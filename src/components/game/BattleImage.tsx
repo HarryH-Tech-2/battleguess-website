@@ -82,7 +82,6 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
             )}
           </AnimatePresence>
         </div>
-
       </div>
 
       {/* Date display below image */}
