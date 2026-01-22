@@ -15,7 +15,7 @@ export const battles: Battle[] = [
     difficulty: "medium",
     year: 1815,
     location: "Belgium",
-    description: "The final defeat of Napoleon Bonaparte"
+    description: "The Battle of Waterloo ended Napoleon's rule as French Emperor and his Hundred Days return from exile. The Duke of Wellington's allied forces, combined with Prussian reinforcements under Blücher, defeated Napoleon's army in a hard-fought engagement. This decisive victory reshaped European politics and led to Napoleon's final exile to Saint Helena, where he died six years later."
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ export const battles: Battle[] = [
     difficulty: "easy",
     year: -480,
     location: "Greece",
-    description: "The legendary last stand of 300 Spartans"
+    description: "King Leonidas and his 300 Spartans, along with several thousand Greek allies, held the narrow pass at Thermopylae against Xerxes' massive Persian army for three days. Their sacrifice bought time for Greece to prepare its defenses. Though all 300 Spartans perished, their bravery became legendary, immortalized by the epitaph: 'Go tell the Spartans that here we lie, obedient to their laws.'"
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ export const battles: Battle[] = [
     difficulty: "medium",
     year: 1863,
     location: "Pennsylvania, USA",
-    description: "The turning point of the American Civil War"
+    description: "Fought over three days in July 1863, Gettysburg was the bloodiest battle of the American Civil War with over 50,000 casualties. The failed Confederate assault known as Pickett's Charge marked the 'high water mark' of the Confederacy. President Lincoln's Gettysburg Address, delivered at the battlefield's dedication, became one of the most famous speeches in American history."
   },
   {
     id: 4,
@@ -63,7 +63,7 @@ export const battles: Battle[] = [
     difficulty: "medium",
     year: 1066,
     location: "England",
-    description: "The Norman conquest of England"
+    description: "On October 14, 1066, William, Duke of Normandy, defeated King Harold II's Saxon army, changing English history forever. Harold was killed, allegedly by an arrow to the eye, and William became the first Norman King of England. The battle introduced feudalism to England and profoundly influenced the English language, culture, and aristocracy for centuries to come."
   },
   {
     id: 5,
@@ -79,7 +79,7 @@ export const battles: Battle[] = [
     difficulty: "medium",
     year: 1943,
     location: "Soviet Union (Russia)",
-    description: "The bloodiest battle in human history"
+    description: "The five-month siege of Stalingrad resulted in nearly 2 million casualties, making it the deadliest battle in human history. Soviet defenders fought building by building, sometimes room by room, in brutal urban combat. The German 6th Army's surrender in February 1943 marked a decisive turning point on the Eastern Front and the beginning of Germany's long retreat."
   },
   {
     id: 6,
@@ -95,7 +95,7 @@ export const battles: Battle[] = [
     difficulty: "easy",
     year: 1944,
     location: "Normandy, France",
-    description: "The Allied invasion of Nazi-occupied France"
+    description: "On June 6, 1944, over 156,000 Allied troops landed on five beaches in Normandy in the largest amphibious invasion in history. Despite fierce German resistance, especially at Omaha Beach, the Allies established a foothold in Nazi-occupied Europe. D-Day opened the Western Front and began the liberation of France, leading to Germany's defeat less than a year later."
   },
   {
     id: 7,
@@ -111,7 +111,7 @@ export const battles: Battle[] = [
     difficulty: "hard",
     year: 1415,
     location: "France",
-    description: "English longbowmen vs French knights"
+    description: "Henry V's outnumbered English army defeated a much larger French force thanks to the devastating effectiveness of the English longbow. French knights, bogged down in mud and funneled into a narrow field, were cut down in waves. The battle inspired Shakespeare's famous play 'Henry V' and demonstrated how technology and terrain could overcome numerical superiority."
   },
   {
     id: 8,
@@ -127,7 +127,7 @@ export const battles: Battle[] = [
     difficulty: "hard",
     year: 1805,
     location: "Atlantic Ocean, off Spain",
-    description: "Britain's greatest naval victory"
+    description: "Admiral Horatio Nelson's bold tactics destroyed the combined French and Spanish fleet, securing British naval supremacy for over a century. Nelson was mortally wounded during the battle but lived long enough to know he had won. His famous signal, 'England expects that every man will do his duty,' became an enduring symbol of British naval tradition."
   },
   {
     id: 9,
@@ -143,7 +143,7 @@ export const battles: Battle[] = [
     difficulty: "medium",
     year: 1916,
     location: "France",
-    description: "One of the bloodiest battles of WWI"
+    description: "The first day of the Somme remains the bloodiest day in British military history, with nearly 60,000 casualties. Over 140 days, the Allies advanced just six miles at a cost of over one million casualties on both sides. The battle saw the first use of tanks in warfare and came to symbolize the horrific futility of trench warfare on the Western Front."
   },
   {
     id: 10,
@@ -159,7 +159,7 @@ export const battles: Battle[] = [
     difficulty: "medium",
     year: -490,
     location: "Greece",
-    description: "Athens defeats the Persian invasion"
+    description: "Athenian hoplites charged a Persian force twice their size and achieved a stunning victory, losing only 192 men while inflicting 6,400 Persian casualties. A messenger named Pheidippides reportedly ran 26 miles to Athens to announce the victory, inspiring the modern marathon. This battle proved that Greek citizen-soldiers could defeat the mighty Persian Empire."
   },
   {
     id: 11,
@@ -175,7 +175,7 @@ export const battles: Battle[] = [
     difficulty: "medium",
     year: 1942,
     location: "Pacific Ocean",
-    description: "The turning point of the Pacific War"
+    description: "American codebreakers intercepted Japanese plans, allowing Admiral Nimitz to set a trap near Midway Atoll. In just five minutes, American dive bombers destroyed three Japanese carriers, with a fourth sunk later that day. Japan lost four fleet carriers, 248 aircraft, and hundreds of experienced pilots—losses that Japan could never replace. The battle shifted the Pacific War's momentum permanently to the Allies."
   },
   {
     id: 12,
@@ -191,7 +191,7 @@ export const battles: Battle[] = [
     difficulty: "hard",
     year: 1805,
     location: "Czech Republic (Moravia)",
-    description: "Napoleon's greatest military victory"
+    description: "Napoleon lured the combined Austrian and Russian armies into a trap by feigning weakness, then struck their weakened center while they tried to outflank him. The crushing victory ended the Third Coalition and forced Austria to sue for peace. Napoleon himself considered Austerlitz his finest battle, a masterpiece of military deception and tactical execution."
   },
   {
     id: 13,
@@ -207,7 +207,7 @@ export const battles: Battle[] = [
     difficulty: "hard",
     year: 1943,
     location: "Soviet Union (Russia)",
-    description: "The largest tank battle in history"
+    description: "Over 6,000 tanks, 4,000 aircraft, and 2 million soldiers clashed in the largest armored battle ever fought. The Germans' Operation Citadel aimed to eliminate a Soviet bulge in the front lines but failed against prepared Soviet defenses in depth. After Kursk, Germany lost the strategic initiative in the East and would never launch another major offensive on the Eastern Front."
   },
   {
     id: 14,
@@ -223,7 +223,7 @@ export const battles: Battle[] = [
     difficulty: "hard",
     year: -216,
     location: "Italy",
-    description: "Hannibal's tactical masterpiece"
+    description: "Hannibal Barca executed a perfect double envelopment, surrounding and annihilating a Roman army nearly twice his size. An estimated 50,000-70,000 Romans were killed in a single day—one of the deadliest days in military history. The battle remains the gold standard of tactical excellence, studied in military academies worldwide to this day."
   },
   {
     id: 15,
@@ -239,7 +239,7 @@ export const battles: Battle[] = [
     difficulty: "medium",
     year: 1916,
     location: "France",
-    description: "France's symbol of WWI resistance"
+    description: "Germany intended to 'bleed France white' at Verdun, but the ten-month battle bled both armies equally with over 700,000 combined casualties. French General Pétain's rallying cry 'Ils ne passeront pas!' (They shall not pass!) became a national symbol of French determination. The battle produced the most concentrated devastation of World War I, turning verdant hills into a moonscape of craters."
   }
 ];
 
