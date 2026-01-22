@@ -6,12 +6,13 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// API Key - replace with your key or use environment variable
-const API_KEY = process.env.VITE_GEMINI_API_KEY || 'AIzaSyAj8wH8RVa2Z5KIzahHSq7tYD9xFFRuFQc';
+const API_KEY = process.env.VITE_GEMINI_API_KEY;
+if (!API_KEY) {
+  process.exit(1);
+}
 
 const genAI = new GoogleGenerativeAI(API_KEY);
 
-// Battle data with dates for the prompt
 const battles = [
   { id: 1, name: "Battle of Waterloo", date: "June 18, 1815", generals: "Napoleon Bonaparte and Duke of Wellington", landscape: "rolling Belgian farmland with muddy fields" },
   { id: 2, name: "Battle of Thermopylae", date: "480 BCE", generals: "King Leonidas and Xerxes I", landscape: "narrow coastal mountain pass in Greece" },
@@ -40,8 +41,6 @@ Use a clean, minimalistic composition with a soft, solid-colored background. At 
 
 async function generateImage(battle) {
   const prompt = createPrompt(battle);
-  console.log(`\nGenerating image for: ${battle.name}`);
-  console.log(`Prompt: ${prompt.substring(0, 100)}...`);
 
   try {
     const model = genAI.getGenerativeModel({
@@ -65,60 +64,35 @@ async function generateImage(battle) {
           const mimeType = part.inlineData.mimeType || 'image/png';
           const extension = mimeType.includes('jpeg') ? 'jpg' : 'png';
 
-          // Save the image
           const outputPath = path.join(__dirname, '..', 'public', 'battles', `battle-${battle.id}.${extension}`);
           const buffer = Buffer.from(imageData, 'base64');
           fs.writeFileSync(outputPath, buffer);
 
-          console.log(`✓ Saved: ${outputPath}`);
           return { success: true, path: `/battles/battle-${battle.id}.${extension}` };
         }
       }
     }
 
-    console.log(`✗ No image data in response for ${battle.name}`);
     return { success: false, error: 'No image data' };
   } catch (error) {
-    console.error(`✗ Error generating ${battle.name}:`, error.message);
     return { success: false, error: error.message };
   }
 }
 
 async function main() {
-  console.log('='.repeat(60));
-  console.log('BattleGuess Image Generator');
-  console.log('='.repeat(60));
-  console.log(`Generating ${battles.length} battle images...`);
-  console.log(`Output directory: public/battles/`);
-  console.log('='.repeat(60));
-
   const results = [];
 
   for (const battle of battles) {
     const result = await generateImage(battle);
     results.push({ ...battle, ...result });
 
-    // Add delay between requests to avoid rate limiting
     if (battle.id < battles.length) {
-      console.log('Waiting 3 seconds before next request...');
       await new Promise(resolve => setTimeout(resolve, 3000));
     }
   }
 
-  console.log('\n' + '='.repeat(60));
-  console.log('Generation Complete!');
-  console.log('='.repeat(60));
-
   const successful = results.filter(r => r.success);
-  const failed = results.filter(r => !r.success);
 
-  console.log(`\nSuccessful: ${successful.length}/${battles.length}`);
-  if (failed.length > 0) {
-    console.log(`Failed: ${failed.length}`);
-    failed.forEach(f => console.log(`  - ${f.name}: ${f.error}`));
-  }
-
-  // Generate the image paths file
   const imagePaths = {};
   successful.forEach(r => {
     imagePaths[r.id] = r.path;
@@ -130,7 +104,6 @@ export const battleImages: Record<number, string> = ${JSON.stringify(imagePaths,
 `;
 
   fs.writeFileSync(outputFile, fileContent);
-  console.log(`\nImage paths saved to: src/data/battleImages.ts`);
 }
 
-main().catch(console.error);
+main().catch(() => process.exit(1));

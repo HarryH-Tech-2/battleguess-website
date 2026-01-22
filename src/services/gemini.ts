@@ -10,7 +10,6 @@ if (API_KEY) {
 
 export const generateBattleImage = async (prompt: string): Promise<string | null> => {
   if (!genAI) {
-    console.warn('Gemini API key not configured. Using placeholder image.');
     return null;
   }
 
@@ -38,8 +37,7 @@ export const generateBattleImage = async (prompt: string): Promise<string | null
     }
 
     return null;
-  } catch (error) {
-    console.error('Error generating image:', error);
+  } catch {
     return null;
   }
 };

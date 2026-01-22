@@ -18,8 +18,6 @@ export function useImageGeneration(): UseImageGenerationReturn {
       return imagePath;
     }
 
-    // Fallback if image not found (shouldn't happen with current setup)
-    console.warn(`No image found for battle ID: ${battleId}`);
     return '/battles/battle-1.png';
   }, []);
 
