@@ -240,6 +240,246 @@ export const battles: Battle[] = [
     year: 1916,
     location: "France",
     description: "Germany intended to 'bleed France white' at Verdun, but the ten-month battle bled both armies equally with over 700,000 combined casualties. French General Pétain's rallying cry 'Ils ne passeront pas!' (They shall not pass!) became a national symbol of French determination. The battle produced the most concentrated devastation of World War I, turning verdant hills into a moonscape of craters."
+  },
+  {
+    id: 16,
+    name: "Battle of Saratoga",
+    acceptedAnswers: ["saratoga", "battle of saratoga", "battles of saratoga"],
+    prompt: "American Revolution Battle of Saratoga 1777, Continental Army soldiers in blue coats fighting British redcoats in autumn forest, General Benedict Arnold leading charge on horseback, musket fire and cannon smoke, New York wilderness with fall foliage, dramatic Revolutionary War painting",
+    hints: [
+      "This battle was fought in autumn 1777 during the American Revolution",
+      "It took place in upstate New York",
+      "It convinced France to ally with the American cause",
+      "British General Burgoyne surrendered his entire army"
+    ],
+    difficulty: "hard",
+    year: 1777,
+    location: "New York, USA",
+    description: "The American victory at Saratoga was the turning point of the American Revolution. British General Burgoyne's army of 6,000 was surrounded and forced to surrender after two engagements. The victory convinced France to enter the war as an American ally, providing the military and financial support that would ultimately secure American independence."
+  },
+  {
+    id: 17,
+    name: "Battle of Lepanto",
+    acceptedAnswers: ["lepanto", "battle of lepanto"],
+    prompt: "Naval Battle of Lepanto 1571, Holy League galleys clashing with Ottoman fleet in Gulf of Patras, massive Mediterranean galley warfare, ramming and boarding actions, Christian and Ottoman flags, cannons firing at close range, dramatic Renaissance naval battle painting, smoke over turquoise waters",
+    hints: [
+      "This naval battle was fought in October 1571",
+      "It took place in the Gulf of Patras off western Greece",
+      "A coalition of Catholic states fought the Ottoman Empire",
+      "It was the last major battle fought primarily between rowing galleys"
+    ],
+    difficulty: "hard",
+    year: 1571,
+    location: "Gulf of Patras, Greece",
+    description: "The Holy League, a coalition of Spain, Venice, and the Papal States, decisively defeated the Ottoman fleet in one of history's largest naval battles. Over 400 galleys clashed in close combat. The victory shattered the myth of Ottoman naval invincibility and prevented Ottoman expansion into the western Mediterranean, though it did not end Ottoman naval power entirely."
+  },
+  {
+    id: 18,
+    name: "Battle of Zama",
+    acceptedAnswers: ["zama", "battle of zama"],
+    prompt: "Ancient Battle of Zama 202 BCE, Roman legions under Scipio Africanus facing Hannibal's Carthaginian army with war elephants, Roman infantry opening lanes for elephants to pass through, Numidian cavalry flanking, North African plains, dust and chaos of ancient warfare, epic historical painting",
+    hints: [
+      "This battle was fought in 202 BCE during the Second Punic War",
+      "It took place in North Africa near Carthage",
+      "War elephants were used but proved ineffective",
+      "Scipio Africanus defeated the great Carthaginian general"
+    ],
+    difficulty: "hard",
+    year: -202,
+    location: "North Africa (Tunisia)",
+    description: "Scipio Africanus defeated Hannibal Barca in a battle that ended the Second Punic War and established Rome as the dominant Mediterranean power. Scipio neutralized Hannibal's war elephants by opening lanes in the Roman formation, then used superior cavalry to envelop the Carthaginian army. It was the only major battle Hannibal ever lost, and it sealed Carthage's fate."
+  },
+  {
+    id: 19,
+    name: "Battle of Tours",
+    acceptedAnswers: ["tours", "battle of tours", "poitiers", "battle of poitiers 732", "tours-poitiers"],
+    prompt: "Battle of Tours 732 CE, Frankish warriors under Charles Martel forming infantry phalanx against Umayyad cavalry charge, medieval Frankish soldiers with shields and axes, Arab horsemen with curved swords, clash of civilizations on French plains, dramatic early medieval battle painting",
+    hints: [
+      "This battle was fought in October 732 CE",
+      "It took place in central France between Tours and Poitiers",
+      "It halted a major northward military advance into Western Europe",
+      "Charles Martel, 'The Hammer,' led the victorious Frankish army"
+    ],
+    difficulty: "hard",
+    year: 732,
+    location: "France",
+    description: "Charles Martel's Frankish army halted the Umayyad Caliphate's advance into Western Europe, a victory many historians consider among the most decisive in world history. The Frankish infantry held firm against repeated cavalry charges, and the Umayyad commander Abd al-Rahman was killed. The battle preserved Christian Western Europe and established the Carolingian dynasty's prestige, paving the way for Charlemagne."
+  },
+  {
+    id: 20,
+    name: "Battle of Teutoburg Forest",
+    acceptedAnswers: ["teutoburg", "teutoburg forest", "battle of teutoburg forest", "teutoburger wald"],
+    prompt: "Battle of Teutoburg Forest 9 CE, Germanic warriors ambushing Roman legions in dense dark forest, Arminius leading tribal warriors in surprise attack, Roman soldiers trapped on narrow forest path, rain and mud, barbaric Germanic warriors with spears overwhelming disciplined Romans, dramatic ancient battle scene",
+    hints: [
+      "This battle was fought in 9 CE during the Roman Empire",
+      "It took place in a dense forest in Germania (modern Germany)",
+      "Three entire Roman legions were destroyed in an ambush",
+      "Arminius, a Germanic chieftain who had served in the Roman army, led the attack"
+    ],
+    difficulty: "hard",
+    year: 9,
+    location: "Germany",
+    description: "Arminius, a Romanized Germanic chieftain, lured three Roman legions under Varus into a devastating ambush in the dense Teutoburg Forest. Over 15,000 Roman soldiers were annihilated over three days of fighting. Emperor Augustus reportedly cried 'Varus, give me back my legions!' The defeat permanently halted Roman expansion east of the Rhine and shaped the future boundary between Latin and Germanic Europe."
+  },
+  {
+    id: 21,
+    name: "Battle of Crécy",
+    acceptedAnswers: ["crecy", "crécy", "battle of crecy", "battle of crécy"],
+    prompt: "Medieval Battle of Crécy 1346, English longbowmen raining arrows on French knights, King Edward III commanding from hilltop, French cavalry charge uphill into arrow storm, muddy battlefield, Hundred Years War, medieval armor and heraldry, dramatic historical battle painting",
+    hints: [
+      "This battle was fought in August 1346 during the Hundred Years' War",
+      "It took place in northern France",
+      "English longbowmen devastated waves of French cavalry",
+      "King Edward III of England won despite being heavily outnumbered"
+    ],
+    difficulty: "hard",
+    year: 1346,
+    location: "France",
+    description: "Edward III's English army, anchored by devastating longbow fire, destroyed a much larger French force that charged uphill in disorganized waves. The French suffered catastrophic losses among their nobility, including the blind King John of Bohemia who rode into battle tied to his knights. Crécy demonstrated the dominance of the English longbow and heralded the decline of mounted knightly warfare."
+  },
+  {
+    id: 22,
+    name: "Battle of Yorktown",
+    acceptedAnswers: ["yorktown", "battle of yorktown", "siege of yorktown"],
+    prompt: "Siege of Yorktown 1781, American Continental Army and French forces besieging British fortifications, George Washington commanding combined forces, French navy blocking Chesapeake Bay, cannon bombardment of British positions, American Revolution final battle, dramatic historical painting",
+    hints: [
+      "This siege took place in autumn 1781",
+      "It was fought in Virginia, USA",
+      "French forces played a crucial role both on land and at sea",
+      "The British surrender here effectively ended the American Revolution"
+    ],
+    difficulty: "medium",
+    year: 1781,
+    location: "Virginia, USA",
+    description: "George Washington's Continental Army and French forces under Rochambeau besieged British General Cornwallis at Yorktown while the French navy blocked any escape by sea. After weeks of bombardment, Cornwallis surrendered his army of over 7,000 men. The defeat shattered British will to continue the war, leading to peace negotiations and American independence."
+  },
+  {
+    id: 23,
+    name: "Battle of Gallipoli",
+    acceptedAnswers: ["gallipoli", "battle of gallipoli", "gallipoli campaign", "dardanelles"],
+    prompt: "World War 1 Gallipoli Campaign 1915, ANZAC soldiers storming beaches under Ottoman fire, steep cliffs and narrow beaches, Turkish defenders firing from above, trenches on hillsides overlooking the sea, Dardanelles strait in background, dramatic WWI Mediterranean battle scene",
+    hints: [
+      "This campaign lasted from 1915 to 1916 during World War I",
+      "It took place on a peninsula in modern-day Turkey",
+      "Australian and New Zealand troops (ANZACs) played a major role",
+      "Winston Churchill was largely responsible for planning this failed campaign"
+    ],
+    difficulty: "medium",
+    year: 1915,
+    location: "Turkey",
+    description: "The Allied attempt to force the Dardanelles strait and knock the Ottoman Empire out of World War I ended in a costly eight-month failure. ANZAC and British forces landed on the Gallipoli peninsula but could never break through Ottoman defenses commanded by Mustafa Kemal (later Atatürk). The campaign cost over 250,000 Allied casualties and forged the national identities of Australia, New Zealand, and modern Turkey."
+  },
+  {
+    id: 24,
+    name: "Battle of the Bulge",
+    acceptedAnswers: ["bulge", "battle of the bulge", "ardennes", "ardennes offensive"],
+    prompt: "World War 2 Battle of the Bulge 1944, American soldiers fighting in snowy Ardennes forest, German Tiger tanks advancing through winter landscape, GIs in foxholes defending frozen positions, paratroopers at Bastogne, blizzard conditions, dramatic WWII winter warfare scene",
+    hints: [
+      "This battle began in December 1944 during World War II",
+      "It was fought in the Ardennes forest region of Belgium and Luxembourg",
+      "It was Germany's last major offensive on the Western Front",
+      "The besieged 101st Airborne at Bastogne replied 'NUTS!' to a German surrender demand"
+    ],
+    difficulty: "medium",
+    year: 1944,
+    location: "Belgium & Luxembourg",
+    description: "Hitler's last desperate gamble threw 250,000 German troops against thinly held American lines in the Ardennes, creating a dangerous 'bulge' in the Allied front. Despite initial surprise and harsh winter conditions, American forces held key positions, most famously at Bastogne. The failed offensive exhausted Germany's last reserves and hastened the end of the war in Europe."
+  },
+  {
+    id: 25,
+    name: "Battle of Iwo Jima",
+    acceptedAnswers: ["iwo jima", "battle of iwo jima", "iwo"],
+    prompt: "World War 2 Battle of Iwo Jima 1945, US Marines storming volcanic black sand beaches, fighting through Japanese bunkers and tunnels, Mount Suribachi in background, Marines raising flag on summit, intense Pacific island warfare, explosions and gunfire, dramatic WWII Pacific theater scene",
+    hints: [
+      "This battle was fought in February-March 1945",
+      "It took place on a small volcanic island in the Pacific Ocean",
+      "An iconic photograph of a flag-raising was taken during this battle",
+      "Japanese defenders fought from an extensive network of tunnels and bunkers"
+    ],
+    difficulty: "medium",
+    year: 1945,
+    location: "Iwo Jima, Japan",
+    description: "Over 70,000 US Marines fought to capture the heavily fortified volcanic island of Iwo Jima from 21,000 entrenched Japanese defenders. The battle produced some of the fiercest fighting in the Pacific War, with nearly 7,000 Marines killed and virtually the entire Japanese garrison wiped out. The iconic photograph of Marines raising the flag on Mount Suribachi became one of the most famous images of World War II."
+  },
+  {
+    id: 26,
+    name: "Battle of Borodino",
+    acceptedAnswers: ["borodino", "battle of borodino"],
+    prompt: "Battle of Borodino 1812, Napoleon's Grande Armée attacking Russian fortifications, massive artillery duel, French cavalry charging Russian redoubts, burning villages, vast Russian landscape, Napoleon observing from hilltop, dramatic Napoleonic Wars painting, smoke-filled battlefield",
+    hints: [
+      "This battle was fought in September 1812",
+      "It took place west of Moscow during a famous invasion of Russia",
+      "It was the bloodiest single day of the Napoleonic Wars",
+      "Napoleon won the field but failed to destroy the Russian army"
+    ],
+    difficulty: "hard",
+    year: 1812,
+    location: "Russia",
+    description: "The bloodiest day of the Napoleonic Wars saw Napoleon's Grande Armée clash with Kutuzov's Russian army in a brutal frontal battle with over 70,000 casualties. Napoleon captured the battlefield but failed to destroy the Russian army, which withdrew in good order. He marched on to Moscow only to find it abandoned and burning, beginning the catastrophic retreat that would destroy his Grande Armée."
+  },
+  {
+    id: 27,
+    name: "Battle of Salamis",
+    acceptedAnswers: ["salamis", "battle of salamis"],
+    prompt: "Ancient naval Battle of Salamis 480 BCE, Greek triremes ramming Persian ships in narrow strait, Themistocles commanding Athenian fleet, Persian King Xerxes watching from shore throne, wooden warships with bronze rams, oars and sails, dramatic ancient naval warfare, Mediterranean waters churning with battle",
+    hints: [
+      "This naval battle was fought in 480 BCE",
+      "It took place in a narrow strait near Athens, Greece",
+      "The Persian king watched the battle from a throne on a hillside",
+      "Themistocles lured the larger enemy fleet into confined waters"
+    ],
+    difficulty: "hard",
+    year: -480,
+    location: "Greece",
+    description: "Themistocles lured Xerxes' massive Persian fleet into the narrow straits of Salamis, where their numerical advantage became a liability. The more maneuverable Greek triremes rammed and sank Persian ships in the confined waters while Xerxes watched helplessly from his golden throne ashore. The decisive Greek victory ended the Persian naval threat and saved Greek civilization from conquest."
+  },
+  {
+    id: 28,
+    name: "Battle of Alesia",
+    acceptedAnswers: ["alesia", "battle of alesia", "siege of alesia"],
+    prompt: "Siege of Alesia 52 BCE, Julius Caesar's Roman legions building double ring of fortifications, Gallic warriors under Vercingetorix trapped inside hilltop fortress, Roman siege works with towers and trenches, Gallic relief army attacking from outside, dramatic ancient siege warfare, epic Roman military engineering",
+    hints: [
+      "This siege took place in 52 BCE during the Gallic Wars",
+      "It was fought in central Gaul (modern France)",
+      "The besieging army built fortifications facing both inward AND outward",
+      "Julius Caesar trapped a Gallic chieftain with extraordinary siege engineering"
+    ],
+    difficulty: "hard",
+    year: -52,
+    location: "France",
+    description: "Caesar besieged the Gallic stronghold of Alesia by building an extraordinary double ring of fortifications—one facing inward to contain Vercingetorix's army, and another facing outward to defend against a massive Gallic relief force. Trapped between two armies, Caesar's legions held both lines and defeated both forces. Vercingetorix surrendered, ending major Gallic resistance and securing Rome's conquest of Gaul."
+  },
+  {
+    id: 29,
+    name: "Battle of Bunker Hill",
+    acceptedAnswers: ["bunker hill", "battle of bunker hill", "breeds hill", "battle of breeds hill"],
+    prompt: "Battle of Bunker Hill 1775, American colonial militia behind earthwork fortifications on hilltop, British redcoats marching uphill in formation, musket volleys and cannon fire, Charlestown burning in background, Boston Harbor with British ships, early American Revolution battle painting",
+    hints: [
+      "This battle was fought in June 1775, early in the American Revolution",
+      "It took place on a hill overlooking Boston, Massachusetts",
+      "The famous order was 'Don't fire until you see the whites of their eyes!'",
+      "The British won the hill but suffered devastating casualties"
+    ],
+    difficulty: "medium",
+    year: 1775,
+    location: "Massachusetts, USA",
+    description: "Colonial militia fortified Breed's Hill (near Bunker Hill) overlooking British-held Boston, forcing a direct assault. The defenders repulsed two British charges before running out of ammunition during the third. Though the British captured the position, they suffered over 1,000 casualties—nearly half their attacking force. The battle proved that untrained colonists could stand against professional British soldiers and boosted American morale."
+  },
+  {
+    id: 30,
+    name: "Battle of Tsushima",
+    acceptedAnswers: ["tsushima", "battle of tsushima"],
+    prompt: "Naval Battle of Tsushima 1905, Japanese battleships under Admiral Togo engaging Russian Baltic Fleet, modern steel warships exchanging broadsides, explosions and smoke, Russian ships sinking, dramatic Russo-Japanese War naval battle, gray seas of Tsushima Strait, early 20th century naval warfare painting",
+    hints: [
+      "This naval battle was fought in May 1905",
+      "It took place in a strait between Japan and Korea",
+      "The losing fleet had sailed halfway around the world to reach the battle",
+      "Admiral Togo's decisive victory shocked the Western world"
+    ],
+    difficulty: "hard",
+    year: 1905,
+    location: "Tsushima Strait, Japan/Korea",
+    description: "Admiral Togo's Japanese fleet annihilated the Russian Baltic Fleet, which had sailed 18,000 miles over seven months to reach the Pacific. In one of the most lopsided naval battles in history, Japan sank 21 Russian ships while losing only 3 torpedo boats. The stunning victory marked Japan's emergence as a world power, ended the Russo-Japanese War, and signaled the decline of European dominance in Asia."
   }
 ];
 

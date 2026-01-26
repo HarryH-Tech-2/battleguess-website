@@ -14,5 +14,20 @@ export const battleImages: Record<number, string> = {
   "12": "/battles/battle-12.png",
   "13": "/battles/battle-13.png",
   "14": "/battles/battle-14.png",
-  "15": "/battles/battle-15.png"
+  "15": "/battles/battle-15.png",
+  "16": "/battles/battle-16.png",
+  "17": "/battles/battle-17.png",
+  "18": "/battles/battle-18.png",
+  "19": "/battles/battle-19.png",
+  "20": "/battles/battle-20.png",
+  "21": "/battles/battle-21.png",
+  "22": "/battles/battle-22.png",
+  "23": "/battles/battle-23.png",
+  "24": "/battles/battle-24.png",
+  "25": "/battles/battle-25.png",
+  "26": "/battles/battle-26.png",
+  "27": "/battles/battle-27.png",
+  "28": "/battles/battle-28.png",
+  "29": "/battles/battle-29.png",
+  "30": "/battles/battle-30.png"
 };
