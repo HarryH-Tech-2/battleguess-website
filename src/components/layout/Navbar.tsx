@@ -60,7 +60,7 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh' }:
                 BattleGuess
               </h1>
               <p className="text-xs text-primary-500 hidden sm:block">
-                Guess the Historical Battle
+                Guess the Battle
               </p>
             </div>
           </motion.div>
