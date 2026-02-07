@@ -7,7 +7,7 @@ export const battles: Battle[] = [
     acceptedAnswers: ["waterloo", "battle of waterloo", "waterlo"],
     prompt: "Epic historical oil painting of the Battle of Waterloo 1815, Napoleon's French army clashing with British and Prussian forces, dramatic cavalry charge across muddy fields, smoke from cannons and muskets, soldiers in period-accurate uniforms, Wellington on horseback, stormy sky, cinematic lighting, highly detailed",
     hints: [
-      "This decisive battle took place in June 1815",
+      "This battle ended a famous emperor's rule and his return from exile",
       "It occurred in present-day Belgium, south of Brussels",
       "Napoleon Bonaparte commanded the French army",
       "The Duke of Wellington led the opposing coalition forces"
@@ -23,7 +23,7 @@ export const battles: Battle[] = [
     acceptedAnswers: ["thermopylae", "battle of thermopylae", "thermopylai", "300 spartans"],
     prompt: "Ancient Greek battle scene at Thermopylae, 300 Spartan warriors in bronze armor and red cloaks defending a narrow mountain pass against massive Persian army, King Leonidas at the front with spear and shield, dramatic cliffs, dust and arrows filling the air, heroic last stand, epic ancient warfare painting",
     hints: [
-      "This battle occurred in 480 BCE during the Greco-Persian Wars",
+      "This battle was part of the Greco-Persian Wars",
       "It took place at a narrow coastal pass in Greece",
       "A small Greek force famously held off a much larger Persian army",
       "King Leonidas led 300 Spartan warriors in this legendary stand"
@@ -39,7 +39,7 @@ export const battles: Battle[] = [
     acceptedAnswers: ["gettysburg", "battle of gettysburg", "getysburg"],
     prompt: "American Civil War Battle of Gettysburg 1863, Union and Confederate soldiers in fierce combat, Pickett's Charge across open fields, cannons firing, smoke-filled battlefield, blue and gray uniforms, dramatic Pennsylvania landscape with rolling hills, historical war painting style, intense action",
     hints: [
-      "This battle was fought in July 1863 during the American Civil War",
+      "This was the bloodiest battle of the American Civil War",
       "It took place in Pennsylvania, a Northern state",
       "It's considered the turning point of the American Civil War",
       "President Lincoln later gave a famous speech honoring the fallen here"
@@ -55,7 +55,7 @@ export const battles: Battle[] = [
     acceptedAnswers: ["hastings", "battle of hastings"],
     prompt: "Medieval Battle of Hastings 1066, Norman knights on horseback charging Saxon shield wall, William the Conqueror leading cavalry, King Harold's army defending hill, arrows flying, medieval weapons and armor, English countryside, dramatic historical painting in the style of the Bayeux Tapestry but realistic",
     hints: [
-      "This battle took place in October 1066",
+      "The losing king was allegedly killed by an arrow to the eye",
       "It was fought in southern England near the coast",
       "This battle determined who would become King of England",
       "William the Conqueror led the Norman invasion force"
@@ -71,7 +71,7 @@ export const battles: Battle[] = [
     acceptedAnswers: ["stalingrad", "battle of stalingrad"],
     prompt: "World War 2 Battle of Stalingrad, brutal urban warfare in destroyed Soviet city, Soviet Red Army soldiers fighting German Wehrmacht in rubble and ruins, snipers in bombed buildings, tanks in snowy streets, Winter 1942-43, dark and gritty atmosphere, dramatic war photography style",
     hints: [
-      "This brutal battle lasted from 1942 to 1943 during World War II",
+      "This brutal urban battle involved fighting building by building, room by room",
       "It was fought in a Soviet city along the Volga River",
       "It's considered the bloodiest battle in human history",
       "The Soviet victory here marked a turning point against Nazi Germany"
@@ -87,9 +87,9 @@ export const battles: Battle[] = [
     acceptedAnswers: ["d-day", "d day", "normandy", "battle of normandy", "normandy landings", "operation overlord"],
     prompt: "D-Day Normandy landings June 6 1944, Allied soldiers storming Omaha Beach from landing craft, explosions and gunfire, soldiers wading through water under heavy fire, German bunkers on cliffs, dramatic World War 2 invasion scene, gray stormy sky, intense action, historical war painting",
     hints: [
-      "This operation took place on June 6, 1944",
-      "It was the largest seaborne invasion in history",
-      "Allied forces landed on beaches in northern France",
+      "This was the largest seaborne invasion in history",
+      "Allied forces landed on five beaches in northern France",
+      "Omaha Beach saw the fiercest fighting during the landings",
       "Operation Overlord was its codename"
     ],
     difficulty: "easy",
@@ -103,7 +103,7 @@ export const battles: Battle[] = [
     acceptedAnswers: ["agincourt", "battle of agincourt", "azincourt"],
     prompt: "Medieval Battle of Agincourt 1415, English longbowmen releasing volley of arrows at French knights, muddy battlefield, King Henry V leading English army, French cavalry charge failing in deep mud, hundreds of arrows darkening sky, Hundred Years War, dramatic medieval battle painting",
     hints: [
-      "This battle was fought in October 1415 during the Hundred Years' War",
+      "This battle was fought during the Hundred Years' War",
       "It took place in northern France",
       "English longbowmen played a decisive role in the victory",
       "King Henry V of England led his outnumbered army to victory"
@@ -119,7 +119,7 @@ export const battles: Battle[] = [
     acceptedAnswers: ["trafalgar", "battle of trafalgar"],
     prompt: "Naval Battle of Trafalgar 1805, British Royal Navy ships of the line engaging French and Spanish fleet, HMS Victory leading the charge, Admiral Nelson's flagship, massive wooden warships with billowing sails, cannon smoke across the sea, dramatic naval warfare painting, stormy Atlantic waters",
     hints: [
-      "This naval battle occurred in October 1805",
+      "This naval victory secured British naval supremacy for over a century",
       "It was fought off the coast of Spain near Gibraltar",
       "Britain's greatest naval hero died in this battle",
       "Admiral Horatio Nelson commanded the British fleet"
@@ -135,7 +135,7 @@ export const battles: Battle[] = [
     acceptedAnswers: ["somme", "battle of the somme", "the somme"],
     prompt: "World War 1 Battle of the Somme 1916, British soldiers going over the top from trenches into no man's land, barbed wire and shell craters, artillery bombardment, mud and devastation, gas masks and steel helmets, haunting WWI battlefield atmosphere, grim realistic war painting",
     hints: [
-      "This battle was fought from July to November 1916",
+      "The first day remains the bloodiest in British military history",
       "It took place in northern France during World War I",
       "The first day saw nearly 60,000 British casualties",
       "Tanks were used in warfare for the first time in this battle"
@@ -151,9 +151,9 @@ export const battles: Battle[] = [
     acceptedAnswers: ["marathon", "battle of marathon"],
     prompt: "Ancient Greek Battle of Marathon 490 BCE, Athenian hoplites in bronze armor charging Persian army on coastal plain, Greek phalanx formation with overlapping shields, Persian archers and cavalry, dramatic ancient warfare, Mediterranean coastline, epic historical painting style",
     hints: [
-      "This battle was fought in 490 BCE",
-      "It took place on a plain near Athens, Greece",
       "A legendary run after this battle inspired a modern sporting event",
+      "It took place on a plain near Athens, Greece",
+      "The outnumbered defenders charged the invading force across an open field",
       "The Athenians defeated a larger Persian invasion force"
     ],
     difficulty: "medium",
@@ -167,9 +167,9 @@ export const battles: Battle[] = [
     acceptedAnswers: ["midway", "battle of midway"],
     prompt: "World War 2 Battle of Midway 1942, American dive bombers attacking Japanese aircraft carriers, explosions and fire on carrier decks, Pacific Ocean naval battle, planes in dogfights, anti-aircraft fire, dramatic WWII aerial and naval combat scene, blue Pacific waters",
     hints: [
-      "This naval battle occurred in June 1942",
+      "American codebreakers intercepted enemy plans before this battle",
       "It was fought in the Pacific Ocean near a small atoll",
-      "American codebreakers helped win this battle",
+      "It turned the tide of the Pacific War",
       "Japan lost four aircraft carriers in this decisive defeat"
     ],
     difficulty: "medium",
@@ -183,8 +183,8 @@ export const battles: Battle[] = [
     acceptedAnswers: ["austerlitz", "battle of austerlitz", "battle of three emperors"],
     prompt: "Battle of Austerlitz 1805, Napoleon Bonaparte commanding French Grande Armée against Russian and Austrian forces, cavalry charge across frozen lakes, dramatic fog lifting to reveal French trap, imperial eagles and tricolor flags, Napoleonic warfare at its finest, epic historical battle painting",
     hints: [
-      "This battle was fought in December 1805",
       "It's also known as the 'Battle of the Three Emperors'",
+      "Napoleon lured the enemy into a trap by feigning weakness",
       "Napoleon considered this his greatest victory",
       "The battle took place in what is now the Czech Republic"
     ],
@@ -199,7 +199,7 @@ export const battles: Battle[] = [
     acceptedAnswers: ["kursk", "battle of kursk"],
     prompt: "World War 2 Battle of Kursk 1943, largest tank battle in history, Soviet T-34 tanks clashing with German Tiger and Panther tanks, massive armored warfare across Russian steppe, explosions and burning vehicles, dramatic Eastern Front combat scene, summer fields turned to battlefield",
     hints: [
-      "This battle was fought in July-August 1943",
+      "Over 6,000 tanks clashed in this massive engagement",
       "It's considered the largest tank battle in history",
       "It took place on the Eastern Front in the Soviet Union",
       "The German offensive 'Operation Citadel' failed here"
@@ -215,8 +215,8 @@ export const battles: Battle[] = [
     acceptedAnswers: ["cannae", "battle of cannae"],
     prompt: "Ancient Battle of Cannae 216 BCE, Hannibal's Carthaginian army executing double envelopment of Roman legions, African and Spanish infantry with Numidian cavalry surrounding Romans, tactical masterpiece in action, ancient warfare on Italian plains, dust and chaos of ancient battle",
     hints: [
-      "This battle was fought in 216 BCE during the Second Punic War",
-      "It took place in southeastern Italy",
+      "A perfect double envelopment destroyed a much larger army",
+      "It took place in southeastern Italy during the Second Punic War",
       "It's studied as one of the greatest tactical victories ever",
       "Hannibal Barca led the Carthaginian forces to victory"
     ],
@@ -231,8 +231,8 @@ export const battles: Battle[] = [
     acceptedAnswers: ["verdun", "battle of verdun"],
     prompt: "World War 1 Battle of Verdun 1916, French soldiers defending fortress against German assault, brutal trench warfare, artillery bombardment devastating landscape, Fort Douaumont in background, mud blood and steel, grim WWI Western Front atmosphere, 'They shall not pass' spirit",
     hints: [
-      "This battle lasted most of 1916 during World War I",
-      "It was fought around a fortified French city",
+      "Germany aimed to 'bleed France white' at this fortified city",
+      "It was fought around a fortified French city during World War I",
       "'Ils ne passeront pas!' (They shall not pass!) was the rallying cry",
       "It became a symbol of French determination and sacrifice"
     ],
@@ -247,9 +247,9 @@ export const battles: Battle[] = [
     acceptedAnswers: ["saratoga", "battle of saratoga", "battles of saratoga"],
     prompt: "American Revolution Battle of Saratoga 1777, Continental Army soldiers in blue coats fighting British redcoats in autumn forest, General Benedict Arnold leading charge on horseback, musket fire and cannon smoke, New York wilderness with fall foliage, dramatic Revolutionary War painting",
     hints: [
-      "This battle was fought in autumn 1777 during the American Revolution",
-      "It took place in upstate New York",
-      "It convinced France to ally with the American cause",
+      "This victory convinced France to ally with the American cause",
+      "It took place in upstate New York during the American Revolution",
+      "It's considered the turning point of the American Revolution",
       "British General Burgoyne surrendered his entire army"
     ],
     difficulty: "hard",
@@ -263,10 +263,10 @@ export const battles: Battle[] = [
     acceptedAnswers: ["lepanto", "battle of lepanto"],
     prompt: "Naval Battle of Lepanto 1571, Holy League galleys clashing with Ottoman fleet in Gulf of Patras, massive Mediterranean galley warfare, ramming and boarding actions, Christian and Ottoman flags, cannons firing at close range, dramatic Renaissance naval battle painting, smoke over turquoise waters",
     hints: [
-      "This naval battle was fought in October 1571",
+      "It was the last major battle fought primarily between rowing galleys",
       "It took place in the Gulf of Patras off western Greece",
       "A coalition of Catholic states fought the Ottoman Empire",
-      "It was the last major battle fought primarily between rowing galleys"
+      "The Holy League shattered the myth of Ottoman naval invincibility"
     ],
     difficulty: "hard",
     year: 1571,
@@ -279,7 +279,7 @@ export const battles: Battle[] = [
     acceptedAnswers: ["zama", "battle of zama"],
     prompt: "Ancient Battle of Zama 202 BCE, Roman legions under Scipio Africanus facing Hannibal's Carthaginian army with war elephants, Roman infantry opening lanes for elephants to pass through, Numidian cavalry flanking, North African plains, dust and chaos of ancient warfare, epic historical painting",
     hints: [
-      "This battle was fought in 202 BCE during the Second Punic War",
+      "This battle ended the Second Punic War",
       "It took place in North Africa near Carthage",
       "War elephants were used but proved ineffective",
       "Scipio Africanus defeated the great Carthaginian general"
@@ -295,9 +295,9 @@ export const battles: Battle[] = [
     acceptedAnswers: ["tours", "battle of tours", "poitiers", "battle of poitiers 732", "tours-poitiers"],
     prompt: "Battle of Tours 732 CE, Frankish warriors under Charles Martel forming infantry phalanx against Umayyad cavalry charge, medieval Frankish soldiers with shields and axes, Arab horsemen with curved swords, clash of civilizations on French plains, dramatic early medieval battle painting",
     hints: [
-      "This battle was fought in October 732 CE",
-      "It took place in central France between Tours and Poitiers",
       "It halted a major northward military advance into Western Europe",
+      "It took place in central France between two famous cities",
+      "Many historians consider it among the most decisive battles in world history",
       "Charles Martel, 'The Hammer,' led the victorious Frankish army"
     ],
     difficulty: "hard",
@@ -311,7 +311,7 @@ export const battles: Battle[] = [
     acceptedAnswers: ["teutoburg", "teutoburg forest", "battle of teutoburg forest", "teutoburger wald"],
     prompt: "Battle of Teutoburg Forest 9 CE, Germanic warriors ambushing Roman legions in dense dark forest, Arminius leading tribal warriors in surprise attack, Roman soldiers trapped on narrow forest path, rain and mud, barbaric Germanic warriors with spears overwhelming disciplined Romans, dramatic ancient battle scene",
     hints: [
-      "This battle was fought in 9 CE during the Roman Empire",
+      "Emperor Augustus reportedly cried 'Give me back my legions!' after this defeat",
       "It took place in a dense forest in Germania (modern Germany)",
       "Three entire Roman legions were destroyed in an ambush",
       "Arminius, a Germanic chieftain who had served in the Roman army, led the attack"
@@ -327,7 +327,7 @@ export const battles: Battle[] = [
     acceptedAnswers: ["crecy", "crécy", "battle of crecy", "battle of crécy"],
     prompt: "Medieval Battle of Crécy 1346, English longbowmen raining arrows on French knights, King Edward III commanding from hilltop, French cavalry charge uphill into arrow storm, muddy battlefield, Hundred Years War, medieval armor and heraldry, dramatic historical battle painting",
     hints: [
-      "This battle was fought in August 1346 during the Hundred Years' War",
+      "This battle was fought during the Hundred Years' War",
       "It took place in northern France",
       "English longbowmen devastated waves of French cavalry",
       "King Edward III of England won despite being heavily outnumbered"
@@ -343,7 +343,7 @@ export const battles: Battle[] = [
     acceptedAnswers: ["yorktown", "battle of yorktown", "siege of yorktown"],
     prompt: "Siege of Yorktown 1781, American Continental Army and French forces besieging British fortifications, George Washington commanding combined forces, French navy blocking Chesapeake Bay, cannon bombardment of British positions, American Revolution final battle, dramatic historical painting",
     hints: [
-      "This siege took place in autumn 1781",
+      "The French navy blocked any escape by sea during this siege",
       "It was fought in Virginia, USA",
       "French forces played a crucial role both on land and at sea",
       "The British surrender here effectively ended the American Revolution"
@@ -359,7 +359,7 @@ export const battles: Battle[] = [
     acceptedAnswers: ["gallipoli", "battle of gallipoli", "gallipoli campaign", "dardanelles"],
     prompt: "World War 1 Gallipoli Campaign 1915, ANZAC soldiers storming beaches under Ottoman fire, steep cliffs and narrow beaches, Turkish defenders firing from above, trenches on hillsides overlooking the sea, Dardanelles strait in background, dramatic WWI Mediterranean battle scene",
     hints: [
-      "This campaign lasted from 1915 to 1916 during World War I",
+      "This failed campaign aimed to knock the Ottoman Empire out of World War I",
       "It took place on a peninsula in modern-day Turkey",
       "Australian and New Zealand troops (ANZACs) played a major role",
       "Winston Churchill was largely responsible for planning this failed campaign"
@@ -375,9 +375,9 @@ export const battles: Battle[] = [
     acceptedAnswers: ["bulge", "battle of the bulge", "ardennes", "ardennes offensive"],
     prompt: "World War 2 Battle of the Bulge 1944, American soldiers fighting in snowy Ardennes forest, German Tiger tanks advancing through winter landscape, GIs in foxholes defending frozen positions, paratroopers at Bastogne, blizzard conditions, dramatic WWII winter warfare scene",
     hints: [
-      "This battle began in December 1944 during World War II",
+      "This was Germany's last major offensive on the Western Front",
       "It was fought in the Ardennes forest region of Belgium and Luxembourg",
-      "It was Germany's last major offensive on the Western Front",
+      "It created a dangerous salient in the Allied front lines",
       "The besieged 101st Airborne at Bastogne replied 'NUTS!' to a German surrender demand"
     ],
     difficulty: "medium",
@@ -391,10 +391,10 @@ export const battles: Battle[] = [
     acceptedAnswers: ["iwo jima", "battle of iwo jima", "iwo"],
     prompt: "World War 2 Battle of Iwo Jima 1945, US Marines storming volcanic black sand beaches, fighting through Japanese bunkers and tunnels, Mount Suribachi in background, Marines raising flag on summit, intense Pacific island warfare, explosions and gunfire, dramatic WWII Pacific theater scene",
     hints: [
-      "This battle was fought in February-March 1945",
-      "It took place on a small volcanic island in the Pacific Ocean",
       "An iconic photograph of a flag-raising was taken during this battle",
-      "Japanese defenders fought from an extensive network of tunnels and bunkers"
+      "It took place on a small volcanic island in the Pacific Ocean",
+      "The defenders fought from an extensive network of tunnels and bunkers",
+      "US Marines stormed black volcanic sand beaches to capture this island"
     ],
     difficulty: "medium",
     year: 1945,
@@ -407,9 +407,9 @@ export const battles: Battle[] = [
     acceptedAnswers: ["borodino", "battle of borodino"],
     prompt: "Battle of Borodino 1812, Napoleon's Grande Armée attacking Russian fortifications, massive artillery duel, French cavalry charging Russian redoubts, burning villages, vast Russian landscape, Napoleon observing from hilltop, dramatic Napoleonic Wars painting, smoke-filled battlefield",
     hints: [
-      "This battle was fought in September 1812",
-      "It took place west of Moscow during a famous invasion of Russia",
       "It was the bloodiest single day of the Napoleonic Wars",
+      "It took place west of Moscow during a famous invasion of Russia",
+      "The victor marched on to find the capital abandoned and burning",
       "Napoleon won the field but failed to destroy the Russian army"
     ],
     difficulty: "hard",
@@ -423,10 +423,10 @@ export const battles: Battle[] = [
     acceptedAnswers: ["salamis", "battle of salamis"],
     prompt: "Ancient naval Battle of Salamis 480 BCE, Greek triremes ramming Persian ships in narrow strait, Themistocles commanding Athenian fleet, Persian King Xerxes watching from shore throne, wooden warships with bronze rams, oars and sails, dramatic ancient naval warfare, Mediterranean waters churning with battle",
     hints: [
-      "This naval battle was fought in 480 BCE",
+      "The enemy king watched the battle from a golden throne on a hillside",
       "It took place in a narrow strait near Athens, Greece",
-      "The Persian king watched the battle from a throne on a hillside",
-      "Themistocles lured the larger enemy fleet into confined waters"
+      "The smaller fleet lured the enemy into confined waters where size was a disadvantage",
+      "Themistocles commanded the victorious fleet"
     ],
     difficulty: "hard",
     year: -480,
@@ -439,9 +439,9 @@ export const battles: Battle[] = [
     acceptedAnswers: ["alesia", "battle of alesia", "siege of alesia"],
     prompt: "Siege of Alesia 52 BCE, Julius Caesar's Roman legions building double ring of fortifications, Gallic warriors under Vercingetorix trapped inside hilltop fortress, Roman siege works with towers and trenches, Gallic relief army attacking from outside, dramatic ancient siege warfare, epic Roman military engineering",
     hints: [
-      "This siege took place in 52 BCE during the Gallic Wars",
-      "It was fought in central Gaul (modern France)",
-      "The besieging army built fortifications facing both inward AND outward",
+      "The besieging army built a double ring of fortifications facing both inward AND outward",
+      "It was fought in central Gaul (modern France) during the Gallic Wars",
+      "The besiegers were trapped between a garrison and a massive relief army",
       "Julius Caesar trapped a Gallic chieftain with extraordinary siege engineering"
     ],
     difficulty: "hard",
@@ -455,9 +455,9 @@ export const battles: Battle[] = [
     acceptedAnswers: ["bunker hill", "battle of bunker hill", "breeds hill", "battle of breeds hill"],
     prompt: "Battle of Bunker Hill 1775, American colonial militia behind earthwork fortifications on hilltop, British redcoats marching uphill in formation, musket volleys and cannon fire, Charlestown burning in background, Boston Harbor with British ships, early American Revolution battle painting",
     hints: [
-      "This battle was fought in June 1775, early in the American Revolution",
-      "It took place on a hill overlooking Boston, Massachusetts",
       "The famous order was 'Don't fire until you see the whites of their eyes!'",
+      "It took place on a hill overlooking Boston, Massachusetts",
+      "Colonial militia proved they could stand against professional soldiers",
       "The British won the hill but suffered devastating casualties"
     ],
     difficulty: "medium",
@@ -471,9 +471,9 @@ export const battles: Battle[] = [
     acceptedAnswers: ["tsushima", "battle of tsushima"],
     prompt: "Naval Battle of Tsushima 1905, Japanese battleships under Admiral Togo engaging Russian Baltic Fleet, modern steel warships exchanging broadsides, explosions and smoke, Russian ships sinking, dramatic Russo-Japanese War naval battle, gray seas of Tsushima Strait, early 20th century naval warfare painting",
     hints: [
-      "This naval battle was fought in May 1905",
+      "The losing fleet had sailed 18,000 miles over seven months to reach the battle",
       "It took place in a strait between Japan and Korea",
-      "The losing fleet had sailed halfway around the world to reach the battle",
+      "This victory marked an Asian power's emergence as a world force",
       "Admiral Togo's decisive victory shocked the Western world"
     ],
     difficulty: "hard",
