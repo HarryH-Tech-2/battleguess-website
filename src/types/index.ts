@@ -1,6 +1,25 @@
+export type CivilizationId =
+  | 'ancient-egypt-mesopotamia'
+  | 'ancient-greece-rome'
+  | 'medieval-europe'
+  | 'ottoman-islamic'
+  | 'east-asia'
+  | 'colonial-napoleonic'
+  | 'american-wars'
+  | 'world-wars';
+
+export interface Civilization {
+  id: CivilizationId;
+  name: string;
+  description: string;
+  icon: string;
+  timeSpan: string;
+}
+
 export interface Battle {
   id: number;
   name: string;
+  civilization: CivilizationId;
   acceptedAnswers: string[];
   prompt: string;
   hints: string[];
@@ -23,6 +42,7 @@ export interface GameState {
   currentGuess: string;
   imageUrl: string | null;
   isImageLoading: boolean;
+  selectedCivilization: CivilizationId | 'all';
 }
 
 export interface GameStats {
@@ -43,4 +63,5 @@ export type GameAction =
   | { type: 'REVEAL_HINT'; payload: number }
   | { type: 'NEXT_BATTLE' }
   | { type: 'RESET_GAME' }
-  | { type: 'GIVE_UP' };
+  | { type: 'GIVE_UP' }
+  | { type: 'SET_CIVILIZATION'; payload: CivilizationId | 'all' };
