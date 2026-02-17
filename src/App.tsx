@@ -10,6 +10,7 @@ import { HintDisplay } from './components/game/HintDisplay';
 import { ResultFeedback } from './components/game/ResultFeedback';
 import { ScoreDisplay } from './components/game/ScoreDisplay';
 import { CivilizationSelector } from './components/game/CivilizationSelector';
+import { DifficultySelector } from './components/game/DifficultySelector';
 import { useGame } from './hooks/useGame';
 import { useImageGeneration } from './hooks/useImageGeneration';
 import { calculateScore } from './utils/scoring';
@@ -81,6 +82,19 @@ function App() {
           <CivilizationSelector
             selected={state.selectedCivilization}
             onSelect={actions.selectCivilization}
+            disabled={state.gameStatus === 'playing' || state.gameStatus === 'loading'}
+          />
+        </motion.div>
+
+        {/* Difficulty Selector - Always visible */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15 }}
+        >
+          <DifficultySelector
+            selected={state.selectedDifficulty}
+            onSelect={actions.selectDifficulty}
             disabled={state.gameStatus === 'playing' || state.gameStatus === 'loading'}
           />
         </motion.div>
