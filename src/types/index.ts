@@ -16,6 +16,8 @@ export interface Civilization {
   timeSpan: string;
 }
 
+export type Difficulty = 'easy' | 'medium' | 'hard';
+
 export interface Battle {
   id: number;
   name: string;
@@ -23,7 +25,7 @@ export interface Battle {
   acceptedAnswers: string[];
   prompt: string;
   hints: string[];
-  difficulty: 'easy' | 'medium' | 'hard';
+  difficulty: Difficulty;
   year: number;
   location: string;
   description: string;
@@ -43,6 +45,7 @@ export interface GameState {
   imageUrl: string | null;
   isImageLoading: boolean;
   selectedCivilization: CivilizationId | 'all';
+  selectedDifficulty: Difficulty | 'all';
 }
 
 export interface GameStats {
@@ -64,4 +67,5 @@ export type GameAction =
   | { type: 'NEXT_BATTLE' }
   | { type: 'RESET_GAME' }
   | { type: 'GIVE_UP' }
-  | { type: 'SET_CIVILIZATION'; payload: CivilizationId | 'all' };
+  | { type: 'SET_CIVILIZATION'; payload: CivilizationId | 'all' }
+  | { type: 'SET_DIFFICULTY'; payload: Difficulty | 'all' };

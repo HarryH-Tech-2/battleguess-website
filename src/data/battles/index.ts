@@ -1,4 +1,4 @@
-import type { Battle, CivilizationId } from '../../types';
+import type { Battle, CivilizationId, Difficulty } from '../../types';
 import { ancientEgyptMesopotamiaBattles } from './ancientEgyptMesopotamia';
 import { ancientGreeceRomeBattles } from './ancientGreeceRome';
 import { medievalEuropeBattles } from './medievalEurope';
@@ -20,17 +20,22 @@ export const allBattles: Battle[] = [
 ];
 
 export const getBattlesByCivilization = (
-  civId: CivilizationId | 'all'
+  civId: CivilizationId | 'all',
+  difficulty: Difficulty | 'all' = 'all'
 ): Battle[] => {
-  if (civId === 'all') return allBattles;
-  return allBattles.filter(b => b.civilization === civId);
+  let pool = civId === 'all' ? allBattles : allBattles.filter(b => b.civilization === civId);
+  if (difficulty !== 'all') {
+    pool = pool.filter(b => b.difficulty === difficulty);
+  }
+  return pool;
 };
 
 export const getRandomBattle = (
   excludeIds: number[] = [],
-  civilization: CivilizationId | 'all' = 'all'
+  civilization: CivilizationId | 'all' = 'all',
+  difficulty: Difficulty | 'all' = 'all'
 ): Battle => {
-  const pool = getBattlesByCivilization(civilization);
+  const pool = getBattlesByCivilization(civilization, difficulty);
   const available = pool.filter(b => !excludeIds.includes(b.id));
   if (available.length === 0) {
     return pool[Math.floor(Math.random() * pool.length)];

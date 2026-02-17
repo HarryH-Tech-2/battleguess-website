@@ -1,5 +1,5 @@
 import { useReducer, useCallback, useEffect } from 'react';
-import type { GameState, GameAction, CivilizationId } from '../types';
+import type { GameState, GameAction, CivilizationId, Difficulty } from '../types';
 import { getRandomBattle, getBattlesByCivilization } from '../data/battles/index';
 import { checkAnswer } from '../utils/stringMatch';
 import { calculateScore } from '../utils/scoring';
@@ -19,6 +19,7 @@ const initialState: GameState = {
   imageUrl: null,
   isImageLoading: false,
   selectedCivilization: 'all',
+  selectedDifficulty: 'all',
 };
 
 function gameReducer(state: GameState, action: GameAction): GameState {
@@ -97,11 +98,17 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         ...initialState,
         bestStreak: state.bestStreak,
         selectedCivilization: state.selectedCivilization,
+        selectedDifficulty: state.selectedDifficulty,
       };
     case 'SET_CIVILIZATION':
       return {
         ...state,
         selectedCivilization: action.payload,
+      };
+    case 'SET_DIFFICULTY':
+      return {
+        ...state,
+        selectedDifficulty: action.payload,
       };
     default:
       return state;
@@ -126,10 +133,10 @@ export function useGame() {
 
   const startGame = useCallback(() => {
     dispatch({ type: 'START_GAME' });
-    const battle = getRandomBattle(playedBattles, state.selectedCivilization);
+    const battle = getRandomBattle(playedBattles, state.selectedCivilization, state.selectedDifficulty);
     setPlayedBattles(prev => [...prev, battle.id]);
     dispatch({ type: 'SET_BATTLE', payload: battle });
-  }, [playedBattles, setPlayedBattles, state.selectedCivilization]);
+  }, [playedBattles, setPlayedBattles, state.selectedCivilization, state.selectedDifficulty]);
 
   const submitGuess = useCallback((guess: string): boolean => {
     if (!state.currentBattle || state.gameStatus !== 'playing') {
@@ -166,11 +173,12 @@ export function useGame() {
 
   const nextBattle = useCallback(() => {
     dispatch({ type: 'NEXT_BATTLE' });
-    const pool = getBattlesByCivilization(state.selectedCivilization);
+    const pool = getBattlesByCivilization(state.selectedCivilization, state.selectedDifficulty);
     const maxPlayed = Math.floor(pool.length * 0.4);
     const battle = getRandomBattle(
       playedBattles.length >= maxPlayed ? [] : playedBattles,
-      state.selectedCivilization
+      state.selectedCivilization,
+      state.selectedDifficulty
     );
     if (playedBattles.length >= maxPlayed) {
       setPlayedBattles([battle.id]);
@@ -178,10 +186,15 @@ export function useGame() {
       setPlayedBattles(prev => [...prev, battle.id]);
     }
     dispatch({ type: 'SET_BATTLE', payload: battle });
-  }, [playedBattles, setPlayedBattles, state.selectedCivilization]);
+  }, [playedBattles, setPlayedBattles, state.selectedCivilization, state.selectedDifficulty]);
 
   const selectCivilization = useCallback((civ: CivilizationId | 'all') => {
     dispatch({ type: 'SET_CIVILIZATION', payload: civ });
+    setPlayedBattles([]);
+  }, [setPlayedBattles]);
+
+  const selectDifficulty = useCallback((difficulty: Difficulty | 'all') => {
+    dispatch({ type: 'SET_DIFFICULTY', payload: difficulty });
     setPlayedBattles([]);
   }, [setPlayedBattles]);
 
@@ -211,6 +224,7 @@ export function useGame() {
       giveUp,
       nextBattle,
       selectCivilization,
+      selectDifficulty,
       setImage,
       setImageLoading,
       resetGame,
