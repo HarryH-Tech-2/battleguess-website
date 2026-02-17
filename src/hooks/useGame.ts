@@ -93,6 +93,11 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         currentGuess: '',
         imageUrl: null,
       };
+    case 'COMPLETE_GAME':
+      return {
+        ...state,
+        gameStatus: 'completed',
+      };
     case 'RESET_GAME':
       return {
         ...initialState,
@@ -172,19 +177,15 @@ export function useGame() {
   }, [setSavedStats]);
 
   const nextBattle = useCallback(() => {
-    dispatch({ type: 'NEXT_BATTLE' });
     const pool = getBattlesByCivilization(state.selectedCivilization, state.selectedDifficulty);
-    const maxPlayed = Math.floor(pool.length * 0.4);
-    const battle = getRandomBattle(
-      playedBattles.length >= maxPlayed ? [] : playedBattles,
-      state.selectedCivilization,
-      state.selectedDifficulty
-    );
-    if (playedBattles.length >= maxPlayed) {
-      setPlayedBattles([battle.id]);
-    } else {
-      setPlayedBattles(prev => [...prev, battle.id]);
+    const remaining = pool.filter(b => !playedBattles.includes(b.id));
+    if (remaining.length === 0) {
+      dispatch({ type: 'COMPLETE_GAME' });
+      return;
     }
+    dispatch({ type: 'NEXT_BATTLE' });
+    const battle = remaining[Math.floor(Math.random() * remaining.length)];
+    setPlayedBattles(prev => [...prev, battle.id]);
     dispatch({ type: 'SET_BATTLE', payload: battle });
   }, [playedBattles, setPlayedBattles, state.selectedCivilization, state.selectedDifficulty]);
 
@@ -211,12 +212,16 @@ export function useGame() {
     setPlayedBattles([]);
   }, [setPlayedBattles]);
 
+  const pool = getBattlesByCivilization(state.selectedCivilization, state.selectedDifficulty);
+
   return {
     state: {
       ...state,
       bestStreak: Math.max(state.bestStreak, savedStats.bestStreak),
     },
     savedStats,
+    totalBattlesInPool: pool.length,
+    battlesPlayed: playedBattles.length,
     actions: {
       startGame,
       submitGuess,
