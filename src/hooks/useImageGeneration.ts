@@ -18,7 +18,7 @@ export function useImageGeneration(): UseImageGenerationReturn {
       return imagePath;
     }
 
-    return '/battles/battle-1.png';
+    return '/battles/battle-1.webp';
   }, []);
 
   return {
