@@ -171,15 +171,20 @@ export async function submitLeaderboardScore(entry: Omit<LeaderboardEntry, 'play
       ...entry,
       updatedAt: Date.now(),
     });
+    console.log('[BattleGuess] Leaderboard score submitted:', entry.totalScore);
     return true;
-  } catch {
+  } catch (err) {
+    console.error('[BattleGuess] Leaderboard submit error:', err);
     return false;
   }
 }
 
 export async function getGlobalLeaderboard(): Promise<LeaderboardEntry[]> {
   const firestore = getDb();
-  if (!firestore) return [];
+  if (!firestore) {
+    console.warn('[BattleGuess] Firebase not configured — leaderboard disabled');
+    return [];
+  }
 
   try {
     const q = query(
@@ -188,8 +193,10 @@ export async function getGlobalLeaderboard(): Promise<LeaderboardEntry[]> {
       limit(100)
     );
     const snapshot = await getDocs(q);
+    console.log(`[BattleGuess] Leaderboard: fetched ${snapshot.docs.length} entries`);
     return snapshot.docs.map(d => d.data() as LeaderboardEntry);
-  } catch {
+  } catch (err) {
+    console.error('[BattleGuess] Leaderboard fetch error:', err);
     return [];
   }
 }
