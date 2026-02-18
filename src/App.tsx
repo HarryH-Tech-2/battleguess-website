@@ -14,6 +14,7 @@ import { DifficultySelector } from './components/game/DifficultySelector';
 import { GameComplete } from './components/game/GameComplete';
 import { useGame } from './hooks/useGame';
 import { useImageGeneration } from './hooks/useImageGeneration';
+import { useBackgroundMusic } from './hooks/useBackgroundMusic';
 import { calculateScore } from './utils/scoring';
 import './index.css';
 
@@ -23,6 +24,7 @@ const BUY_ME_A_COFFEE_URL = "https://buymeacoffee.com/harryhh";
 function App() {
   const { state, actions, totalBattlesInPool, battlesPlayed } = useGame();
   const { getImageForBattle } = useImageGeneration();
+  const { isMuted, toggleMute } = useBackgroundMusic('/drum-tune.mp3');
   const [showDonationPopup, setShowDonationPopup] = useState(false);
   const hasShownPopup = useRef(false);
 
@@ -58,7 +60,7 @@ function App() {
   const isResult = state.gameStatus === 'won' || state.gameStatus === 'lost';
 
   return (
-    <Layout buyMeACoffeeUrl={BUY_ME_A_COFFEE_URL}>
+    <Layout buyMeACoffeeUrl={BUY_ME_A_COFFEE_URL} isMuted={isMuted} onToggleMute={toggleMute}>
       <div className="space-y-4 sm:space-y-6 pb-6 sm:pb-8">
         {/* Score Display - Always visible after game starts */}
         {(state.score > 0 || state.streak > 0 || state.bestStreak > 0) && (

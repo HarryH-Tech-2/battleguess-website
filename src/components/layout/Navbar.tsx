@@ -2,9 +2,11 @@ import { motion } from 'framer-motion';
 
 interface NavbarProps {
   buyMeACoffeeUrl?: string;
+  isMuted?: boolean;
+  onToggleMute?: () => void;
 }
 
-export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh' }: NavbarProps) {
+export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', isMuted, onToggleMute }: NavbarProps) {
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
@@ -65,7 +67,28 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh' }:
             </div>
           </motion.div>
 
-          {/* Right side - Buy Me a Coffee */}
+          {/* Right side - Music toggle & Buy Me a Coffee */}
+          <div className="flex items-center gap-2 sm:gap-3">
+          {onToggleMute && (
+            <motion.button
+              onClick={onToggleMute}
+              className="p-2 rounded-lg bg-primary-100 hover:bg-primary-200 text-primary-600 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              title={isMuted ? 'Unmute music' : 'Mute music'}
+            >
+              {isMuted ? (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                </svg>
+              )}
+            </motion.button>
+          )}
           <motion.a
             href={buyMeACoffeeUrl}
             target="_blank"
@@ -79,6 +102,7 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh' }:
             </svg>
             <span className="hidden sm:inline">Buy me a coffee</span>
           </motion.a>
+          </div>
         </div>
       </div>
     </motion.nav>

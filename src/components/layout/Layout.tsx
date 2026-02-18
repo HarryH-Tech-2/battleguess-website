@@ -5,9 +5,11 @@ import { ParticleBackground, FloatingOrbs } from '../effects/ParticleBackground'
 interface LayoutProps {
   children: ReactNode;
   buyMeACoffeeUrl?: string;
+  isMuted?: boolean;
+  onToggleMute?: () => void;
 }
 
-export function Layout({ children, buyMeACoffeeUrl }: LayoutProps) {
+export function Layout({ children, buyMeACoffeeUrl, isMuted, onToggleMute }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden">
       {/* Background effects */}
@@ -17,7 +19,7 @@ export function Layout({ children, buyMeACoffeeUrl }: LayoutProps) {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col min-h-screen">
-        <Navbar buyMeACoffeeUrl={buyMeACoffeeUrl} />
+        <Navbar buyMeACoffeeUrl={buyMeACoffeeUrl} isMuted={isMuted} onToggleMute={onToggleMute} />
 
         <main className="flex-1 container mx-auto px-3 sm:px-4 max-w-2xl py-4 sm:py-6">
           {children}
