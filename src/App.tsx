@@ -11,6 +11,7 @@ import { ResultFeedback } from './components/game/ResultFeedback';
 import { ScoreDisplay } from './components/game/ScoreDisplay';
 import { CivilizationSelector } from './components/game/CivilizationSelector';
 import { DifficultySelector } from './components/game/DifficultySelector';
+import { GameComplete } from './components/game/GameComplete';
 import { useGame } from './hooks/useGame';
 import { useImageGeneration } from './hooks/useImageGeneration';
 import { calculateScore } from './utils/scoring';
@@ -20,7 +21,7 @@ import './index.css';
 const BUY_ME_A_COFFEE_URL = "https://buymeacoffee.com/harryhh";
 
 function App() {
-  const { state, actions } = useGame();
+  const { state, actions, totalBattlesInPool, battlesPlayed } = useGame();
   const { getImageForBattle } = useImageGeneration();
   const [showDonationPopup, setShowDonationPopup] = useState(false);
   const hasShownPopup = useRef(false);
@@ -58,7 +59,7 @@ function App() {
 
   return (
     <Layout buyMeACoffeeUrl={BUY_ME_A_COFFEE_URL}>
-      <div className="space-y-6 pb-8">
+      <div className="space-y-4 sm:space-y-6 pb-6 sm:pb-8">
         {/* Score Display - Always visible after game starts */}
         {(state.score > 0 || state.streak > 0 || state.bestStreak > 0) && (
           <motion.div
@@ -113,11 +114,11 @@ function App() {
               >
                 <BattleImage imageUrl={null} isLoading={false} />
 
-                <div className="space-y-3">
-                  <h2 className="text-2xl font-bold text-primary-800">
+                <div className="space-y-2 sm:space-y-3">
+                  <h2 className="text-xl sm:text-2xl font-bold text-primary-800">
                     Welcome to BattleGuess!
                   </h2>
-                  <p className="text-gray-600 max-w-md mx-auto">
+                  <p className="text-sm sm:text-base text-gray-600 max-w-md mx-auto">
                     You'll be shown an AI-generated image of a famous historical battle.
                     Try to guess which battle it depicts!
                   </p>
@@ -230,6 +231,25 @@ function App() {
                 />
               </motion.div>
             )}
+
+            {/* Completed State - All battles finished */}
+            {state.gameStatus === 'completed' && (
+              <motion.div
+                key="completed"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <GameComplete
+                  score={state.score}
+                  correctGuesses={state.correctGuesses}
+                  totalGuesses={state.totalGuesses}
+                  bestStreak={state.bestStreak}
+                  totalBattles={totalBattlesInPool}
+                  onPlayAgain={actions.resetGame}
+                />
+              </motion.div>
+            )}
           </AnimatePresence>
         </Card>
 
@@ -238,9 +258,12 @@ function App() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center text-sm text-primary-400"
+            className="text-center text-sm text-primary-400 space-y-1"
           >
-            {state.correctGuesses} correct out of {state.totalGuesses} battles
+            <div>{state.correctGuesses} correct out of {state.totalGuesses} battles</div>
+            <div className="text-primary-300">
+              Battle {battlesPlayed} of {totalBattlesInPool}
+            </div>
           </motion.div>
         )}
       </div>

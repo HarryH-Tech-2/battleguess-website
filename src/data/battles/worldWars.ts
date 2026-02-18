@@ -13,7 +13,7 @@ export const worldWarsBattles: Battle[] = [
       "It's considered the bloodiest battle in human history",
       "The Soviet victory here marked a turning point against Nazi Germany"
     ],
-    difficulty: "medium",
+    difficulty: "easy",
     year: 1943,
     location: "Soviet Union (Russia)",
     description: "The five-month siege of Stalingrad resulted in nearly 2 million casualties, making it the deadliest battle in human history. Soviet defenders fought building by building, sometimes room by room, in brutal urban combat. The German 6th Army's surrender in February 1943 marked a decisive turning point on the Eastern Front and the beginning of Germany's long retreat."
@@ -47,7 +47,7 @@ export const worldWarsBattles: Battle[] = [
       "The first day saw nearly 60,000 British casualties",
       "Tanks were used in warfare for the first time in this battle"
     ],
-    difficulty: "medium",
+    difficulty: "easy",
     year: 1916,
     location: "France",
     description: "The first day of the Somme remains the bloodiest day in British military history, with nearly 60,000 casualties. Over 140 days, the Allies advanced just six miles at a cost of over one million casualties on both sides. The battle saw the first use of tanks in warfare and came to symbolize the horrific futility of trench warfare on the Western Front."
@@ -64,7 +64,7 @@ export const worldWarsBattles: Battle[] = [
       "It turned the tide of the Pacific War",
       "Japan lost four aircraft carriers in this decisive defeat"
     ],
-    difficulty: "medium",
+    difficulty: "easy",
     year: 1942,
     location: "Pacific Ocean",
     description: "American codebreakers intercepted Japanese plans, allowing Admiral Nimitz to set a trap near Midway Atoll. In just five minutes, American dive bombers destroyed three Japanese carriers, with a fourth sunk later that day. Japan lost four fleet carriers, 248 aircraft, and hundreds of experienced pilots—losses that Japan could never replace. The battle shifted the Pacific War's momentum permanently to the Allies."
@@ -115,7 +115,7 @@ export const worldWarsBattles: Battle[] = [
       "It created a dangerous salient in the Allied front lines",
       "The besieged 101st Airborne at Bastogne replied 'NUTS!' to a German surrender demand"
     ],
-    difficulty: "medium",
+    difficulty: "easy",
     year: 1944,
     location: "Belgium & Luxembourg",
     description: "Hitler's last desperate gamble threw 250,000 German troops against thinly held American lines in the Ardennes, creating a dangerous 'bulge' in the Allied front. Despite initial surprise and harsh winter conditions, American forces held key positions, most famously at Bastogne. The failed offensive exhausted Germany's last reserves and hastened the end of the war in Europe."
@@ -132,7 +132,7 @@ export const worldWarsBattles: Battle[] = [
       "The defenders fought from an extensive network of tunnels and bunkers",
       "US Marines stormed black volcanic sand beaches to capture this island"
     ],
-    difficulty: "medium",
+    difficulty: "easy",
     year: 1945,
     location: "Iwo Jima, Japan",
     description: "Over 70,000 US Marines fought to capture the heavily fortified volcanic island of Iwo Jima from 21,000 entrenched Japanese defenders. The battle produced some of the fiercest fighting in the Pacific War, with nearly 7,000 Marines killed and virtually the entire Japanese garrison wiped out. The iconic photograph of Marines raising the flag on Mount Suribachi became one of the most famous images of World War II."

@@ -21,7 +21,7 @@ export function DifficultySelector({
 }: DifficultySelectorProps) {
   return (
     <div className="w-full">
-      <div className="flex items-center gap-2 justify-center">
+      <div className="flex items-center gap-2 sm:gap-2 justify-center">
         {items.map(item => {
           const isSelected = selected === item.id;
           return (
@@ -29,7 +29,7 @@ export function DifficultySelector({
               key={item.id}
               onClick={() => !disabled && onSelect(item.id)}
               className={`
-                flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium
+                flex-1 sm:flex-none flex items-center justify-center gap-1 sm:gap-1.5 px-2 py-1.5 sm:px-3 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium
                 transition-colors duration-200 whitespace-nowrap
                 ${isSelected
                   ? item.color

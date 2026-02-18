@@ -8,9 +8,25 @@ interface CivilizationSelectorProps {
   disabled?: boolean;
 }
 
+const shortNames: Record<string, string> = {
+  'ancient-egypt-mesopotamia': 'Egypt',
+  'ancient-greece-rome': 'Greece & Rome',
+  'medieval-europe': 'Medieval',
+  'ottoman-islamic': 'Ottoman',
+  'east-asia': 'East Asia',
+  'colonial-napoleonic': 'Colonial',
+  'american-wars': 'American',
+  'world-wars': 'World Wars',
+};
+
 const items = [
-  { id: 'all' as const, name: 'All Battles', icon: '\u{1F30D}' },
-  ...civilizations.map(c => ({ id: c.id, name: c.name, icon: c.icon })),
+  { id: 'all' as const, name: 'All Battles', shortName: 'All', icon: '\u{1F30D}' },
+  ...civilizations.map(c => ({
+    id: c.id,
+    name: c.name,
+    shortName: shortNames[c.id] || c.name,
+    icon: c.icon,
+  })),
 ];
 
 export function CivilizationSelector({
@@ -19,8 +35,8 @@ export function CivilizationSelector({
   disabled = false,
 }: CivilizationSelectorProps) {
   return (
-    <div className="w-full overflow-x-auto scrollbar-hide">
-      <div className="flex items-center gap-2 pb-1 min-w-max justify-center">
+    <div className="w-full overflow-x-auto scrollbar-hide -mx-3 px-3 sm:mx-0 sm:px-0">
+      <div className="flex items-center gap-1.5 sm:gap-2 pb-1 sm:flex-wrap sm:justify-center w-max sm:w-auto">
         {items.map(item => {
           const isSelected = selected === item.id;
           return (
@@ -28,7 +44,7 @@ export function CivilizationSelector({
               key={item.id}
               onClick={() => !disabled && onSelect(item.id)}
               className={`
-                flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium
+                flex items-center gap-1 sm:gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium
                 transition-colors duration-200 whitespace-nowrap
                 ${isSelected
                   ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-md'
@@ -41,7 +57,8 @@ export function CivilizationSelector({
               disabled={disabled}
             >
               <span>{item.icon}</span>
-              <span>{item.name}</span>
+              <span className="sm:hidden">{item.shortName}</span>
+              <span className="hidden sm:inline">{item.name}</span>
             </motion.button>
           );
         })}

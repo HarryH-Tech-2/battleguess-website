@@ -16,7 +16,7 @@ export const medievalEuropeBattles: Battle[] = [
       "This battle determined who would become King of England",
       "William the Conqueror led the Norman invasion force"
     ],
-    difficulty: "medium",
+    difficulty: "easy",
     year: 1066,
     location: "England",
     description: "On October 14, 1066, William, Duke of Normandy, defeated King Harold II's Saxon army, changing English history forever. Harold was killed, allegedly by an arrow to the eye, and William became the first Norman King of England. The battle introduced feudalism to England and profoundly influenced the English language, culture, and aristocracy for centuries to come."

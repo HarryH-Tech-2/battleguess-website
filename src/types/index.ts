@@ -39,7 +39,7 @@ export interface GameState {
   hintsUsed: number;
   totalGuesses: number;
   correctGuesses: number;
-  gameStatus: 'idle' | 'playing' | 'won' | 'lost' | 'loading';
+  gameStatus: 'idle' | 'playing' | 'won' | 'lost' | 'loading' | 'completed';
   revealedHints: number[];
   currentGuess: string;
   imageUrl: string | null;
@@ -68,4 +68,5 @@ export type GameAction =
   | { type: 'RESET_GAME' }
   | { type: 'GIVE_UP' }
   | { type: 'SET_CIVILIZATION'; payload: CivilizationId | 'all' }
-  | { type: 'SET_DIFFICULTY'; payload: Difficulty | 'all' };
+  | { type: 'SET_DIFFICULTY'; payload: Difficulty | 'all' }
+  | { type: 'COMPLETE_GAME' };

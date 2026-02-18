@@ -62,9 +62,9 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
                   animate={{ opacity: 1 }}
                   className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary-100 to-primary-200"
                 >
-                  <div className="text-center p-8">
+                  <div className="text-center p-4 sm:p-8">
                     <svg
-                      className="w-20 h-20 mx-auto text-primary-400 mb-4"
+                      className="w-14 h-14 sm:w-20 sm:h-20 mx-auto text-primary-400 mb-3 sm:mb-4"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -76,7 +76,7 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
                         d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                       />
                     </svg>
-                    <p className="text-primary-600 font-medium text-lg">Click "Start Game" to begin!</p>
+                    <p className="text-primary-600 font-medium text-base sm:text-lg">Click "Start Game" to begin!</p>
                   </div>
                 </motion.div>
               )}
