@@ -46,3 +46,25 @@ export const getRandomBattle = (
 export const getBattleById = (id: number): Battle | undefined => {
   return allBattles.find(b => b.id === id);
 };
+
+export const getTimelineBattleSet = (
+  civilization: CivilizationId | 'all' = 'all',
+  difficulty: Difficulty | 'all' = 'all',
+  count: number = 5
+): Battle[] => {
+  const pool = getBattlesByCivilization(civilization, difficulty);
+  if (pool.length < count) return pool.sort((a, b) => a.year - b.year);
+
+  // Try to find a set with good year spread (min 50 years between earliest and latest)
+  for (let attempt = 0; attempt < 20; attempt++) {
+    const shuffled = [...pool].sort(() => Math.random() - 0.5);
+    const selected = shuffled.slice(0, count);
+    const years = selected.map(b => b.year);
+    const spread = Math.max(...years) - Math.min(...years);
+    if (spread >= 50) return selected;
+  }
+
+  // Fallback: just pick random ones
+  const shuffled = [...pool].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, count);
+};

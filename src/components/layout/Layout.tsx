@@ -7,9 +7,14 @@ interface LayoutProps {
   buyMeACoffeeUrl?: string;
   isMuted?: boolean;
   onToggleMute?: () => void;
+  dailyStreak?: number;
+  onOpenStats?: () => void;
+  onOpenAchievements?: () => void;
+  achievementCount?: { unlocked: number; total: number };
+  onOpenLeaderboard?: () => void;
 }
 
-export function Layout({ children, buyMeACoffeeUrl, isMuted, onToggleMute }: LayoutProps) {
+export function Layout({ children, buyMeACoffeeUrl, isMuted, onToggleMute, dailyStreak, onOpenStats, onOpenAchievements, achievementCount, onOpenLeaderboard }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden">
       {/* Background effects */}
@@ -19,7 +24,7 @@ export function Layout({ children, buyMeACoffeeUrl, isMuted, onToggleMute }: Lay
 
       {/* Content */}
       <div className="relative z-10 flex flex-col min-h-screen">
-        <Navbar buyMeACoffeeUrl={buyMeACoffeeUrl} isMuted={isMuted} onToggleMute={onToggleMute} />
+        <Navbar buyMeACoffeeUrl={buyMeACoffeeUrl} isMuted={isMuted} onToggleMute={onToggleMute} dailyStreak={dailyStreak} onOpenStats={onOpenStats} onOpenAchievements={onOpenAchievements} achievementCount={achievementCount} onOpenLeaderboard={onOpenLeaderboard} />
 
         <main className="flex-1 container mx-auto px-3 sm:px-4 max-w-2xl py-4 sm:py-6">
           {children}

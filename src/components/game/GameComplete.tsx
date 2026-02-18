@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
+import { Confetti } from '../effects/Confetti';
+import { ShareButton } from './ShareButton';
 
 interface GameCompleteProps {
   score: number;
@@ -167,46 +169,31 @@ export function GameComplete({
         </div>
       </motion.div>
 
-      {/* Celebration confetti */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        {[...Array(60)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute"
-            style={{
-              left: `${Math.random() * 100}%`,
-              width: i % 3 === 0 ? '8px' : '6px',
-              height: i % 3 === 0 ? '8px' : '14px',
-              borderRadius: i % 3 === 0 ? '50%' : '2px',
-              background: ['#d4af37', '#3b82f6', '#dc2626', '#16a34a', '#fbbf24', '#8b5cf6'][i % 6],
-            }}
-            initial={{ y: -20, opacity: 1, rotate: 0 }}
-            animate={{
-              y: window.innerHeight + 20,
-              opacity: 0,
-              rotate: Math.random() * 720 - 360,
-            }}
-            transition={{
-              duration: 2.5 + Math.random() * 2,
-              delay: Math.random() * 1.5,
-              ease: 'easeIn',
-            }}
-          />
-        ))}
-      </div>
+      <Confetti variant="celebration" count={60} />
 
-      {/* Play Again Button */}
+      {/* Play Again + Share */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
+        className="flex gap-3"
       >
-        <Button variant="primary" size="lg" onClick={onPlayAgain} className="w-full">
+        <Button variant="primary" size="lg" onClick={onPlayAgain} className="flex-1">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
           New Campaign
         </Button>
+        <ShareButton
+          data={{
+            score,
+            accuracy,
+            streak: bestStreak,
+            rank,
+            battlesWon: correctGuesses,
+            totalBattles,
+          }}
+        />
       </motion.div>
     </motion.div>
   );

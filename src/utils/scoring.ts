@@ -17,6 +17,26 @@ export const calculateScore = (
   return score;
 };
 
+export const calculateTimedBonus = (
+  timeRemaining: number,
+  totalTime: number
+): number => {
+  if (totalTime <= 0 || timeRemaining <= 0) return 0;
+  const ratio = timeRemaining / totalTime;
+  return Math.round(ratio * 50); // Up to 50 bonus points
+};
+
+export const getTimerDuration = (
+  difficulty: 'easy' | 'medium' | 'hard'
+): number => {
+  const durations: Record<string, number> = {
+    easy: 60,
+    medium: 45,
+    hard: 30,
+  };
+  return durations[difficulty];
+};
+
 export const formatScore = (score: number): string => {
   return score.toLocaleString();
 };

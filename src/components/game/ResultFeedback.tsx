@@ -1,5 +1,11 @@
 import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
+import { Confetti } from '../effects/Confetti';
+import { DefeatAnimation } from '../effects/DefeatAnimation';
+import { ShareButton } from './ShareButton';
+import { BattleMap } from './BattleMap';
+import { battleFacts } from '../../data/battleFacts';
+import { battleCoordinates } from '../../data/battleCoordinates';
 import type { Battle } from '../../types';
 
 interface ResultFeedbackProps {
@@ -9,6 +15,7 @@ interface ResultFeedbackProps {
   hintsUsed: number;
   streak: number;
   onNextBattle: () => void;
+  timedBonus?: number;
 }
 
 export function ResultFeedback({
@@ -18,7 +25,10 @@ export function ResultFeedback({
   hintsUsed,
   streak,
   onNextBattle,
+  timedBonus = 0,
 }: ResultFeedbackProps) {
+  const fact = battleFacts[battle.id];
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
@@ -84,18 +94,42 @@ export function ResultFeedback({
         </div>
       </motion.div>
 
+      {/* Did You Know? */}
+      {fact && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35 }}
+          className="bg-amber-50 border border-amber-200 rounded-xl p-3 sm:p-4 text-left"
+        >
+          <div className="flex items-start gap-2">
+            <span className="text-lg mt-0.5">💡</span>
+            <div>
+              <p className="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-1">Did you know?</p>
+              <p className="text-sm text-amber-900">{fact}</p>
+            </div>
+          </div>
+        </motion.div>
+      )}
+
       {/* Stats */}
       {isWin && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="grid grid-cols-3 gap-2 sm:gap-4"
+          className={`grid gap-2 sm:gap-4 ${timedBonus > 0 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-3'}`}
         >
           <div className="bg-white rounded-xl p-2 sm:p-3 shadow-md border border-primary-100">
             <p className="text-xl sm:text-2xl font-bold text-primary-600">+{score}</p>
             <p className="text-xs text-gray-500">Points</p>
           </div>
+          {timedBonus > 0 && (
+            <div className="bg-white rounded-xl p-2 sm:p-3 shadow-md border border-green-200">
+              <p className="text-xl sm:text-2xl font-bold text-green-600">+{timedBonus}</p>
+              <p className="text-xs text-gray-500">Time Bonus</p>
+            </div>
+          )}
           <div className="bg-white rounded-xl p-2 sm:p-3 shadow-md border border-primary-100">
             <p className="text-xl sm:text-2xl font-bold text-primary-600">{hintsUsed}</p>
             <p className="text-xs text-gray-500">Hints Used</p>
@@ -107,45 +141,49 @@ export function ResultFeedback({
         </motion.div>
       )}
 
-      {/* Confetti effect for wins */}
-      {isWin && (
-        <div className="fixed inset-0 pointer-events-none overflow-hidden">
-          {[...Array(50)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-3 h-3 rounded-full"
-              style={{
-                background: ['#3b82f6', '#60a5fa', '#93c5fd', '#fbbf24', '#34d399'][i % 5],
-                left: `${Math.random() * 100}%`,
-              }}
-              initial={{ y: -20, opacity: 1 }}
-              animate={{
-                y: window.innerHeight + 20,
-                opacity: 0,
-                rotate: Math.random() * 720,
-              }}
-              transition={{
-                duration: 2 + Math.random() * 2,
-                delay: Math.random() * 0.5,
-                ease: 'easeIn',
-              }}
-            />
-          ))}
-        </div>
+      {/* Map View */}
+      {battleCoordinates[battle.id] && (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45 }}
+        >
+          <BattleMap
+            lat={battleCoordinates[battle.id].lat}
+            lng={battleCoordinates[battle.id].lng}
+            battleName={battle.name}
+          />
+        </motion.div>
       )}
 
-      {/* Next Button */}
+      {/* Animations */}
+      {isWin ? <Confetti /> : <DefeatAnimation />}
+
+      {/* Actions */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
+        className="flex gap-3"
       >
-        <Button variant="primary" size="lg" onClick={onNextBattle} className="w-full">
+        <Button variant="primary" size="lg" onClick={onNextBattle} className="flex-1">
           Next Battle
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
         </Button>
+        {isWin && (
+          <ShareButton
+            data={{
+              score,
+              accuracy: 0,
+              streak,
+              rank: '',
+              battlesWon: 0,
+              totalBattles: 0,
+            }}
+          />
+        )}
       </motion.div>
     </motion.div>
   );

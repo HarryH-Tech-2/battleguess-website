@@ -1,7 +1,7 @@
 import { useReducer, useCallback, useEffect } from 'react';
-import type { GameState, GameAction, CivilizationId, Difficulty } from '../types';
-import { getRandomBattle, getBattlesByCivilization } from '../data/battles/index';
-import { checkAnswer } from '../utils/stringMatch';
+import type { GameState, GameAction, CivilizationId, Difficulty, GameMode } from '../types';
+import { getRandomBattle, getBattlesByCivilization, getBattleById } from '../data/battles/index';
+import { checkAnswer, checkYearAnswer, checkLocationAnswer } from '../utils/stringMatch';
 import { calculateScore } from '../utils/scoring';
 import { useLocalStorage } from './useLocalStorage';
 
@@ -20,6 +20,7 @@ const initialState: GameState = {
   isImageLoading: false,
   selectedCivilization: 'all',
   selectedDifficulty: 'all',
+  gameMode: 'classic',
 };
 
 function gameReducer(state: GameState, action: GameAction): GameState {
@@ -49,7 +50,7 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         ...state,
         isImageLoading: action.payload,
       };
-    case 'CORRECT_ANSWER':
+    case 'CORRECT_ANSWER': {
       const newStreak = state.streak + 1;
       const scoreIncrease = state.currentBattle
         ? calculateScore(state.hintsUsed, state.currentBattle.difficulty, state.streak)
@@ -63,6 +64,7 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         correctGuesses: state.correctGuesses + 1,
         totalGuesses: state.totalGuesses + 1,
       };
+    }
     case 'WRONG_ANSWER':
       return {
         ...state,
@@ -104,6 +106,7 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         bestStreak: state.bestStreak,
         selectedCivilization: state.selectedCivilization,
         selectedDifficulty: state.selectedDifficulty,
+        gameMode: state.gameMode,
       };
     case 'SET_CIVILIZATION':
       return {
@@ -114,6 +117,11 @@ function gameReducer(state: GameState, action: GameAction): GameState {
       return {
         ...state,
         selectedDifficulty: action.payload,
+      };
+    case 'SET_MODE':
+      return {
+        ...state,
+        gameMode: action.payload,
       };
     default:
       return state;
@@ -143,12 +151,31 @@ export function useGame() {
     dispatch({ type: 'SET_BATTLE', payload: battle });
   }, [playedBattles, setPlayedBattles, state.selectedCivilization, state.selectedDifficulty]);
 
+  const startBattleById = useCallback((battleId: number) => {
+    const battle = getBattleById(battleId);
+    if (!battle) return;
+    dispatch({ type: 'START_GAME' });
+    setPlayedBattles(prev => [...prev, battle.id]);
+    dispatch({ type: 'SET_BATTLE', payload: battle });
+  }, [setPlayedBattles]);
+
   const submitGuess = useCallback((guess: string): boolean => {
     if (!state.currentBattle || state.gameStatus !== 'playing') {
       return false;
     }
 
-    const isCorrect = checkAnswer(guess, state.currentBattle.acceptedAnswers);
+    let isCorrect = false;
+
+    if (state.gameMode === 'reverse-year') {
+      const yearGuess = parseInt(guess, 10);
+      if (!isNaN(yearGuess)) {
+        isCorrect = checkYearAnswer(yearGuess, state.currentBattle.year);
+      }
+    } else if (state.gameMode === 'reverse-location') {
+      isCorrect = checkLocationAnswer(guess, state.currentBattle.location);
+    } else {
+      isCorrect = checkAnswer(guess, state.currentBattle.acceptedAnswers);
+    }
 
     if (isCorrect) {
       dispatch({ type: 'CORRECT_ANSWER' });
@@ -162,7 +189,7 @@ export function useGame() {
       dispatch({ type: 'WRONG_ANSWER' });
       return false;
     }
-  }, [state.currentBattle, state.gameStatus, setSavedStats]);
+  }, [state.currentBattle, state.gameStatus, state.gameMode, setSavedStats]);
 
   const revealHint = useCallback((hintIndex: number) => {
     dispatch({ type: 'REVEAL_HINT', payload: hintIndex });
@@ -199,6 +226,10 @@ export function useGame() {
     setPlayedBattles([]);
   }, [setPlayedBattles]);
 
+  const setMode = useCallback((mode: GameMode) => {
+    dispatch({ type: 'SET_MODE', payload: mode });
+  }, []);
+
   const setImage = useCallback((url: string) => {
     dispatch({ type: 'SET_IMAGE', payload: url });
   }, []);
@@ -224,12 +255,14 @@ export function useGame() {
     battlesPlayed: playedBattles.length,
     actions: {
       startGame,
+      startBattleById,
       submitGuess,
       revealHint,
       giveUp,
       nextBattle,
       selectCivilization,
       selectDifficulty,
+      setMode,
       setImage,
       setImageLoading,
       resetGame,
