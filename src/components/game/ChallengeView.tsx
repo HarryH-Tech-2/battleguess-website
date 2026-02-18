@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { Confetti } from '../effects/Confetti';
@@ -186,6 +187,106 @@ export function ChallengeResult({ challenge, playerScore, playerCorrect, attempt
         </Button>
         <Button variant="secondary" size="lg" onClick={onBack}>
           Back
+        </Button>
+      </div>
+    </motion.div>
+  );
+}
+
+// Challenge Share Link screen (shown after creator finishes playing)
+interface ChallengeShareProps {
+  url: string;
+  score: number;
+  correctGuesses: number;
+  totalBattles: number;
+  onDone: () => void;
+}
+
+export function ChallengeShare({ url, score, correctGuesses, totalBattles, onDone }: ChallengeShareProps) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // fallback: select text
+    }
+  };
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'BattleGuess Challenge',
+          text: `I scored ${score} points on BattleGuess! Can you beat me?`,
+          url,
+        });
+      } catch {
+        handleCopy();
+      }
+    } else {
+      handleCopy();
+    }
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      className="text-center space-y-5"
+    >
+      <Confetti variant="celebration" count={30} />
+
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: 'spring', stiffness: 200, delay: 0.1 }}
+        className="w-20 h-20 mx-auto bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center shadow-lg"
+      >
+        <span className="text-3xl">🔗</span>
+      </motion.div>
+
+      <div>
+        <h2 className="text-2xl font-bold text-primary-800">Challenge Created!</h2>
+        <p className="text-gray-600 text-sm mt-2">
+          You scored <span className="font-bold text-primary-600">{score}</span> points ({correctGuesses}/{totalBattles} correct)
+        </p>
+      </div>
+
+      <p className="text-sm text-gray-500">Share this link with a friend to challenge them:</p>
+
+      {/* Link box */}
+      <div className="bg-gray-50 border border-gray-200 rounded-xl p-3 flex items-center gap-2">
+        <input
+          type="text"
+          readOnly
+          value={url}
+          className="flex-1 bg-transparent text-sm text-gray-700 outline-none truncate"
+          onClick={e => (e.target as HTMLInputElement).select()}
+        />
+        <button
+          onClick={handleCopy}
+          className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${
+            copied
+              ? 'bg-green-100 text-green-700'
+              : 'bg-primary-100 text-primary-700 hover:bg-primary-200'
+          }`}
+        >
+          {copied ? 'Copied!' : 'Copy'}
+        </button>
+      </div>
+
+      <div className="flex gap-3">
+        <Button variant="primary" size="lg" onClick={handleShare} className="flex-1">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+          </svg>
+          Share Challenge
+        </Button>
+        <Button variant="secondary" size="lg" onClick={onDone}>
+          Done
         </Button>
       </div>
     </motion.div>

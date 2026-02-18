@@ -53,8 +53,9 @@ export function StatsPanel({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed inset-x-4 top-1/2 -translate-y-1/2 mx-auto z-50 w-auto max-w-lg max-h-[85vh] overflow-y-auto"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
           >
+            <div className="w-full max-w-lg max-h-[85vh] overflow-y-auto pointer-events-auto">
             <div className="bg-white rounded-2xl shadow-2xl p-5 relative">
               <button
                 onClick={onClose}
@@ -119,6 +120,7 @@ export function StatsPanel({
                   </div>
                 </div>
               )}
+            </div>
             </div>
           </motion.div>
         </>

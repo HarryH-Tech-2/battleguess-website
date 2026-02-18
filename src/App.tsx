@@ -22,7 +22,7 @@ import { CampaignNarrative } from './components/game/CampaignNarrative';
 import { CampaignComplete } from './components/game/CampaignComplete';
 import { GameComplete } from './components/game/GameComplete';
 import { DailyChallengeIntro, DailyProgress, DailyResult } from './components/game/DailyChallenge';
-import { ChallengeInvite, ChallengeProgress, ChallengeResult } from './components/game/ChallengeView';
+import { ChallengeInvite, ChallengeProgress, ChallengeResult, ChallengeShare } from './components/game/ChallengeView';
 import { Leaderboard } from './components/game/Leaderboard';
 import { PlayerNameInput } from './components/game/PlayerNameInput';
 import { StatsPanel } from './components/stats/StatsPanel';
@@ -87,6 +87,14 @@ function App() {
       actions.setImage(imageUrl);
     }
   }, [state.currentBattle, state.gameStatus, state.imageUrl, actions, getImageForBattle]);
+
+  // Track battle IDs when creating a challenge
+  useEffect(() => {
+    if (challenge.state.phase === 'creating' && state.currentBattle && state.gameStatus === 'playing') {
+      challenge.recordBattlePlayed(state.currentBattle.id);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.currentBattle?.id, state.gameStatus]);
 
   // Start timer when a timed game begins playing
   useEffect(() => {
@@ -160,6 +168,15 @@ function App() {
       }
     } else if (curr === 'completed') {
       playSound('complete');
+      // If we were creating a challenge, finish it and generate the share link
+      if (challenge.state.phase === 'creating') {
+        challenge.finishCreating(
+          state.score,
+          state.correctGuesses,
+          state.selectedDifficulty,
+          state.selectedCivilization
+        );
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.gameStatus, state.streak, state.currentBattle, state.hintsUsed, playSound, recordResult]);
@@ -527,7 +544,7 @@ function App() {
                     variant="primary"
                     size="lg"
                     onClick={() => {
-                      // Start a challenge by playing 5 random battles
+                      challenge.startCreating();
                       recordPlay();
                       actions.startGame();
                     }}
@@ -767,8 +784,29 @@ function App() {
               </motion.div>
             )}
 
+            {/* Challenge Share Link */}
+            {challenge.state.phase === 'share' && challenge.state.challengeUrl && (
+              <motion.div
+                key="challenge-share"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <ChallengeShare
+                  url={challenge.state.challengeUrl}
+                  score={challenge.state.score}
+                  correctGuesses={challenge.state.correctGuesses}
+                  totalBattles={challenge.state.playedBattleIds.length}
+                  onDone={() => {
+                    challenge.reset();
+                    actions.resetGame();
+                  }}
+                />
+              </motion.div>
+            )}
+
             {/* Completed State - All battles finished */}
-            {state.gameStatus === 'completed' && (
+            {state.gameStatus === 'completed' && challenge.state.phase !== 'share' && (
               <motion.div
                 key="completed"
                 initial={{ opacity: 0 }}

@@ -3,9 +3,7 @@ import { Button } from '../ui/Button';
 import { Confetti } from '../effects/Confetti';
 import { DefeatAnimation } from '../effects/DefeatAnimation';
 import { ShareButton } from './ShareButton';
-import { BattleMap } from './BattleMap';
 import { battleFacts } from '../../data/battleFacts';
-import { battleCoordinates } from '../../data/battleCoordinates';
 import type { Battle } from '../../types';
 
 interface ResultFeedbackProps {
@@ -138,21 +136,6 @@ export function ResultFeedback({
             <p className="text-xl sm:text-2xl font-bold text-primary-600">{streak}</p>
             <p className="text-xs text-gray-500">Streak</p>
           </div>
-        </motion.div>
-      )}
-
-      {/* Map View */}
-      {battleCoordinates[battle.id] && (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.45 }}
-        >
-          <BattleMap
-            lat={battleCoordinates[battle.id].lat}
-            lng={battleCoordinates[battle.id].lng}
-            battleName={battle.name}
-          />
         </motion.div>
       )}
 

@@ -11,7 +11,7 @@ import { getBattleById } from '../data/battles';
 import type { Battle } from '../types';
 
 interface ChallengeState {
-  phase: 'idle' | 'creating' | 'playing' | 'result' | 'viewing';
+  phase: 'idle' | 'creating' | 'playing' | 'result' | 'viewing' | 'share';
   challenge: Challenge | null;
   battles: Battle[];
   currentIndex: number;
@@ -20,6 +20,7 @@ interface ChallengeState {
   attempts: ChallengeAttempt[];
   isLoading: boolean;
   challengeUrl: string | null;
+  playedBattleIds: number[];
 }
 
 export function useChallengeMode() {
@@ -33,6 +34,7 @@ export function useChallengeMode() {
     attempts: [],
     isLoading: false,
     challengeUrl: null,
+    playedBattleIds: [],
   });
 
   // Check URL for challenge ID on mount
@@ -61,6 +63,7 @@ export function useChallengeMode() {
     }
   };
 
+  // For accepting a received challenge
   const startChallenge = useCallback(() => {
     setState(prev => ({
       ...prev,
@@ -70,6 +73,36 @@ export function useChallengeMode() {
       correctGuesses: 0,
     }));
   }, []);
+
+  // For creating a new challenge (creator plays first)
+  const startCreating = useCallback(() => {
+    setState(prev => ({
+      ...prev,
+      phase: 'creating',
+      score: 0,
+      correctGuesses: 0,
+      playedBattleIds: [],
+      challengeUrl: null,
+    }));
+  }, []);
+
+  const recordBattlePlayed = useCallback((battleId: number) => {
+    setState(prev => ({
+      ...prev,
+      playedBattleIds: [...prev.playedBattleIds, battleId],
+    }));
+  }, []);
+
+  const finishCreating = useCallback(async (score: number, correctGuesses: number, difficulty: string, civilization: string) => {
+    const battleIds = state.playedBattleIds;
+    if (battleIds.length === 0) return;
+
+    const challengeId = await createChallenge(battleIds, score, correctGuesses, difficulty, civilization);
+    if (challengeId) {
+      const url = `${window.location.origin}${window.location.pathname}?challenge=${challengeId}`;
+      setState(prev => ({ ...prev, phase: 'share', challengeUrl: url, score, correctGuesses }));
+    }
+  }, [state.playedBattleIds]);
 
   const recordBattleResult = useCallback((correct: boolean, score: number) => {
     setState(prev => ({
@@ -127,6 +160,7 @@ export function useChallengeMode() {
       attempts: [],
       isLoading: false,
       challengeUrl: null,
+      playedBattleIds: [],
     });
     // Clear URL param
     const url = new URL(window.location.href);
@@ -137,6 +171,9 @@ export function useChallengeMode() {
   return {
     state,
     startChallenge,
+    startCreating,
+    recordBattlePlayed,
+    finishCreating,
     recordBattleResult,
     advanceToNext,
     createNewChallenge,
