@@ -18,7 +18,7 @@ export function Layout({ children, buyMeACoffeeUrl, isMuted, onToggleMute, daily
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden">
       {/* Background effects */}
-      <div className="fixed inset-0 bg-gradient-to-br from-primary-50 via-white to-primary-100" />
+      <div className="fixed inset-0 bg-gradient-to-br from-emerald-50 via-slate-50 to-green-100" />
       <FloatingOrbs />
       <ParticleBackground />
 
@@ -30,20 +30,20 @@ export function Layout({ children, buyMeACoffeeUrl, isMuted, onToggleMute, daily
           {children}
         </main>
 
-        {/* Footer with vibrant gradient background */}
+        {/* Footer with military gradient background */}
         <footer className="relative mt-auto overflow-hidden">
           {/* Main gradient layers */}
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-600 via-primary-500/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-700/40 via-amber-500/30 to-primary-700/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-emerald-800 via-emerald-700/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-900/40 via-emerald-600/30 to-green-900/40" />
 
           {/* Animated glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-200/15 to-transparent animate-pulse" />
 
           {/* Top border glow */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400 to-transparent" />
 
           {/* Bottom accent line */}
-          <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary-700 via-amber-500 to-primary-700" />
+          <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-green-900 via-emerald-500 to-green-900" />
 
           <div className="relative py-10" />
         </footer>

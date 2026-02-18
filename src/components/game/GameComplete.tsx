@@ -160,7 +160,7 @@ export function GameComplete({
           <p className="text-xs text-gray-500 mt-1">Accuracy</p>
         </div>
         <div className="bg-white rounded-xl p-3 sm:p-4 shadow-md border border-primary-100">
-          <p className="text-2xl sm:text-3xl font-bold text-orange-500">{bestStreak}</p>
+          <p className="text-2xl sm:text-3xl font-bold text-primary-500">{bestStreak}</p>
           <p className="text-xs text-gray-500 mt-1">Best Streak</p>
         </div>
         <div className="bg-white rounded-xl p-3 sm:p-4 shadow-md border border-primary-100">

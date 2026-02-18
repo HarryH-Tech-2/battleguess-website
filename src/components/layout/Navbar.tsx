@@ -99,7 +99,7 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', i
             {onOpenLeaderboard && (
               <motion.button
                 onClick={onOpenLeaderboard}
-                className="p-2 rounded-xl bg-yellow-50 hover:bg-yellow-100 text-yellow-600 transition-colors"
+                className="p-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-600 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 title="Global leaderboard"
@@ -114,7 +114,7 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', i
             {onOpenAchievements && (
               <motion.button
                 onClick={onOpenAchievements}
-                className="relative p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-600 transition-colors"
+                className="relative p-2 rounded-xl bg-primary-50 hover:bg-primary-100 text-primary-600 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 title="View achievements"
@@ -123,7 +123,7 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', i
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                 </svg>
                 {achievementCount && achievementCount.unlocked > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-amber-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 bg-primary-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
                     {achievementCount.unlocked}
                   </span>
                 )}

@@ -98,13 +98,13 @@ export function ResultFeedback({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35 }}
-          className="bg-amber-50 border border-amber-200 rounded-xl p-3 sm:p-4 text-left"
+          className="bg-emerald-50 border border-emerald-200 rounded-xl p-3 sm:p-4 text-left"
         >
           <div className="flex items-start gap-2">
             <span className="text-lg mt-0.5">💡</span>
             <div>
-              <p className="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-1">Did you know?</p>
-              <p className="text-sm text-amber-900">{fact}</p>
+              <p className="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Did you know?</p>
+              <p className="text-sm text-emerald-900">{fact}</p>
             </div>
           </div>
         </motion.div>

@@ -30,7 +30,7 @@ export function ScoreDisplay({ score, streak, bestStreak }: ScoreDisplayProps) {
         animate={{ scale: 1 }}
       >
         <span className="text-base sm:text-xl">🔥</span>
-        <span className="font-bold text-sm sm:text-base text-orange-600">{streak}</span>
+        <span className="font-bold text-sm sm:text-base text-primary-600">{streak}</span>
         <span className="text-gray-400 text-xs sm:text-sm">streak</span>
       </motion.div>
 

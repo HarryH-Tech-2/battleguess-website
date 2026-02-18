@@ -47,7 +47,7 @@ export function AchievementsList({ isOpen, onClose, unlocked }: AchievementsList
               {/* Progress bar */}
               <div className="h-2 bg-gray-100 rounded-full overflow-hidden mb-4">
                 <motion.div
-                  className="h-full bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full"
+                  className="h-full bg-gradient-to-r from-primary-400 to-emerald-500 rounded-full"
                   initial={{ width: 0 }}
                   animate={{ width: `${(unlocked.length / achievements.length) * 100}%` }}
                   transition={{ duration: 0.8, ease: 'easeOut' }}

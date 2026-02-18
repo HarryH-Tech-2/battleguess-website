@@ -40,7 +40,7 @@ export function Card({ children, variant = 'default', glow = false, className = 
         transition={{ duration: 0.4, ease: 'easeOut' }}
         whileHover={{
           y: -2,
-          boxShadow: '0 25px 50px -12px rgba(249, 115, 22, 0.25)',
+          boxShadow: '0 25px 50px -12px rgba(34, 197, 94, 0.25)',
         }}
         {...props}
       >

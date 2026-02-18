@@ -18,7 +18,7 @@ export function AchievementPopup({ achievement, onDismiss }: AchievementPopupPro
           className="fixed top-24 left-1/2 z-[60] cursor-pointer"
           onClick={onDismiss}
         >
-          <div className="bg-gradient-to-r from-amber-500 to-yellow-500 rounded-2xl shadow-2xl p-4 flex items-center gap-3 min-w-[280px]">
+          <div className="bg-gradient-to-r from-primary-500 to-emerald-500 rounded-2xl shadow-2xl p-4 flex items-center gap-3 min-w-[280px]">
             <motion.span
               className="text-3xl"
               initial={{ scale: 0, rotate: -180 }}
@@ -28,9 +28,9 @@ export function AchievementPopup({ achievement, onDismiss }: AchievementPopupPro
               {achievement.icon}
             </motion.span>
             <div>
-              <p className="text-xs font-bold text-amber-900 uppercase tracking-wider">Achievement Unlocked!</p>
+              <p className="text-xs font-bold text-emerald-900 uppercase tracking-wider">Achievement Unlocked!</p>
               <p className="text-white font-bold">{achievement.name}</p>
-              <p className="text-amber-100 text-xs">{achievement.description}</p>
+              <p className="text-emerald-100 text-xs">{achievement.description}</p>
             </div>
           </div>
         </motion.div>

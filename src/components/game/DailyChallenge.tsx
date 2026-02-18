@@ -25,7 +25,7 @@ export function DailyChallengeIntro({ onStart, isCompleted, todayResult, battleC
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ type: 'spring', stiffness: 200, delay: 0.1 }}
-        className="w-20 h-20 mx-auto bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center shadow-lg"
+        className="w-20 h-20 mx-auto bg-gradient-to-br from-primary-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg"
       >
         <span className="text-white text-3xl font-bold">{today.getDate()}</span>
       </motion.div>
@@ -79,21 +79,21 @@ interface DailyProgressProps {
 
 export function DailyProgress({ current, total, score }: DailyProgressProps) {
   return (
-    <div className="flex items-center justify-between bg-orange-50 rounded-lg px-3 py-2 border border-orange-200">
+    <div className="flex items-center justify-between bg-primary-50 rounded-lg px-3 py-2 border border-primary-200">
       <div className="flex items-center gap-2">
-        <span className="text-orange-500 font-bold text-sm">DAILY</span>
+        <span className="text-primary-600 font-bold text-sm">DAILY</span>
         <div className="flex gap-1">
           {Array.from({ length: total }).map((_, i) => (
             <div
               key={i}
               className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                i < current ? 'bg-orange-400' : i === current ? 'bg-orange-300 animate-pulse' : 'bg-orange-100'
+                i < current ? 'bg-primary-400' : i === current ? 'bg-primary-300 animate-pulse' : 'bg-primary-100'
               }`}
             />
           ))}
         </div>
       </div>
-      <span className="text-sm font-medium text-orange-700">{score} pts</span>
+      <span className="text-sm font-medium text-primary-700">{score} pts</span>
     </div>
   );
 }
@@ -134,15 +134,15 @@ export function DailyResult({ score, correctGuesses, totalBattles, leaderboard, 
           <p className="text-2xl font-bold text-green-600">{correctGuesses}/{totalBattles}</p>
           <p className="text-xs text-gray-500">Correct</p>
         </div>
-        <div className="bg-white rounded-xl p-3 shadow-md border border-orange-200 text-center">
-          <p className="text-2xl font-bold text-orange-600">{accuracy}%</p>
+        <div className="bg-white rounded-xl p-3 shadow-md border border-primary-200 text-center">
+          <p className="text-2xl font-bold text-primary-600">{accuracy}%</p>
           <p className="text-xs text-gray-500">Accuracy</p>
         </div>
       </div>
 
       {/* Leaderboard */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-        <div className="px-4 py-3 bg-gradient-to-r from-orange-50 to-amber-50 border-b border-gray-200">
+        <div className="px-4 py-3 bg-gradient-to-r from-primary-50 to-emerald-50 border-b border-gray-200">
           <h3 className="font-semibold text-sm text-gray-700">Today's Leaderboard</h3>
         </div>
         {isLoadingLeaderboard ? (

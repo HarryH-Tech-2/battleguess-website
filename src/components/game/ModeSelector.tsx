@@ -38,7 +38,7 @@ export function ModeSelector({ selected, onSelect, disabled }: ModeSelectorProps
                 isActive
                   ? 'bg-primary-600 text-white shadow-md'
                   : mode.highlight && !isActive
-                    ? 'bg-orange-50 text-orange-700 hover:bg-orange-100 border border-orange-300'
+                    ? 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-300'
                     : 'bg-white text-gray-600 hover:bg-primary-50 hover:text-primary-700 border border-gray-200'
               } ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
               whileHover={!disabled ? { scale: 1.03 } : undefined}
@@ -68,7 +68,7 @@ export function ModeSelector({ selected, onSelect, disabled }: ModeSelectorProps
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -5 }}
             transition={{ duration: 0.15 }}
-            className="text-xs text-center text-gray-500 max-w-sm mx-auto leading-relaxed"
+            className="text-sm text-center text-primary-700 font-medium bg-primary-50 border border-primary-200 rounded-lg px-4 py-2.5 max-w-md mx-auto leading-relaxed"
           >
             {selectedMode.longDesc}
           </motion.p>
