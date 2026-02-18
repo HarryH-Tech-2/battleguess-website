@@ -14,7 +14,7 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', i
       className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-primary-100 shadow-sm"
     >
       <div className="container mx-auto px-4 max-w-4xl">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo & Title */}
           <motion.div
             className="flex items-center gap-3"
@@ -72,7 +72,7 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', i
           {onToggleMute && (
             <motion.button
               onClick={onToggleMute}
-              className="p-2 rounded-lg bg-primary-100 hover:bg-primary-200 text-primary-600 transition-colors"
+              className="p-2.5 rounded-xl bg-gradient-to-br from-primary-100 to-primary-200 hover:from-primary-200 hover:to-primary-300 text-primary-700 shadow-sm hover:shadow-md transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               title={isMuted ? 'Unmute music' : 'Mute music'}

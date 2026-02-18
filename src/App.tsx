@@ -98,7 +98,7 @@ function App() {
           <DifficultySelector
             selected={state.selectedDifficulty}
             onSelect={actions.selectDifficulty}
-            disabled={state.gameStatus === 'playing' || state.gameStatus === 'loading'}
+            disabled={state.gameStatus === 'loading'}
           />
         </motion.div>
 
