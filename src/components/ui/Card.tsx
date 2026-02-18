@@ -10,9 +10,9 @@ interface CardProps extends HTMLMotionProps<'div'> {
 
 export function Card({ children, variant = 'default', glow = false, className = '', ...props }: CardProps) {
   const variants = {
-    default: 'bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-primary-100/50 p-6',
-    elevated: 'bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-primary-100/50 p-8',
-    glass: 'bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl border border-white/30 p-6',
+    default: 'bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-primary-100/50 p-4 sm:p-6',
+    elevated: 'bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-primary-100/50 p-4 sm:p-6 md:p-8',
+    glass: 'bg-white/70 backdrop-blur-lg rounded-2xl shadow-xl border border-white/30 p-4 sm:p-6',
   };
 
   return (

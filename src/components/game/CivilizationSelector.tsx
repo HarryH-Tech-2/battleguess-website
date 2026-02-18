@@ -19,8 +19,8 @@ export function CivilizationSelector({
   disabled = false,
 }: CivilizationSelectorProps) {
   return (
-    <div className="w-full overflow-x-auto scrollbar-hide">
-      <div className="flex items-center gap-2 pb-1 min-w-max justify-center">
+    <div className="w-full">
+      <div className="flex items-center gap-1.5 sm:gap-2 pb-1 flex-wrap justify-center">
         {items.map(item => {
           const isSelected = selected === item.id;
           return (
@@ -28,7 +28,7 @@ export function CivilizationSelector({
               key={item.id}
               onClick={() => !disabled && onSelect(item.id)}
               className={`
-                flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium
+                flex items-center gap-1 sm:gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium
                 transition-colors duration-200 whitespace-nowrap
                 ${isSelected
                   ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-md'

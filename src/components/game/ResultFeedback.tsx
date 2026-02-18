@@ -51,10 +51,10 @@ export function ResultFeedback({
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
-        <h2 className={`text-3xl font-bold ${isWin ? 'text-green-600' : 'text-red-600'}`}>
+        <h2 className={`text-2xl sm:text-3xl font-bold ${isWin ? 'text-green-600' : 'text-red-600'}`}>
           {isWin ? 'Correct!' : 'Not this time...'}
         </h2>
-        <p className="text-xl text-gray-700 mt-2">
+        <p className="text-lg sm:text-xl text-gray-700 mt-2">
           It was the <span className="font-bold text-primary-700">{battle.name}</span>
         </p>
       </motion.div>
@@ -64,9 +64,9 @@ export function ResultFeedback({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="bg-primary-50 rounded-xl p-4 text-left"
+        className="bg-primary-50 rounded-xl p-3 sm:p-4 text-left"
       >
-        <p className="text-primary-800">{battle.description}</p>
+        <p className="text-sm sm:text-base text-primary-800">{battle.description}</p>
         <div className="mt-2 flex flex-wrap gap-2">
           <span className="px-2 py-1 bg-primary-200 text-primary-800 rounded text-sm">
             {battle.year < 0 ? `${Math.abs(battle.year)} BCE` : battle.year}
@@ -90,18 +90,18 @@ export function ResultFeedback({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="grid grid-cols-3 gap-4"
+          className="grid grid-cols-3 gap-2 sm:gap-4"
         >
-          <div className="bg-white rounded-xl p-3 shadow-md border border-primary-100">
-            <p className="text-2xl font-bold text-primary-600">+{score}</p>
+          <div className="bg-white rounded-xl p-2 sm:p-3 shadow-md border border-primary-100">
+            <p className="text-xl sm:text-2xl font-bold text-primary-600">+{score}</p>
             <p className="text-xs text-gray-500">Points</p>
           </div>
-          <div className="bg-white rounded-xl p-3 shadow-md border border-primary-100">
-            <p className="text-2xl font-bold text-primary-600">{hintsUsed}</p>
+          <div className="bg-white rounded-xl p-2 sm:p-3 shadow-md border border-primary-100">
+            <p className="text-xl sm:text-2xl font-bold text-primary-600">{hintsUsed}</p>
             <p className="text-xs text-gray-500">Hints Used</p>
           </div>
-          <div className="bg-white rounded-xl p-3 shadow-md border border-primary-100">
-            <p className="text-2xl font-bold text-primary-600">{streak}</p>
+          <div className="bg-white rounded-xl p-2 sm:p-3 shadow-md border border-primary-100">
+            <p className="text-xl sm:text-2xl font-bold text-primary-600">{streak}</p>
             <p className="text-xs text-gray-500">Streak</p>
           </div>
         </motion.div>

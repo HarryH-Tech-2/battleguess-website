@@ -13,7 +13,7 @@ export const americanWarsBattles: Battle[] = [
       "It's considered the turning point of the American Civil War",
       "President Lincoln later gave a famous speech honoring the fallen here"
     ],
-    difficulty: "medium",
+    difficulty: "easy",
     year: 1863,
     location: "Pennsylvania, USA",
     description: "Fought over three days in July 1863, Gettysburg was the bloodiest battle of the American Civil War with over 50,000 casualties. The failed Confederate assault known as Pickett's Charge marked the 'high water mark' of the Confederacy. President Lincoln's Gettysburg Address, delivered at the battlefield's dedication, became one of the most famous speeches in American history."
@@ -30,7 +30,7 @@ export const americanWarsBattles: Battle[] = [
       "It's considered the turning point of the American Revolution",
       "British General Burgoyne surrendered his entire army"
     ],
-    difficulty: "hard",
+    difficulty: "easy",
     year: 1777,
     location: "New York, USA",
     description: "The American victory at Saratoga was the turning point of the American Revolution. British General Burgoyne's army of 6,000 was surrounded and forced to surrender after two engagements. The victory convinced France to enter the war as an American ally, providing the military and financial support that would ultimately secure American independence."
@@ -64,7 +64,7 @@ export const americanWarsBattles: Battle[] = [
       "Colonial militia proved they could stand against professional soldiers",
       "The British won the hill but suffered devastating casualties"
     ],
-    difficulty: "medium",
+    difficulty: "easy",
     year: 1775,
     location: "Massachusetts, USA",
     description: "Colonial militia fortified Breed's Hill (near Bunker Hill) overlooking British-held Boston, forcing a direct assault. The defenders repulsed two British charges before running out of ammunition during the third. Though the British captured the position, they suffered over 1,000 casualties—nearly half their attacking force. The battle proved that untrained colonists could stand against professional British soldiers and boosted American morale."

@@ -13,7 +13,7 @@ export const colonialNapoleonicBattles: Battle[] = [
       "Napoleon Bonaparte commanded the French army",
       "The Duke of Wellington led the opposing coalition forces"
     ],
-    difficulty: "medium",
+    difficulty: "easy",
     year: 1815,
     location: "Belgium",
     description: "The Battle of Waterloo ended Napoleon's rule as French Emperor and his Hundred Days return from exile. The Duke of Wellington's allied forces, combined with Prussian reinforcements under Blücher, defeated Napoleon's army in a hard-fought engagement. This decisive victory reshaped European politics and led to Napoleon's final exile to Saint Helena, where he died six years later."

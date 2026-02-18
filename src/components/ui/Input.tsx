@@ -87,7 +87,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         <motion.input
           ref={ref}
           className={`
-            relative w-full px-5 py-4 rounded-xl border-2 bg-white/90 backdrop-blur-sm text-lg
+            relative w-full px-4 py-3 sm:px-5 sm:py-4 rounded-xl border-2 bg-white/90 backdrop-blur-sm text-base sm:text-lg
             outline-none transition-all duration-300 z-10
             placeholder:text-gray-400
             ${error

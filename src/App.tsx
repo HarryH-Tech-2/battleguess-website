@@ -59,7 +59,7 @@ function App() {
 
   return (
     <Layout buyMeACoffeeUrl={BUY_ME_A_COFFEE_URL}>
-      <div className="space-y-6 pb-8">
+      <div className="space-y-4 sm:space-y-6 pb-6 sm:pb-8">
         {/* Score Display - Always visible after game starts */}
         {(state.score > 0 || state.streak > 0 || state.bestStreak > 0) && (
           <motion.div
@@ -114,11 +114,11 @@ function App() {
               >
                 <BattleImage imageUrl={null} isLoading={false} />
 
-                <div className="space-y-3">
-                  <h2 className="text-2xl font-bold text-primary-800">
+                <div className="space-y-2 sm:space-y-3">
+                  <h2 className="text-xl sm:text-2xl font-bold text-primary-800">
                     Welcome to BattleGuess!
                   </h2>
-                  <p className="text-gray-600 max-w-md mx-auto">
+                  <p className="text-sm sm:text-base text-gray-600 max-w-md mx-auto">
                     You'll be shown an AI-generated image of a famous historical battle.
                     Try to guess which battle it depicts!
                   </p>
