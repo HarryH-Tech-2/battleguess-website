@@ -108,33 +108,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           {...props}
         />
 
-        {/* Typing indicator dots */}
-        <AnimatePresence>
-          {isFocused && props.value && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 flex gap-1 z-20"
-            >
-              {[0, 1, 2].map((i) => (
-                <motion.div
-                  key={i}
-                  className="w-1.5 h-1.5 bg-primary-400 rounded-full"
-                  animate={{
-                    y: [0, -4, 0],
-                    opacity: [0.5, 1, 0.5],
-                  }}
-                  transition={{
-                    duration: 0.6,
-                    delay: i * 0.1,
-                    repeat: Infinity,
-                  }}
-                />
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     );
   }
