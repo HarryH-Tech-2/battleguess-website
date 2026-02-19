@@ -34,8 +34,7 @@ export function Footer() {
 
   // Rotate facts
   useEffect(() => {
-    const shuffled = [...footerTeasers].sort(() => Math.random() - 0.5);
-    const startIndex = Math.floor(Math.random() * shuffled.length);
+    const startIndex = Math.floor(Math.random() * footerTeasers.length);
     setCurrentFactIndex(startIndex);
 
     const interval = setInterval(() => {
@@ -66,7 +65,7 @@ export function Footer() {
     <div className="relative py-8 px-4">
       {/* Radar scan line */}
       <div
-        className="absolute top-0 h-full w-px opacity-20 pointer-events-none"
+        className="absolute top-0 h-full w-px opacity-30 pointer-events-none"
         style={{
           left: `${scanLinePos}%`,
           background: 'linear-gradient(to bottom, transparent, #22c55e, transparent)',
@@ -77,13 +76,13 @@ export function Footer() {
       <div className="max-w-4xl mx-auto space-y-5">
         {/* Battle intel ticker */}
         <div className="relative overflow-hidden">
-          <div className="flex items-center gap-3 mb-3">
+          <div className="flex items-center gap-3 mb-3 justify-center">
             {/* Blinking dot */}
-            <span className="relative flex h-2 w-2">
+            <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
             </span>
-            <span className="text-sm font-mono font-semibold uppercase tracking-[0.2em] text-emerald-200">
+            <span className="text-sm font-mono font-bold uppercase tracking-[0.2em] text-white drop-shadow-sm">
               Battle Intel Feed
             </span>
           </div>
@@ -95,9 +94,9 @@ export function Footer() {
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               exit={{ opacity: 0, y: -12, filter: 'blur(4px)' }}
               transition={{ duration: 0.5 }}
-              className="relative"
+              className="relative text-center"
             >
-              <p className="text-base text-emerald-50/90 leading-relaxed italic">
+              <p className="text-base text-white/95 leading-relaxed italic drop-shadow-sm">
                 &ldquo;{currentFact.text}&rdquo;
               </p>
             </motion.div>
@@ -108,10 +107,10 @@ export function Footer() {
             {footerTeasers.map((_, i) => (
               <div
                 key={i}
-                className={`h-0.5 rounded-full transition-all duration-500 ${
+                className={`h-1 rounded-full transition-all duration-500 ${
                   i === currentFactIndex
-                    ? 'w-4 bg-emerald-400'
-                    : 'w-1.5 bg-emerald-800/60'
+                    ? 'w-5 bg-white/80'
+                    : 'w-1.5 bg-white/20'
                 }`}
               />
             ))}
@@ -119,16 +118,16 @@ export function Footer() {
         </div>
 
         {/* Divider with crosshairs */}
-        <div className="flex items-center gap-3 opacity-30">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent to-emerald-500" />
-          <svg className="w-3 h-3 text-emerald-400" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <div className="flex items-center gap-3 opacity-50">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent to-white/60" />
+          <svg className="w-3.5 h-3.5 text-white/70" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
             <circle cx="6" cy="6" r="4" />
             <line x1="6" y1="0" x2="6" y2="3" />
             <line x1="6" y1="9" x2="6" y2="12" />
             <line x1="0" y1="6" x2="3" y2="6" />
             <line x1="9" y1="6" x2="12" y2="6" />
           </svg>
-          <div className="flex-1 h-px bg-gradient-to-l from-transparent to-emerald-500" />
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent to-white/60" />
         </div>
 
         {/* Stats row */}
@@ -139,11 +138,11 @@ export function Footer() {
             transition={{ delay: 0.6 }}
             className="text-center"
           >
-            <div className="text-lg font-bold font-mono text-emerald-300">{totalBattles}</div>
-            <div className="text-[10px] uppercase tracking-widest text-emerald-500/60">Battles</div>
+            <div className="text-xl font-bold font-mono text-white drop-shadow-sm">{totalBattles}</div>
+            <div className="text-xs uppercase tracking-widest text-white/60 font-medium">Battles</div>
           </motion.div>
 
-          <div className="w-px h-6 bg-emerald-700/40" />
+          <div className="w-px h-8 bg-white/20" />
 
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -151,11 +150,11 @@ export function Footer() {
             transition={{ delay: 0.7 }}
             className="text-center"
           >
-            <div className="text-lg font-bold font-mono text-emerald-300">{eras}</div>
-            <div className="text-[10px] uppercase tracking-widest text-emerald-500/60">Eras</div>
+            <div className="text-xl font-bold font-mono text-white drop-shadow-sm">{eras}</div>
+            <div className="text-xs uppercase tracking-widest text-white/60 font-medium">Eras</div>
           </motion.div>
 
-          <div className="w-px h-6 bg-emerald-700/40" />
+          <div className="w-px h-8 bg-white/20" />
 
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -163,11 +162,11 @@ export function Footer() {
             transition={{ delay: 0.8 }}
             className="text-center"
           >
-            <div className="text-lg font-bold font-mono text-emerald-300">{totalFacts}</div>
-            <div className="text-[10px] uppercase tracking-widest text-emerald-500/60">Facts</div>
+            <div className="text-xl font-bold font-mono text-white drop-shadow-sm">{totalFacts}</div>
+            <div className="text-xs uppercase tracking-widest text-white/60 font-medium">Facts</div>
           </motion.div>
 
-          <div className="w-px h-6 bg-emerald-700/40" />
+          <div className="w-px h-8 bg-white/20" />
 
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -175,8 +174,8 @@ export function Footer() {
             transition={{ delay: 0.9 }}
             className="text-center"
           >
-            <div className="text-lg font-bold font-mono text-emerald-300">5000+</div>
-            <div className="text-[10px] uppercase tracking-widest text-emerald-500/60">Years</div>
+            <div className="text-xl font-bold font-mono text-white drop-shadow-sm">5000+</div>
+            <div className="text-xs uppercase tracking-widest text-white/60 font-medium">Years</div>
           </motion.div>
         </div>
 
@@ -187,7 +186,7 @@ export function Footer() {
           transition={{ delay: 1 }}
           className="text-center"
         >
-          <p className="text-[10px] text-emerald-600/40 font-mono">
+          <p className="text-xs text-white/40 font-mono">
             &copy; {new Date().getFullYear()} BattleGuess
           </p>
         </motion.div>
