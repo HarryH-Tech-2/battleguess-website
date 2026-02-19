@@ -78,16 +78,16 @@ export function AchievementsList({ isOpen, onClose, unlocked }: AchievementsList
 function AchievementRow({ achievement, isUnlocked }: { achievement: AchievementDef; isUnlocked: boolean }) {
   return (
     <div className={`flex items-center gap-3 p-3 rounded-xl transition-colors ${
-      isUnlocked ? 'bg-amber-50 border border-amber-200' : 'bg-gray-50 border border-gray-100 opacity-60'
+      isUnlocked ? 'bg-amber-50 border border-amber-200' : 'bg-gray-100 border border-gray-200 opacity-70'
     }`}>
       <span className={`text-2xl ${isUnlocked ? '' : 'grayscale'}`}>
         {achievement.icon}
       </span>
       <div className="flex-1 min-w-0">
-        <p className={`font-medium ${isUnlocked ? 'text-gray-800' : 'text-gray-500'}`}>
+        <p className={`font-semibold text-[15px] ${isUnlocked ? 'text-gray-900' : 'text-gray-600'}`}>
           {achievement.name}
         </p>
-        <p className="text-xs text-gray-400">{achievement.description}</p>
+        <p className={`text-sm ${isUnlocked ? 'text-gray-600' : 'text-gray-500'}`}>{achievement.description}</p>
       </div>
       {isUnlocked && (
         <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

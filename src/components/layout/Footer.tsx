@@ -82,7 +82,7 @@ export function Footer() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
             </span>
-            <span className="text-base font-mono font-bold uppercase tracking-[0.2em] text-white drop-shadow-md">
+            <span className="text-lg sm:text-xl font-mono font-bold uppercase tracking-[0.2em] text-white drop-shadow-md">
               Battle Intel Feed
             </span>
           </div>
@@ -96,7 +96,7 @@ export function Footer() {
               transition={{ duration: 0.5 }}
               className="relative text-center"
             >
-              <p className="text-lg text-white leading-relaxed italic drop-shadow-md">
+              <p className="text-xl sm:text-2xl text-white leading-relaxed italic drop-shadow-md">
                 &ldquo;{currentFact.text}&rdquo;
               </p>
             </motion.div>
