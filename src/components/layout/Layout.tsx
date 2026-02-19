@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { Navbar } from './Navbar';
+import { Footer } from './Footer';
 import { ParticleBackground, FloatingOrbs } from '../effects/ParticleBackground';
 
 interface LayoutProps {
@@ -43,7 +44,9 @@ export function Layout({ children, buyMeACoffeeUrl, dailyStreak, onOpenStats, on
           {/* Bottom accent line */}
           <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-green-900 via-emerald-500 to-green-900" />
 
-          <div className="relative py-10" />
+          <div className="relative">
+            <Footer />
+          </div>
         </footer>
       </div>
     </div>
