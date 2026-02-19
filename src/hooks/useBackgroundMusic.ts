@@ -4,7 +4,8 @@ export function useBackgroundMusic(src: string) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isMuted, setIsMuted] = useState(() => {
     const stored = localStorage.getItem('battleguess-music-muted');
-    return stored === 'true';
+    // Default to muted — music only plays when user explicitly enables it
+    return stored === null ? true : stored === 'true';
   });
   const hasInteracted = useRef(false);
 
