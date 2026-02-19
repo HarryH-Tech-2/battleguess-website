@@ -145,6 +145,12 @@ function App() {
           civilization: state.currentBattle.civilization,
           streak: state.streak,
         });
+        actions.recordBattleResult({
+          battleId: state.currentBattle.id,
+          correct: true,
+          hintsUsed: state.hintsUsed,
+          difficulty: state.currentBattle.difficulty,
+        });
       }
     } else if (prev === 'playing' && curr === 'lost') {
       setTimedBonus(0);
@@ -164,6 +170,12 @@ function App() {
           difficulty: state.currentBattle.difficulty,
           civilization: state.currentBattle.civilization,
           streak: 0,
+        });
+        actions.recordBattleResult({
+          battleId: state.currentBattle.id,
+          correct: false,
+          hintsUsed: state.hintsUsed,
+          difficulty: state.currentBattle.difficulty,
         });
       }
     } else if (curr === 'completed') {
@@ -819,6 +831,7 @@ function App() {
                   totalGuesses={state.totalGuesses}
                   bestStreak={state.bestStreak}
                   totalBattles={totalBattlesInPool}
+                  battleResults={state.battleResults}
                   onPlayAgain={actions.resetGame}
                 />
               </motion.div>

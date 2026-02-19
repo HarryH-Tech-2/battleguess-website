@@ -1,5 +1,5 @@
 import { useReducer, useCallback, useEffect } from 'react';
-import type { GameState, GameAction, CivilizationId, Difficulty, GameMode } from '../types';
+import type { GameState, GameAction, CivilizationId, Difficulty, GameMode, BattleRoundResult } from '../types';
 import { getRandomBattle, getBattlesByCivilization, getBattleById } from '../data/battles/index';
 import { checkAnswer, checkYearAnswer, checkLocationAnswer } from '../utils/stringMatch';
 import { calculateScore } from '../utils/scoring';
@@ -21,6 +21,7 @@ const initialState: GameState = {
   selectedCivilization: 'all',
   selectedDifficulty: 'all',
   gameMode: 'classic',
+  battleResults: [],
 };
 
 function gameReducer(state: GameState, action: GameAction): GameState {
@@ -122,6 +123,11 @@ function gameReducer(state: GameState, action: GameAction): GameState {
       return {
         ...state,
         gameMode: action.payload,
+      };
+    case 'RECORD_BATTLE_RESULT':
+      return {
+        ...state,
+        battleResults: [...state.battleResults, action.payload],
       };
     default:
       return state;
@@ -238,6 +244,10 @@ export function useGame() {
     dispatch({ type: 'SET_IMAGE_LOADING', payload: loading });
   }, []);
 
+  const recordBattleResult = useCallback((result: BattleRoundResult) => {
+    dispatch({ type: 'RECORD_BATTLE_RESULT', payload: result });
+  }, []);
+
   const resetGame = useCallback(() => {
     dispatch({ type: 'RESET_GAME' });
     setPlayedBattles([]);
@@ -265,6 +275,7 @@ export function useGame() {
       setMode,
       setImage,
       setImageLoading,
+      recordBattleResult,
       resetGame,
     },
   };

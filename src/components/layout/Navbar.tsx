@@ -19,7 +19,7 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', i
       animate={{ opacity: 1, y: 0 }}
       className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-primary-100 shadow-sm"
     >
-      <div className="container mx-auto px-4 max-w-4xl">
+      <div className="container mx-auto px-4 lg:px-8 max-w-2xl lg:max-w-4xl xl:max-w-5xl">
         <div className="flex items-center justify-between h-20">
           {/* Logo & Title */}
           <motion.div

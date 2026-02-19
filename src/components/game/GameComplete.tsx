@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { Confetti } from '../effects/Confetti';
 import { ShareButton } from './ShareButton';
+import type { BattleRoundResult } from '../../types';
 
 interface GameCompleteProps {
   score: number;
@@ -9,6 +10,7 @@ interface GameCompleteProps {
   totalGuesses: number;
   bestStreak: number;
   totalBattles: number;
+  battleResults: BattleRoundResult[];
   onPlayAgain: () => void;
 }
 
@@ -28,6 +30,7 @@ export function GameComplete({
   totalGuesses,
   bestStreak,
   totalBattles,
+  battleResults,
   onPlayAgain,
 }: GameCompleteProps) {
   const { rank, message, quote } = getRankTitle(correctGuesses, totalBattles);
@@ -169,21 +172,60 @@ export function GameComplete({
         </div>
       </motion.div>
 
+      {/* Battle Results Grid */}
+      {battleResults.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.55 }}
+          className="space-y-2"
+        >
+          <p className="text-xs uppercase tracking-wider text-gray-400 font-medium">Battle Results</p>
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
+            {battleResults.map((result, i) => {
+              const bgColor = !result.correct
+                ? 'bg-red-500'
+                : result.hintsUsed > 0
+                  ? 'bg-yellow-500'
+                  : 'bg-green-500';
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.6 + i * 0.05, type: 'spring', stiffness: 300 }}
+                  className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full ${bgColor} flex items-center justify-center shadow-md`}
+                >
+                  <span className="text-white text-xs sm:text-sm font-bold">
+                    {result.correct ? '\u2713' : '\u2717'}
+                  </span>
+                </motion.div>
+              );
+            })}
+          </div>
+          <div className="flex items-center justify-center gap-4 text-[10px] sm:text-xs text-gray-400">
+            <span className="flex items-center gap-1">
+              <span className="w-2.5 h-2.5 rounded-full bg-green-500 inline-block" /> No hints
+            </span>
+            <span className="flex items-center gap-1">
+              <span className="w-2.5 h-2.5 rounded-full bg-yellow-500 inline-block" /> With hints
+            </span>
+            <span className="flex items-center gap-1">
+              <span className="w-2.5 h-2.5 rounded-full bg-red-500 inline-block" /> Wrong
+            </span>
+          </div>
+        </motion.div>
+      )}
+
       <Confetti variant="celebration" count={60} />
 
-      {/* Play Again + Share */}
+      {/* Share Score (prominent) + New Campaign */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
-        className="flex gap-3"
+        className="space-y-3"
       >
-        <Button variant="primary" size="lg" onClick={onPlayAgain} className="flex-1">
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-          </svg>
-          New Campaign
-        </Button>
         <ShareButton
           data={{
             score,
@@ -192,8 +234,16 @@ export function GameComplete({
             rank,
             battlesWon: correctGuesses,
             totalBattles,
+            battleResults,
           }}
+          className="w-full"
         />
+        <Button variant="secondary" size="lg" onClick={onPlayAgain} className="w-full">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+          New Campaign
+        </Button>
       </motion.div>
     </motion.div>
   );

@@ -164,6 +164,7 @@ export function ResultFeedback({
               rank: '',
               battlesWon: 0,
               totalBattles: 0,
+              battleResults: [],
             }}
           />
         )}

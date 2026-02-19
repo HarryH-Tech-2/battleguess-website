@@ -18,6 +18,13 @@ export interface Civilization {
 
 export type Difficulty = 'easy' | 'medium' | 'hard';
 
+export interface BattleRoundResult {
+  battleId: number;
+  correct: boolean;
+  hintsUsed: number;
+  difficulty: Difficulty;
+}
+
 export type GameMode = 'classic' | 'timed' | 'reverse-year' | 'reverse-location' | 'timeline' | 'campaign' | 'daily' | 'challenge';
 
 export interface Battle {
@@ -49,6 +56,7 @@ export interface GameState {
   selectedCivilization: CivilizationId | 'all';
   selectedDifficulty: Difficulty | 'all';
   gameMode: GameMode;
+  battleResults: BattleRoundResult[];
 }
 
 export interface GameStats {
@@ -73,4 +81,5 @@ export type GameAction =
   | { type: 'SET_CIVILIZATION'; payload: CivilizationId | 'all' }
   | { type: 'SET_DIFFICULTY'; payload: Difficulty | 'all' }
   | { type: 'SET_MODE'; payload: GameMode }
-  | { type: 'COMPLETE_GAME' };
+  | { type: 'COMPLETE_GAME' }
+  | { type: 'RECORD_BATTLE_RESULT'; payload: BattleRoundResult };
