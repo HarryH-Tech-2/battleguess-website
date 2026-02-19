@@ -82,7 +82,7 @@ export function Footer() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
             </span>
-            <span className="text-sm font-mono font-bold uppercase tracking-[0.2em] text-white drop-shadow-sm">
+            <span className="text-base font-mono font-bold uppercase tracking-[0.2em] text-white drop-shadow-md">
               Battle Intel Feed
             </span>
           </div>
@@ -96,25 +96,12 @@ export function Footer() {
               transition={{ duration: 0.5 }}
               className="relative text-center"
             >
-              <p className="text-base text-white/95 leading-relaxed italic drop-shadow-sm">
+              <p className="text-lg text-white leading-relaxed italic drop-shadow-md">
                 &ldquo;{currentFact.text}&rdquo;
               </p>
             </motion.div>
           </AnimatePresence>
 
-          {/* Progress dots */}
-          <div className="flex gap-1 mt-3 justify-center">
-            {footerTeasers.map((_, i) => (
-              <div
-                key={i}
-                className={`h-1 rounded-full transition-all duration-500 ${
-                  i === currentFactIndex
-                    ? 'w-5 bg-white/80'
-                    : 'w-1.5 bg-white/20'
-                }`}
-              />
-            ))}
-          </div>
         </div>
 
         {/* Divider with crosshairs */}
@@ -179,17 +166,6 @@ export function Footer() {
           </motion.div>
         </div>
 
-        {/* Bottom copyright */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="text-center"
-        >
-          <p className="text-xs text-white/40 font-mono">
-            &copy; {new Date().getFullYear()} BattleGuess
-          </p>
-        </motion.div>
       </div>
     </div>
   );
