@@ -83,7 +83,7 @@ export function Footer() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
             </span>
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-emerald-400/80">
+            <span className="text-sm font-mono font-semibold uppercase tracking-[0.2em] text-emerald-200">
               Battle Intel Feed
             </span>
           </div>
@@ -97,7 +97,7 @@ export function Footer() {
               transition={{ duration: 0.5 }}
               className="relative"
             >
-              <p className="text-sm text-emerald-100/70 leading-relaxed font-light italic">
+              <p className="text-base text-emerald-50/90 leading-relaxed italic">
                 &ldquo;{currentFact.text}&rdquo;
               </p>
             </motion.div>
@@ -180,18 +180,15 @@ export function Footer() {
           </motion.div>
         </div>
 
-        {/* Bottom credits */}
+        {/* Bottom copyright */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="text-center space-y-1"
+          className="text-center"
         >
-          <p className="text-xs text-emerald-600/50">
-            Images generated with AI &middot; Built with React & Framer Motion
-          </p>
-          <p className="text-[10px] text-emerald-700/40 font-mono">
-            &copy; {new Date().getFullYear()} BattleGuess &mdash; Test your knowledge of history&apos;s greatest battles
+          <p className="text-[10px] text-emerald-600/40 font-mono">
+            &copy; {new Date().getFullYear()} BattleGuess
           </p>
         </motion.div>
       </div>
