@@ -576,7 +576,7 @@ function App() {
                     onClick={() => setShowNameInput(true)}
                     className="text-sm text-primary-500 hover:text-primary-700 underline"
                   >
-                    Set your commander name
+                    Set your name
                   </button>
                 </div>
               </motion.div>
@@ -635,7 +635,7 @@ function App() {
                     onClick={() => setShowNameInput(true)}
                     className="text-sm text-primary-500 hover:text-primary-700 underline"
                   >
-                    Set your commander name
+                    Set your name
                   </button>
                 </div>
               </motion.div>
