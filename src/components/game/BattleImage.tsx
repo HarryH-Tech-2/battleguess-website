@@ -54,16 +54,21 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
+                  loading="lazy"
+                  decoding="async"
                 />
               ) : (
                 <motion.img
                   key="placeholder"
-                  src="/welcome-placeholder.png"
+                  src="/welcome-placeholder.webp"
                   alt="BattleGuess - Can you name the battle?"
                   className="w-full h-full object-cover"
                   initial={{ opacity: 0, scale: 1.02 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8 }}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                 />
               )}
             </AnimatePresence>
