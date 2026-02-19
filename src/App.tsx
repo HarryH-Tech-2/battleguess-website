@@ -43,7 +43,6 @@ import { useDailyChallenge } from './hooks/useDailyChallenge';
 import { useChallengeMode } from './hooks/useChallengeMode';
 import { getDailyBattleIds, getDailyDateKey, getPlayerName } from './services/firebase';
 import { calculateScore, calculateTimedBonus, getTimerDuration } from './utils/scoring';
-import { AchievementProgress } from './components/game/AchievementProgress';
 import './index.css';
 
 // Update this with your actual Buy Me a Coffee URL
@@ -317,12 +316,6 @@ function App() {
               streak={state.streak}
               bestStreak={state.bestStreak}
             />
-            <div className="mt-2">
-              <AchievementProgress
-                stats={achievementsSystem.achievementStats}
-                unlockedIds={new Set(achievementsSystem.unlocked.map(u => u.id))}
-              />
-            </div>
           </motion.div>
         )}
 
