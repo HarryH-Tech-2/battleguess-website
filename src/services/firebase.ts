@@ -52,7 +52,7 @@ function getPlayerId(): string {
   return id;
 }
 
-function getPlayerName(): string {
+export function getPlayerName(): string {
   return localStorage.getItem('battleguess-player-name') || 'Anonymous Commander';
 }
 

@@ -10,7 +10,7 @@ interface UnlockedAchievement {
 export function useAchievements() {
   const [unlocked, setUnlocked] = useLocalStorage<UnlockedAchievement[]>('battleguess-achievements', []);
   const [newlyUnlocked, setNewlyUnlocked] = useState<AchievementDef | null>(null);
-  const [, setAchievementStats] = useLocalStorage<AchievementStats>('battleguess-achievement-stats', {
+  const [achievementStats, setAchievementStats] = useLocalStorage<AchievementStats>('battleguess-achievement-stats', {
     totalGames: 0,
     totalCorrect: 0,
     bestStreak: 0,
@@ -131,6 +131,7 @@ export function useAchievements() {
     newlyUnlocked,
     dismissPopup,
     achievements,
+    achievementStats,
     recordGameResult,
     recordTimelineRound,
     recordCampaignComplete,

@@ -11,6 +11,7 @@ import { ReversePrompt } from './components/game/ReversePrompt';
 import { HintDisplay } from './components/game/HintDisplay';
 import { ResultFeedback } from './components/game/ResultFeedback';
 import { ScoreDisplay } from './components/game/ScoreDisplay';
+import { MusicTrackSelector } from './components/game/MusicTrackSelector';
 import { CivilizationSelector } from './components/game/CivilizationSelector';
 import { DifficultySelector } from './components/game/DifficultySelector';
 import { ModeSelector } from './components/game/ModeSelector';
@@ -40,8 +41,9 @@ import { useCampaignGame } from './hooks/useCampaignGame';
 import { useAchievements } from './hooks/useAchievements';
 import { useDailyChallenge } from './hooks/useDailyChallenge';
 import { useChallengeMode } from './hooks/useChallengeMode';
-import { getDailyBattleIds, getDailyDateKey } from './services/firebase';
+import { getDailyBattleIds, getDailyDateKey, getPlayerName } from './services/firebase';
 import { calculateScore, calculateTimedBonus, getTimerDuration } from './utils/scoring';
+import { AchievementProgress } from './components/game/AchievementProgress';
 import './index.css';
 
 // Update this with your actual Buy Me a Coffee URL
@@ -50,7 +52,7 @@ const BUY_ME_A_COFFEE_URL = "https://buymeacoffee.com/harryhh";
 function App() {
   const { state, actions, totalBattlesInPool, battlesPlayed } = useGame();
   const { getImageForBattle } = useImageGeneration();
-  const { isMuted, toggleMute } = useBackgroundMusic('/drum-tune.mp3');
+  const { isMuted, toggleMute, currentTrackId, changeTrack, tracks } = useBackgroundMusic('/drum-tune.mp3');
   const { play: playSound } = useSoundEffects(isMuted);
   const { recordResult, total, accuracy, avgHints, byCivilization, byDifficulty } = useStats();
   const { currentStreak: dailyStreak, recordPlay } = useDailyStreak();
@@ -300,6 +302,8 @@ function App() {
       onOpenAchievements={() => setShowAchievements(true)}
       achievementCount={{ unlocked: achievementsSystem.unlockedCount, total: achievementsSystem.totalAchievements }}
       onOpenLeaderboard={() => setShowLeaderboard(true)}
+      onOpenNameInput={() => setShowNameInput(true)}
+      playerName={getPlayerName()}
     >
       <div className="space-y-4 sm:space-y-6 pb-6 sm:pb-8">
         {/* Score Display - Always visible after game starts */}
@@ -313,6 +317,12 @@ function App() {
               streak={state.streak}
               bestStreak={state.bestStreak}
             />
+            <div className="mt-2">
+              <AchievementProgress
+                stats={achievementsSystem.achievementStats}
+                unlockedIds={new Set(achievementsSystem.unlocked.map(u => u.id))}
+              />
+            </div>
           </motion.div>
         )}
 
@@ -612,25 +622,20 @@ function App() {
                     </svg>
                     Start Game
                   </Button>
+                  <div className="flex justify-center">
+                    <MusicTrackSelector
+                      tracks={tracks}
+                      currentTrackId={currentTrackId}
+                      onChangeTrack={changeTrack}
+                      isMuted={isMuted}
+                      onToggleMute={toggleMute}
+                    />
+                  </div>
                   <button
-                    onClick={toggleMute}
-                    className={`flex items-center justify-center gap-2 mx-auto px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                      isMuted
-                        ? 'bg-primary-50 text-primary-600 hover:bg-primary-100'
-                        : 'bg-primary-100 text-primary-700 hover:bg-primary-200'
-                    }`}
+                    onClick={() => setShowNameInput(true)}
+                    className="text-sm text-primary-500 hover:text-primary-700 underline"
                   >
-                    {isMuted ? (
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-                      </svg>
-                    ) : (
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                      </svg>
-                    )}
-                    {isMuted ? 'Enable Music' : 'Music On'}
+                    Set your commander name
                   </button>
                 </div>
               </motion.div>
@@ -753,26 +758,13 @@ function App() {
                     • Potential: {calculateScore(0, state.currentBattle.difficulty, state.streak)} pts
                     {isTimedMode && ' + time bonus'}
                   </span>
-                  <button
-                    onClick={toggleMute}
-                    className={`p-3 rounded-full transition-all duration-200 ${
-                      isMuted
-                        ? 'bg-primary-50 text-primary-400 hover:bg-primary-100 hover:text-primary-600'
-                        : 'bg-primary-100 text-primary-600 hover:bg-primary-200'
-                    }`}
-                    title={isMuted ? 'Enable music' : 'Mute music'}
-                  >
-                    {isMuted ? (
-                      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-                      </svg>
-                    ) : (
-                      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                      </svg>
-                    )}
-                  </button>
+                  <MusicTrackSelector
+                    tracks={tracks}
+                    currentTrackId={currentTrackId}
+                    onChangeTrack={changeTrack}
+                    isMuted={isMuted}
+                    onToggleMute={toggleMute}
+                  />
                 </div>
 
                 {/* Guess Input - varies by mode */}

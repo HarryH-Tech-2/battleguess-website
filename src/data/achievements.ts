@@ -20,6 +20,50 @@ export interface AchievementStats {
   totalPerfectTimelines: number;
 }
 
+// Progress extractors: for each achievement, return { current, target }
+const progressExtractors: Record<string, (s: AchievementStats) => { current: number; target: number }> = {
+  'first-blood': (s) => ({ current: s.totalCorrect, target: 1 }),
+  'rising-star': (s) => ({ current: s.totalCorrect, target: 10 }),
+  'history-buff': (s) => ({ current: s.totalCorrect, target: 50 }),
+  'master-historian': (s) => ({ current: s.totalCorrect, target: 100 }),
+  'on-fire': (s) => ({ current: s.bestStreak, target: 3 }),
+  'unstoppable': (s) => ({ current: s.bestStreak, target: 10 }),
+  'legendary': (s) => ({ current: s.bestStreak, target: 20 }),
+  'eagle-eye': (s) => ({ current: s.totalNoHintWins, target: 5 }),
+  'no-help-needed': (s) => ({ current: s.totalNoHintWins, target: 20 }),
+  'tactician': (s) => ({ current: s.totalHardCorrect, target: 5 }),
+  'tactician-supreme': (s) => ({ current: s.totalHardCorrect, target: 25 }),
+  'world-traveler': (s) => ({ current: s.uniqueCivilizations, target: 8 }),
+  'dedicated': (s) => ({ current: s.totalGames, target: 25 }),
+  'veteran': (s) => ({ current: s.totalGames, target: 100 }),
+  'easy-rider': (s) => ({ current: s.totalEasyCorrect, target: 10 }),
+  'medium-mastery': (s) => ({ current: s.totalMediumCorrect, target: 10 }),
+  'timeline-master': (s) => ({ current: s.totalTimelineRounds, target: 5 }),
+  'perfect-timeline': (s) => ({ current: s.totalPerfectTimelines, target: 1 }),
+  'campaign-hero': (s) => ({ current: s.totalCampaignsCompleted, target: 1 }),
+  'campaign-veteran': (s) => ({ current: s.totalCampaignsCompleted, target: 3 }),
+};
+
+export function getNextAchievement(
+  stats: AchievementStats,
+  unlockedIds: Set<string>
+): { achievement: AchievementDef; progress: number; current: number; target: number } | null {
+  let best: { achievement: AchievementDef; progress: number; current: number; target: number } | null = null;
+
+  for (const achievement of achievements) {
+    if (unlockedIds.has(achievement.id)) continue;
+    const extractor = progressExtractors[achievement.id];
+    if (!extractor) continue;
+    const { current, target } = extractor(stats);
+    const progress = Math.min(current / target, 1);
+    if (!best || progress > best.progress) {
+      best = { achievement, progress, current, target };
+    }
+  }
+
+  return best;
+}
+
 export const achievements: AchievementDef[] = [
   {
     id: 'first-blood',
