@@ -5,8 +5,6 @@ import { ParticleBackground, FloatingOrbs } from '../effects/ParticleBackground'
 interface LayoutProps {
   children: ReactNode;
   buyMeACoffeeUrl?: string;
-  isMuted?: boolean;
-  onToggleMute?: () => void;
   dailyStreak?: number;
   onOpenStats?: () => void;
   onOpenAchievements?: () => void;
@@ -14,7 +12,7 @@ interface LayoutProps {
   onOpenLeaderboard?: () => void;
 }
 
-export function Layout({ children, buyMeACoffeeUrl, isMuted, onToggleMute, dailyStreak, onOpenStats, onOpenAchievements, achievementCount, onOpenLeaderboard }: LayoutProps) {
+export function Layout({ children, buyMeACoffeeUrl, dailyStreak, onOpenStats, onOpenAchievements, achievementCount, onOpenLeaderboard }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden">
       {/* Background effects */}
@@ -24,7 +22,7 @@ export function Layout({ children, buyMeACoffeeUrl, isMuted, onToggleMute, daily
 
       {/* Content */}
       <div className="relative z-10 flex flex-col min-h-screen">
-        <Navbar buyMeACoffeeUrl={buyMeACoffeeUrl} isMuted={isMuted} onToggleMute={onToggleMute} dailyStreak={dailyStreak} onOpenStats={onOpenStats} onOpenAchievements={onOpenAchievements} achievementCount={achievementCount} onOpenLeaderboard={onOpenLeaderboard} />
+        <Navbar buyMeACoffeeUrl={buyMeACoffeeUrl} dailyStreak={dailyStreak} onOpenStats={onOpenStats} onOpenAchievements={onOpenAchievements} achievementCount={achievementCount} onOpenLeaderboard={onOpenLeaderboard} />
 
         <main className="flex-1 container mx-auto px-3 sm:px-4 lg:px-8 max-w-2xl lg:max-w-4xl xl:max-w-5xl py-4 sm:py-6">
           {children}

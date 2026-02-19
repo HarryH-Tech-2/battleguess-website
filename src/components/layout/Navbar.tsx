@@ -3,8 +3,6 @@ import { DailyStreakBadge } from '../game/DailyStreakBadge';
 
 interface NavbarProps {
   buyMeACoffeeUrl?: string;
-  isMuted?: boolean;
-  onToggleMute?: () => void;
   dailyStreak?: number;
   onOpenStats?: () => void;
   onOpenAchievements?: () => void;
@@ -12,7 +10,7 @@ interface NavbarProps {
   onOpenLeaderboard?: () => void;
 }
 
-export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', isMuted, onToggleMute, dailyStreak, onOpenStats, onOpenAchievements, achievementCount, onOpenLeaderboard }: NavbarProps) {
+export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', dailyStreak, onOpenStats, onOpenAchievements, achievementCount, onOpenLeaderboard }: NavbarProps) {
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
@@ -126,28 +124,6 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', i
                   <span className="absolute -top-1 -right-1 bg-primary-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
                     {achievementCount.unlocked}
                   </span>
-                )}
-              </motion.button>
-            )}
-
-            {/* Music toggle */}
-            {onToggleMute && (
-              <motion.button
-                onClick={onToggleMute}
-                className="p-2.5 rounded-xl bg-gradient-to-br from-primary-100 to-primary-200 hover:from-primary-200 hover:to-primary-300 text-primary-700 shadow-sm hover:shadow-md transition-all"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                title={isMuted ? 'Unmute music' : 'Mute music'}
-              >
-                {isMuted ? (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-                  </svg>
-                ) : (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                  </svg>
                 )}
               </motion.button>
             )}

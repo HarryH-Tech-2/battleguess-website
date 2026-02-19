@@ -295,8 +295,6 @@ function App() {
   return (
     <Layout
       buyMeACoffeeUrl={BUY_ME_A_COFFEE_URL}
-      isMuted={isMuted}
-      onToggleMute={toggleMute}
       dailyStreak={dailyStreak}
       onOpenStats={() => setShowStatsPanel(true)}
       onOpenAchievements={() => setShowAchievements(true)}
@@ -742,7 +740,7 @@ function App() {
                   />
                 )}
 
-                {/* Difficulty Badge */}
+                {/* Difficulty Badge + Music Toggle */}
                 <div className="flex items-center justify-center gap-2">
                   <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                     state.currentBattle.difficulty === 'easy' ? 'bg-green-100 text-green-700' :
@@ -755,6 +753,26 @@ function App() {
                     • Potential: {calculateScore(0, state.currentBattle.difficulty, state.streak)} pts
                     {isTimedMode && ' + time bonus'}
                   </span>
+                  <button
+                    onClick={toggleMute}
+                    className={`ml-1 p-1.5 rounded-lg transition-colors ${
+                      isMuted
+                        ? 'text-gray-400 hover:text-primary-600 hover:bg-primary-50'
+                        : 'text-primary-600 hover:text-primary-700 hover:bg-primary-50'
+                    }`}
+                    title={isMuted ? 'Enable music' : 'Mute music'}
+                  >
+                    {isMuted ? (
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                      </svg>
+                    ) : (
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                      </svg>
+                    )}
+                  </button>
                 </div>
 
                 {/* Guess Input - varies by mode */}
