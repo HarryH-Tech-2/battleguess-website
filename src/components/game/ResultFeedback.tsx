@@ -4,7 +4,7 @@ import { Confetti } from '../effects/Confetti';
 import { DefeatAnimation } from '../effects/DefeatAnimation';
 import { ShareButton } from './ShareButton';
 import { battleFacts } from '../../data/battleFacts';
-import type { Battle } from '../../types';
+import type { Battle, BattleRoundResult } from '../../types';
 
 interface ResultFeedbackProps {
   isWin: boolean;
@@ -14,6 +14,11 @@ interface ResultFeedbackProps {
   streak: number;
   onNextBattle: () => void;
   timedBonus?: number;
+  totalScore?: number;
+  correctGuesses?: number;
+  totalGuesses?: number;
+  bestStreak?: number;
+  battleResults?: BattleRoundResult[];
 }
 
 export function ResultFeedback({
@@ -24,6 +29,11 @@ export function ResultFeedback({
   streak,
   onNextBattle,
   timedBonus = 0,
+  totalScore = 0,
+  correctGuesses = 0,
+  totalGuesses = 0,
+  bestStreak = 0,
+  battleResults = [],
 }: ResultFeedbackProps) {
   const fact = battleFacts[battle.id];
 
@@ -158,13 +168,13 @@ export function ResultFeedback({
         {isWin && (
           <ShareButton
             data={{
-              score,
-              accuracy: 0,
-              streak,
-              rank: '',
-              battlesWon: 0,
-              totalBattles: 0,
-              battleResults: [],
+              score: totalScore,
+              accuracy: totalGuesses > 0 ? Math.round((correctGuesses / totalGuesses) * 100) : 0,
+              streak: bestStreak,
+              rank: streak >= 10 ? 'Unstoppable' : streak >= 5 ? 'On Fire' : streak >= 3 ? 'Hot Streak' : 'Commander',
+              battlesWon: correctGuesses,
+              totalBattles: totalGuesses,
+              battleResults,
             }}
           />
         )}

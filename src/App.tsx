@@ -336,7 +336,7 @@ function App() {
             <ModeSelector
               selected={state.gameMode}
               onSelect={actions.setMode}
-              disabled={state.gameStatus === 'loading'}
+              disabled={state.gameStatus === 'loading' || isResult}
             />
           </motion.div>
         )}
@@ -770,6 +770,7 @@ function App() {
                 {/* Guess Input - varies by mode */}
                 {isReverseMode ? (
                   <ReverseGuessInput
+                    key={state.currentBattle.id}
                     mode={state.gameMode}
                     onSubmit={actions.submitGuess}
                     disabled={false}
@@ -778,6 +779,7 @@ function App() {
                   />
                 ) : (
                   <GuessInput
+                    key={state.currentBattle.id}
                     onSubmit={actions.submitGuess}
                     disabled={!state.imageUrl}
                     onGiveUp={actions.giveUp}
@@ -822,6 +824,11 @@ function App() {
                   streak={state.streak}
                   onNextBattle={handleNextBattle}
                   timedBonus={timedBonus}
+                  totalScore={state.score}
+                  correctGuesses={state.correctGuesses}
+                  totalGuesses={state.totalGuesses}
+                  bestStreak={state.bestStreak}
+                  battleResults={state.battleResults}
                 />
               </motion.div>
             )}

@@ -239,8 +239,9 @@ export function generateShareText(data: ShareCardData): string {
     lines.push('');
   }
 
-  // Footer
-  lines.push('Can you beat me? battleguess.app');
+  // Footer with link
+  lines.push('Can you beat me? Play at:');
+  lines.push('https://battleguess.app');
 
   return lines.join('\n');
 }
@@ -259,6 +260,7 @@ export async function shareResult(data: ShareCardData): Promise<ShareStatus> {
         await navigator.share({
           title: 'BattleGuess Score',
           text: shareText,
+          url: 'https://battleguess.app',
           files: [file],
         });
         return 'shared';
@@ -268,6 +270,7 @@ export async function shareResult(data: ShareCardData): Promise<ShareStatus> {
       await navigator.share({
         title: 'BattleGuess Score',
         text: shareText,
+        url: 'https://battleguess.app',
       });
       return 'shared';
     } catch {
