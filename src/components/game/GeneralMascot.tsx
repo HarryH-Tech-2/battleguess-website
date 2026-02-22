@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface GeneralMascotProps {
@@ -6,13 +6,29 @@ interface GeneralMascotProps {
   revealedHints: number[];
   onRevealHint: (index: number) => void;
   disabled?: boolean;
+  side?: 'left' | 'right';
+  mascotImage?: string;
+  mascotAlt?: string;
 }
 
-export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: GeneralMascotProps) {
+export function GeneralMascot({
+  hints,
+  revealedHints,
+  onRevealHint,
+  disabled,
+  side = 'right',
+  mascotImage = '/mascot-roman.png',
+  mascotAlt = 'Battle Guide mascot',
+}: GeneralMascotProps) {
   const [showBubble, setShowBubble] = useState(false);
   const nextHintIndex = revealedHints.length;
   const canRevealMore = nextHintIndex < hints.length;
   const hintsRemaining = hints.length - revealedHints.length;
+
+  // Reset bubble when mascot side changes (new question)
+  useEffect(() => {
+    setShowBubble(false);
+  }, [side]);
 
   const handleRevealHint = () => {
     if (canRevealMore && !disabled) {
@@ -32,13 +48,15 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
     }
   };
 
+  const isLeft = side === 'left';
+
   return (
     <div
-      className="fixed z-40 flex flex-col items-end
-        right-2 bottom-16
-        sm:right-1 sm:bottom-20
-        xl:right-0 xl:bottom-4 xl:top-auto
-        2xl:right-2"
+      className={`fixed z-40 flex flex-col ${isLeft ? 'items-start' : 'items-end'}
+        ${isLeft ? 'left-2' : 'right-2'} bottom-16
+        ${isLeft ? 'sm:left-1' : 'sm:right-1'} sm:bottom-20
+        ${isLeft ? 'xl:left-0' : 'xl:right-0'} xl:bottom-4 xl:top-auto
+        ${isLeft ? '2xl:left-2' : '2xl:right-2'}`}
     >
       {/* Speech Bubble */}
       <AnimatePresence>
@@ -77,7 +95,7 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
                 {[...revealedHints].sort((a, b) => a - b).map((hintIndex) => (
                   <motion.div
                     key={hintIndex}
-                    initial={{ opacity: 0, x: -10 }}
+                    initial={{ opacity: 0, x: isLeft ? 10 : -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     className="flex items-start gap-2.5 bg-amber-50 rounded-xl p-3 xl:p-4 border border-amber-100"
                   >
@@ -111,7 +129,7 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
             )}
 
             {/* Speech bubble pointer */}
-            <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-4 h-4 bg-white/95 border-r-2 border-b-2 border-amber-200 transform rotate-45" />
+            <div className={`absolute -bottom-2.5 ${isLeft ? 'left-8' : 'left-1/2 -translate-x-1/2'} w-4 h-4 bg-white/95 border-r-2 border-b-2 border-amber-200 transform rotate-45`} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -131,7 +149,7 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
         {/* Hint count badge */}
         {hintsRemaining > 0 && (
           <motion.span
-            className="absolute top-2 right-0 sm:top-3 sm:right-1 xl:top-6 xl:right-2 2xl:top-8 2xl:right-4 bg-red-500 text-white text-xs sm:text-sm xl:text-xl 2xl:text-2xl font-bold rounded-full w-6 h-6 sm:w-8 sm:h-8 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 flex items-center justify-center z-10 shadow-lg border-2 xl:border-[3px] border-white"
+            className={`absolute top-2 ${isLeft ? 'left-0' : 'right-0'} sm:top-3 ${isLeft ? 'sm:left-1' : 'sm:right-1'} ${isLeft ? 'xl:top-6 xl:left-2 2xl:top-8 2xl:left-4' : 'xl:top-6 xl:right-2 2xl:top-8 2xl:right-4'} bg-red-500 text-white text-xs sm:text-sm xl:text-xl 2xl:text-2xl font-bold rounded-full w-6 h-6 sm:w-8 sm:h-8 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 flex items-center justify-center z-10 shadow-lg border-2 xl:border-[3px] border-white`}
             animate={{ scale: [1, 1.15, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
@@ -141,8 +159,8 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
 
         {/* Mascot image */}
         <img
-          src="/mascot.png"
-          alt="Battle Guide mascot"
+          src={mascotImage}
+          alt={mascotAlt}
           className="w-[160px] h-[192px] sm:w-[200px] sm:h-[240px] lg:w-[260px] lg:h-[312px] xl:w-[440px] xl:h-[528px] 2xl:w-[520px] 2xl:h-[624px] object-contain select-none pointer-events-none"
           draggable={false}
         />

@@ -906,13 +906,16 @@ function App() {
         )}
       </div>
 
-      {/* Mascot Hint Character - floating overlay (shows every other turn) */}
-      {isPlaying && state.currentBattle && !isReverseMode && state.totalGuesses % 2 === 0 && (
+      {/* Mascot Hint Character - alternates between Napoleon (left) and Roman (right) each turn */}
+      {isPlaying && state.currentBattle && !isReverseMode && (
         <GeneralMascot
           hints={state.currentBattle.hints}
           revealedHints={state.revealedHints}
           onRevealHint={actions.revealHint}
           disabled={!state.imageUrl}
+          side={state.totalGuesses % 2 === 0 ? 'left' : 'right'}
+          mascotImage={state.totalGuesses % 2 === 0 ? '/mascot.png' : '/mascot-roman.png'}
+          mascotAlt={state.totalGuesses % 2 === 0 ? 'Napoleon Battle Guide' : 'Roman Battle Guide'}
         />
       )}
 
