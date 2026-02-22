@@ -20,13 +20,48 @@ const modeSlugs = [
   'reverse-location', 'timeline', 'campaign', 'challenge'
 ];
 
+// Collection slugs (from battleCollections.ts)
+const collectionSlugs = [
+  'naval-battles',
+  'siege-warfare',
+  'battles-that-changed-history',
+  'against-all-odds',
+  'ambush-and-surprise',
+  'last-stands',
+  'empire-builders',
+];
+
+// Blog topic/pillar page slugs (from blogPosts.ts)
+const blogTopicSlugs = [
+  'ancient-warfare',
+  'wars-and-conflicts',
+  'military-strategy',
+  'military-technology',
+  'game-guides',
+];
+
 // Blog post slugs (from blogPosts.ts)
 const blogSlugs = [
   '10-most-decisive-battles-in-history',
   'how-ancient-warfare-shaped-modern-world',
   'beginners-guide-to-military-history',
   '8-ways-to-improve-your-battleguess-score',
-  'evolution-of-siege-warfare'
+  'evolution-of-siege-warfare',
+  'top-10-naval-battles-that-ruled-the-waves',
+  'battles-every-student-should-know',
+  'greatest-military-commanders-of-all-time',
+  'how-gunpowder-changed-warfare-forever',
+  'world-war-ii-turning-points',
+  'samurai-battles-feudal-japan',
+  'crusades-explained-battles-and-legacy',
+  'american-revolution-key-battles',
+  'latin-american-wars-of-independence',
+  'history-of-cavalry-from-chariots-to-tanks',
+  'ottoman-empire-greatest-military-victories',
+  'women-in-military-history',
+  'how-weather-decided-famous-battles',
+  'ancient-rome-vs-ancient-greece-military-comparison',
+  'battlefield-tactics-explained-for-beginners',
 ];
 
 // Read battle data to extract IDs and names for slug generation
@@ -86,8 +121,22 @@ function generateSitemap() {
       priority: '0.5',
       changefreq: 'monthly',
     })),
+    // Collections
+    { loc: '/collections', priority: '0.8', changefreq: 'monthly' },
+    // Individual collection pages
+    ...collectionSlugs.map(slug => ({
+      loc: `/collections/${slug}`,
+      priority: '0.6',
+      changefreq: 'monthly',
+    })),
     // Blog
     { loc: '/blog', priority: '0.7', changefreq: 'weekly' },
+    // Blog topic/pillar pages
+    ...blogTopicSlugs.map(slug => ({
+      loc: `/blog/topics/${slug}`,
+      priority: '0.7',
+      changefreq: 'monthly',
+    })),
     // Individual blog posts
     ...blogSlugs.map(slug => ({
       loc: `/blog/${slug}`,

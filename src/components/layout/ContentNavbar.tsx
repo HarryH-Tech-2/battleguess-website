@@ -12,6 +12,7 @@ export function ContentNavbar() {
   const navLinks = [
     { to: '/modes', label: t('nav.gameModes') },
     { to: '/battles', label: t('nav.battles') },
+    { to: '/collections', label: t('nav.collections') },
     { to: '/blog', label: t('nav.blog') },
     { to: '/faq', label: t('nav.faq') },
     { to: '/about', label: t('nav.about') },

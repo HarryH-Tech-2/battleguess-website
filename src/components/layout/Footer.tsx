@@ -168,6 +168,54 @@ export function Footer() {
           </motion.div>
         </div>
 
+        {/* Explore links */}
+        <div className="flex items-center gap-3 opacity-50">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent to-white/60" />
+          <svg className="w-3.5 h-3.5 text-white/70" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <circle cx="6" cy="6" r="4" />
+            <line x1="6" y1="0" x2="6" y2="3" />
+            <line x1="6" y1="9" x2="6" y2="12" />
+            <line x1="0" y1="6" x2="3" y2="6" />
+            <line x1="9" y1="6" x2="12" y2="6" />
+          </svg>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent to-white/60" />
+        </div>
+
+        {/* Footer Navigation */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+          <div>
+            <div className="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">Explore</div>
+            <div className="space-y-1">
+              <a href="/battles" className="block text-sm text-white/70 hover:text-white transition-colors">Battles</a>
+              <a href="/collections" className="block text-sm text-white/70 hover:text-white transition-colors">Collections</a>
+              <a href="/modes" className="block text-sm text-white/70 hover:text-white transition-colors">Game Modes</a>
+            </div>
+          </div>
+          <div>
+            <div className="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">Learn</div>
+            <div className="space-y-1">
+              <a href="/blog/topics/ancient-warfare" className="block text-sm text-white/70 hover:text-white transition-colors">Ancient Warfare</a>
+              <a href="/blog/topics/wars-and-conflicts" className="block text-sm text-white/70 hover:text-white transition-colors">Wars & Conflicts</a>
+              <a href="/blog/topics/military-strategy" className="block text-sm text-white/70 hover:text-white transition-colors">Strategy & Tactics</a>
+            </div>
+          </div>
+          <div>
+            <div className="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">Read</div>
+            <div className="space-y-1">
+              <a href="/blog/topics/military-technology" className="block text-sm text-white/70 hover:text-white transition-colors">Military Technology</a>
+              <a href="/blog/topics/game-guides" className="block text-sm text-white/70 hover:text-white transition-colors">Game Guides</a>
+              <a href="/blog" className="block text-sm text-white/70 hover:text-white transition-colors">All Articles</a>
+            </div>
+          </div>
+          <div>
+            <div className="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">Info</div>
+            <div className="space-y-1">
+              <a href="/about" className="block text-sm text-white/70 hover:text-white transition-colors">About</a>
+              <a href="/faq" className="block text-sm text-white/70 hover:text-white transition-colors">FAQ</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );

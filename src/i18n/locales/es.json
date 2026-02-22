@@ -4,6 +4,7 @@
     "play": "Jugar",
     "gameModes": "Modos de Juego",
     "battles": "Batallas",
+    "collections": "Colecciones",
     "blog": "Blog",
     "faq": "Preguntas Frecuentes",
     "about": "Acerca de",
@@ -119,6 +120,16 @@
       "noBattlesFound": "No se encontraron batallas que coincidan con tu busqueda.",
       "battleNotFound": "Batalla No Encontrada",
       "battleNotFoundDesc": "La batalla que buscas no existe."
+    },
+    "collections": {
+      "title": "Colecciones de Batallas",
+      "subtitle": "Listas curadas de batallas organizadas por tema",
+      "battlesCount": "batallas",
+      "ctaTitle": "Listo para poner a prueba tus conocimientos?",
+      "ctaSubtitle": "Mira cuantas de estas batallas puedes identificar en BattleGuess",
+      "backToCollections": "Todas las Colecciones",
+      "notFound": "Coleccion No Encontrada",
+      "notFoundDesc": "La coleccion de batallas que buscas no existe."
     },
     "blog": {
       "title": "Blog",
