@@ -906,8 +906,8 @@ function App() {
         )}
       </div>
 
-      {/* Mascot Hint Character - floating overlay */}
-      {isPlaying && state.currentBattle && !isReverseMode && (
+      {/* Mascot Hint Character - floating overlay (shows every other turn) */}
+      {isPlaying && state.currentBattle && !isReverseMode && state.totalGuesses % 2 === 0 && (
         <GeneralMascot
           hints={state.currentBattle.hints}
           revealedHints={state.revealedHints}
