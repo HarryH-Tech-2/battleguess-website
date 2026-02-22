@@ -21,7 +21,13 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
   };
 
   return (
-    <div className="fixed right-1 sm:right-3 lg:right-5 bottom-14 sm:bottom-20 lg:bottom-24 z-40 flex flex-col items-end">
+    <div
+      className="fixed z-40 flex flex-col items-center
+        right-2 bottom-16
+        sm:right-3 sm:bottom-20
+        xl:right-8 xl:top-1/2 xl:-translate-y-1/2 xl:bottom-auto
+        2xl:right-16"
+    >
       {/* Speech Bubble */}
       <AnimatePresence>
         {showBubble && (
@@ -30,7 +36,7 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 10 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            className="relative bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border-2 border-amber-200 p-3 sm:p-4 max-w-[220px] sm:max-w-[280px] lg:max-w-[320px] mb-2 max-h-[50vh] overflow-y-auto"
+            className="relative bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border-2 border-amber-200 p-3 sm:p-4 max-w-[220px] sm:max-w-[280px] xl:max-w-[300px] mb-2 xl:mb-3 max-h-[50vh] overflow-y-auto"
           >
             {/* Close button */}
             <button
@@ -99,7 +105,7 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
             )}
 
             {/* Speech bubble pointer */}
-            <div className="absolute -bottom-2.5 right-8 sm:right-12 lg:right-14 w-4 h-4 bg-white/95 border-r-2 border-b-2 border-amber-200 transform rotate-45" />
+            <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-4 h-4 bg-white/95 border-r-2 border-b-2 border-amber-200 transform rotate-45" />
           </motion.div>
         )}
       </AnimatePresence>
@@ -110,7 +116,7 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
         className="relative group cursor-pointer"
         whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.94 }}
-        animate={showBubble ? {} : { y: [0, -6, 0] }}
+        animate={showBubble ? {} : { y: [0, -8, 0] }}
         transition={{
           y: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' },
         }}
@@ -119,7 +125,7 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
         {/* Hint count badge */}
         {hintsRemaining > 0 && (
           <motion.span
-            className="absolute -top-1 -left-1 sm:-top-1 sm:-left-1 bg-red-500 text-white text-[10px] sm:text-xs lg:text-sm font-bold rounded-full w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 flex items-center justify-center z-10 shadow-lg border-2 border-white"
+            className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 xl:-top-3 xl:-right-3 bg-red-500 text-white text-[10px] sm:text-xs xl:text-sm font-bold rounded-full w-5 h-5 sm:w-7 sm:h-7 xl:w-9 xl:h-9 flex items-center justify-center z-10 shadow-lg border-2 xl:border-[3px] border-white"
             animate={{ scale: [1, 1.15, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
@@ -129,16 +135,16 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
 
         {/* Platform shadow */}
         <motion.div
-          className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-12 sm:w-16 lg:w-24 h-2 sm:h-3 bg-black/15 rounded-full blur-sm"
-          animate={showBubble ? {} : { scaleX: [1, 0.85, 1] }}
+          className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-16 sm:w-20 xl:w-40 2xl:w-48 h-3 xl:h-4 bg-black/15 rounded-full blur-md"
+          animate={showBubble ? {} : { scaleX: [1, 0.8, 1] }}
           transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
         />
 
-        {/* Mascot image — responsive sizing */}
+        {/* Mascot image — big on desktop, compact on mobile */}
         <img
           src="/mascot.png"
           alt="Battle Guide mascot"
-          className="w-[70px] h-[85px] sm:w-[100px] sm:h-[120px] lg:w-[140px] lg:h-[168px] object-contain select-none pointer-events-none"
+          className="w-[80px] h-[96px] sm:w-[100px] sm:h-[120px] xl:w-[220px] xl:h-[264px] 2xl:w-[260px] 2xl:h-[312px] object-contain select-none pointer-events-none drop-shadow-xl"
           draggable={false}
         />
       </motion.button>
