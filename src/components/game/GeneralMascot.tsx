@@ -24,9 +24,9 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
     <div
       className="fixed z-40 flex flex-col items-center
         right-2 bottom-16
-        sm:right-3 sm:bottom-20
-        xl:right-8 xl:top-1/2 xl:-translate-y-1/2 xl:bottom-auto
-        2xl:right-16"
+        sm:right-1 sm:bottom-20
+        xl:right-0 xl:top-1/2 xl:-translate-y-1/2 xl:bottom-auto
+        2xl:right-2"
     >
       {/* Speech Bubble */}
       <AnimatePresence>
