@@ -99,7 +99,7 @@ export function useChallengeMode() {
 
     const challengeId = await createChallenge(battleIds, score, correctGuesses, difficulty, civilization);
     if (challengeId) {
-      const url = `${window.location.origin}${window.location.pathname}?challenge=${challengeId}`;
+      const url = `${window.location.origin}/?challenge=${challengeId}`;
       setState(prev => ({ ...prev, phase: 'share', challengeUrl: url, score, correctGuesses }));
     }
   }, [state.playedBattleIds]);
@@ -137,7 +137,7 @@ export function useChallengeMode() {
   ): Promise<string | null> => {
     const challengeId = await createChallenge(battleIds, score, correctGuesses, difficulty, civilization);
     if (challengeId) {
-      const url = `${window.location.origin}${window.location.pathname}?challenge=${challengeId}`;
+      const url = `${window.location.origin}/?challenge=${challengeId}`;
       setState(prev => ({ ...prev, challengeUrl: url }));
       return url;
     }

@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef, useCallback, lazy, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Layout } from './components/layout/Layout';
 import { Card } from './components/ui/Card';
@@ -24,11 +24,13 @@ import { CampaignComplete } from './components/game/CampaignComplete';
 import { GameComplete } from './components/game/GameComplete';
 import { DailyChallengeIntro, DailyProgress, DailyResult } from './components/game/DailyChallenge';
 import { ChallengeInvite, ChallengeProgress, ChallengeResult, ChallengeShare } from './components/game/ChallengeView';
-import { Leaderboard } from './components/game/Leaderboard';
 import { PlayerNameInput } from './components/game/PlayerNameInput';
-import { StatsPanel } from './components/stats/StatsPanel';
 import { AchievementPopup } from './components/achievements/AchievementPopup';
-import { AchievementsList } from './components/achievements/AchievementsList';
+
+// Lazy-load overlay components (modals that aren't always visible)
+const Leaderboard = lazy(() => import('./components/game/Leaderboard').then(m => ({ default: m.Leaderboard })));
+const StatsPanel = lazy(() => import('./components/stats/StatsPanel').then(m => ({ default: m.StatsPanel })));
+const AchievementsList = lazy(() => import('./components/achievements/AchievementsList').then(m => ({ default: m.AchievementsList })));
 import { useGame } from './hooks/useGame';
 import { useImageGeneration } from './hooks/useImageGeneration';
 import { useBackgroundMusic } from './hooks/useBackgroundMusic';
@@ -43,6 +45,7 @@ import { useDailyChallenge } from './hooks/useDailyChallenge';
 import { useChallengeMode } from './hooks/useChallengeMode';
 import { getDailyBattleIds, getDailyDateKey, getPlayerName } from './services/firebase';
 import { calculateScore, calculateTimedBonus, getTimerDuration } from './utils/scoring';
+import type { GameMode } from './types';
 import './index.css';
 
 // Update this with your actual Buy Me a Coffee URL
@@ -80,6 +83,19 @@ function App() {
 
   const isTimedMode = state.gameMode === 'timed';
   const isReverseMode = state.gameMode === 'reverse-year' || state.gameMode === 'reverse-location';
+
+  // Auto-select mode from URL query param (for "Play Now" links from content pages)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const modeParam = params.get('mode');
+    const validModes = ['classic', 'timed', 'reverse-year', 'reverse-location', 'timeline', 'campaign', 'daily', 'challenge'];
+    if (modeParam && validModes.includes(modeParam)) {
+      actions.setMode(modeParam as GameMode);
+      const url = new URL(window.location.href);
+      url.searchParams.delete('mode');
+      window.history.replaceState({}, '', url.toString());
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Load image when a new battle starts
   useEffect(() => {
@@ -907,34 +923,40 @@ function App() {
         buyMeACoffeeUrl={BUY_ME_A_COFFEE_URL}
       />
 
-      {/* Stats Panel */}
-      <StatsPanel
-        isOpen={showStatsPanel}
-        onClose={() => setShowStatsPanel(false)}
-        total={total}
-        accuracy={accuracy}
-        avgHints={avgHints}
-        byCivilization={byCivilization}
-        byDifficulty={byDifficulty}
-        bestStreak={state.bestStreak}
-      />
+      {/* Stats Panel (lazy-loaded) */}
+      <Suspense fallback={null}>
+        <StatsPanel
+          isOpen={showStatsPanel}
+          onClose={() => setShowStatsPanel(false)}
+          total={total}
+          accuracy={accuracy}
+          avgHints={avgHints}
+          byCivilization={byCivilization}
+          byDifficulty={byDifficulty}
+          bestStreak={state.bestStreak}
+        />
+      </Suspense>
 
       {/* Achievements */}
       <AchievementPopup
         achievement={achievementsSystem.newlyUnlocked}
         onDismiss={achievementsSystem.dismissPopup}
       />
-      <AchievementsList
-        isOpen={showAchievements}
-        onClose={() => setShowAchievements(false)}
-        unlocked={achievementsSystem.unlocked}
-      />
+      <Suspense fallback={null}>
+        <AchievementsList
+          isOpen={showAchievements}
+          onClose={() => setShowAchievements(false)}
+          unlocked={achievementsSystem.unlocked}
+        />
+      </Suspense>
 
-      {/* Global Leaderboard */}
-      <Leaderboard
-        isOpen={showLeaderboard}
-        onClose={() => setShowLeaderboard(false)}
-      />
+      {/* Global Leaderboard (lazy-loaded) */}
+      <Suspense fallback={null}>
+        <Leaderboard
+          isOpen={showLeaderboard}
+          onClose={() => setShowLeaderboard(false)}
+        />
+      </Suspense>
 
       {/* Player Name Input */}
       <PlayerNameInput

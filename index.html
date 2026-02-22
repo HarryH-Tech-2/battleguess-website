@@ -42,10 +42,8 @@
     <meta name="apple-mobile-web-app-title" content="BattleGuess" />
 
     <!-- Preloads -->
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/welcome-placeholder.webp" as="image" type="image/webp" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Structured Data: WebApplication -->
     <script type="application/ld+json">
@@ -121,6 +119,20 @@
           }
         }
       ]
+    }
+    </script>
+
+    <!-- Structured Data: Speakable (AEO / Voice Assistants) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "BattleGuess — Historical Battle Guessing Game",
+      "url": "https://battleguess.app",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "meta[name='description']"]
+      }
     }
     </script>
 
