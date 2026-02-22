@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
 
 const steps = [
@@ -67,6 +68,8 @@ const jsonLd = {
 };
 
 function About() {
+  const { t } = useTranslation();
+
   return (
     <ContentLayout
       title="About BattleGuess | How to Play"
@@ -82,11 +85,10 @@ function About() {
         className="text-center mb-14"
       >
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-4">
-          About BattleGuess
+          {t('pages.about.title')}
         </h1>
         <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
-          BattleGuess is the ultimate history trivia game where you identify famous battles from stunning AI-generated artwork.
-          Test your knowledge across 8 historical eras, from the ancient world to the World Wars, and compete on global leaderboards.
+          {t('pages.about.description')}
         </p>
       </motion.div>
 
@@ -98,7 +100,7 @@ function About() {
         className="mb-16"
       >
         <h2 className="text-2xl font-bold text-slate-800 text-center mb-8">
-          How to Play
+          {t('pages.about.howToPlay')}
         </h2>
         <div className="space-y-4">
           {steps.map((step, index) => (
@@ -133,7 +135,7 @@ function About() {
         className="mb-16"
       >
         <h2 className="text-2xl font-bold text-slate-800 text-center mb-8">
-          What Makes BattleGuess Special
+          {t('pages.about.whatMakesSpecial')}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {features.map((feature, index) => (
@@ -165,16 +167,16 @@ function About() {
       >
         <div className="bg-gradient-to-br from-primary-50 to-emerald-100/50 rounded-2xl p-8 border border-primary-200/50">
           <h2 className="text-xl font-bold text-slate-800 mb-2">
-            Ready to Test Your Knowledge?
+            {t('pages.about.cta')}
           </h2>
           <p className="text-slate-600 mb-5">
-            Jump in and see how many battles you can identify.
+            {t('pages.about.ctaSubtitle')}
           </p>
           <Link
             to="/"
             className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md shadow-primary-200 hover:shadow-lg hover:shadow-primary-200 transition-all duration-200"
           >
-            Play Now
+            {t('nav.playNow')}
           </Link>
         </div>
       </motion.div>

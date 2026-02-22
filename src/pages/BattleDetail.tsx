@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
 import { getBattleById } from '../data/battles';
 import { battleFacts } from '../data/battleFacts';
@@ -21,6 +22,7 @@ function BattleDetail() {
   const { battleId } = useParams<{ battleId: string }>();
   const id = battleId ? parseBattleId(battleId) : NaN;
   const battle = !isNaN(id) ? getBattleById(id) : undefined;
+  const { t } = useTranslation();
 
   if (!battle) {
     return (
@@ -32,16 +34,16 @@ function BattleDetail() {
         <div className="text-center py-16">
           <div className="text-6xl mb-4">🔍</div>
           <h1 className="text-2xl font-bold text-slate-800 mb-3">
-            Battle Not Found
+            {t('pages.battles.battleNotFound')}
           </h1>
           <p className="text-slate-500 mb-6">
-            The battle you are looking for does not exist.
+            {t('pages.battles.battleNotFoundDesc')}
           </p>
           <Link
             to="/battles"
             className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
           >
-            &larr; Back to Encyclopedia
+            &larr; {t('pages.battles.backToEncyclopedia')}
           </Link>
         </div>
       </ContentLayout>
@@ -81,7 +83,7 @@ function BattleDetail() {
           to="/battles"
           className="inline-flex items-center gap-1 text-slate-500 hover:text-primary-600 text-sm font-medium transition-colors"
         >
-          &larr; Back to Encyclopedia
+          &larr; {t('pages.battles.backToEncyclopedia')}
         </Link>
       </motion.div>
 
@@ -157,7 +159,7 @@ function BattleDetail() {
         >
           <div className="bg-gradient-to-br from-amber-50 to-amber-100/50 rounded-2xl p-6 border border-amber-200/50">
             <h2 className="text-lg font-bold text-amber-800 mb-2 flex items-center gap-2">
-              <span>💡</span> Did You Know?
+              <span>💡</span> {t('pages.battles.didYouKnow')}
             </h2>
             <p className="text-amber-900/80 leading-relaxed">
               {fact}
@@ -175,16 +177,16 @@ function BattleDetail() {
       >
         <div className="bg-gradient-to-br from-primary-50 to-emerald-100/50 rounded-2xl p-8 border border-primary-200/50">
           <h2 className="text-xl font-bold text-slate-800 mb-2">
-            Can you identify this battle?
+            {t('pages.battles.canYouIdentify')}
           </h2>
           <p className="text-slate-600 mb-5">
-            Put your knowledge to the test in BattleGuess
+            {t('pages.battles.putKnowledgeToTest')}
           </p>
           <Link
             to="/"
             className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md shadow-primary-200 hover:shadow-lg hover:shadow-primary-200 transition-all duration-200"
           >
-            Play BattleGuess
+            {t('pages.battles.playBattleGuess')}
           </Link>
         </div>
       </motion.div>

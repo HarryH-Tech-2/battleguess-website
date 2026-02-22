@@ -44,6 +44,19 @@ export function SEOHead({ title, description, canonical, jsonLd, ogImage }: SEOH
     }
     canonicalLink.href = canonical;
 
+    // hreflang tags
+    const langs = ['en', 'es'];
+    for (const lang of langs) {
+      let hreflang = document.querySelector(`link[hreflang="${lang}"]`) as HTMLLinkElement | null;
+      if (!hreflang) {
+        hreflang = document.createElement('link');
+        hreflang.rel = 'alternate';
+        hreflang.hreflang = lang;
+        document.head.appendChild(hreflang);
+      }
+      hreflang.href = canonical;
+    }
+
     // JSON-LD
     const existingScript = document.getElementById('seo-jsonld');
     if (existingScript) existingScript.remove();

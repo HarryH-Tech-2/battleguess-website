@@ -1,0 +1,139 @@
+{
+  "nav": {
+    "playNow": "Play Now",
+    "play": "Play",
+    "gameModes": "Game Modes",
+    "battles": "Battles",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "about": "About",
+    "language": "Language"
+  },
+  "game": {
+    "startGame": "Start Game",
+    "submit": "Submit",
+    "giveUp": "Give Up",
+    "nextBattle": "Next Battle",
+    "score": "Score",
+    "streak": "Streak",
+    "bestStreak": "Best Streak",
+    "round": "Round",
+    "gameMode": "Game Mode",
+    "difficulty": "Difficulty",
+    "civilization": "Civilization",
+    "hints": "Hints",
+    "revealHint": "Reveal Hint",
+    "guessPlaceholder": "Enter your guess...",
+    "correct": "Correct!",
+    "wrong": "Wrong!",
+    "timeUp": "Time's up!",
+    "loading": "Generating battle image...",
+    "welcome": "Welcome to BattleGuess!",
+    "selectMode": "Select a mode and start playing",
+    "playAgain": "Play Again",
+    "newGame": "New Game"
+  },
+  "modes": {
+    "classic": "Classic",
+    "timed": "Timed",
+    "reverseYear": "Year",
+    "reverseLocation": "Location",
+    "timeline": "Timeline",
+    "campaign": "Campaign",
+    "daily": "Daily",
+    "challenge": "Challenge"
+  },
+  "difficulty": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "all": "All"
+  },
+  "navbar": {
+    "stats": "Stats",
+    "leaderboard": "Leaderboard",
+    "achievements": "Achievements",
+    "setName": "Set Name",
+    "buyMeACoffee": "Buy me a coffee",
+    "twitter": "Twitter/X"
+  },
+  "footer": {
+    "battleIntelFeed": "Battle Intel Feed",
+    "battles": "Battles",
+    "eras": "Eras",
+    "facts": "Facts",
+    "years": "Years"
+  },
+  "pages": {
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about BattleGuess",
+      "categories": {
+        "all": "All",
+        "gameplay": "Gameplay",
+        "account": "Account",
+        "technical": "Technical",
+        "content": "Content"
+      },
+      "cta": "Still have questions? Start playing and discover the answers!"
+    },
+    "about": {
+      "title": "About BattleGuess",
+      "description": "BattleGuess is the ultimate history trivia game where you identify famous battles from stunning AI-generated artwork. Test your knowledge across 8 historical eras, from the ancient world to the World Wars, and compete on global leaderboards.",
+      "howToPlay": "How to Play",
+      "whatMakesSpecial": "What Makes BattleGuess Special",
+      "cta": "Ready to Test Your Knowledge?",
+      "ctaSubtitle": "Jump in and see how many battles you can identify.",
+      "features": {
+        "aiImages": "AI-Generated Images",
+        "gameModes": "8 Game Modes",
+        "battles": "200+ Battles",
+        "eras": "8 Historical Eras"
+      }
+    },
+    "modes": {
+      "title": "Game Modes",
+      "subtitle": "8 unique ways to test your history knowledge",
+      "rules": "Rules",
+      "strategy": "Strategy & Tips",
+      "backToModes": "Back to Game Modes",
+      "allGameModes": "All Game Modes",
+      "playMode": "Play {{mode}} Mode",
+      "modeNotFound": "Mode Not Found",
+      "modeNotFoundDesc": "The game mode you are looking for does not exist."
+    },
+    "battles": {
+      "title": "Battle Encyclopedia",
+      "subtitle": "Explore {{count}} historical battles across 8 eras",
+      "searchPlaceholder": "Search battles...",
+      "allEras": "All Eras",
+      "didYouKnow": "Did you know?",
+      "backToEncyclopedia": "Back to Encyclopedia",
+      "canYouIdentify": "Can you identify this battle?",
+      "putKnowledgeToTest": "Put your knowledge to the test in BattleGuess",
+      "playBattleGuess": "Play BattleGuess",
+      "cta": "Can you identify this battle? Play BattleGuess!",
+      "year": "Year",
+      "location": "Location",
+      "era": "Era",
+      "noBattlesFound": "No battles found matching your search.",
+      "battleNotFound": "Battle Not Found",
+      "battleNotFoundDesc": "The battle you are looking for does not exist."
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "History insights, game guides, and military history deep dives",
+      "readMore": "Read more",
+      "backToBlog": "Back to Blog",
+      "minRead": "min read",
+      "postNotFound": "Post Not Found",
+      "postNotFoundDesc": "The blog post you are looking for does not exist."
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "notFound": "Not found",
+    "backToHome": "Back to Home",
+    "learnMore": "Learn more"
+  }
+}

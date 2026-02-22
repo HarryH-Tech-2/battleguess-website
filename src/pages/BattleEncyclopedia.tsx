@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
 import { allBattles } from '../data/battles';
 import { civilizations } from '../data/civilizations';
@@ -23,6 +24,7 @@ const difficultyColors: Record<string, string> = {
 function BattleEncyclopedia() {
   const [search, setSearch] = useState('');
   const [selectedEra, setSelectedEra] = useState<CivilizationId | 'all'>('all');
+  const { t } = useTranslation();
 
   const filteredBattles = useMemo(() => {
     let battles = allBattles;
@@ -57,10 +59,10 @@ function BattleEncyclopedia() {
         className="text-center mb-8"
       >
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-3">
-          Battle Encyclopedia
+          {t('pages.battles.title')}
         </h1>
         <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-          Explore {allBattles.length} historical battles across 8 eras
+          {t('pages.battles.subtitle', { count: allBattles.length })}
         </p>
       </motion.div>
 
@@ -74,7 +76,7 @@ function BattleEncyclopedia() {
         <div className="relative max-w-md mx-auto">
           <input
             type="text"
-            placeholder="Search battles..."
+            placeholder={t('pages.battles.searchPlaceholder')}
             value={search}
             onChange={e => setSearch(e.target.value)}
             className="w-full px-4 py-3 pl-10 rounded-xl border border-slate-200 bg-white text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent shadow-sm"
@@ -110,7 +112,7 @@ function BattleEncyclopedia() {
               : 'bg-white text-slate-600 hover:bg-primary-50 hover:text-primary-700 border border-slate-200'
           }`}
         >
-          All Eras
+          {t('pages.battles.allEras')}
         </button>
         {civilizations.map(civ => (
           <button
@@ -131,7 +133,7 @@ function BattleEncyclopedia() {
       {filteredBattles.length === 0 ? (
         <div className="text-center py-12">
           <div className="text-5xl mb-3">🔍</div>
-          <p className="text-slate-500 text-lg">No battles found matching your search.</p>
+          <p className="text-slate-500 text-lg">{t('pages.battles.noBattlesFound')}</p>
         </div>
       ) : (
         <div className="space-y-10">

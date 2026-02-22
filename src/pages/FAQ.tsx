@@ -1,22 +1,24 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
 import { faqItems } from '../data/faqData';
 
 type Category = 'all' | 'gameplay' | 'account' | 'technical' | 'content';
 
-const categories: { value: Category; label: string }[] = [
-  { value: 'all', label: 'All' },
-  { value: 'gameplay', label: 'Gameplay' },
-  { value: 'account', label: 'Account' },
-  { value: 'technical', label: 'Technical' },
-  { value: 'content', label: 'Content' },
-];
-
 function FAQ() {
   const [activeCategory, setActiveCategory] = useState<Category>('all');
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const { t } = useTranslation();
+
+  const categories: { value: Category; label: string }[] = [
+    { value: 'all', label: t('pages.faq.categories.all') },
+    { value: 'gameplay', label: t('pages.faq.categories.gameplay') },
+    { value: 'account', label: t('pages.faq.categories.account') },
+    { value: 'technical', label: t('pages.faq.categories.technical') },
+    { value: 'content', label: t('pages.faq.categories.content') },
+  ];
 
   const filteredItems = useMemo(() => {
     if (activeCategory === 'all') return faqItems;
@@ -55,10 +57,10 @@ function FAQ() {
         className="text-center mb-10"
       >
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-3">
-          Frequently Asked Questions
+          {t('pages.faq.title')}
         </h1>
         <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-          Everything you need to know about BattleGuess
+          {t('pages.faq.subtitle')}
         </p>
       </motion.div>
 
@@ -145,16 +147,16 @@ function FAQ() {
       >
         <div className="bg-gradient-to-br from-amber-50 to-amber-100/50 rounded-2xl p-8 border border-amber-200/50">
           <h2 className="text-xl font-bold text-slate-800 mb-2">
-            Still have questions?
+            {t('pages.faq.cta')}
           </h2>
           <p className="text-slate-600 mb-5">
-            Start playing and discover the answers!
+            {t('pages.faq.subtitle')}
           </p>
           <Link
             to="/"
             className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md shadow-amber-200 hover:shadow-lg hover:shadow-amber-200 transition-all duration-200"
           >
-            Play BattleGuess
+            {t('pages.battles.playBattleGuess')}
           </Link>
         </div>
       </motion.div>

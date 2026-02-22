@@ -1,0 +1,139 @@
+{
+  "nav": {
+    "playNow": "Jugar Ahora",
+    "play": "Jugar",
+    "gameModes": "Modos de Juego",
+    "battles": "Batallas",
+    "blog": "Blog",
+    "faq": "Preguntas Frecuentes",
+    "about": "Acerca de",
+    "language": "Idioma"
+  },
+  "game": {
+    "startGame": "Iniciar Juego",
+    "submit": "Enviar",
+    "giveUp": "Rendirse",
+    "nextBattle": "Siguiente Batalla",
+    "score": "Puntuaje",
+    "streak": "Racha",
+    "bestStreak": "Mejor Racha",
+    "round": "Ronda",
+    "gameMode": "Modo de Juego",
+    "difficulty": "Dificultad",
+    "civilization": "Civilizacion",
+    "hints": "Pistas",
+    "revealHint": "Revelar Pista",
+    "guessPlaceholder": "Escribe tu respuesta...",
+    "correct": "Correcto!",
+    "wrong": "Incorrecto!",
+    "timeUp": "Se acabo el tiempo!",
+    "loading": "Generando imagen de batalla...",
+    "welcome": "Bienvenido a BattleGuess!",
+    "selectMode": "Selecciona un modo y empieza a jugar",
+    "playAgain": "Jugar de Nuevo",
+    "newGame": "Nuevo Juego"
+  },
+  "modes": {
+    "classic": "Clasico",
+    "timed": "Contrarreloj",
+    "reverseYear": "Ano",
+    "reverseLocation": "Ubicacion",
+    "timeline": "Linea Temporal",
+    "campaign": "Campana",
+    "daily": "Diario",
+    "challenge": "Desafio"
+  },
+  "difficulty": {
+    "easy": "Facil",
+    "medium": "Medio",
+    "hard": "Dificil",
+    "all": "Todos"
+  },
+  "navbar": {
+    "stats": "Estadisticas",
+    "leaderboard": "Clasificacion",
+    "achievements": "Logros",
+    "setName": "Nombre",
+    "buyMeACoffee": "Invitame un cafe",
+    "twitter": "Twitter/X"
+  },
+  "footer": {
+    "battleIntelFeed": "Datos de Batallas",
+    "battles": "Batallas",
+    "eras": "Eras",
+    "facts": "Datos",
+    "years": "Anos"
+  },
+  "pages": {
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "subtitle": "Todo lo que necesitas saber sobre BattleGuess",
+      "categories": {
+        "all": "Todas",
+        "gameplay": "Juego",
+        "account": "Cuenta",
+        "technical": "Tecnico",
+        "content": "Contenido"
+      },
+      "cta": "Tienes mas preguntas? Empieza a jugar y descubre las respuestas!"
+    },
+    "about": {
+      "title": "Acerca de BattleGuess",
+      "description": "BattleGuess es el juego definitivo de trivia historica donde identificas batallas famosas a partir de impresionantes imagenes generadas por IA. Pon a prueba tus conocimientos en 8 eras historicas, desde el mundo antiguo hasta las Guerras Mundiales, y compite en clasificaciones globales.",
+      "howToPlay": "Como Jugar",
+      "whatMakesSpecial": "Que Hace Especial a BattleGuess",
+      "cta": "Listo para Poner a Prueba tus Conocimientos?",
+      "ctaSubtitle": "Entra y descubre cuantas batallas puedes identificar.",
+      "features": {
+        "aiImages": "Imagenes Generadas por IA",
+        "gameModes": "8 Modos de Juego",
+        "battles": "200+ Batallas",
+        "eras": "8 Eras Historicas"
+      }
+    },
+    "modes": {
+      "title": "Modos de Juego",
+      "subtitle": "8 formas unicas de poner a prueba tu conocimiento historico",
+      "rules": "Reglas",
+      "strategy": "Estrategia y Consejos",
+      "backToModes": "Volver a Modos de Juego",
+      "allGameModes": "Todos los Modos de Juego",
+      "playMode": "Jugar Modo {{mode}}",
+      "modeNotFound": "Modo No Encontrado",
+      "modeNotFoundDesc": "El modo de juego que buscas no existe."
+    },
+    "battles": {
+      "title": "Enciclopedia de Batallas",
+      "subtitle": "Explora {{count}} batallas historicas en 8 eras",
+      "searchPlaceholder": "Buscar batallas...",
+      "allEras": "Todas las Eras",
+      "didYouKnow": "Sabias que?",
+      "backToEncyclopedia": "Volver a la Enciclopedia",
+      "canYouIdentify": "Puedes identificar esta batalla?",
+      "putKnowledgeToTest": "Pon a prueba tus conocimientos en BattleGuess",
+      "playBattleGuess": "Jugar BattleGuess",
+      "cta": "Puedes identificar esta batalla? Juega BattleGuess!",
+      "year": "Ano",
+      "location": "Ubicacion",
+      "era": "Era",
+      "noBattlesFound": "No se encontraron batallas que coincidan con tu busqueda.",
+      "battleNotFound": "Batalla No Encontrada",
+      "battleNotFoundDesc": "La batalla que buscas no existe."
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "Perspectivas historicas, guias de juego y analisis de historia militar",
+      "readMore": "Leer mas",
+      "backToBlog": "Volver al Blog",
+      "minRead": "min de lectura",
+      "postNotFound": "Publicacion No Encontrada",
+      "postNotFoundDesc": "La publicacion que buscas no existe."
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "notFound": "No encontrado",
+    "backToHome": "Volver al Inicio",
+    "learnMore": "Saber mas"
+  }
+}

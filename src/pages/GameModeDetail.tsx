@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
 import { getGameModeBySlug } from '../data/gameModeData';
 
 function GameModeDetail() {
   const { modeId } = useParams<{ modeId: string }>();
   const mode = modeId ? getGameModeBySlug(modeId) : undefined;
+  const { t } = useTranslation();
 
   if (!mode) {
     return (
@@ -17,16 +19,16 @@ function GameModeDetail() {
         <div className="text-center py-16">
           <div className="text-6xl mb-4">🔍</div>
           <h1 className="text-2xl font-bold text-slate-800 mb-3">
-            Mode Not Found
+            {t('pages.modes.modeNotFound')}
           </h1>
           <p className="text-slate-500 mb-6">
-            The game mode you are looking for does not exist.
+            {t('pages.modes.modeNotFoundDesc')}
           </p>
           <Link
             to="/modes"
             className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
           >
-            &larr; Back to Game Modes
+            &larr; {t('pages.modes.backToModes')}
           </Link>
         </div>
       </ContentLayout>
@@ -50,7 +52,7 @@ function GameModeDetail() {
           to="/modes"
           className="inline-flex items-center gap-1 text-slate-500 hover:text-primary-600 text-sm font-medium transition-colors"
         >
-          &larr; All Game Modes
+          &larr; {t('pages.modes.allGameModes')}
         </Link>
       </motion.div>
 
@@ -81,7 +83,7 @@ function GameModeDetail() {
       >
         <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
           <h2 className="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
-            <span className="text-lg">📋</span> Rules
+            <span className="text-lg">📋</span> {t('pages.modes.rules')}
           </h2>
           <p className="text-slate-600 leading-relaxed">{mode.rules}</p>
         </div>
@@ -96,7 +98,7 @@ function GameModeDetail() {
       >
         <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
           <h2 className="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
-            <span className="text-lg">💡</span> Strategy & Tips
+            <span className="text-lg">💡</span> {t('pages.modes.strategy')}
           </h2>
           <p className="text-slate-600 leading-relaxed">{mode.strategy}</p>
         </div>
@@ -113,7 +115,7 @@ function GameModeDetail() {
           to={`/?mode=${mode.slug}`}
           className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3.5 rounded-xl shadow-md shadow-primary-200 hover:shadow-lg hover:shadow-primary-200 transition-all duration-200 text-lg"
         >
-          Play {mode.label} Mode
+          {t('pages.modes.playMode', { mode: mode.label })}
         </Link>
       </motion.div>
     </ContentLayout>

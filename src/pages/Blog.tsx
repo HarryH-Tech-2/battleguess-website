@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
 import { blogPosts } from '../data/blogPosts';
 
 function Blog() {
+  const { t } = useTranslation();
+
   return (
     <ContentLayout
       title="Blog | BattleGuess"
@@ -18,10 +21,10 @@ function Blog() {
         className="text-center mb-10"
       >
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-3">
-          Blog
+          {t('pages.blog.title')}
         </h1>
         <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-          History insights and game guides
+          {t('pages.blog.subtitle')}
         </p>
       </motion.div>
 

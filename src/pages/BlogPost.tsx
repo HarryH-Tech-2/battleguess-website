@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
 import { blogPosts } from '../data/blogPosts';
 
 function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const post = blogPosts.find(p => p.slug === slug);
+  const { t } = useTranslation();
 
   if (!post) {
     return (
@@ -17,16 +19,16 @@ function BlogPost() {
         <div className="text-center py-16">
           <div className="text-6xl mb-4">📝</div>
           <h1 className="text-2xl font-bold text-slate-800 mb-3">
-            Post Not Found
+            {t('pages.blog.postNotFound')}
           </h1>
           <p className="text-slate-500 mb-6">
-            The blog post you are looking for does not exist.
+            {t('pages.blog.postNotFoundDesc')}
           </p>
           <Link
             to="/blog"
             className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
           >
-            &larr; Back to Blog
+            &larr; {t('pages.blog.backToBlog')}
           </Link>
         </div>
       </ContentLayout>
@@ -74,7 +76,7 @@ function BlogPost() {
           to="/blog"
           className="inline-flex items-center gap-1 text-slate-500 hover:text-primary-600 text-sm font-medium transition-colors"
         >
-          &larr; Back to Blog
+          &larr; {t('pages.blog.backToBlog')}
         </Link>
       </motion.div>
 

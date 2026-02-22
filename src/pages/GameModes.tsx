@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
 import { gameModeData } from '../data/gameModeData';
 
 function GameModes() {
+  const { t } = useTranslation();
+
   return (
     <ContentLayout
       title="Game Modes | BattleGuess"
@@ -18,10 +21,10 @@ function GameModes() {
         className="text-center mb-10"
       >
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-3">
-          Game Modes
+          {t('pages.modes.title')}
         </h1>
         <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-          8 unique ways to test your knowledge of military history
+          {t('pages.modes.subtitle')}
         </p>
       </motion.div>
 

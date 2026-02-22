@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { allBattles } from '../../data/battles/index';
 import { battleFacts } from '../../data/battleFacts';
 
@@ -31,6 +32,7 @@ export function Footer() {
   const [currentFactIndex, setCurrentFactIndex] = useState(0);
   const [scanLinePos, setScanLinePos] = useState(0);
   const animFrameRef = useRef<number>(0);
+  const { t } = useTranslation();
 
   // Rotate facts
   useEffect(() => {
@@ -83,7 +85,7 @@ export function Footer() {
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
             </span>
             <span className="text-lg sm:text-xl font-mono font-bold uppercase tracking-[0.2em] text-white drop-shadow-md">
-              Battle Intel Feed
+              {t('footer.battleIntelFeed')}
             </span>
           </div>
 
@@ -126,7 +128,7 @@ export function Footer() {
             className="text-center"
           >
             <div className="text-xl font-bold font-mono text-white drop-shadow-sm">{totalBattles}</div>
-            <div className="text-xs uppercase tracking-widest text-white/60 font-medium">Battles</div>
+            <div className="text-xs uppercase tracking-widest text-white/60 font-medium">{t('footer.battles')}</div>
           </motion.div>
 
           <div className="w-px h-8 bg-white/20" />
@@ -138,7 +140,7 @@ export function Footer() {
             className="text-center"
           >
             <div className="text-xl font-bold font-mono text-white drop-shadow-sm">{eras}</div>
-            <div className="text-xs uppercase tracking-widest text-white/60 font-medium">Eras</div>
+            <div className="text-xs uppercase tracking-widest text-white/60 font-medium">{t('footer.eras')}</div>
           </motion.div>
 
           <div className="w-px h-8 bg-white/20" />
@@ -150,7 +152,7 @@ export function Footer() {
             className="text-center"
           >
             <div className="text-xl font-bold font-mono text-white drop-shadow-sm">{totalFacts}</div>
-            <div className="text-xs uppercase tracking-widest text-white/60 font-medium">Facts</div>
+            <div className="text-xs uppercase tracking-widest text-white/60 font-medium">{t('footer.facts')}</div>
           </motion.div>
 
           <div className="w-px h-8 bg-white/20" />
@@ -162,7 +164,7 @@ export function Footer() {
             className="text-center"
           >
             <div className="text-xl font-bold font-mono text-white drop-shadow-sm">5000+</div>
-            <div className="text-xs uppercase tracking-widest text-white/60 font-medium">Years</div>
+            <div className="text-xs uppercase tracking-widest text-white/60 font-medium">{t('footer.years')}</div>
           </motion.div>
         </div>
 
