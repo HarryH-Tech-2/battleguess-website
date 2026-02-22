@@ -34,10 +34,10 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
 
   return (
     <div
-      className="fixed z-40 flex flex-col items-center
+      className="fixed z-40 flex flex-col items-end
         right-2 bottom-16
         sm:right-1 sm:bottom-20
-        xl:right-0 xl:top-1/2 xl:-translate-y-1/2 xl:bottom-auto
+        xl:right-0 xl:bottom-4 xl:top-auto
         2xl:right-2"
     >
       {/* Speech Bubble */}
@@ -48,7 +48,7 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 10 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            className="relative bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border-2 border-amber-200 p-4 sm:p-5 xl:p-6 max-w-[280px] sm:max-w-[340px] xl:max-w-[400px] mb-2 xl:mb-3 max-h-[50vh] overflow-y-auto"
+            className="relative bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border-2 border-amber-200 p-4 sm:p-5 xl:p-6 max-w-[280px] sm:max-w-[340px] xl:max-w-[400px] mb-2 xl:mb-3 max-h-[55vh] overflow-y-auto"
           >
             {/* Close button */}
             <button
