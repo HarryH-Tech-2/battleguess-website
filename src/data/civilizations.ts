@@ -57,4 +57,11 @@ export const civilizations: Civilization[] = [
     icon: '\u{1FA96}',
     timeSpan: '1914 - 1945',
   },
+  {
+    id: 'south-america',
+    name: 'Latin American Wars',
+    description: 'Conquest, independence, and revolution',
+    icon: '\u{1F30E}',
+    timeSpan: '1438 - 1935',
+  },
 ];

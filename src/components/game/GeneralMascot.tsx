@@ -20,6 +20,18 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
     }
   };
 
+  const handleMascotClick = () => {
+    if (!showBubble) {
+      // Opening the bubble — auto-reveal first hint if none revealed yet
+      if (revealedHints.length === 0 && canRevealMore && !disabled) {
+        onRevealHint(0);
+      }
+      setShowBubble(true);
+    } else {
+      setShowBubble(false);
+    }
+  };
+
   return (
     <div
       className="fixed z-40 flex flex-col items-center
@@ -78,12 +90,6 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
               </div>
             )}
 
-            {revealedHints.length === 0 && (
-              <p className="text-sm xl:text-base text-amber-400 italic mb-3 text-center py-3">
-                Ready for orders, sir! Click below for intel.
-              </p>
-            )}
-
             {/* Reveal button */}
             {canRevealMore && !disabled && (
               <motion.button
@@ -112,7 +118,7 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
 
       {/* Mascot Character */}
       <motion.button
-        onClick={() => setShowBubble(!showBubble)}
+        onClick={handleMascotClick}
         className="relative group cursor-pointer"
         whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.94 }}
@@ -133,18 +139,11 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
           </motion.span>
         )}
 
-        {/* Platform shadow */}
-        <motion.div
-          className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-32 sm:w-40 xl:w-72 2xl:w-80 h-4 xl:h-8 bg-black/15 rounded-full blur-lg"
-          animate={showBubble ? {} : { scaleX: [1, 0.8, 1] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-        />
-
         {/* Mascot image */}
         <img
           src="/mascot.png"
           alt="Battle Guide mascot"
-          className="w-[160px] h-[192px] sm:w-[200px] sm:h-[240px] lg:w-[260px] lg:h-[312px] xl:w-[440px] xl:h-[528px] 2xl:w-[520px] 2xl:h-[624px] object-contain select-none pointer-events-none drop-shadow-xl"
+          className="w-[160px] h-[192px] sm:w-[200px] sm:h-[240px] lg:w-[260px] lg:h-[312px] xl:w-[440px] xl:h-[528px] 2xl:w-[520px] 2xl:h-[624px] object-contain select-none pointer-events-none"
           draggable={false}
         />
       </motion.button>

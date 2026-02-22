@@ -7,6 +7,7 @@ import { eastAsiaBattles } from './eastAsia';
 import { colonialNapoleonicBattles } from './colonialNapoleonic';
 import { americanWarsBattles } from './americanWars';
 import { worldWarsBattles } from './worldWars';
+import { southAmericaBattles } from './southAmerica';
 
 export const allBattles: Battle[] = [
   ...ancientEgyptMesopotamiaBattles,
@@ -17,6 +18,7 @@ export const allBattles: Battle[] = [
   ...colonialNapoleonicBattles,
   ...americanWarsBattles,
   ...worldWarsBattles,
+  ...southAmericaBattles,
 ];
 
 export const getBattlesByCivilization = (

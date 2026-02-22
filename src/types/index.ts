@@ -6,7 +6,8 @@ export type CivilizationId =
   | 'east-asia'
   | 'colonial-napoleonic'
   | 'american-wars'
-  | 'world-wars';
+  | 'world-wars'
+  | 'south-america';
 
 export interface Civilization {
   id: CivilizationId;

@@ -42,6 +42,7 @@ function getBattleSlugs() {
     'src/data/battles/colonialNapoleonic.ts',
     'src/data/battles/americanWars.ts',
     'src/data/battles/worldWars.ts',
+    'src/data/battles/southAmerica.ts',
   ];
 
   for (const file of battleFiles) {

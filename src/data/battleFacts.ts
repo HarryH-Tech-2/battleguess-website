@@ -231,4 +231,33 @@ export const battleFacts: Record<number, string> = {
   198: "During the Siege of Leningrad, the city's symphony orchestra performed Shostakovich's Seventh Symphony in the besieged city, with the concert broadcast on loudspeakers so the German besiegers could hear it too.",
   199: "The 'Little Ships of Dunkirk,' the flotilla of civilian vessels that helped evacuate troops, included pleasure yachts, fishing boats, and even a paddle steamer. Many owners sailed their own boats across the Channel under fire.",
   200: "Major John Frost's paratroopers at Arnhem bridge held for four days instead of the planned two, inspiring the phrase 'a bridge too far.' Frost himself was wounded and captured but survived the war.",
+
+  // ========================================
+  // Latin American Wars (IDs 201-225)
+  // ========================================
+  201: "Atahualpa offered to fill a room once with gold and twice with silver as ransom for his release. The Spanish collected the treasure — estimated at 6 tons of gold — but executed him anyway.",
+  202: "At the peak of its power, Tenochtitlan had a population of over 200,000 people, making it one of the largest cities in the world. It was built on an island connected to the shore by causeways and featured elaborate aqueducts and floating gardens.",
+  203: "After the desperate victory at Otumba, Cortes's surviving force numbered fewer than 500 Spaniards, yet he immediately began planning the reconquest of Tenochtitlan rather than retreating to the coast.",
+  204: "During the Siege of Cusco, Manco Inca used captured Spanish weapons and even Spanish cavalry tactics against the defenders. One Inca captain learned to ride horses and lead mounted charges.",
+  205: "Bolivar's crossing of the Andes before Boyaca involved climbing passes over 4,000 meters high. Many of his llanero cavalry, who had never seen mountains, died of altitude sickness and exposure during the crossing.",
+  206: "The British volunteers who fought at Carabobo had formed the 'British Legion' after Napoleonic War veterans were recruited by Bolivar's agents in London pubs and promised land grants in the new republics.",
+  207: "San Martin's crossing of the Andes with 5,000 men is considered one of the greatest military feats in history. He used elaborate deception plans, sending spies to convince the Spanish he would attack from different passes.",
+  208: "After the victory at Maipu, San Martin and the wounded O'Higgins embraced on the battlefield. San Martin reportedly said: 'General, Chile will not forget the name of the brave who fought for her freedom.'",
+  209: "The Spanish Viceroy La Serna was personally wounded and captured at Ayacucho. His surrender effectively ended over 300 years of Spanish rule in mainland South America.",
+  210: "The Battle of Junin lasted approximately 45 minutes and was fought entirely with cavalry sabers and lances — not a single firearm was discharged during the entire engagement, making it one of history's last great cold-steel cavalry battles.",
+  211: "The battle on Pichincha volcano was fought at an altitude where many soldiers from the coastal lowlands struggled to breathe. Sucre himself had to be helped up the final slopes.",
+  212: "When Belgrano disobeyed orders to retreat and instead fought at Tucuman, the Buenos Aires government was furious — until they learned he had won. He was then given full authority to continue the campaign.",
+  213: "The War of the Triple Alliance was proportionally the deadliest conflict in modern history. Paraguay lost an estimated 60-90% of its population, including almost all adult males, reducing the country to near extinction.",
+  214: "After his defeat at Rancagua, O'Higgins led survivors across the Andes to Mendoza, where he met San Martin. Together they would plan the liberation campaign that would return to free Chile three years later.",
+  215: "Captain Arturo Prat's last words before boarding the Huascar are debated, but the most famous version has him crying 'Board her, boys!' His sacrifice at Iquique is commemorated as Chilean Navy Day every May 21st.",
+  216: "Admiral Miguel Grau of Peru was known as 'The Gentleman of the Seas' because he returned personal effects of fallen enemies to their families. Even his Chilean adversaries honored him after his death at Angamos.",
+  217: "Colonel Bolognesi's famous last words at Arica — 'I have sacred duties to fulfill and I will fight until firing the last cartridge' — became one of the most iconic phrases in Peruvian military history.",
+  218: "The Battle of Puebla is more widely celebrated in the United States as Cinco de Mayo than it is in Mexico, where it is a relatively minor holiday compared to Mexican Independence Day on September 16th.",
+  219: "When a Brazilian soldier reportedly told Lopez to surrender at Cerro Cora, he allegedly replied 'I die with my fatherland!' — words that became the national motto of Paraguayan resistance and pride.",
+  220: "During La Noche Triste, so much looted Aztec gold was lost in the waters of Lake Texcoco that treasure hunters searched the area for centuries. Some soldiers reportedly drowned because they refused to abandon their gold.",
+  221: "Despite technically losing the Battle of Vuelta de Obligado, Argentina celebrates November 20th as the 'Day of National Sovereignty' in honor of the defiant resistance against European intervention.",
+  222: "The Battle of Ituzaingo led to British-mediated negotiations that created Uruguay as an independent buffer state. Neither Argentina nor Brazil got what they wanted — instead, an entirely new nation was born.",
+  223: "Bolivia hired a German general, Hans Kundt, to lead their forces in the Chaco War. His European-style tactics proved disastrous in the harsh scrubland, and he was eventually relieved of command after repeated defeats.",
+  224: "The two grenadiers who saved San Martin's life at San Lorenzo — Sergeant Juan Bautista Cabral and Private Baigorria — became national heroes. Cabral's dying words were reportedly 'I die happy, we have beaten the enemy.'",
+  225: "The defeat at Cancha Rayada was so complete that San Martin's army initially appeared destroyed. But within days he had rallied 5,000 men for the Battle of Maipu, one of the great military comebacks in history.",
 };
