@@ -36,25 +36,25 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 10 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            className="relative bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border-2 border-amber-200 p-3 sm:p-4 max-w-[220px] sm:max-w-[280px] xl:max-w-[300px] mb-2 xl:mb-3 max-h-[50vh] overflow-y-auto"
+            className="relative bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border-2 border-amber-200 p-4 sm:p-5 xl:p-6 max-w-[280px] sm:max-w-[340px] xl:max-w-[400px] mb-2 xl:mb-3 max-h-[50vh] overflow-y-auto"
           >
             {/* Close button */}
             <button
               onClick={() => setShowBubble(false)}
-              className="absolute top-2 right-2 w-6 h-6 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 text-xs font-bold transition-colors"
+              className="absolute top-3 right-3 w-7 h-7 xl:w-8 xl:h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 text-xs font-bold transition-colors"
             >
-              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 xl:w-4 xl:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center">
-                <svg className="w-3.5 h-3.5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex items-center gap-2.5 mb-3 xl:mb-4">
+              <div className="w-8 h-8 xl:w-10 xl:h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                <svg className="w-4.5 h-4.5 xl:w-6 xl:h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <p className="text-xs sm:text-sm font-bold text-amber-800">
+              <p className="text-sm sm:text-base xl:text-lg font-bold text-amber-800">
                 Intel Report ({revealedHints.length}/{hints.length})
               </p>
             </div>
@@ -67,19 +67,19 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
                     key={hintIndex}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="flex items-start gap-2 bg-amber-50 rounded-lg p-2 border border-amber-100"
+                    className="flex items-start gap-2.5 bg-amber-50 rounded-xl p-3 xl:p-4 border border-amber-100"
                   >
-                    <span className="flex-shrink-0 w-5 h-5 bg-amber-500 text-white rounded-full flex items-center justify-center text-[10px] font-bold mt-0.5">
+                    <span className="flex-shrink-0 w-6 h-6 xl:w-7 xl:h-7 bg-amber-500 text-white rounded-full flex items-center justify-center text-xs xl:text-sm font-bold mt-0.5">
                       {hintIndex + 1}
                     </span>
-                    <p className="text-xs sm:text-sm text-amber-900 leading-relaxed">{hints[hintIndex]}</p>
+                    <p className="text-sm sm:text-base xl:text-base text-amber-900 leading-relaxed">{hints[hintIndex]}</p>
                   </motion.div>
                 ))}
               </div>
             )}
 
             {revealedHints.length === 0 && (
-              <p className="text-xs text-amber-400 italic mb-3 text-center py-2">
+              <p className="text-sm xl:text-base text-amber-400 italic mb-3 text-center py-3">
                 Ready for orders, sir! Click below for intel.
               </p>
             )}
@@ -90,7 +90,7 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
                 onClick={handleRevealHint}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-2 px-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-xs sm:text-sm font-semibold transition-all shadow-md hover:shadow-lg"
+                className="w-full py-2.5 xl:py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-sm sm:text-base xl:text-lg font-semibold transition-all shadow-md hover:shadow-lg"
               >
                 Gather Intel (-25 pts)
               </motion.button>
@@ -98,7 +98,7 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
 
             {!canRevealMore && (
               <div className="text-center py-1">
-                <p className="text-xs text-amber-500 font-medium">
+                <p className="text-sm xl:text-base text-amber-500 font-medium">
                   All intel gathered, sir!
                 </p>
               </div>
