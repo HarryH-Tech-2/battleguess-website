@@ -63,6 +63,29 @@ export function useBackgroundMusic(defaultSrc: string) {
     localStorage.setItem('battleguess-music-muted', String(isMuted));
   }, [isMuted]);
 
+  // Pause music when page is hidden (mobile tab switch / browser minimize)
+  const wasPlayingBeforeHidden = useRef(false);
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      const audio = audioRef.current;
+      if (!audio) return;
+
+      if (document.hidden) {
+        wasPlayingBeforeHidden.current = !isMuted && hasInteracted.current;
+        audio.pause();
+      } else {
+        if (wasPlayingBeforeHidden.current && !isMuted) {
+          audio.play().catch(() => {});
+        }
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [isMuted]);
+
   // Start playback on first user interaction (browsers require this)
   useEffect(() => {
     const startPlayback = () => {

@@ -8,7 +8,7 @@ import { BattleImage } from './components/game/BattleImage';
 import { GuessInput } from './components/game/GuessInput';
 import { ReverseGuessInput } from './components/game/ReverseGuessInput';
 import { ReversePrompt } from './components/game/ReversePrompt';
-import { HintDisplay } from './components/game/HintDisplay';
+import { GeneralMascot } from './components/game/GeneralMascot';
 import { ResultFeedback } from './components/game/ResultFeedback';
 import { ScoreDisplay } from './components/game/ScoreDisplay';
 import { MusicTrackSelector } from './components/game/MusicTrackSelector';
@@ -107,6 +107,20 @@ function App() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.gameStatus, isTimedMode, state.currentBattle]);
+
+  // When civilization changes mid-game, load a new battle from the new pool
+  const prevCivilization = useRef(state.selectedCivilization);
+  useEffect(() => {
+    const isSpecialMode = state.gameMode === 'campaign' || state.gameMode === 'daily' || state.gameMode === 'challenge';
+    if (
+      prevCivilization.current !== state.selectedCivilization &&
+      state.gameStatus === 'playing' &&
+      !isSpecialMode
+    ) {
+      actions.startGame();
+    }
+    prevCivilization.current = state.selectedCivilization;
+  }, [state.selectedCivilization, state.gameStatus, state.gameMode, actions]);
 
   // Sound effects & stats recording based on game status changes
   useEffect(() => {
@@ -343,7 +357,7 @@ function App() {
           <CivilizationSelector
             selected={state.selectedCivilization}
             onSelect={actions.selectCivilization}
-            disabled={state.gameStatus === 'playing' || state.gameStatus === 'loading'}
+            disabled={state.gameStatus === 'loading'}
           />
         </motion.div>
 
@@ -779,15 +793,7 @@ function App() {
                   />
                 )}
 
-                {/* Hints - only in classic/timed modes */}
-                {!isReverseMode && (
-                  <HintDisplay
-                    hints={state.currentBattle.hints}
-                    revealedHints={state.revealedHints}
-                    onRevealHint={actions.revealHint}
-                    disabled={!state.imageUrl}
-                  />
-                )}
+                {/* Hints moved to GeneralMascot floating overlay */}
               </motion.div>
             )}
 
@@ -883,6 +889,16 @@ function App() {
           </motion.div>
         )}
       </div>
+
+      {/* Mascot Hint Character - floating overlay */}
+      {isPlaying && state.currentBattle && !isReverseMode && (
+        <GeneralMascot
+          hints={state.currentBattle.hints}
+          revealedHints={state.revealedHints}
+          onRevealHint={actions.revealHint}
+          disabled={!state.imageUrl}
+        />
+      )}
 
       {/* Donation Popup */}
       <DonationPopup
