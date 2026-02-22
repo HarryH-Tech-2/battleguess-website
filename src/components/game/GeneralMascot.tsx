@@ -125,7 +125,7 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
         {/* Hint count badge */}
         {hintsRemaining > 0 && (
           <motion.span
-            className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 xl:-top-3 xl:-right-3 bg-red-500 text-white text-[10px] sm:text-xs xl:text-sm font-bold rounded-full w-5 h-5 sm:w-7 sm:h-7 xl:w-9 xl:h-9 flex items-center justify-center z-10 shadow-lg border-2 xl:border-[3px] border-white"
+            className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 xl:-top-4 xl:-right-4 bg-red-500 text-white text-xs sm:text-sm xl:text-lg font-bold rounded-full w-6 h-6 sm:w-8 sm:h-8 xl:w-12 xl:h-12 flex items-center justify-center z-10 shadow-lg border-2 xl:border-[3px] border-white"
             animate={{ scale: [1, 1.15, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
@@ -135,16 +135,16 @@ export function GeneralMascot({ hints, revealedHints, onRevealHint, disabled }: 
 
         {/* Platform shadow */}
         <motion.div
-          className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-16 sm:w-20 xl:w-40 2xl:w-48 h-3 xl:h-4 bg-black/15 rounded-full blur-md"
+          className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-24 sm:w-32 xl:w-56 2xl:w-64 h-4 xl:h-6 bg-black/15 rounded-full blur-lg"
           animate={showBubble ? {} : { scaleX: [1, 0.8, 1] }}
           transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
         />
 
-        {/* Mascot image — big on desktop, compact on mobile */}
+        {/* Mascot image */}
         <img
           src="/mascot.png"
           alt="Battle Guide mascot"
-          className="w-[80px] h-[96px] sm:w-[100px] sm:h-[120px] xl:w-[220px] xl:h-[264px] 2xl:w-[260px] 2xl:h-[312px] object-contain select-none pointer-events-none drop-shadow-xl"
+          className="w-[120px] h-[144px] sm:w-[160px] sm:h-[192px] lg:w-[200px] lg:h-[240px] xl:w-[340px] xl:h-[408px] 2xl:w-[400px] 2xl:h-[480px] object-contain select-none pointer-events-none drop-shadow-xl"
           draggable={false}
         />
       </motion.button>
