@@ -2,17 +2,178 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Guess the famous battle from AI-generated images! Test your history knowledge." />
+
+    <!-- Primary SEO -->
+    <title>BattleGuess — Free Historical Battle Guessing Game | Test Your History Knowledge</title>
+    <meta name="description" content="Can you identify famous battles from AI-generated images? BattleGuess is a free history trivia game with 8 game modes, covering ancient civilizations to world wars. Play now!" />
+    <meta name="keywords" content="history game, battle quiz, military history trivia, guess the battle, historical battles, war history game, free history quiz, educational game" />
+    <meta name="author" content="BattleGuess" />
+    <link rel="canonical" href="https://battleguess.app" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://battleguess.app" />
+    <meta property="og:title" content="BattleGuess — Can You Name the Battle?" />
+    <meta property="og:description" content="Test your military history knowledge! Identify famous battles from AI-generated images across 8 game modes — from ancient Egypt to World War II." />
+    <meta property="og:image" content="https://battleguess.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="BattleGuess" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://battleguess.app" />
+    <meta name="twitter:title" content="BattleGuess — Can You Name the Battle?" />
+    <meta name="twitter:description" content="Test your military history knowledge! Identify famous battles from AI-generated images across 8 game modes." />
+    <meta name="twitter:image" content="https://battleguess.app/og-image.png" />
+    <meta name="twitter:creator" content="@HarryHH1993" />
+
+    <!-- Favicons & PWA -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#16a34a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="BattleGuess" />
+
+    <!-- Preloads -->
     <link rel="preload" href="/welcome-placeholder.webp" as="image" type="image/webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>BattleGuess - Guess the Historical Battle</title>
+
+    <!-- Structured Data: WebApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "BattleGuess",
+      "url": "https://battleguess.app",
+      "description": "A free historical battle guessing game. Identify famous battles from AI-generated images across 8 game modes covering ancient civilizations to modern warfare.",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Harry",
+        "url": "https://x.com/HarryHH1993"
+      },
+      "image": "https://battleguess.app/og-image.png",
+      "screenshot": "https://battleguess.app/og-image.png",
+      "genre": ["Educational", "Trivia", "History"],
+      "inLanguage": "en"
+    }
+    </script>
+
+    <!-- Structured Data: FAQ (AEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is BattleGuess?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BattleGuess is a free online history trivia game where players identify famous historical battles from AI-generated images. It covers battles from ancient Egypt and Mesopotamia through to the World Wars, with 8 different game modes including classic, timed, reverse, timeline, campaign, daily challenge, and multiplayer challenges."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you play BattleGuess?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You are shown an AI-generated image of a historical battle and must guess which battle it depicts. You can use hints (at a point cost) to help identify the battle. Choose from 8 game modes: Classic (standard guessing), Timed (beat the clock), Year (guess the year), Location (guess the location), Timeline (order battles chronologically), Campaign (progressive missions), Daily (new challenge every day), and Challenge (compete with friends)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is BattleGuess free to play?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, BattleGuess is completely free to play. No account or download is required — just visit battleguess.app and start playing in your browser on any device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What historical periods does BattleGuess cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BattleGuess covers battles from 8 historical eras: Ancient Egypt and Mesopotamia, Ancient Greece and Rome, Medieval Europe, Ottoman and Islamic Empires, East Asia, Colonial and Napoleonic Era, American Wars, and World Wars. Each era has multiple battles at easy, medium, and hard difficulty levels."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What game modes are available in BattleGuess?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BattleGuess offers 8 game modes: Classic (identify the battle from an image), Timed (guess before time runs out), Year (guess when the battle took place), Location (guess where it happened), Timeline (place battles in chronological order), Campaign (complete themed missions), Daily Challenge (new battle every day), and Challenge (create shareable challenges for friends)."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: HowTo (AEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Play BattleGuess",
+      "description": "Learn how to play BattleGuess, the free historical battle guessing game.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Choose your settings",
+          "text": "Select a game mode (Classic, Timed, Year, Location, Timeline, Campaign, Daily, or Challenge), pick a historical era, and choose a difficulty level."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Study the battle image",
+          "text": "An AI-generated image of a historical battle is shown. Look for clues like weapons, armor, terrain, and formations to identify the era and battle."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Use hints if needed",
+          "text": "Click the mascot on the right side of the screen to reveal hints. Each hint costs 25 points but provides valuable clues about the battle."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Submit your guess",
+          "text": "Type your answer and submit. You earn points based on difficulty, speed, and how few hints you used. Build streaks for bonus points!"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Climb the leaderboard",
+          "text": "Set your name and compete on the global leaderboard. Unlock achievements, track your stats, and share your scores with friends."
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
+    <noscript>
+      <div style="padding: 2rem; text-align: center; font-family: sans-serif;">
+        <h1>BattleGuess — Historical Battle Guessing Game</h1>
+        <p>BattleGuess is a free history trivia game where you identify famous battles from AI-generated images. Choose from 8 game modes covering ancient civilizations to modern warfare.</p>
+        <p>Please enable JavaScript to play BattleGuess.</p>
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

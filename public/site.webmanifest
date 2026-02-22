@@ -1,0 +1,28 @@
+{
+  "name": "BattleGuess — Historical Battle Guessing Game",
+  "short_name": "BattleGuess",
+  "description": "Identify famous battles from AI-generated images. Free history trivia with 8 game modes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f0fdf4",
+  "theme_color": "#16a34a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "categories": ["games", "education"],
+  "lang": "en"
+}
