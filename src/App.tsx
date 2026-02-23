@@ -809,7 +809,18 @@ function App() {
                   />
                 )}
 
-                {/* Hints moved to GeneralMascot floating overlay */}
+                {/* Mascot Hint Character - inline on mobile, fixed overlay on desktop */}
+                {!isReverseMode && (
+                  <GeneralMascot
+                    hints={state.currentBattle.hints}
+                    revealedHints={state.revealedHints}
+                    onRevealHint={actions.revealHint}
+                    disabled={!state.imageUrl}
+                    side={state.totalGuesses % 2 === 0 ? 'left' : 'right'}
+                    mascotImage={state.totalGuesses % 2 === 0 ? '/mascot.png' : '/mascot-roman.png'}
+                    mascotAlt={state.totalGuesses % 2 === 0 ? 'Napoleon Battle Guide' : 'Roman Battle Guide'}
+                  />
+                )}
               </motion.div>
             )}
 
@@ -905,19 +916,6 @@ function App() {
           </motion.div>
         )}
       </div>
-
-      {/* Mascot Hint Character - alternates between Napoleon (left) and Roman (right) each turn */}
-      {isPlaying && state.currentBattle && !isReverseMode && (
-        <GeneralMascot
-          hints={state.currentBattle.hints}
-          revealedHints={state.revealedHints}
-          onRevealHint={actions.revealHint}
-          disabled={!state.imageUrl}
-          side={state.totalGuesses % 2 === 0 ? 'left' : 'right'}
-          mascotImage={state.totalGuesses % 2 === 0 ? '/mascot.png' : '/mascot-roman.png'}
-          mascotAlt={state.totalGuesses % 2 === 0 ? 'Napoleon Battle Guide' : 'Roman Battle Guide'}
-        />
-      )}
 
       {/* Donation Popup */}
       <DonationPopup

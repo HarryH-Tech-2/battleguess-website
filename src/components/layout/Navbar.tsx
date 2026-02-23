@@ -97,60 +97,63 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
 
           {/* Right side */}
           <div className="flex items-center gap-1.5 sm:gap-3">
-            {/* Daily Streak Badge */}
+            {/* Daily Streak Badge - always visible */}
             {dailyStreak !== undefined && dailyStreak > 0 && (
               <DailyStreakBadge streak={dailyStreak} />
             )}
 
-            {/* Stats button */}
-            {onOpenStats && (
-              <motion.button
-                onClick={onOpenStats}
-                className="p-2 sm:p-2.5 rounded-xl bg-primary-50 hover:bg-primary-100 text-primary-600 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                title="View stats"
-              >
-                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </motion.button>
-            )}
+            {/* Icon buttons - hidden on mobile, shown on sm+ */}
+            <div className="hidden sm:flex items-center gap-1.5 sm:gap-3">
+              {/* Stats button */}
+              {onOpenStats && (
+                <motion.button
+                  onClick={onOpenStats}
+                  className="p-2 sm:p-2.5 rounded-xl bg-primary-50 hover:bg-primary-100 text-primary-600 transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  title="View stats"
+                >
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </motion.button>
+              )}
 
-            {/* Leaderboard button */}
-            {onOpenLeaderboard && (
-              <motion.button
-                onClick={onOpenLeaderboard}
-                className="p-2 sm:p-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-600 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                title="Global leaderboard"
-              >
-                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              </motion.button>
-            )}
+              {/* Leaderboard button */}
+              {onOpenLeaderboard && (
+                <motion.button
+                  onClick={onOpenLeaderboard}
+                  className="p-2 sm:p-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-600 transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  title="Global leaderboard"
+                >
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                </motion.button>
+              )}
 
-            {/* Achievements button */}
-            {onOpenAchievements && (
-              <motion.button
-                onClick={onOpenAchievements}
-                className="relative p-2 rounded-xl bg-primary-50 hover:bg-primary-100 text-primary-600 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                title="View achievements"
-              >
-                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                </svg>
-                {achievementCount && achievementCount.unlocked > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-primary-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
-                    {achievementCount.unlocked}
-                  </span>
-                )}
-              </motion.button>
-            )}
+              {/* Achievements button */}
+              {onOpenAchievements && (
+                <motion.button
+                  onClick={onOpenAchievements}
+                  className="relative p-2 rounded-xl bg-primary-50 hover:bg-primary-100 text-primary-600 transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  title="View achievements"
+                >
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                  {achievementCount && achievementCount.unlocked > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-primary-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
+                      {achievementCount.unlocked}
+                    </span>
+                  )}
+                </motion.button>
+              )}
+            </div>
 
             {/* Desktop-only items */}
             <div className="hidden sm:flex items-center gap-3">
@@ -203,18 +206,20 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
               </motion.a>
             </div>
 
-            {/* Mobile overflow menu */}
+            {/* Mobile burger menu */}
             <div className="relative sm:hidden" ref={menuRef}>
               <motion.button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-xl bg-gray-50 hover:bg-gray-100 text-gray-600 transition-colors"
+                className="p-2 rounded-xl bg-primary-50 hover:bg-primary-100 text-primary-600 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <circle cx="12" cy="5" r="2" />
-                  <circle cx="12" cy="12" r="2" />
-                  <circle cx="12" cy="19" r="2" />
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  {mobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                  )}
                 </svg>
               </motion.button>
 
@@ -225,8 +230,54 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -5, scale: 0.95 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute right-0 mt-2 w-52 bg-white rounded-xl shadow-lg border border-primary-100 overflow-hidden z-50"
+                    className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-primary-100 overflow-hidden z-50"
                   >
+                    {/* Stats */}
+                    {onOpenStats && (
+                      <button
+                        onClick={() => { onOpenStats(); setMobileMenuOpen(false); }}
+                        className="flex items-center gap-3 w-full px-4 py-3 text-left text-sm text-primary-600 hover:bg-primary-50 transition-colors"
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        <span className="font-medium">Stats</span>
+                      </button>
+                    )}
+
+                    {/* Leaderboard */}
+                    {onOpenLeaderboard && (
+                      <button
+                        onClick={() => { onOpenLeaderboard(); setMobileMenuOpen(false); }}
+                        className="flex items-center gap-3 w-full px-4 py-3 text-left text-sm text-emerald-600 hover:bg-emerald-50 transition-colors"
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <span className="font-medium">Leaderboard</span>
+                      </button>
+                    )}
+
+                    {/* Achievements */}
+                    {onOpenAchievements && (
+                      <button
+                        onClick={() => { onOpenAchievements(); setMobileMenuOpen(false); }}
+                        className="flex items-center gap-3 w-full px-4 py-3 text-left text-sm text-primary-600 hover:bg-primary-50 transition-colors"
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                        <span className="font-medium">Achievements</span>
+                        {achievementCount && achievementCount.unlocked > 0 && (
+                          <span className="ml-auto bg-primary-500 text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                            {achievementCount.unlocked}
+                          </span>
+                        )}
+                      </button>
+                    )}
+
+                    <div className="border-t border-gray-100" />
+
                     {/* Set Name */}
                     {onOpenNameInput && (
                       <button
