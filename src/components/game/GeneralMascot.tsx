@@ -56,7 +56,7 @@ export function GeneralMascot({
         relative flex flex-col items-center mt-4
         xl:fixed xl:z-40 xl:mt-0 xl:top-24 xl:bottom-4 xl:justify-end
         ${isLeft ? 'xl:items-start' : 'xl:items-end'}
-        ${isLeft ? 'xl:left-0 2xl:left-2' : 'xl:right-0 2xl:right-2'}
+        ${isLeft ? 'xl:-left-8 2xl:-left-4' : 'xl:-right-8 2xl:-right-4'}
       `}
     >
       {/* Speech Bubble */}
