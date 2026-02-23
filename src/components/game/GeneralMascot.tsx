@@ -150,7 +150,7 @@ export function GeneralMascot({
         {/* Hint count badge */}
         {hintsRemaining > 0 && (
           <motion.span
-            className={`absolute top-1 right-1 sm:top-2 sm:right-2 xl:top-6 xl:right-2 2xl:top-8 2xl:right-4 bg-red-500 text-white text-xs sm:text-sm xl:text-xl 2xl:text-2xl font-bold rounded-full w-6 h-6 sm:w-8 sm:h-8 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 flex items-center justify-center z-10 shadow-lg border-2 xl:border-[3px] border-white`}
+            className={`absolute top-1 right-1 sm:top-2 sm:right-2 xl:top-2 xl:right-1 2xl:top-3 2xl:right-2 bg-red-500 text-white text-xs sm:text-sm xl:text-base 2xl:text-lg font-bold rounded-full w-6 h-6 sm:w-8 sm:h-8 xl:w-9 xl:h-9 2xl:w-10 2xl:h-10 flex items-center justify-center z-10 shadow-lg border-2 border-white`}
             animate={{ scale: [1, 1.15, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
@@ -162,7 +162,7 @@ export function GeneralMascot({
         <img
           src={mascotImage}
           alt={mascotAlt}
-          className="w-[120px] h-[144px] sm:w-[140px] sm:h-[168px] xl:w-[440px] xl:h-[528px] 2xl:w-[520px] 2xl:h-[624px] object-contain select-none pointer-events-none"
+          className="w-[120px] h-[144px] sm:w-[140px] sm:h-[168px] xl:w-[220px] xl:h-[264px] 2xl:w-[260px] 2xl:h-[312px] object-contain select-none pointer-events-none"
           draggable={false}
         />
       </motion.button>
