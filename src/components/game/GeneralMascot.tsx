@@ -38,9 +38,11 @@ export function GeneralMascot({
     return () => window.removeEventListener('resize', check);
   }, []);
 
+  // Close bubble when the question changes (new hints = new question)
+  const hintsKey = hints.join('|');
   useEffect(() => {
     setShowBubble(false);
-  }, [side]);
+  }, [hintsKey]);
 
   const handleRevealHint = () => {
     if (canRevealMore && !disabled) {
@@ -101,7 +103,12 @@ export function GeneralMascot({
       style={canDrag ? { cursor: 'grab', touchAction: 'none' } : undefined}
       whileDrag={canDrag ? { cursor: 'grabbing', scale: 1.05 } : undefined}
       className={`fixed z-40 bottom-2 lg:bottom-4
-        ${isLeft ? 'left-1 sm:left-2 lg:left-[8%] 2xl:left-[10%]' : 'right-1 sm:right-2 lg:right-[8%] 2xl:right-[10%]'}
+        ${canDrag
+          ? 'right-1 sm:right-2 lg:right-[8%] 2xl:right-[10%]'
+          : isLeft
+            ? 'left-1 sm:left-2 lg:left-[8%] 2xl:left-[10%]'
+            : 'right-1 sm:right-2 lg:right-[8%] 2xl:right-[10%]'
+        }
       `}
     >
       {/* Speech Bubble - absolutely positioned above mascot */}
@@ -112,7 +119,7 @@ export function GeneralMascot({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            className={`absolute bottom-full mb-2 ${isLeft ? 'left-0' : 'right-0'} bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border-2 border-amber-200 p-3 sm:p-4 lg:p-5 w-[260px] sm:w-[300px] lg:w-[360px] max-h-[50vh] overflow-y-auto`}
+            className={`absolute bottom-full mb-2 ${canDrag ? 'right-0' : isLeft ? 'left-0' : 'right-0'} bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border-2 border-amber-200 p-3 sm:p-4 lg:p-5 w-[260px] sm:w-[300px] lg:w-[360px] max-h-[50vh] overflow-y-auto`}
             onPointerDown={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -141,7 +148,7 @@ export function GeneralMascot({
                 {[...revealedHints].sort((a, b) => a - b).map((hintIndex) => (
                   <motion.div
                     key={hintIndex}
-                    initial={{ opacity: 0, x: isLeft ? 10 : -10 }}
+                    initial={{ opacity: 0, x: (canDrag || !isLeft) ? -10 : 10 }}
                     animate={{ opacity: 1, x: 0 }}
                     className="flex items-start gap-2 bg-amber-50 rounded-lg p-2 lg:p-3 border border-amber-100"
                   >
@@ -171,7 +178,7 @@ export function GeneralMascot({
               </div>
             )}
 
-            <div className={`absolute -bottom-2 ${isLeft ? 'left-6' : 'right-6'} w-3 h-3 bg-white/95 border-r-2 border-b-2 border-amber-200 transform rotate-45`} />
+            <div className={`absolute -bottom-2 ${canDrag ? 'right-6' : isLeft ? 'left-6' : 'right-6'} w-3 h-3 bg-white/95 border-r-2 border-b-2 border-amber-200 transform rotate-45`} />
           </motion.div>
         )}
       </AnimatePresence>
