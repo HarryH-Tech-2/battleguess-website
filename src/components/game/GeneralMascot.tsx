@@ -135,20 +135,14 @@ export function GeneralMascot({
       <motion.button
         onClick={handleMascotClick}
         className="relative group cursor-pointer flex-shrink-0"
-        whileHover={{ scale: 1.06 }}
-        whileTap={{ scale: 0.94 }}
-        animate={showBubble ? {} : { y: [0, -6, 0] }}
-        transition={{
-          y: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' },
-        }}
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.97 }}
         title={`${hintsRemaining} hints remaining – click for intel!`}
       >
         {/* Hint count badge */}
         {hintsRemaining > 0 && (
           <motion.span
             className={`absolute -top-1 ${isLeft ? '-right-1' : '-right-1'} bg-red-500 text-white text-[10px] sm:text-xs xl:text-sm font-bold rounded-full w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 flex items-center justify-center z-10 shadow-lg border-2 border-white`}
-            animate={{ scale: [1, 1.15, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
           >
             {hintsRemaining}
           </motion.span>
