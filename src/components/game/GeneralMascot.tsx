@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue } from 'framer-motion';
 
 interface GeneralMascotProps {
   hints: string[];
@@ -13,6 +13,9 @@ interface GeneralMascotProps {
 
 // Enable drag on screens >= 1024px (lg breakpoint)
 const DRAG_BREAKPOINT = 1024;
+
+// Module-level storage — survives component unmount/remount between questions
+const savedPosition = { x: 0, y: 0 };
 
 export function GeneralMascot({
   hints,
@@ -30,6 +33,10 @@ export function GeneralMascot({
   const nextHintIndex = revealedHints.length;
   const canRevealMore = nextHintIndex < hints.length;
   const hintsRemaining = hints.length - revealedHints.length;
+
+  // Motion values initialised from saved position so drag persists across remounts
+  const dragX = useMotionValue(savedPosition.x);
+  const dragY = useMotionValue(savedPosition.y);
 
   useEffect(() => {
     const check = () => setCanDrag(window.innerWidth >= DRAG_BREAKPOINT);
@@ -95,12 +102,15 @@ export function GeneralMascot({
         }
       }}
       onDragEnd={() => {
+        // Persist position so it survives unmount/remount between questions
+        savedPosition.x = dragX.get();
+        savedPosition.y = dragY.get();
         // Small delay so the click handler can check isDraggingRef
         setTimeout(() => {
           isDraggingRef.current = false;
         }, 100);
       }}
-      style={canDrag ? { cursor: 'grab', touchAction: 'none' } : undefined}
+      style={canDrag ? { x: dragX, y: dragY, cursor: 'grab', touchAction: 'none' } : undefined}
       whileDrag={canDrag ? { cursor: 'grabbing', scale: 1.05 } : undefined}
       className={`fixed z-40 bottom-2 lg:bottom-4
         ${canDrag
