@@ -74,17 +74,25 @@ export function GeneralMascot({
 
   const isLeft = side === 'left';
 
-  // Calculate viewport constraints dynamically so mascot stays on screen
+  // Calculate viewport constraints relative to the CSS layout position (not the
+  // visual position). getBoundingClientRect() includes the drag transform, so we
+  // subtract the current offset to recover the true layout rect.
   const getConstraints = useCallback(() => {
     if (!containerRef.current) return { top: -500, left: -500, right: 500, bottom: 500 };
     const rect = containerRef.current.getBoundingClientRect();
+    const currentX = dragX.get();
+    const currentY = dragY.get();
+    const layoutLeft = rect.left - currentX;
+    const layoutTop = rect.top - currentY;
+    const layoutRight = rect.right - currentX;
+    const layoutBottom = rect.bottom - currentY;
     return {
-      top: -rect.top,
-      left: -rect.left,
-      right: window.innerWidth - rect.right,
-      bottom: window.innerHeight - rect.bottom,
+      top: -layoutTop,
+      left: -layoutLeft,
+      right: window.innerWidth - layoutRight,
+      bottom: window.innerHeight - layoutBottom,
     };
-  }, []);
+  }, [dragX, dragY]);
 
   return (
     <motion.div
