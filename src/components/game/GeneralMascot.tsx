@@ -74,31 +74,42 @@ export function GeneralMascot({
 
   const isLeft = side === 'left';
 
-  // Calculate viewport constraints relative to the CSS layout position (not the
-  // visual position). getBoundingClientRect() includes the drag transform, so we
-  // subtract the current offset to recover the true layout rect.
-  const getConstraints = useCallback(() => {
-    if (!containerRef.current) return { top: -500, left: -500, right: 500, bottom: 500 };
-    const rect = containerRef.current.getBoundingClientRect();
-    const currentX = dragX.get();
-    const currentY = dragY.get();
-    const layoutLeft = rect.left - currentX;
-    const layoutTop = rect.top - currentY;
-    const layoutRight = rect.right - currentX;
-    const layoutBottom = rect.bottom - currentY;
-    return {
-      top: -layoutTop,
-      left: -layoutLeft,
-      right: window.innerWidth - layoutRight,
-      bottom: window.innerHeight - layoutBottom,
+  // Viewport drag constraints — computed after mount when the ref is available,
+  // and kept up-to-date on window resize. Uses generous initial values so drag
+  // works even on the very first frame before the effect runs.
+  const [dragBounds, setDragBounds] = useState({
+    top: -window.innerHeight,
+    left: -window.innerWidth,
+    right: window.innerWidth,
+    bottom: window.innerHeight,
+  });
+
+  useEffect(() => {
+    if (!canDrag) return;
+    const recalc = () => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const cx = dragX.get();
+      const cy = dragY.get();
+      // Subtract current drag offset to get the CSS layout position
+      setDragBounds({
+        top: -(rect.top - cy),
+        left: -(rect.left - cx),
+        right: window.innerWidth - (rect.right - cx),
+        bottom: window.innerHeight - (rect.bottom - cy),
+      });
     };
-  }, [dragX, dragY]);
+    // Run after paint so the ref is guaranteed to be set
+    requestAnimationFrame(recalc);
+    window.addEventListener('resize', recalc);
+    return () => window.removeEventListener('resize', recalc);
+  }, [canDrag, dragX, dragY]);
 
   return (
     <motion.div
       ref={containerRef}
       drag={canDrag}
-      dragConstraints={canDrag ? getConstraints() : undefined}
+      dragConstraints={canDrag ? dragBounds : undefined}
       dragElastic={0.1}
       dragMomentum={false}
       onDragStart={() => {
