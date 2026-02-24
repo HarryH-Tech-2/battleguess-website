@@ -47,13 +47,6 @@ export function ModeSelector({ selected, onSelect, disabled }: ModeSelectorProps
             >
               <span>{mode.icon}</span>
               <span>{mode.label}</span>
-              {isActive && (
-                <motion.div
-                  layoutId="mode-indicator"
-                  className="absolute inset-0 rounded-xl bg-primary-600 -z-10"
-                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                />
-              )}
             </motion.button>
           );
         })}
