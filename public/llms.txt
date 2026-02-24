@@ -1,0 +1,52 @@
+# BattleGuess
+
+> BattleGuess is a free browser-based historical battle guessing game at https://battleguess.app. Players identify famous battles from images across 225 battles spanning 9 historical eras, with 8 different game modes. No account or download required.
+
+BattleGuess covers battles from Ancient Egypt and Mesopotamia through to the World Wars and South American independence wars. Each battle includes an image, hints, historical facts, location data, and difficulty rating. The game features scoring, streaks, achievements, a global leaderboard, and daily challenges.
+
+Built with React, TypeScript, and Vite. Uses Firebase for leaderboards and the Gemini API for image generation. Deployed at https://battleguess.app.
+
+## Game Modes
+
+- [Classic Mode](https://battleguess.app/modes/classic): Identify battles from images with optional hints at a point cost
+- [Timed Mode](https://battleguess.app/modes/timed): Race against a 30-second countdown to guess the battle
+- [Year Mode](https://battleguess.app/modes/year): Guess the year a battle took place using a slider
+- [Location Mode](https://battleguess.app/modes/location): Pinpoint the battle location on an interactive map
+- [Timeline Mode](https://battleguess.app/modes/timeline): Arrange battles in chronological order
+- [Campaign Mode](https://battleguess.app/modes/campaign): Complete themed missions across historical eras
+- [Daily Challenge](https://battleguess.app/modes/daily): A new battle every day, same for all players worldwide
+- [Challenge Mode](https://battleguess.app/modes/challenge): Create shareable challenges and compete with friends
+
+## Historical Eras
+
+- [Ancient Egypt & Mesopotamia](https://battleguess.app/battles): Battles from the earliest civilizations (3000 BCE–500 BCE)
+- [Ancient Greece & Rome](https://battleguess.app/battles): Classical era warfare including Marathon, Thermopylae, and Cannae
+- [Medieval Europe](https://battleguess.app/battles): Crusades, Hundred Years War, and feudal conflicts
+- [Ottoman & Islamic Empires](https://battleguess.app/battles): Conquests and sieges across the Middle East and Mediterranean
+- [East Asia](https://battleguess.app/battles): Battles from China, Japan, Korea, and Mongolia
+- [Colonial & Napoleonic Era](https://battleguess.app/battles): European expansion and the Napoleonic Wars
+- [American Wars](https://battleguess.app/battles): Revolutionary War, Civil War, and conflicts in the Americas
+- [World Wars](https://battleguess.app/battles): Major battles of WWI and WWII
+- [South America](https://battleguess.app/battles): Independence wars and regional conflicts across Latin America
+
+## Content Pages
+
+- [FAQ](https://battleguess.app/faq): Frequently asked questions about gameplay, modes, scoring, and features
+- [About & How to Play](https://battleguess.app/about): Game overview, step-by-step instructions, and credits
+- [All Game Modes](https://battleguess.app/modes): Detailed descriptions of all 8 game modes with rules and strategies
+- [Battle Encyclopedia](https://battleguess.app/battles): Browse all 225 battles by era, difficulty, and name
+- [Blog](https://battleguess.app/blog): Articles about military history, game strategy, and historical warfare
+- [Battle Collections](https://battleguess.app/collections): Curated thematic collections of related battles
+
+## Blog Articles
+
+- [10 Most Decisive Battles in History](https://battleguess.app/blog/decisive-battles-history): Exploring the battles that changed the course of civilization
+- [How Ancient Warfare Shaped the Modern World](https://battleguess.app/blog/ancient-warfare-modern-world): The lasting legacy of ancient military innovations
+- [A Beginner's Guide to Military History](https://battleguess.app/blog/beginners-guide-military-history): Getting started with the study of historical warfare
+- [8 Ways to Improve Your BattleGuess Score](https://battleguess.app/blog/improve-battleguess-score): Tips and strategies for better gameplay
+- [The Evolution of Siege Warfare](https://battleguess.app/blog/evolution-siege-warfare): From ancient rams to modern fortifications
+
+## Optional
+
+- [Sitemap](https://battleguess.app/sitemap.xml): Full XML sitemap with all 272 URLs
+- [Web App Manifest](https://battleguess.app/site.webmanifest): PWA manifest for mobile installation

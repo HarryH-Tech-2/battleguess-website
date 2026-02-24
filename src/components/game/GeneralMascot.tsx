@@ -26,7 +26,7 @@ export function GeneralMascot({
   const [showBubble, setShowBubble] = useState(false);
   const [canDrag, setCanDrag] = useState(false);
   const isDraggingRef = useRef(false);
-  const pointerStartRef = useRef<{ x: number; y: number } | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const nextHintIndex = revealedHints.length;
   const canRevealMore = nextHintIndex < hints.length;
   const hintsRemaining = hints.length - revealedHints.length;
@@ -49,7 +49,6 @@ export function GeneralMascot({
   };
 
   const handleMascotClick = useCallback(() => {
-    // If we just finished a drag, don't toggle
     if (isDraggingRef.current) {
       isDraggingRef.current = false;
       return;
@@ -66,26 +65,41 @@ export function GeneralMascot({
 
   const isLeft = side === 'left';
 
+  // Calculate viewport constraints dynamically so mascot stays on screen
+  const getConstraints = useCallback(() => {
+    if (!containerRef.current) return { top: -500, left: -500, right: 500, bottom: 500 };
+    const rect = containerRef.current.getBoundingClientRect();
+    return {
+      top: -rect.top,
+      left: -rect.left,
+      right: window.innerWidth - rect.right,
+      bottom: window.innerHeight - rect.bottom,
+    };
+  }, []);
+
   return (
     <motion.div
+      ref={containerRef}
       drag={canDrag}
-      dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-      dragSnapToOrigin={false}
-      dragElastic={0.05}
+      dragConstraints={canDrag ? getConstraints() : undefined}
+      dragElastic={0.1}
       dragMomentum={false}
-      dragTransition={{ bounceStiffness: 300, bounceDamping: 30 }}
-      onPointerDown={(e) => {
-        pointerStartRef.current = { x: e.clientX, y: e.clientY };
+      onDragStart={() => {
         isDraggingRef.current = false;
       }}
       onDrag={(_, info) => {
-        // If moved more than 5px, it's a drag not a click
         if (Math.abs(info.offset.x) > 5 || Math.abs(info.offset.y) > 5) {
           isDraggingRef.current = true;
         }
       }}
-      style={canDrag ? { cursor: 'grab' } : undefined}
-      whileDrag={canDrag ? { cursor: 'grabbing', scale: 1.03 } : undefined}
+      onDragEnd={() => {
+        // Small delay so the click handler can check isDraggingRef
+        setTimeout(() => {
+          isDraggingRef.current = false;
+        }, 100);
+      }}
+      style={canDrag ? { cursor: 'grab', touchAction: 'none' } : undefined}
+      whileDrag={canDrag ? { cursor: 'grabbing', scale: 1.05 } : undefined}
       className={`fixed z-40 bottom-2 lg:bottom-4
         ${isLeft ? 'left-1 sm:left-2 lg:left-[8%] 2xl:left-[10%]' : 'right-1 sm:right-2 lg:right-[8%] 2xl:right-[10%]'}
       `}
@@ -99,6 +113,7 @@ export function GeneralMascot({
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
             className={`absolute bottom-full mb-2 ${isLeft ? 'left-0' : 'right-0'} bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border-2 border-amber-200 p-3 sm:p-4 lg:p-5 w-[260px] sm:w-[300px] lg:w-[360px] max-h-[50vh] overflow-y-auto`}
+            onPointerDown={(e) => e.stopPropagation()}
           >
             {/* Close button */}
             <button
@@ -140,14 +155,12 @@ export function GeneralMascot({
             )}
 
             {canRevealMore && !disabled && (
-              <motion.button
+              <button
                 onClick={handleRevealHint}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
                 className="w-full py-2 lg:py-2.5 px-3 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-xs sm:text-sm lg:text-sm font-semibold transition-all shadow-md hover:shadow-lg"
               >
                 Gather Intel (-25 pts)
-              </motion.button>
+              </button>
             )}
 
             {!canRevealMore && (
@@ -158,23 +171,25 @@ export function GeneralMascot({
               </div>
             )}
 
-            {/* Speech bubble pointer */}
             <div className={`absolute -bottom-2 ${isLeft ? 'left-6' : 'right-6'} w-3 h-3 bg-white/95 border-r-2 border-b-2 border-amber-200 transform rotate-45`} />
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Mascot Character - click to toggle hints, drag to reposition */}
+      {/* Mascot Character */}
       <motion.div
         onClick={handleMascotClick}
         className="relative"
         animate={{ y: [0, -6, 0] }}
         transition={{ y: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' } }}
-        title={`${hintsRemaining} hints remaining – click for intel!`}
+        title={canDrag
+          ? `${hintsRemaining} hints remaining – click for intel, drag to move!`
+          : `${hintsRemaining} hints remaining – click for intel!`
+        }
       >
         {hintsRemaining > 0 && (
           <span
-            className={`absolute -top-1 -right-1 bg-red-500 text-white text-[10px] sm:text-xs lg:text-lg font-bold rounded-full w-5 h-5 sm:w-6 sm:h-6 lg:w-10 lg:h-10 flex items-center justify-center z-10 shadow-lg border-2 lg:border-[3px] border-white`}
+            className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] sm:text-xs lg:text-lg font-bold rounded-full w-5 h-5 sm:w-6 sm:h-6 lg:w-10 lg:h-10 flex items-center justify-center z-10 shadow-lg border-2 lg:border-[3px] border-white"
           >
             {hintsRemaining}
           </span>
