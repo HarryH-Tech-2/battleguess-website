@@ -25,7 +25,6 @@ export function GeneralMascot({
   const canRevealMore = nextHintIndex < hints.length;
   const hintsRemaining = hints.length - revealedHints.length;
 
-  // Reset bubble when mascot side changes (new question)
   useEffect(() => {
     setShowBubble(false);
   }, [side]);
@@ -51,19 +50,19 @@ export function GeneralMascot({
 
   return (
     <div
-      className={`fixed z-40 bottom-2 xl:bottom-[28%] flex flex-col items-end
+      className={`fixed z-40 bottom-2 xl:bottom-[28%]
         ${isLeft ? 'left-1 sm:left-2 xl:left-4 2xl:left-8' : 'right-1 sm:right-2 xl:right-4 2xl:right-8'}
       `}
     >
-      {/* Speech Bubble */}
+      {/* Speech Bubble - absolutely positioned above mascot so it doesn't push it */}
       <AnimatePresence>
         {showBubble && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: 10 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            className={`relative bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border-2 border-amber-200 p-3 sm:p-4 xl:p-5 max-w-[260px] sm:max-w-[300px] xl:max-w-[360px] mb-2 max-h-[50vh] overflow-y-auto ${isLeft ? 'self-start' : 'self-end'}`}
+            className={`absolute bottom-full mb-2 ${isLeft ? 'left-0' : 'right-0'} bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border-2 border-amber-200 p-3 sm:p-4 xl:p-5 w-[260px] sm:w-[300px] xl:w-[360px] max-h-[50vh] overflow-y-auto`}
           >
             {/* Close button */}
             <button
@@ -86,7 +85,6 @@ export function GeneralMascot({
               </p>
             </div>
 
-            {/* Revealed hints list */}
             {revealedHints.length > 0 && (
               <div className="space-y-1.5 mb-2">
                 {[...revealedHints].sort((a, b) => a - b).map((hintIndex) => (
@@ -105,7 +103,6 @@ export function GeneralMascot({
               </div>
             )}
 
-            {/* Reveal button */}
             {canRevealMore && !disabled && (
               <motion.button
                 onClick={handleRevealHint}
@@ -131,28 +128,26 @@ export function GeneralMascot({
         )}
       </AnimatePresence>
 
-      {/* Mascot Character */}
+      {/* Mascot Character - position never changes */}
       <motion.button
         onClick={handleMascotClick}
-        className="relative group cursor-pointer flex-shrink-0"
+        className="relative cursor-pointer"
         animate={{ y: [0, -6, 0] }}
         transition={{ y: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' } }}
         title={`${hintsRemaining} hints remaining – click for intel!`}
       >
-        {/* Hint count badge */}
         {hintsRemaining > 0 && (
           <motion.span
-            className={`absolute -top-1 ${isLeft ? '-right-1' : '-right-1'} bg-red-500 text-white text-[10px] sm:text-xs xl:text-sm font-bold rounded-full w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 flex items-center justify-center z-10 shadow-lg border-2 border-white`}
+            className={`absolute -top-1 -right-1 bg-red-500 text-white text-[10px] sm:text-xs xl:text-sm font-bold rounded-full w-5 h-5 sm:w-6 sm:h-6 xl:w-7 xl:h-7 flex items-center justify-center z-10 shadow-lg border-2 border-white`}
           >
             {hintsRemaining}
           </motion.span>
         )}
 
-        {/* Mascot image */}
         <img
           src={mascotImage}
           alt={mascotAlt}
-          className="w-[80px] h-[96px] sm:w-[100px] sm:h-[120px] xl:w-[180px] xl:h-[216px] 2xl:w-[210px] 2xl:h-[252px] object-contain select-none pointer-events-none"
+          className="w-[80px] h-[96px] sm:w-[100px] sm:h-[120px] xl:w-[220px] xl:h-[264px] 2xl:w-[250px] 2xl:h-[300px] object-contain select-none pointer-events-none"
           draggable={false}
         />
       </motion.button>
