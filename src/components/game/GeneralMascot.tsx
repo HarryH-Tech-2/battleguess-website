@@ -27,7 +27,10 @@ export function GeneralMascot({
   mascotAlt = 'Battle Guide mascot',
 }: GeneralMascotProps) {
   const [showBubble, setShowBubble] = useState(false);
-  const [canDrag, setCanDrag] = useState(false);
+  // Initialise synchronously so the first frame already has the correct style
+  const [canDrag, setCanDrag] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth >= DRAG_BREAKPOINT
+  );
   const isDraggingRef = useRef(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const nextHintIndex = revealedHints.length;
@@ -40,7 +43,6 @@ export function GeneralMascot({
 
   useEffect(() => {
     const check = () => setCanDrag(window.innerWidth >= DRAG_BREAKPOINT);
-    check();
     window.addEventListener('resize', check);
     return () => window.removeEventListener('resize', check);
   }, []);
