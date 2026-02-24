@@ -135,8 +135,8 @@ export function GeneralMascot({
       <motion.button
         onClick={handleMascotClick}
         className="relative group cursor-pointer flex-shrink-0"
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.97 }}
+        animate={{ y: [0, -6, 0] }}
+        transition={{ y: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' } }}
         title={`${hintsRemaining} hints remaining – click for intel!`}
       >
         {/* Hint count badge */}
