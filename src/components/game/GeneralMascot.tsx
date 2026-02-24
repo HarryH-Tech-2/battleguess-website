@@ -50,7 +50,7 @@ export function GeneralMascot({
 
   return (
     <div
-      className={`fixed z-40 bottom-2 xl:bottom-[28%]
+      className={`fixed z-40 bottom-2 xl:bottom-4
         ${isLeft ? 'left-1 sm:left-2 xl:left-[8%] 2xl:left-[10%]' : 'right-1 sm:right-2 xl:right-[8%] 2xl:right-[10%]'}
       `}
     >
@@ -138,7 +138,7 @@ export function GeneralMascot({
       >
         {hintsRemaining > 0 && (
           <motion.span
-            className={`absolute -top-1 -right-1 bg-red-500 text-white text-[10px] sm:text-xs xl:text-xl font-bold rounded-full w-5 h-5 sm:w-6 sm:h-6 xl:w-12 xl:h-12 flex items-center justify-center z-10 shadow-lg border-2 xl:border-[3px] border-white`}
+            className={`absolute -top-1 -right-1 bg-red-500 text-white text-[10px] sm:text-xs xl:text-lg font-bold rounded-full w-5 h-5 sm:w-6 sm:h-6 xl:w-10 xl:h-10 flex items-center justify-center z-10 shadow-lg border-2 xl:border-[3px] border-white`}
           >
             {hintsRemaining}
           </motion.span>
@@ -147,7 +147,7 @@ export function GeneralMascot({
         <img
           src={mascotImage}
           alt={mascotAlt}
-          className="w-[80px] h-[96px] sm:w-[100px] sm:h-[120px] xl:w-[440px] xl:h-[528px] 2xl:w-[500px] 2xl:h-[600px] object-contain select-none pointer-events-none"
+          className="w-[80px] h-[96px] sm:w-[100px] sm:h-[120px] xl:w-[340px] xl:h-[408px] 2xl:w-[400px] 2xl:h-[480px] object-contain select-none pointer-events-none"
           draggable={false}
         />
       </motion.button>
