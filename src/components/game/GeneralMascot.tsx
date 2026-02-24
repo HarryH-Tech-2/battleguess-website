@@ -51,8 +51,8 @@ export function GeneralMascot({
 
   return (
     <div
-      className={`fixed z-40 bottom-2 flex flex-col items-end
-        ${isLeft ? 'left-1 sm:left-2 xl:-left-8 2xl:-left-4' : 'right-1 sm:right-2 xl:-right-8 2xl:-right-4'}
+      className={`fixed z-40 bottom-2 xl:bottom-[28%] flex flex-col items-end
+        ${isLeft ? 'left-1 sm:left-2 xl:left-4 2xl:left-8' : 'right-1 sm:right-2 xl:right-4 2xl:right-8'}
       `}
     >
       {/* Speech Bubble */}
