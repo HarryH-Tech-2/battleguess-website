@@ -121,7 +121,10 @@ function gameReducer(state: GameState, action: GameAction): GameState {
       };
     case 'SET_MODE':
       return {
-        ...state,
+        ...initialState,
+        bestStreak: state.bestStreak,
+        selectedCivilization: state.selectedCivilization,
+        selectedDifficulty: state.selectedDifficulty,
         gameMode: action.payload,
       };
     case 'RECORD_BATTLE_RESULT':
@@ -234,7 +237,8 @@ export function useGame() {
 
   const setMode = useCallback((mode: GameMode) => {
     dispatch({ type: 'SET_MODE', payload: mode });
-  }, []);
+    setPlayedBattles([]);
+  }, [setPlayedBattles]);
 
   const setImage = useCallback((url: string) => {
     dispatch({ type: 'SET_IMAGE', payload: url });

@@ -127,7 +127,7 @@ function BattleDetail() {
           <div className="rounded-2xl overflow-hidden shadow-md border border-slate-100">
             <img
               src={imageUrl}
-              alt={`AI-generated artwork depicting the Battle of ${battle.name}`}
+              alt={`Historical artwork depicting the Battle of ${battle.name}`}
               loading="lazy"
               className="w-full h-auto object-cover"
             />

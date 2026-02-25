@@ -9,7 +9,7 @@ interface ModeSelectorProps {
 
 const modes: { id: GameMode; label: string; icon: string; shortDesc: string; longDesc: string; highlight?: boolean }[] = [
   { id: 'daily', label: 'Daily', icon: '📆', shortDesc: 'Same 5 battles for everyone today', longDesc: 'Everyone gets the same 5 battles each day. Compare your score on the daily leaderboard!', highlight: true },
-  { id: 'classic', label: 'Classic', icon: '🎯', shortDesc: 'Guess the battle from the image', longDesc: 'See an AI-generated image of a famous battle and try to guess which one it is. Use hints if you get stuck!' },
+  { id: 'classic', label: 'Classic', icon: '🎯', shortDesc: 'Guess the battle from the image', longDesc: 'See an image of a famous battle and try to guess which one it is. Use hints if you get stuck!' },
   { id: 'timed', label: 'Timed', icon: '⏱️', shortDesc: 'Race against the clock', longDesc: 'Same as Classic, but with a countdown timer. Guess faster to earn bonus points!' },
   { id: 'reverse-year', label: 'Year', icon: '📅', shortDesc: 'Guess when it happened', longDesc: "You'll be given a battle name \u2014 guess the year it took place. Within 10 years counts as correct." },
   { id: 'reverse-location', label: 'Location', icon: '📍', shortDesc: 'Guess where it happened', longDesc: "You'll be given a battle name \u2014 type the location where it took place." },

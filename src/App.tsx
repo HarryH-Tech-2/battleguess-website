@@ -622,7 +622,7 @@ function App() {
                   </h2>
                   <p className="text-sm sm:text-base text-gray-600 max-w-md mx-auto">
                     {state.gameMode === 'classic' || state.gameMode === 'timed'
-                      ? "You'll be shown an AI-generated image of a famous historical battle. Try to guess which battle it depicts!"
+                      ? "You'll be shown an image of a famous historical battle. Try to guess which battle it depicts!"
                       : state.gameMode === 'reverse-year'
                         ? "You'll be given a battle name — can you guess the year it took place?"
                         : state.gameMode === 'reverse-location'
