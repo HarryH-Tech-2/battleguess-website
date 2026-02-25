@@ -150,7 +150,7 @@ export function GeneralMascot({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            className={`absolute bottom-full mb-2 ${canDrag ? 'right-0' : isLeft ? 'left-0' : 'right-0'} bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl border-2 border-amber-200 p-3 sm:p-4 lg:p-5 w-[260px] sm:w-[300px] lg:w-[360px] max-h-[50vh] overflow-y-auto`}
+            className={`absolute bottom-full mb-2 ${canDrag ? 'right-0' : isLeft ? 'left-0' : 'right-0'} bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border-2 border-amber-200 p-2 sm:p-4 lg:p-5 w-[200px] sm:w-[300px] lg:w-[360px] max-h-[45vh] sm:max-h-[50vh] overflow-y-auto`}
             onPointerDown={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -163,30 +163,30 @@ export function GeneralMascot({
               </svg>
             </button>
 
-            <div className="flex items-center gap-2 mb-2 lg:mb-3">
-              <div className="w-7 h-7 lg:w-8 lg:h-8 rounded-full bg-amber-100 flex items-center justify-center">
-                <svg className="w-4 h-4 lg:w-5 lg:h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2 lg:mb-3">
+              <div className="w-5 h-5 sm:w-7 sm:h-7 lg:w-8 lg:h-8 rounded-full bg-amber-100 flex items-center justify-center">
+                <svg className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <p className="text-sm sm:text-base lg:text-base font-bold text-amber-800">
+              <p className="text-xs sm:text-sm lg:text-base font-bold text-amber-800">
                 Intel Report ({revealedHints.length}/{hints.length})
               </p>
             </div>
 
             {revealedHints.length > 0 && (
-              <div className="space-y-1.5 mb-2">
+              <div className="space-y-1 sm:space-y-1.5 mb-1.5 sm:mb-2">
                 {[...revealedHints].sort((a, b) => a - b).map((hintIndex) => (
                   <motion.div
                     key={hintIndex}
                     initial={{ opacity: 0, x: (canDrag || !isLeft) ? -10 : 10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="flex items-start gap-2 bg-amber-50 rounded-lg p-2 lg:p-3 border border-amber-100"
+                    className="flex items-start gap-1.5 sm:gap-2 bg-amber-50 rounded-md sm:rounded-lg p-1.5 sm:p-2 lg:p-3 border border-amber-100"
                   >
-                    <span className="flex-shrink-0 w-5 h-5 lg:w-6 lg:h-6 bg-amber-500 text-white rounded-full flex items-center justify-center text-[10px] lg:text-xs font-bold mt-0.5">
+                    <span className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 bg-amber-500 text-white rounded-full flex items-center justify-center text-[8px] sm:text-[10px] lg:text-xs font-bold mt-0.5">
                       {hintIndex + 1}
                     </span>
-                    <p className="text-xs sm:text-sm lg:text-sm text-amber-900 leading-relaxed">{hints[hintIndex]}</p>
+                    <p className="text-[10px] sm:text-xs lg:text-sm text-amber-900 leading-snug sm:leading-relaxed">{hints[hintIndex]}</p>
                   </motion.div>
                 ))}
               </div>
@@ -195,7 +195,7 @@ export function GeneralMascot({
             {canRevealMore && !disabled && (
               <button
                 onClick={handleRevealHint}
-                className="w-full py-2 lg:py-2.5 px-3 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-xs sm:text-sm lg:text-sm font-semibold transition-all shadow-md hover:shadow-lg"
+                className="w-full py-1.5 sm:py-2 lg:py-2.5 px-2 sm:px-3 rounded-md sm:rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-[10px] sm:text-xs lg:text-sm font-semibold transition-all shadow-md hover:shadow-lg"
               >
                 Gather Intel (-25 pts)
               </button>
