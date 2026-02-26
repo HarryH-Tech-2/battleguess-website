@@ -17,11 +17,8 @@ interface NavbarProps {
 export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', dailyStreak, onOpenStats, onOpenAchievements, achievementCount, onOpenLeaderboard, onOpenNameInput, playerName }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  const toggleLanguage = () => {
-    i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es');
-  };
 
   // Close menu on click outside
   useEffect(() => {
@@ -321,14 +318,6 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
                       <span className="font-medium">Buy me a coffee</span>
                     </a>
 
-                    {/* Language toggle */}
-                    <button
-                      onClick={() => { toggleLanguage(); setMobileMenuOpen(false); }}
-                      className="flex items-center gap-3 w-full px-4 py-3 text-left text-sm text-gray-600 hover:bg-gray-50 transition-colors border-t border-gray-100"
-                    >
-                      <span className="text-lg">🌐</span>
-                      <span className="font-medium">{i18n.language === 'es' ? 'English' : 'Espanol'}</span>
-                    </button>
                   </motion.div>
                 )}
               </AnimatePresence>

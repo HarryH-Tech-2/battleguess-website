@@ -7,7 +7,7 @@ export function ContentNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const navLinks = [
     { to: '/modes', label: t('nav.gameModes') },
@@ -17,10 +17,6 @@ export function ContentNavbar() {
     { to: '/faq', label: t('nav.faq') },
     { to: '/about', label: t('nav.about') },
   ];
-
-  const toggleLanguage = () => {
-    i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es');
-  };
 
   useEffect(() => {
     setMenuOpen(false);
@@ -64,13 +60,6 @@ export function ContentNavbar() {
               {link.label}
             </Link>
           ))}
-          <button
-            onClick={toggleLanguage}
-            className="px-2.5 py-1.5 rounded-lg text-xs font-bold text-gray-500 hover:bg-gray-100 transition-colors border border-gray-200"
-            title={t('nav.language')}
-          >
-            {i18n.language === 'es' ? 'EN' : 'ES'}
-          </button>
           <Link
             to="/"
             className="ml-2 px-4 py-2 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold transition-colors shadow-md hover:shadow-lg"
@@ -81,12 +70,6 @@ export function ContentNavbar() {
 
         {/* Mobile hamburger */}
         <div className="flex items-center gap-2 md:hidden" ref={menuRef}>
-          <button
-            onClick={toggleLanguage}
-            className="px-2 py-1 rounded-lg text-xs font-bold text-gray-500 hover:bg-gray-100 transition-colors border border-gray-200"
-          >
-            {i18n.language === 'es' ? 'EN' : 'ES'}
-          </button>
           <Link
             to="/"
             className="px-3 py-1.5 rounded-lg bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold transition-colors"

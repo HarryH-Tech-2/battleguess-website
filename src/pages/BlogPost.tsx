@@ -8,17 +8,38 @@ import type { BlogSection } from '../data/blogPosts';
 import { getBattleById } from '../data/battles';
 import { getBattleSlug, formatYear, getEraIcon } from '../utils/battleHelpers';
 
+function renderInlineLinks(text: string) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (match) {
+      return (
+        <a
+          key={i}
+          href={match[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary-600 hover:text-primary-800 underline decoration-primary-300 hover:decoration-primary-500 transition-colors"
+        >
+          {match[1]}
+        </a>
+      );
+    }
+    return <span key={i}>{part}</span>;
+  });
+}
+
 function renderContent(content: string) {
   // Split on double newlines for paragraphs
   const paragraphs = content.split('\n\n');
   if (paragraphs.length <= 1) {
     return (
-      <p className="text-slate-600 leading-relaxed">{content}</p>
+      <p className="text-slate-600 leading-relaxed">{renderInlineLinks(content)}</p>
     );
   }
   return paragraphs.map((p, i) => (
     <p key={i} className="text-slate-600 leading-relaxed mb-3 last:mb-0">
-      {p}
+      {renderInlineLinks(p)}
     </p>
   ));
 }
@@ -40,7 +61,7 @@ function SectionBlock({ section, index }: { section: BlogSection; index: number 
           {section.bullets.map((item, i) => (
             <li key={i} className="flex items-start gap-2 text-slate-600 leading-relaxed">
               <span className="text-primary-500 mt-1.5 flex-shrink-0">&#8226;</span>
-              <span>{item}</span>
+              <span>{renderInlineLinks(item)}</span>
             </li>
           ))}
         </ul>
