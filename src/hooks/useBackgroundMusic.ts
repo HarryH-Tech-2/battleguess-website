@@ -15,10 +15,7 @@ export const MUSIC_TRACKS: MusicTrack[] = [
 
 export function useBackgroundMusic(defaultSrc: string) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [isMuted, setIsMuted] = useState(() => {
-    const stored = localStorage.getItem('battleguess-music-muted');
-    return stored === null ? true : stored === 'true';
-  });
+  const [isMuted, setIsMuted] = useState(true);
   const [currentTrackId, setCurrentTrackId] = useState(() => {
     const stored = localStorage.getItem('battleguess-music-track');
     if (stored) return stored;
@@ -60,7 +57,6 @@ export function useBackgroundMusic(defaultSrc: string) {
       audio.play().catch(() => {});
     }
 
-    localStorage.setItem('battleguess-music-muted', String(isMuted));
   }, [isMuted]);
 
   // Pause music when page is hidden (mobile tab switch / browser minimize)
