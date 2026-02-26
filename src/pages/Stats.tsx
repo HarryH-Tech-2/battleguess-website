@@ -178,7 +178,7 @@ function Stats() {
               <h2 className="text-lg font-bold text-slate-700 mb-4">
                 Achievements ({unlocked.length}/{allAchievements.length})
               </h2>
-              <div className="space-y-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {allAchievements.map((achievement, i) => {
                   const isUnlocked = unlockedIds.has(achievement.id);
                   const extractor = progressExtractors[achievement.id];
@@ -190,33 +190,24 @@ function Stats() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.03 }}
-                      className={`flex items-center gap-3 rounded-xl p-3 border ${
+                      className={`rounded-xl p-4 text-center border ${
                         isUnlocked
                           ? 'bg-amber-50 border-amber-200'
                           : 'bg-white border-slate-100'
                       }`}
                     >
-                      <span className={`text-2xl flex-shrink-0 ${isUnlocked ? '' : 'grayscale opacity-40'}`}>
+                      <span className={`text-3xl ${isUnlocked ? '' : 'grayscale opacity-40'}`}>
                         {achievement.icon}
                       </span>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between gap-2">
-                          <p className={`text-sm font-semibold ${isUnlocked ? 'text-slate-800' : 'text-slate-500'}`}>
-                            {achievement.name}
-                          </p>
-                          {isUnlocked ? (
-                            <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                          ) : progress && (
-                            <span className="text-xs text-slate-400 flex-shrink-0">{progress.current}/{progress.target}</span>
-                          )}
-                        </div>
-                        <p className={`text-xs ${isUnlocked ? 'text-slate-500' : 'text-slate-400'}`}>
-                          {achievement.description}
-                        </p>
-                        {!isUnlocked && progress && (
-                          <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden mt-1.5">
+                      <p className={`text-sm font-semibold mt-2 ${isUnlocked ? 'text-slate-800' : 'text-slate-500'}`}>
+                        {achievement.name}
+                      </p>
+                      <p className={`text-xs mt-0.5 ${isUnlocked ? 'text-slate-500' : 'text-slate-400'}`}>
+                        {achievement.description}
+                      </p>
+                      {!isUnlocked && progress && (
+                        <div className="mt-2">
+                          <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
                             <motion.div
                               className="h-full bg-primary-400 rounded-full"
                               initial={{ width: 0 }}
@@ -224,8 +215,9 @@ function Stats() {
                               transition={{ duration: 0.6, delay: i * 0.03 }}
                             />
                           </div>
-                        )}
-                      </div>
+                          <p className="text-[11px] text-slate-400 mt-1">{progress.current}/{progress.target}</p>
+                        </div>
+                      )}
                     </motion.div>
                   );
                 })}
