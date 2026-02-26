@@ -9,13 +9,13 @@ export const faqItems: FAQItem[] = [
   {
     question: 'What is BattleGuess?',
     answer:
-      'BattleGuess is a free online history trivia game where players identify famous historical battles from AI-generated images. It covers battles from ancient Egypt and Mesopotamia through to the World Wars, with 8 different game modes including classic, timed, reverse, timeline, campaign, daily challenge, and multiplayer challenges.',
+      'BattleGuess is a free online history trivia game where players identify famous historical battles from images. It covers battles from ancient Egypt and Mesopotamia through to the World Wars, with 5 different game modes including classic, year, campaign, daily challenge, and multiplayer challenges.',
     category: 'gameplay',
   },
   {
     question: 'How do you play BattleGuess?',
     answer:
-      'You are shown an AI-generated image of a historical battle and must guess which battle it depicts. You can use hints (at a point cost) to help identify the battle. Choose from 8 game modes: Classic (standard guessing), Timed (beat the clock), Year (guess the year), Location (guess the location), Timeline (order battles chronologically), Campaign (progressive missions), Daily (new challenge every day), and Challenge (compete with friends).',
+      'You are shown an image of a historical battle and must guess which battle it depicts. You can use hints (at a point cost) to help identify the battle. Choose from 5 game modes: Classic (identify the battle from an image), Year (guess when it took place), Campaign (progressive missions), Daily (new challenge every day), and Challenge (compete with friends).',
     category: 'gameplay',
   },
   {
@@ -33,7 +33,7 @@ export const faqItems: FAQItem[] = [
   {
     question: 'What game modes are available in BattleGuess?',
     answer:
-      'BattleGuess offers 8 game modes: Classic (identify the battle from an image), Timed (guess before time runs out), Year (guess when the battle took place), Location (guess where it happened), Timeline (place battles in chronological order), Campaign (complete themed missions), Daily Challenge (new battle every day), and Challenge (create shareable challenges for friends).',
+      'BattleGuess offers 5 game modes: Classic (identify the battle from an image), Year (guess when the battle took place), Campaign (complete themed missions), Daily Challenge (new battle every day), and Challenge (create shareable challenges for friends).',
     category: 'gameplay',
   },
 
@@ -41,7 +41,7 @@ export const faqItems: FAQItem[] = [
   {
     question: 'How does scoring work?',
     answer:
-      'Your score for each battle is determined by several factors. You earn base points according to the difficulty of the battle: easy battles award fewer points while hard battles award more. A streak bonus rewards consecutive correct answers, so keeping your streak alive is key. Each hint you use costs 25 points, so use them wisely. In Timed mode you also earn a speed bonus for answering quickly \u2014 the faster you guess, the more bonus points you receive.',
+      'Your score for each battle is determined by several factors. You earn base points according to the difficulty of the battle: easy battles award fewer points while hard battles award more. A streak bonus rewards consecutive correct answers, so keeping your streak alive is key. Each hint you use costs 25 points, so use them wisely.',
     category: 'gameplay',
   },
   {

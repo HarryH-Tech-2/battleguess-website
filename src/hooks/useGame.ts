@@ -1,7 +1,7 @@
 import { useReducer, useCallback, useEffect } from 'react';
 import type { GameState, GameAction, CivilizationId, Difficulty, GameMode, BattleRoundResult } from '../types';
 import { getRandomBattle, getBattlesByCivilization, getBattleById } from '../data/battles/index';
-import { checkAnswer, checkYearAnswer, checkLocationAnswer } from '../utils/stringMatch';
+import { checkAnswer, checkYearAnswer } from '../utils/stringMatch';
 import { calculateScore } from '../utils/scoring';
 import { useLocalStorage } from './useLocalStorage';
 
@@ -180,8 +180,6 @@ export function useGame() {
       if (!isNaN(yearGuess)) {
         isCorrect = checkYearAnswer(yearGuess, state.currentBattle.year);
       }
-    } else if (state.gameMode === 'reverse-location') {
-      isCorrect = checkLocationAnswer(guess, state.currentBattle.location);
     } else {
       isCorrect = checkAnswer(guess, state.currentBattle.acceptedAnswers);
     }

@@ -26,7 +26,7 @@ export interface BattleRoundResult {
   difficulty: Difficulty;
 }
 
-export type GameMode = 'classic' | 'timed' | 'reverse-year' | 'reverse-location' | 'timeline' | 'campaign' | 'daily' | 'challenge';
+export type GameMode = 'classic' | 'reverse-year' | 'campaign' | 'daily' | 'challenge';
 
 export interface Battle {
   id: number;

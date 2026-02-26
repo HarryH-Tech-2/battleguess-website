@@ -47,24 +47,3 @@ export const checkYearAnswer = (
 ): boolean => {
   return Math.abs(guess - actual) <= tolerance;
 };
-
-export const checkLocationAnswer = (
-  guess: string,
-  actual: string,
-  threshold: number = 0.6
-): boolean => {
-  const normalizedGuess = normalizeAnswer(guess);
-  const normalizedActual = normalizeAnswer(actual);
-
-  if (!normalizedGuess) return false;
-
-  // Exact match
-  if (normalizedGuess === normalizedActual) return true;
-
-  // Contains match
-  if (normalizedGuess.includes(normalizedActual) || normalizedActual.includes(normalizedGuess)) return true;
-
-  // Fuzzy match
-  const similarity = compareTwoStrings(normalizedGuess, normalizedActual);
-  return similarity >= threshold;
-};

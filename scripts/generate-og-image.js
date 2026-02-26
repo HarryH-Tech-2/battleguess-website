@@ -58,7 +58,7 @@ async function generateOGImage() {
       .url { fill: rgba(255,255,255,0.6); font-size: 20px; font-family: 'Arial', 'Helvetica', sans-serif; }
     </style>
     <text x="40" y="${OG_HEIGHT - 62}" class="tagline">Free Historical Battle Guessing Game</text>
-    <text x="40" y="${OG_HEIGHT - 30}" class="modes">225 Battles  |  8 Game Modes  |  9 Historical Eras  |  Play Free Now</text>
+    <text x="40" y="${OG_HEIGHT - 30}" class="modes">225 Battles  |  5 Game Modes  |  9 Historical Eras  |  Play Free Now</text>
     <text x="${OG_WIDTH - 40}" y="${OG_HEIGHT - 30}" text-anchor="end" class="url">battleguess.app</text>
   </svg>`;
 

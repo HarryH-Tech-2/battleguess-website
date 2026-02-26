@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
 import { blogPosts, blogCategories } from '../data/blogPosts';
 import type { BlogSection } from '../data/blogPosts';
+import { getBattleById } from '../data/battles';
+import { getBattleSlug, formatYear, getEraIcon } from '../utils/battleHelpers';
 
 function renderContent(content: string) {
   // Split on double newlines for paragraphs
@@ -24,7 +26,7 @@ function renderContent(content: string) {
 function SectionBlock({ section, index }: { section: BlogSection; index: number }) {
   return (
     <motion.section
-      key={index}
+      id={`section-${index}`}
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.1 + index * 0.06 }}
@@ -57,6 +59,13 @@ function BlogPost() {
     return blogPosts
       .filter(p => p.slug !== post.slug && p.category === post.category)
       .slice(0, 3);
+  }, [post]);
+
+  const relatedBattles = useMemo(() => {
+    if (!post?.relatedBattleIds) return [];
+    return post.relatedBattleIds
+      .map(id => getBattleById(id))
+      .filter((b): b is NonNullable<typeof b> => b !== undefined);
   }, [post]);
 
   const category = post
@@ -181,17 +190,52 @@ function BlogPost() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.05 }}
-          className="mb-10"
+          className="mb-10 flex justify-center"
         >
-          <div className="rounded-2xl overflow-hidden shadow-md border border-slate-100">
+          <div className="rounded-2xl overflow-hidden shadow-md border border-slate-100 max-w-lg">
             <img
               src={post.image}
               alt={post.imageAlt || post.title}
               loading="eager"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover max-h-64 sm:max-h-80"
             />
           </div>
         </motion.div>
+      )}
+
+      {/* Lead paragraph */}
+      <motion.p
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.08 }}
+        className="text-lg sm:text-xl text-slate-600 leading-relaxed mb-8 font-medium"
+      >
+        {post.description}
+      </motion.p>
+
+      {/* Table of Contents */}
+      {post.sections.length > 3 && (
+        <motion.nav
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-10"
+          aria-label="Table of contents"
+        >
+          <h2 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-3">In This Article</h2>
+          <ol className="space-y-1.5">
+            {post.sections.map((section, i) => (
+              <li key={i} className="text-sm">
+                <a
+                  href={`#section-${i}`}
+                  className="text-primary-600 hover:text-primary-800 hover:underline transition-colors"
+                >
+                  {section.heading}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </motion.nav>
       )}
 
       {/* Article Content */}
@@ -200,6 +244,37 @@ function BlogPost() {
           <SectionBlock key={index} section={section} index={index} />
         ))}
       </article>
+
+      {/* Explore These Battles */}
+      {relatedBattles.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.35 }}
+          className="mt-10"
+        >
+          <h2 className="text-xl font-bold text-slate-800 mb-4">Explore These Battles</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {relatedBattles.map(battle => (
+              <Link
+                key={battle.id}
+                to={`/battles/${getBattleSlug(battle)}`}
+                className="flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm border border-slate-100 hover:shadow-md hover:border-primary-200 transition-all duration-200 group"
+              >
+                <span className="text-2xl flex-shrink-0">{getEraIcon(battle.civilization)}</span>
+                <div className="min-w-0">
+                  <p className="font-semibold text-slate-800 group-hover:text-primary-700 transition-colors text-sm truncate">
+                    {battle.name}
+                  </p>
+                  <p className="text-xs text-slate-400">
+                    {formatYear(battle.year)} &middot; {battle.location}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </motion.div>
+      )}
 
       {/* Play BattleGuess CTA */}
       <motion.div
@@ -213,7 +288,7 @@ function BlogPost() {
             Ready to test your knowledge?
           </h2>
           <p className="text-slate-600 mb-5">
-            Identify famous battles from AI-generated artwork across 8 historical eras.
+            Identify famous battles from historical artwork across 9 historical eras.
           </p>
           <Link
             to="/"

@@ -15,9 +15,6 @@ import { MusicTrackSelector } from './components/game/MusicTrackSelector';
 import { CivilizationSelector } from './components/game/CivilizationSelector';
 import { DifficultySelector } from './components/game/DifficultySelector';
 import { ModeSelector } from './components/game/ModeSelector';
-import { TimerDisplay } from './components/game/TimerDisplay';
-import { TimelineBoard } from './components/game/TimelineBoard';
-import { TimelineResult } from './components/game/TimelineResult';
 import { CampaignSelector } from './components/game/CampaignSelector';
 import { CampaignNarrative } from './components/game/CampaignNarrative';
 import { CampaignComplete } from './components/game/CampaignComplete';
@@ -37,14 +34,12 @@ import { useBackgroundMusic } from './hooks/useBackgroundMusic';
 import { useSoundEffects } from './hooks/useSoundEffects';
 import { useStats } from './hooks/useStats';
 import { useDailyStreak } from './hooks/useDailyStreak';
-import { useTimer } from './hooks/useTimer';
-import { useTimelineGame } from './hooks/useTimelineGame';
 import { useCampaignGame } from './hooks/useCampaignGame';
 import { useAchievements } from './hooks/useAchievements';
 import { useDailyChallenge } from './hooks/useDailyChallenge';
 import { useChallengeMode } from './hooks/useChallengeMode';
-import { getDailyBattleIds, getDailyDateKey, getPlayerName } from './services/firebase';
-import { calculateScore, calculateTimedBonus, getTimerDuration } from './utils/scoring';
+import { getDailyBattleIds, getDailyDateKey, getPlayerName, submitLeaderboardScore } from './services/firebase';
+import { calculateScore } from './utils/scoring';
 import type { GameMode } from './types';
 import './index.css';
 
@@ -58,7 +53,6 @@ function App() {
   const { play: playSound } = useSoundEffects(isMuted);
   const { recordResult, total, accuracy, avgHints, byCivilization, byDifficulty } = useStats();
   const { currentStreak: dailyStreak, recordPlay } = useDailyStreak();
-  const timeline = useTimelineGame();
   const campaign = useCampaignGame();
   const achievementsSystem = useAchievements();
   const daily = useDailyChallenge();
@@ -68,27 +62,17 @@ function App() {
   const [showAchievements, setShowAchievements] = useState(false);
   const [showLeaderboard, setShowLeaderboard] = useState(false);
   const [showNameInput, setShowNameInput] = useState(false);
-  const [timedBonus, setTimedBonus] = useState(0);
   const hasShownPopup = useRef(false);
   const prevGameStatus = useRef(state.gameStatus);
   const prevRevealedHints = useRef(state.revealedHints.length);
 
-  const handleTimerExpire = useCallback(() => {
-    if (state.gameStatus === 'playing') {
-      actions.giveUp();
-    }
-  }, [state.gameStatus, actions]);
-
-  const timer = useTimer({ onExpire: handleTimerExpire });
-
-  const isTimedMode = state.gameMode === 'timed';
-  const isReverseMode = state.gameMode === 'reverse-year' || state.gameMode === 'reverse-location';
+  const isReverseMode = state.gameMode === 'reverse-year';
 
   // Auto-select mode from URL query param (for "Play Now" links from content pages)
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const modeParam = params.get('mode');
-    const validModes = ['classic', 'timed', 'reverse-year', 'reverse-location', 'timeline', 'campaign', 'daily', 'challenge'];
+    const validModes = ['classic', 'reverse-year', 'campaign', 'daily', 'challenge'];
     if (modeParam && validModes.includes(modeParam)) {
       actions.setMode(modeParam as GameMode);
       const url = new URL(window.location.href);
@@ -113,17 +97,6 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.currentBattle?.id, state.gameStatus]);
 
-  // Start timer when a timed game begins playing
-  useEffect(() => {
-    if (state.gameStatus === 'playing' && isTimedMode && state.currentBattle) {
-      const duration = getTimerDuration(state.currentBattle.difficulty);
-      timer.start(duration);
-    } else if (state.gameStatus !== 'playing') {
-      timer.stop();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state.gameStatus, isTimedMode, state.currentBattle]);
-
   // When civilization changes mid-game, load a new battle from the new pool
   const prevCivilization = useRef(state.selectedCivilization);
   useEffect(() => {
@@ -145,15 +118,6 @@ function App() {
     prevGameStatus.current = curr;
 
     if (prev === 'playing' && curr === 'won') {
-      // Calculate timed bonus if applicable
-      let bonus = 0;
-      if (isTimedMode) {
-        bonus = calculateTimedBonus(timer.timeRemaining, timer.totalTime);
-        setTimedBonus(bonus);
-      } else {
-        setTimedBonus(0);
-      }
-
       if (state.streak >= 3) {
         playSound('streak');
       } else {
@@ -182,9 +146,15 @@ function App() {
           hintsUsed: state.hintsUsed,
           difficulty: state.currentBattle.difficulty,
         });
+        // Submit to global leaderboard (only updates if score is higher)
+        submitLeaderboardScore({
+          totalScore: state.score,
+          gamesPlayed: state.totalGuesses,
+          bestStreak: state.bestStreak,
+          accuracy: Math.round((state.correctGuesses / state.totalGuesses) * 100),
+        });
       }
     } else if (prev === 'playing' && curr === 'lost') {
-      setTimedBonus(0);
       playSound('giveUp');
       if (state.currentBattle) {
         recordResult({
@@ -207,6 +177,13 @@ function App() {
           correct: false,
           hintsUsed: state.hintsUsed,
           difficulty: state.currentBattle.difficulty,
+        });
+        // Submit to global leaderboard (only updates if score is higher)
+        submitLeaderboardScore({
+          totalScore: state.score,
+          gamesPlayed: state.totalGuesses,
+          bestStreak: state.bestStreak,
+          accuracy: state.totalGuesses > 0 ? Math.round((state.correctGuesses / state.totalGuesses) * 100) : 0,
         });
       }
     } else if (curr === 'completed') {
@@ -259,9 +236,7 @@ function App() {
 
   const handleStartGame = () => {
     recordPlay();
-    if (state.gameMode === 'timeline') {
-      timeline.actions.startRound(state.selectedCivilization, state.selectedDifficulty);
-    } else if (isDailyPlaying) {
+    if (isDailyPlaying) {
       // Daily mode - load next daily battle via startBattleById
       const battle = daily.getCurrentBattle();
       if (battle) actions.startBattleById(battle.id);
@@ -315,13 +290,12 @@ function App() {
     actions.nextBattle();
   };
 
-  const isTimelineActive = state.gameMode === 'timeline' && timeline.state.status !== 'idle';
   const isCampaignActive = state.gameMode === 'campaign' && campaign.state.phase !== 'select';
   const isDailyActive = isDailyMode && daily.state.phase !== 'intro';
   const isChallengeActive = isChallengeMode && challenge.state.phase !== 'idle';
   const isPlaying = state.gameStatus === 'playing';
   const isResult = state.gameStatus === 'won' || state.gameStatus === 'lost';
-  const isIdle = state.gameStatus === 'idle' && !isTimelineActive && !isCampaignActive && !isDailyActive && !isChallengeActive;
+  const isIdle = state.gameStatus === 'idle' && !isCampaignActive && !isDailyActive && !isChallengeActive;
 
   return (
     <Layout
@@ -350,7 +324,7 @@ function App() {
         )}
 
         {/* Mode Selector - visible when idle or between rounds */}
-        {(isIdle || isResult || state.gameStatus === 'completed' || (isTimelineActive && timeline.state.status === 'submitted') || (state.gameMode === 'campaign' && campaign.state.phase === 'select') || (isCampaignActive && campaign.state.phase === 'complete')) && (
+        {(isIdle || isResult || state.gameStatus === 'completed' || (state.gameMode === 'campaign' && campaign.state.phase === 'select') || (isCampaignActive && campaign.state.phase === 'complete')) && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -621,13 +595,9 @@ function App() {
                     Welcome to BattleGuess!
                   </h2>
                   <p className="text-sm sm:text-base text-gray-600 max-w-md mx-auto">
-                    {state.gameMode === 'classic' || state.gameMode === 'timed'
-                      ? "You'll be shown an image of a famous historical battle. Try to guess which battle it depicts!"
-                      : state.gameMode === 'reverse-year'
-                        ? "You'll be given a battle name — can you guess the year it took place?"
-                        : state.gameMode === 'reverse-location'
-                          ? "You'll be given a battle name — can you guess where it took place?"
-                          : "You'll be given 5 battles — arrange them in chronological order!"
+                    {state.gameMode === 'reverse-year'
+                      ? "You'll be given a battle name — can you guess the year it took place?"
+                      : "You'll be shown an image of a famous historical battle. Try to guess which battle it depicts!"
                     }
                   </p>
                 </div>
@@ -678,42 +648,6 @@ function App() {
               </motion.div>
             )}
 
-            {/* Timeline Playing State */}
-            {isTimelineActive && timeline.state.status === 'playing' && (
-              <motion.div
-                key="timeline-playing"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                <TimelineBoard
-                  battles={timeline.state.playerOrder}
-                  onReorder={timeline.actions.reorderBattles}
-                  onSubmit={timeline.actions.submitOrder}
-                />
-              </motion.div>
-            )}
-
-            {/* Timeline Result State */}
-            {isTimelineActive && timeline.state.status === 'submitted' && timeline.state.score && (
-              <motion.div
-                key="timeline-result"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                <TimelineResult
-                  playerOrder={timeline.state.playerOrder}
-                  correctOrder={timeline.state.correctOrder}
-                  score={timeline.state.score}
-                  totalScore={timeline.state.totalScore}
-                  roundsPlayed={timeline.state.roundsPlayed}
-                  onNextRound={() => timeline.actions.nextRound(state.selectedCivilization, state.selectedDifficulty)}
-                  onReset={() => timeline.actions.reset()}
-                />
-              </motion.div>
-            )}
-
             {/* Daily/Challenge Progress Bar */}
             {isPlaying && isDailyPlaying && (
               <DailyProgress
@@ -741,22 +675,10 @@ function App() {
                 exit={{ opacity: 0 }}
                 className="space-y-6"
               >
-                {/* Timer Display for timed mode */}
-                {isTimedMode && (
-                  <div className="flex justify-center">
-                    <TimerDisplay
-                      timeRemaining={timer.timeRemaining}
-                      totalTime={timer.totalTime}
-                      isRunning={timer.isRunning}
-                    />
-                  </div>
-                )}
-
                 {/* Reverse mode: show battle name + question */}
                 {isReverseMode ? (
                   <ReversePrompt
                     battleName={state.currentBattle.name}
-                    mode={state.gameMode}
                   />
                 ) : (
                   /* Classic/Timed: show battle image */
@@ -779,7 +701,6 @@ function App() {
                   </span>
                   <span className="text-sm text-gray-500">
                     • Potential: {calculateScore(0, state.currentBattle.difficulty, state.streak)} pts
-                    {isTimedMode && ' + time bonus'}
                   </span>
                   <MusicTrackSelector
                     tracks={tracks}
@@ -838,7 +759,6 @@ function App() {
                   hintsUsed={state.hintsUsed}
                   streak={state.streak}
                   onNextBattle={handleNextBattle}
-                  timedBonus={timedBonus}
                   totalScore={state.score}
                   correctGuesses={state.correctGuesses}
                   totalGuesses={state.totalGuesses}

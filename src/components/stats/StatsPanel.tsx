@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { civilizations } from '../../data/civilizations';
 
 interface StatsPanelProps {
@@ -117,6 +118,20 @@ export function StatsPanel({
                         );
                       })}
                     </div>
+                  </div>
+
+                  {/* View Full Stats link */}
+                  <div className="text-center pt-2">
+                    <Link
+                      to="/stats"
+                      onClick={onClose}
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors"
+                    >
+                      View Full Stats Page
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </Link>
                   </div>
                 </div>
               )}

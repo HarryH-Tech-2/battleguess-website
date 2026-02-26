@@ -23,6 +23,7 @@ export interface BlogPost {
   image?: string;
   imageAlt?: string;
   sections: BlogSection[];
+  relatedBattleIds?: number[];
 }
 
 export const blogCategories: {
@@ -81,6 +82,7 @@ export const blogPosts: BlogPost[] = [
     category: 'wars-and-conflicts',
     image: '/blog/decisive-battles.webp',
     imageAlt: 'Dramatic painting of armies clashing on a battlefield representing the most decisive battles in history',
+    relatedBattleIds: [2, 42, 4, 75, 1, 5, 11],
     sections: [
       {
         heading: 'Why Some Battles Matter More Than Others',
@@ -126,6 +128,7 @@ export const blogPosts: BlogPost[] = [
     category: 'ancient-warfare',
     image: '/blog/ancient-warfare.webp',
     imageAlt: 'Ancient Greek and Roman soldiers in formation with shields and spears on a Mediterranean battlefield',
+    relatedBattleIds: [31, 42, 73],
     sections: [
       {
         heading: 'The Birth of Organized Warfare',
@@ -166,6 +169,7 @@ export const blogPosts: BlogPost[] = [
     category: 'game-guides',
     image: '/blog/beginners-guide.webp',
     imageAlt: 'Open history book with battlefield illustrations spanning multiple eras of warfare',
+    relatedBattleIds: [2, 42, 1],
     sections: [
       {
         heading: 'Where to Start',
@@ -251,6 +255,7 @@ export const blogPosts: BlogPost[] = [
     category: 'military-technology',
     image: '/blog/siege-warfare.webp',
     imageAlt: 'Medieval siege with trebuchets launching stones at a castle wall while defenders fight back',
+    relatedBattleIds: [73, 75, 82],
     sections: [
       {
         heading: 'The Earliest Sieges',
@@ -296,6 +301,7 @@ export const blogPosts: BlogPost[] = [
     category: 'wars-and-conflicts',
     image: '/blog/naval-battles.webp',
     imageAlt: 'Wooden warships exchanging cannon fire on rough seas in a dramatic naval battle',
+    relatedBattleIds: [27, 44, 8, 11],
     sections: [
       {
         heading: 'Why Naval Battles Matter',
@@ -336,6 +342,7 @@ export const blogPosts: BlogPost[] = [
     category: 'game-guides',
     image: '/blog/student-battles.webp',
     imageAlt: 'Student studying military history with maps and battle diagrams spread across a desk',
+    relatedBattleIds: [10, 2, 42, 14, 4, 75, 1, 16, 22, 3, 5],
     sections: [
       {
         heading: 'Why These Battles Matter for Students',
@@ -376,6 +383,7 @@ export const blogPosts: BlogPost[] = [
     category: 'military-strategy',
     image: '/blog/military-commanders.webp',
     imageAlt: 'Commanding general on horseback surveying a battlefield with troops in formation below',
+    relatedBattleIds: [42, 59, 14, 18, 12, 1],
     sections: [
       {
         heading: 'What Makes a Great Commander',
@@ -416,6 +424,7 @@ export const blogPosts: BlogPost[] = [
     category: 'military-technology',
     image: '/blog/gunpowder-warfare.webp',
     imageAlt: 'Cannon firing with smoke billowing across a battlefield as castle walls crumble',
+    relatedBattleIds: [75, 122, 12, 26],
     sections: [
       {
         heading: 'The Chinese Origins',
@@ -456,6 +465,7 @@ export const blogPosts: BlogPost[] = [
     category: 'wars-and-conflicts',
     image: '/blog/wwii-turning-points.webp',
     imageAlt: 'World War II battle scene with tanks advancing through smoke and explosions on a European front',
+    relatedBattleIds: [197, 5, 11, 189, 6],
     sections: [
       {
         heading: 'What Makes a Turning Point',
@@ -496,6 +506,7 @@ export const blogPosts: BlogPost[] = [
     category: 'wars-and-conflicts',
     image: '/blog/samurai-battles.webp',
     imageAlt: 'Samurai warriors in traditional armor clashing with swords in front of a Japanese castle',
+    relatedBattleIds: [129, 134, 122, 119, 121],
     sections: [
       {
         heading: 'The Warrior Culture of Japan',
@@ -536,6 +547,7 @@ export const blogPosts: BlogPost[] = [
     category: 'wars-and-conflicts',
     image: '/blog/crusades.webp',
     imageAlt: 'Crusader knights with cross-marked shields besieging a fortified Middle Eastern city',
+    relatedBattleIds: [78, 90, 82],
     sections: [
       {
         heading: 'What Were the Crusades',
@@ -576,6 +588,7 @@ export const blogPosts: BlogPost[] = [
     category: 'wars-and-conflicts',
     image: '/blog/american-revolution.webp',
     imageAlt: 'Continental Army soldiers firing muskets at advancing British redcoats across a colonial American field',
+    relatedBattleIds: [29, 170, 16, 22],
     sections: [
       {
         heading: 'The Shot Heard Round the World',
@@ -616,6 +629,7 @@ export const blogPosts: BlogPost[] = [
     category: 'wars-and-conflicts',
     image: '/blog/latin-american-independence.webp',
     imageAlt: 'South American independence forces crossing the Andes mountains with cavalry and flags',
+    relatedBattleIds: [205, 206, 207, 208, 209, 218],
     sections: [
       {
         heading: 'A Continent in Chains',
@@ -656,6 +670,7 @@ export const blogPosts: BlogPost[] = [
     category: 'military-technology',
     image: '/blog/cavalry-evolution.webp',
     imageAlt: 'Evolution of mounted warfare showing a chariot, medieval knight, and modern tank side by side',
+    relatedBattleIds: [31, 42, 4, 12],
     sections: [
       {
         heading: 'The Age of Chariots',
@@ -696,6 +711,7 @@ export const blogPosts: BlogPost[] = [
     category: 'wars-and-conflicts',
     image: '/blog/ottoman-victories.webp',
     imageAlt: 'Ottoman Janissary troops with massive siege cannons outside the walls of Constantinople',
+    relatedBattleIds: [75],
     sections: [
       {
         heading: 'Rise of the Ottoman Military',
@@ -736,6 +752,7 @@ export const blogPosts: BlogPost[] = [
     category: 'military-strategy',
     image: '/blog/women-military-history.webp',
     imageAlt: 'Joan of Arc in armor rallying French troops with a banner at the Siege of Orleans',
+    relatedBattleIds: [44],
     sections: [
       {
         heading: 'Hidden Figures of the Battlefield',
@@ -816,6 +833,7 @@ export const blogPosts: BlogPost[] = [
     category: 'ancient-warfare',
     image: '/blog/rome-vs-greece.webp',
     imageAlt: 'Roman legionaries with rectangular shields facing Greek hoplites in phalanx formation',
+    relatedBattleIds: [14, 42],
     sections: [
       {
         heading: 'Two Military Giants',

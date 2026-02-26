@@ -39,19 +39,6 @@ export const gameModeData: GameModeInfo[] = [
       'Start by examining the image for era-specific details such as armor styles, weapons, and landscape. Ancient battles often feature shields, spears, and Mediterranean terrain, while World War battles show trenches, tanks, or modern uniforms. If the image shows naval combat, narrow your options to famous sea battles. Use hints selectively \u2014 the first hint is usually a broad era clue that can save you from a wrong guess. Building and maintaining a streak is one of the best ways to maximize your overall score.',
   },
   {
-    id: 'timed',
-    slug: 'timed',
-    label: 'Timed',
-    icon: '\u23F1\uFE0F',
-    shortDesc: 'Race against the clock',
-    longDesc:
-      'Same as Classic, but with a countdown timer. Guess faster to earn bonus points!',
-    rules:
-      'Timed mode follows the same rules as Classic mode but adds a countdown timer to each round. You must submit your answer before time runs out or the round ends with no points. A speed bonus is awarded based on how quickly you answer \u2014 the faster you guess correctly, the higher the bonus. Hints are still available and cost the same 25 points each. If the timer expires before you answer, you receive zero points for that round and your streak resets.',
-    strategy:
-      'Speed is rewarded, but accuracy matters more since a wrong answer earns nothing. Develop a quick mental checklist: scan for the era first, then look for distinguishing features like famous landmarks or battle formations. If you recognize the battle instantly, submit immediately for maximum time bonus. If you are unsure, one well-chosen hint is better than a wild guess that breaks your streak. Practice in Classic mode first to build your knowledge base, then switch to Timed once you can identify battles more confidently.',
-  },
-  {
     id: 'reverse-year',
     slug: 'reverse-year',
     label: 'Year',
@@ -63,32 +50,6 @@ export const gameModeData: GameModeInfo[] = [
       'In Year mode you are told the name of a battle and must guess the year it occurred. Your answer is considered correct if it falls within 10 years of the actual date. The closer your guess is to the exact year, the more points you earn. Battles span from ancient history (BCE dates) through the 20th century. No image is shown \u2014 this mode tests your pure chronological knowledge of military history.',
     strategy:
       'Anchor your knowledge around major historical milestones. For example, the fall of Rome was 476 CE, the Norman Conquest was 1066, and World War I started in 1914. Use these anchors to estimate dates for less familiar battles. Learn the rough century for each major civilization and era in BattleGuess, and you will be within range for most battles. Remember that BCE dates count backward, so the Battle of Thermopylae (480 BCE) is earlier than the Battle of Actium (31 BCE). Even an educated guess within 10 years earns points, so never leave a round blank.',
-  },
-  {
-    id: 'reverse-location',
-    slug: 'reverse-location',
-    label: 'Location',
-    icon: '\u{1F4CD}',
-    shortDesc: 'Guess where it happened',
-    longDesc:
-      "You'll be given a battle name \u2014 type the location where it took place.",
-    rules:
-      'You are given the name of a historical battle and must type the location where it took place. Accepted answers include the city, region, or country associated with the battle. The game accepts multiple valid spellings and common names for each location. Like Year mode, no image is shown. Points are awarded for correct answers, and your streak continues as long as you keep answering correctly.',
-    strategy:
-      'Many battles are named after their location, which gives you a direct clue \u2014 the Battle of Gettysburg happened in Gettysburg, and the Battle of Waterloo happened near Waterloo, Belgium. For battles with less obvious names, learn the geographic theaters of major conflicts: the Eastern Front of WWII was in Russia and Eastern Europe, Napoleon fought across Western Europe and Egypt, and ancient Greek battles took place around the Aegean. When unsure, think about which empire or nation was involved and guess the general region. A country-level answer is often accepted when the exact city is unclear.',
-  },
-  {
-    id: 'timeline',
-    slug: 'timeline',
-    label: 'Timeline',
-    icon: '\u{1F4DC}',
-    shortDesc: 'Sort battles chronologically',
-    longDesc:
-      'Drag and drop 5 battles into the correct chronological order. Perfect order earns a bonus!',
-    rules:
-      'You are given 5 battle names and must arrange them in correct chronological order from earliest to latest. Drag and drop the battles into position. You earn points for each battle placed in the correct position, and a perfect-order bonus is awarded if you get all 5 right. The battles are drawn from different eras and difficulty levels, so you may need to compare ancient battles against modern ones. There is no time limit, so you can take as long as you need to think it through.',
-    strategy:
-      'Start by identifying battles you are confident about and place those first. Group battles by era \u2014 ancient, medieval, early modern, and modern \u2014 before fine-tuning the order within each group. If you are unsure about two battles from the same era, think about the broader historical context: which empire rose first, which war came before which. Eliminating obviously wrong placements first makes the remaining decisions easier. Since perfect order earns a bonus, it is worth spending extra time to get every position right rather than settling for partial credit.',
   },
   {
     id: 'campaign',

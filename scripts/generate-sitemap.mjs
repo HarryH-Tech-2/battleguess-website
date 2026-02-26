@@ -16,8 +16,7 @@ const TODAY = new Date().toISOString().split('T')[0];
 
 // Game mode slugs (from gameModeData.ts)
 const modeSlugs = [
-  'daily', 'classic', 'timed', 'reverse-year',
-  'reverse-location', 'timeline', 'campaign', 'challenge'
+  'daily', 'classic', 'reverse-year', 'campaign', 'challenge'
 ];
 
 // Collection slugs (from battleCollections.ts)

@@ -15,9 +15,7 @@ export interface AchievementStats {
   totalMediumCorrect: number;
   totalEasyCorrect: number;
   uniqueCivilizations: number;
-  totalTimelineRounds: number;
   totalCampaignsCompleted: number;
-  totalPerfectTimelines: number;
 }
 
 // Progress extractors: for each achievement, return { current, target }
@@ -38,8 +36,6 @@ const progressExtractors: Record<string, (s: AchievementStats) => { current: num
   'veteran': (s) => ({ current: s.totalGames, target: 100 }),
   'easy-rider': (s) => ({ current: s.totalEasyCorrect, target: 10 }),
   'medium-mastery': (s) => ({ current: s.totalMediumCorrect, target: 10 }),
-  'timeline-master': (s) => ({ current: s.totalTimelineRounds, target: 5 }),
-  'perfect-timeline': (s) => ({ current: s.totalPerfectTimelines, target: 1 }),
   'campaign-hero': (s) => ({ current: s.totalCampaignsCompleted, target: 1 }),
   'campaign-veteran': (s) => ({ current: s.totalCampaignsCompleted, target: 3 }),
 };
@@ -176,20 +172,6 @@ export const achievements: AchievementDef[] = [
     description: 'Get 10 medium battles correct',
     icon: '🟡',
     check: (s) => s.totalMediumCorrect >= 10,
-  },
-  {
-    id: 'timeline-master',
-    name: 'Timeline Master',
-    description: 'Complete 5 timeline rounds',
-    icon: '📜',
-    check: (s) => s.totalTimelineRounds >= 5,
-  },
-  {
-    id: 'perfect-timeline',
-    name: 'Perfect Order',
-    description: 'Get a perfect score in a timeline round',
-    icon: '✨',
-    check: (s) => s.totalPerfectTimelines >= 1,
   },
   {
     id: 'campaign-hero',

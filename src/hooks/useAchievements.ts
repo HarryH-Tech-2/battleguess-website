@@ -19,9 +19,7 @@ export function useAchievements() {
     totalMediumCorrect: 0,
     totalEasyCorrect: 0,
     uniqueCivilizations: 0,
-    totalTimelineRounds: 0,
     totalCampaignsCompleted: 0,
-    totalPerfectTimelines: 0,
   });
   const [uniqueCivs, setUniqueCivs] = useLocalStorage<string[]>('battleguess-unique-civs', []);
   const queueRef = useRef<AchievementDef[]>([]);
@@ -90,9 +88,7 @@ export function useAchievements() {
         totalMediumCorrect: prev.totalMediumCorrect + (params.correct && params.difficulty === 'medium' ? 1 : 0),
         totalEasyCorrect: prev.totalEasyCorrect + (params.correct && params.difficulty === 'easy' ? 1 : 0),
         uniqueCivilizations: newCivs.length,
-        totalTimelineRounds: prev.totalTimelineRounds,
         totalCampaignsCompleted: prev.totalCampaignsCompleted,
-        totalPerfectTimelines: prev.totalPerfectTimelines,
       };
 
       // Defer the check to avoid state update during render
@@ -100,18 +96,6 @@ export function useAchievements() {
       return updated;
     });
   }, [setAchievementStats, uniqueCivs, setUniqueCivs, checkAndUnlock]);
-
-  const recordTimelineRound = useCallback((isPerfect: boolean) => {
-    setAchievementStats(prev => {
-      const updated: AchievementStats = {
-        ...prev,
-        totalTimelineRounds: prev.totalTimelineRounds + 1,
-        totalPerfectTimelines: prev.totalPerfectTimelines + (isPerfect ? 1 : 0),
-      };
-      setTimeout(() => checkAndUnlock(updated), 0);
-      return updated;
-    });
-  }, [setAchievementStats, checkAndUnlock]);
 
   const recordCampaignComplete = useCallback(() => {
     setAchievementStats(prev => {
@@ -133,7 +117,6 @@ export function useAchievements() {
     achievements,
     achievementStats,
     recordGameResult,
-    recordTimelineRound,
     recordCampaignComplete,
   };
 }

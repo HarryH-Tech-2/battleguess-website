@@ -13,6 +13,7 @@ const BattleCollectionDetail = lazy(() => import('./pages/BattleCollectionDetail
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 const BlogTopic = lazy(() => import('./pages/BlogTopic'));
+const Stats = lazy(() => import('./pages/Stats'));
 
 function LoadingFallback() {
   return (
@@ -41,6 +42,7 @@ export function AppRouter() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/topics/:topicId" element={<BlogTopic />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/stats" element={<Stats />} />
         <Route path="*" element={<App />} />
       </Routes>
     </Suspense>

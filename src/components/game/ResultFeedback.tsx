@@ -13,7 +13,6 @@ interface ResultFeedbackProps {
   hintsUsed: number;
   streak: number;
   onNextBattle: () => void;
-  timedBonus?: number;
   totalScore?: number;
   correctGuesses?: number;
   totalGuesses?: number;
@@ -28,7 +27,6 @@ export function ResultFeedback({
   hintsUsed,
   streak,
   onNextBattle,
-  timedBonus = 0,
   totalScore = 0,
   correctGuesses = 0,
   totalGuesses = 0,
@@ -126,18 +124,12 @@ export function ResultFeedback({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className={`grid gap-2 sm:gap-4 ${timedBonus > 0 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-3'}`}
+          className="grid gap-2 sm:gap-4 grid-cols-3"
         >
           <div className="bg-white rounded-xl p-2 sm:p-3 shadow-md border border-primary-100">
             <p className="text-xl sm:text-2xl font-bold text-primary-600">+{score}</p>
             <p className="text-xs text-gray-500">Points</p>
           </div>
-          {timedBonus > 0 && (
-            <div className="bg-white rounded-xl p-2 sm:p-3 shadow-md border border-green-200">
-              <p className="text-xl sm:text-2xl font-bold text-green-600">+{timedBonus}</p>
-              <p className="text-xs text-gray-500">Time Bonus</p>
-            </div>
-          )}
           <div className="bg-white rounded-xl p-2 sm:p-3 shadow-md border border-primary-100">
             <p className="text-xl sm:text-2xl font-bold text-primary-600">{hintsUsed}</p>
             <p className="text-xs text-gray-500">Hints Used</p>
