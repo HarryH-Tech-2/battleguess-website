@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback, lazy, Suspense } from 'react';
+import { useEffect, useState, useRef, lazy, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Layout } from './components/layout/Layout';
 import { Card } from './components/ui/Card';
