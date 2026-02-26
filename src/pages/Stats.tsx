@@ -5,7 +5,7 @@ import { ContentLayout } from '../components/layout/ContentLayout';
 import { useStats } from '../hooks/useStats';
 import { useAchievements } from '../hooks/useAchievements';
 import { civilizations } from '../data/civilizations';
-import { getNextAchievement } from '../data/achievements';
+import { progressExtractors } from '../data/achievements';
 
 function AccuracyBar({ label, icon, correct, total }: { label: string; icon?: string; correct: number; total: number }) {
   const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
@@ -37,10 +37,6 @@ function Stats() {
   );
 
   const unlockedIds = useMemo(() => new Set(unlocked.map(u => u.id)), [unlocked]);
-  const nextAchievement = useMemo(
-    () => getNextAchievement(achievementStats, unlockedIds),
-    [achievementStats, unlockedIds]
-  );
 
   const bestStreak = achievementStats.bestStreak;
 
@@ -182,46 +178,58 @@ function Stats() {
               <h2 className="text-lg font-bold text-slate-700 mb-4">
                 Achievements ({unlocked.length}/{allAchievements.length})
               </h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {allAchievements.map(achievement => {
+              <div className="space-y-2">
+                {allAchievements.map((achievement, i) => {
                   const isUnlocked = unlockedIds.has(achievement.id);
+                  const extractor = progressExtractors[achievement.id];
+                  const progress = extractor ? extractor(achievementStats) : null;
+                  const pct = progress ? Math.min(Math.round((progress.current / progress.target) * 100), 100) : 0;
                   return (
-                    <div
+                    <motion.div
                       key={achievement.id}
-                      className={`rounded-xl p-3 text-center border ${
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.03 }}
+                      className={`flex items-center gap-3 rounded-xl p-3 border ${
                         isUnlocked
                           ? 'bg-amber-50 border-amber-200'
-                          : 'bg-slate-50 border-slate-100 opacity-50'
+                          : 'bg-white border-slate-100'
                       }`}
                     >
-                      <span className="text-2xl">{achievement.icon}</span>
-                      <p className={`text-xs font-semibold mt-1 ${isUnlocked ? 'text-amber-800' : 'text-slate-500'}`}>
-                        {achievement.name}
-                      </p>
-                      <p className="text-[10px] text-slate-400 mt-0.5">{achievement.description}</p>
-                    </div>
+                      <span className={`text-2xl flex-shrink-0 ${isUnlocked ? '' : 'grayscale opacity-40'}`}>
+                        {achievement.icon}
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between gap-2">
+                          <p className={`text-sm font-semibold ${isUnlocked ? 'text-slate-800' : 'text-slate-500'}`}>
+                            {achievement.name}
+                          </p>
+                          {isUnlocked ? (
+                            <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                          ) : progress && (
+                            <span className="text-xs text-slate-400 flex-shrink-0">{progress.current}/{progress.target}</span>
+                          )}
+                        </div>
+                        <p className={`text-xs ${isUnlocked ? 'text-slate-500' : 'text-slate-400'}`}>
+                          {achievement.description}
+                        </p>
+                        {!isUnlocked && progress && (
+                          <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden mt-1.5">
+                            <motion.div
+                              className="h-full bg-primary-400 rounded-full"
+                              initial={{ width: 0 }}
+                              animate={{ width: `${pct}%` }}
+                              transition={{ duration: 0.6, delay: i * 0.03 }}
+                            />
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
                   );
                 })}
               </div>
-
-              {nextAchievement && (
-                <div className="mt-4 bg-primary-50 border border-primary-200 rounded-xl p-4">
-                  <p className="text-sm text-primary-700 font-medium">
-                    Next achievement: {nextAchievement.achievement.icon} {nextAchievement.achievement.name}
-                  </p>
-                  <div className="h-2 bg-primary-100 rounded-full overflow-hidden mt-2">
-                    <motion.div
-                      className="h-full bg-primary-500 rounded-full"
-                      initial={{ width: 0 }}
-                      animate={{ width: `${nextAchievement.progress * 100}%` }}
-                      transition={{ duration: 0.8 }}
-                    />
-                  </div>
-                  <p className="text-xs text-primary-500 mt-1">
-                    {nextAchievement.current}/{nextAchievement.target}
-                  </p>
-                </div>
-              )}
             </section>
 
             {/* Play More CTA */}

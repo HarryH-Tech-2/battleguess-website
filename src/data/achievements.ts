@@ -19,7 +19,7 @@ export interface AchievementStats {
 }
 
 // Progress extractors: for each achievement, return { current, target }
-const progressExtractors: Record<string, (s: AchievementStats) => { current: number; target: number }> = {
+export const progressExtractors: Record<string, (s: AchievementStats) => { current: number; target: number }> = {
   'first-blood': (s) => ({ current: s.totalCorrect, target: 1 }),
   'rising-star': (s) => ({ current: s.totalCorrect, target: 10 }),
   'history-buff': (s) => ({ current: s.totalCorrect, target: 50 }),
