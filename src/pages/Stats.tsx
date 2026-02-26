@@ -190,24 +190,24 @@ function Stats() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.03 }}
-                      className={`rounded-xl p-4 text-center border ${
+                      className={`rounded-xl p-5 text-center border ${
                         isUnlocked
                           ? 'bg-amber-50 border-amber-200'
                           : 'bg-white border-slate-100'
                       }`}
                     >
-                      <span className={`text-3xl ${isUnlocked ? '' : 'grayscale opacity-40'}`}>
+                      <span className={`text-4xl ${isUnlocked ? '' : 'grayscale opacity-40'}`}>
                         {achievement.icon}
                       </span>
-                      <p className={`text-sm font-semibold mt-2 ${isUnlocked ? 'text-slate-800' : 'text-slate-500'}`}>
+                      <p className={`text-base font-bold mt-2 ${isUnlocked ? 'text-slate-800' : 'text-slate-500'}`}>
                         {achievement.name}
                       </p>
-                      <p className={`text-xs mt-0.5 ${isUnlocked ? 'text-slate-500' : 'text-slate-400'}`}>
+                      <p className={`text-sm mt-1 leading-snug ${isUnlocked ? 'text-slate-600' : 'text-slate-400'}`}>
                         {achievement.description}
                       </p>
                       {!isUnlocked && progress && (
-                        <div className="mt-2">
-                          <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                        <div className="mt-3">
+                          <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
                             <motion.div
                               className="h-full bg-primary-400 rounded-full"
                               initial={{ width: 0 }}
@@ -215,7 +215,7 @@ function Stats() {
                               transition={{ duration: 0.6, delay: i * 0.03 }}
                             />
                           </div>
-                          <p className="text-[11px] text-slate-400 mt-1">{progress.current}/{progress.target}</p>
+                          <p className="text-xs text-slate-400 mt-1">{progress.current}/{progress.target}</p>
                         </div>
                       )}
                     </motion.div>
