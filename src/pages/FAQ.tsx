@@ -34,10 +34,10 @@ function FAQ() {
     '@type': 'FAQPage',
     mainEntity: faqItems.map(item => ({
       '@type': 'Question',
-      name: item.question,
+      name: t(`faqItems.${item.id}.question`),
       acceptedAnswer: {
         '@type': 'Answer',
-        text: item.answer,
+        text: t(`faqItems.${item.id}.answer`),
       },
     })),
   };
@@ -96,7 +96,7 @@ function FAQ() {
           const isOpen = openIndex === index;
           return (
             <motion.div
-              key={`${activeCategory}-${index}`}
+              key={`${activeCategory}-${item.id}`}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: index * 0.03 }}
@@ -107,7 +107,7 @@ function FAQ() {
                 className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-slate-50 transition-colors"
               >
                 <span className="font-semibold text-slate-800 pr-4">
-                  {item.question}
+                  {t(`faqItems.${item.id}.question`)}
                 </span>
                 <span
                   className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-300 ${
@@ -129,7 +129,7 @@ function FAQ() {
                     className="overflow-hidden"
                   >
                     <div className="px-5 pb-4 text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                      {item.answer}
+                      {t(`faqItems.${item.id}.answer`)}
                     </div>
                   </motion.div>
                 )}

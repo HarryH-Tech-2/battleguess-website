@@ -191,7 +191,7 @@ function BattleDetail() {
           transition={{ duration: 0.4, delay: 0.35 }}
           className="mb-10"
         >
-          <h2 className="text-lg font-bold text-slate-700 mb-3">Featured In</h2>
+          <h2 className="text-lg font-bold text-slate-700 mb-3">{t('pages.battles.featuredIn')}</h2>
           <div className="flex flex-wrap gap-2">
             {featuredCollections.map(collection => (
               <LocaleLink
@@ -217,7 +217,7 @@ function BattleDetail() {
           transition={{ duration: 0.4, delay: 0.38 }}
           className="mb-10"
         >
-          <h2 className="text-lg font-bold text-slate-700 mb-3">Related Articles</h2>
+          <h2 className="text-lg font-bold text-slate-700 mb-3">{t('pages.battles.relatedArticles')}</h2>
           <div className="space-y-2">
             {relatedArticles.map(article => (
               <LocaleLink

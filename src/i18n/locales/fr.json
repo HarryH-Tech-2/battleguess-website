@@ -7,7 +7,7 @@
     "collections": "Collections",
     "blog": "Blog",
     "faq": "FAQ",
-    "about": "A propos",
+    "about": "À propos",
     "language": "Langue"
   },
   "game": {
@@ -16,33 +16,33 @@
     "giveUp": "Abandonner",
     "nextBattle": "Bataille suivante",
     "score": "Score",
-    "streak": "Serie",
-    "bestStreak": "Meilleure serie",
+    "streak": "Série",
+    "bestStreak": "Meilleure série",
     "round": "Manche",
     "gameMode": "Mode de jeu",
-    "difficulty": "Difficulte",
+    "difficulty": "Difficulté",
     "civilization": "Civilisation",
     "hints": "Indices",
-    "revealHint": "Reveler l'indice",
-    "guessPlaceholder": "Entrez votre reponse...",
+    "revealHint": "Révéler un indice",
+    "guessPlaceholder": "Entrez votre réponse...",
     "correct": "Correct !",
     "wrong": "Faux !",
-    "timeUp": "Temps ecoule !",
-    "loading": "Generation de l'image de bataille...",
+    "timeUp": "Temps écoulé !",
+    "loading": "Génération de l'image de bataille...",
     "welcome": "Bienvenue sur BattleGuess !",
-    "selectMode": "Choisissez un mode et commencez a jouer",
+    "selectMode": "Sélectionnez un mode et commencez à jouer",
     "playAgain": "Rejouer",
     "newGame": "Nouvelle partie"
   },
   "modes": {
     "classic": "Classique",
-    "timed": "Chrono",
-    "reverseYear": "Annee",
-    "reverseLocation": "Lieu",
+    "timed": "Chronométré",
+    "reverseYear": "Année",
+    "reverseLocation": "Localisation",
     "timeline": "Chronologie",
     "campaign": "Campagne",
     "daily": "Quotidien",
-    "challenge": "Defi"
+    "challenge": "Défi"
   },
   "difficulty": {
     "easy": "Facile",
@@ -53,50 +53,64 @@
   "navbar": {
     "stats": "Statistiques",
     "leaderboard": "Classement",
-    "achievements": "Succes",
-    "setName": "Choisir un nom",
-    "buyMeACoffee": "Offrir un cafe",
+    "achievements": "Succès",
+    "setName": "Choisir un pseudo",
+    "buyMeACoffee": "Offrez-moi un café",
     "twitter": "Twitter/X"
   },
   "footer": {
-    "battleIntelFeed": "Fil d'Intel Bataille",
+    "battleIntelFeed": "Fil d'actualités des batailles",
     "battles": "Batailles",
-    "eras": "Epoques",
+    "eras": "Époques",
     "facts": "Anecdotes",
-    "years": "Annees"
+    "years": "Années"
   },
   "pages": {
     "faq": {
-      "title": "Questions frequentes",
+      "title": "Questions fréquentes",
       "subtitle": "Tout ce que vous devez savoir sur BattleGuess",
       "categories": {
-        "all": "Toutes",
+        "all": "Tout",
         "gameplay": "Gameplay",
         "account": "Compte",
         "technical": "Technique",
         "content": "Contenu"
       },
-      "cta": "Encore des questions ? Commencez a jouer et decouvrez les reponses !"
+      "cta": "Vous avez encore des questions ? Commencez à jouer et découvrez les réponses !"
     },
     "about": {
-      "title": "A propos de BattleGuess",
-      "description": "BattleGuess est le jeu de culture historique ultime ou vous identifiez des batailles celebres a partir de superbes images generees par IA. Testez vos connaissances a travers 8 epoques historiques, de l'Antiquite aux Guerres mondiales, et affrontez des joueurs du monde entier.",
+      "title": "À propos de BattleGuess",
+      "description": "BattleGuess est le jeu de culture générale historique ultime où vous identifiez des batailles célèbres à partir de superbes illustrations générées par IA. Testez vos connaissances à travers 8 époques historiques, de l'Antiquité aux guerres mondiales, et rivalisez dans les classements mondiaux.",
       "howToPlay": "Comment jouer",
-      "whatMakesSpecial": "Ce qui rend BattleGuess special",
-      "cta": "Pret a tester vos connaissances ?",
+      "whatMakesSpecial": "Ce qui rend BattleGuess unique",
+      "cta": "Prêt à tester vos connaissances ?",
       "ctaSubtitle": "Lancez-vous et voyez combien de batailles vous pouvez identifier.",
       "features": {
-        "aiImages": "Images generees par IA",
+        "aiImages": "Images générées par IA",
         "gameModes": "8 modes de jeu",
-        "battles": "200+ batailles",
-        "eras": "8 epoques historiques"
-      }
+        "battles": "Plus de 200 batailles",
+        "eras": "8 époques historiques"
+      },
+      "step1Title": "Choisissez vos paramètres",
+      "step1Desc": "Sélectionnez votre époque, votre niveau de difficulté et votre mode de jeu préférés. Que vous souhaitiez un défi quotidien rapide ou une campagne complète, il y a un mode pour vous.",
+      "step2Title": "Étudiez l'image de la bataille",
+      "step2Desc": "Examinez l'illustration générée par IA représentant une célèbre bataille historique. Recherchez des indices visuels comme les armures, les armes, le terrain et les formations.",
+      "step3Title": "Utilisez les indices si nécessaire",
+      "step3Desc": "Bloqué ? Révélez jusqu'à trois indices progressifs pour vous aider à identifier la bataille. Chaque indice coûte des points, alors utilisez-les judicieusement.",
+      "step4Title": "Soumettez votre réponse",
+      "step4Desc": "Tapez le nom de la bataille et validez votre réponse. Les bonnes réponses rapportent des points en fonction de la difficulté, des indices utilisés et de votre série en cours.",
+      "step5Title": "Grimpez dans le classement",
+      "step5Desc": "Construisez votre série, débloquez des succès et rivalisez dans le classement mondial. Partagez vos résultats avec vos amis et défiez-les de battre votre score.",
+      "featureAiDesc": "Chaque bataille prend vie grâce à des images uniques et atmosphériques générées par IA, conçues pour capturer l'essence de chaque engagement historique.",
+      "featureModesDesc": "Du mode Classique au tri Chronologique, en passant par les défis Chronométrés, les Campagnes et les défis Quotidiens, il y a toujours une nouvelle façon de jouer.",
+      "featureBattlesDesc": "Explorez plus de 200 batailles historiquement fidèles couvrant des milliers d'années d'histoire militaire, de la guerre antique sur chars aux combats modernes.",
+      "featureErasDesc": "Voyagez à travers l'Égypte ancienne, la Grèce et Rome antiques, l'Europe médiévale, l'Empire ottoman, l'Asie de l'Est, l'ère coloniale, les guerres américaines et les guerres mondiales."
     },
     "modes": {
       "title": "Modes de jeu",
-      "subtitle": "8 facons uniques de tester vos connaissances historiques",
-      "rules": "Regles",
-      "strategy": "Strategie et astuces",
+      "subtitle": "8 façons uniques de tester vos connaissances historiques",
+      "rules": "Règles",
+      "strategy": "Stratégie et conseils",
       "backToModes": "Retour aux modes de jeu",
       "allGameModes": "Tous les modes de jeu",
       "playMode": "Jouer en mode {{mode}}",
@@ -104,28 +118,30 @@
       "modeNotFoundDesc": "Le mode de jeu que vous recherchez n'existe pas."
     },
     "battles": {
-      "title": "Encyclopedie des batailles",
-      "subtitle": "Explorez {{count}} batailles historiques a travers 8 epoques",
+      "title": "Encyclopédie des batailles",
+      "subtitle": "Explorez {{count}} batailles historiques à travers 8 époques",
       "searchPlaceholder": "Rechercher des batailles...",
-      "allEras": "Toutes les epoques",
+      "allEras": "Toutes les époques",
       "didYouKnow": "Le saviez-vous ?",
-      "backToEncyclopedia": "Retour a l'encyclopedie",
+      "backToEncyclopedia": "Retour à l'encyclopédie",
       "canYouIdentify": "Pouvez-vous identifier cette bataille ?",
-      "putKnowledgeToTest": "Testez vos connaissances dans BattleGuess",
-      "playBattleGuess": "Jouer a BattleGuess",
-      "cta": "Pouvez-vous identifier cette bataille ? Jouez a BattleGuess !",
-      "year": "Annee",
+      "putKnowledgeToTest": "Mettez vos connaissances à l'épreuve dans BattleGuess",
+      "playBattleGuess": "Jouer à BattleGuess",
+      "cta": "Pouvez-vous identifier cette bataille ? Jouez à BattleGuess !",
+      "year": "Année",
       "location": "Lieu",
-      "era": "Epoque",
-      "noBattlesFound": "Aucune bataille trouvee correspondant a votre recherche.",
+      "era": "Époque",
+      "noBattlesFound": "Aucune bataille trouvée correspondant à votre recherche.",
       "battleNotFound": "Bataille introuvable",
-      "battleNotFoundDesc": "La bataille que vous recherchez n'existe pas."
+      "battleNotFoundDesc": "La bataille que vous recherchez n'existe pas.",
+      "featuredIn": "Présent dans",
+      "relatedArticles": "Articles connexes"
     },
     "collections": {
       "title": "Collections de batailles",
-      "subtitle": "Listes de batailles organisees par theme",
+      "subtitle": "Des sélections de batailles organisées par thème",
       "battlesCount": "batailles",
-      "ctaTitle": "Pret a tester vos connaissances ?",
+      "ctaTitle": "Prêt à tester vos connaissances ?",
       "ctaSubtitle": "Voyez combien de ces batailles vous pouvez identifier dans BattleGuess",
       "backToCollections": "Toutes les collections",
       "notFound": "Collection introuvable",
@@ -133,18 +149,135 @@
     },
     "blog": {
       "title": "Blog",
-      "subtitle": "Analyses historiques, guides de jeu et plongees dans l'histoire militaire",
+      "subtitle": "Analyses historiques, guides de jeu et explorations approfondies de l'histoire militaire",
       "readMore": "Lire la suite",
       "backToBlog": "Retour au blog",
       "minRead": "min de lecture",
       "postNotFound": "Article introuvable",
       "postNotFoundDesc": "L'article de blog que vous recherchez n'existe pas."
+    },
+    "stats": {
+      "title": "Vos statistiques",
+      "backToGame": "Retour au jeu",
+      "noStats": "Aucune statistique",
+      "noStatsDesc": "Jouez quelques batailles pour commencer à suivre votre progression !",
+      "overview": "Aperçu",
+      "battlesPlayed": "Batailles jouées",
+      "accuracy": "Précision",
+      "avgHints": "Indices moy.",
+      "bestStreak": "Meilleure série",
+      "winRate": "Taux de réussite",
+      "correct": "Correct",
+      "incorrect": "Incorrect",
+      "byDifficulty": "Par difficulté",
+      "byCivilization": "Par civilisation",
+      "achievements": "Succès",
+      "keepPlaying": "Continuer à jouer"
     }
   },
   "common": {
     "loading": "Chargement...",
     "notFound": "Introuvable",
-    "backToHome": "Retour a l'accueil",
+    "backToHome": "Retour à l'accueil",
     "learnMore": "En savoir plus"
+  },
+  "faqItems": {
+    "0": {
+      "question": "Qu'est-ce que BattleGuess ?",
+      "answer": "BattleGuess est un jeu de culture générale historique en ligne et gratuit où les joueurs identifient des batailles historiques célèbres à partir d'images. Il couvre des batailles depuis l'Égypte ancienne et la Mésopotamie jusqu'aux guerres mondiales, avec 5 modes de jeu différents : classique, année, campagne, défi quotidien et défis multijoueurs."
+    },
+    "1": {
+      "question": "Comment jouer à BattleGuess ?",
+      "answer": "On vous montre l'image d'une bataille historique et vous devez deviner de quelle bataille il s'agit. Vous pouvez utiliser des indices (moyennant des points) pour vous aider à identifier la bataille. Choisissez parmi 5 modes de jeu : Classique (identifiez la bataille à partir d'une image), Année (devinez quand elle a eu lieu), Campagne (missions progressives), Quotidien (nouveau défi chaque jour) et Défi (affrontez vos amis)."
+    },
+    "2": {
+      "question": "BattleGuess est-il gratuit ?",
+      "answer": "Oui, BattleGuess est entièrement gratuit. Aucun compte ni téléchargement n'est nécessaire — il suffit de visiter battleguess.app et de commencer à jouer dans votre navigateur sur n'importe quel appareil."
+    },
+    "3": {
+      "question": "Quelles périodes historiques BattleGuess couvre-t-il ?",
+      "answer": "BattleGuess couvre des batailles de 8 époques historiques : l'Égypte ancienne et la Mésopotamie, la Grèce et Rome antiques, l'Europe médiévale, les empires ottoman et islamiques, l'Asie de l'Est, l'ère coloniale et napoléonienne, les guerres américaines et les guerres mondiales. Chaque époque propose plusieurs batailles aux niveaux facile, moyen et difficile."
+    },
+    "4": {
+      "question": "Quels modes de jeu sont disponibles dans BattleGuess ?",
+      "answer": "BattleGuess propose 5 modes de jeu : Classique (identifiez la bataille à partir d'une image), Année (devinez quand la bataille a eu lieu), Campagne (accomplissez des missions thématiques), Défi quotidien (nouvelle bataille chaque jour) et Défi (créez des défis partageables pour vos amis)."
+    },
+    "5": {
+      "question": "Comment fonctionne le système de points ?",
+      "answer": "Votre score pour chaque bataille est déterminé par plusieurs facteurs. Vous gagnez des points de base en fonction de la difficulté de la bataille : les batailles faciles rapportent moins de points tandis que les batailles difficiles en rapportent davantage. Un bonus de série récompense les bonnes réponses consécutives, donc maintenir votre série est essentiel. Chaque indice utilisé coûte 25 points, alors utilisez-les judicieusement."
+    },
+    "6": {
+      "question": "Que sont les indices et comment les utiliser ?",
+      "answer": "Chaque manche vous donne accès à 4 indices qui peuvent vous aider à identifier la bataille. Pour révéler un indice, cliquez sur la mascotte du Général sur le côté droit de l'écran. Chaque indice coûte 25 points sur votre score potentiel pour cette manche. Les indices sont progressifs — le premier indice est un indice général, tandis que les suivants deviennent de plus en plus précis. Utiliser les indices de manière stratégique peut vous aider à répondre correctement plutôt que de deviner au hasard et de ne gagner aucun point."
+    },
+    "7": {
+      "question": "Faut-il un compte pour jouer ?",
+      "answer": "Non, vous n'avez pas besoin de compte pour jouer à BattleGuess. Le jeu fonctionne entièrement dans votre navigateur sans inscription ni téléchargement. Si vous souhaitez apparaître dans le classement mondial, vous pouvez éventuellement définir un pseudo dans les paramètres, mais ce n'est pas obligatoire pour profiter pleinement du jeu."
+    },
+    "8": {
+      "question": "Comment fonctionne le classement ?",
+      "answer": "BattleGuess dispose d'un classement mondial qui enregistre les meilleurs scores de tous les joueurs. Pour y participer, définissez votre pseudo dans les paramètres du jeu. Vos scores sont enregistrés automatiquement pendant que vous jouez. En mode Quotidien, il existe un classement quotidien séparé qui se réinitialise chaque jour, vous permettant de rivaliser pour la première place contre tous ceux qui jouent les mêmes batailles. Vos statistiques globales et vos séries sont également enregistrées dans vos records personnels."
+    },
+    "9": {
+      "question": "Puis-je jouer sur mon téléphone ?",
+      "answer": "Oui, BattleGuess est entièrement responsive et fonctionne sur tous les appareils modernes, y compris les smartphones, les tablettes et les ordinateurs de bureau. L'interface s'adapte automatiquement à la taille de votre écran, vous offrant la même expérience que vous jouiez sur un grand écran ou un téléphone portable. Aucun téléchargement d'application n'est nécessaire — ouvrez simplement battleguess.app dans le navigateur de votre téléphone."
+    },
+    "10": {
+      "question": "BattleGuess fonctionne-t-il hors ligne ?",
+      "answer": "BattleGuess nécessite une connexion Internet pour jouer. Le jeu doit charger les images de batailles générées par IA depuis le serveur, envoyer vos scores au classement mondial et synchroniser les données du défi quotidien. Bien que les fichiers principaux de l'application puissent être mis en cache par votre navigateur pour un chargement plus rapide, une connexion Internet active est nécessaire pour profiter pleinement de l'expérience de jeu."
+    },
+    "11": {
+      "question": "D'où viennent les images des batailles ?",
+      "answer": "Toutes les images de batailles dans BattleGuess sont générées par IA à l'aide de Google Gemini. Chaque image est soigneusement conçue pour représenter une bataille historique spécifique avec des détails fidèles à l'époque, tels que les armures, les armes, le terrain et les formations. L'approche par IA permet au jeu de fournir des représentations vivantes et uniques de batailles qui peuvent avoir peu ou pas d'illustrations historiques disponibles."
+    },
+    "12": {
+      "question": "Les informations historiques sont-elles fiables ?",
+      "answer": "Les informations historiques dans BattleGuess sont bien documentées et conçues pour être éducatives. Les descriptions des batailles, les dates, les lieux et les faits clés ont été vérifiés à partir de sources historiques fiables. Bien que les images générées par IA soient des interprétations artistiques plutôt que des reconstitutions exactes, le contenu factuel — y compris les noms des batailles, les années, les belligérants et les issues — est précis et vise à aider les joueurs à apprendre la véritable histoire militaire tout en jouant."
+    },
+    "13": {
+      "question": "De nouvelles batailles seront-elles ajoutées ?",
+      "answer": "BattleGuess propose actuellement environ 200 batailles couvrant des milliers d'années d'histoire militaire, et d'autres sont prévues. De nouvelles batailles, époques et campagnes sont ajoutées lors de mises à jour régulières pour maintenir le jeu à jour et enrichir son contenu éducatif. L'objectif est de constituer la collection la plus complète de batailles historiques de tous les jeux de culture générale."
+    },
+    "14": {
+      "question": "Puis-je défier mes amis ?",
+      "answer": "Oui ! En mode Défi, vous jouez une série de batailles puis vous recevez un lien unique à partager. Envoyez ce lien à un ami et il jouera exactement les mêmes batailles dans les mêmes conditions. Une fois terminé, vous pouvez comparer vos scores pour voir qui connaît le mieux l'histoire militaire. C'est un excellent moyen de s'affronter même si vous n'êtes pas en ligne en même temps."
+    }
+  },
+  "gameModesData": {
+    "daily": {
+      "label": "Quotidien",
+      "shortDesc": "Les mêmes 5 batailles pour tout le monde aujourd'hui",
+      "longDesc": "Tout le monde reçoit les mêmes 5 batailles chaque jour. Comparez votre score dans le classement quotidien !",
+      "rules": "Chaque jour, un nouvel ensemble de 5 batailles est sélectionné et partagé entre tous les joueurs du monde entier. Vous n'avez qu'une seule tentative par jour, donc chaque réponse compte. Votre score total sur les 5 batailles est publié dans le classement quotidien, qui se réinitialise à minuit UTC. Les indices sont disponibles mais coûtent des points, comme en mode Classique. Vous ne pouvez pas rejouer le défi quotidien une fois terminé, alors prenez votre temps et réfléchissez bien.",
+      "strategy": "Comme vous n'avez qu'une seule chance par jour, évitez de vous précipiter. Étudiez chaque image attentivement avant de vous engager sur une réponse. Gardez vos indices pour les batailles que vous ne pouvez vraiment pas identifier plutôt que de les utiliser trop tôt. Prêtez attention aux indices visuels comme le terrain, les uniformes et les types d'armes pour déterminer l'époque avant de répondre. Consultez le classement quotidien ensuite pour voir comment vous vous situez et apprendre des batailles que vous avez manquées."
+    },
+    "classic": {
+      "label": "Classique",
+      "shortDesc": "Devinez la bataille à partir de l'image",
+      "longDesc": "Observez une image générée par IA d'une bataille célèbre et essayez de deviner laquelle c'est. Utilisez les indices si vous êtes bloqué !",
+      "rules": "Une image générée par IA représentant une bataille historique vous est présentée. Votre objectif est de taper correctement le nom de la bataille. Vous avez accès à 4 indices par manche, chacun coûtant 25 points. Les points sont attribués en fonction de la difficulté de la bataille : les batailles faciles, moyennes et difficiles ont des valeurs de points de base croissantes. Les bonnes réponses construisent votre série, qui accorde des points bonus pour les réponses correctes consécutives.",
+      "strategy": "Commencez par examiner l'image pour repérer des détails propres à chaque époque, comme les styles d'armure, les armes et le paysage. Les batailles antiques présentent souvent des boucliers, des lances et un terrain méditerranéen, tandis que les batailles des guerres mondiales montrent des tranchées, des chars ou des uniformes modernes. Si l'image montre un combat naval, réduisez vos options aux batailles navales célèbres. Utilisez les indices de manière sélective — le premier indice est généralement un indice d'époque général qui peut vous éviter une mauvaise réponse. Construire et maintenir une série est l'un des meilleurs moyens de maximiser votre score global."
+    },
+    "reverse-year": {
+      "label": "Année",
+      "shortDesc": "Devinez quand cela s'est passé",
+      "longDesc": "On vous donne le nom d'une bataille — devinez l'année où elle a eu lieu. À 10 ans près, c'est considéré comme correct.",
+      "rules": "En mode Année, on vous donne le nom d'une bataille et vous devez deviner l'année où elle a eu lieu. Votre réponse est considérée comme correcte si elle se situe dans un intervalle de 10 ans par rapport à la date réelle. Plus votre estimation est proche de l'année exacte, plus vous gagnez de points. Les batailles couvrent de l'Antiquité (dates avant J.-C.) jusqu'au XXe siècle. Aucune image n'est affichée — ce mode teste vos connaissances chronologiques pures de l'histoire militaire.",
+      "strategy": "Ancrez vos connaissances autour de jalons historiques majeurs. Par exemple, la chute de Rome date de 476 apr. J.-C., la conquête normande de 1066, et la Première Guerre mondiale a commencé en 1914. Utilisez ces repères pour estimer les dates des batailles moins connues. Apprenez le siècle approximatif de chaque grande civilisation et époque dans BattleGuess, et vous serez dans la bonne fourchette pour la plupart des batailles. N'oubliez pas que les dates avant J.-C. comptent à rebours, donc la bataille des Thermopyles (480 av. J.-C.) est antérieure à la bataille d'Actium (31 av. J.-C.). Même une estimation éclairée à 10 ans près rapporte des points, alors ne laissez jamais une manche sans réponse."
+    },
+    "campaign": {
+      "label": "Campagne",
+      "shortDesc": "Parcourez l'histoire",
+      "longDesc": "Suivez un récit à travers des campagnes historiques comme L'Ascension de Rome ou Le Pari de Napoléon.",
+      "rules": "Le mode Campagne propose des campagnes narratives thématiques, chacune composée d'une série de missions progressives centrées sur une période historique ou un commandant spécifique. Les missions augmentent en difficulté au fur et à mesure que vous avancez dans la campagne. Vous devez compléter chaque mission pour débloquer la suivante. Chaque campagne raconte une histoire, fournissant un contexte historique entre les batailles. Votre performance sur l'ensemble des missions contribue à un score de campagne, et terminer une campagne entière débloque des succès.",
+      "strategy": "Lisez attentivement le texte narratif entre les missions — il contient souvent des indices sur la prochaine bataille que vous affronterez. Comme les campagnes sont centrées sur des époques ou des commandants spécifiques, étudier cette période avant de commencer vous donnera un avantage significatif. Les premières missions de chaque campagne sont généralement plus faciles, alors utilisez-les pour prendre de l'élan et construire une bonne série avant que la difficulté n'augmente. Si vous bloquez sur une mission, notez la bataille et étudiez-la avant de réessayer. Le mode Campagne est l'un des meilleurs moyens d'apprendre systématiquement un pan spécifique de l'histoire militaire."
+    },
+    "challenge": {
+      "label": "Défi",
+      "shortDesc": "Défiez un ami",
+      "longDesc": "Jouez une série de batailles, puis partagez un lien. Votre ami joue les mêmes batailles et tente de battre votre score !",
+      "rules": "En mode Défi, vous jouez une série de batailles et votre score est enregistré. Une fois terminé, vous recevez un lien unique à partager. Quand quelqu'un ouvre ce lien, il joue exactement les mêmes batailles dans le même ordre et dans les mêmes conditions. Les deux scores sont ensuite comparés pour voir qui a fait mieux. Les indices, le système de points et la difficulté fonctionnent comme en mode Classique. Chaque lien de défi peut être partagé avec plusieurs personnes, créant ainsi une mini-compétition entre amis.",
+      "strategy": "Lorsque vous créez un défi, jouez avec soin et visez votre meilleur score possible — votre score est la référence que vos amis essaieront de battre. Évitez d'utiliser les indices si vous le pouvez pour que votre score soit plus difficile à dépasser. Lorsque vous recevez un défi, traitez-le mentalement comme une session en mode Chronométré même s'il n'y a pas de minuteur, car la concentration et la précision détermineront le gagnant. Après avoir comparé les scores, discutez des batailles qui vous ont posé problème — c'est un excellent moyen d'apprendre ensemble. Partagez les défis sur les réseaux sociaux ou dans les conversations de groupe pour obtenir le plus de participants et les résultats les plus compétitifs."
+    }
   }
 }

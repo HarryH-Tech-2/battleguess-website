@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
 import { LocaleLink } from '../components/ui/LocaleLink';
 import { useStats } from '../hooks/useStats';
@@ -30,6 +31,7 @@ function AccuracyBar({ label, icon, correct, total }: { label: string; icon?: st
 function Stats() {
   const { total, correct, accuracy, byCivilization, byDifficulty, avgHints } = useStats();
   const { unlocked, achievementStats, achievements: allAchievements } = useAchievements();
+  const { t } = useTranslation();
 
   const civMap = useMemo(
     () => Object.fromEntries(civilizations.map(c => [c.id, c])),
@@ -57,35 +59,35 @@ function Stats() {
             to="/"
             className="text-slate-500 hover:text-primary-600 font-medium transition-colors text-sm"
           >
-            &larr; Back to Game
+            &larr; {t('pages.stats.backToGame')}
           </LocaleLink>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-8">Your Stats</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-8">{t('pages.stats.title')}</h1>
 
         {total === 0 ? (
           <div className="text-center py-16">
             <div className="text-6xl mb-4">📊</div>
-            <h2 className="text-xl font-bold text-slate-800 mb-3">No stats yet</h2>
-            <p className="text-slate-500 mb-6">Play some battles to start tracking your progress!</p>
+            <h2 className="text-xl font-bold text-slate-800 mb-3">{t('pages.stats.noStats')}</h2>
+            <p className="text-slate-500 mb-6">{t('pages.stats.noStatsDesc')}</p>
             <LocaleLink
               to="/"
               className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md transition-all"
             >
-              Play BattleGuess
+              {t('pages.battles.playBattleGuess')}
             </LocaleLink>
           </div>
         ) : (
           <div className="space-y-8">
             {/* Overview */}
             <section>
-              <h2 className="text-lg font-bold text-slate-700 mb-4">Overview</h2>
+              <h2 className="text-lg font-bold text-slate-700 mb-4">{t('pages.stats.overview')}</h2>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
-                  { label: 'Battles Played', value: total, color: 'from-primary-500 to-emerald-500' },
-                  { label: 'Accuracy', value: `${accuracy}%`, color: 'from-blue-500 to-primary-500' },
-                  { label: 'Avg Hints', value: avgHints, color: 'from-amber-500 to-orange-500' },
-                  { label: 'Best Streak', value: bestStreak, color: 'from-red-500 to-pink-500' },
+                  { label: t('pages.stats.battlesPlayed'), value: total, color: 'from-primary-500 to-emerald-500' },
+                  { label: t('pages.stats.accuracy'), value: `${accuracy}%`, color: 'from-blue-500 to-primary-500' },
+                  { label: t('pages.stats.avgHints'), value: avgHints, color: 'from-amber-500 to-orange-500' },
+                  { label: t('pages.stats.bestStreak'), value: bestStreak, color: 'from-red-500 to-pink-500' },
                 ].map((s, i) => (
                   <motion.div
                     key={s.label}
@@ -105,16 +107,16 @@ function Stats() {
 
             {/* Win/Loss Summary */}
             <section>
-              <h2 className="text-lg font-bold text-slate-700 mb-4">Win Rate</h2>
+              <h2 className="text-lg font-bold text-slate-700 mb-4">{t('pages.stats.winRate')}</h2>
               <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
                 <div className="flex items-center gap-4 mb-3">
                   <div className="text-center">
                     <p className="text-2xl font-bold text-green-600">{correct}</p>
-                    <p className="text-xs text-slate-500">Correct</p>
+                    <p className="text-xs text-slate-500">{t('pages.stats.correct')}</p>
                   </div>
                   <div className="text-center">
                     <p className="text-2xl font-bold text-red-500">{total - correct}</p>
-                    <p className="text-xs text-slate-500">Incorrect</p>
+                    <p className="text-xs text-slate-500">{t('pages.stats.incorrect')}</p>
                   </div>
                 </div>
                 <div className="h-4 bg-slate-100 rounded-full overflow-hidden flex">
@@ -136,7 +138,7 @@ function Stats() {
 
             {/* By Difficulty */}
             <section>
-              <h2 className="text-lg font-bold text-slate-700 mb-4">By Difficulty</h2>
+              <h2 className="text-lg font-bold text-slate-700 mb-4">{t('pages.stats.byDifficulty')}</h2>
               <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 space-y-3">
                 {(['easy', 'medium', 'hard'] as const).map(d => {
                   const data = byDifficulty[d];
@@ -145,7 +147,7 @@ function Stats() {
                   return (
                     <AccuracyBar
                       key={d}
-                      label={d.charAt(0).toUpperCase() + d.slice(1)}
+                      label={t(`difficulty.${d}`)}
                       icon={icon}
                       correct={data.correct}
                       total={data.total}
@@ -157,7 +159,7 @@ function Stats() {
 
             {/* By Civilization */}
             <section>
-              <h2 className="text-lg font-bold text-slate-700 mb-4">By Civilization</h2>
+              <h2 className="text-lg font-bold text-slate-700 mb-4">{t('pages.stats.byCivilization')}</h2>
               <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 space-y-3">
                 {Object.entries(byCivilization).map(([civId, data]) => {
                   const civ = civMap[civId];
@@ -177,7 +179,7 @@ function Stats() {
             {/* Achievements Progress */}
             <section>
               <h2 className="text-lg font-bold text-slate-700 mb-4">
-                Achievements ({unlocked.length}/{allAchievements.length})
+                {t('pages.stats.achievements')} ({unlocked.length}/{allAchievements.length})
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {allAchievements.map((achievement, i) => {
@@ -231,7 +233,7 @@ function Stats() {
                 to="/"
                 className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md transition-all"
               >
-                Keep Playing
+                {t('pages.stats.keepPlaying')}
               </LocaleLink>
             </div>
           </div>

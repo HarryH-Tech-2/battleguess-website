@@ -90,7 +90,21 @@
         "gameModes": "8 Game Modes",
         "battles": "200+ Battles",
         "eras": "8 Historical Eras"
-      }
+      },
+      "step1Title": "Choose Your Settings",
+      "step1Desc": "Select your preferred era, difficulty level, and game mode. Whether you want a quick daily challenge or a full campaign, there is a mode for you.",
+      "step2Title": "Study the Battle Image",
+      "step2Desc": "Examine the AI-generated artwork depicting a famous historical battle. Look for visual clues like armor, weapons, terrain, and formations.",
+      "step3Title": "Use Hints If Needed",
+      "step3Desc": "Stuck? Reveal up to three progressive hints to help narrow down the battle. Each hint costs points, so use them wisely.",
+      "step4Title": "Submit Your Guess",
+      "step4Desc": "Type the name of the battle and submit your answer. Correct answers earn points based on difficulty, hints used, and your current streak.",
+      "step5Title": "Climb the Leaderboard",
+      "step5Desc": "Build your streak, earn achievements, and compete on the global leaderboard. Share your results with friends and challenge them to beat your score.",
+      "featureAiDesc": "Every battle is brought to life with unique, atmospheric AI-generated images crafted to capture the essence of each historical engagement.",
+      "featureModesDesc": "From Classic guessing to Timeline sorting, Timed challenges, Campaigns, and Daily challenges, there is always a new way to play.",
+      "featureBattlesDesc": "Explore over 200 historically accurate battles spanning thousands of years of military history, from ancient chariot warfare to modern combat.",
+      "featureErasDesc": "Journey through Ancient Egypt, Greece & Rome, Medieval Europe, the Ottoman Empire, East Asia, the Colonial era, American Wars, and the World Wars."
     },
     "modes": {
       "title": "Game Modes",
@@ -119,7 +133,9 @@
       "era": "Era",
       "noBattlesFound": "No battles found matching your search.",
       "battleNotFound": "Battle Not Found",
-      "battleNotFoundDesc": "The battle you are looking for does not exist."
+      "battleNotFoundDesc": "The battle you are looking for does not exist.",
+      "featuredIn": "Featured In",
+      "relatedArticles": "Related Articles"
     },
     "collections": {
       "title": "Battle Collections",
@@ -139,6 +155,24 @@
       "minRead": "min read",
       "postNotFound": "Post Not Found",
       "postNotFoundDesc": "The blog post you are looking for does not exist."
+    },
+    "stats": {
+      "title": "Your Stats",
+      "backToGame": "Back to Game",
+      "noStats": "No stats yet",
+      "noStatsDesc": "Play some battles to start tracking your progress!",
+      "overview": "Overview",
+      "battlesPlayed": "Battles Played",
+      "accuracy": "Accuracy",
+      "avgHints": "Avg Hints",
+      "bestStreak": "Best Streak",
+      "winRate": "Win Rate",
+      "correct": "Correct",
+      "incorrect": "Incorrect",
+      "byDifficulty": "By Difficulty",
+      "byCivilization": "By Civilization",
+      "achievements": "Achievements",
+      "keepPlaying": "Keep Playing"
     }
   },
   "common": {
@@ -146,5 +180,104 @@
     "notFound": "Not found",
     "backToHome": "Back to Home",
     "learnMore": "Learn more"
+  },
+  "faqItems": {
+    "0": {
+      "question": "What is BattleGuess?",
+      "answer": "BattleGuess is a free online history trivia game where players identify famous historical battles from images. It covers battles from ancient Egypt and Mesopotamia through to the World Wars, with 5 different game modes including classic, year, campaign, daily challenge, and multiplayer challenges."
+    },
+    "1": {
+      "question": "How do you play BattleGuess?",
+      "answer": "You are shown an image of a historical battle and must guess which battle it depicts. You can use hints (at a point cost) to help identify the battle. Choose from 5 game modes: Classic (identify the battle from an image), Year (guess when it took place), Campaign (progressive missions), Daily (new challenge every day), and Challenge (compete with friends)."
+    },
+    "2": {
+      "question": "Is BattleGuess free to play?",
+      "answer": "Yes, BattleGuess is completely free to play. No account or download is required \u2014 just visit battleguess.app and start playing in your browser on any device."
+    },
+    "3": {
+      "question": "What historical periods does BattleGuess cover?",
+      "answer": "BattleGuess covers battles from 8 historical eras: Ancient Egypt and Mesopotamia, Ancient Greece and Rome, Medieval Europe, Ottoman and Islamic Empires, East Asia, Colonial and Napoleonic Era, American Wars, and World Wars. Each era has multiple battles at easy, medium, and hard difficulty levels."
+    },
+    "4": {
+      "question": "What game modes are available in BattleGuess?",
+      "answer": "BattleGuess offers 5 game modes: Classic (identify the battle from an image), Year (guess when the battle took place), Campaign (complete themed missions), Daily Challenge (new battle every day), and Challenge (create shareable challenges for friends)."
+    },
+    "5": {
+      "question": "How does scoring work?",
+      "answer": "Your score for each battle is determined by several factors. You earn base points according to the difficulty of the battle: easy battles award fewer points while hard battles award more. A streak bonus rewards consecutive correct answers, so keeping your streak alive is key. Each hint you use costs 25 points, so use them wisely."
+    },
+    "6": {
+      "question": "What are hints and how do I use them?",
+      "answer": "Each battle round gives you access to 4 hints that can help you identify the battle. To reveal a hint, click the General mascot on the right side of the screen. Each hint costs 25 points from your potential score for that round. Hints are progressive \u2014 the first hint is a general clue, while later hints become increasingly specific. Using hints strategically can help you answer correctly rather than guessing blindly and earning zero points."
+    },
+    "7": {
+      "question": "Do I need an account to play?",
+      "answer": "No, you do not need an account to play BattleGuess. The game runs entirely in your browser with no sign-up or download required. If you want to appear on the global leaderboard, you can optionally set a display name in the settings, but this is not required to enjoy the full game experience."
+    },
+    "8": {
+      "question": "How does the leaderboard work?",
+      "answer": "BattleGuess features a global leaderboard that tracks high scores across all players. To participate, set your display name in the game settings. Your scores are recorded automatically as you play. In Daily mode there is a separate daily leaderboard that resets each day, letting you compete for the top spot against everyone who plays the same set of battles. Your all-time stats and streaks are also tracked for your personal records."
+    },
+    "9": {
+      "question": "Can I play on my phone?",
+      "answer": "Yes, BattleGuess is fully responsive and works on all modern devices including smartphones, tablets, and desktop computers. The interface adapts to your screen size automatically, so you get the same great experience whether you are playing on a large monitor or a mobile phone. No app download is needed \u2014 just open battleguess.app in your mobile browser."
+    },
+    "10": {
+      "question": "Does BattleGuess work offline?",
+      "answer": "BattleGuess requires an internet connection to play. The game needs to load AI-generated battle images from the server, submit your scores to the global leaderboard, and sync daily challenge data. While the core application files may be cached by your browser for faster loading, an active internet connection is necessary for the full gameplay experience."
+    },
+    "11": {
+      "question": "Where do the battle images come from?",
+      "answer": "All battle images in BattleGuess are AI-generated using Google Gemini. Each image is carefully prompted to depict a specific historical battle with period-accurate details such as armor, weapons, terrain, and formations. The AI-generated approach allows the game to provide vivid, unique depictions of battles that may have limited or no historical illustrations available."
+    },
+    "12": {
+      "question": "How accurate is the historical information?",
+      "answer": "The historical information in BattleGuess is well-researched and designed to be educational. Battle descriptions, dates, locations, and key facts have been verified against reputable historical sources. While the AI-generated images are artistic interpretations rather than exact recreations, the factual content \u2014 including battle names, years, belligerents, and outcomes \u2014 is accurate and intended to help players learn real military history as they play."
+    },
+    "13": {
+      "question": "Will more battles be added?",
+      "answer": "BattleGuess currently features around 200 battles spanning thousands of years of military history, and more are planned. New battles, eras, and campaigns are added in regular updates to keep the game fresh and expand its educational coverage. The goal is to build the most comprehensive collection of historical battles in any trivia game."
+    },
+    "14": {
+      "question": "Can I challenge my friends?",
+      "answer": "Yes! In Challenge mode you play through a set of battles and then receive a unique shareable link. Send that link to a friend and they will play the exact same battles under the same conditions. Once they finish, you can compare scores to see who knows their military history better. It is a great way to compete head-to-head even if you are not online at the same time."
+    }
+  },
+  "gameModesData": {
+    "daily": {
+      "label": "Daily",
+      "shortDesc": "Same 5 battles for everyone today",
+      "longDesc": "Everyone gets the same 5 battles each day. Compare your score on the daily leaderboard!",
+      "rules": "Each day a fresh set of 5 battles is selected and shared globally among all players. You get one attempt per day, so every guess matters. Your total score across all 5 battles is posted to the daily leaderboard, which resets at midnight UTC. Hints are available but cost points just like in Classic mode. You cannot replay the daily challenge once you have completed it, so take your time and think carefully.",
+      "strategy": "Since you only get one shot per day, avoid rushing. Study each image thoroughly before committing to an answer. Save your hints for battles you genuinely cannot identify rather than burning them early. Pay close attention to visual cues like terrain, uniforms, and weapon types to narrow down the era before guessing. Check the daily leaderboard afterward to see how you compare and learn from battles you missed."
+    },
+    "classic": {
+      "label": "Classic",
+      "shortDesc": "Guess the battle from the image",
+      "longDesc": "See an AI-generated image of a famous battle and try to guess which one it is. Use hints if you get stuck!",
+      "rules": "You are presented with an AI-generated image depicting a historical battle. Your goal is to type the name of the battle correctly. You have access to 4 hints per round, each costing 25 points. Points are awarded based on the difficulty of the battle: easy, medium, and hard battles have increasing base point values. Correct answers build your streak, which awards bonus points for consecutive correct guesses.",
+      "strategy": "Start by examining the image for era-specific details such as armor styles, weapons, and landscape. Ancient battles often feature shields, spears, and Mediterranean terrain, while World War battles show trenches, tanks, or modern uniforms. If the image shows naval combat, narrow your options to famous sea battles. Use hints selectively \u2014 the first hint is usually a broad era clue that can save you from a wrong guess. Building and maintaining a streak is one of the best ways to maximize your overall score."
+    },
+    "reverse-year": {
+      "label": "Year",
+      "shortDesc": "Guess when it happened",
+      "longDesc": "You'll be given a battle name \u2014 guess the year it took place. Within 10 years counts as correct.",
+      "rules": "In Year mode you are told the name of a battle and must guess the year it occurred. Your answer is considered correct if it falls within 10 years of the actual date. The closer your guess is to the exact year, the more points you earn. Battles span from ancient history (BCE dates) through the 20th century. No image is shown \u2014 this mode tests your pure chronological knowledge of military history.",
+      "strategy": "Anchor your knowledge around major historical milestones. For example, the fall of Rome was 476 CE, the Norman Conquest was 1066, and World War I started in 1914. Use these anchors to estimate dates for less familiar battles. Learn the rough century for each major civilization and era in BattleGuess, and you will be within range for most battles. Remember that BCE dates count backward, so the Battle of Thermopylae (480 BCE) is earlier than the Battle of Actium (31 BCE). Even an educated guess within 10 years earns points, so never leave a round blank."
+    },
+    "campaign": {
+      "label": "Campaign",
+      "shortDesc": "Play through history",
+      "longDesc": "Follow a narrative through historical campaigns like Rise of Rome or Napoleon\u2019s Gambit.",
+      "rules": "Campaign mode features themed narrative campaigns, each consisting of a series of progressive missions centered around a specific historical period or commander. Missions increase in difficulty as you advance through the campaign. You must complete each mission to unlock the next one. Each campaign tells a story, providing historical context between battles. Your performance across all missions contributes to a campaign score, and completing an entire campaign unlocks achievements.",
+      "strategy": "Read the narrative text between missions carefully \u2014 it often contains clues about the next battle you will face. Since campaigns are themed around specific eras or commanders, studying that period before starting will give you a significant advantage. Early missions in each campaign tend to be easier, so use them to build momentum and a strong streak before the difficulty ramps up. If you struggle with a mission, take note of the battle and study it before retrying. Campaign mode is one of the best ways to systematically learn a specific slice of military history."
+    },
+    "challenge": {
+      "label": "Challenge",
+      "shortDesc": "Challenge a friend",
+      "longDesc": "Play a set of battles, then share a link. Your friend plays the same battles and tries to beat your score!",
+      "rules": "In Challenge mode you play through a set of battles and your score is recorded. After finishing, you receive a unique shareable link. When someone opens that link, they play the exact same battles in the same order under the same conditions. Both scores are then compared so you can see who performed better. Hints, scoring, and difficulty all work the same as Classic mode. Each challenge link can be shared with multiple people, creating a mini-competition among friends.",
+      "strategy": "When creating a challenge, play carefully and aim for your highest possible score \u2014 your score is the benchmark your friends will try to beat. Avoid using hints if you can so your score is harder to top. When receiving a challenge, treat it like a Timed mode session mentally even though there is no timer, because focus and accuracy will determine who wins. After comparing scores, discuss the battles you each struggled with \u2014 it is a great way to learn together. Share challenges on social media or in group chats to get the most participants and the most competitive results."
+    }
   }
 }

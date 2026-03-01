@@ -48,10 +48,10 @@ function GameModes() {
                 </div>
                 <div className="min-w-0">
                   <h2 className="font-bold text-slate-800 text-lg group-hover:text-primary-700 transition-colors">
-                    {mode.label}
+                    {t(`gameModesData.${mode.slug}.label`)}
                   </h2>
                   <p className="text-slate-500 text-sm mt-1 leading-relaxed">
-                    {mode.shortDesc}
+                    {t(`gameModesData.${mode.slug}.shortDesc`)}
                   </p>
                 </div>
               </div>

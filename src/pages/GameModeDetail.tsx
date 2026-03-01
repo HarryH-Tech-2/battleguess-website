@@ -37,10 +37,15 @@ function GameModeDetail() {
     );
   }
 
+  const label = t(`gameModesData.${mode.slug}.label`);
+  const longDesc = t(`gameModesData.${mode.slug}.longDesc`);
+  const rules = t(`gameModesData.${mode.slug}.rules`);
+  const strategy = t(`gameModesData.${mode.slug}.strategy`);
+
   return (
     <ContentLayout
-      title={`${mode.label} Mode | BattleGuess`}
-      description={mode.longDesc}
+      title={`${label} Mode | BattleGuess`}
+      description={longDesc}
       canonical={`https://battleguess.app/modes/${mode.slug}`}
       path={`/modes/${mode.slug}`}
     >
@@ -70,10 +75,10 @@ function GameModeDetail() {
           {mode.icon}
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-3">
-          {mode.label}
+          {label}
         </h1>
         <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
-          {mode.longDesc}
+          {longDesc}
         </p>
       </motion.div>
 
@@ -88,7 +93,7 @@ function GameModeDetail() {
           <h2 className="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
             <span className="text-lg">📋</span> {t('pages.modes.rules')}
           </h2>
-          <p className="text-slate-600 leading-relaxed">{mode.rules}</p>
+          <p className="text-slate-600 leading-relaxed">{rules}</p>
         </div>
       </motion.section>
 
@@ -103,7 +108,7 @@ function GameModeDetail() {
           <h2 className="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
             <span className="text-lg">💡</span> {t('pages.modes.strategy')}
           </h2>
-          <p className="text-slate-600 leading-relaxed">{mode.strategy}</p>
+          <p className="text-slate-600 leading-relaxed">{strategy}</p>
         </div>
       </motion.section>
 
@@ -118,7 +123,7 @@ function GameModeDetail() {
           to={`/?mode=${mode.slug}`}
           className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3.5 rounded-xl shadow-md shadow-primary-200 hover:shadow-lg hover:shadow-primary-200 transition-all duration-200 text-lg"
         >
-          {t('pages.modes.playMode', { mode: mode.label })}
+          {t('pages.modes.playMode', { mode: label })}
         </LocaleLink>
       </motion.div>
     </ContentLayout>
