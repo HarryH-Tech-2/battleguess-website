@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, Outlet, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { isSupportedLanguage } from './i18n';
@@ -33,11 +33,12 @@ function LanguageLayout() {
   const { i18n } = useTranslation();
   const targetLang = lang && isSupportedLanguage(lang) ? lang : 'en';
 
-  // Set language synchronously so children render with correct translations.
-  // changeLanguage with pre-loaded resources updates i18n.language immediately.
-  if (i18n.language !== targetLang) {
-    i18n.changeLanguage(targetLang);
-  }
+  // Sync language from URL (handles back/forward navigation and direct URL access)
+  useEffect(() => {
+    if (i18n.language !== targetLang) {
+      i18n.changeLanguage(targetLang);
+    }
+  }, [targetLang, i18n]);
 
   return <Outlet />;
 }

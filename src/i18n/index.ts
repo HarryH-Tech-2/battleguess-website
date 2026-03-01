@@ -11,6 +11,10 @@ export function isSupportedLanguage(lang: string): lang is SupportedLanguage {
   return (supportedLanguages as readonly string[]).includes(lang);
 }
 
+// Detect language from URL on initial page load
+const pathLang = window.location.pathname.split('/')[1];
+const detectedLang = isSupportedLanguage(pathLang) ? pathLang : 'en';
+
 i18n
   .use(initReactI18next)
   .init({
@@ -19,7 +23,7 @@ i18n
       fr: { translation: fr },
       es: { translation: es },
     },
-    lng: 'en',
+    lng: detectedLang,
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,

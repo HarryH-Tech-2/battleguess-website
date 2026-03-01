@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguagePrefix } from '../../hooks/useLanguagePrefix';
 import { supportedLanguages } from '../../i18n';
@@ -18,6 +19,7 @@ export function LanguageSwitcher({ compact }: LanguageSwitcherProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const { currentLang, switchLanguagePath } = useLanguagePrefix();
+  const { i18n } = useTranslation();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,7 +35,9 @@ export function LanguageSwitcher({ compact }: LanguageSwitcherProps) {
 
   function handleSelect(lang: string) {
     if (lang !== currentLang) {
-      navigate(switchLanguagePath(lang));
+      const path = switchLanguagePath(lang);
+      i18n.changeLanguage(lang);
+      navigate(path);
     }
     setOpen(false);
   }
