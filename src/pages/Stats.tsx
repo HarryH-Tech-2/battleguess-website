@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { ContentLayout } from '../components/layout/ContentLayout';
+import { LocaleLink } from '../components/ui/LocaleLink';
 import { useStats } from '../hooks/useStats';
 import { useAchievements } from '../hooks/useAchievements';
 import { civilizations } from '../data/civilizations';
@@ -45,6 +45,7 @@ function Stats() {
       title="Your Stats | BattleGuess"
       description="Track your BattleGuess progress, accuracy, streaks, and achievements."
       canonical="https://battleguess.app/stats"
+      path="/stats"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -52,12 +53,12 @@ function Stats() {
         transition={{ duration: 0.5 }}
       >
         <div className="flex items-center gap-3 mb-8">
-          <Link
+          <LocaleLink
             to="/"
             className="text-slate-500 hover:text-primary-600 font-medium transition-colors text-sm"
           >
             &larr; Back to Game
-          </Link>
+          </LocaleLink>
         </div>
 
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-8">Your Stats</h1>
@@ -67,12 +68,12 @@ function Stats() {
             <div className="text-6xl mb-4">📊</div>
             <h2 className="text-xl font-bold text-slate-800 mb-3">No stats yet</h2>
             <p className="text-slate-500 mb-6">Play some battles to start tracking your progress!</p>
-            <Link
+            <LocaleLink
               to="/"
               className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md transition-all"
             >
               Play BattleGuess
-            </Link>
+            </LocaleLink>
           </div>
         ) : (
           <div className="space-y-8">
@@ -226,12 +227,12 @@ function Stats() {
 
             {/* Play More CTA */}
             <div className="text-center pt-4">
-              <Link
+              <LocaleLink
                 to="/"
                 className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md transition-all"
               >
                 Keep Playing
-              </Link>
+              </LocaleLink>
             </div>
           </div>
         )}

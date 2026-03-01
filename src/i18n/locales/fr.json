@@ -1,0 +1,150 @@
+{
+  "nav": {
+    "playNow": "Jouer maintenant",
+    "play": "Jouer",
+    "gameModes": "Modes de jeu",
+    "battles": "Batailles",
+    "collections": "Collections",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "about": "A propos",
+    "language": "Langue"
+  },
+  "game": {
+    "startGame": "Commencer la partie",
+    "submit": "Valider",
+    "giveUp": "Abandonner",
+    "nextBattle": "Bataille suivante",
+    "score": "Score",
+    "streak": "Serie",
+    "bestStreak": "Meilleure serie",
+    "round": "Manche",
+    "gameMode": "Mode de jeu",
+    "difficulty": "Difficulte",
+    "civilization": "Civilisation",
+    "hints": "Indices",
+    "revealHint": "Reveler l'indice",
+    "guessPlaceholder": "Entrez votre reponse...",
+    "correct": "Correct !",
+    "wrong": "Faux !",
+    "timeUp": "Temps ecoule !",
+    "loading": "Generation de l'image de bataille...",
+    "welcome": "Bienvenue sur BattleGuess !",
+    "selectMode": "Choisissez un mode et commencez a jouer",
+    "playAgain": "Rejouer",
+    "newGame": "Nouvelle partie"
+  },
+  "modes": {
+    "classic": "Classique",
+    "timed": "Chrono",
+    "reverseYear": "Annee",
+    "reverseLocation": "Lieu",
+    "timeline": "Chronologie",
+    "campaign": "Campagne",
+    "daily": "Quotidien",
+    "challenge": "Defi"
+  },
+  "difficulty": {
+    "easy": "Facile",
+    "medium": "Moyen",
+    "hard": "Difficile",
+    "all": "Tous"
+  },
+  "navbar": {
+    "stats": "Statistiques",
+    "leaderboard": "Classement",
+    "achievements": "Succes",
+    "setName": "Choisir un nom",
+    "buyMeACoffee": "Offrir un cafe",
+    "twitter": "Twitter/X"
+  },
+  "footer": {
+    "battleIntelFeed": "Fil d'Intel Bataille",
+    "battles": "Batailles",
+    "eras": "Epoques",
+    "facts": "Anecdotes",
+    "years": "Annees"
+  },
+  "pages": {
+    "faq": {
+      "title": "Questions frequentes",
+      "subtitle": "Tout ce que vous devez savoir sur BattleGuess",
+      "categories": {
+        "all": "Toutes",
+        "gameplay": "Gameplay",
+        "account": "Compte",
+        "technical": "Technique",
+        "content": "Contenu"
+      },
+      "cta": "Encore des questions ? Commencez a jouer et decouvrez les reponses !"
+    },
+    "about": {
+      "title": "A propos de BattleGuess",
+      "description": "BattleGuess est le jeu de culture historique ultime ou vous identifiez des batailles celebres a partir de superbes images generees par IA. Testez vos connaissances a travers 8 epoques historiques, de l'Antiquite aux Guerres mondiales, et affrontez des joueurs du monde entier.",
+      "howToPlay": "Comment jouer",
+      "whatMakesSpecial": "Ce qui rend BattleGuess special",
+      "cta": "Pret a tester vos connaissances ?",
+      "ctaSubtitle": "Lancez-vous et voyez combien de batailles vous pouvez identifier.",
+      "features": {
+        "aiImages": "Images generees par IA",
+        "gameModes": "8 modes de jeu",
+        "battles": "200+ batailles",
+        "eras": "8 epoques historiques"
+      }
+    },
+    "modes": {
+      "title": "Modes de jeu",
+      "subtitle": "8 facons uniques de tester vos connaissances historiques",
+      "rules": "Regles",
+      "strategy": "Strategie et astuces",
+      "backToModes": "Retour aux modes de jeu",
+      "allGameModes": "Tous les modes de jeu",
+      "playMode": "Jouer en mode {{mode}}",
+      "modeNotFound": "Mode introuvable",
+      "modeNotFoundDesc": "Le mode de jeu que vous recherchez n'existe pas."
+    },
+    "battles": {
+      "title": "Encyclopedie des batailles",
+      "subtitle": "Explorez {{count}} batailles historiques a travers 8 epoques",
+      "searchPlaceholder": "Rechercher des batailles...",
+      "allEras": "Toutes les epoques",
+      "didYouKnow": "Le saviez-vous ?",
+      "backToEncyclopedia": "Retour a l'encyclopedie",
+      "canYouIdentify": "Pouvez-vous identifier cette bataille ?",
+      "putKnowledgeToTest": "Testez vos connaissances dans BattleGuess",
+      "playBattleGuess": "Jouer a BattleGuess",
+      "cta": "Pouvez-vous identifier cette bataille ? Jouez a BattleGuess !",
+      "year": "Annee",
+      "location": "Lieu",
+      "era": "Epoque",
+      "noBattlesFound": "Aucune bataille trouvee correspondant a votre recherche.",
+      "battleNotFound": "Bataille introuvable",
+      "battleNotFoundDesc": "La bataille que vous recherchez n'existe pas."
+    },
+    "collections": {
+      "title": "Collections de batailles",
+      "subtitle": "Listes de batailles organisees par theme",
+      "battlesCount": "batailles",
+      "ctaTitle": "Pret a tester vos connaissances ?",
+      "ctaSubtitle": "Voyez combien de ces batailles vous pouvez identifier dans BattleGuess",
+      "backToCollections": "Toutes les collections",
+      "notFound": "Collection introuvable",
+      "notFoundDesc": "La collection de batailles que vous recherchez n'existe pas."
+    },
+    "blog": {
+      "title": "Blog",
+      "subtitle": "Analyses historiques, guides de jeu et plongees dans l'histoire militaire",
+      "readMore": "Lire la suite",
+      "backToBlog": "Retour au blog",
+      "minRead": "min de lecture",
+      "postNotFound": "Article introuvable",
+      "postNotFoundDesc": "L'article de blog que vous recherchez n'existe pas."
+    }
+  },
+  "common": {
+    "loading": "Chargement...",
+    "notFound": "Introuvable",
+    "backToHome": "Retour a l'accueil",
+    "learnMore": "En savoir plus"
+  }
+}

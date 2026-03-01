@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { DailyStreakBadge } from '../game/DailyStreakBadge';
+import { LanguageSwitcher } from '../ui/LanguageSwitcher';
 
 interface NavbarProps {
   buyMeACoffeeUrl?: string;
@@ -154,6 +155,9 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
 
             {/* Desktop-only items */}
             <div className="hidden sm:flex items-center gap-3">
+              {/* Language switcher */}
+              <LanguageSwitcher />
+
               {/* Set name */}
               {onOpenNameInput && (
                 <motion.button
@@ -272,6 +276,11 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
                         )}
                       </button>
                     )}
+
+                    {/* Language switcher */}
+                    <div className="px-4 py-2.5">
+                      <LanguageSwitcher compact />
+                    </div>
 
                     <div className="border-t border-gray-100" />
 

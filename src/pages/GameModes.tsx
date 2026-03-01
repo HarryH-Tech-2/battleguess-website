@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
+import { LocaleLink } from '../components/ui/LocaleLink';
 import { gameModeData } from '../data/gameModeData';
 
 function GameModes() {
@@ -12,6 +12,7 @@ function GameModes() {
       title="Game Modes | BattleGuess"
       description="Explore 8 unique game modes in BattleGuess: Classic, Timed, Year, Location, Timeline, Campaign, Daily Challenge, and Community Challenge."
       canonical="https://battleguess.app/modes"
+      path="/modes"
     >
       {/* Header */}
       <motion.div
@@ -37,7 +38,7 @@ function GameModes() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.06 }}
           >
-            <Link
+            <LocaleLink
               to={`/modes/${mode.slug}`}
               className="block bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-md hover:border-emerald-200 transition-all duration-200 group h-full"
             >
@@ -54,7 +55,7 @@ function GameModes() {
                   </p>
                 </div>
               </div>
-            </Link>
+            </LocaleLink>
           </motion.div>
         ))}
       </div>

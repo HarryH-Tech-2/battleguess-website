@@ -1,12 +1,16 @@
 import { useEffect } from 'react';
+import { supportedLanguages } from '../../i18n';
 
 interface SEOHeadProps {
   title: string;
   description: string;
   canonical: string;
+  path?: string;
   jsonLd?: object;
   ogImage?: string;
 }
+
+const BASE_URL = 'https://battleguess.app';
 
 function setMetaTag(property: string, content: string, isProperty = false) {
   const attr = isProperty ? 'property' : 'name';
@@ -19,7 +23,7 @@ function setMetaTag(property: string, content: string, isProperty = false) {
   tag.content = content;
 }
 
-export function SEOHead({ title, description, canonical, jsonLd, ogImage }: SEOHeadProps) {
+export function SEOHead({ title, description, canonical, path, jsonLd, ogImage }: SEOHeadProps) {
   useEffect(() => {
     document.title = title;
 
@@ -44,17 +48,27 @@ export function SEOHead({ title, description, canonical, jsonLd, ogImage }: SEOH
     }
     canonicalLink.href = canonical;
 
-    // hreflang tags
-    const langs = ['en', 'es'];
-    for (const lang of langs) {
-      let hreflang = document.querySelector(`link[hreflang="${lang}"]`) as HTMLLinkElement | null;
-      if (!hreflang) {
-        hreflang = document.createElement('link');
+    // Clean up old hreflang tags
+    document.querySelectorAll('link[hreflang]').forEach(el => el.remove());
+
+    // Generate hreflang tags for all supported languages + x-default
+    if (path !== undefined) {
+      const basePath = path || '/';
+
+      for (const lang of supportedLanguages) {
+        const hreflang = document.createElement('link');
         hreflang.rel = 'alternate';
         hreflang.hreflang = lang;
+        hreflang.href = lang === 'en' ? `${BASE_URL}${basePath}` : `${BASE_URL}/${lang}${basePath}`;
         document.head.appendChild(hreflang);
       }
-      hreflang.href = canonical;
+
+      // x-default points to English (no prefix)
+      const xDefault = document.createElement('link');
+      xDefault.rel = 'alternate';
+      xDefault.hreflang = 'x-default';
+      xDefault.href = `${BASE_URL}${basePath}`;
+      document.head.appendChild(xDefault);
     }
 
     // JSON-LD
@@ -72,7 +86,7 @@ export function SEOHead({ title, description, canonical, jsonLd, ogImage }: SEOH
       const script = document.getElementById('seo-jsonld');
       if (script) script.remove();
     };
-  }, [title, description, canonical, jsonLd, ogImage]);
+  }, [title, description, canonical, path, jsonLd, ogImage]);
 
   return null;
 }

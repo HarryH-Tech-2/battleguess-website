@@ -1,13 +1,17 @@
 import { useState, useRef, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { LocaleLink } from '../ui/LocaleLink';
+import { LanguageSwitcher } from '../ui/LanguageSwitcher';
+import { useLanguagePrefix } from '../../hooks/useLanguagePrefix';
 
 export function ContentNavbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const { t } = useTranslation();
+  const { localePath } = useLanguagePrefix();
 
   const navLinks = [
     { to: '/modes', label: t('nav.gameModes') },
@@ -36,46 +40,48 @@ export function ContentNavbar() {
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-primary-100/50 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 h-14 sm:h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
+        <LocaleLink to="/" className="flex items-center gap-2 group">
           <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
           <span className="text-lg sm:text-xl font-extrabold text-gradient">BattleGuess</span>
-        </Link>
+        </LocaleLink>
 
         {/* Desktop nav links */}
         <div className="hidden md:flex items-center gap-1">
           {navLinks.map(link => (
-            <Link
+            <LocaleLink
               key={link.to}
               to={link.to}
               className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                location.pathname.startsWith(link.to)
+                location.pathname.startsWith(localePath(link.to))
                   ? 'bg-primary-50 text-primary-700'
                   : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
               }`}
             >
               {link.label}
-            </Link>
+            </LocaleLink>
           ))}
-          <Link
+          <LanguageSwitcher />
+          <LocaleLink
             to="/"
             className="ml-2 px-4 py-2 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold transition-colors shadow-md hover:shadow-lg"
           >
             {t('nav.playNow')}
-          </Link>
+          </LocaleLink>
         </div>
 
         {/* Mobile hamburger */}
         <div className="flex items-center gap-2 md:hidden" ref={menuRef}>
-          <Link
+          <LanguageSwitcher compact />
+          <LocaleLink
             to="/"
             className="px-3 py-1.5 rounded-lg bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold transition-colors"
           >
             {t('nav.play')}
-          </Link>
+          </LocaleLink>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
@@ -99,17 +105,17 @@ export function ContentNavbar() {
                 className="absolute top-full right-4 mt-1 w-48 bg-white rounded-xl shadow-xl border border-gray-200 py-2 overflow-hidden"
               >
                 {navLinks.map(link => (
-                  <Link
+                  <LocaleLink
                     key={link.to}
                     to={link.to}
                     className={`block px-4 py-2.5 text-sm font-medium transition-colors ${
-                      location.pathname.startsWith(link.to)
+                      location.pathname.startsWith(localePath(link.to))
                         ? 'bg-primary-50 text-primary-700'
                         : 'text-gray-700 hover:bg-gray-50'
                     }`}
                   >
                     {link.label}
-                  </Link>
+                  </LocaleLink>
                 ))}
               </motion.div>
             )}

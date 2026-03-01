@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
+import { LocaleLink } from '../components/ui/LocaleLink';
 
 const steps = [
   {
@@ -75,6 +75,7 @@ function About() {
       title="About BattleGuess | How to Play"
       description="Learn how to play BattleGuess and discover what makes it the ultimate history trivia game. 200+ battles, 8 eras, 8 game modes, and AI-generated artwork."
       canonical="https://battleguess.app/about"
+      path="/about"
       jsonLd={jsonLd}
     >
       {/* Hero */}
@@ -172,12 +173,12 @@ function About() {
           <p className="text-slate-600 mb-5">
             {t('pages.about.ctaSubtitle')}
           </p>
-          <Link
+          <LocaleLink
             to="/"
             className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md shadow-primary-200 hover:shadow-lg hover:shadow-primary-200 transition-all duration-200"
           >
             {t('nav.playNow')}
-          </Link>
+          </LocaleLink>
         </div>
       </motion.div>
     </ContentLayout>

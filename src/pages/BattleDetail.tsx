@@ -1,8 +1,9 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
+import { LocaleLink } from '../components/ui/LocaleLink';
 import { getBattleById } from '../data/battles';
 import { battleFacts } from '../data/battleFacts';
 import { battleImages } from '../data/battleImages';
@@ -42,12 +43,12 @@ function BattleDetail() {
           <p className="text-slate-500 mb-6">
             {t('pages.battles.battleNotFoundDesc')}
           </p>
-          <Link
+          <LocaleLink
             to="/battles"
             className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
           >
             &larr; {t('pages.battles.backToEncyclopedia')}
-          </Link>
+          </LocaleLink>
         </div>
       </ContentLayout>
     );
@@ -83,6 +84,7 @@ function BattleDetail() {
       title={`${battle.name} | BattleGuess`}
       description={battle.description}
       canonical={`https://battleguess.app/battles/${battleId}`}
+      path={`/battles/${battleId}`}
       jsonLd={jsonLd}
     >
       {/* Back link */}
@@ -97,7 +99,7 @@ function BattleDetail() {
           className="inline-flex items-center gap-1 text-slate-500 hover:text-primary-600 text-sm font-medium transition-colors"
         >
           &larr; {t('pages.battles.backToEncyclopedia')}
-        </Link>
+        </LocaleLink>
       </motion.div>
 
       {/* Battle Header */}
@@ -192,7 +194,7 @@ function BattleDetail() {
           <h2 className="text-lg font-bold text-slate-700 mb-3">Featured In</h2>
           <div className="flex flex-wrap gap-2">
             {featuredCollections.map(collection => (
-              <Link
+              <LocaleLink
                 key={collection.slug}
                 to={`/collections/${collection.slug}`}
                 className="inline-flex items-center gap-2 bg-white border border-slate-200 hover:border-primary-300 rounded-xl px-4 py-2.5 shadow-sm hover:shadow-md transition-all duration-200 group"
@@ -201,7 +203,7 @@ function BattleDetail() {
                 <span className="text-sm font-medium text-slate-700 group-hover:text-primary-700 transition-colors">
                   {collection.title}
                 </span>
-              </Link>
+              </LocaleLink>
             ))}
           </div>
         </motion.div>
@@ -218,7 +220,7 @@ function BattleDetail() {
           <h2 className="text-lg font-bold text-slate-700 mb-3">Related Articles</h2>
           <div className="space-y-2">
             {relatedArticles.map(article => (
-              <Link
+              <LocaleLink
                 key={article.slug}
                 to={`/blog/${article.slug}`}
                 className="flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm border border-slate-100 hover:shadow-md hover:border-primary-200 transition-all duration-200 group"
@@ -230,7 +232,7 @@ function BattleDetail() {
                   </p>
                   <p className="text-xs text-slate-400">{article.readTime}</p>
                 </div>
-              </Link>
+              </LocaleLink>
             ))}
           </div>
         </motion.div>
@@ -250,12 +252,12 @@ function BattleDetail() {
           <p className="text-slate-600 mb-5">
             {t('pages.battles.putKnowledgeToTest')}
           </p>
-          <Link
+          <LocaleLink
             to="/"
             className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md shadow-primary-200 hover:shadow-lg hover:shadow-primary-200 transition-all duration-200"
           >
             {t('pages.battles.playBattleGuess')}
-          </Link>
+          </LocaleLink>
         </div>
       </motion.div>
     </ContentLayout>

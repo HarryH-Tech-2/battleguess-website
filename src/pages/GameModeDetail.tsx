@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
+import { LocaleLink } from '../components/ui/LocaleLink';
 import { getGameModeBySlug } from '../data/gameModeData';
 
 function GameModeDetail() {
@@ -15,6 +16,7 @@ function GameModeDetail() {
         title="Mode Not Found | BattleGuess"
         description="The requested game mode could not be found."
         canonical="https://battleguess.app/modes"
+        path="/modes"
       >
         <div className="text-center py-16">
           <div className="text-6xl mb-4">🔍</div>
@@ -24,12 +26,12 @@ function GameModeDetail() {
           <p className="text-slate-500 mb-6">
             {t('pages.modes.modeNotFoundDesc')}
           </p>
-          <Link
+          <LocaleLink
             to="/modes"
             className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
           >
             &larr; {t('pages.modes.backToModes')}
-          </Link>
+          </LocaleLink>
         </div>
       </ContentLayout>
     );
@@ -40,6 +42,7 @@ function GameModeDetail() {
       title={`${mode.label} Mode | BattleGuess`}
       description={mode.longDesc}
       canonical={`https://battleguess.app/modes/${mode.slug}`}
+      path={`/modes/${mode.slug}`}
     >
       {/* Back link */}
       <motion.div
@@ -53,7 +56,7 @@ function GameModeDetail() {
           className="inline-flex items-center gap-1 text-slate-500 hover:text-primary-600 text-sm font-medium transition-colors"
         >
           &larr; {t('pages.modes.allGameModes')}
-        </Link>
+        </LocaleLink>
       </motion.div>
 
       {/* Mode Header */}
@@ -111,12 +114,12 @@ function GameModeDetail() {
         transition={{ duration: 0.5, delay: 0.35 }}
         className="text-center"
       >
-        <Link
+        <LocaleLink
           to={`/?mode=${mode.slug}`}
           className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3.5 rounded-xl shadow-md shadow-primary-200 hover:shadow-lg hover:shadow-primary-200 transition-all duration-200 text-lg"
         >
           {t('pages.modes.playMode', { mode: mode.label })}
-        </Link>
+        </LocaleLink>
       </motion.div>
     </ContentLayout>
   );

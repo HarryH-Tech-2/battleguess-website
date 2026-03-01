@@ -1,8 +1,9 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
+import { LocaleLink } from '../components/ui/LocaleLink';
 import { blogPosts, blogCategories } from '../data/blogPosts';
 import type { BlogSection } from '../data/blogPosts';
 import { getBattleById } from '../data/battles';
@@ -99,6 +100,7 @@ function BlogPost() {
         title="Post Not Found | BattleGuess"
         description="The requested blog post could not be found."
         canonical="https://battleguess.app/blog"
+        path="/blog"
       >
         <div className="text-center py-16">
           <div className="text-6xl mb-4">📝</div>
@@ -108,12 +110,12 @@ function BlogPost() {
           <p className="text-slate-500 mb-6">
             {t('pages.blog.postNotFoundDesc')}
           </p>
-          <Link
+          <LocaleLink
             to="/blog"
             className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
           >
             &larr; {t('pages.blog.backToBlog')}
-          </Link>
+          </LocaleLink>
         </div>
       </ContentLayout>
     );
@@ -148,6 +150,7 @@ function BlogPost() {
       title={`${post.title} | BattleGuess`}
       description={post.description}
       canonical={`https://battleguess.app/blog/${post.slug}`}
+      path={`/blog/${slug}`}
       jsonLd={jsonLd}
     >
       {/* Back link + Category breadcrumb */}
@@ -157,21 +160,21 @@ function BlogPost() {
         transition={{ duration: 0.3 }}
         className="mb-6 flex items-center gap-2 text-sm"
       >
-        <Link
+        <LocaleLink
           to="/blog"
           className="text-slate-500 hover:text-primary-600 font-medium transition-colors"
         >
           {t('pages.blog.backToBlog')}
-        </Link>
+        </LocaleLink>
         {category && (
           <>
             <span className="text-slate-300">/</span>
-            <Link
+            <LocaleLink
               to={`/blog/topics/${post.category}`}
               className="text-slate-500 hover:text-primary-600 font-medium transition-colors"
             >
               {category.icon} {category.title}
-            </Link>
+            </LocaleLink>
           </>
         )}
       </motion.div>
@@ -277,7 +280,7 @@ function BlogPost() {
           <h2 className="text-xl font-bold text-slate-800 mb-4">Explore These Battles</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {relatedBattles.map(battle => (
-              <Link
+              <LocaleLink
                 key={battle.id}
                 to={`/battles/${getBattleSlug(battle)}`}
                 className="flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm border border-slate-100 hover:shadow-md hover:border-primary-200 transition-all duration-200 group"
@@ -291,7 +294,7 @@ function BlogPost() {
                     {formatYear(battle.year)} &middot; {battle.location}
                   </p>
                 </div>
-              </Link>
+              </LocaleLink>
             ))}
           </div>
         </motion.div>
@@ -311,12 +314,12 @@ function BlogPost() {
           <p className="text-slate-600 mb-5">
             Identify famous battles from historical artwork across 9 historical eras.
           </p>
-          <Link
+          <LocaleLink
             to="/"
             className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md shadow-primary-200 hover:shadow-lg hover:shadow-primary-200 transition-all duration-200"
           >
             Play BattleGuess
-          </Link>
+          </LocaleLink>
         </div>
       </motion.div>
 
@@ -331,7 +334,7 @@ function BlogPost() {
           <h2 className="text-xl font-bold text-slate-800 mb-4">Related Articles</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {relatedPosts.map(related => (
-              <Link
+              <LocaleLink
                 key={related.slug}
                 to={`/blog/${related.slug}`}
                 className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:shadow-md hover:border-primary-200 transition-all duration-200 group block"
@@ -350,7 +353,7 @@ function BlogPost() {
                   {related.title}
                 </h3>
                 <p className="text-slate-400 text-xs mt-1">{related.readTime}</p>
-              </Link>
+              </LocaleLink>
             ))}
           </div>
         </motion.div>

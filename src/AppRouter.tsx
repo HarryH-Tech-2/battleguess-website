@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Outlet } from 'react-router-dom';
+import { useLanguagePrefix } from './hooks/useLanguagePrefix';
 import App from './App';
 
 const FAQ = lazy(() => import('./pages/FAQ'));
@@ -26,24 +27,43 @@ function LoadingFallback() {
   );
 }
 
+function LanguageLayout() {
+  useLanguagePrefix();
+  return <Outlet />;
+}
+
+const contentRoutes = (
+  <>
+    <Route index element={<App />} />
+    <Route path="faq" element={<FAQ />} />
+    <Route path="about" element={<About />} />
+    <Route path="modes" element={<GameModes />} />
+    <Route path="modes/:modeId" element={<GameModeDetail />} />
+    <Route path="battles" element={<BattleEncyclopedia />} />
+    <Route path="battles/:battleId" element={<BattleDetail />} />
+    <Route path="collections" element={<BattleCollections />} />
+    <Route path="collections/:slug" element={<BattleCollectionDetail />} />
+    <Route path="blog" element={<Blog />} />
+    <Route path="blog/topics/:topicId" element={<BlogTopic />} />
+    <Route path="blog/:slug" element={<BlogPost />} />
+    <Route path="stats" element={<Stats />} />
+    <Route path="*" element={<App />} />
+  </>
+);
+
 export function AppRouter() {
   return (
     <Suspense fallback={<LoadingFallback />}>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/modes" element={<GameModes />} />
-        <Route path="/modes/:modeId" element={<GameModeDetail />} />
-        <Route path="/battles" element={<BattleEncyclopedia />} />
-        <Route path="/battles/:battleId" element={<BattleDetail />} />
-        <Route path="/collections" element={<BattleCollections />} />
-        <Route path="/collections/:slug" element={<BattleCollectionDetail />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/topics/:topicId" element={<BlogTopic />} />
-        <Route path="/blog/:slug" element={<BlogPost />} />
-        <Route path="/stats" element={<Stats />} />
-        <Route path="*" element={<App />} />
+        {/* English (default, no prefix) */}
+        <Route element={<LanguageLayout />}>
+          {contentRoutes}
+        </Route>
+
+        {/* Language-prefixed routes (fr, es) */}
+        <Route path=":lang" element={<LanguageLayout />}>
+          {contentRoutes}
+        </Route>
       </Routes>
     </Suspense>
   );

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
+import { LocaleLink } from '../components/ui/LocaleLink';
 import { blogPosts, blogCategories } from '../data/blogPosts';
 
 function Blog() {
@@ -12,6 +12,7 @@ function Blog() {
       title="Blog | BattleGuess"
       description="History insights, game guides, and behind-the-scenes articles from the BattleGuess team."
       canonical="https://battleguess.app/blog"
+      path="/blog"
     >
       {/* Header */}
       <motion.div
@@ -36,13 +37,13 @@ function Blog() {
         className="flex flex-wrap justify-center gap-2 mb-10"
       >
         {blogCategories.map(cat => (
-          <Link
+          <LocaleLink
             key={cat.id}
             to={`/blog/topics/${cat.id}`}
             className="px-3 py-1.5 rounded-full text-sm font-medium bg-white text-slate-600 hover:bg-primary-50 hover:text-primary-700 border border-slate-200 transition-all duration-200"
           >
             {cat.icon} {cat.title}
-          </Link>
+          </LocaleLink>
         ))}
       </motion.div>
 
@@ -55,7 +56,7 @@ function Blog() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.15 + index * 0.04 }}
           >
-            <Link
+            <LocaleLink
               to={`/blog/${post.slug}`}
               className="flex gap-4 bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:shadow-md hover:border-primary-200 transition-all duration-200 group"
             >
@@ -102,7 +103,7 @@ function Blog() {
                   ))}
                 </div>
               </div>
-            </Link>
+            </LocaleLink>
           </motion.div>
         ))}
       </div>

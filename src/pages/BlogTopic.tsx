@@ -1,8 +1,9 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
+import { LocaleLink } from '../components/ui/LocaleLink';
 import { blogPosts, blogCategories } from '../data/blogPosts';
 import type { BlogCategory } from '../data/blogPosts';
 
@@ -23,6 +24,7 @@ function BlogTopic() {
         title="Topic Not Found | BattleGuess"
         description="The requested blog topic could not be found."
         canonical="https://battleguess.app/blog"
+        path="/blog"
       >
         <div className="text-center py-16">
           <div className="text-6xl mb-4">📝</div>
@@ -30,12 +32,12 @@ function BlogTopic() {
           <p className="text-slate-500 mb-6">
             The blog topic you are looking for does not exist.
           </p>
-          <Link
+          <LocaleLink
             to="/blog"
             className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
           >
             &larr; {t('pages.blog.backToBlog')}
-          </Link>
+          </LocaleLink>
         </div>
       </ContentLayout>
     );
@@ -62,6 +64,7 @@ function BlogTopic() {
       title={`${category.title} | BattleGuess Blog`}
       description={category.description}
       canonical={`https://battleguess.app/blog/topics/${topicId}`}
+      path={`/blog/topics/${topicId}`}
       jsonLd={jsonLd}
     >
       {/* Breadcrumb */}
@@ -71,12 +74,12 @@ function BlogTopic() {
         transition={{ duration: 0.3 }}
         className="mb-6 flex items-center gap-2 text-sm"
       >
-        <Link
+        <LocaleLink
           to="/blog"
           className="text-slate-500 hover:text-primary-600 font-medium transition-colors"
         >
           {t('pages.blog.backToBlog')}
-        </Link>
+        </LocaleLink>
         <span className="text-slate-300">/</span>
         <span className="text-slate-700 font-medium">{category.title}</span>
       </motion.div>
@@ -113,7 +116,7 @@ function BlogTopic() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.05 }}
           >
-            <Link
+            <LocaleLink
               to={`/blog/${post.slug}`}
               className="flex gap-4 bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:shadow-md hover:border-primary-200 transition-all duration-200 group"
             >
@@ -146,7 +149,7 @@ function BlogTopic() {
                   </span>
                 </div>
               </div>
-            </Link>
+            </LocaleLink>
           </motion.div>
         ))}
       </div>
@@ -161,7 +164,7 @@ function BlogTopic() {
         <h2 className="text-xl font-bold text-slate-800 mb-4">Explore More Topics</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {otherCategories.map(cat => (
-            <Link
+            <LocaleLink
               key={cat.id}
               to={`/blog/topics/${cat.id}`}
               className="flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm border border-slate-100 hover:shadow-md hover:border-primary-200 transition-all duration-200 group"
@@ -175,7 +178,7 @@ function BlogTopic() {
                   {blogPosts.filter(p => p.category === cat.id).length} articles
                 </p>
               </div>
-            </Link>
+            </LocaleLink>
           ))}
         </div>
       </motion.div>
@@ -194,12 +197,12 @@ function BlogTopic() {
           <p className="text-slate-600 mb-5">
             Identify famous battles from AI-generated artwork across 8 historical eras.
           </p>
-          <Link
+          <LocaleLink
             to="/"
             className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md shadow-primary-200 hover:shadow-lg hover:shadow-primary-200 transition-all duration-200"
           >
             Play BattleGuess
-          </Link>
+          </LocaleLink>
         </div>
       </motion.div>
     </ContentLayout>

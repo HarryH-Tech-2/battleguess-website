@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
+import { LocaleLink } from '../components/ui/LocaleLink';
 import { battleCollections, getCollectionBattles } from '../data/battleCollections';
 
 function BattleCollections() {
@@ -21,6 +21,7 @@ function BattleCollections() {
       title="Battle Collections | BattleGuess"
       description="Curated battle playlists organized by theme — Naval Battles, Siege Warfare, Battles That Changed History, and more."
       canonical="https://battleguess.app/collections"
+      path="/collections"
       jsonLd={jsonLd}
     >
       {/* Header */}
@@ -49,7 +50,7 @@ function BattleCollections() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.05 * i }}
             >
-              <Link
+              <LocaleLink
                 to={`/collections/${collection.slug}`}
                 className="block bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:border-primary-200 transition-all duration-300 group h-full"
               >
@@ -68,7 +69,7 @@ function BattleCollections() {
                     &rarr;
                   </span>
                 </div>
-              </Link>
+              </LocaleLink>
             </motion.div>
           );
         })}
@@ -88,12 +89,12 @@ function BattleCollections() {
           <p className="text-slate-600 mb-5">
             {t('pages.collections.ctaSubtitle')}
           </p>
-          <Link
+          <LocaleLink
             to="/"
             className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md shadow-primary-200 hover:shadow-lg hover:shadow-primary-200 transition-all duration-200"
           >
             {t('pages.battles.playBattleGuess')}
-          </Link>
+          </LocaleLink>
         </div>
       </motion.div>
     </ContentLayout>

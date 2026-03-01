@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
+import { LocaleLink } from '../components/ui/LocaleLink';
 import { getCollectionBySlug, getCollectionBattles } from '../data/battleCollections';
 import {
   getBattleSlug,
@@ -27,6 +28,7 @@ function BattleCollectionDetail() {
         title="Collection Not Found | BattleGuess"
         description="The requested battle collection could not be found."
         canonical="https://battleguess.app/collections"
+        path="/collections"
       >
         <div className="text-center py-16">
           <div className="text-6xl mb-4">🔍</div>
@@ -36,12 +38,12 @@ function BattleCollectionDetail() {
           <p className="text-slate-500 mb-6">
             {t('pages.collections.notFoundDesc')}
           </p>
-          <Link
+          <LocaleLink
             to="/collections"
             className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
           >
             &larr; {t('pages.collections.backToCollections')}
-          </Link>
+          </LocaleLink>
         </div>
       </ContentLayout>
     );
@@ -68,6 +70,7 @@ function BattleCollectionDetail() {
       title={`${collection.title} | BattleGuess`}
       description={collection.description}
       canonical={`https://battleguess.app/collections/${slug}`}
+      path={`/collections/${slug}`}
       jsonLd={jsonLd}
     >
       {/* Back link */}
@@ -77,12 +80,12 @@ function BattleCollectionDetail() {
         transition={{ duration: 0.3 }}
         className="mb-6"
       >
-        <Link
+        <LocaleLink
           to="/collections"
           className="inline-flex items-center gap-1 text-slate-500 hover:text-primary-600 text-sm font-medium transition-colors"
         >
           &larr; {t('pages.collections.backToCollections')}
-        </Link>
+        </LocaleLink>
       </motion.div>
 
       {/* Collection Header */}
@@ -134,7 +137,7 @@ function BattleCollectionDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.03 * i }}
           >
-            <Link
+            <LocaleLink
               to={`/battles/${getBattleSlug(battle)}`}
               className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 hover:shadow-md hover:border-primary-200 transition-all duration-200 group block"
             >
@@ -159,7 +162,7 @@ function BattleCollectionDetail() {
                   {battle.difficulty}
                 </span>
               </div>
-            </Link>
+            </LocaleLink>
           </motion.div>
         ))}
       </div>
@@ -178,12 +181,12 @@ function BattleCollectionDetail() {
           <p className="text-slate-600 mb-5">
             {t('pages.collections.ctaSubtitle')}
           </p>
-          <Link
+          <LocaleLink
             to="/"
             className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md shadow-primary-200 hover:shadow-lg hover:shadow-primary-200 transition-all duration-200"
           >
             {t('pages.battles.playBattleGuess')}
-          </Link>
+          </LocaleLink>
         </div>
       </motion.div>
     </ContentLayout>

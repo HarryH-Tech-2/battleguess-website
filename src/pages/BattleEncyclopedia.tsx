@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
+import { LocaleLink } from '../components/ui/LocaleLink';
 import { allBattles } from '../data/battles';
 import { civilizations } from '../data/civilizations';
 import type { CivilizationId } from '../types';
@@ -50,6 +50,7 @@ function BattleEncyclopedia() {
       title="Battle Encyclopedia | BattleGuess"
       description="Explore over 200 historical battles across 8 eras in the BattleGuess encyclopedia. Learn about battles from ancient Egypt to the World Wars."
       canonical="https://battleguess.app/battles"
+      path="/battles"
     >
       {/* Header */}
       <motion.div
@@ -160,7 +161,7 @@ function BattleEncyclopedia() {
                 {/* Battle Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {groupedBattles[eraId]!.map(battle => (
-                    <Link
+                    <LocaleLink
                       key={battle.id}
                       to={`/battles/${getBattleSlug(battle)}`}
                       className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 hover:shadow-md hover:border-primary-200 transition-all duration-200 group block"
@@ -182,7 +183,7 @@ function BattleEncyclopedia() {
                           {battle.difficulty}
                         </span>
                       </div>
-                    </Link>
+                    </LocaleLink>
                   ))}
                 </div>
               </motion.section>

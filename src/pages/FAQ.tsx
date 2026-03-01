@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
+import { LocaleLink } from '../components/ui/LocaleLink';
 import { faqItems } from '../data/faqData';
 
 type Category = 'all' | 'gameplay' | 'account' | 'technical' | 'content';
@@ -47,6 +47,7 @@ function FAQ() {
       title="FAQ | BattleGuess"
       description="Find answers to frequently asked questions about BattleGuess, the history trivia game where you identify battles from AI-generated images."
       canonical="https://battleguess.app/faq"
+      path="/faq"
       jsonLd={jsonLd}
     >
       {/* Header */}
@@ -152,12 +153,12 @@ function FAQ() {
           <p className="text-slate-600 mb-5">
             {t('pages.faq.subtitle')}
           </p>
-          <Link
+          <LocaleLink
             to="/"
             className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md shadow-amber-200 hover:shadow-lg hover:shadow-amber-200 transition-all duration-200"
           >
             {t('pages.battles.playBattleGuess')}
-          </Link>
+          </LocaleLink>
         </div>
       </motion.div>
     </ContentLayout>
