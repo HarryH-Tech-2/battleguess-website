@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route, Outlet } from 'react-router-dom';
-import { useLanguagePrefix } from './hooks/useLanguagePrefix';
+import { Routes, Route, Outlet, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { isSupportedLanguage } from './i18n';
 import App from './App';
 
 const FAQ = lazy(() => import('./pages/FAQ'));
@@ -28,7 +29,16 @@ function LoadingFallback() {
 }
 
 function LanguageLayout() {
-  useLanguagePrefix();
+  const { lang } = useParams<{ lang?: string }>();
+  const { i18n } = useTranslation();
+  const targetLang = lang && isSupportedLanguage(lang) ? lang : 'en';
+
+  // Set language synchronously so children render with correct translations.
+  // changeLanguage with pre-loaded resources updates i18n.language immediately.
+  if (i18n.language !== targetLang) {
+    i18n.changeLanguage(targetLang);
+  }
+
   return <Outlet />;
 }
 
