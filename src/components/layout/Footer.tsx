@@ -6,7 +6,6 @@ import { battleFacts } from '../../data/battleFacts';
 import { LocaleLink } from '../ui/LocaleLink';
 
 const TEASER_COUNT = 20;
-const TEASER_IDS = [10, 32, 127, 31, 9, 185, 137, 193, 41, 188, 11, 163, 91, 4, 125, 17, 6, 170, 24, 95];
 
 export function Footer() {
   const [currentFactIndex, setCurrentFactIndex] = useState(0);
