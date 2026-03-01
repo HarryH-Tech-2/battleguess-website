@@ -94,7 +94,7 @@ function BattleDetail() {
         transition={{ duration: 0.3 }}
         className="mb-6"
       >
-        <Link
+        <LocaleLink
           to="/battles"
           className="inline-flex items-center gap-1 text-slate-500 hover:text-primary-600 text-sm font-medium transition-colors"
         >
