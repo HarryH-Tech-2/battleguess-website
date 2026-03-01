@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import type { Difficulty } from '../../types';
 
 interface DifficultySelectorProps {
@@ -7,11 +8,11 @@ interface DifficultySelectorProps {
   disabled?: boolean;
 }
 
-const items: { id: Difficulty | 'all'; name: string; icon: string; color: string }[] = [
-  { id: 'all', name: 'All Levels', icon: '🎯', color: '' },
-  { id: 'easy', name: 'Easy', icon: '🟢', color: 'from-green-500 to-green-600' },
-  { id: 'medium', name: 'Medium', icon: '🟡', color: 'from-yellow-500 to-yellow-600' },
-  { id: 'hard', name: 'Hard', icon: '🔴', color: 'from-red-500 to-red-600' },
+const items: { id: Difficulty | 'all'; icon: string; color: string }[] = [
+  { id: 'all', icon: '🎯', color: '' },
+  { id: 'easy', icon: '🟢', color: 'from-green-500 to-green-600' },
+  { id: 'medium', icon: '🟡', color: 'from-yellow-500 to-yellow-600' },
+  { id: 'hard', icon: '🔴', color: 'from-red-500 to-red-600' },
 ];
 
 export function DifficultySelector({
@@ -19,11 +20,14 @@ export function DifficultySelector({
   onSelect,
   disabled = false,
 }: DifficultySelectorProps) {
+  const { t } = useTranslation();
+
   return (
     <div className="w-full">
       <div className="flex items-center gap-2 sm:gap-2 justify-center">
         {items.map(item => {
           const isSelected = selected === item.id;
+          const name = item.id === 'all' ? t('difficulty.allLevels') : t(`difficulty.${item.id}`);
           return (
             <motion.button
               key={item.id}
@@ -44,7 +48,7 @@ export function DifficultySelector({
               disabled={disabled}
             >
               <span>{item.icon}</span>
-              <span>{item.name}</span>
+              <span>{name}</span>
             </motion.button>
           );
         })}

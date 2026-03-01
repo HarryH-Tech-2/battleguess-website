@@ -3,30 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { allBattles } from '../../data/battles/index';
 import { battleFacts } from '../../data/battleFacts';
+import { LocaleLink } from '../ui/LocaleLink';
 
-// Curated short quotes from battle facts (under 15 words each, paraphrased as teasers)
-const footerTeasers = [
-  { text: 'Did you know? The marathon race is based on a legendary run from Marathon to Athens.', id: 10 },
-  { text: 'The word "Armageddon" comes from the ancient battlefield of Megiddo.', id: 32 },
-  { text: 'Kamikaze means "divine wind" — named after typhoons that sank Mongol fleets.', id: 127 },
-  { text: 'The first peace treaty in history was signed after the Battle of Kadesh.', id: 31 },
-  { text: 'Tanks were first deployed at the Battle of the Somme in 1916.', id: 9 },
-  { text: 'Paris taxi drivers ferried troops to the Battle of the Marne in 1914.', id: 185 },
-  { text: 'Sun Tzu may have personally advised the army at the Battle of Boju.', id: 137 },
-  { text: 'The Coral Sea was the first naval battle where ships never saw each other.', id: 193 },
-  { text: 'Alexander the Great built a causeway to Tyre that turned an island into a peninsula.', id: 41 },
-  { text: 'The word "Caporetto" became Italian slang for a catastrophic defeat.', id: 188 },
-  { text: 'At Midway, five crucial minutes changed the entire course of the Pacific War.', id: 11 },
-  { text: 'A lost cigar wrapper revealed Lee\'s battle plans before Antietam.', id: 163 },
-  { text: 'Joan of Arc pulled an arrow from her own shoulder and kept fighting at Orleans.', id: 91 },
-  { text: 'The Bayeux Tapestry depicting Hastings is actually an embroidery, not a tapestry.', id: 4 },
-  { text: 'Admiral Yi\'s 13 ships destroyed 31 Japanese warships at Myeongnyang.', id: 125 },
-  { text: 'Don Quixote\'s author Cervantes fought at the Battle of Lepanto.', id: 17 },
-  { text: 'Eisenhower carried a failure letter in his wallet on D-Day, just in case.', id: 6 },
-  { text: 'Washington\'s troops crossed the Delaware on Christmas night 1776.', id: 170 },
-  { text: 'General McAuliffe\'s reply to the German surrender demand at Bastogne: "NUTS!"', id: 24 },
-  { text: 'Khalid ibn al-Walid never lost a single battle in his entire career.', id: 95 },
-];
+const TEASER_COUNT = 20;
+const TEASER_IDS = [10, 32, 127, 31, 9, 185, 137, 193, 41, 188, 11, 163, 91, 4, 125, 17, 6, 170, 24, 95];
 
 export function Footer() {
   const [currentFactIndex, setCurrentFactIndex] = useState(0);
@@ -36,11 +16,11 @@ export function Footer() {
 
   // Rotate facts
   useEffect(() => {
-    const startIndex = Math.floor(Math.random() * footerTeasers.length);
+    const startIndex = Math.floor(Math.random() * TEASER_COUNT);
     setCurrentFactIndex(startIndex);
 
     const interval = setInterval(() => {
-      setCurrentFactIndex(prev => (prev + 1) % footerTeasers.length);
+      setCurrentFactIndex(prev => (prev + 1) % TEASER_COUNT);
     }, 6000);
     return () => clearInterval(interval);
   }, []);
@@ -61,7 +41,6 @@ export function Footer() {
   const totalBattles = allBattles.length;
   const totalFacts = Object.keys(battleFacts).length;
   const eras = 8;
-  const currentFact = footerTeasers[currentFactIndex];
 
   return (
     <div className="relative py-8 px-4">
@@ -99,7 +78,7 @@ export function Footer() {
               className="relative text-center"
             >
               <p className="text-xl sm:text-2xl text-white leading-relaxed italic drop-shadow-md">
-                &ldquo;{currentFact.text}&rdquo;
+                &ldquo;{t(`footerTeasers.${currentFactIndex}`)}&rdquo;
               </p>
             </motion.div>
           </AnimatePresence>
@@ -184,34 +163,34 @@ export function Footer() {
         {/* Footer Navigation */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
           <div>
-            <div className="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">Explore</div>
+            <div className="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">{t('footer.explore')}</div>
             <div className="space-y-1">
-              <a href="/battles" className="block text-sm text-white/70 hover:text-white transition-colors">Battles</a>
-              <a href="/collections" className="block text-sm text-white/70 hover:text-white transition-colors">Collections</a>
-              <a href="/modes" className="block text-sm text-white/70 hover:text-white transition-colors">Game Modes</a>
+              <LocaleLink to="/battles" className="block text-sm text-white/70 hover:text-white transition-colors">{t('nav.battles')}</LocaleLink>
+              <LocaleLink to="/collections" className="block text-sm text-white/70 hover:text-white transition-colors">{t('nav.collections')}</LocaleLink>
+              <LocaleLink to="/modes" className="block text-sm text-white/70 hover:text-white transition-colors">{t('nav.gameModes')}</LocaleLink>
             </div>
           </div>
           <div>
-            <div className="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">Learn</div>
+            <div className="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">{t('footer.learn')}</div>
             <div className="space-y-1">
-              <a href="/blog/topics/ancient-warfare" className="block text-sm text-white/70 hover:text-white transition-colors">Ancient Warfare</a>
-              <a href="/blog/topics/wars-and-conflicts" className="block text-sm text-white/70 hover:text-white transition-colors">Wars & Conflicts</a>
-              <a href="/blog/topics/military-strategy" className="block text-sm text-white/70 hover:text-white transition-colors">Strategy & Tactics</a>
+              <LocaleLink to="/blog/topics/ancient-warfare" className="block text-sm text-white/70 hover:text-white transition-colors">{t('footer.ancientWarfare')}</LocaleLink>
+              <LocaleLink to="/blog/topics/wars-and-conflicts" className="block text-sm text-white/70 hover:text-white transition-colors">{t('footer.warsConflicts')}</LocaleLink>
+              <LocaleLink to="/blog/topics/military-strategy" className="block text-sm text-white/70 hover:text-white transition-colors">{t('footer.strategyTactics')}</LocaleLink>
             </div>
           </div>
           <div>
-            <div className="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">Read</div>
+            <div className="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">{t('footer.read')}</div>
             <div className="space-y-1">
-              <a href="/blog/topics/military-technology" className="block text-sm text-white/70 hover:text-white transition-colors">Military Technology</a>
-              <a href="/blog/topics/game-guides" className="block text-sm text-white/70 hover:text-white transition-colors">Game Guides</a>
-              <a href="/blog" className="block text-sm text-white/70 hover:text-white transition-colors">All Articles</a>
+              <LocaleLink to="/blog/topics/military-technology" className="block text-sm text-white/70 hover:text-white transition-colors">{t('footer.militaryTechnology')}</LocaleLink>
+              <LocaleLink to="/blog/topics/game-guides" className="block text-sm text-white/70 hover:text-white transition-colors">{t('footer.gameGuides')}</LocaleLink>
+              <LocaleLink to="/blog" className="block text-sm text-white/70 hover:text-white transition-colors">{t('footer.allArticles')}</LocaleLink>
             </div>
           </div>
           <div>
-            <div className="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">Info</div>
+            <div className="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">{t('footer.info')}</div>
             <div className="space-y-1">
-              <a href="/about" className="block text-sm text-white/70 hover:text-white transition-colors">About</a>
-              <a href="/faq" className="block text-sm text-white/70 hover:text-white transition-colors">FAQ</a>
+              <LocaleLink to="/about" className="block text-sm text-white/70 hover:text-white transition-colors">{t('nav.about')}</LocaleLink>
+              <LocaleLink to="/faq" className="block text-sm text-white/70 hover:text-white transition-colors">{t('nav.faq')}</LocaleLink>
             </div>
           </div>
         </div>

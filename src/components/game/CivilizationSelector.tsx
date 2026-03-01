@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import type { CivilizationId } from '../../types';
 import { civilizations } from '../../data/civilizations';
 
@@ -8,32 +9,23 @@ interface CivilizationSelectorProps {
   disabled?: boolean;
 }
 
-const shortNames: Record<string, string> = {
-  'ancient-egypt-mesopotamia': 'Egypt',
-  'ancient-greece-rome': 'Greece & Rome',
-  'medieval-europe': 'Medieval',
-  'ottoman-islamic': 'Ottoman',
-  'east-asia': 'East Asia',
-  'colonial-napoleonic': 'Colonial',
-  'american-wars': 'American',
-  'world-wars': 'World Wars',
-};
-
-const items = [
-  { id: 'all' as const, name: 'All Battles', shortName: 'All', icon: '\u{1F30D}' },
-  ...civilizations.map(c => ({
-    id: c.id,
-    name: c.name,
-    shortName: shortNames[c.id] || c.name,
-    icon: c.icon,
-  })),
-];
-
 export function CivilizationSelector({
   selected,
   onSelect,
   disabled = false,
 }: CivilizationSelectorProps) {
+  const { t } = useTranslation();
+
+  const items = [
+    { id: 'all' as const, name: t('civilizations.allBattles'), shortName: t('civilizations.allShort'), icon: '\u{1F30D}' },
+    ...civilizations.map(c => ({
+      id: c.id,
+      name: t(`civilizations.${c.id}`),
+      shortName: t(`civilizations.${c.id}-short`),
+      icon: c.icon,
+    })),
+  ];
+
   return (
     <div className="w-full overflow-x-auto scrollbar-hide -mx-3 px-3 sm:mx-0 sm:px-0">
       <div className="flex items-center gap-1.5 sm:gap-2 pb-1 sm:flex-wrap sm:justify-center w-max sm:w-auto">
