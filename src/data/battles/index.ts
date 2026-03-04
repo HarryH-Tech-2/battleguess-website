@@ -37,7 +37,15 @@ export const getRandomBattle = (
   civilization: CivilizationId | 'all' = 'all',
   difficulty: Difficulty | 'all' = 'all'
 ): Battle => {
-  const pool = getBattlesByCivilization(civilization, difficulty);
+  let pool = getBattlesByCivilization(civilization, difficulty);
+  // Fallback: if no battles match the exact filters, ignore difficulty
+  if (pool.length === 0) {
+    pool = getBattlesByCivilization(civilization, 'all');
+  }
+  // Final fallback: use all battles
+  if (pool.length === 0) {
+    pool = allBattles;
+  }
   const available = pool.filter(b => !excludeIds.includes(b.id));
   if (available.length === 0) {
     return pool[Math.floor(Math.random() * pool.length)];

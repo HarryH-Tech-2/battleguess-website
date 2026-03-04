@@ -218,7 +218,10 @@ export function useGame() {
       dispatch({ type: 'COMPLETE_GAME' });
       return;
     }
-    const pool = getBattlesByCivilization(state.selectedCivilization, state.selectedDifficulty);
+    let pool = getBattlesByCivilization(state.selectedCivilization, state.selectedDifficulty);
+    if (pool.length === 0) {
+      pool = getBattlesByCivilization(state.selectedCivilization, 'all');
+    }
     const remaining = pool.filter(b => !playedBattles.includes(b.id));
     if (remaining.length === 0) {
       dispatch({ type: 'COMPLETE_GAME' });
