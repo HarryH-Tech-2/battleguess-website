@@ -5,6 +5,8 @@ import { checkAnswer, checkYearAnswer } from '../utils/stringMatch';
 import { calculateScore } from '../utils/scoring';
 import { useLocalStorage } from './useLocalStorage';
 
+const ROUNDS_PER_GAME = 10;
+
 const initialState: GameState = {
   currentBattle: null,
   score: 0,
@@ -212,6 +214,10 @@ export function useGame() {
   }, [setSavedStats]);
 
   const nextBattle = useCallback(() => {
+    if (playedBattles.length >= ROUNDS_PER_GAME) {
+      dispatch({ type: 'COMPLETE_GAME' });
+      return;
+    }
     const pool = getBattlesByCivilization(state.selectedCivilization, state.selectedDifficulty);
     const remaining = pool.filter(b => !playedBattles.includes(b.id));
     if (remaining.length === 0) {
@@ -256,15 +262,13 @@ export function useGame() {
     setPlayedBattles([]);
   }, [setPlayedBattles]);
 
-  const pool = getBattlesByCivilization(state.selectedCivilization, state.selectedDifficulty);
-
   return {
     state: {
       ...state,
       bestStreak: Math.max(state.bestStreak, savedStats.bestStreak),
     },
     savedStats,
-    totalBattlesInPool: pool.length,
+    totalBattlesInPool: ROUNDS_PER_GAME,
     battlesPlayed: playedBattles.length,
     actions: {
       startGame,
