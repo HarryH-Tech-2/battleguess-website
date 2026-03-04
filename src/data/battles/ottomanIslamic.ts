@@ -425,5 +425,90 @@ export const ottomanIslamicBattles: Battle[] = [
     year: 1711,
     location: "Moldova",
     description: "The Ottoman army under Grand Vizier Baltaci Mehmed Pasha surrounded Tsar Peter the Great's Russian army along the Pruth River in Moldova. Trapped with no escape, Peter was forced to negotiate a humiliating peace, returning the fortress of Azov to the Ottomans and dismantling his Black Sea fleet. The campaign was one of the Ottoman Empire's last great military successes and temporarily reversed Russian expansion toward the Black Sea."
+  },
+  {
+    id: 231,
+    name: "Fall of Constantinople",
+    civilization: 'ottoman-islamic',
+    acceptedAnswers: ["constantinople", "fall of constantinople", "siege of constantinople", "conquest of constantinople", "istanbul"],
+    prompt: "Ottoman army storming the massive walls of Constantinople, Sultan Mehmed II on horseback directing the assault, giant cannon blasting ancient walls, thousands of Janissaries charging through a breach, Hagia Sophia in the background, dramatic medieval siege",
+    hints: [
+      "This siege ended an empire that had lasted over a thousand years",
+      "The attackers used one of the largest cannons ever built to breach legendary walls",
+      "The city was renamed and became the capital of a new empire",
+      "Sultan Mehmed II conquered the capital of the Byzantine Empire in 1453"
+    ],
+    difficulty: "easy",
+    year: 1453,
+    location: "Constantinople (modern Istanbul, Turkey)",
+    description: "Sultan Mehmed II besieged Constantinople, capital of the Byzantine Empire, with a massive army and the largest cannons ever built. After a 53-day siege, the Ottomans breached the legendary Theodosian Walls. The last Byzantine Emperor, Constantine XI, died fighting. The fall of Constantinople ended the Roman Empire after over a thousand years and established the Ottoman Empire as the dominant power in the eastern Mediterranean."
+  },
+  {
+    id: 232,
+    name: "Battle of Tours",
+    civilization: 'ottoman-islamic',
+    acceptedAnswers: ["tours", "battle of tours", "poitiers", "battle of poitiers", "tours-poitiers", "battle of tours-poitiers"],
+    prompt: "Frankish heavy infantry under Charles Martel forming a defensive wall against charging Arab and Berber cavalry near Tours in France, medieval European warriors clashing with Umayyad forces, dramatic 8th century battlefield",
+    hints: [
+      "Many historians consider this one of the most important battles in European history",
+      "It stopped an Islamic advance into the heart of Western Europe",
+      "It was fought in central France in 732 AD",
+      "Charles Martel defeated the Umayyad army, halting the Muslim advance into Europe"
+    ],
+    difficulty: "easy",
+    year: 732,
+    location: "Tours, France",
+    description: "Charles Martel led a Frankish army against the Umayyad Caliphate's forces under Abdul Rahman Al Ghafiqi near Tours in central France. The Frankish heavy infantry held firm against repeated cavalry charges, and Abdul Rahman was killed in the fighting. The victory halted the northward expansion of Islam into Western Europe and established the Carolingian dynasty's prestige, eventually leading to the reign of Charlemagne."
+  },
+  {
+    id: 233,
+    name: "Siege of Vienna",
+    civilization: 'ottoman-islamic',
+    acceptedAnswers: ["vienna", "siege of vienna", "battle of vienna"],
+    prompt: "Massive Ottoman army besieging the city of Vienna, Ottoman siege tents surrounding the city walls, Janissaries attacking fortifications, winged hussars charging down a hillside to relieve the city, dramatic 17th century siege warfare",
+    hints: [
+      "This siege marked the farthest advance of the Ottoman Empire into Europe",
+      "A famous cavalry charge by winged horsemen helped save the city",
+      "The besieged city was the capital of the Habsburg Empire",
+      "The Polish King Jan Sobieski led the relief force that broke the Ottoman siege in 1683"
+    ],
+    difficulty: "easy",
+    year: 1683,
+    location: "Vienna, Austria",
+    description: "The Ottoman Empire besieged Vienna, the Habsburg capital, with a massive army under Grand Vizier Kara Mustafa Pasha. After two months of desperate defense, a relief force led by Polish King Jan III Sobieski arrived and launched one of the largest cavalry charges in history. The Ottomans were routed, marking the beginning of their long retreat from Europe and the end of Ottoman expansion westward."
+  },
+  {
+    id: 234,
+    name: "Battle of Hattin",
+    civilization: 'ottoman-islamic',
+    acceptedAnswers: ["hattin", "battle of hattin", "horns of hattin"],
+    prompt: "Saladin's Muslim army surrounding exhausted Crusader knights at the Horns of Hattin, thirsty knights in heavy armor collapsing in the desert heat, Saladin on horseback directing the battle, dramatic Crusades-era warfare in the Holy Land",
+    hints: [
+      "The victorious commander is one of the most celebrated figures in Islamic history",
+      "The losing army was desperately short of water in the desert heat",
+      "This defeat led to the fall of Jerusalem to Muslim forces",
+      "Saladin destroyed the Crusader army and recaptured Jerusalem"
+    ],
+    difficulty: "easy",
+    year: 1187,
+    location: "Horns of Hattin, Palestine",
+    description: "Saladin lured the Crusader army under Guy of Lusignan into a waterless march toward the Horns of Hattin near the Sea of Galilee. Exhausted and dying of thirst, the Crusaders were surrounded and destroyed. Saladin captured the True Cross and most of the Crusader nobility. Within months, he recaptured Jerusalem and most of the Crusader states, shocking Christian Europe and triggering the Third Crusade."
+  },
+  {
+    id: 235,
+    name: "Battle of Gallipoli",
+    civilization: 'ottoman-islamic',
+    acceptedAnswers: ["gallipoli", "battle of gallipoli", "dardanelles", "gallipoli campaign", "canakkale"],
+    prompt: "Ottoman soldiers defending trenches at Gallipoli against Allied troops landing on beaches below steep cliffs, ANZAC soldiers climbing rocky shores under heavy fire, dramatic World War I battle at the Dardanelles strait",
+    hints: [
+      "This failed Allied campaign is a defining moment in Australian and New Zealand national identity",
+      "The Allies attempted to knock the Ottoman Empire out of World War I by seizing a strategic strait",
+      "A young Ottoman officer who later founded modern Turkey made his name defending here",
+      "Mustafa Kemal Ataturk helped defeat the Allied invasion at the Dardanelles"
+    ],
+    difficulty: "easy",
+    year: 1915,
+    location: "Gallipoli Peninsula, Turkey",
+    description: "The Allied powers attempted to seize the Dardanelles strait and capture Constantinople to knock the Ottoman Empire out of World War I. British, French, and ANZAC forces landed on the Gallipoli peninsula but were pinned down by fierce Ottoman resistance. Mustafa Kemal, later known as Ataturk, distinguished himself as a brilliant defensive commander. After eight months of brutal trench warfare and over 400,000 casualties on each side, the Allies evacuated in defeat. The campaign became a founding national myth for Australia, New Zealand, and modern Turkey."
   }
 ];

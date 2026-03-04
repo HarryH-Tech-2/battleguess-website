@@ -425,5 +425,90 @@ export const ancientEgyptMesopotamiaBattles: Battle[] = [
     year: -2004,
     location: "Ur (modern Iraq)",
     description: "The great Sumerian city of Ur, capital of the Third Dynasty of Ur and one of the world's oldest cities, fell to a combined assault by Elamites from the east and Amorite nomads from the west. King Ibbi-Sin, the last Sumerian king, was captured and taken in chains to Elam, where he died in captivity. The destruction of Ur ended Sumerian political power forever, though Sumerian culture and language survived as a scholarly tradition. The fall inspired the 'Lament for Ur,' one of the oldest and most moving works of literature, describing the goddess Ningal weeping over her destroyed city."
+  },
+  {
+    id: 226,
+    name: "Battle of Kadesh",
+    civilization: 'ancient-egypt-mesopotamia',
+    acceptedAnswers: ["kadesh", "battle of kadesh", "qadesh", "battle of qadesh"],
+    prompt: "Ramesses II on a golden war chariot leading Egyptian forces against Hittite chariots at Kadesh, epic ancient battle with thousands of chariots clashing near a river, dramatic bronze age warfare painting",
+    hints: [
+      "This is one of the most famous battles of the ancient world, with records from both sides",
+      "A famous pharaoh nearly lost his life after being ambushed by chariots",
+      "It led to one of the earliest known peace treaties in history",
+      "Ramesses II fought the Hittites at the Orontes River in Syria"
+    ],
+    difficulty: "easy",
+    year: -1274,
+    location: "Orontes River, Syria",
+    description: "Ramesses II led his Egyptian army against the Hittite forces of Muwatalli II near the city of Kadesh on the Orontes River. The Egyptians were ambushed when Hittite chariots struck their divided columns, nearly capturing the pharaoh himself. Ramesses rallied his forces and fought to a stalemate. The battle led to the earliest known international peace treaty, the Egyptian-Hittite peace accord."
+  },
+  {
+    id: 227,
+    name: "Battle of Gaugamela",
+    civilization: 'ancient-egypt-mesopotamia',
+    acceptedAnswers: ["gaugamela", "battle of gaugamela", "arbela", "battle of arbela"],
+    prompt: "Alexander the Great on his horse Bucephalus charging into the Persian lines at Gaugamela, massive ancient battlefield with war elephants and thousands of soldiers, dramatic Hellenistic warfare",
+    hints: [
+      "One of history's most famous conquerors won this battle despite being vastly outnumbered",
+      "This battle ended the greatest empire the ancient Near East had ever seen",
+      "The defeated king fled the battlefield in his chariot",
+      "Alexander the Great destroyed the Persian Empire of Darius III in Mesopotamia"
+    ],
+    difficulty: "easy",
+    year: -331,
+    location: "Gaugamela, Mesopotamia (modern Iraq)",
+    description: "Alexander the Great faced Darius III's massive Persian army on a plain near Gaugamela. Despite being vastly outnumbered, Alexander executed a brilliant oblique attack, leading his Companion cavalry in a devastating charge directly at Darius. The Persian king fled, and his army collapsed. The victory gave Alexander control of Babylon, Susa, and Persepolis, ending the Achaemenid Empire."
+  },
+  {
+    id: 228,
+    name: "Fall of Babylon",
+    civilization: 'ancient-egypt-mesopotamia',
+    acceptedAnswers: ["babylon", "fall of babylon", "conquest of babylon"],
+    prompt: "Persian soldiers entering the legendary city of Babylon at night through dried river channels, massive walls and the famous Ishtar Gate illuminated by torches, Cyrus the Great on horseback entering peacefully, ancient Mesopotamian city",
+    hints: [
+      "The attackers supposedly entered this legendary city by diverting a river",
+      "This city was one of the Seven Wonders of the ancient world for its Hanging Gardens",
+      "The conqueror freed the Jewish people from captivity, earning praise in the Bible",
+      "Cyrus the Great of Persia captured the most famous city in Mesopotamia"
+    ],
+    difficulty: "easy",
+    year: -539,
+    location: "Babylon (modern Iraq)",
+    description: "Cyrus the Great of Persia captured Babylon from King Nabonidus. According to Herodotus, the Persians diverted the Euphrates River and entered along the dry riverbed. Cyrus presented himself as a liberator and freed the captive Jewish population, earning praise in the Hebrew Bible. The Cyrus Cylinder, found in Babylon, is sometimes called the first declaration of human rights."
+  },
+  {
+    id: 229,
+    name: "Battle of Actium",
+    civilization: 'ancient-egypt-mesopotamia',
+    acceptedAnswers: ["actium", "battle of actium"],
+    prompt: "Massive ancient naval battle between Roman and Egyptian fleets, Cleopatra's royal barge with golden sails fleeing the battle, warships ramming and burning on the Mediterranean Sea, dramatic ancient naval warfare",
+    hints: [
+      "This famous naval battle decided the fate of ancient Egypt",
+      "The losing side included the most famous queen in history",
+      "It was fought between rival Roman factions on the Mediterranean Sea",
+      "Octavian defeated Mark Antony and Cleopatra, ending Egypt's independence"
+    ],
+    difficulty: "easy",
+    year: -31,
+    location: "Actium, Greece",
+    description: "Octavian's fleet defeated the combined naval forces of Mark Antony and Cleopatra VII at Actium. When Cleopatra's squadron fled toward Egypt, Antony abandoned his fleet to follow her. The victory made Octavian sole ruler of the Roman world, and Egypt became a Roman province, ending the Ptolemaic dynasty and thousands of years of Egyptian independence."
+  },
+  {
+    id: 230,
+    name: "Siege of Jerusalem",
+    civilization: 'ancient-egypt-mesopotamia',
+    acceptedAnswers: ["jerusalem", "siege of jerusalem", "fall of jerusalem", "destruction of jerusalem"],
+    prompt: "Babylonian army besieging the holy city of Jerusalem, Solomon's Temple engulfed in flames on a hilltop, battering rams against ancient walls, desperate defenders, smoke rising over the ancient city, dramatic ancient siege",
+    hints: [
+      "This siege destroyed one of the most sacred buildings in religious history",
+      "The conqueror deported an entire nation to his capital in Mesopotamia",
+      "This event is one of the most important in Jewish history",
+      "Nebuchadnezzar II destroyed Solomon's Temple and began the Babylonian Exile"
+    ],
+    difficulty: "easy",
+    year: -587,
+    location: "Jerusalem",
+    description: "Nebuchadnezzar II of Babylon besieged Jerusalem after King Zedekiah rebelled. After an 18-month siege, the city fell and Solomon's Temple was completely destroyed. The elite of Judah were deported to Babylon in what became known as the Babylonian Exile, one of the defining events in Jewish history."
   }
 ];
