@@ -85,7 +85,10 @@ function App() {
   useEffect(() => {
     if (state.currentBattle && state.gameStatus === 'playing' && !state.imageUrl) {
       const imageUrl = getImageForBattle(state.currentBattle.id);
-      actions.setImage(imageUrl);
+      // Preload the image before showing it
+      const img = new Image();
+      img.onload = () => actions.setImage(imageUrl);
+      img.src = imageUrl;
     }
   }, [state.currentBattle, state.gameStatus, state.imageUrl, actions, getImageForBattle]);
 

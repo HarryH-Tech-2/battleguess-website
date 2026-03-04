@@ -54,7 +54,8 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
-                  loading="lazy"
+                  loading="eager"
+                  fetchPriority="high"
                   decoding="async"
                 />
               ) : (
