@@ -155,10 +155,11 @@ export function useGame() {
 
   const startGame = useCallback(() => {
     dispatch({ type: 'START_GAME' });
-    const battle = getRandomBattle(playedBattles, state.selectedCivilization, state.selectedDifficulty);
-    setPlayedBattles(prev => [...prev, battle.id]);
+    setPlayedBattles([]);
+    const battle = getRandomBattle([], state.selectedCivilization, state.selectedDifficulty);
+    setPlayedBattles([battle.id]);
     dispatch({ type: 'SET_BATTLE', payload: battle });
-  }, [playedBattles, setPlayedBattles, state.selectedCivilization, state.selectedDifficulty]);
+  }, [setPlayedBattles, state.selectedCivilization, state.selectedDifficulty]);
 
   const startBattleById = useCallback((battleId: number) => {
     const battle = getBattleById(battleId);
