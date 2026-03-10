@@ -41,6 +41,7 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         ...state,
         currentBattle: action.payload,
         gameStatus: 'playing',
+        isImageLoading: true,
       };
     case 'SET_IMAGE':
       return {

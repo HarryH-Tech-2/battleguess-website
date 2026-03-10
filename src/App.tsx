@@ -312,19 +312,6 @@ function App() {
       playerName={getPlayerName()}
     >
       <div className="space-y-4 sm:space-y-6 pb-6 sm:pb-8">
-        {/* Score Display - Always visible after game starts */}
-        {(state.score > 0 || state.streak > 0 || state.bestStreak > 0) && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <ScoreDisplay
-              score={state.score}
-              streak={state.streak}
-              bestStreak={state.bestStreak}
-            />
-          </motion.div>
-        )}
 
         {/* Mode Selector - visible when idle or between rounds */}
         {(isIdle || isResult || state.gameStatus === 'completed' || (state.gameMode === 'campaign' && campaign.state.phase === 'select') || (isCampaignActive && campaign.state.phase === 'complete')) && (
@@ -691,6 +678,21 @@ function App() {
                     battleName={state.currentBattle.name}
                     battleYear={state.currentBattle.year}
                   />
+                )}
+
+
+                {/* Score Display - Below image */}
+                {(state.score > 0 || state.streak > 0 || state.bestStreak > 0) && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                  >
+                    <ScoreDisplay
+                      score={state.score}
+                      streak={state.streak}
+                      bestStreak={state.bestStreak}
+                    />
+                  </motion.div>
                 )}
 
                 {/* Difficulty Badge + Music Toggle */}
