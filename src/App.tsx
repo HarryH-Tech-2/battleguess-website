@@ -439,6 +439,11 @@ function App() {
                     if (battleIds.length > 0) {
                       recordPlay();
                       actions.startBattleById(battleIds[0]);
+                      // Prefetch all daily battle images so they're cached for later rounds
+                      battleIds.slice(1).forEach(id => {
+                        const img = new Image();
+                        img.src = getImageForBattle(id);
+                      });
                     }
                   }}
                   isCompleted={daily.isCompletedToday}
@@ -486,6 +491,11 @@ function App() {
                     if (challenge.state.battles[0]) {
                       recordPlay();
                       actions.startBattleById(challenge.state.battles[0].id);
+                      // Prefetch remaining challenge battle images
+                      challenge.state.battles.slice(1).forEach(b => {
+                        const img = new Image();
+                        img.src = getImageForBattle(b.id);
+                      });
                     }
                   }}
                   onDecline={() => {
