@@ -8,7 +8,6 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          firebase: ['firebase/app', 'firebase/firestore'],
           'framer-motion': ['framer-motion'],
           'blog-data': ['./src/data/blogPosts'],
         },

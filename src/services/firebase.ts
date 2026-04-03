@@ -1,16 +1,5 @@
-import { initializeApp, type FirebaseApp } from 'firebase/app';
-import {
-  getFirestore,
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  setDoc,
-  query,
-  orderBy,
-  limit,
-  type Firestore,
-} from 'firebase/firestore';
+import type { FirebaseApp } from 'firebase/app';
+import type { Firestore } from 'firebase/firestore';
 
 // Firebase config - replace with your own from Firebase Console
 const firebaseConfig = {
@@ -29,9 +18,11 @@ function isConfigured(): boolean {
   return !!firebaseConfig.apiKey && !!firebaseConfig.projectId;
 }
 
-function getDb(): Firestore | null {
+async function getDb(): Promise<Firestore | null> {
   if (!isConfigured()) return null;
   if (!app) {
+    const { initializeApp } = await import('firebase/app');
+    const { getFirestore } = await import('firebase/firestore');
     app = initializeApp(firebaseConfig);
     db = getFirestore(app);
   }
@@ -98,10 +89,11 @@ export interface DailyScore {
 }
 
 export async function submitDailyScore(score: number, correctGuesses: number, totalBattles: number): Promise<boolean> {
-  const firestore = getDb();
+  const firestore = await getDb();
   if (!firestore) return false;
 
   try {
+    const { doc, setDoc } = await import('firebase/firestore');
     const dateKey = getDailyDateKey();
     const playerId = getPlayerId();
     await setDoc(doc(firestore, 'daily', dateKey, 'scores', playerId), {
@@ -119,10 +111,11 @@ export async function submitDailyScore(score: number, correctGuesses: number, to
 }
 
 export async function getDailyLeaderboard(dateKey?: string): Promise<DailyScore[]> {
-  const firestore = getDb();
+  const firestore = await getDb();
   if (!firestore) return [];
 
   try {
+    const { collection, query, orderBy, limit, getDocs } = await import('firebase/firestore');
     const key = dateKey || getDailyDateKey();
     const q = query(
       collection(firestore, 'daily', key, 'scores'),
@@ -151,10 +144,11 @@ export interface LeaderboardEntry {
 }
 
 export async function submitLeaderboardScore(entry: Omit<LeaderboardEntry, 'playerId' | 'playerName' | 'updatedAt'>): Promise<boolean> {
-  const firestore = getDb();
+  const firestore = await getDb();
   if (!firestore) return false;
 
   try {
+    const { doc, getDoc, setDoc } = await import('firebase/firestore');
     const playerId = getPlayerId();
     const docRef = doc(firestore, 'leaderboard', playerId);
     const existing = await getDoc(docRef);
@@ -180,13 +174,14 @@ export async function submitLeaderboardScore(entry: Omit<LeaderboardEntry, 'play
 }
 
 export async function getGlobalLeaderboard(): Promise<LeaderboardEntry[]> {
-  const firestore = getDb();
+  const firestore = await getDb();
   if (!firestore) {
     console.warn('[BattleGuess] Firebase not configured — leaderboard disabled');
     return [];
   }
 
   try {
+    const { collection, query, orderBy, limit, getDocs } = await import('firebase/firestore');
     const q = query(
       collection(firestore, 'leaderboard'),
       orderBy('totalScore', 'desc'),
@@ -236,7 +231,7 @@ export async function createChallenge(
   difficulty: string,
   civilization: string
 ): Promise<string | null> {
-  const firestore = getDb();
+  const firestore = await getDb();
   const challengeId = generateChallengeId();
 
   if (!firestore) {
@@ -246,6 +241,7 @@ export async function createChallenge(
   }
 
   try {
+    const { doc, setDoc } = await import('firebase/firestore');
     await setDoc(doc(firestore, 'challenges', challengeId), {
       challengeId,
       creatorId: getPlayerId(),
@@ -284,10 +280,11 @@ export async function getChallenge(challengeId: string): Promise<Challenge | nul
     // Not base64 - try Firebase
   }
 
-  const firestore = getDb();
+  const firestore = await getDb();
   if (!firestore) return null;
 
   try {
+    const { doc, getDoc } = await import('firebase/firestore');
     const docSnap = await getDoc(doc(firestore, 'challenges', challengeId));
     return docSnap.exists() ? (docSnap.data() as Challenge) : null;
   } catch {
@@ -296,10 +293,11 @@ export async function getChallenge(challengeId: string): Promise<Challenge | nul
 }
 
 export async function submitChallengeAttempt(challengeId: string, score: number, correctGuesses: number): Promise<boolean> {
-  const firestore = getDb();
+  const firestore = await getDb();
   if (!firestore) return false;
 
   try {
+    const { doc, setDoc } = await import('firebase/firestore');
     const playerId = getPlayerId();
     await setDoc(doc(firestore, 'challenges', challengeId, 'attempts', playerId), {
       playerId,
@@ -315,10 +313,11 @@ export async function submitChallengeAttempt(challengeId: string, score: number,
 }
 
 export async function getChallengeAttempts(challengeId: string): Promise<ChallengeAttempt[]> {
-  const firestore = getDb();
+  const firestore = await getDb();
   if (!firestore) return [];
 
   try {
+    const { collection, query, orderBy, limit, getDocs } = await import('firebase/firestore');
     const q = query(
       collection(firestore, 'challenges', challengeId, 'attempts'),
       orderBy('score', 'desc'),
