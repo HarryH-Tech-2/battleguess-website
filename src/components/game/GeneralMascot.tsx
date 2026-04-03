@@ -23,7 +23,7 @@ export function GeneralMascot({
   onRevealHint,
   disabled,
   side = 'right',
-  mascotImage = '/mascot-roman.png',
+  mascotImage = '/mascot-roman.webp',
   mascotAlt = 'Battle Guide mascot',
 }: GeneralMascotProps) {
   const [showBubble, setShowBubble] = useState(false);

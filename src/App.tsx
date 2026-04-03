@@ -857,7 +857,7 @@ function App() {
           onRevealHint={actions.revealHint}
           disabled={!state.imageUrl}
           side={state.totalGuesses % 2 === 0 ? 'left' : 'right'}
-          mascotImage={state.totalGuesses % 2 === 0 ? '/mascot.png' : '/mascot-roman.png'}
+          mascotImage={state.totalGuesses % 2 === 0 ? '/mascot.webp' : '/mascot-roman.webp'}
           mascotAlt={state.totalGuesses % 2 === 0 ? 'Napoleon Battle Guide' : 'Roman Battle Guide'}
         />
       )}
