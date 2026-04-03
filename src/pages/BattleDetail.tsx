@@ -1,16 +1,18 @@
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
 import { LocaleLink } from '../components/ui/LocaleLink';
-import { getBattleById } from '../data/battles';
+import { getBattleById, allBattles } from '../data/battles';
 import { battleFacts } from '../data/battleFacts';
 import { battleImages } from '../data/battleImages';
-import { blogPosts } from '../data/blogPosts';
+import type { BlogPost } from '../data/blogPosts';
 import { battleCollections } from '../data/battleCollections';
+import { buildBreadcrumbJsonLd } from '../utils/breadcrumbs';
 import {
   parseBattleId,
+  getBattleSlug,
   getEraDisplayName,
   getEraIcon,
   formatYear,
@@ -27,6 +29,29 @@ function BattleDetail() {
   const id = battleId ? parseBattleId(battleId) : NaN;
   const battle = !isNaN(id) ? getBattleById(id) : undefined;
   const { t } = useTranslation();
+
+  const [relatedArticles, setRelatedArticles] = useState<BlogPost[]>([]);
+
+  useEffect(() => {
+    if (!battle) return;
+    import('../data/blogPosts').then(({ blogPosts }) => {
+      setRelatedArticles(blogPosts.filter(p => p.relatedBattleIds?.includes(battle.id)));
+    });
+  }, [battle?.id]);
+
+  const featuredCollections = useMemo(
+    () => battle ? battleCollections.filter(c => c.battleIds.includes(battle.id)) : [],
+    [battle]
+  );
+
+  const relatedBattles = useMemo(
+    () => battle
+      ? allBattles
+          .filter(b => b.id !== battle.id && b.civilization === battle.civilization)
+          .slice(0, 4)
+      : [],
+    [battle]
+  );
 
   if (!battle) {
     return (
@@ -57,27 +82,44 @@ function BattleDetail() {
   const fact = battleFacts[battle.id];
   const imageUrl = battleImages[battle.id];
 
-  const relatedArticles = useMemo(
-    () => blogPosts.filter(p => p.relatedBattleIds?.includes(battle.id)),
-    [battle.id]
-  );
+  const breadcrumbs = buildBreadcrumbJsonLd([
+    { name: 'Home', url: 'https://battleguess.app' },
+    { name: 'Battle Encyclopedia', url: 'https://battleguess.app/battles' },
+    { name: battle.name, url: `https://battleguess.app/battles/${battleId}` },
+  ]);
 
-  const featuredCollections = useMemo(
-    () => battleCollections.filter(c => c.battleIds.includes(battle.id)),
-    [battle.id]
-  );
-
-  const jsonLd = {
+  const article = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: battle.name,
     description: battle.description,
-    datePublished: formatYear(battle.year),
-    author: {
-      '@type': 'Organization',
-      name: 'BattleGuess',
+    author: { '@type': 'Organization', name: 'BattleGuess' },
+    publisher: { '@type': 'Organization', name: 'BattleGuess', url: 'https://battleguess.app' },
+    ...(imageUrl && { image: `https://battleguess.app${imageUrl}` }),
+  };
+
+  const historicalEvent = {
+    '@context': 'https://schema.org',
+    '@type': 'HistoricalEvent',
+    name: battle.name,
+    description: battle.description,
+    startDate: battle.year < 0 ? `${String(Math.abs(battle.year)).padStart(4, '0')}-01-01` : `${String(battle.year).padStart(4, '0')}-01-01`,
+    location: {
+      '@type': 'Place',
+      name: battle.location,
     },
   };
+
+  const speakable = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.battle-quick-facts', '.battle-description'],
+    },
+  };
+
+  const jsonLd = [breadcrumbs, article, historicalEvent, speakable];
 
   return (
     <ContentLayout
@@ -131,6 +173,28 @@ function BattleDetail() {
         </p>
       </motion.div>
 
+      {/* Quick Facts */}
+      <motion.div
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.08 }}
+        className="mb-8 battle-quick-facts"
+      >
+        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+          <h2 className="text-lg font-bold text-slate-700 mb-3">Quick Facts</h2>
+          <dl className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
+            <dt className="text-slate-500 font-medium">Year</dt>
+            <dd className="text-slate-800 font-semibold">{formatYear(battle.year)}</dd>
+            <dt className="text-slate-500 font-medium">Location</dt>
+            <dd className="text-slate-800">{battle.location}</dd>
+            <dt className="text-slate-500 font-medium">Era</dt>
+            <dd className="text-slate-800">{getEraIcon(battle.civilization)} {getEraDisplayName(battle.civilization)}</dd>
+            <dt className="text-slate-500 font-medium">Difficulty</dt>
+            <dd className="text-slate-800 capitalize">{battle.difficulty}</dd>
+          </dl>
+        </div>
+      </motion.div>
+
       {/* Battle Image */}
       {imageUrl && (
         <motion.div
@@ -157,7 +221,7 @@ function BattleDetail() {
         transition={{ duration: 0.4, delay: 0.2 }}
         className="mb-8"
       >
-        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 battle-description">
           <p className="text-slate-700 leading-relaxed text-lg">
             {battle.description}
           </p>
@@ -231,6 +295,37 @@ function BattleDetail() {
                     {article.title}
                   </p>
                   <p className="text-xs text-slate-400">{article.readTime}</p>
+                </div>
+              </LocaleLink>
+            ))}
+          </div>
+        </motion.div>
+      )}
+
+      {/* Related Battles */}
+      {relatedBattles.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.39 }}
+          className="mb-10"
+        >
+          <h2 className="text-lg font-bold text-slate-700 mb-3">Related Battles</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {relatedBattles.map(b => (
+              <LocaleLink
+                key={b.id}
+                to={`/battles/${getBattleSlug(b)}`}
+                className="flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm border border-slate-100 hover:shadow-md hover:border-primary-200 transition-all duration-200 group"
+              >
+                <span className="text-2xl flex-shrink-0">{getEraIcon(b.civilization)}</span>
+                <div className="min-w-0">
+                  <p className="font-semibold text-slate-800 group-hover:text-primary-700 transition-colors text-sm truncate">
+                    {b.name}
+                  </p>
+                  <p className="text-xs text-slate-400">
+                    {formatYear(b.year)} &middot; {b.location}
+                  </p>
                 </div>
               </LocaleLink>
             ))}

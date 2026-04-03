@@ -9,7 +9,7 @@ interface ContentLayoutProps {
   description: string;
   canonical: string;
   path?: string;
-  jsonLd?: object;
+  jsonLd?: object | object[];
 }
 
 export function ContentLayout({ children, title, description, canonical, path, jsonLd }: ContentLayoutProps) {
