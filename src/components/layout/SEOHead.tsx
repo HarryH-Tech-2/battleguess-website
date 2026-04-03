@@ -6,8 +6,9 @@ interface SEOHeadProps {
   description: string;
   canonical: string;
   path?: string;
-  jsonLd?: object;
+  jsonLd?: object | object[];
   ogImage?: string;
+  robots?: string;
 }
 
 const BASE_URL = 'https://battleguess.app';
@@ -23,11 +24,12 @@ function setMetaTag(property: string, content: string, isProperty = false) {
   tag.content = content;
 }
 
-export function SEOHead({ title, description, canonical, path, jsonLd, ogImage }: SEOHeadProps) {
+export function SEOHead({ title, description, canonical, path, jsonLd, ogImage, robots = 'index, follow' }: SEOHeadProps) {
   useEffect(() => {
     document.title = title;
 
     setMetaTag('description', description);
+    setMetaTag('robots', robots);
     setMetaTag('og:title', title, true);
     setMetaTag('og:description', description, true);
     setMetaTag('og:url', canonical, true);
@@ -72,21 +74,23 @@ export function SEOHead({ title, description, canonical, path, jsonLd, ogImage }
     }
 
     // JSON-LD
-    const existingScript = document.getElementById('seo-jsonld');
-    if (existingScript) existingScript.remove();
+    document.querySelectorAll('.seo-jsonld').forEach(el => el.remove());
     if (jsonLd) {
-      const script = document.createElement('script');
-      script.id = 'seo-jsonld';
-      script.type = 'application/ld+json';
-      script.textContent = JSON.stringify(jsonLd);
-      document.head.appendChild(script);
+      const items = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
+      items.forEach((item, index) => {
+        const script = document.createElement('script');
+        script.className = 'seo-jsonld';
+        script.id = `seo-jsonld-${index}`;
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(item);
+        document.head.appendChild(script);
+      });
     }
 
     return () => {
-      const script = document.getElementById('seo-jsonld');
-      if (script) script.remove();
+      document.querySelectorAll('.seo-jsonld').forEach(el => el.remove());
     };
-  }, [title, description, canonical, path, jsonLd, ogImage]);
+  }, [title, description, canonical, path, jsonLd, ogImage, robots]);
 
   return null;
 }
