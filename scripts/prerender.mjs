@@ -87,9 +87,20 @@ async function prerender() {
 
   let browser;
   try {
-    const puppeteer = await import('puppeteer');
+    const puppeteer = await import('puppeteer-core');
+    let executablePath;
+    try {
+      const chromium = await import('@sparticuz/chromium');
+      executablePath = await chromium.default.executablePath();
+    } catch {
+      // Local dev: fall back to regular puppeteer's Chrome
+      const localPuppeteer = await import('puppeteer');
+      const { executablePath: localPath } = localPuppeteer.default;
+      executablePath = localPath();
+    }
     browser = await puppeteer.default.launch({
       headless: true,
+      executablePath,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
 
