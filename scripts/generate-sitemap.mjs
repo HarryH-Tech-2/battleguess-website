@@ -12,7 +12,8 @@ const rootDir = resolve(__dirname, '..');
 // and generate the sitemap from known structures.
 
 const BASE_URL = 'https://battleguess.app';
-const TODAY = new Date().toISOString().split('T')[0];
+const BUILD_DATE = new Date().toISOString().split('T')[0];
+const LANGUAGES = ['en', 'fr', 'es'];
 
 // Game mode slugs (from gameModeData.ts)
 const modeSlugs = [
@@ -63,6 +64,20 @@ const blogSlugs = [
   'battlefield-tactics-explained-for-beginners',
 ];
 
+// Extract blog post dates from source for accurate lastmod
+function getBlogPostDates() {
+  const content = readFileSync(resolve(rootDir, 'src/data/blogPosts.ts'), 'utf-8');
+  const dates = {};
+  const slugMatches = [...content.matchAll(/slug:\s*['"]([^'"]+)['"]/g)];
+  const dateMatches = [...content.matchAll(/date:\s*['"]([^'"]+)['"]/g)];
+  for (let i = 0; i < slugMatches.length && i < dateMatches.length; i++) {
+    dates[slugMatches[i][1]] = dateMatches[i][1];
+  }
+  return dates;
+}
+
+const blogPostDates = getBlogPostDates();
+
 // Read battle data to extract IDs and names for slug generation
 // We parse the compiled JS or read from source files
 function getBattleSlugs() {
@@ -101,56 +116,79 @@ function generateSitemap() {
 
   const urls = [
     // Home
-    { loc: '/', priority: '1.0', changefreq: 'weekly' },
+    { loc: '/', priority: '1.0', changefreq: 'weekly', lastmod: BUILD_DATE },
     // Content pages
-    { loc: '/faq', priority: '0.7', changefreq: 'monthly' },
-    { loc: '/about', priority: '0.7', changefreq: 'monthly' },
-    { loc: '/modes', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/faq', priority: '0.7', changefreq: 'monthly', lastmod: '2026-01-15' },
+    { loc: '/about', priority: '0.7', changefreq: 'monthly', lastmod: '2026-01-15' },
+    { loc: '/modes', priority: '0.8', changefreq: 'monthly', lastmod: '2026-01-15' },
     // Individual mode pages
     ...modeSlugs.map(slug => ({
       loc: `/modes/${slug}`,
       priority: '0.6',
       changefreq: 'monthly',
+      lastmod: '2026-01-15',
     })),
     // Battle encyclopedia
-    { loc: '/battles', priority: '0.8', changefreq: 'weekly' },
+    { loc: '/battles', priority: '0.8', changefreq: 'weekly', lastmod: BUILD_DATE },
     // Individual battle pages
     ...battleSlugs.map(slug => ({
       loc: `/battles/${slug}`,
       priority: '0.5',
       changefreq: 'monthly',
+      lastmod: BUILD_DATE,
     })),
     // Collections
-    { loc: '/collections', priority: '0.8', changefreq: 'monthly' },
+    { loc: '/collections', priority: '0.8', changefreq: 'monthly', lastmod: '2026-02-01' },
     // Individual collection pages
     ...collectionSlugs.map(slug => ({
       loc: `/collections/${slug}`,
       priority: '0.6',
       changefreq: 'monthly',
+      lastmod: '2026-02-01',
     })),
     // Blog
-    { loc: '/blog', priority: '0.7', changefreq: 'weekly' },
+    { loc: '/blog', priority: '0.7', changefreq: 'weekly', lastmod: BUILD_DATE },
     // Blog topic/pillar pages
     ...blogTopicSlugs.map(slug => ({
       loc: `/blog/topics/${slug}`,
       priority: '0.7',
       changefreq: 'monthly',
+      lastmod: BUILD_DATE,
     })),
     // Individual blog posts
     ...blogSlugs.map(slug => ({
       loc: `/blog/${slug}`,
       priority: '0.6',
       changefreq: 'monthly',
+      lastmod: blogPostDates[slug] || BUILD_DATE,
     })),
   ];
 
+  // Generate entries for all languages with hreflang alternates
+  const allEntries = [];
+  for (const url of urls) {
+    for (const lang of LANGUAGES) {
+      const prefix = lang === 'en' ? '' : `/${lang}`;
+      const loc = `${BASE_URL}${prefix}${url.loc}`;
+      const hreflangs = LANGUAGES.map(l => {
+        const p = l === 'en' ? '' : `/${l}`;
+        return `    <xhtml:link rel="alternate" hreflang="${l}" href="${BASE_URL}${p}${url.loc}"/>`;
+      }).join('\n');
+      // x-default points to English version
+      const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${url.loc}"/>`;
+      allEntries.push({ loc, priority: url.priority, changefreq: url.changefreq, lastmod: url.lastmod, hreflangs: hreflangs + '\n' + xDefault });
+    }
+  }
+
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(u => `  <url>
-    <loc>${BASE_URL}${u.loc}</loc>
-    <lastmod>${TODAY}</lastmod>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${allEntries.map(u => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${u.lastmod}</lastmod>
     <changefreq>${u.changefreq}</changefreq>
     <priority>${u.priority}</priority>
+${u.hreflangs}
   </url>`).join('\n')}
 </urlset>
 `;
