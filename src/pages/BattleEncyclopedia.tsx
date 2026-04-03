@@ -14,6 +14,7 @@ import {
   formatYear,
   groupBattlesByEra,
 } from '../utils/battleHelpers';
+import { buildBreadcrumbJsonLd } from '../utils/breadcrumbs';
 
 const difficultyColors: Record<string, string> = {
   easy: 'bg-green-100 text-green-700',
@@ -45,12 +46,34 @@ function BattleEncyclopedia() {
 
   const eraOrder = civilizations.map(c => c.id);
 
+  const breadcrumbs = buildBreadcrumbJsonLd([
+    { name: 'Home', url: 'https://battleguess.app' },
+    { name: 'Battle Encyclopedia', url: 'https://battleguess.app/battles' },
+  ]);
+
+  const itemList = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Historical Battles Encyclopedia',
+    description: `Explore over ${allBattles.length} historical battles across 8 eras.`,
+    numberOfItems: allBattles.length,
+    itemListElement: allBattles.slice(0, 50).map((battle, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: battle.name,
+      url: `https://battleguess.app/battles/${getBattleSlug(battle)}`,
+    })),
+  };
+
+  const jsonLd = [breadcrumbs, itemList];
+
   return (
     <ContentLayout
       title="Battle Encyclopedia | BattleGuess"
       description="Explore over 200 historical battles across 8 eras in the BattleGuess encyclopedia. Learn about battles from ancient Egypt to the World Wars."
       canonical="https://battleguess.app/battles"
       path="/battles"
+      jsonLd={jsonLd}
     >
       {/* Header */}
       <motion.div
