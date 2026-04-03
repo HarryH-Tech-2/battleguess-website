@@ -8,6 +8,7 @@ import { blogPosts, blogCategories } from '../data/blogPosts';
 import type { BlogSection } from '../data/blogPosts';
 import { getBattleById } from '../data/battles';
 import { getBattleSlug, formatYear, getEraIcon } from '../utils/battleHelpers';
+import { buildBreadcrumbJsonLd } from '../utils/breadcrumbs';
 
 function renderInlineLinks(text: string) {
   const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
@@ -127,12 +128,20 @@ function BlogPost() {
     day: 'numeric',
   });
 
-  const jsonLd = {
+  const breadcrumbs = buildBreadcrumbJsonLd([
+    { name: 'Home', url: 'https://battleguess.app' },
+    { name: 'Blog', url: 'https://battleguess.app/blog' },
+    ...(category ? [{ name: category.title, url: `https://battleguess.app/blog/topics/${post.category}` }] : []),
+    { name: post.title, url: `https://battleguess.app/blog/${post.slug}` },
+  ]);
+
+  const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
     datePublished: post.date,
+    dateModified: post.date,
     ...(post.image && { image: `https://battleguess.app${post.image}` }),
     author: {
       '@type': 'Organization',
@@ -143,7 +152,13 @@ function BlogPost() {
       name: 'BattleGuess',
       url: 'https://battleguess.app',
     },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://battleguess.app/blog/${post.slug}`,
+    },
   };
+
+  const jsonLd = [breadcrumbs, articleSchema];
 
   return (
     <ContentLayout
