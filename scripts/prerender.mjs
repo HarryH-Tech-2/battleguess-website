@@ -59,39 +59,25 @@ function isDirectory(p) {
   }
 }
 
-// Get all routes to pre-render
+// Get all routes to pre-render by parsing the sitemap
 function getRoutes() {
-  const routes = ['/faq', '/about', '/modes', '/blog'];
-
-  // Mode detail pages
-  const modeSlugs = ['daily', 'classic', 'timed', 'reverse-year', 'reverse-location', 'timeline', 'campaign', 'challenge'];
-  for (const slug of modeSlugs) {
-    routes.push(`/modes/${slug}`);
-  }
-
-  // Blog slugs
-  const blogSlugs = [
-    '10-most-decisive-battles-in-history',
-    'how-ancient-warfare-shaped-modern-world',
-    'beginners-guide-to-military-history',
-    '8-ways-to-improve-your-battleguess-score',
-    'evolution-of-siege-warfare',
-  ];
-  for (const slug of blogSlugs) {
-    routes.push(`/blog/${slug}`);
-  }
-
-  // Battle pages - read IDs from the sitemap we already generated
-  routes.push('/battles');
   const sitemapPath = resolve(distDir, 'sitemap.xml');
-  if (existsSync(sitemapPath)) {
-    const sitemap = readFileSync(sitemapPath, 'utf-8');
-    const battleMatches = sitemap.matchAll(/<loc>https:\/\/battleguess\.app(\/battles\/\d+-[^<]+)<\/loc>/g);
-    for (const match of battleMatches) {
-      routes.push(match[1]);
+  if (!existsSync(sitemapPath)) {
+    console.error('Sitemap not found at', sitemapPath);
+    process.exit(1);
+  }
+
+  const sitemap = readFileSync(sitemapPath, 'utf-8');
+  const routes = [];
+  const locMatches = sitemap.matchAll(/<loc>https:\/\/battleguess\.app([^<]*)<\/loc>/g);
+  for (const match of locMatches) {
+    const path = match[1] || '/';
+    if (path !== '/') {
+      routes.push(path);
     }
   }
 
+  console.log(`Found ${routes.length} routes in sitemap to pre-render`);
   return routes;
 }
 
@@ -110,8 +96,8 @@ async function prerender() {
     const routes = getRoutes();
     console.log(`Pre-rendering ${routes.length} routes...`);
 
-    // Process in batches of 5 for speed
-    const BATCH_SIZE = 5;
+    // Process in batches of 10 for speed
+    const BATCH_SIZE = 10;
     let completed = 0;
 
     for (let i = 0; i < routes.length; i += BATCH_SIZE) {
