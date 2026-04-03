@@ -220,6 +220,8 @@ function BlogPost() {
             <img
               src={post.image}
               alt={post.imageAlt || post.title}
+              width={800}
+              height={450}
               loading="eager"
               className="w-full h-auto object-cover max-h-64 sm:max-h-80"
             />
@@ -344,6 +346,8 @@ function BlogPost() {
                     <img
                       src={related.image}
                       alt={related.imageAlt || related.title}
+                      width={400}
+                      height={225}
                       loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
