@@ -188,14 +188,23 @@
     </script>
   </head>
   <body>
+    <div id="root"></div>
     <noscript>
-      <div style="padding: 2rem; text-align: center; font-family: sans-serif;">
-        <h1>BattleGuess — Historical Battle Guessing Game</h1>
-        <p>BattleGuess is a free history trivia game where you identify famous battles from images. Choose from 5 game modes covering ancient civilizations to modern warfare.</p>
-        <p>Please enable JavaScript to play BattleGuess.</p>
+      <div style="max-width:800px;margin:0 auto;padding:2rem;font-family:system-ui,sans-serif">
+        <h1>BattleGuess - The History Battle Guessing Game</h1>
+        <p>Test your knowledge of military history by identifying famous battles from historical artwork. Featuring over 200 battles across 8 eras, from Ancient Egypt to the World Wars.</p>
+        <nav>
+          <ul>
+            <li><a href="/battles">Battle Encyclopedia</a></li>
+            <li><a href="/blog">History Blog</a></li>
+            <li><a href="/collections">Battle Collections</a></li>
+            <li><a href="/modes">Game Modes</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </nav>
       </div>
     </noscript>
-    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
