@@ -27,6 +27,8 @@ let failures = 0;
 
 for (const check of checks) {
   const filePath = resolve(distDir, check.path);
+  let checkFailed = false;
+
   if (!existsSync(filePath)) {
     console.error(`FAIL: ${check.path} does not exist`);
     failures++;
@@ -39,16 +41,17 @@ for (const check of checks) {
     if (!html.includes(needle)) {
       console.error(`FAIL: ${check.path} missing expected content: "${needle}"`);
       failures++;
+      checkFailed = true;
     }
   }
 
-  // Check that the page has more than just the SPA shell
   if (html.length < 5000) {
     console.error(`FAIL: ${check.path} is suspiciously small (${html.length} bytes) — likely not rendered`);
     failures++;
+    checkFailed = true;
   }
 
-  if (failures === 0) {
+  if (!checkFailed) {
     console.log(`PASS: ${check.path}`);
   }
 }

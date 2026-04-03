@@ -103,7 +103,7 @@ function BattleDetail() {
     '@type': 'HistoricalEvent',
     name: battle.name,
     description: battle.description,
-    startDate: battle.year < 0 ? `${String(Math.abs(battle.year)).padStart(4, '0')}-01-01` : `${String(battle.year).padStart(4, '0')}-01-01`,
+    startDate: battle.year < 0 ? `-${String(Math.abs(battle.year)).padStart(4, '0')}-01-01` : `${String(battle.year).padStart(4, '0')}-01-01`,
     location: {
       '@type': 'Place',
       name: battle.location,
@@ -209,6 +209,8 @@ function BattleDetail() {
               alt={`Historical artwork depicting the Battle of ${battle.name}`}
               loading="lazy"
               className="w-full h-auto object-cover"
+              width={1080}
+              height={1080}
             />
           </div>
         </motion.div>
