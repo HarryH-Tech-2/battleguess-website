@@ -10,12 +10,13 @@ interface ContentLayoutProps {
   canonical: string;
   path?: string;
   jsonLd?: object | object[];
+  robots?: string;
 }
 
-export function ContentLayout({ children, title, description, canonical, path, jsonLd }: ContentLayoutProps) {
+export function ContentLayout({ children, title, description, canonical, path, jsonLd, robots }: ContentLayoutProps) {
   return (
     <div className="min-h-screen flex flex-col relative">
-      <SEOHead title={title} description={description} canonical={canonical} path={path} jsonLd={jsonLd} />
+      <SEOHead title={title} description={description} canonical={canonical} path={path} jsonLd={jsonLd} robots={robots} />
 
       <div className="fixed inset-0 bg-gradient-to-br from-emerald-50 via-slate-50 to-green-100 -z-10" />
 

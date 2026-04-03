@@ -48,6 +48,7 @@ function Stats() {
       description="Track your BattleGuess progress, accuracy, streaks, and achievements."
       canonical="https://battleguess.app/stats"
       path="/stats"
+      robots="noindex, follow"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
