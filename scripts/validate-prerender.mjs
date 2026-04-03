@@ -10,7 +10,7 @@ const distDir = resolve(__dirname, '..', 'dist');
 
 const checks = [
   {
-    path: 'battles/1-battle-of-thermopylae/index.html',
+    path: 'battles/2-battle-of-thermopylae/index.html',
     mustContain: ['<title>', 'Thermopylae', '<main'],
   },
   {
