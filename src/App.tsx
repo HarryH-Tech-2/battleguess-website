@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef, lazy, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Layout } from './components/layout/Layout';
+import { SEOHead } from './components/layout/SEOHead';
 import { Card } from './components/ui/Card';
 import { Button } from './components/ui/Button';
 import { DonationPopup } from './components/ui/DonationPopup';
@@ -311,6 +312,13 @@ function App() {
       onOpenNameInput={() => setShowNameInput(true)}
       playerName={getPlayerName()}
     >
+      <SEOHead
+        title="BattleGuess - The History Battle Guessing Game"
+        description="Test your knowledge of military history by identifying famous battles from artwork. Over 200 battles across 8 historical eras."
+        canonical="https://battleguess.app"
+        path="/"
+      />
+      <h1 className="sr-only">BattleGuess - The History Battle Guessing Game</h1>
       <div className="space-y-4 sm:space-y-6 pb-6 sm:pb-8">
 
         {/* Mode Selector - visible when idle or between rounds */}
