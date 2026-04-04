@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../ui/Button';
 import { Confetti } from '../effects/Confetti';
 import { DefeatAnimation } from '../effects/DefeatAnimation';
@@ -33,6 +34,7 @@ export function ResultFeedback({
   bestStreak = 0,
   battleResults = [],
 }: ResultFeedbackProps) {
+  const { t } = useTranslation();
   const fact = battleFacts[battle.id];
 
   return (
@@ -68,10 +70,10 @@ export function ResultFeedback({
         transition={{ delay: 0.2 }}
       >
         <h2 className={`text-2xl sm:text-3xl font-bold ${isWin ? 'text-green-600' : 'text-red-600'}`}>
-          {isWin ? 'Correct!' : 'Not this time...'}
+          {isWin ? t('result.correct') : t('result.notThisTime')}
         </h2>
         <p className="text-lg sm:text-xl text-gray-700 mt-2">
-          It was the <span className="font-bold text-primary-700">{battle.name}</span>
+          {t('result.itWasThe')} <span className="font-bold text-primary-700">{battle.name}</span>
         </p>
       </motion.div>
 
@@ -111,7 +113,7 @@ export function ResultFeedback({
           <div className="flex items-start gap-2">
             <span className="text-lg mt-0.5">💡</span>
             <div>
-              <p className="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">Did you know?</p>
+              <p className="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-1">{t('result.didYouKnow')}</p>
               <p className="text-sm text-emerald-900">{fact}</p>
             </div>
           </div>
@@ -128,15 +130,15 @@ export function ResultFeedback({
         >
           <div className="bg-white rounded-xl p-2 sm:p-3 shadow-md border border-primary-100">
             <p className="text-xl sm:text-2xl font-bold text-primary-600">+{score}</p>
-            <p className="text-xs text-gray-500">Points</p>
+            <p className="text-xs text-gray-500">{t('result.points')}</p>
           </div>
           <div className="bg-white rounded-xl p-2 sm:p-3 shadow-md border border-primary-100">
             <p className="text-xl sm:text-2xl font-bold text-primary-600">{hintsUsed}</p>
-            <p className="text-xs text-gray-500">Hints Used</p>
+            <p className="text-xs text-gray-500">{t('result.hintsUsed')}</p>
           </div>
           <div className="bg-white rounded-xl p-2 sm:p-3 shadow-md border border-primary-100">
             <p className="text-xl sm:text-2xl font-bold text-primary-600">{streak}</p>
-            <p className="text-xs text-gray-500">Streak</p>
+            <p className="text-xs text-gray-500">{t('result.streak')}</p>
           </div>
         </motion.div>
       )}
@@ -152,7 +154,7 @@ export function ResultFeedback({
         className="flex gap-3"
       >
         <Button variant="primary" size="lg" onClick={onNextBattle} className="flex-1">
-          Next Battle
+          {t('result.nextBattle')}
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>

@@ -10,15 +10,39 @@ interface NavbarProps {
   onOpenStats?: () => void;
   onOpenAchievements?: () => void;
   achievementCount?: { unlocked: number; total: number };
-  onOpenLeaderboard?: () => void;
   onOpenNameInput?: () => void;
   playerName?: string;
 }
 
-export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', dailyStreak, onOpenStats, onOpenAchievements, achievementCount, onOpenLeaderboard, onOpenNameInput, playerName }: NavbarProps) {
+export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', dailyStreak, onOpenStats, onOpenAchievements, achievementCount, onOpenNameInput, playerName }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [feedbackMessage, setFeedbackMessage] = useState('');
+  const [feedbackStatus, setFeedbackStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const menuRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
+
+  const handleFeedbackSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!feedbackMessage.trim()) return;
+    setFeedbackStatus('sending');
+    try {
+      const res = await fetch('https://formspree.io/f/mjgppvjg', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: feedbackMessage }),
+      });
+      if (res.ok) {
+        setFeedbackStatus('sent');
+        setFeedbackMessage('');
+        setTimeout(() => { setShowFeedback(false); setFeedbackStatus('idle'); }, 2000);
+      } else {
+        setFeedbackStatus('error');
+      }
+    } catch {
+      setFeedbackStatus('error');
+    }
+  };
 
 
   // Close menu on click outside
@@ -117,20 +141,15 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
                 </motion.button>
               )}
 
-              {/* Leaderboard button */}
-              {onOpenLeaderboard && (
-                <motion.button
-                  onClick={onOpenLeaderboard}
-                  className="p-2 sm:p-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-600 transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  title="Global leaderboard"
-                >
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                </motion.button>
-              )}
+              {/* Feedback button */}
+              <motion.button
+                onClick={() => setShowFeedback(true)}
+                className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-600 text-sm font-medium transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {t('navbar.feedback')}
+              </motion.button>
 
               {/* Achievements button */}
               {onOpenAchievements && (
@@ -246,18 +265,16 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
                       </button>
                     )}
 
-                    {/* Leaderboard */}
-                    {onOpenLeaderboard && (
-                      <button
-                        onClick={() => { onOpenLeaderboard(); setMobileMenuOpen(false); }}
-                        className="flex items-center gap-3 w-full px-4 py-3 text-left text-sm text-emerald-600 hover:bg-emerald-50 transition-colors"
-                      >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                        <span className="font-medium">Leaderboard</span>
-                      </button>
-                    )}
+                    {/* Feedback */}
+                    <button
+                      onClick={() => { setShowFeedback(true); setMobileMenuOpen(false); }}
+                      className="flex items-center gap-3 w-full px-4 py-3 text-left text-sm text-emerald-600 hover:bg-emerald-50 transition-colors"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                      </svg>
+                      <span className="font-medium">{t('navbar.feedback')}</span>
+                    </button>
 
                     {/* Achievements */}
                     {onOpenAchievements && (
@@ -334,6 +351,60 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
           </div>
         </div>
       </div>
+      {/* Feedback Modal */}
+      <AnimatePresence>
+        {showFeedback && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
+            onClick={() => { setShowFeedback(false); setFeedbackStatus('idle'); }}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-white rounded-2xl shadow-xl max-w-md w-full overflow-hidden"
+              onClick={e => e.stopPropagation()}
+            >
+              <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 px-5 py-4 flex items-center justify-between">
+                <h2 className="text-lg font-bold text-white">{t('navbar.feedback')}</h2>
+                <button onClick={() => { setShowFeedback(false); setFeedbackStatus('idle'); }} className="text-white/70 hover:text-white transition-colors">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <form onSubmit={handleFeedbackSubmit} className="p-5 space-y-4">
+                <p className="text-sm text-gray-500">{t('navbar.feedbackDesc')}</p>
+                <textarea
+                  value={feedbackMessage}
+                  onChange={e => setFeedbackMessage(e.target.value)}
+                  placeholder={t('navbar.feedbackPlaceholder')}
+                  className="w-full h-32 px-3 py-2 border border-gray-200 rounded-xl text-sm resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  required
+                  disabled={feedbackStatus === 'sending' || feedbackStatus === 'sent'}
+                />
+                {feedbackStatus === 'error' && (
+                  <p className="text-sm text-red-500">{t('navbar.feedbackError')}</p>
+                )}
+                {feedbackStatus === 'sent' ? (
+                  <p className="text-sm text-emerald-600 font-medium">{t('navbar.feedbackSuccess')}</p>
+                ) : (
+                  <button
+                    type="submit"
+                    disabled={feedbackStatus === 'sending' || !feedbackMessage.trim()}
+                    className="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 disabled:bg-gray-300 text-white font-medium rounded-xl transition-colors"
+                  >
+                    {feedbackStatus === 'sending' ? t('navbar.feedbackSending') : t('navbar.feedbackSubmit')}
+                  </button>
+                )}
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }

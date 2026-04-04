@@ -32,7 +32,24 @@
     "welcome": "¡Bienvenido a BattleGuess!",
     "selectMode": "Selecciona un modo y empieza a jugar",
     "playAgain": "Jugar de nuevo",
-    "newGame": "Nueva partida"
+    "newGame": "Nueva partida",
+    "pts": "pts",
+    "best": "mejor",
+    "potential": "Potencial",
+    "unstoppable": "¡Imparable!",
+    "streakCount": "¡{{count}} seguidas!",
+    "threeInARow": "¡3 seguidas!",
+    "loadingBattleScene": "Cargando escena de batalla..."
+  },
+  "result": {
+    "correct": "¡Correcto!",
+    "notThisTime": "Esta vez no...",
+    "itWasThe": "Era la",
+    "didYouKnow": "¿Sabías que?",
+    "points": "Puntos",
+    "hintsUsed": "Pistas usadas",
+    "streak": "Racha",
+    "nextBattle": "Siguiente batalla"
   },
   "modes": {
     "classic": "Clásico",
@@ -53,8 +70,14 @@
   },
   "navbar": {
     "stats": "Estadísticas",
-    "leaderboard": "Clasificación",
     "achievements": "Logros",
+    "feedback": "Comentarios",
+    "feedbackDesc": "¡Nos encantaría saber tu opinión! Comparte sugerencias, reporta errores o cuéntanos qué te gusta.",
+    "feedbackPlaceholder": "Escribe tu comentario aquí...",
+    "feedbackSubmit": "Enviar comentario",
+    "feedbackSending": "Enviando...",
+    "feedbackSuccess": "¡Gracias por tu comentario!",
+    "feedbackError": "Algo salió mal. Por favor, inténtalo de nuevo.",
     "setName": "Elegir nombre",
     "buyMeACoffee": "Invítame un café",
     "twitter": "Twitter/X"

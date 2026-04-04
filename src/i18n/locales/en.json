@@ -32,7 +32,24 @@
     "welcome": "Welcome to BattleGuess!",
     "selectMode": "Select a mode and start playing",
     "playAgain": "Play Again",
-    "newGame": "New Game"
+    "newGame": "New Game",
+    "pts": "pts",
+    "best": "best",
+    "potential": "Potential",
+    "unstoppable": "Unstoppable!",
+    "streakCount": "{{count}} streak!",
+    "threeInARow": "3 in a row!",
+    "loadingBattleScene": "Loading battle scene..."
+  },
+  "result": {
+    "correct": "Correct!",
+    "notThisTime": "Not this time...",
+    "itWasThe": "It was the",
+    "didYouKnow": "Did you know?",
+    "points": "Points",
+    "hintsUsed": "Hints Used",
+    "streak": "Streak",
+    "nextBattle": "Next Battle"
   },
   "modes": {
     "classic": "Classic",
@@ -53,8 +70,14 @@
   },
   "navbar": {
     "stats": "Stats",
-    "leaderboard": "Leaderboard",
     "achievements": "Achievements",
+    "feedback": "Feedback",
+    "feedbackDesc": "We'd love to hear your thoughts! Share suggestions, report bugs, or tell us what you enjoy.",
+    "feedbackPlaceholder": "Type your feedback here...",
+    "feedbackSubmit": "Send Feedback",
+    "feedbackSending": "Sending...",
+    "feedbackSuccess": "Thanks for your feedback!",
+    "feedbackError": "Something went wrong. Please try again.",
     "setName": "Set Name",
     "buyMeACoffee": "Buy me a coffee",
     "twitter": "Twitter/X"

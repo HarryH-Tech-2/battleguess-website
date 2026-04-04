@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 interface ScoreDisplayProps {
   score: number;
@@ -68,19 +69,23 @@ function FireIcon({ streak }: { streak: number }) {
 }
 
 export function ScoreDisplay({ score, streak, bestStreak }: ScoreDisplayProps) {
+  const { t } = useTranslation();
   const [milestoneText, setMilestoneText] = useState('');
   const [scoreDelta, setScoreDelta] = useState(0);
   const prevScore = useRef(score);
   const tier = getStreakTier(streak);
 
+  // Translate streak milestone labels
+  const streakLabel = streak >= 10 ? t('game.unstoppable') : streak >= 5 ? t('game.streakCount', { count: streak }) : streak >= 3 ? t('game.threeInARow') : '';
+
   // Show milestone text on streak changes
   useEffect(() => {
-    if (streak >= 3 && tier.label) {
-      setMilestoneText(tier.label);
+    if (streak >= 3 && streakLabel) {
+      setMilestoneText(streakLabel);
       const timer = setTimeout(() => setMilestoneText(''), 2500);
       return () => clearTimeout(timer);
     }
-  }, [streak, tier.label]);
+  }, [streak, streakLabel]);
 
   // Animate score changes with a floating +pts indicator
   useEffect(() => {
@@ -109,7 +114,7 @@ export function ScoreDisplay({ score, streak, bestStreak }: ScoreDisplayProps) {
             <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
           </svg>
           <span className="font-extrabold text-lg sm:text-xl text-amber-700">{score.toLocaleString()}</span>
-          <span className="text-amber-500 text-xs sm:text-sm font-semibold">pts</span>
+          <span className="text-amber-500 text-xs sm:text-sm font-semibold">{t('game.pts')}</span>
 
           {/* Floating +pts animation */}
           <AnimatePresence>
@@ -141,7 +146,7 @@ export function ScoreDisplay({ score, streak, bestStreak }: ScoreDisplayProps) {
             <span className="text-base sm:text-xl opacity-40">🔥</span>
           )}
           <span className="font-bold text-base sm:text-lg text-primary-600">{streak}</span>
-          <span className="text-gray-400 text-xs sm:text-sm">streak</span>
+          <span className="text-gray-400 text-xs sm:text-sm">{t('game.streak')}</span>
         </motion.div>
 
         {/* Best Streak */}
@@ -153,7 +158,7 @@ export function ScoreDisplay({ score, streak, bestStreak }: ScoreDisplayProps) {
             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
           </svg>
           <span className="font-bold text-base sm:text-lg">{bestStreak}</span>
-          <span className="text-primary-100 text-xs sm:text-sm">best</span>
+          <span className="text-primary-100 text-xs sm:text-sm">{t('game.best')}</span>
         </motion.div>
       </div>
 

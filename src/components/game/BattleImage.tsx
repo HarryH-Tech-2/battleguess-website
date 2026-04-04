@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 interface BattleImageProps {
   imageUrl: string | null;
@@ -14,11 +15,12 @@ function formatYear(year?: number): string {
 }
 
 export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: BattleImageProps) {
+  const { t } = useTranslation();
   return (
     <div className="space-y-3">
       {/* Image Container - Square aspect ratio for 1080x1080 images */}
       <div className="relative overflow-hidden rounded-2xl shadow-xl bg-gray-900">
-          <div className="aspect-square">
+          <div className="aspect-[4/3]">
             <AnimatePresence mode="wait">
               {isLoading ? (
                 <motion.div
@@ -41,7 +43,7 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
                   >
-                    Loading battle scene...
+                    {t('game.loadingBattleScene')}
                   </motion.p>
                 </motion.div>
               ) : imageUrl ? (

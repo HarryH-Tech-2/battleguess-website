@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef, lazy, Suspense } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Layout } from './components/layout/Layout';
 import { SEOHead } from './components/layout/SEOHead';
@@ -26,7 +27,6 @@ import { PlayerNameInput } from './components/game/PlayerNameInput';
 import { AchievementPopup } from './components/achievements/AchievementPopup';
 
 // Lazy-load overlay components (modals that aren't always visible)
-const Leaderboard = lazy(() => import('./components/game/Leaderboard').then(m => ({ default: m.Leaderboard })));
 const StatsPanel = lazy(() => import('./components/stats/StatsPanel').then(m => ({ default: m.StatsPanel })));
 const AchievementsList = lazy(() => import('./components/achievements/AchievementsList').then(m => ({ default: m.AchievementsList })));
 import { useGame } from './hooks/useGame';
@@ -39,7 +39,7 @@ import { useCampaignGame } from './hooks/useCampaignGame';
 import { useAchievements } from './hooks/useAchievements';
 import { useDailyChallenge } from './hooks/useDailyChallenge';
 import { useChallengeMode } from './hooks/useChallengeMode';
-import { getDailyBattleIds, getDailyDateKey, getPlayerName, submitLeaderboardScore } from './services/firebase';
+import { getDailyBattleIds, getDailyDateKey, getPlayerName } from './services/firebase';
 import { calculateScore } from './utils/scoring';
 import type { GameMode } from './types';
 import './index.css';
@@ -48,6 +48,7 @@ import './index.css';
 const BUY_ME_A_COFFEE_URL = "https://buymeacoffee.com/harryhh";
 
 function App() {
+  const { t } = useTranslation();
   const { state, actions, totalBattlesInPool, battlesPlayed } = useGame();
   const { getImageForBattle } = useImageGeneration();
   const { isMuted, toggleMute, currentTrackId, changeTrack, tracks } = useBackgroundMusic('/drum-tune.mp3');
@@ -61,7 +62,6 @@ function App() {
   const [showDonationPopup, setShowDonationPopup] = useState(false);
   const [showStatsPanel, setShowStatsPanel] = useState(false);
   const [showAchievements, setShowAchievements] = useState(false);
-  const [showLeaderboard, setShowLeaderboard] = useState(false);
   const [showNameInput, setShowNameInput] = useState(false);
   const hasShownPopup = useRef(false);
   const prevGameStatus = useRef(state.gameStatus);
@@ -150,13 +150,6 @@ function App() {
           hintsUsed: state.hintsUsed,
           difficulty: state.currentBattle.difficulty,
         });
-        // Submit to global leaderboard (only updates if score is higher)
-        submitLeaderboardScore({
-          totalScore: state.score,
-          gamesPlayed: state.totalGuesses,
-          bestStreak: state.bestStreak,
-          accuracy: Math.round((state.correctGuesses / state.totalGuesses) * 100),
-        });
       }
     } else if (prev === 'playing' && curr === 'lost') {
       playSound('giveUp');
@@ -181,13 +174,6 @@ function App() {
           correct: false,
           hintsUsed: state.hintsUsed,
           difficulty: state.currentBattle.difficulty,
-        });
-        // Submit to global leaderboard (only updates if score is higher)
-        submitLeaderboardScore({
-          totalScore: state.score,
-          gamesPlayed: state.totalGuesses,
-          bestStreak: state.bestStreak,
-          accuracy: state.totalGuesses > 0 ? Math.round((state.correctGuesses / state.totalGuesses) * 100) : 0,
         });
       }
     } else if (curr === 'completed') {
@@ -308,7 +294,6 @@ function App() {
       onOpenStats={() => setShowStatsPanel(true)}
       onOpenAchievements={() => setShowAchievements(true)}
       achievementCount={{ unlocked: achievementsSystem.unlockedCount, total: achievementsSystem.totalAchievements }}
-      onOpenLeaderboard={() => setShowLeaderboard(true)}
       onOpenNameInput={() => setShowNameInput(true)}
       playerName={getPlayerName()}
     >
@@ -699,7 +684,26 @@ function App() {
                 )}
 
 
-                {/* Score Display - Below image */}
+                {/* Guess Input - varies by mode */}
+                {isReverseMode ? (
+                  <ReverseGuessInput
+                    key={state.currentBattle.id}
+                    mode={state.gameMode}
+                    onSubmit={actions.submitGuess}
+                    disabled={false}
+                    onGiveUp={actions.giveUp}
+                    actualYear={state.currentBattle.year}
+                  />
+                ) : (
+                  <GuessInput
+                    key={state.currentBattle.id}
+                    onSubmit={actions.submitGuess}
+                    disabled={!state.imageUrl}
+                    onGiveUp={actions.giveUp}
+                  />
+                )}
+
+                {/* Score Display - Below guess input */}
                 {(state.score > 0 || state.streak > 0 || state.bestStreak > 0) && (
                   <motion.div
                     initial={{ opacity: 0, y: -20 }}
@@ -723,7 +727,7 @@ function App() {
                     {state.currentBattle.difficulty.charAt(0).toUpperCase() + state.currentBattle.difficulty.slice(1)}
                   </span>
                   <span className="text-sm text-gray-500">
-                    • Potential: {calculateScore(0, state.currentBattle.difficulty, state.streak)} pts
+                    • {t('game.potential')}: {calculateScore(0, state.currentBattle.difficulty, state.streak)} {t('game.pts')}
                   </span>
                   <MusicTrackSelector
                     tracks={tracks}
@@ -733,25 +737,6 @@ function App() {
                     onToggleMute={toggleMute}
                   />
                 </div>
-
-                {/* Guess Input - varies by mode */}
-                {isReverseMode ? (
-                  <ReverseGuessInput
-                    key={state.currentBattle.id}
-                    mode={state.gameMode}
-                    onSubmit={actions.submitGuess}
-                    disabled={false}
-                    onGiveUp={actions.giveUp}
-                    actualYear={state.currentBattle.year}
-                  />
-                ) : (
-                  <GuessInput
-                    key={state.currentBattle.id}
-                    onSubmit={actions.submitGuess}
-                    disabled={!state.imageUrl}
-                    onGiveUp={actions.giveUp}
-                  />
-                )}
 
                 {/* Mascot rendered outside card as fixed overlay */}
               </motion.div>
@@ -893,14 +878,6 @@ function App() {
           isOpen={showAchievements}
           onClose={() => setShowAchievements(false)}
           unlocked={achievementsSystem.unlocked}
-        />
-      </Suspense>
-
-      {/* Global Leaderboard (lazy-loaded) */}
-      <Suspense fallback={null}>
-        <Leaderboard
-          isOpen={showLeaderboard}
-          onClose={() => setShowLeaderboard(false)}
         />
       </Suspense>
 
