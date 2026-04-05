@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
+import { FeedbackWidget } from './FeedbackWidget';
 import { ParticleBackground, FloatingOrbs } from '../effects/ParticleBackground';
 
 interface LayoutProps {
@@ -48,6 +49,9 @@ export function Layout({ children, buyMeACoffeeUrl, dailyStreak, onOpenStats, on
           </div>
         </footer>
       </div>
+
+      {/* Floating feedback button + modal, portaled to body */}
+      <FeedbackWidget />
     </div>
   );
 }

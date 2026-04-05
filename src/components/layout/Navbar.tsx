@@ -14,41 +14,8 @@ interface NavbarProps {
 
 export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', dailyStreak, onOpenStats, onOpenAchievements, achievementCount }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showFeedback, setShowFeedback] = useState(false);
-  const [feedbackMessage, setFeedbackMessage] = useState('');
-  const [feedbackEmail, setFeedbackEmail] = useState('');
-  const [feedbackSubscribe, setFeedbackSubscribe] = useState(false);
-  const [feedbackStatus, setFeedbackStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const menuRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
-
-  const handleFeedbackSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!feedbackMessage.trim()) return;
-    setFeedbackStatus('sending');
-    try {
-      const res = await fetch('https://formspree.io/f/mjgppvjg', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: feedbackMessage,
-          email: feedbackEmail || undefined,
-          subscribeToUpdates: feedbackSubscribe ? 'yes' : 'no',
-        }),
-      });
-      if (res.ok) {
-        setFeedbackStatus('sent');
-        setFeedbackMessage('');
-        setFeedbackEmail('');
-        setFeedbackSubscribe(false);
-        setTimeout(() => { setShowFeedback(false); setFeedbackStatus('idle'); }, 2000);
-      } else {
-        setFeedbackStatus('error');
-      }
-    } catch {
-      setFeedbackStatus('error');
-    }
-  };
 
 
   // Close menu on click outside
@@ -147,16 +114,6 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
                 </motion.button>
               )}
 
-              {/* Feedback button */}
-              <motion.button
-                onClick={() => setShowFeedback(true)}
-                className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-primary-50 hover:bg-primary-100 text-primary-700 text-sm font-medium transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {t('navbar.feedback')}
-              </motion.button>
-
               {/* Achievements button */}
               {onOpenAchievements && (
                 <motion.button
@@ -253,17 +210,6 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
                       </button>
                     )}
 
-                    {/* Feedback */}
-                    <button
-                      onClick={() => { setShowFeedback(true); setMobileMenuOpen(false); }}
-                      className="flex items-center gap-3 w-full px-4 py-3 text-left text-sm text-primary-700 hover:bg-primary-50 transition-colors"
-                    >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                      </svg>
-                      <span className="font-medium">{t('navbar.feedback')}</span>
-                    </button>
-
                     {/* Achievements */}
                     {onOpenAchievements && (
                       <button
@@ -324,83 +270,6 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
           </div>
         </div>
       </div>
-      {/* Feedback Modal */}
-      <AnimatePresence>
-        {showFeedback && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm"
-            onClick={() => { setShowFeedback(false); setFeedbackStatus('idle'); }}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden border border-primary-100"
-              onClick={e => e.stopPropagation()}
-            >
-              <div className="bg-gradient-to-r from-primary-600 to-primary-800 px-5 py-4 flex items-center justify-between">
-                <h2 className="text-lg font-bold text-white">{t('navbar.feedback')}</h2>
-                <button onClick={() => { setShowFeedback(false); setFeedbackStatus('idle'); }} className="text-white/70 hover:text-white transition-colors">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-              <form onSubmit={handleFeedbackSubmit} className="p-5 space-y-4">
-                <p className="text-sm text-gray-500">{t('navbar.feedbackDesc')}</p>
-                <textarea
-                  value={feedbackMessage}
-                  onChange={e => setFeedbackMessage(e.target.value)}
-                  placeholder={t('navbar.feedbackPlaceholder')}
-                  className="w-full h-32 px-3 py-2 border border-primary-100 rounded-xl text-sm resize-none focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  required
-                  disabled={feedbackStatus === 'sending' || feedbackStatus === 'sent'}
-                />
-                <div className="pt-2 border-t border-primary-50 space-y-2">
-                  <label className="flex items-start gap-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={feedbackSubscribe}
-                      onChange={e => setFeedbackSubscribe(e.target.checked)}
-                      className="mt-0.5 w-4 h-4 rounded border-primary-200 text-primary-600 focus:ring-primary-500"
-                      disabled={feedbackStatus === 'sending' || feedbackStatus === 'sent'}
-                    />
-                    <span className="text-sm text-gray-600">{t('navbar.subscribeLabel')}</span>
-                  </label>
-                  {feedbackSubscribe && (
-                    <input
-                      type="email"
-                      value={feedbackEmail}
-                      onChange={e => setFeedbackEmail(e.target.value)}
-                      placeholder={t('navbar.subscribePlaceholder')}
-                      className="w-full px-3 py-2 border border-primary-100 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      required={feedbackSubscribe}
-                      disabled={feedbackStatus === 'sending' || feedbackStatus === 'sent'}
-                    />
-                  )}
-                </div>
-                {feedbackStatus === 'error' && (
-                  <p className="text-sm text-red-500">{t('navbar.feedbackError')}</p>
-                )}
-                {feedbackStatus === 'sent' ? (
-                  <p className="text-sm text-primary-700 font-medium">{t('navbar.feedbackSuccess')}</p>
-                ) : (
-                  <button
-                    type="submit"
-                    disabled={feedbackStatus === 'sending' || !feedbackMessage.trim()}
-                    className="w-full py-2.5 bg-primary-600 hover:bg-primary-700 disabled:bg-gray-300 text-white font-medium rounded-xl transition-colors shadow-md shadow-primary-200"
-                  >
-                    {feedbackStatus === 'sending' ? t('navbar.feedbackSending') : t('navbar.feedbackSubmit')}
-                  </button>
-                )}
-              </form>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.nav>
   );
 }
