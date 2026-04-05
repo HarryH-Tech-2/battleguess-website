@@ -78,6 +78,8 @@
     "feedbackSending": "Sending...",
     "feedbackSuccess": "Thanks for your feedback!",
     "feedbackError": "Something went wrong. Please try again.",
+    "subscribeLabel": "Sign me up for product updates and new releases",
+    "subscribePlaceholder": "your@email.com",
     "setName": "Set Name",
     "buyMeACoffee": "Buy me a coffee",
     "twitter": "Twitter/X"

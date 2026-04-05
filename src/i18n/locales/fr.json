@@ -78,6 +78,8 @@
     "feedbackSending": "Envoi en cours...",
     "feedbackSuccess": "Merci pour votre avis !",
     "feedbackError": "Une erreur est survenue. Veuillez réessayer.",
+    "subscribeLabel": "Je souhaite recevoir les mises à jour et nouveautés",
+    "subscribePlaceholder": "votre@email.com",
     "setName": "Choisir un pseudo",
     "buyMeACoffee": "Offrez-moi un café",
     "twitter": "Twitter/X"

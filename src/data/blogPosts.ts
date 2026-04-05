@@ -76,7 +76,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'From Thermopylae to Stalingrad, explore the battles that changed the course of civilization and shaped the world we live in today.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '12 min read',
     tags: ['history', 'battles', 'military', 'world history'],
     category: 'wars-and-conflicts',
@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Criteria for Ranking Decisive Battles',
         content:
-          'Historians have long debated which battles truly changed history. [Edward Creasy](https://en.wikipedia.org/wiki/Edward_Shepherd_Creasy) published his famous "Fifteen Decisive Battles of the World" in 1851, establishing a template that military historians still reference. Our criteria consider three factors: the immediate political consequence of the battle, the long-term cultural impact on civilization, and the degree to which the losing side\u2019s trajectory was permanently altered.',
+          'Historians have long debated which battles truly changed history. [Edward Creasy](https://en.wikipedia.org/wiki/Edward_Shepherd_Creasy) published his famous "Fifteen Decisive Battles of the World" in 1851, establishing a template that military historians still reference. Our criteria consider three factors: the immediate political consequence of the battle, the long-term cultural impact on civilization, and the degree to which the losing side\u2019s trajectory was permanently altered. For authoritative reference material on major engagements, the [Encyclopaedia Britannica list of major battles](https://www.britannica.com/topic/list-of-battles-2030603) and the [Imperial War Museums archives](https://www.iwm.org.uk/history) are excellent places to compare scholarly assessments.',
         bullets: [
           'Political impact \u2014 did the battle change borders, topple governments, or create new states?',
           'Cultural legacy \u2014 did the outcome shape languages, religions, or social systems for centuries?',
@@ -102,17 +102,17 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'The Ancient World: Thermopylae and Gaugamela',
         content:
-          'The Battle of Thermopylae in 480 BCE, where 300 Spartans and their Greek allies held a narrow pass against the massive Persian army of Xerxes I, became a legendary symbol of courage against overwhelming odds. Though the Greeks ultimately lost the pass, the delay allowed Athens to evacuate and prepare the navy that won at Salamis. The Persian Wars are covered extensively by [Herodotus](https://en.wikipedia.org/wiki/Herodotus), often called the father of history.\n\nA century and a half later, Alexander the Great defeated Darius III at the Battle of Gaugamela in 331 BCE, effectively ending the Persian Empire and spreading Greek culture across the known world from Egypt to India. Alexander\u2019s campaigns created the [Hellenistic world](https://en.wikipedia.org/wiki/Hellenistic_period), a cultural fusion of Greek and Eastern traditions that persisted for centuries.',
+          'The Battle of Thermopylae in 480 BCE, where 300 Spartans and their Greek allies held a narrow pass against the massive Persian army of Xerxes I, became a legendary symbol of courage against overwhelming odds. Though the Greeks ultimately lost the pass, the delay allowed Athens to evacuate and prepare the navy that won at Salamis. The Persian Wars are covered extensively by [Herodotus](https://en.wikipedia.org/wiki/Herodotus), often called the father of history.\n\nA century and a half later, Alexander the Great defeated Darius III at the Battle of Gaugamela in 331 BCE, effectively ending the Persian Empire and spreading Greek culture across the known world from Egypt to India. Alexander\u2019s campaigns created the [Hellenistic world](https://www.britannica.com/event/Hellenistic-Age), a cultural fusion of Greek and Eastern traditions that persisted for centuries. The [World History Encyclopedia entry on Gaugamela](https://www.worldhistory.org/Battle_of_Gaugamela/) offers a detailed tactical breakdown of the engagement.',
       },
       {
         heading: 'Medieval Turning Points: Hastings and Constantinople',
         content:
-          'The Battle of Hastings in 1066 saw William the Conqueror defeat the Anglo-Saxon King Harold II, forever changing the language, culture, and legal system of England. The Norman victory introduced feudalism and French-influenced governance to the British Isles, the effects of which are still visible in English law and vocabulary today. The [Bayeux Tapestry](https://en.wikipedia.org/wiki/Bayeux_Tapestry), a 70-meter embroidered cloth, remains the most famous visual record of any medieval battle.\n\nNearly four centuries later, the Fall of Constantinople in 1453 marked the end of the Byzantine Empire when Ottoman forces breached the ancient walls. This event closed the overland trade routes to Asia and spurred European powers to seek sea routes, ultimately leading to the Age of Exploration.',
+          'The Battle of Hastings in 1066 saw William the Conqueror defeat the Anglo-Saxon King Harold II, forever changing the language, culture, and legal system of England. The Norman victory introduced feudalism and French-influenced governance to the British Isles, the effects of which are still visible in English law and vocabulary today. The [Bayeux Museum](https://www.bayeuxmuseum.com/en/the-bayeux-tapestry/) preserves the 70-meter embroidered tapestry that remains the most famous visual record of any medieval battle.\n\nNearly four centuries later, the Fall of Constantinople in 1453 marked the end of the Byzantine Empire when Ottoman forces breached the ancient walls. This event closed the overland trade routes to Asia and spurred European powers to seek sea routes, ultimately leading to the Age of Exploration. [History Today](https://www.historytoday.com/archive/months-past/fall-constantinople) has a concise scholarly treatment of the siege.',
       },
       {
         heading: 'The Napoleonic Era: Waterloo',
         content:
-          'The Battle of Waterloo in 1815 ended Napoleon Bonaparte\u2019s rule as Emperor of France and reshaped the political map of Europe for a century. The combined British, Prussian, and allied forces defeated Napoleon\u2019s army in present-day Belgium, leading to his exile on Saint Helena. The [Congress of Vienna](https://en.wikipedia.org/wiki/Congress_of_Vienna) that followed established a balance of power in Europe that held until World War I. Waterloo demonstrated that even the most brilliant military commander could be undone by coalition warfare and logistical overextension.',
+          'The Battle of Waterloo in 1815 ended Napoleon Bonaparte\u2019s rule as Emperor of France and reshaped the political map of Europe for a century. The combined British, Prussian, and allied forces defeated Napoleon\u2019s army in present-day Belgium, leading to his exile on Saint Helena. The [Congress of Vienna](https://www.britannica.com/event/Congress-of-Vienna) that followed established a balance of power in Europe that held until World War I. The [National Army Museum\u2019s Waterloo archive](https://www.nam.ac.uk/explore/battle-waterloo) shows how coalition warfare and logistical overextension undid even the most brilliant commander.',
       },
       {
         heading: 'The World Wars: Stalingrad and Midway',
@@ -144,7 +144,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'Discover how military tactics, technology, and strategy from the ancient world laid the foundations for modern civilization.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '10 min read',
     tags: ['ancient history', 'warfare', 'tactics', 'civilization'],
     category: 'ancient-warfare',
@@ -207,7 +207,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'New to military history? This guide covers the best starting points, key eras to explore, and how to build your knowledge from the ground up.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '9 min read',
     tags: ['beginner', 'guide', 'learning', 'military history'],
     category: 'game-guides',
@@ -273,7 +273,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'Practical tips and strategies to boost your scores across all game modes in BattleGuess, from studying images to mastering streaks.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '7 min read',
     tags: ['tips', 'strategy', 'game guide', 'BattleGuess'],
     category: 'game-guides',
@@ -339,7 +339,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'Trace the development of siege warfare from ancient battering rams and siege towers to the massive artillery bombardments of the modern era.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '10 min read',
     tags: ['siege warfare', 'fortifications', 'military technology', 'history'],
     category: 'military-technology',
@@ -401,7 +401,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'From ancient triremes to modern aircraft carriers, these naval engagements determined who controlled the seas and shaped the destiny of empires.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '11 min read',
     tags: ['naval battles', 'maritime history', 'ships', 'military history'],
     category: 'wars-and-conflicts',
@@ -452,7 +452,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'A curated list of the most important battles for history students, covering the engagements that shaped civilizations and appear on every exam.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '10 min read',
     tags: ['education', 'history', 'students', 'learning'],
     category: 'game-guides',
@@ -517,7 +517,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'From Alexander the Great to Napoleon Bonaparte, explore the strategies and victories of history\u2019s most brilliant military leaders.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '12 min read',
     tags: ['commanders', 'generals', 'leadership', 'strategy'],
     category: 'military-strategy',
@@ -576,7 +576,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'The introduction of gunpowder weapons transformed battle tactics, ended the age of castles, and reshaped the global balance of power.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '10 min read',
     tags: ['gunpowder', 'military technology', 'weapons', 'history'],
     category: 'military-technology',
@@ -635,7 +635,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'The five key battles that shifted the momentum of World War II, from the defense of Britain to the fall of Berlin.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '11 min read',
     tags: ['World War II', 'turning points', 'modern warfare', 'history'],
     category: 'wars-and-conflicts',
@@ -698,7 +698,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'Explore the epic battles of feudal Japan, from the Genpei War to the unification under Tokugawa, and the code of the samurai warrior.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '10 min read',
     tags: ['Japan', 'samurai', 'feudal warfare', 'East Asia'],
     category: 'wars-and-conflicts',
@@ -755,7 +755,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'An accessible overview of the Crusades covering the major battles, key figures, and the lasting impact these religious wars had on both East and West.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '11 min read',
     tags: ['Crusades', 'medieval', 'Middle East', 'religious wars'],
     category: 'wars-and-conflicts',
@@ -808,7 +808,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'From the first shots at Lexington to the final victory at Yorktown, explore the battles that created the United States of America.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '10 min read',
     tags: ['American Revolution', 'independence', 'colonial warfare', 'United States'],
     category: 'wars-and-conflicts',
@@ -860,7 +860,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'How Simon Bolivar, Jose de San Martin, and other liberators fought to free South America from colonial rule through a series of dramatic battles.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '10 min read',
     tags: ['Latin America', 'independence', 'Bolivar', 'San Martin'],
     category: 'wars-and-conflicts',
@@ -913,7 +913,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'Trace the evolution of mounted warfare from ancient war chariots through medieval knights to the mechanized armor of the 20th century.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '10 min read',
     tags: ['cavalry', 'tanks', 'military evolution', 'mounted warfare'],
     category: 'military-technology',
@@ -971,7 +971,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'How the Ottoman Empire built one of history\u2019s most powerful military machines and conquered an empire spanning three continents.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '10 min read',
     tags: ['Ottoman Empire', 'Islamic history', 'conquest', 'military power'],
     category: 'wars-and-conflicts',
@@ -1029,7 +1029,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'From ancient warrior queens to modern military leaders, discover the women who shaped the course of military history.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '10 min read',
     tags: ['women in history', 'warriors', 'leadership', 'military history'],
     category: 'military-strategy',
@@ -1082,7 +1082,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'Rain, snow, fog, and storms have turned the tide of history. Discover how weather conditions determined the outcome of some of the most famous battles ever fought.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '9 min read',
     tags: ['weather', 'tactics', 'terrain', 'battle conditions'],
     category: 'military-strategy',
@@ -1138,7 +1138,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'Phalanx versus legion, hoplite versus legionary \u2014 compare the two greatest military systems of the ancient world and the battles that proved their strengths.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '10 min read',
     tags: ['Rome', 'Greece', 'ancient warfare', 'tactics', 'military comparison'],
     category: 'ancient-warfare',
@@ -1203,7 +1203,7 @@ export const blogPosts: BlogPost[] = [
     description:
       'Flanking, envelopment, pincer movements, and more \u2014 understand the core tactical concepts that commanders have used to win battles throughout history.',
     date: '2026-02-22',
-    author: 'BattleGuess Team',
+    author: 'Harry H',
     readTime: '9 min read',
     tags: ['tactics', 'strategy', 'beginner', 'military concepts'],
     category: 'military-strategy',

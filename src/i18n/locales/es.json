@@ -78,6 +78,8 @@
     "feedbackSending": "Enviando...",
     "feedbackSuccess": "¡Gracias por tu comentario!",
     "feedbackError": "Algo salió mal. Por favor, inténtalo de nuevo.",
+    "subscribeLabel": "Quiero recibir actualizaciones y novedades del producto",
+    "subscribePlaceholder": "tu@email.com",
     "setName": "Elegir nombre",
     "buyMeACoffee": "Invítame un café",
     "twitter": "Twitter/X"

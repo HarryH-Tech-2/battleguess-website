@@ -144,8 +144,9 @@ function BlogPost() {
     dateModified: post.date,
     ...(post.image && { image: `https://battleguess.app${post.image}` }),
     author: {
-      '@type': 'Organization',
+      '@type': 'Person',
       name: post.author,
+      url: 'https://x.com/HarryHH1993',
     },
     publisher: {
       '@type': 'Organization',
@@ -207,7 +208,17 @@ function BlogPost() {
         <div className="flex flex-wrap items-center gap-3 text-slate-500 text-sm">
           <span>{formattedDate}</span>
           <span className="text-slate-300">&middot;</span>
-          <span>{post.author}</span>
+          <span>
+            By{' '}
+            <a
+              href="https://x.com/HarryHH1993"
+              target="_blank"
+              rel="noopener noreferrer author"
+              className="text-primary-600 hover:text-primary-800 font-medium underline decoration-primary-300 hover:decoration-primary-500 transition-colors"
+            >
+              {post.author}
+            </a>
+          </span>
           <span className="text-slate-300">&middot;</span>
           <span>{post.readTime}</span>
         </div>

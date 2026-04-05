@@ -23,7 +23,6 @@ import { CampaignComplete } from './components/game/CampaignComplete';
 import { GameComplete } from './components/game/GameComplete';
 import { DailyChallengeIntro, DailyProgress, DailyResult } from './components/game/DailyChallenge';
 import { ChallengeInvite, ChallengeProgress, ChallengeResult, ChallengeShare } from './components/game/ChallengeView';
-import { PlayerNameInput } from './components/game/PlayerNameInput';
 import { AchievementPopup } from './components/achievements/AchievementPopup';
 
 // Lazy-load overlay components (modals that aren't always visible)
@@ -39,7 +38,7 @@ import { useCampaignGame } from './hooks/useCampaignGame';
 import { useAchievements } from './hooks/useAchievements';
 import { useDailyChallenge } from './hooks/useDailyChallenge';
 import { useChallengeMode } from './hooks/useChallengeMode';
-import { getDailyBattleIds, getDailyDateKey, getPlayerName } from './services/firebase';
+import { getDailyBattleIds, getDailyDateKey } from './services/firebase';
 import { calculateScore } from './utils/scoring';
 import type { GameMode } from './types';
 import './index.css';
@@ -62,7 +61,6 @@ function App() {
   const [showDonationPopup, setShowDonationPopup] = useState(false);
   const [showStatsPanel, setShowStatsPanel] = useState(false);
   const [showAchievements, setShowAchievements] = useState(false);
-  const [showNameInput, setShowNameInput] = useState(false);
   const hasShownPopup = useRef(false);
   const prevGameStatus = useRef(state.gameStatus);
   const prevRevealedHints = useRef(state.revealedHints.length);
@@ -294,8 +292,6 @@ function App() {
       onOpenStats={() => setShowStatsPanel(true)}
       onOpenAchievements={() => setShowAchievements(true)}
       achievementCount={{ unlocked: achievementsSystem.unlockedCount, total: achievementsSystem.totalAchievements }}
-      onOpenNameInput={() => setShowNameInput(true)}
-      playerName={getPlayerName()}
     >
       <SEOHead
         title="BattleGuess - The History Battle Guessing Game"
@@ -562,12 +558,6 @@ function App() {
                   >
                     Start Challenge
                   </Button>
-                  <button
-                    onClick={() => setShowNameInput(true)}
-                    className="text-sm text-primary-500 hover:text-primary-700 underline"
-                  >
-                    Set your name
-                  </button>
                 </div>
               </motion.div>
             )}
@@ -617,12 +607,6 @@ function App() {
                       onToggleMute={toggleMute}
                     />
                   </div>
-                  <button
-                    onClick={() => setShowNameInput(true)}
-                    className="text-sm text-primary-500 hover:text-primary-700 underline"
-                  >
-                    Set your name
-                  </button>
                 </div>
               </motion.div>
             )}
@@ -880,13 +864,6 @@ function App() {
           unlocked={achievementsSystem.unlocked}
         />
       </Suspense>
-
-      {/* Player Name Input */}
-      <PlayerNameInput
-        isOpen={showNameInput}
-        onClose={() => setShowNameInput(false)}
-        currentName={localStorage.getItem('battleguess-player-name') || 'Anonymous Commander'}
-      />
     </Layout>
   );
 }
