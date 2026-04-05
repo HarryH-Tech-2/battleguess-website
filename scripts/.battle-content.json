@@ -1,0 +1,1167 @@
+{
+  "1": {
+    "name": "Battle of Waterloo",
+    "description": "The Battle of Waterloo ended Napoleon's rule as French Emperor and his Hundred Days return from exile. The Duke of Wellington's allied forces, combined with Prussian reinforcements under Blücher, defeated Napoleon's army in a hard-fought engagement. This decisive victory reshaped European politics and led to Napoleon's final exile to Saint Helena, where he died six years later.",
+    "fact": "Napoleon spent his final exile on Saint Helena reading about Waterloo, and reportedly blamed Marshal Grouchy for not arriving in time with reinforcements rather than accepting any personal fault."
+  },
+  "2": {
+    "name": "Battle of Thermopylae",
+    "description": "King Leonidas and his 300 Spartans, along with several thousand Greek allies, held the narrow pass at Thermopylae against Xerxes' massive Persian army for three days. Their sacrifice bought time for Greece to prepare its defenses. Though all 300 Spartans perished, their bravery became legendary, immortalized by the epitaph: 'Go tell the Spartans that here we lie, obedient to their laws.'",
+    "fact": "The narrow pass at Thermopylae was so constricted that the Persian numerical advantage was meaningless. Today, centuries of silt deposits have pushed the coastline miles out, making the pass unrecognizable."
+  },
+  "3": {
+    "name": "Battle of Gettysburg",
+    "description": "Fought over three days in July 1863, Gettysburg was the bloodiest battle of the American Civil War with over 50,000 casualties. The failed Confederate assault known as Pickett's Charge marked the 'high water mark' of the Confederacy. President Lincoln's Gettysburg Address, delivered at the battlefield's dedication, became one of the most famous speeches in American history.",
+    "fact": "During Pickett's Charge at Gettysburg, Confederate General Lewis Armistead placed his hat on his sword tip to rally his men as they crossed the stone wall. He was mortally wounded moments later."
+  },
+  "4": {
+    "name": "Battle of Hastings",
+    "description": "On October 14, 1066, William, Duke of Normandy, defeated King Harold II's Saxon army, changing English history forever. Harold was killed, allegedly by an arrow to the eye, and William became the first Norman King of England. The battle introduced feudalism to England and profoundly influenced the English language, culture, and aristocracy for centuries to come.",
+    "fact": "The Bayeux Tapestry, which depicts the Battle of Hastings, is actually an embroidery, not a tapestry. It stretches 230 feet long and was likely commissioned by Bishop Odo, William's half-brother."
+  },
+  "5": {
+    "name": "Battle of Stalingrad",
+    "description": "The five-month siege of Stalingrad resulted in nearly 2 million casualties, making it the deadliest battle in human history. Soviet defenders fought building by building, sometimes room by room, in brutal urban combat. The German 6th Army's surrender in February 1943 marked a decisive turning point on the Eastern Front and the beginning of Germany's long retreat.",
+    "fact": "At Stalingrad, the average life expectancy of a newly arrived Soviet soldier was less than 24 hours. Snipers on both sides became legendary, with Soviet sniper Vasily Zaitsev credited with over 200 kills."
+  },
+  "6": {
+    "name": "D-Day",
+    "description": "On June 6, 1944, over 156,000 Allied troops landed on five beaches in Normandy in the largest amphibious invasion in history. Despite fierce German resistance, especially at Omaha Beach, the Allies established a foothold in Nazi-occupied Europe. D-Day opened the Western Front and began the liberation of France, leading to Germany's defeat less than a year later.",
+    "fact": "The D-Day weather forecast was so critical that Eisenhower had two letters prepared: one for success and one taking personal blame for failure. The failure letter was found in his wallet after the war."
+  },
+  "7": {
+    "name": "Battle of Agincourt",
+    "description": "Henry V's outnumbered English army defeated a much larger French force thanks to the devastating effectiveness of the English longbow. French knights, bogged down in mud and funneled into a narrow field, were cut down in waves. The battle inspired Shakespeare's famous play 'Henry V' and demonstrated how technology and terrain could overcome numerical superiority.",
+    "fact": "Henry V's army at Agincourt was ravaged by dysentery. Many English soldiers fought without pants due to the illness, making their victory over armored French knights even more remarkable."
+  },
+  "8": {
+    "name": "Battle of Trafalgar",
+    "description": "Admiral Horatio Nelson's bold tactics destroyed the combined French and Spanish fleet, securing British naval supremacy for over a century. Nelson was mortally wounded during the battle but lived long enough to know he had won. His famous signal, 'England expects that every man will do his duty,' became an enduring symbol of British naval tradition.",
+    "fact": "Nelson's body was preserved in a barrel of brandy for the voyage home after Trafalgar. Sailors allegedly drilled a hole in the barrel and drank some, giving rise to the term 'tapping the Admiral.'"
+  },
+  "9": {
+    "name": "Battle of the Somme",
+    "description": "The first day of the Somme remains the bloodiest day in British military history, with nearly 60,000 casualties. Over 140 days, the Allies advanced just six miles at a cost of over one million casualties on both sides. The battle saw the first use of tanks in warfare and came to symbolize the horrific futility of trench warfare on the Western Front.",
+    "fact": "Tanks were first used at the Somme, but the initial models were so unreliable that of the 49 deployed, only 32 reached the start line and most broke down during the advance."
+  },
+  "10": {
+    "name": "Battle of Marathon",
+    "description": "Athenian hoplites charged a Persian force twice their size and achieved a stunning victory, losing only 192 men while inflicting 6,400 Persian casualties. A messenger named Pheidippides reportedly ran 26 miles to Athens to announce the victory, inspiring the modern marathon. This battle proved that Greek citizen-soldiers could defeat the mighty Persian Empire.",
+    "fact": "The 26.2-mile marathon race is based on the legend of Pheidippides running from Marathon to Athens, but Herodotus actually wrote that he ran 150 miles from Athens to Sparta before the battle to request help."
+  },
+  "11": {
+    "name": "Battle of Midway",
+    "description": "American codebreakers intercepted Japanese plans, allowing Admiral Nimitz to set a trap near Midway Atoll. In just five minutes, American dive bombers destroyed three Japanese carriers, with a fourth sunk later that day. Japan lost four fleet carriers, 248 aircraft, and hundreds of experienced pilots—losses that Japan could never replace. The battle shifted the Pacific War's momentum permanently to the Allies.",
+    "fact": "The five crucial minutes at Midway when American dive bombers caught three Japanese carriers with fueled and armed planes on their decks changed the entire course of the Pacific War."
+  },
+  "12": {
+    "name": "Battle of Austerlitz",
+    "description": "Napoleon lured the combined Austrian and Russian armies into a trap by feigning weakness, then struck their weakened center while they tried to outflank him. The crushing victory ended the Third Coalition and forced Austria to sue for peace. Napoleon himself considered Austerlitz his finest battle, a masterpiece of military deception and tactical execution.",
+    "fact": "Napoleon was suffering from a severe cold on the morning of Austerlitz and could barely speak, yet he delivered one of the greatest tactical performances in military history that day."
+  },
+  "13": {
+    "name": "Battle of Kursk",
+    "description": "Over 6,000 tanks, 4,000 aircraft, and 2 million soldiers clashed in the largest armored battle ever fought. The Germans' Operation Citadel aimed to eliminate a Soviet bulge in the front lines but failed against prepared Soviet defenses in depth. After Kursk, Germany lost the strategic initiative in the East and would never launch another major offensive on the Eastern Front.",
+    "fact": "Soviet intelligence before Kursk was so thorough that they knew the exact date and time of the German attack. They even launched a massive preemptive artillery bombardment just hours before the assault began."
+  },
+  "14": {
+    "name": "Battle of Cannae",
+    "description": "Hannibal Barca executed a perfect double envelopment, surrounding and annihilating a Roman army nearly twice his size. An estimated 50,000-70,000 Romans were killed in a single day—one of the deadliest days in military history. The battle remains the gold standard of tactical excellence, studied in military academies worldwide to this day.",
+    "fact": "After Cannae, Hannibal's officers collected three bushels of gold rings from the fingers of dead Roman senators and knights, which were poured onto the floor of the Carthaginian senate as proof of victory."
+  },
+  "15": {
+    "name": "Battle of Verdun",
+    "description": "Germany intended to 'bleed France white' at Verdun, but the ten-month battle bled both armies equally with over 700,000 combined casualties. French General Pétain's rallying cry 'Ils ne passeront pas!' (They shall not pass!) became a national symbol of French determination. The battle produced the most concentrated devastation of World War I, turning verdant hills into a moonscape of craters.",
+    "fact": "The landscape around Verdun was so devastated by shellfire that several villages were completely erased from the map. They are still marked on French maps as 'villages that died for France.'"
+  },
+  "16": {
+    "name": "Battle of Saratoga",
+    "description": "The American victory at Saratoga was the turning point of the American Revolution. British General Burgoyne's army of 6,000 was surrounded and forced to surrender after two engagements. The victory convinced France to enter the war as an American ally, providing the military and financial support that would ultimately secure American independence.",
+    "fact": "Benedict Arnold, who led the critical charge at Saratoga, was shot in the same leg that had been wounded at Quebec. He later became America's most infamous traitor, making his heroism at Saratoga tragically ironic."
+  },
+  "17": {
+    "name": "Battle of Lepanto",
+    "description": "The Holy League, a coalition of Spain, Venice, and the Papal States, decisively defeated the Ottoman fleet in one of history's largest naval battles. Over 400 galleys clashed in close combat. The victory shattered the myth of Ottoman naval invincibility and prevented Ottoman expansion into the western Mediterranean, though it did not end Ottoman naval power entirely.",
+    "fact": "Miguel de Cervantes, the author of Don Quixote, fought at Lepanto and lost the use of his left hand from gunshot wounds. He later called the battle 'the most noble and memorable event that past centuries have seen.'"
+  },
+  "18": {
+    "name": "Battle of Zama",
+    "description": "Scipio Africanus defeated Hannibal Barca in a battle that ended the Second Punic War and established Rome as the dominant Mediterranean power. Scipio neutralized Hannibal's war elephants by opening lanes in the Roman formation, then used superior cavalry to envelop the Carthaginian army. It was the only major battle Hannibal ever lost, and it sealed Carthage's fate.",
+    "fact": "At Zama, Scipio ordered his men to open lanes in their formation so Hannibal's war elephants would charge harmlessly through the gaps. The trick worked, and the elephants panicked from trumpet blasts."
+  },
+  "19": {
+    "name": "Battle of Tours",
+    "description": "Charles Martel's Frankish army halted the Umayyad Caliphate's advance into Western Europe, a victory many historians consider among the most decisive in world history. The Frankish infantry held firm against repeated cavalry charges, and the Umayyad commander Abd al-Rahman was killed. The battle preserved Christian Western Europe and established the Carolingian dynasty's prestige, paving the way for Charlemagne.",
+    "fact": "Charles Martel's nickname 'The Hammer' came from the way his infantry smashed the Umayyad cavalry charges at Tours. His grandson Charlemagne would go on to become the first Holy Roman Emperor."
+  },
+  "20": {
+    "name": "Battle of Teutoburg Forest",
+    "description": "Arminius, a Romanized Germanic chieftain, lured three Roman legions under Varus into a devastating ambush in the dense Teutoburg Forest. Over 15,000 Roman soldiers were annihilated over three days of fighting. Emperor Augustus reportedly cried 'Varus, give me back my legions!' The defeat permanently halted Roman expansion east of the Rhine and shaped the future boundary between Latin and Germanic Europe.",
+    "fact": "The site of the Teutoburg Forest battle was lost for nearly 2,000 years until an amateur archaeologist discovered Roman coins and military artifacts at Kalkriese Hill in 1987."
+  },
+  "21": {
+    "name": "Battle of Crécy",
+    "description": "Edward III's English army, anchored by devastating longbow fire, destroyed a much larger French force that charged uphill in disorganized waves. The French suffered catastrophic losses among their nobility, including the blind King John of Bohemia who rode into battle tied to his knights. Crécy demonstrated the dominance of the English longbow and heralded the decline of mounted knightly warfare.",
+    "fact": "The blind King John of Bohemia insisted on fighting at Crecy. He had his horse tied to two knights' horses so they could lead him into battle, where all three were killed together."
+  },
+  "22": {
+    "name": "Battle of Yorktown",
+    "description": "George Washington's Continental Army and French forces under Rochambeau besieged British General Cornwallis at Yorktown while the French navy blocked any escape by sea. After weeks of bombardment, Cornwallis surrendered his army of over 7,000 men. The defeat shattered British will to continue the war, leading to peace negotiations and American independence.",
+    "fact": "When Cornwallis surrendered at Yorktown, his band reportedly played a tune called 'The World Turned Upside Down.' Cornwallis himself was too humiliated to attend the ceremony and sent a subordinate."
+  },
+  "23": {
+    "name": "Battle of Gallipoli",
+    "description": "The Allied attempt to force the Dardanelles strait and knock the Ottoman Empire out of World War I ended in a costly eight-month failure. ANZAC and British forces landed on the Gallipoli peninsula but could never break through Ottoman defenses commanded by Mustafa Kemal (later Atatürk). The campaign cost over 250,000 Allied casualties and forged the national identities of Australia, New Zealand, and modern Turkey.",
+    "fact": "Mustafa Kemal (later Ataturk) told his soldiers at Gallipoli: 'I am not ordering you to fight, I am ordering you to die.' He went on to found the modern Republic of Turkey."
+  },
+  "24": {
+    "name": "Battle of the Bulge",
+    "description": "Hitler's last desperate gamble threw 250,000 German troops against thinly held American lines in the Ardennes, creating a dangerous 'bulge' in the Allied front. Despite initial surprise and harsh winter conditions, American forces held key positions, most famously at Bastogne. The failed offensive exhausted Germany's last reserves and hastened the end of the war in Europe.",
+    "fact": "When the Germans demanded the surrender of Bastogne during the Battle of the Bulge, Brigadier General McAuliffe's famous one-word reply was 'NUTS!' The confused German officers had to ask what it meant."
+  },
+  "25": {
+    "name": "Battle of Iwo Jima",
+    "description": "Over 70,000 US Marines fought to capture the heavily fortified volcanic island of Iwo Jima from 21,000 entrenched Japanese defenders. The battle produced some of the fiercest fighting in the Pacific War, with nearly 7,000 Marines killed and virtually the entire Japanese garrison wiped out. The iconic photograph of Marines raising the flag on Mount Suribachi became one of the most famous images of World War II.",
+    "fact": "Of the nearly 21,000 Japanese defenders on Iwo Jima, only 216 were taken prisoner. The rest fought to the death or took their own lives, a testament to the fanatical resistance American forces faced."
+  },
+  "26": {
+    "name": "Battle of Borodino",
+    "description": "The bloodiest day of the Napoleonic Wars saw Napoleon's Grande Armée clash with Kutuzov's Russian army in a brutal frontal battle with over 70,000 casualties. Napoleon captured the battlefield but failed to destroy the Russian army, which withdrew in good order. He marched on to Moscow only to find it abandoned and burning, beginning the catastrophic retreat that would destroy his Grande Armée.",
+    "fact": "During the retreat from Moscow after Borodino, starving French soldiers discovered that Russia's vast distances and scorched-earth tactics were deadlier than any army they had faced."
+  },
+  "27": {
+    "name": "Battle of Salamis",
+    "description": "Themistocles lured Xerxes' massive Persian fleet into the narrow straits of Salamis, where their numerical advantage became a liability. The more maneuverable Greek triremes rammed and sank Persian ships in the confined waters while Xerxes watched helplessly from his golden throne ashore. The decisive Greek victory ended the Persian naval threat and saved Greek civilization from conquest.",
+    "fact": "Xerxes reportedly had the Hellespont sea whipped 300 times as punishment after a storm destroyed his first bridge of boats, demonstrating the megalomania that would contribute to his defeat at Salamis."
+  },
+  "28": {
+    "name": "Battle of Alesia",
+    "description": "Caesar besieged the Gallic stronghold of Alesia by building an extraordinary double ring of fortifications—one facing inward to contain Vercingetorix's army, and another facing outward to defend against a massive Gallic relief force. Trapped between two armies, Caesar's legions held both lines and defeated both forces. Vercingetorix surrendered, ending major Gallic resistance and securing Rome's conquest of Gaul.",
+    "fact": "Caesar's siege works at Alesia totaled about 18 kilometers of fortifications facing inward and 21 kilometers facing outward, all built in approximately three weeks by his engineering-savvy legions."
+  },
+  "29": {
+    "name": "Battle of Bunker Hill",
+    "description": "Colonial militia fortified Breed's Hill (near Bunker Hill) overlooking British-held Boston, forcing a direct assault. The defenders repulsed two British charges before running out of ammunition during the third. Though the British captured the position, they suffered over 1,000 casualties—nearly half their attacking force. The battle proved that untrained colonists could stand against professional British soldiers and boosted American morale.",
+    "fact": "The famous order 'Don't fire until you see the whites of their eyes' at Bunker Hill was likely given because the Americans were critically short on gunpowder and needed every shot to count."
+  },
+  "30": {
+    "name": "Battle of Tsushima",
+    "description": "Admiral Togo's Japanese fleet annihilated the Russian Baltic Fleet, which had sailed 18,000 miles over seven months to reach the Pacific. In one of the most lopsided naval battles in history, Japan sank 21 Russian ships while losing only 3 torpedo boats. The stunning victory marked Japan's emergence as a world power, ended the Russo-Japanese War, and signaled the decline of European dominance in Asia.",
+    "fact": "The Russian Baltic Fleet took seven months to sail 18,000 miles to reach Tsushima, and many crewmen had never fired their guns in practice before the battle began."
+  },
+  "31": {
+    "name": "Battle of Kadesh",
+    "description": "Ramesses II led his Egyptian army against the Hittite forces of Muwatalli II near the city of Kadesh on the Orontes River. The Egyptians were ambushed when Hittite chariots struck their divided columns, nearly capturing the pharaoh himself. Ramesses rallied his forces and fought to a stalemate. The battle led to the earliest known international peace treaty, the Egyptian-Hittite peace accord.",
+    "fact": "The Battle of Kadesh produced history's first known peace treaty. A copy of this Egyptian-Hittite treaty hangs in the United Nations headquarters in New York as a symbol of diplomacy."
+  },
+  "32": {
+    "name": "Battle of Megiddo",
+    "description": "Pharaoh Thutmose III led his army through the narrow Aruna Pass to surprise a coalition of Canaanite rulers led by the King of Kadesh near the fortress city of Megiddo. The bold move through the dangerous pass caught the Canaanites off guard. After defeating the coalition in the field, the Egyptians besieged Megiddo for seven months before it fell. The victory established Egyptian dominance over the Levant for generations. The site later gave its name to the biblical concept of Armageddon.",
+    "fact": "Megiddo's ancient name gave us the word 'Armageddon' (Har Megiddo, meaning 'Mount of Megiddo'), where the Bible prophesies the final battle between good and evil will take place."
+  },
+  "33": {
+    "name": "Battle of Pelusium",
+    "description": "The Persian king Cambyses II invaded Egypt and met the forces of Pharaoh Psamtik III at Pelusium, the fortress guarding the eastern Nile Delta. Ancient sources claim the Persians placed cats and other animals sacred to the Egyptians on their shields, causing the defenders to hesitate. The Egyptians were routed, and Memphis fell shortly after. Egypt became a Persian satrapy, ending the 26th Dynasty and beginning centuries of foreign domination.",
+    "fact": "The Persian use of cats as shields at Pelusium exploited the Egyptian reverence for the cat-goddess Bastet. Harming a cat in ancient Egypt could carry the death penalty."
+  },
+  "34": {
+    "name": "Battle of the Delta",
+    "description": "Ramesses III prepared a brilliant defense against the Sea Peoples, a mysterious confederation of maritime raiders who had already destroyed the Hittite Empire and ravaged the Levant. He lured their fleet into the mouths of the Nile, where Egyptian archers on the riverbanks and Egyptian warships attacked from all sides. The Sea Peoples' ships were capsized and their warriors slaughtered. This victory saved Egypt from the collapse that engulfed the rest of the Bronze Age eastern Mediterranean.",
+    "fact": "The identity of the 'Sea Peoples' defeated at the Delta remains one of the greatest unsolved mysteries of ancient history. Scholars have proposed origins from Sardinia, Sicily, Anatolia, and even mainland Greece."
+  },
+  "35": {
+    "name": "Battle of Carchemish",
+    "description": "Crown Prince Nebuchadnezzar II of Babylon led his forces against the combined Egyptian army of Pharaoh Necho II and the remnants of the Assyrian Empire at Carchemish on the Euphrates. The Egyptians had marched north to prop up what remained of Assyria as a buffer state against Babylon. Nebuchadnezzar's decisive victory destroyed the Assyro-Egyptian alliance and established Babylonian supremacy over the entire Near East, including the Levant.",
+    "fact": "Nebuchadnezzar had to rush home from Carchemish when his father died, reportedly riding across the desert with a small escort to claim the Babylonian throne before any rivals could act."
+  },
+  "36": {
+    "name": "Siege of Lachish",
+    "description": "The Assyrian king Sennacherib besieged Lachish, the second most important city in the Kingdom of Judah, as part of his campaign against King Hezekiah. The Assyrians constructed a massive siege ramp, still visible today, and used battering rams to breach the walls. The city fell after fierce resistance, and its inhabitants were killed or deported. Sennacherib was so proud of this conquest that he commissioned elaborate stone reliefs depicting the siege for his palace at Nineveh, providing one of the most detailed visual records of ancient warfare.",
+    "fact": "The Assyrian siege ramp at Lachish, built of thousands of tons of stone and earth, is still visible today and is one of the best-preserved examples of ancient siege engineering anywhere in the world."
+  },
+  "37": {
+    "name": "Fall of Nineveh",
+    "description": "A coalition of Babylonians under Nabopolassar and Medes under Cyaxares besieged Nineveh, the magnificent capital of the Assyrian Empire. After three months, unusually heavy rains caused the Tigris to flood and breach a section of the massive city walls. The allies stormed through the gap and sacked the city. The Assyrian king Sin-shar-ishkun perished in the flames of his palace. The fall of Nineveh ended the Assyrian Empire, which had terrorized the Near East for centuries.",
+    "fact": "The flooding of the Tigris that breached Nineveh's walls fulfilled a prophecy in the Book of Nahum, which predicted the city would be destroyed 'with an overrunning flood.'"
+  },
+  "38": {
+    "name": "Fall of Babylon",
+    "description": "Cyrus the Great of Persia captured Babylon, one of the ancient world's greatest cities, from King Nabonidus. According to the Greek historian Herodotus, the Persians diverted the Euphrates River, which flowed under the city walls, and entered along the dry riverbed while the Babylonians celebrated a festival. Cyrus presented himself as a liberator chosen by Babylon's god Marduk. He freed the captive Jewish population, earning praise in the Hebrew Bible. The Cyrus Cylinder, found in Babylon, is sometimes called the first declaration of human rights.",
+    "fact": "The Cyrus Cylinder, found in the ruins of Babylon, records Cyrus's decree freeing captive peoples and is sometimes called the world's first charter of human rights."
+  },
+  "39": {
+    "name": "Battle of Qarqar",
+    "description": "Shalmaneser III of Assyria led his army westward and was confronted at Qarqar by a coalition of twelve Levantine kingdoms, including Damascus under Hadadezer, Israel under King Ahab (who contributed 2,000 chariots), and Hamath. Though Shalmaneser claimed victory in his royal inscriptions, the fact that he withdrew and did not campaign in the region again for several years suggests the battle was at best a stalemate. It is notable as one of the earliest battles corroborating biblical figures through Assyrian records.",
+    "fact": "King Ahab of Israel contributed 2,000 chariots to the coalition at Qarqar, the largest chariot force of any single allied king, suggesting Israel was far wealthier than the Bible implies."
+  },
+  "40": {
+    "name": "Battle of Raphia",
+    "description": "Ptolemy IV Philopator of Egypt faced Antiochus III of the Seleucid Empire at Raphia in one of the largest battles of the Hellenistic world, with over 150,000 soldiers engaged. The battle featured a clash between African forest elephants on the Egyptian side and larger Indian elephants on the Seleucid side. Crucially, Ptolemy armed 20,000 native Egyptians as phalanx infantry, and their performance proved decisive. The Ptolemaic victory preserved Egyptian control of Coele-Syria, but the empowerment of native Egyptian soldiers led to internal revolts that would weaken the dynasty.",
+    "fact": "At Raphia, the smaller African forest elephants on the Egyptian side panicked and fled when they encountered the larger Indian elephants fighting for the Seleucids, causing chaos in the Egyptian lines."
+  },
+  "41": {
+    "name": "Siege of Tyre",
+    "description": "Alexander the Great besieged the island city of Tyre, which sat half a mile offshore and was considered impregnable. When the Tyrians refused to submit, Alexander ordered the construction of a massive causeway from the mainland to the island. Despite Tyrian fire ships, naval attacks, and desperate resistance over seven months, Alexander completed the causeway and breached the walls. The city was sacked and 30,000 inhabitants were sold into slavery. The causeway permanently connected Tyre to the mainland, where it remains a peninsula to this day.",
+    "fact": "The causeway Alexander built to reach the island of Tyre permanently changed the geography of the coastline. What was once an island is now a peninsula connected to the mainland."
+  },
+  "42": {
+    "name": "Battle of Gaugamela",
+    "description": "Alexander the Great faced Darius III's massive Persian army on a plain near Gaugamela that Darius had leveled to give his scythed chariots and cavalry maximum advantage. Despite being vastly outnumbered, Alexander executed a brilliant oblique attack, drawing the Persian left flank out of position before leading his Companion cavalry in a devastating charge directly at Darius. The Persian king fled, and his army collapsed. The victory gave Alexander control of Babylon, Susa, and Persepolis, ending the Achaemenid Empire that had ruled the Near East for over two centuries.",
+    "fact": "Darius III had the battlefield at Gaugamela specially leveled and cleared of obstacles to maximize his chariot advantage, but Alexander simply avoided the prepared ground during his decisive charge."
+  },
+  "43": {
+    "name": "Battle of Issus",
+    "description": "Alexander the Great confronted Darius III of Persia on a narrow coastal plain near the town of Issus in southern Asia Minor. The confined terrain between the mountains and the sea neutralized the Persians' vast numerical advantage. Alexander led his Companion cavalry in a charge directly at Darius, who panicked and fled the battlefield, abandoning his mother, wife, and children. The victory opened the way to the Levant and Egypt, and the captured Persian royal family was treated with great respect by Alexander.",
+    "fact": "After Issus, Alexander treated Darius's captured mother, wife, and daughters with such respect that Darius's mother Sisygambis reportedly refused to mourn Darius when he later died, considering Alexander her true son."
+  },
+  "44": {
+    "name": "Battle of Actium",
+    "description": "Octavian's fleet, commanded by Agrippa, confronted the combined naval forces of Mark Antony and Cleopatra VII at Actium. Antony's larger but poorly crewed ships were outmaneuvered by Octavian's lighter, more agile fleet. When Cleopatra's squadron broke through and fled toward Egypt, Antony abandoned his fleet to follow her. The remaining forces surrendered. The victory made Octavian the sole ruler of the Roman world, and Egypt became a Roman province, ending the Ptolemaic dynasty and the last independent kingdom of the ancient Near East.",
+    "fact": "Cleopatra's flight from Actium may not have been cowardice. Some historians believe it was a pre-arranged plan to break through with the war chest and escape to Egypt."
+  },
+  "45": {
+    "name": "Siege of Jerusalem",
+    "description": "Nebuchadnezzar II of Babylon besieged Jerusalem after King Zedekiah of Judah rebelled against Babylonian authority. After an 18-month siege, the city walls were breached and the Babylonians sacked the city. Solomon's Temple, the spiritual center of the Jewish people, was completely destroyed. Zedekiah was captured, forced to watch his sons' execution, then blinded and taken in chains to Babylon. The elite of Judah were deported to Babylon in what became known as the Babylonian Exile, one of the defining events in Jewish history.",
+    "fact": "The Babylonian Exile that followed the siege of Jerusalem lasted roughly 70 years and fundamentally transformed Judaism, leading to the compilation of much of the Hebrew Bible as we know it."
+  },
+  "46": {
+    "name": "Battle of Thymbra",
+    "description": "Cyrus the Great of Persia faced King Croesus of Lydia, one of the wealthiest rulers of the ancient world, on the plain of Thymbra near the Lydian capital of Sardis. Cyrus placed camels at the front of his formation, knowing that their unfamiliar scent would panic the Lydian horses. The tactic worked brilliantly, throwing the feared Lydian cavalry into chaos. Croesus retreated to Sardis, which fell after a brief siege. According to Herodotus, Croesus had consulted the Oracle at Delphi before the war and was told that if he attacked Persia, he would destroy a great empire. The empire destroyed was his own.",
+    "fact": "King Croesus of Lydia is credited with inventing the first standardized gold and silver coins. His proverbial wealth gave rise to the expression 'rich as Croesus.'"
+  },
+  "47": {
+    "name": "Battle of Opis",
+    "description": "Cyrus the Great confronted the Babylonian army under Nabonidus's son Belshazzar at the strategic city of Opis on the Tigris River. The Persians won a decisive victory, and the defeat shattered Babylonian morale. The nearby city of Sippar surrendered without a fight, and Babylon itself fell shortly afterward with minimal resistance. The battle effectively ended the Neo-Babylonian Empire and brought all of Mesopotamia under Persian control, creating the largest empire the world had yet seen.",
+    "fact": "The Battle of Opis opened the road to Babylon, which fell so quickly afterward that according to the ancient sources, some parts of the city did not even know it had been captured."
+  },
+  "48": {
+    "name": "Siege of Avaris",
+    "description": "Pharaoh Ahmose I besieged and captured Avaris, the capital of the Hyksos, a foreign dynasty of likely Canaanite origin that had ruled Lower Egypt for over a century. The Hyksos had introduced the horse-drawn chariot and composite bow to Egypt, technologies the Egyptians now turned against them. The fall of Avaris reunified Egypt under native rule and inaugurated the New Kingdom, the most powerful and prosperous era of ancient Egyptian civilization. Ahmose pursued the Hyksos into southern Canaan, establishing Egyptian influence in the Levant.",
+    "fact": "The Hyksos, expelled from Avaris, had actually introduced several military innovations to Egypt including the composite bow, horse-drawn chariot, and improved bronze weapons that Egypt then used to build an empire."
+  },
+  "49": {
+    "name": "Battle of Djahy",
+    "description": "Ramesses III met the Sea Peoples in a decisive land battle at Djahy on the Levantine coast, complementing his naval victory at the Nile Delta. The Sea Peoples advanced overland with ox carts carrying their families, suggesting a mass migration rather than a simple raid. Egyptian chariots and archers devastated the invaders' columns. Combined with the naval Battle of the Delta, this victory halted the Sea Peoples' advance and preserved Egypt as the sole surviving great power of the Late Bronze Age, while the rest of the eastern Mediterranean descended into a dark age.",
+    "fact": "The Sea Peoples at Djahy traveled with ox carts carrying their entire families, suggesting this was a mass migration of whole populations rather than a military raid."
+  },
+  "50": {
+    "name": "Nubian Campaign of Thutmose I",
+    "description": "Thutmose I launched an aggressive military campaign into Nubia, pushing further south along the Nile than any previous pharaoh. He sailed past the dangerous Second Cataract and fought his way to the Third Cataract, deep into the territory of the Kushite kingdom. The pharaoh personally killed the Nubian chief in battle, and his body was hung from the bow of the royal ship as a warning. Thutmose established a new southern frontier and built fortresses to consolidate Egyptian control over Nubian gold mines, which would fund Egypt's imperial expansion for centuries.",
+    "fact": "Thutmose I was so proud of killing the Nubian chief that he hung the body from the prow of his royal ship for the entire journey back to Egypt as a trophy and warning."
+  },
+  "51": {
+    "name": "Battle of Ulai",
+    "description": "Ashurbanipal of Assyria sent his army against the Elamite kingdom, and the two forces clashed at the Ulai River in a catastrophically one-sided battle. The Elamite king Teumman was killed and beheaded during the rout. Ashurbanipal's palace reliefs at Nineveh graphically depict the river choked with Elamite corpses and the king's severed head being carried in triumph. In one famous relief panel, Ashurbanipal and his queen dine in a garden with Teumman's head hanging from a nearby tree. The battle broke Elamite power and is one of the most vividly documented battles of the ancient world.",
+    "fact": "Ashurbanipal's palace reliefs of the Battle of Ulai are so detailed that scholars can identify individual Elamite nobles and trace the sequence of the battle from panel to panel."
+  },
+  "52": {
+    "name": "Sack of Babylon by Sennacherib",
+    "description": "After years of Babylonian revolts, Sennacherib of Assyria lost patience and ordered the complete destruction of Babylon, one of the most ancient and revered cities in Mesopotamia. His army razed the city's walls, temples, and palaces, then diverted canals to flood the ruins. The destruction of Babylon, especially its sacred temples, shocked the ancient world and was considered an act of supreme sacrilege. Many Assyrians believed that the subsequent murder of Sennacherib by his own sons was divine punishment for destroying the holy city. His successor Esarhaddon would later rebuild Babylon to atone for the crime.",
+    "fact": "Sennacherib's destruction of Babylon was considered so sacrilegious that his own son Esarhaddon later spent years rebuilding the city to atone for his father's crime against the gods."
+  },
+  "53": {
+    "name": "Battle of Halule",
+    "description": "Sennacherib of Assyria faced a massive coalition of Babylonians, Elamites, Chaldeans, and Aramaean tribes at Halule on the Tigris River. It was one of the largest battles in Mesopotamian history. Sennacherib's inscriptions claim a great victory with rivers of enemy blood, but the fact that Babylon remained independent after the battle suggests the outcome was less decisive than claimed. The inconclusive result frustrated Sennacherib so deeply that two years later he would take the drastic step of completely destroying Babylon.",
+    "fact": "Both sides at Halule claimed victory in their official records, making it one of the earliest examples of competing propaganda narratives about the same battle in ancient history."
+  },
+  "54": {
+    "name": "Siege of Memphis",
+    "description": "Esarhaddon of Assyria crossed the Sinai Desert and invaded Egypt, besieging and capturing Memphis, the ancient capital. Pharaoh Taharqa of the Nubian 25th Dynasty fled south to Upper Egypt. The conquest of Memphis brought Egypt under Assyrian control for the first time, uniting the two oldest civilizations of the Near East under one empire. Esarhaddon erected a victory stele showing Taharqa's son in chains. However, Assyrian control over Egypt proved difficult to maintain, and Taharqa would later recapture Memphis, forcing Esarhaddon's successor Ashurbanipal to invade Egypt again.",
+    "fact": "Esarhaddon's conquest of Memphis was the first and only time Assyria and Egypt, the two oldest civilizations of the Near East, were united under a single ruler."
+  },
+  "55": {
+    "name": "Fall of Ur",
+    "description": "The great Sumerian city of Ur, capital of the Third Dynasty of Ur and one of the world's oldest cities, fell to a combined assault by Elamites from the east and Amorite nomads from the west. King Ibbi-Sin, the last Sumerian king, was captured and taken in chains to Elam, where he died in captivity. The destruction of Ur ended Sumerian political power forever, though Sumerian culture and language survived as a scholarly tradition. The fall inspired the 'Lament for Ur,' one of the oldest and most moving works of literature, describing the goddess Ningal weeping over her destroyed city.",
+    "fact": "The 'Lament for Ur,' composed after the city's fall, is one of the oldest surviving works of literature and describes the goddess Ningal weeping over the ruins in heartbreaking poetic verse."
+  },
+  "56": {
+    "name": "Battle of Plataea",
+    "description": "The combined Greek army, led by the Spartan regent Pausanias, decisively defeated the Persian forces of Mardonius at Plataea. This was the final major land battle of the second Persian invasion of Greece. The Persian commander Mardonius was killed and his army routed, effectively ending Xerxes' ambitions to conquer Greece and securing Greek independence for generations.",
+    "fact": "After the Greek victory at Plataea, the allied Greeks swore an oath never to rebuild the temples destroyed by the Persians, leaving them as monuments to Persian sacrilege for decades."
+  },
+  "57": {
+    "name": "Battle of Leuctra",
+    "description": "Epaminondas of Thebes revolutionized Greek warfare by massing his left wing fifty ranks deep against the Spartan right, while refusing his weaker right wing. This oblique order shattered the supposedly invincible Spartan phalanx and killed King Cleombrotus. The victory ended Spartan military supremacy in Greece forever and established Thebes as the leading Greek power.",
+    "fact": "Epaminondas's oblique order at Leuctra was so revolutionary that it influenced military tactics for over two thousand years, directly inspiring Frederick the Great's tactics at Leuthen in 1757."
+  },
+  "58": {
+    "name": "Battle of the Granicus",
+    "description": "Alexander the Great fought his first major battle against the Persian Empire at the Granicus River in Asia Minor. Leading his Companion cavalry personally across the river, Alexander nearly died in fierce hand-to-hand combat with Persian nobles. The decisive Macedonian victory opened all of Asia Minor to Alexander's conquest and signaled the beginning of the end for the Achaemenid Persian Empire.",
+    "fact": "Alexander nearly died at the Granicus when a Persian nobleman's sword blow split his helmet. He was only saved when his companion Cleitus the Black cut off the Persian's arm mid-swing."
+  },
+  "59": {
+    "name": "Battle of Pharsalus",
+    "description": "Caesar's veteran legions faced Pompey's numerically superior army in the decisive battle of their civil war. Caesar placed a hidden fourth line of infantry to counter Pompey's cavalry, which routed after the unexpected attack. Pompey fled to Egypt where he was murdered. The victory made Caesar the undisputed master of the Roman Republic and set the stage for the fall of the Republic.",
+    "fact": "Before Pharsalus, Caesar ordered his infantry to use their javelins to stab at the faces of Pompey's aristocratic young cavalry, knowing they would flinch to protect their looks. The tactic worked perfectly."
+  },
+  "60": {
+    "name": "Battle of Lake Trasimene",
+    "description": "Hannibal executed the largest ambush in military history, hiding his army in the hills above Lake Trasimene and springing the trap on the Roman consul Flaminius as his legions marched along the narrow lakeside road. Dense morning fog concealed the Carthaginian forces until they struck. The entire Roman army of roughly 25,000 was killed or captured in just three hours, including the consul himself.",
+    "fact": "Lake Trasimene was such a complete surprise that many Roman soldiers were killed while still trying to put on their armor, and some drowned in the lake trying to escape."
+  },
+  "61": {
+    "name": "Battle of Cynoscephalae",
+    "description": "The Roman legions under Titus Quinctius Flamininus defeated Philip V of Macedon's phalanx at the hills called Cynoscephalae. The uneven terrain disrupted the rigid Macedonian phalanx, while the flexible Roman manipular system adapted and exploited gaps in the formation. The victory established Roman dominance over Greece and demonstrated the tactical superiority of the legion over the phalanx on broken ground.",
+    "fact": "The victory at Cynoscephalae was partly won by an unnamed Roman tribune who, on his own initiative, took twenty maniples and attacked the Macedonian phalanx from behind."
+  },
+  "62": {
+    "name": "Battle of Adrianople",
+    "description": "Gothic cavalry smashed into the exposed flanks of Emperor Valens' Roman legions, annihilating two-thirds of the Roman army. Emperor Valens himself was killed and his body was never found. The battle is often cited as the beginning of the end for the Western Roman Empire, demonstrating the rising dominance of heavy cavalry over infantry and the growing threat of barbarian peoples to Rome.",
+    "fact": "Emperor Valens's body was never found after Adrianople. One account claims he was carried wounded to a farmhouse that the Goths then set on fire, not knowing the emperor was inside."
+  },
+  "63": {
+    "name": "Battle of the Catalaunian Plains",
+    "description": "The Roman general Aetius forged an alliance with the Visigoths and other Germanic tribes to halt Attila the Hun's devastating invasion of Gaul. In one of the last great battles of the Western Roman Empire, the coalition forced Attila to retreat after a bloody stalemate. Though the Visigothic king Theodoric was killed, the battle saved Western Europe from Hun domination and marked the high-water mark of Attila's conquests.",
+    "fact": "The Visigothic King Theodoric I was killed at the Catalaunian Plains, but his death was not discovered until after the battle when his body was found buried under a pile of corpses."
+  },
+  "64": {
+    "name": "Battle of Pydna",
+    "description": "The Roman consul Lucius Aemilius Paullus defeated King Perseus of Macedon in a battle that ended the Antigonid dynasty and Macedonian independence. As the Macedonian phalanx advanced over uneven ground, gaps opened in the formation. Roman legionaries charged into these gaps with their short swords, where the long sarissa pikes were useless at close quarters. Over 20,000 Macedonians were killed in under an hour.",
+    "fact": "After Pydna, the Roman consul Aemilius Paullus wept at the sight of the defeated King Perseus, reportedly reflecting on the fragility of human fortune and the fickleness of fate."
+  },
+  "65": {
+    "name": "Siege of Syracuse",
+    "description": "The Roman siege of Syracuse is famous for the ingenious defensive machines designed by the mathematician Archimedes, including giant claws that lifted ships from the water and catapults of extraordinary range. The city held out for over two years against Roman forces under Marcellus. When the city finally fell, Archimedes was killed by a Roman soldier, allegedly while drawing geometric figures in the sand.",
+    "fact": "When Syracuse finally fell, the Roman commander Marcellus reportedly wept at the beauty of the city he was about to sack. He had given specific orders to spare Archimedes, but a soldier killed him anyway."
+  },
+  "66": {
+    "name": "Battle of the Milvian Bridge",
+    "description": "Constantine defeated his rival Maxentius at the Milvian Bridge over the Tiber River, just outside Rome. According to legend, Constantine saw a cross of light in the sky with the words 'In this sign, conquer' before the battle and ordered his soldiers to mark their shields with the Christian chi-rho symbol. Maxentius drowned in the Tiber while fleeing. The victory led Constantine to issue the Edict of Milan, legalizing Christianity throughout the Roman Empire.",
+    "fact": "Constantine's vision of the cross before the Milvian Bridge, whether genuine or political invention, altered the course of Western civilization by linking Roman imperial power to Christianity."
+  },
+  "67": {
+    "name": "Battle of Chaeronea",
+    "description": "Philip II of Macedon crushed the combined armies of Athens and Thebes at Chaeronea, ending Greek city-state independence forever. The eighteen-year-old Alexander commanded the left wing and led the Companion cavalry charge that annihilated the Theban Sacred Band. The victory made Philip the master of Greece and set the stage for Alexander's later conquest of the Persian Empire.",
+    "fact": "After Chaeronea, Philip II erected a stone lion over the mass grave of the Theban Sacred Band. When excavated in 1890, 254 skeletons were found arranged in seven orderly rows."
+  },
+  "68": {
+    "name": "Battle of the Trebia",
+    "description": "Hannibal lured the impetuous Roman consul Sempronius into crossing the freezing Trebia River at dawn, forcing the Romans to fight cold, wet, and hungry. While his infantry held the Roman center, Hannibal's brother Mago sprang from concealment with 2,000 soldiers and attacked the Roman rear. The Roman army was virtually destroyed, marking Hannibal's first great victory on Italian soil after his famous crossing of the Alps.",
+    "fact": "At the Trebia, Hannibal had his brother Mago and 2,000 men hide in a ravine overnight. They were so well concealed that the Romans marched right past them before the trap was sprung."
+  },
+  "69": {
+    "name": "Battle of the Metaurus",
+    "description": "The Roman consul Claudius Nero secretly marched his forces north to join his colleague Livius Salinator, catching Hasdrubal Barca's army by surprise at the Metaurus River. Hasdrubal had been marching south to reinforce his brother Hannibal. The Carthaginian army was annihilated and Hasdrubal was killed. The Romans catapulted Hasdrubal's severed head into Hannibal's camp, crushing his hope of receiving reinforcements.",
+    "fact": "After the Metaurus, the Romans catapulted Hasdrubal's severed head into Hannibal's camp. According to Livy, Hannibal looked at his brother's face and said 'I see the fate of Carthage.'"
+  },
+  "70": {
+    "name": "Battle of Zela",
+    "description": "Caesar swiftly defeated Pharnaces II of Pontus in a battle so quick and decisive that he described it with the famous phrase 'Veni, vidi, vici' — 'I came, I saw, I conquered.' Pharnaces had taken advantage of the Roman civil war to seize territories in Asia Minor. Caesar's veteran legions charged uphill and routed the Pontic army in about four hours, restoring Roman control of the region.",
+    "fact": "Caesar's dispatch to the Roman Senate about Zela, 'Veni, vidi, vici,' was not just a boast but a pointed insult to Pompey, who had taken far longer to subdue the same region years earlier."
+  },
+  "71": {
+    "name": "Battle of Carrhae",
+    "description": "Marcus Licinius Crassus, the richest man in Rome and member of the First Triumvirate, led seven legions into the Mesopotamian desert where they were annihilated by Parthian horse archers and cataphracts under Surena. The Parthian archers used the famous 'Parthian shot,' firing arrows while retreating, to devastate the trapped Romans. Crassus was killed, and according to legend, the Parthians poured molten gold down his throat to mock his legendary greed.",
+    "fact": "According to legend, the Parthians poured molten gold down Crassus's throat after Carrhae to mock his legendary greed. His head was then used as a prop in a performance of Euripides's play 'The Bacchae.'"
+  },
+  "72": {
+    "name": "Battle of Philippi",
+    "description": "The forces of Octavian and Mark Antony clashed with those of Caesar's assassins Brutus and Cassius in two engagements over three weeks at Philippi in Macedonia. Cassius, mistakenly believing the battle lost, committed suicide after the first engagement. Brutus was defeated in the second battle and also took his own life. The victory avenged Caesar's assassination and left Octavian and Antony as masters of the Roman world.",
+    "fact": "The ghost of Julius Caesar allegedly appeared to Brutus before Philippi, saying 'I shall meet you at Philippi.' Shakespeare immortalized this encounter in his play."
+  },
+  "73": {
+    "name": "Siege of Masada",
+    "description": "After the fall of Jerusalem in 70 CE, nearly a thousand Jewish Zealots held out atop the seemingly impregnable desert fortress of Masada for three years. The Roman Tenth Legion besieged them, building an enormous earth ramp up the cliff face. When the Romans finally breached the walls, they found that the defenders had chosen to take their own lives rather than be enslaved. Masada became an enduring symbol of resistance and determination.",
+    "fact": "The Roman siege ramp at Masada, built by Jewish slaves, still stands today and is one of the best-preserved Roman military structures in the world."
+  },
+  "74": {
+    "name": "Battle of Bannockburn",
+    "description": "Robert the Bruce's Scottish army defeated a far larger English force under Edward II near Stirling Castle. The Scots used dense spear formations called schiltrons and chose boggy terrain that neutralized English heavy cavalry. The decisive victory secured Scottish independence for centuries and cemented Bruce's place as Scotland's greatest king. It remains one of the most celebrated battles in Scottish history.",
+    "fact": "Robert the Bruce allegedly gained inspiration for his fight for Scottish independence from watching a spider repeatedly try and fail to spin its web in a cave where he was hiding."
+  },
+  "75": {
+    "name": "Siege of Constantinople",
+    "description": "Sultan Mehmed II's Ottoman army besieged the Byzantine capital with over 80,000 troops and massive cannons that battered the ancient Theodosian Walls. Despite a heroic defense led by Emperor Constantine XI, the city fell on May 29, 1453, ending the Byzantine Empire and over a thousand years of Roman imperial continuity. The fall sent shockwaves through Christendom and marked the definitive end of the medieval era.",
+    "fact": "Mehmed II was only 21 years old when he conquered Constantinople. He had his engineers cast the largest cannon ever built, so massive it required 60 oxen and 200 men to transport."
+  },
+  "76": {
+    "name": "Battle of Poitiers",
+    "description": "Edward the Black Prince's Anglo-Gascon army defeated a much larger French force and captured King John II of France on the battlefield. The English used hedgerows and vineyards to channel the French attacks, while longbowmen devastated the advancing knights. The capture of the French king led to an enormous ransom and the Treaty of Bretigny, temporarily giving England vast territories in France.",
+    "fact": "The ransom for King John II of France after Poitiers was set at 3 million gold ecus, roughly twice the annual revenue of the entire French crown, devastating France's economy for decades."
+  },
+  "77": {
+    "name": "Battle of Bouvines",
+    "description": "Philip II Augustus of France defeated a powerful coalition of the Holy Roman Emperor Otto IV, King John of England's allies, and the Count of Flanders in a single decisive battle. The victory cemented French royal power, led to John signing the Magna Carta under pressure from his barons, and ended Otto IV's claim to the imperial throne. Bouvines is considered one of the most consequential battles in medieval European history.",
+    "fact": "The Battle of Bouvines is one of the few medieval battles where the outcome directly led to a constitutional document: the English barons forced King John to sign the Magna Carta the following year."
+  },
+  "78": {
+    "name": "Battle of Hattin",
+    "description": "Saladin lured the Crusader army under King Guy of Lusignan away from water sources and trapped them on the barren Horns of Hattin. Exhausted by heat and thirst, the Crusaders were annihilated, and the True Cross was captured. The disaster left the Crusader states virtually defenseless, and Saladin recaptured Jerusalem within three months, prompting the Third Crusade.",
+    "fact": "Saladin offered Guy of Lusignan a cup of iced water after Hattin as a sign of mercy, but pointedly did not offer one to Raynald of Chatillon, whom Saladin then personally beheaded."
+  },
+  "79": {
+    "name": "Battle of Manzikert",
+    "description": "The Seljuk Turks under Sultan Alp Arslan defeated the Byzantine army and captured Emperor Romanos IV Diogenes in one of history's most consequential battles. The disaster shattered Byzantine military power in Anatolia, opening the peninsula to massive Turkish migration and settlement. The loss of Anatolia permanently weakened Byzantium and was a direct catalyst for the First Crusade two decades later.",
+    "fact": "Emperor Romanos IV was treated with surprising courtesy by Sultan Alp Arslan after his capture at Manzikert. The sultan reportedly said, 'I would have done the same as you if our roles were reversed.'"
+  },
+  "80": {
+    "name": "Battle of Legnano",
+    "description": "The Lombard League, an alliance of northern Italian city-states, defeated the army of Holy Roman Emperor Frederick Barbarossa. The Italian militia infantry rallied around their carroccio, a sacred ox-drawn war wagon, and repulsed Barbarossa's cavalry. The victory forced the emperor to recognize the independence of the Italian communes in the Peace of Constance and demonstrated that well-organized infantry could defeat feudal cavalry.",
+    "fact": "The carroccio, or war wagon, defended at Legnano was a sacred ox-drawn cart bearing the city's standard and an altar with a priest. Its capture meant utter dishonor for the city."
+  },
+  "81": {
+    "name": "Battle of Towton",
+    "description": "Fought in a blinding snowstorm near the village of Towton in Yorkshire, this was the bloodiest battle ever fought on English soil, with estimates of up to 28,000 killed. The Yorkists used the driving snow to their advantage, as Lancastrian archers fired into the wind and fell short. Edward of York's decisive victory made him King Edward IV and was the defining moment of the Wars of the Roses.",
+    "fact": "Archaeological excavations of a mass grave at Towton revealed skulls with up to thirteen separate blade wounds, showing the extraordinary brutality of medieval close combat."
+  },
+  "82": {
+    "name": "Siege of Acre",
+    "description": "The Crusader siege of Acre was one of the most dramatic engagements of the Third Crusade, lasting nearly two years. The besieging Crusaders were themselves encircled by Saladin's relief army, creating a remarkable double siege. The arrival of Richard the Lionheart and Philip II of France turned the tide, and the city fell in July 1191. The capture of Acre gave the Crusaders a vital port and base of operations in the Holy Land.",
+    "fact": "The Siege of Acre featured one of history's most unusual double sieges: the Crusaders besieged the city while Saladin's army besieged the Crusaders, creating a ring within a ring."
+  },
+  "83": {
+    "name": "Battle of Muret",
+    "description": "Simon de Montfort led a daring cavalry charge from the town of Muret with fewer than 1,000 knights against a combined army of perhaps 30,000 under King Peter II of Aragon and the Counts of Toulouse and Foix. Peter II was killed in the fighting, and his army disintegrated. The victory secured the Albigensian Crusade's success, destroyed Cathar hopes for Aragonese protection, and ultimately brought southern France under the French crown.",
+    "fact": "Simon de Montfort had fewer than 1,000 knights at Muret yet defeated an army of perhaps 30,000, making it one of the most lopsided cavalry victories in medieval history."
+  },
+  "84": {
+    "name": "Battle of Las Navas de Tolosa",
+    "description": "A grand coalition of the Christian kingdoms of Castile, Aragon, and Navarre, supported by crusaders from across Europe, defeated the Almohad Caliphate in a battle that broke Muslim military power in Iberia. The Almohad caliph's elite bodyguard, chained together to prevent retreat, were overwhelmed. The victory was the turning point of the Reconquista, leading to the rapid Christian conquest of Cordoba, Seville, and most of southern Spain within decades.",
+    "fact": "The Almohad caliph's elite bodyguard at Las Navas de Tolosa were literally chained together to prevent retreat. The Christian coalition had to hack through both the chains and the men."
+  },
+  "85": {
+    "name": "Battle of Tannenberg",
+    "description": "The combined Polish-Lithuanian army under King Wladyslaw II Jagiello and Grand Duke Vytautas decisively defeated the Teutonic Knights in one of medieval Europe's largest battles. The Teutonic Grand Master Ulrich von Jungingen was killed along with much of the Order's leadership. The victory broke the Teutonic Knights' power permanently and established the Polish-Lithuanian union as a major European power for centuries to come.",
+    "fact": "The Grand Master of the Teutonic Knights and most of the Order's senior leadership were killed at Tannenberg/Grunwald, effectively decapitating the organization in a single afternoon."
+  },
+  "86": {
+    "name": "Battle of Stirling Bridge",
+    "description": "William Wallace and Andrew de Moray ambushed an English army as it crossed the narrow bridge over the River Forth near Stirling. The English could only cross a few abreast, and the Scots attacked when roughly half the army had crossed, trapping them against the river. The English vanguard was annihilated, and the remainder fled. The stunning victory made Wallace Guardian of Scotland and a symbol of Scottish resistance.",
+    "fact": "After Stirling Bridge, the Scots reportedly flayed the skin from the English treasurer Hugh de Cressingham's body. William Wallace allegedly had a sword belt made from the skin."
+  },
+  "87": {
+    "name": "Battle of Nicopolis",
+    "description": "Sultan Bayezid I destroyed the last great Crusade of the Middle Ages when French and Burgundian knights charged recklessly into prepared Ottoman positions without waiting for their Hungarian allies. The undisciplined Crusader attack was repulsed, and the Ottoman counterattack routed the entire Christian army. Thousands of Crusader nobles were captured and held for ransom. The defeat ended any serious Western attempt to halt Ottoman expansion in the Balkans for decades.",
+    "fact": "The French knights at Nicopolis were so confident of easy victory that they reportedly argued over who would get to charge first, completely ignoring tactical coordination with their Hungarian allies."
+  },
+  "88": {
+    "name": "Battle of Lechfeld",
+    "description": "King Otto I of Germany gathered a large army and defeated the Magyars in a decisive battle on the Lechfeld plain near Augsburg. The Magyar raiding force was annihilated as it tried to retreat, ending half a century of devastating Hungarian raids into Western Europe. The victory established Otto as the dominant ruler in Europe and led to his coronation as Holy Roman Emperor in 962, founding the imperial tradition that lasted until 1806.",
+    "fact": "The captured Magyar leaders at Lechfeld were hanged, and Otto's victory was so complete that the Magyars abandoned raiding entirely and settled down to become the Christian Kingdom of Hungary."
+  },
+  "89": {
+    "name": "Battle of Clontarf",
+    "description": "High King Brian Boru's Irish army defeated a coalition of Vikings from Dublin, Orkney, and the Isle of Man, along with the rebellious Kingdom of Leinster, in fierce fighting near Dublin. The battle broke Viking power in Ireland but came at a terrible cost: Brian Boru was killed in his tent by fleeing Norse warriors after the battle was won. His death left Ireland without a strong central ruler, but the Viking age in Ireland was effectively over.",
+    "fact": "Brian Boru was over 70 years old at Clontarf and too elderly to fight, so he prayed in his tent during the battle. He was killed by fleeing Viking Brodir of Man, who stumbled upon the tent."
+  },
+  "90": {
+    "name": "Battle of Arsuf",
+    "description": "Richard the Lionheart marched his Crusader army south along the coast toward Jaffa while Saladin's forces constantly harassed them. At Arsuf, the Hospitaller knights, unable to endure further provocation, broke ranks and charged. Richard seized the moment and ordered a general cavalry charge that routed Saladin's army. The victory was one of the few times a Crusader army defeated Saladin in open battle and demonstrated Richard's superb tactical ability.",
+    "fact": "The Knights Hospitaller at Arsuf had endured hours of arrow fire and provocation before finally breaking ranks and charging without orders, forcing Richard the Lionheart to commit to a full-scale attack."
+  },
+  "91": {
+    "name": "Siege of Orléans",
+    "description": "Joan of Arc, a seventeen-year-old peasant girl claiming divine guidance, inspired the demoralized French army to break the English siege of Orléans in just nine days. Her arrival transformed French morale and led to a series of victories that turned the Hundred Years' War decisively in France's favor. The relief of Orléans paved the way for the coronation of Charles VII at Reims and began the process that would expel the English from France.",
+    "fact": "Joan of Arc was wounded by a crossbow bolt through the shoulder during the assault on Orleans but pulled the arrow out herself and returned to lead the attack."
+  },
+  "92": {
+    "name": "Battle of Kosovo",
+    "description": "Prince Lazar of Serbia and Sultan Murad I of the Ottoman Empire clashed on the Field of Blackbirds (Kosovo Polje) in a battle that killed both leaders. A Serbian knight, Miloš Obilić, assassinated Murad in his tent, and Lazar was captured and executed. Though the battle's immediate outcome was ambiguous, it led to Serbia's gradual absorption into the Ottoman Empire. Kosovo became the central myth of Serbian national identity, commemorated in epic poetry for centuries.",
+    "fact": "The Serbian knight Milos Obilic reportedly infiltrated Sultan Murad's tent and assassinated him with a hidden blade, one of the most famous acts of individual bravery in Balkan history."
+  },
+  "93": {
+    "name": "Battle of Stamford Bridge",
+    "description": "King Harold Godwinson force-marched his Saxon army north and caught the Viking invasion force of Harald Hardrada and Harold's own brother Tostig completely by surprise at Stamford Bridge. Legend tells of a single giant Viking berserker who held the bridge alone until an Englishman floated under it in a barrel and speared him from below. Both Hardrada and Tostig were killed, ending the Viking Age in England. Just three days later, Harold learned that William of Normandy had landed in the south.",
+    "fact": "The legendary Viking berserker at Stamford Bridge supposedly held the entire Saxon army at bay on the narrow bridge until an enterprising Englishman floated underneath in a barrel and speared him from below."
+  },
+  "94": {
+    "name": "Battle of Sluys",
+    "description": "Edward III's English fleet attacked the French navy, which had chained its ships together in the harbor of Sluys off the Flemish coast. English longbowmen decimated the packed French crews before English men-at-arms boarded the French vessels. The French fleet was virtually annihilated, with nearly 200 ships captured or sunk. The victory gave England naval supremacy in the English Channel for a generation and allowed the English to invade France at will during the early Hundred Years' War.",
+    "fact": "The French losses at Sluys were so catastrophic that it was said nobody dared tell King Philip VI of the disaster. Instead, the court jester reportedly said, 'The English cowards did not jump into the sea like our brave French.'"
+  },
+  "95": {
+    "name": "Battle of Yarmouk",
+    "description": "The Rashidun Caliphate's forces under Khalid ibn al-Walid decisively defeated a much larger Byzantine army near the Yarmouk River. The six-day battle ended Byzantine control over the Levant and opened the way for the rapid Arab conquest of Syria, Palestine, and Egypt. A devastating dust storm blinded the Byzantines during the final assault, turning retreat into catastrophe as thousands fell into the river gorge.",
+    "fact": "Khalid ibn al-Walid never lost a battle in his entire career and was given the title 'Sword of God.' His cavalry tactics at Yarmouk are still studied in military academies today."
+  },
+  "96": {
+    "name": "Battle of Badr",
+    "description": "The first major military engagement of the early Muslim community saw roughly 313 Muslims defeat a Meccan force of around 1,000 near the wells of Badr. The victory was a turning point for the nascent Islamic state in Medina, providing crucial legitimacy and resources. The battle is regarded in Islamic tradition as a divinely aided triumph and remains one of the most celebrated events in Islamic history.",
+    "fact": "The Battle of Badr was fought with such small numbers (roughly 313 Muslims against 1,000 Meccans) that many individual combats are recorded by name in Islamic historical sources."
+  },
+  "97": {
+    "name": "Siege of Baghdad",
+    "description": "Hulagu Khan's Mongol army besieged and sacked Baghdad, ending the five-century-old Abbasid Caliphate. The last Abbasid caliph, al-Musta'sim, was executed, and the city's legendary libraries, mosques, and hospitals were destroyed. According to accounts, the Tigris ran black with ink from the books thrown into it. The fall of Baghdad is widely considered one of the most catastrophic events in Islamic history, ending the Islamic Golden Age.",
+    "fact": "Scholars estimate that the Mongol sack of Baghdad destroyed libraries containing millions of manuscripts, setting back Islamic science and learning by centuries. The Tigris reportedly ran black with ink."
+  },
+  "98": {
+    "name": "Battle of Ain Jalut",
+    "description": "The Mamluk Sultanate of Egypt, led by Sultan Qutuz and his general Baybars, dealt the Mongol Empire its first significant defeat at Ain Jalut in the Jezreel Valley. The Mamluks used a feigned retreat to draw the Mongols into an ambush. The victory halted the Mongol westward advance and preserved Egypt and the remaining Islamic heartlands from Mongol conquest, marking a turning point in world history.",
+    "fact": "Ain Jalut means 'Spring of Goliath' in Arabic, and it is traditionally identified as the place where the young David slew the giant Goliath in the biblical narrative."
+  },
+  "99": {
+    "name": "Battle of Mohacs",
+    "description": "Sultan Suleiman the Magnificent's Ottoman army annihilated the Hungarian army under King Louis II in less than two hours. The young Hungarian king drowned in a swamp while fleeing the rout. The decisive Ottoman victory led to the partition of Hungary between the Ottomans, Habsburgs, and the Principality of Transylvania, fundamentally reshaping the political map of Central Europe for over 150 years.",
+    "fact": "King Louis II of Hungary was only 20 years old when he drowned fleeing Mohacs. His body armor dragged him under the water of a swollen stream as he tried to escape on horseback."
+  },
+  "100": {
+    "name": "Siege of Vienna",
+    "description": "Sultan Suleiman the Magnificent laid siege to Vienna, the capital of Habsburg Austria, in the Ottoman Empire's deepest thrust into central Europe. The defenders held out despite being heavily outnumbered, aided by autumn rains that bogged down Ottoman supply lines and rendered their heavy siege guns unusable. Suleiman withdrew after two weeks, marking the high-water mark of Ottoman expansion into Western Europe.",
+    "fact": "Suleiman's army at the 1529 Siege of Vienna was slowed by the worst autumn rains in memory, and his massive siege cannons had to be abandoned on the muddy roads of Hungary."
+  },
+  "101": {
+    "name": "Battle of Preveza",
+    "description": "The Ottoman fleet under the legendary admiral Hayreddin Barbarossa decisively defeated a combined Holy League fleet of Spanish, Venetian, and Papal ships near Preveza in western Greece. Barbarossa's superior tactics and seamanship routed the disorganized Christian coalition. The victory secured Ottoman naval supremacy in the Mediterranean for over three decades until the Battle of Lepanto in 1571.",
+    "fact": "Hayreddin Barbarossa started his career as a simple pirate from the island of Lesbos before becoming the most feared admiral in the Mediterranean and the Ottoman Empire's Grand Admiral."
+  },
+  "102": {
+    "name": "Battle of Chaldiran",
+    "description": "Sultan Selim I's Ottoman army, equipped with muskets and artillery, defeated Shah Ismail I's Safavid Persian cavalry at Chaldiran in eastern Anatolia. The battle demonstrated the superiority of gunpowder weapons against traditional mounted warfare. The victory established Ottoman control over eastern Anatolia and Kurdistan, and set the Ottoman-Safavid border that would largely persist for centuries, defining the Sunni-Shia geopolitical divide.",
+    "fact": "Shah Ismail was so shaken by his defeat at Chaldiran that he never personally led his armies in battle again and reportedly fell into a depression from which he never fully recovered."
+  },
+  "103": {
+    "name": "Battle of Varna",
+    "description": "Sultan Murad II emerged from retirement to face a Crusader army led by King Wladyslaw III of Poland and Hungary near Varna on the Bulgarian Black Sea coast. The young king launched a reckless cavalry charge into the Ottoman center and was killed, his head displayed on a pike. The decisive Ottoman victory ended the last serious Crusade aimed at driving the Ottomans from Europe and secured Ottoman dominance in the Balkans.",
+    "fact": "King Wladyslaw III's head was placed on a pike after Varna and paraded through Ottoman lands. His body was never identified, leading to legends that he had survived and was living in hiding."
+  },
+  "104": {
+    "name": "Battle of Ankara",
+    "description": "Timur (Tamerlane) crushed the Ottoman army and captured Sultan Bayezid I in one of the most consequential battles of the medieval period. Many Ottoman vassal troops defected to Timur during the battle, sealing Bayezid's defeat. The sultan reportedly died in captivity, and the Ottoman Empire plunged into a decade-long civil war known as the Ottoman Interregnum. The empire nearly collapsed but eventually recovered under Mehmed I.",
+    "fact": "The story that Bayezid I was kept in an iron cage by Timur after Ankara is likely a legend, but his captivity and humiliation were real. Some accounts say Timur used him as a footstool."
+  },
+  "105": {
+    "name": "Battle of Marj Dabiq",
+    "description": "Sultan Selim I's Ottoman army routed the Mamluk Sultanate's forces under Sultan al-Ghawri north of Aleppo. The Mamluks, who disdained firearms as dishonorable, were devastated by Ottoman artillery and musket fire. Al-Ghawri was killed during the battle amid mass defections from his own ranks. The victory gave the Ottomans control of Syria and opened the road to the conquest of Egypt and the holy cities of Mecca and Medina.",
+    "fact": "The Mamluk warriors at Marj Dabiq considered firearms to be a cowardly and dishonorable weapon, clinging to traditional cavalry combat even as Ottoman muskets and cannons mowed them down."
+  },
+  "106": {
+    "name": "Battle of Ridaniya",
+    "description": "Sultan Selim I's Ottoman army defeated the last Mamluk sultan, Tuman Bay II, outside Cairo, completing the Ottoman conquest of Egypt. The Mamluk Sultanate, which had ruled Egypt and the Levant for over 250 years, was extinguished. The victory gave the Ottomans control of the Islamic holy cities of Mecca and Medina, the lucrative spice trade routes, and the symbolic title of Caliph of Islam.",
+    "fact": "After conquering Egypt at Ridaniya, Selim I claimed the title of Caliph of Islam, transferring the spiritual leadership of Sunni Muslims from the Abbasids to the Ottoman dynasty."
+  },
+  "107": {
+    "name": "Siege of Rhodes",
+    "description": "Sultan Suleiman the Magnificent besieged the fortress of the Knights Hospitaller on Rhodes with an army of around 100,000 men. After a grueling five-month siege involving extensive mining and multiple assaults, the vastly outnumbered Knights negotiated an honorable surrender. Suleiman, impressed by their courage, allowed them to depart freely. The Knights eventually resettled on Malta, where they would face the Ottomans again in 1565.",
+    "fact": "When the Knights Hospitaller surrendered Rhodes, Suleiman was so impressed by their bravery that he personally watched them depart with full military honors and reportedly said he regretted driving such brave men from their home."
+  },
+  "108": {
+    "name": "Battle of Karbala",
+    "description": "Husayn ibn Ali, grandson of the Prophet Muhammad, and a small band of around 72 followers were surrounded and killed by thousands of Umayyad troops under Yazid I's orders on the plains of Karbala. The Umayyads had cut off Husayn's party from the Euphrates River, denying them water for days. Husayn's martyrdom became the foundational event of Shia Islam and created the deepest sectarian divide in the Muslim world, commemorated annually during Ashura.",
+    "fact": "The Battle of Karbala lasted only a few hours, but its impact on Islamic civilization has endured for over 1,300 years, creating the fundamental divide between Sunni and Shia Muslims."
+  },
+  "109": {
+    "name": "Battle of the Zab",
+    "description": "The Abbasid revolutionary army, marching under black banners, defeated the Umayyad Caliphate's forces under Caliph Marwan II at the Great Zab River in northern Iraq. The Umayyad army collapsed and Marwan fled, only to be hunted down and killed in Egypt. The Abbasids systematically exterminated the Umayyad dynasty and established a new caliphate centered on Baghdad, ushering in the Islamic Golden Age of learning and culture.",
+    "fact": "The Abbasid revolution used black as their color in contrast to the Umayyad white. The black banners of the Abbasids became so iconic that some Islamic prophecies reference 'armies with black banners from the east.'"
+  },
+  "110": {
+    "name": "Battle of Talas",
+    "description": "An Abbasid Arab army allied with Turkic Karluk warriors defeated a Tang Dynasty Chinese expeditionary force in the Talas River valley of Central Asia. The battle marked the westernmost extent of Chinese influence and secured Islamic dominance over Central Asia. Captured Chinese prisoners reportedly introduced papermaking technology to the Islamic world, revolutionizing communication and scholarship across the Middle East and eventually Europe.",
+    "fact": "Chinese prisoners captured at Talas reportedly taught their captors the secrets of papermaking, which then spread westward through the Islamic world and eventually to Europe, revolutionizing civilization."
+  },
+  "111": {
+    "name": "Battle of Panipat",
+    "description": "Babur, a descendant of both Timur and Genghis Khan, defeated Sultan Ibrahim Lodi's much larger Delhi Sultanate army using cannons, matchlock firearms, and innovative cart-based field fortifications. Despite being outnumbered roughly four to one, Babur's gunpowder weapons and tactical genius carried the day. The victory founded the Mughal Empire, which would rule most of the Indian subcontinent for over three centuries and create some of history's greatest architectural and cultural achievements.",
+    "fact": "Babur wrote detailed memoirs called the Baburnama, which contain one of the earliest firsthand accounts of India by a Central Asian conqueror and are considered a masterpiece of autobiographical literature."
+  },
+  "112": {
+    "name": "Siege of Malta",
+    "description": "The Knights of St. John, led by Grand Master Jean de Valette, defended Malta against an Ottoman invasion force of over 40,000 with a garrison of only about 6,000. The brutal four-month siege saw Fort St. Elmo fall after weeks of fighting, but the Knights held their remaining fortifications until a Christian relief force arrived from Sicily. The Ottoman withdrawal marked a significant check on Ottoman expansion in the western Mediterranean.",
+    "fact": "Fort St. Elmo at Malta was expected to fall in days but held for over a month. When it finally fell, the Ottoman commander reportedly looked at the larger fortifications still to be taken and said, 'If the child cost so much, what price will the parent exact?'"
+  },
+  "113": {
+    "name": "Battle of Mezokeresztes",
+    "description": "During the Long Turkish War, Sultan Mehmed III's Ottoman army faced a combined Habsburg and Transylvanian force at Mezokeresztes in Hungary. The Ottomans were on the verge of defeat when Habsburg troops broke ranks to loot the Ottoman camp, allowing the janissaries to counterattack and rout the disorganized Christian forces. The dramatic reversal turned a near-catastrophe into an Ottoman victory, though the costly Long Turkish War would continue for another decade.",
+    "fact": "At Mezokeresztes, the Habsburg troops were so confident of victory that they stopped fighting to loot the Ottoman camp, only to be counterattacked and routed while stuffing their pockets with gold."
+  },
+  "114": {
+    "name": "Battle of Sarikamish",
+    "description": "Ottoman War Minister Enver Pasha personally led a reckless winter offensive against Russian forces in the Caucasus mountains. Poorly equipped Ottoman soldiers, many lacking winter clothing, marched through mountain passes in freezing conditions. Of roughly 100,000 Ottoman troops, fewer than 18,000 survived, with most dying from exposure and disease rather than combat. The catastrophic defeat destabilized the eastern Ottoman Empire and contributed to the tragic events that followed.",
+    "fact": "Of the roughly 100,000 Ottoman soldiers who marched into the Caucasus mountains at Sarikamish, approximately 75,000 died from exposure, frostbite, and disease rather than enemy action."
+  },
+  "115": {
+    "name": "Capture of Aqaba",
+    "description": "Arab rebel forces, guided by T.E. Lawrence ('Lawrence of Arabia'), captured the strategic Ottoman port of Aqaba by attacking overland from the desert, a direction the Ottoman defenses did not cover. The daring raid involved a grueling march across the Nefud Desert followed by a dramatic camel charge. The capture of Aqaba provided a vital supply port for the Arab Revolt and opened a new front against the Ottoman Empire in World War I.",
+    "fact": "T.E. Lawrence's march on Aqaba covered some of the most inhospitable desert on earth. The overland approach was considered so impossible that the Ottoman garrison's guns all faced out to sea."
+  },
+  "116": {
+    "name": "Battle of Kut",
+    "description": "Ottoman forces besieged a British-Indian garrison of around 13,000 troops under General Townshend at Kut-al-Amara on the Tigris River. After 147 days of siege and multiple failed relief attempts that cost 23,000 additional British casualties, Townshend surrendered. It was one of Britain's worst military humiliations, with thousands of captured soldiers dying in Ottoman captivity. The disaster led to a complete overhaul of the British Mesopotamian campaign.",
+    "fact": "After the fall of Kut, approximately 70% of the British-Indian prisoners died in Ottoman captivity from disease, starvation, and forced marches, one of the worst POW death rates of World War I."
+  },
+  "117": {
+    "name": "Battle of Pruth",
+    "description": "The Ottoman army under Grand Vizier Baltaci Mehmed Pasha surrounded Tsar Peter the Great's Russian army along the Pruth River in Moldova. Trapped with no escape, Peter was forced to negotiate a humiliating peace, returning the fortress of Azov to the Ottomans and dismantling his Black Sea fleet. The campaign was one of the Ottoman Empire's last great military successes and temporarily reversed Russian expansion toward the Black Sea.",
+    "fact": "Peter the Great was so desperate to escape the trap at the Pruth that his wife Catherine reportedly gave up her jewelry to bribe the Ottoman Grand Vizier into accepting lenient peace terms."
+  },
+  "118": {
+    "name": "Battle of Red Cliffs",
+    "description": "One of the most famous battles in Chinese history, the Battle of Red Cliffs saw the allied forces of Sun Quan and Liu Bei destroy Cao Cao's vastly larger northern army using a devastating fire attack against his chained fleet. The victory prevented Cao Cao from unifying China and led directly to the formation of the Three Kingdoms. It remains one of the most celebrated events in Chinese literature and culture.",
+    "fact": "The novel 'Romance of the Three Kingdoms,' which dramatizes the Battle of Red Cliffs, is so widely read in East Asia that many Chinese, Japanese, and Korean people know its characters better than their own family histories."
+  },
+  "119": {
+    "name": "Battle of Sekigahara",
+    "description": "Often called the greatest samurai battle in history, Sekigahara pitted Tokugawa Ieyasu's Eastern Army against the Western Coalition loyal to the Toyotomi clan. The defection of several western daimyo during the battle turned the tide decisively in Tokugawa's favor. The victory allowed Ieyasu to establish the Tokugawa Shogunate, which ruled Japan in relative peace for over 260 years.",
+    "fact": "At Sekigahara, the Western daimyo Kobayakawa Hideaki sat on a hilltop for hours refusing to commit to either side. Tokugawa Ieyasu finally ordered his men to fire on Kobayakawa's position, which prompted him to switch sides."
+  },
+  "120": {
+    "name": "Battle of Changping",
+    "description": "The Battle of Changping was one of the bloodiest engagements in ancient history, fought between the states of Qin and Zhao during China's Warring States period. The Qin general Bai Qi lured the Zhao army into a trap, surrounded them, and starved them into surrender. According to historical records, approximately 400,000 Zhao prisoners were executed after the battle, crippling Zhao and paving the way for Qin's eventual unification of China.",
+    "fact": "Ancient sources claim that after Changping, the victorious Qin general Bai Qi executed roughly 400,000 prisoners by burying them alive, making it one of the largest mass killings in ancient history if the figures are accurate."
+  },
+  "121": {
+    "name": "Siege of Osaka",
+    "description": "The Siege of Osaka was the final conflict of Japan's Sengoku period, fought in two campaigns during the winter of 1614 and summer of 1615. Tokugawa Ieyasu besieged Osaka Castle, the stronghold of Toyotomi Hideyori, the young heir of the Toyotomi clan. The fall of Osaka Castle and the death of Hideyori eliminated the last threat to Tokugawa rule, ushering in over two centuries of peace under the Tokugawa Shogunate.",
+    "fact": "After the fall of Osaka Castle, the Tokugawa shogunate imposed such strict peace that Japan experienced virtually no warfare for over 250 years, a period known as the 'Great Peace.'"
+  },
+  "122": {
+    "name": "Battle of Nagashino",
+    "description": "The Battle of Nagashino marked a revolution in Japanese warfare when Oda Nobunaga deployed approximately 3,000 matchlock-armed ashigaru behind wooden palisades to devastate the legendary Takeda cavalry. Using rotating volley fire, Nobunaga's forces shattered charge after charge of Takeda horsemen. The battle demonstrated that firearms had fundamentally changed warfare in Japan and severely weakened the once-mighty Takeda clan.",
+    "fact": "Oda Nobunaga's use of rotating volley fire at Nagashino in 1575 predated the European adoption of the same technique, making Japanese warfare temporarily more advanced than contemporary European methods."
+  },
+  "123": {
+    "name": "Battle of Baekgang",
+    "description": "The Battle of Baekgang was a decisive naval engagement at the mouth of the Geum River in Korea, where a Tang Chinese and Silla Korean alliance destroyed a Japanese fleet that had come to restore the fallen Baekje kingdom. The Tang-Silla forces destroyed over 400 Japanese ships. The defeat ended Japanese military involvement in Korean affairs for nearly a millennium and solidified Silla's unification of the Korean peninsula.",
+    "fact": "After the defeat at Baekgang, Japan did not send another military force to the Korean peninsula for over 900 years, until Toyotomi Hideyoshi's invasions in the 1590s."
+  },
+  "124": {
+    "name": "Battle of Noryang",
+    "description": "The Battle of Noryang was the final naval battle of the Imjin War, fought as the Japanese fleet attempted to withdraw from Korea following Toyotomi Hideyoshi's death. A combined Korean and Ming Chinese fleet ambushed the retreating Japanese in the narrow Noryang Strait, destroying over 200 ships. Tragically, the legendary Admiral Yi Sun-sin was struck and killed by a bullet during the battle, dying at the moment of his greatest victory.",
+    "fact": "Admiral Yi Sun-sin's dying words at Noryang were reportedly 'The battle is at its height. Do not announce my death,' ensuring his men would keep fighting to complete the victory."
+  },
+  "125": {
+    "name": "Battle of Myeongnyang",
+    "description": "In one of history's most remarkable naval victories, Admiral Yi Sun-sin faced a Japanese fleet of over 130 warships with only 13 ships of his own. By positioning his fleet in the narrow Myeongnyang Strait, where powerful currents neutralized the Japanese numerical advantage, Yi destroyed 31 Japanese ships without losing a single vessel. The victory is celebrated as one of the greatest military achievements in Korean history.",
+    "fact": "Admiral Yi Sun-sin's 13 ships at Myeongnyang destroyed 31 Japanese warships without losing a single vessel, a ratio of victory almost unmatched in the history of naval warfare."
+  },
+  "126": {
+    "name": "Battle of Fei River",
+    "description": "The Battle of Fei River was one of the most decisive battles in Chinese history, where the vastly outnumbered Eastern Jin forces defeated the enormous army of the Former Qin. When the Qin commander ordered his troops to pull back from the river to allow the Jin forces to cross for a set-piece battle, the withdrawal turned into a panicked rout. The victory preserved the Eastern Jin dynasty and ensured the continued division of China between north and south for another two centuries.",
+    "fact": "The Former Qin emperor Fu Jian reportedly commanded over 870,000 soldiers at the Fei River, but his massive army was so poorly coordinated that a simple order to withdraw became an unstoppable rout."
+  },
+  "127": {
+    "name": "Mongol Invasion of Japan",
+    "description": "In 1274, Kublai Khan launched the first Mongol invasion of Japan with a fleet of approximately 900 ships carrying 40,000 Mongol, Chinese, and Korean soldiers. After initial fighting at Hakata Bay where samurai struggled against unfamiliar Mongol tactics, a massive typhoon struck and devastated the Mongol fleet. The Japanese called this storm 'kamikaze' or 'divine wind,' a term that would take on new meaning centuries later.",
+    "fact": "The word 'kamikaze,' meaning 'divine wind,' was coined for the typhoons that destroyed the Mongol fleets. Centuries later, Japanese suicide pilots adopted the same name during World War II."
+  },
+  "128": {
+    "name": "Battle of Salsu",
+    "description": "The Battle of Salsu was a catastrophic defeat for the Sui Dynasty of China during Emperor Yang's invasion of the Korean kingdom of Goguryeo. General Eulji Mundeok lured the exhausted Sui army deep into Goguryeo territory, then destroyed a dam on the Salsu River as the Chinese crossed. Of the 305,000 Sui soldiers who had advanced, fewer than 3,000 reportedly returned. The disaster contributed directly to the fall of the Sui Dynasty.",
+    "fact": "General Eulji Mundeok sent a taunting poem to the Sui Chinese commander before springing his trap at Salsu, mocking the enemy's strategy while simultaneously distracting them from the approaching disaster."
+  },
+  "129": {
+    "name": "Battle of Dan-no-ura",
+    "description": "The Battle of Dan-no-ura was the final engagement of the Genpei War, fought in the narrow Straits of Shimonoseki between the Minamoto and Taira clans. When the tidal currents shifted against the Taira fleet, their formation broke apart and the Minamoto forces overwhelmed them. The child Emperor Antoku drowned along with many Taira nobles, and the Minamoto victory established the Kamakura Shogunate, Japan's first military government.",
+    "fact": "When the Taira clan was defeated at Dan-no-ura, the Emperor's grandmother leapt into the sea carrying the six-year-old Emperor Antoku, along with one of the three Imperial Regalia of Japan, the sacred sword Kusanagi."
+  },
+  "130": {
+    "name": "Battle of Shanhai Pass",
+    "description": "The Battle of Shanhai Pass was the pivotal moment that allowed the Manchu Qing Dynasty to enter China proper. Ming general Wu Sangui, trapped between the rebel army of Li Zicheng that had captured Beijing and the Manchu forces outside the Great Wall, chose to open the gates to the Manchus. The combined Manchu and Ming forces routed Li Zicheng's rebel army, but the Manchus never left, establishing the Qing Dynasty that would rule China for nearly three centuries.",
+    "fact": "Wu Sangui's decision to open the gates of the Great Wall at Shanhai Pass to the Manchus was partly motivated by rage after the rebel Li Zicheng seized his favorite concubine, Chen Yuanyuan."
+  },
+  "131": {
+    "name": "Battle of Sarhu",
+    "description": "The Battle of Sarhu was a decisive engagement in which the Manchu leader Nurhaci defeated a Ming punitive expedition that outnumbered his forces roughly three to one. The Ming commander split his 200,000-strong army into four columns that were to converge on the Manchu position, but Nurhaci concentrated his forces and destroyed each column in succession. The catastrophic defeat marked the beginning of the end for the Ming Dynasty and the rise of the Manchu Qing.",
+    "fact": "Nurhaci organized his Manchu forces using the Banner system, dividing his army into eight color-coded banners that served as both military units and administrative divisions for centuries afterward."
+  },
+  "132": {
+    "name": "Battle of Yamen",
+    "description": "The Battle of Yamen was the final confrontation between the Mongol Yuan Dynasty and the remnants of the Southern Song Dynasty. The Song fleet, chained together in a defensive formation, was surrounded and destroyed by the Yuan navy. When defeat became certain, the loyal minister Lu Xiufu carried the eight-year-old Emperor Bing on his back and jumped into the sea, ending the Song Dynasty forever. It was one of the most dramatic endings of any Chinese dynasty.",
+    "fact": "The loyal minister Lu Xiufu carried the last Song emperor on his back into the sea at Yamen rather than let him be captured. An estimated 100,000 Song loyalists drowned themselves rather than submit to Mongol rule."
+  },
+  "133": {
+    "name": "Battle of Kawanakajima",
+    "description": "The Battles of Kawanakajima were a series of five engagements between the legendary rivals Takeda Shingen and Uesugi Kenshin, with the fourth battle in 1561 being the most famous and bloodiest. According to legend, Kenshin rode directly into Takeda's command post and slashed at him with his sword, which Shingen deflected with his iron war fan. The battles epitomize the Sengoku period's warrior spirit and remain among the most romanticized conflicts in Japanese history.",
+    "fact": "The famous duel between Takeda Shingen and Uesugi Kenshin at Kawanakajima, where Kenshin slashed at Shingen with his sword and Shingen deflected it with his iron war fan, is one of the most iconic images in Japanese art."
+  },
+  "134": {
+    "name": "Battle of Okehazama",
+    "description": "The Battle of Okehazama was one of the most dramatic upsets in Japanese military history. The young Oda Nobunaga, with roughly 2,500 men, launched a surprise attack during a thunderstorm against Imagawa Yoshimoto's army of 25,000 while they rested in a narrow gorge. Imagawa was killed in the attack, and his army collapsed. The victory transformed Nobunaga from a minor provincial lord into a major power and set him on the path to unifying Japan.",
+    "fact": "Oda Nobunaga had only about 2,500 soldiers at Okehazama against 25,000, making it roughly a 1-to-10 ratio. A sudden thunderstorm masked his approach and allowed him to attack while the enemy celebrated."
+  },
+  "135": {
+    "name": "Siege of Pyongyang",
+    "description": "The Siege of Pyongyang was a decisive battle during the Imjin War in which a combined Ming Chinese and Korean force of over 40,000 recaptured the city from Japanese occupation. Ming general Li Rusong led the assault with cannon and infantry, overwhelming the Japanese garrison under Konishi Yukinaga. The liberation of Pyongyang marked the first major allied victory of the war and began the Japanese retreat from northern Korea.",
+    "fact": "The Siege of Pyongyang was one of the first battles where Ming Chinese firearms, including early rockets and grenades, were used on a large scale against Japanese forces armed with matchlock muskets."
+  },
+  "136": {
+    "name": "Battle of Guandu",
+    "description": "The Battle of Guandu was the decisive clash between the two most powerful warlords of northern China at the end of the Han Dynasty. Cao Cao, heavily outnumbered by Yuan Shao's forces, held a fortified position at the Yellow River crossing before launching a daring raid that destroyed Yuan Shao's supply depot at Wuchao. The destruction of his supplies caused Yuan Shao's army to collapse. The victory gave Cao Cao dominance over northern China and was a crucial step in the formation of the Three Kingdoms.",
+    "fact": "Cao Cao's victory at Guandu came after a defector from Yuan Shao's camp revealed the location of the supply depot at Wuchao, demonstrating how intelligence and betrayal can decide wars."
+  },
+  "137": {
+    "name": "Battle of Boju",
+    "description": "The Battle of Boju was the climactic engagement of Wu's invasion of Chu during the Spring and Autumn period. The Wu army, reportedly trained according to the military theories of Sun Tzu, defeated the much larger Chu forces in a series of engagements culminating at Boju. The victory led to the capture of Chu's capital Ying, one of the most stunning military campaigns in ancient Chinese history. The campaign is often cited as a practical demonstration of the principles in Sun Tzu's Art of War.",
+    "fact": "The Wu invasion that culminated at Boju was supposedly influenced by Sun Tzu himself. Some historians believe Sun Tzu served as a military adviser to the Wu king during this campaign."
+  },
+  "138": {
+    "name": "Battle of Suiyang",
+    "description": "The Siege of Suiyang was one of the most harrowing defensive stands in military history, fought during the devastating An Lushan Rebellion against the Tang Dynasty. General Zhang Xun and a small garrison held the city for ten months against over 100,000 rebel troops, enduring starvation so extreme it became legendary. Though Suiyang eventually fell and Zhang Xun was executed, the prolonged defense prevented the rebels from advancing into southern China and bought crucial time for the Tang to regroup and ultimately suppress the rebellion.",
+    "fact": "The defense of Suiyang during the An Lushan Rebellion is estimated to have cost 13 million lives across China overall, making it potentially the deadliest conflict in human history until World War II."
+  },
+  "139": {
+    "name": "Battle of Yiling",
+    "description": "The Battle of Yiling, also known as the Battle of Xiaoting, was fought when Liu Bei of Shu Han launched a massive invasion of Eastern Wu to avenge the death of his sworn brother Guan Yu and recapture the province of Jing. The young Wu commander Lu Xun patiently held his positions for months, then launched a devastating fire attack that swept through Liu Bei's forest camps along the Yangtze gorges. The destruction of Liu Bei's army ended any hope of Shu Han dominance and cemented the Three Kingdoms balance of power.",
+    "fact": "Liu Bei's invasion at Yiling was motivated by the death of his sworn brother Guan Yu. In Chinese culture, the sworn brotherhood of Liu Bei, Guan Yu, and Zhang Fei remains one of the most famous friendships in literature."
+  },
+  "140": {
+    "name": "Battle of Hulao Pass",
+    "description": "The Battle of Hulao Pass was a decisive engagement during the wars of Tang Dynasty unification. Prince Li Shimin, the future Emperor Taizong, lured Dou Jiande's massive army into attacking a fortified position at the narrow Hulao Pass, then personally led a devastating cavalry charge that routed the enemy and captured Dou Jiande. The victory simultaneously eliminated two rival powers and effectively secured the Tang Dynasty's control over China, establishing what would become one of the greatest dynasties in Chinese history.",
+    "fact": "Li Shimin, who won at Hulao Pass, later forced his own father to abdicate and became Emperor Taizong of Tang, widely regarded as one of the greatest emperors in all of Chinese history."
+  },
+  "141": {
+    "name": "Battle of Busan",
+    "description": "The Battle of Busan was the opening engagement of the Imjin War, Japan's massive invasion of Korea in 1592. An invasion force of over 700 ships carrying approximately 158,000 Japanese soldiers landed at Busan and quickly overwhelmed the Korean garrison. The fortress commander Jeong Bal fought to the death as Japanese troops armed with matchlock rifles stormed the walls. The fall of Busan opened the door for the rapid Japanese advance up the Korean peninsula toward Seoul.",
+    "fact": "Toyotomi Hideyoshi's invasion of Korea at Busan in 1592 involved roughly 158,000 soldiers, making it one of the largest overseas military expeditions in world history up to that time."
+  },
+  "142": {
+    "name": "Battle of Mukden",
+    "description": "The Battle of Mukden was the largest and most decisive land battle of the Russo-Japanese War, involving over 600,000 soldiers and making it the largest battle in world history up to that time. Japanese forces under Marshal Oyama executed a double envelopment of the Russian positions around Mukden, forcing a costly Russian retreat. The defeat, combined with the naval disaster at Tsushima, compelled Russia to accept peace terms and confirmed Japan's emergence as a major world power.",
+    "fact": "The Battle of Mukden involved over 600,000 soldiers along a front stretching 50 miles, making it the largest battle the world had seen before the mass engagements of World War I."
+  },
+  "143": {
+    "name": "Battle of Jena-Auerstedt",
+    "description": "Napoleon shattered the Prussian army in a devastating twin engagement. While Napoleon himself defeated one Prussian force at Jena, Marshal Davout's outnumbered III Corps held and routed the main Prussian army at Auerstedt. The double victory destroyed Prussian military power in a single day, and within weeks Napoleon occupied Berlin. Prussia was forced into a humiliating peace that reduced it to a shadow of its former self.",
+    "fact": "Marshal Davout's III Corps at Auerstedt defeated the main Prussian army while outnumbered nearly 2 to 1, yet Napoleon was reportedly annoyed that Davout had stolen some of his glory."
+  },
+  "144": {
+    "name": "Battle of Wagram",
+    "description": "Napoleon assembled the largest army he had ever commanded and defeated Archduke Charles of Austria in a brutal two-day battle on the Marchfeld plain near Vienna. Over 300,000 soldiers clashed in one of the largest battles in European history to that point. Napoleon's massing of over 100 guns into a grand battery to smash the Austrian center proved decisive. The victory forced Austria to sign the Treaty of Schonbrunn and cemented Napoleon's dominance over continental Europe.",
+    "fact": "Napoleon massed 112 cannons into a single grand battery at Wagram, the largest artillery concentration in warfare up to that point, to blast a hole through the Austrian center."
+  },
+  "145": {
+    "name": "Battle of Leipzig",
+    "description": "The largest battle in European history before World War I saw over 600,000 soldiers clash as a coalition of Russia, Austria, Prussia, and Sweden converged on Napoleon's army at Leipzig. After four days of fighting, Napoleon was decisively defeated and forced to retreat across the Rhine, abandoning Germany entirely. The battle effectively ended French domination of Central Europe and set the stage for the invasion of France and Napoleon's first abdication.",
+    "fact": "At Leipzig, Saxon and Wurttemberg troops switched sides mid-battle and turned their guns on the French, one of the most dramatic mass defections in military history."
+  },
+  "146": {
+    "name": "Battle of Leuthen",
+    "description": "Frederick the Great executed his famous oblique order attack, concentrating his outnumbered Prussian army against the Austrian left flank while refusing his own left. The Austrians, with nearly twice Frederick's numbers, were rolled up and routed in one of the most brilliant tactical victories in military history. Napoleon later studied this battle and called it a masterpiece of maneuver, resolution, and determination worthy of study for all time.",
+    "fact": "Napoleon studied Frederick the Great's victory at Leuthen obsessively and called it a masterpiece that alone was sufficient to immortalize Frederick among the great generals of history."
+  },
+  "147": {
+    "name": "Battle of Blenheim",
+    "description": "The Duke of Marlborough and Prince Eugene of Savoy achieved a stunning victory over a larger French and Bavarian army on the banks of the Danube. Marlborough's bold cavalry charge across open ground split the Franco-Bavarian army in two, trapping thousands in the village of Blindheim. The victory shattered the myth of French military invincibility under Louis XIV, saved Vienna and the Holy Roman Empire, and established Britain as a major European military power.",
+    "fact": "The Duke of Marlborough marched his army 250 miles across Europe in complete secrecy before the Battle of Blenheim, one of the greatest deception marches in military history."
+  },
+  "148": {
+    "name": "Battle of Plassey",
+    "description": "Robert Clive led a small British East India Company force of 3,000 against the Nawab of Bengal's army of 50,000 at Plassey. The battle was decided as much by diplomacy as by fighting, as Clive had secretly negotiated the defection of the Nawab's key general, Mir Jafar, who held his troops back during the engagement. The victory gave the East India Company control of Bengal's vast wealth and resources, marking the beginning of British imperial rule in India.",
+    "fact": "Robert Clive's entire force at Plassey suffered only 22 killed, making it one of the most consequential battles in world history with the fewest casualties on the winning side."
+  },
+  "149": {
+    "name": "Battle of Rossbach",
+    "description": "Frederick the Great annihilated a combined French and Imperial Austrian army twice his size in under ninety minutes at Rossbach. As the allied army attempted a flanking march, Frederick rapidly redeployed and launched General Seydlitz's cavalry into their exposed flank before the enemy could form battle lines. The allies suffered over 5,000 casualties and 5,000 captured against only 550 Prussian losses. The victory humiliated France and made Frederick a hero across Protestant Europe.",
+    "fact": "Frederick the Great's cavalry commander Seydlitz reportedly signaled the charge at Rossbach by tossing his tobacco pipe into the air, his personal signal that the moment had come."
+  },
+  "150": {
+    "name": "Battle of the Nile",
+    "description": "Admiral Horatio Nelson launched a daring attack on the anchored French fleet in Aboukir Bay, sailing his ships between the French line and the shore to attack from both sides simultaneously. The French flagship L'Orient exploded in a massive fireball visible for miles, one of the most dramatic events in naval history. Nelson destroyed or captured eleven of thirteen French ships of the line, stranding Napoleon's army in Egypt and establishing British naval supremacy in the Mediterranean.",
+    "fact": "The explosion of the French flagship L'Orient at the Battle of the Nile was so massive that both fleets reportedly ceased firing for ten minutes in stunned silence."
+  },
+  "151": {
+    "name": "Battle of Marengo",
+    "description": "Napoleon was on the verge of defeat when General Desaix arrived with fresh troops and launched a dramatic counterattack that shattered the advancing Austrian army. Desaix was killed leading the charge that reversed the battle's outcome, but his sacrifice turned a near-disaster into a decisive French victory. Marengo secured Napoleon's political position as First Consul, drove Austria from northern Italy, and cemented his reputation as a military genius who could snatch victory from the jaws of defeat.",
+    "fact": "General Desaix arrived at Marengo late in the afternoon and reportedly said 'This battle is completely lost, but there is time to win another' before leading the charge that saved Napoleon."
+  },
+  "152": {
+    "name": "Battle of Vitoria",
+    "description": "The Duke of Wellington launched a coordinated four-column attack that shattered King Joseph Bonaparte's French army defending the vital crossroads of Vitoria. The French were routed so completely that they abandoned an enormous baggage train laden with plundered Spanish treasure, art, and the French war chest. Wellington's troops broke ranks to loot the spoils, prompting the duke's famous complaint about his army. The victory effectively ended French rule in Spain and forced Napoleon to fight on French soil.",
+    "fact": "Wellington's soldiers at Vitoria were so busy looting the captured French baggage train (which contained millions in gold and art) that they let the French army escape, infuriating the duke."
+  },
+  "153": {
+    "name": "Spanish Armada",
+    "description": "King Philip II of Spain launched a massive fleet of 130 ships to invade England and overthrow Queen Elizabeth I. English commanders including Sir Francis Drake used faster, more maneuverable ships and fireships to scatter the Armada from its anchorage at Calais. Fierce storms then devastated the fleeing Spanish fleet as it attempted to sail home around Scotland and Ireland. The defeat ended Spain's hopes of conquering England, boosted English national confidence, and marked the beginning of England's rise as a dominant naval power.",
+    "fact": "When the Spanish Armada was first sighted, Sir Francis Drake was allegedly playing a game of bowls and insisted on finishing his game before going to fight."
+  },
+  "154": {
+    "name": "Battle of Rocroi",
+    "description": "The 21-year-old Duke of Enghien, later known as the Grand Conde, led a French army to a stunning victory over the Spanish Army of Flanders at Rocroi. The battle destroyed the legendary Spanish tercios, the pike-and-shot infantry formations that had been considered invincible for over a century. The Spanish infantry fought to near-annihilation in a heroic last stand, but their destruction marked the end of Spanish military supremacy in Europe and the rise of France as the continent's dominant military power.",
+    "fact": "The Spanish tercios at Rocroi fought so bravely in their final stand that the French commander reportedly offered them surrender terms normally reserved for garrison troops in a fortress."
+  },
+  "155": {
+    "name": "Battle of Poltava",
+    "description": "Tsar Peter the Great's reformed Russian army decisively defeated King Charles XII of Sweden at Poltava, ending Sweden's era as a great European power. Charles XII, wounded days before the battle, commanded from a stretcher as his exhausted and outnumbered army attacked prepared Russian positions and was shattered. The victory transformed Russia from a peripheral kingdom into a major European power, secured Peter's modernizing reforms, and shifted the balance of power in Northern and Eastern Europe permanently.",
+    "fact": "After Poltava, Charles XII of Sweden fled to the Ottoman Empire where he stayed for five years, essentially becoming a guest-prisoner while trying to convince the Sultan to attack Russia."
+  },
+  "156": {
+    "name": "Battle of Breitenfeld",
+    "description": "King Gustavus Adolphus of Sweden won a revolutionary victory over the Imperial Catholic League army under Tilly at Breitenfeld near Leipzig. Despite his Saxon allies routing early in the battle, Gustavus Adolphus used his innovative combined arms tactics, mobile light artillery, and flexible formations to outmaneuver and destroy the Imperial tercios. The victory proved that the traditional deep infantry formations could be beaten by more modern methods and established Sweden as the champion of the Protestant cause in the Thirty Years' War.",
+    "fact": "Gustavus Adolphus introduced the first standardized military uniforms and lightweight leather cannons that could be moved by just two men, revolutionizing European warfare at Breitenfeld."
+  },
+  "157": {
+    "name": "Battle of Lutzen",
+    "description": "King Gustavus Adolphus of Sweden was killed leading a cavalry charge into thick fog at Lutzen while fighting Wallenstein's Imperial army. Despite losing their inspirational king, the enraged Swedish army fought on and drove the Imperial forces from the field. The battle was a tactical Swedish victory but a strategic blow, as the loss of Gustavus Adolphus deprived the Protestant cause of its greatest military leader and prolonged the devastating Thirty Years' War for another sixteen years.",
+    "fact": "When Gustavus Adolphus's body was recovered at Lutzen, it had been stripped of armor and clothing and bore multiple bullet and sword wounds, making identification initially difficult."
+  },
+  "158": {
+    "name": "Battle of the Boyne",
+    "description": "William III of Orange led his army across the River Boyne to defeat the forces of the deposed Catholic King James II in the decisive battle of the Williamite War in Ireland. James II, who had been overthrown in England's Glorious Revolution, had raised an army in Ireland to reclaim his throne but fled the field when the battle turned against him, earning the Irish nickname 'Seamus an Chaca.' The victory secured Protestant rule in Britain and Ireland and remains one of the most politically significant battles in Irish and British history.",
+    "fact": "William III of Orange was actually hit by a cannonball at the Boyne that grazed his shoulder, but he concealed the wound to keep morale high and led his troops across the river."
+  },
+  "159": {
+    "name": "Battle of Chesme",
+    "description": "The Russian Baltic Fleet, having sailed all the way around Europe to the Mediterranean, trapped the Ottoman navy in the harbor of Chesme on the Aegean coast of Turkey. Russian fireships sent into the crowded harbor ignited the closely packed Ottoman vessels, and the resulting inferno destroyed virtually the entire Ottoman fleet. Russia lost only one ship while the Ottomans lost over sixty vessels and thousands of sailors. The victory gave Russia temporary control of the Aegean Sea and demonstrated the growing reach of Russian naval power.",
+    "fact": "The Russian fleet at Chesme had sailed from the Baltic Sea all the way around Europe to the Mediterranean, a voyage so ambitious that most European powers thought it would fail."
+  },
+  "160": {
+    "name": "Siege of Gibraltar",
+    "description": "Spain and France besieged the British fortress of Gibraltar for nearly four years during the American Revolutionary War, hoping to recapture the strategic peninsula controlling the Mediterranean entrance. The British garrison under General George Eliott endured bombardment, starvation, and a dramatic assault by specially constructed floating batteries, which the defenders destroyed using red-hot shot. The successful defense of Gibraltar was one of Britain's most celebrated military achievements of the 18th century and ensured British control of this vital strategic position.",
+    "fact": "During the Great Siege of Gibraltar, the British garrison heated cannonballs until they were red-hot before firing them at the enemy's floating batteries, setting them ablaze from within."
+  },
+  "161": {
+    "name": "Battle of Cape St Vincent",
+    "description": "Admiral Jervis led a smaller British fleet against a larger Spanish fleet off Cape St Vincent, Portugal, during the French Revolutionary Wars. Commodore Horatio Nelson, acting on his own initiative, broke from the British line and threw his ship HMS Captain into the path of the escaping Spanish fleet. In a legendary feat of daring, Nelson boarded and captured two Spanish ships in succession, including the massive San Josef. The victory prevented Spain from joining its fleet with the French and made Nelson a national hero.",
+    "fact": "Nelson's unauthorized act of leaving the British line at Cape St Vincent technically violated naval regulations, but his spectacular success meant Admiral Jervis chose to praise rather than punish him."
+  },
+  "162": {
+    "name": "Battle of Friedland",
+    "description": "Napoleon caught the Russian army with its back to the Alle River at Friedland and launched a devastating assault that shattered the Russian forces. Marshal Ney's corps stormed the town while French artillery poured fire into the Russian columns trapped against the river. The Russians suffered catastrophic losses trying to retreat across inadequate bridges. Fought on the anniversary of Marengo, the victory forced Tsar Alexander I to seek peace, leading to the famous meeting between the two emperors on a raft on the Neman River and the Treaty of Tilsit.",
+    "fact": "The Battle of Friedland was fought on June 14, 1807, exactly seven years to the day after Napoleon's victory at Marengo, a coincidence Napoleon took as an omen of victory."
+  },
+  "163": {
+    "name": "Battle of Antietam",
+    "description": "Fought on September 17, 1862, Antietam was the bloodiest single day in American military history with nearly 23,000 casualties. Union General McClellan intercepted Lee's invasion of Maryland and fought the Confederates to a tactical draw, though Lee was forced to withdraw back to Virginia. The strategic Union victory gave President Lincoln the political cover to issue the Emancipation Proclamation, transforming the war into a fight against slavery.",
+    "fact": "A copy of Lee's battle orders for Antietam was found wrapped around three cigars by Union soldiers in a field. This 'Lost Order' gave McClellan advance knowledge of Lee's divided army."
+  },
+  "164": {
+    "name": "Battle of Shiloh",
+    "description": "Confederate forces under Albert Sidney Johnston launched a surprise dawn attack on Grant's Union army at Pittsburg Landing near Shiloh Church, Tennessee. The Confederates nearly drove the Union into the Tennessee River, but a heroic stand at the 'Hornet's Nest' bought time for reinforcements. Johnston was killed during the assault. Overnight, Union reinforcements arrived, and Grant counterattacked the next day, winning a costly victory with over 23,000 total casualties that shocked the nation.",
+    "fact": "Confederate General Albert Sidney Johnston bled to death at Shiloh from a wound behind his knee, and his personal physician had been sent to treat wounded Union prisoners. A simple tourniquet could have saved his life."
+  },
+  "165": {
+    "name": "Battle of Vicksburg",
+    "description": "After a brilliant campaign of maneuver, General Grant besieged the Confederate stronghold of Vicksburg, perched on bluffs overlooking the Mississippi River. For 47 days, Union forces bombarded the city while its defenders and civilians endured starvation. The garrison surrendered on July 4, 1863, the day after Gettysburg. The fall of Vicksburg gave the Union control of the entire Mississippi River, splitting the Confederacy in two.",
+    "fact": "During the siege of Vicksburg, civilians dug caves into the hillsides to escape the constant Union bombardment. The city became known as 'Prairie Dog Village' for its network of underground shelters."
+  },
+  "166": {
+    "name": "Battle of Chancellorsville",
+    "description": "Facing a Union army twice his size under General Hooker, Robert E. Lee made the audacious decision to split his force and send Stonewall Jackson on a flanking march through the Virginia Wilderness. Jackson's surprise attack crushed the Union right flank, leading to a stunning Confederate victory. However, the triumph was marred when Jackson was accidentally shot by his own troops and died days later, a loss Lee called losing his 'right arm.'",
+    "fact": "Stonewall Jackson was accidentally shot by his own men at Chancellorsville while returning from a nighttime reconnaissance. Lee remarked, 'He has lost his left arm, but I have lost my right.'"
+  },
+  "167": {
+    "name": "Battle of Fort Sumter",
+    "description": "On April 12, 1861, Confederate batteries opened fire on the Union-held Fort Sumter in Charleston Harbor, beginning the American Civil War. Major Robert Anderson's small garrison held out for 34 hours before surrendering. Remarkably, no one was killed during the bombardment itself. The attack galvanized the North, and President Lincoln called for 75,000 volunteers, prompting four more Southern states to join the Confederacy.",
+    "fact": "Remarkably, no one was killed during the 34-hour bombardment of Fort Sumter. The only fatalities occurred during the surrender ceremony when a cannon accidentally exploded during the salute."
+  },
+  "168": {
+    "name": "Battle of Chattanooga",
+    "description": "After the Union defeat at Chickamauga, Grant was sent to relieve the besieged army at Chattanooga. In a series of engagements, Union forces captured Lookout Mountain in the famous 'Battle Above the Clouds' and then stormed Missionary Ridge in an unplanned but spectacularly successful uphill assault that routed the Confederate army. The victory opened the gateway to Georgia and set the stage for Sherman's March to the Sea.",
+    "fact": "The spontaneous Union charge up Missionary Ridge at Chattanooga was not ordered by any general. Grant, watching in disbelief, turned to an aide and asked who had ordered the men forward. Nobody had."
+  },
+  "169": {
+    "name": "First Battle of Bull Run",
+    "description": "The first major battle of the Civil War shattered illusions of a quick conflict. Washington civilians rode out with picnic baskets to watch what they expected to be an easy Union victory. Instead, Confederate reinforcements arriving by rail turned the tide, and Thomas Jackson earned the nickname 'Stonewall' for his brigade's steadfast defense. The Union army broke and fled in a chaotic retreat back to Washington, proving the war would be long and costly.",
+    "fact": "Washington civilians brought picnic baskets and opera glasses to watch the First Battle of Bull Run, expecting entertainment. They fled in panic alongside the retreating army when the battle turned."
+  },
+  "170": {
+    "name": "Battle of Trenton",
+    "description": "On Christmas night 1776, George Washington led 2,400 soldiers across the ice-choked Delaware River in a desperate bid to revive the faltering Revolution. At dawn, they surprised the Hessian garrison at Trenton, capturing nearly 1,000 enemy soldiers in under two hours with minimal American losses. The stunning victory restored American morale after a string of devastating defeats and convinced many soldiers to reenlist, keeping the Continental Army alive.",
+    "fact": "Washington's crossing of the Delaware on Christmas night 1776 was so dangerous that two soldiers froze to death during the crossing, but the surprise attack captured nearly 1,000 Hessians with almost no American casualties."
+  },
+  "171": {
+    "name": "Battle of Cowpens",
+    "description": "Brigadier General Daniel Morgan devised a brilliant tactical plan that used the militia's tendency to break and run as a deliberate feint. Morgan placed militia in front with orders to fire two volleys then retreat behind the Continental regulars, drawing the British into a trap. When Tarleton's forces pursued, they were hit by disciplined regulars and a cavalry counterattack that destroyed the British force. Over 800 British were killed or captured, dealing a devastating blow to British operations in the South.",
+    "fact": "Daniel Morgan at Cowpens deliberately put a river behind his own army so his militia could not run away, then used their tendency to retreat as a deliberate tactical feint to draw the British into a trap."
+  },
+  "172": {
+    "name": "Battle of Monmouth",
+    "description": "As the British army marched across New Jersey after evacuating Philadelphia, Washington attacked their rear guard near Monmouth Courthouse. When General Charles Lee ordered a premature retreat, Washington personally rode to the front and rallied the troops. In sweltering heat that killed soldiers on both sides, the Continental Army fought the British to a standstill, demonstrating the improved discipline gained from Baron von Steuben's training at Valley Forge. The legend of 'Molly Pitcher,' a woman who supposedly took over her husband's cannon, was born from this battle.",
+    "fact": "'Molly Pitcher' at Monmouth may be a composite figure based on several women who carried water to cool cannons and soldiers. Mary Ludwig Hays is the most commonly cited real person behind the legend."
+  },
+  "173": {
+    "name": "Battle of New Orleans",
+    "description": "Andrew Jackson assembled a diverse force of regulars, militia, free Black soldiers, Choctaw warriors, and even Jean Lafitte's pirates to defend New Orleans against a veteran British army. On January 8, 1815, the British launched a frontal assault across open ground and were cut to pieces by devastating American fire. The British suffered over 2,000 casualties to only 71 American losses. Ironically, the Treaty of Ghent ending the War of 1812 had been signed two weeks earlier, though news had not yet reached the combatants. The victory made Jackson a national hero and future president.",
+    "fact": "The Battle of New Orleans was fought two weeks after the Treaty of Ghent was signed ending the War of 1812. Slow communication meant neither army knew the war was officially over."
+  },
+  "174": {
+    "name": "Battle of the Alamo",
+    "description": "A garrison of roughly 200 Texan defenders held the fortified Alamo mission against Mexican President Santa Anna's army of thousands for 13 days before being overwhelmed on March 6, 1836. All defenders were killed, including famous frontiersmen Davy Crockett and Jim Bowie, and commander William Barrett Travis. Though a military defeat, the heroic stand became a powerful symbol. 'Remember the Alamo!' became the rallying cry that inspired the Texan army to defeat Santa Anna at the Battle of San Jacinto six weeks later, securing Texas independence.",
+    "fact": "Davy Crockett's exact fate at the Alamo remains debated. Some accounts say he died fighting, while a controversial Mexican officer's diary claims he was captured and executed after the battle."
+  },
+  "175": {
+    "name": "Battle of Buena Vista",
+    "description": "General Zachary Taylor's force of roughly 5,000 American troops, mostly untested volunteers, faced Santa Anna's army of nearly 20,000 in a narrow mountain pass near the hacienda of Buena Vista. Over two days of fierce fighting, American artillery proved devastating, and the defenders held their positions despite being vastly outnumbered. Santa Anna withdrew his battered army, ending the northern Mexico campaign. The victory made Taylor a national hero and propelled him to the presidency in 1848.",
+    "fact": "Zachary Taylor was so informal that his soldiers nicknamed him 'Old Rough and Ready.' At Buena Vista, he sat on his horse sideways with one leg crossed over the saddle while calmly directing the battle."
+  },
+  "176": {
+    "name": "Battle of Chapultepec",
+    "description": "The fortified castle of Chapultepec, perched on a hill overlooking Mexico City, was the last major obstacle to the American capture of the Mexican capital. US forces stormed the position on September 13, 1847, scaling the walls under heavy fire. Six young Mexican military cadets, the 'Ninos Heroes,' chose to die fighting rather than surrender, becoming enduring symbols of Mexican patriotism. The fall of Chapultepec led to the capture of Mexico City and the end of the war. The battle is immortalized in the opening line of the Marines' Hymn: 'From the Halls of Montezuma.'",
+    "fact": "The six Mexican teenage cadets who died defending Chapultepec, known as the 'Ninos Heroes,' are honored with one of Mexico's most important national monuments. One reportedly wrapped himself in the Mexican flag and jumped from the ramparts rather than let it be captured."
+  },
+  "177": {
+    "name": "Battle of San Juan Hill",
+    "description": "During the Santiago campaign of the Spanish-American War, American forces assaulted the fortified San Juan Heights defending the city. Theodore Roosevelt led his Rough Riders up nearby Kettle Hill while regular infantry and Buffalo Soldiers of the 9th and 10th Cavalry stormed San Juan Hill. The hard-fought victory tightened the siege of Santiago and led to the Spanish surrender in Cuba. Roosevelt's celebrated charge made him a national hero, propelling him to the vice presidency and then the White House.",
+    "fact": "The Buffalo Soldiers of the 9th and 10th Cavalry regiments fought alongside the Rough Riders at San Juan Hill but received far less recognition. They were among the most experienced combat troops in the battle."
+  },
+  "178": {
+    "name": "Battle of Manila Bay",
+    "description": "On May 1, 1898, Commodore George Dewey's Asiatic Squadron sailed into Manila Bay and destroyed the entire Spanish Pacific fleet in a matter of hours. Dewey's famous order to his flagship captain, 'You may fire when you are ready, Gridley,' opened one of the most lopsided naval victories in history. The Americans sank or captured every Spanish vessel without losing a single sailor. The battle established the United States as a Pacific power and led to American acquisition of the Philippines.",
+    "fact": "Commodore Dewey's flagship Olympia, from which he gave the famous 'fire when ready' order at Manila Bay, is preserved today as a museum ship in Philadelphia."
+  },
+  "179": {
+    "name": "Battle of Ia Drang",
+    "description": "The first major battle between US Army troops and North Vietnamese Army regulars took place in the Ia Drang Valley of Vietnam's Central Highlands in November 1965. Lieutenant Colonel Hal Moore's 1st Battalion, 7th Cavalry was helicoptered into Landing Zone X-Ray and immediately surrounded by a much larger NVA force. Over three days of desperate fighting, American firepower and air support prevented the battalion from being overrun. The battle demonstrated both the potential of air cavalry tactics and the determination of the North Vietnamese enemy. It was later immortalized in the book and film 'We Were Soldiers.'",
+    "fact": "The Battle of Ia Drang was the first time American forces used helicopter-borne air cavalry tactics in a major engagement, revolutionizing the concept of airmobile warfare."
+  },
+  "180": {
+    "name": "Battle of Khe Sanh",
+    "description": "For 77 days beginning in January 1968, some 6,000 US Marines at the isolated Khe Sanh Combat Base were besieged by up to 40,000 North Vietnamese troops. Many Americans feared Khe Sanh would become a repeat of the French disaster at Dien Bien Phu. However, unlike the French, the Americans had overwhelming air support. Operation Niagara unleashed massive B-52 strikes that devastated the besieging forces. The siege coincided with the Tet Offensive and became a symbol of the war's grinding nature. The base was ultimately relieved and then controversially abandoned months later.",
+    "fact": "During the siege of Khe Sanh, the US dropped more bombs on the surrounding area than were dropped on Japan during all of World War II, making it one of the most intense bombardments in military history."
+  },
+  "181": {
+    "name": "Tet Offensive",
+    "description": "On January 30, 1968, during the Vietnamese lunar new year ceasefire, North Vietnamese and Viet Cong forces launched coordinated attacks on over 100 cities and military installations across South Vietnam. Viet Cong sappers even breached the US Embassy compound in Saigon. The Battle of Hue raged for a month as Marines fought to recapture the ancient citadel. Though the offensive was a devastating military defeat for the communists, who suffered enormous casualties, it shattered American public confidence that the war was being won. The Tet Offensive proved to be a strategic turning point, leading to President Johnson's decision not to seek reelection and the beginning of American disengagement.",
+    "fact": "During the Tet Offensive, Viet Cong sappers actually breached the US Embassy compound in Saigon and held the grounds for six hours. The shocking television footage undermined American confidence in the war effort."
+  },
+  "182": {
+    "name": "Battle of Inchon",
+    "description": "On September 15, 1950, General Douglas MacArthur launched a daring amphibious assault at Inchon, deep behind North Korean lines. The operation was considered nearly impossible due to extreme tidal variations, narrow approach channels, and high seawalls. Despite the risks, the landing achieved complete surprise. Within two weeks, the Marines had recaptured Seoul and cut the supply lines of the North Korean army besieging the Pusan Perimeter in the south. The North Korean invasion collapsed, and UN forces advanced rapidly northward, completely reversing the course of the war.",
+    "fact": "Military planners gave MacArthur's Inchon landing only a 1-in-5,000 chance of success due to the extreme 32-foot tidal variations, but MacArthur insisted the very impossibility of the plan would guarantee surprise."
+  },
+  "183": {
+    "name": "Battle of Chosin Reservoir",
+    "description": "In late November 1950, approximately 30,000 UN troops, primarily US Marines, were surrounded by 120,000 Chinese soldiers at the Chosin Reservoir in the frozen mountains of North Korea. In temperatures plunging to minus 35 degrees Fahrenheit, the Marines fought a legendary 78-mile fighting withdrawal to the port of Hungnam. When told they were retreating, Marine commander General O.P. Smith famously declared, 'Retreat, hell! We're just attacking in a different direction.' Despite suffering heavy casualties from combat and frostbite, the Marines inflicted devastating losses on the Chinese and evacuated successfully by sea, preserving a battle-hardened force that would fight on.",
+    "fact": "At the Chosin Reservoir, temperatures were so extreme that mortar rounds had to be warmed by hand before they could be fired, blood plasma froze before it could be administered, and Tootsie Rolls were air-dropped as rations and also used to patch bullet holes in fuel drums."
+  },
+  "184": {
+    "name": "Battle of Tannenberg",
+    "description": "In one of the most decisive battles of World War I, German generals Hindenburg and Ludendorff exploited poor Russian coordination to encircle and destroy the Russian Second Army. Nearly 92,000 Russian soldiers were captured and 78,000 killed or wounded, while German losses were minimal. The defeated Russian commander, General Samsonov, shot himself in the aftermath. Tannenberg secured East Prussia and made Hindenburg a national hero.",
+    "fact": "The Battle of Tannenberg in 1914 was deliberately named after the nearby village where Teutonic Knights had been defeated in 1410, giving the German victory symbolic revenge for the medieval loss."
+  },
+  "185": {
+    "name": "Battle of the Marne",
+    "description": "The German Schlieffen Plan nearly succeeded as armies swept through Belgium and into France, reaching within 30 miles of Paris. In a desperate counterattack, French commander Joffre struck the exposed German flank along the Marne River, famously requisitioning Parisian taxicabs to rush reinforcements to the front. The Allied victory saved Paris and ended Germany's hope for a quick victory, condemning both sides to four years of trench warfare.",
+    "fact": "Paris taxicab drivers who ferried troops to the Marne were later paid their full metered fare by the French government, totaling about 70,000 francs for the 600 taxis used."
+  },
+  "186": {
+    "name": "Battle of Jutland",
+    "description": "The largest naval battle of World War I saw 250 warships clash in the North Sea off the coast of Denmark. The British Royal Navy lost more ships and sailors than the German High Seas Fleet, yet the strategic outcome favored Britain: the German fleet never again seriously challenged British naval supremacy. Germany's High Seas Fleet remained bottled up in port for the rest of the war, ensuring Allied control of the seas.",
+    "fact": "Three British battlecruisers exploded and sank at Jutland due to inadequate magazine protection. Admiral Beatty, watching two of his ships blow up, remarked, 'There seems to be something wrong with our bloody ships today.'"
+  },
+  "187": {
+    "name": "Battle of Passchendaele",
+    "description": "The Third Battle of Ypres, known as Passchendaele, became the defining symbol of the senseless horror of World War I. Torrential rain turned the Flanders battlefield into a quagmire where men and horses drowned in mud-filled shell craters. After three months and over 500,000 combined casualties, Canadian forces captured the ruins of Passchendaele village—an advance of just five miles that was lost within months.",
+    "fact": "The mud at Passchendaele was so deep and liquid that wounded soldiers who fell off the duckboard paths could drown before anyone could reach them. Pack mules disappeared entirely into shell holes."
+  },
+  "188": {
+    "name": "Battle of Caporetto",
+    "description": "A surprise Austro-Hungarian and German assault using innovative infiltration tactics shattered the Italian Second Army, triggering a catastrophic rout. The Italian front collapsed as troops fled westward in panic, losing over 300,000 prisoners and nearly 700,000 total casualties. The Italians retreated nearly 100 miles to the Piave River before stabilizing their lines. The disaster was so complete that 'Caporetto' became an Italian byword for catastrophic defeat.",
+    "fact": "The word 'Caporetto' entered the Italian language as a synonym for a catastrophic and humiliating defeat, similar to how 'Waterloo' is used in English."
+  },
+  "189": {
+    "name": "Battle of El Alamein",
+    "description": "Field Marshal Montgomery's British Eighth Army launched a massive offensive against Rommel's Afrika Korps at El Alamein, breaking through Axis lines after twelve days of intense fighting. The victory ended the Axis threat to Egypt and the Suez Canal, and began the long Allied advance across North Africa. Churchill famously declared it a turning point, saying 'Before Alamein we never had a victory. After Alamein we never had a defeat.'",
+    "fact": "Montgomery kept a portrait of Rommel in his command trailer throughout the North Africa campaign, studying his opponent's face before making decisions. He called it 'knowing your enemy.'"
+  },
+  "190": {
+    "name": "Battle of Guadalcanal",
+    "description": "The six-month campaign for Guadalcanal was the first major Allied offensive in the Pacific, fought in brutal jungle conditions. US Marines seized the critical Henderson Field airstrip, then defended it against relentless Japanese counterattacks by land, sea, and air. The campaign cost Japan irreplaceable ships, aircraft, and veteran troops, and proved that Allied forces could take and hold ground against determined Japanese defenders.",
+    "fact": "The waters around Guadalcanal saw so many naval engagements that the strait between the islands was nicknamed 'Ironbottom Sound' for the dozens of warships resting on the ocean floor."
+  },
+  "191": {
+    "name": "Battle of Okinawa",
+    "description": "The bloodiest battle of the Pacific War saw over 180,000 American troops invade Okinawa, just 340 miles from mainland Japan. Japanese defenders fought from elaborate cave and tunnel networks, while nearly 2,000 kamikaze attacks sank or damaged hundreds of Allied ships. The staggering casualties on both sides—over 12,000 Americans killed, 100,000 Japanese soldiers dead, and an estimated 100,000 Okinawan civilians lost—heavily influenced the decision to use atomic bombs rather than invade the Japanese mainland.",
+    "fact": "The Japanese garrison on Okinawa included schoolgirls organized into nursing units called the 'Himeyuri Students.' Over 200 of them died during the battle, many by suicide when capture seemed imminent."
+  },
+  "192": {
+    "name": "Battle of Berlin",
+    "description": "The final battle of the European war saw 2.5 million Soviet soldiers close in on the German capital in a massive pincer movement. Desperate German defenders, including old men and boys of the Volkssturm, fought block by block as the city was reduced to rubble. Hitler committed suicide in his bunker on April 30 as Soviet soldiers raised the red flag over the Reichstag. Germany surrendered unconditionally eight days later, ending the war in Europe.",
+    "fact": "Soviet soldiers at Berlin competed fiercely to be the first to raise the red flag over the Reichstag. The famous photograph was actually staged the next day because the original flag-raising happened at night."
+  },
+  "193": {
+    "name": "Battle of the Coral Sea",
+    "description": "The Battle of the Coral Sea was a milestone in naval warfare: the first battle in which opposing fleets fought entirely with carrier-based aircraft, never coming within sight of each other. Though the US lost the carrier Lexington, the battle turned back a Japanese invasion force aimed at Port Moresby, New Guinea, protecting the sea lanes to Australia. The tactical draw was a strategic Allied victory, marking the first time a Japanese naval advance had been checked.",
+    "fact": "The Coral Sea was the first naval battle in history where opposing ships never came within visual range of each other. All attacks were carried out by carrier-based aircraft."
+  },
+  "194": {
+    "name": "Siege of Tobruk",
+    "description": "For 241 days, a garrison of predominantly Australian troops held the Libyan port of Tobruk against Rommel's Afrika Korps, denying the Germans a key supply port and disrupting their advance into Egypt. German propaganda derisively called the defenders 'Rats of Tobruk,' a name the Australians adopted with fierce pride. The successful defense was one of the first times Axis forces had been stopped and held in the war, boosting Allied morale during a dark period.",
+    "fact": "German propaganda called the Tobruk defenders 'Rats.' The Australian garrison adopted the insult as a badge of honor, designing a medal featuring a rat that veterans wore with pride for the rest of their lives."
+  },
+  "195": {
+    "name": "Battle of Monte Cassino",
+    "description": "Four bloody assaults over five months were required to break through the German Gustav Line at Monte Cassino, which blocked the Allied advance on Rome. The Allies controversially bombed the historic sixth-century Benedictine monastery, which the Germans then used as a fortified position. Troops from Poland, Britain, India, New Zealand, France, and the United States all fought and suffered heavy casualties before Polish soldiers of the II Corps finally captured the ruins in May 1944, opening the road to Rome.",
+    "fact": "The Allies controversially bombed the ancient Monte Cassino abbey, founded by St. Benedict in 529 AD. Ironically, the Germans had not been using it as a military position, but occupied the ruins after the bombing."
+  },
+  "196": {
+    "name": "Battle of Leyte Gulf",
+    "description": "The largest naval battle in history by tonnage involved nearly 300 ships across four separate engagements around the Philippine Islands. Japan committed virtually its entire remaining fleet in a desperate gamble to destroy the American invasion force, deploying kamikaze attacks for the first time. The American victory was decisive: Japan lost four carriers, three battleships, and numerous other warships, effectively ending the Imperial Japanese Navy as a fighting force.",
+    "fact": "Leyte Gulf was so large it is actually counted as four separate battles: the Sibuyan Sea, Surigao Strait, Samar, and Cape Engano, fought simultaneously across an area the size of France."
+  },
+  "197": {
+    "name": "Battle of Britain",
+    "description": "The first major campaign fought entirely in the air saw the Royal Air Force defend Britain against the German Luftwaffe's attempt to gain air superiority as a precursor to invasion. Despite being heavily outnumbered, RAF Fighter Command's Spitfires and Hurricanes, aided by radar and brilliant tactics, inflicted unsustainable losses on the Luftwaffe. Churchill immortalized the RAF pilots with his famous tribute. Hitler indefinitely postponed Operation Sea Lion, his planned invasion of Britain.",
+    "fact": "At the height of the Battle of Britain, RAF Fighter Command was so short of pilots that some flew multiple sorties per day and slept in their cockpits between missions. Churchill's 'so few' numbered only about 2,900 aircrew."
+  },
+  "198": {
+    "name": "Siege of Leningrad",
+    "description": "The 872-day German siege of Leningrad was one of the most devastating episodes of World War II. Cut off from supplies, the city's population endured unimaginable suffering: over one million civilians died from starvation, disease, and bombardment. The only supply route was the 'Road of Life' across frozen Lake Ladoga in winter. Despite the horrors, the city never surrendered, and its resistance became a powerful symbol of Soviet determination and sacrifice.",
+    "fact": "During the Siege of Leningrad, the city's symphony orchestra performed Shostakovich's Seventh Symphony in the besieged city, with the concert broadcast on loudspeakers so the German besiegers could hear it too."
+  },
+  "199": {
+    "name": "Battle of Dunkirk",
+    "description": "With the British Expeditionary Force and French troops trapped against the sea by the rapid German advance, Operation Dynamo launched a desperate evacuation from the beaches and harbor of Dunkirk. A remarkable armada of over 800 vessels—including hundreds of civilian fishing boats, pleasure craft, and yachts—crossed the English Channel to rescue 338,226 Allied soldiers. Though a military defeat, the 'Miracle of Dunkirk' preserved the core of the British Army to fight another day and became a defining moment of British resilience.",
+    "fact": "The 'Little Ships of Dunkirk,' the flotilla of civilian vessels that helped evacuate troops, included pleasure yachts, fishing boats, and even a paddle steamer. Many owners sailed their own boats across the Channel under fire."
+  },
+  "200": {
+    "name": "Battle of Arnhem",
+    "description": "Operation Market Garden, the largest airborne operation in history, aimed to capture key bridges across the Netherlands and outflank Germany's Siegfried Line. British 1st Airborne Division landed near the bridge at Arnhem but found themselves facing two SS Panzer divisions unexpectedly stationed nearby. Colonel Frost's paratroopers held the north end of the Arnhem bridge for four days against overwhelming odds before being overrun. Only 2,163 of 10,000 British airborne troops escaped, and the operation's failure dashed Allied hopes for ending the war in 1944.",
+    "fact": "Major John Frost's paratroopers at Arnhem bridge held for four days instead of the planned two, inspiring the phrase 'a bridge too far.' Frost himself was wounded and captured but survived the war."
+  },
+  "201": {
+    "name": "Battle of Cajamarca",
+    "description": "Francisco Pizarro's small band of Spanish conquistadors ambushed and captured the Inca Emperor Atahualpa in the city plaza of Cajamarca. Despite being vastly outnumbered, the Spanish used cavalry, firearms, and surprise to rout the Inca forces and seize their emperor, effectively beginning the conquest of the Inca Empire.",
+    "fact": "Atahualpa offered to fill a room once with gold and twice with silver as ransom for his release. The Spanish collected the treasure — estimated at 6 tons of gold — but executed him anyway."
+  },
+  "202": {
+    "name": "Siege of Tenochtitlan",
+    "description": "Hernan Cortes and his Spanish-Tlaxcalan alliance besieged the Aztec capital of Tenochtitlan for 75 days. The Spanish built brigantine warships to control Lake Texcoco, cut off food and water supplies, and fought brutal street-by-street combat before the city fell, ending the Aztec Empire.",
+    "fact": "At the peak of its power, Tenochtitlan had a population of over 200,000 people, making it one of the largest cities in the world. It was built on an island connected to the shore by causeways and featured elaborate aqueducts and floating gardens."
+  },
+  "203": {
+    "name": "Battle of Otumba",
+    "description": "After the disastrous retreat from Tenochtitlan known as La Noche Triste, Cortes and his battered survivors were intercepted on the plains of Otumba by a massive Aztec army. In a desperate cavalry charge, Cortes personally struck down the Aztec commanding general, causing the army to scatter and saving his force from annihilation.",
+    "fact": "After the desperate victory at Otumba, Cortes's surviving force numbered fewer than 500 Spaniards, yet he immediately began planning the reconquest of Tenochtitlan rather than retreating to the coast."
+  },
+  "204": {
+    "name": "Siege of Cusco",
+    "description": "Manco Inca rallied over 100,000 warriors to besiege the Spanish garrison at Cusco, the former Inca capital. The siege lasted nearly a year, with fierce fighting at the fortress of Sacsayhuaman. Despite overwhelming numbers, the Inca could not dislodge the Spanish, who were eventually relieved by forces from other colonies.",
+    "fact": "During the Siege of Cusco, Manco Inca used captured Spanish weapons and even Spanish cavalry tactics against the defenders. One Inca captain learned to ride horses and lead mounted charges."
+  },
+  "205": {
+    "name": "Battle of Boyaca",
+    "description": "After an audacious crossing of the Andes, Simon Bolivar's patriot army intercepted the Spanish royalist forces at the Bridge of Boyaca. The decisive two-hour battle resulted in the capture of the royalist commander and opened the road to Bogota, securing the independence of New Granada (modern Colombia).",
+    "fact": "Bolivar's crossing of the Andes before Boyaca involved climbing passes over 4,000 meters high. Many of his llanero cavalry, who had never seen mountains, died of altitude sickness and exposure during the crossing."
+  },
+  "206": {
+    "name": "Battle of Carabobo",
+    "description": "Simon Bolivar led his patriot army to a decisive victory over Spanish royalist forces at Carabobo. The British Legion made a crucial flanking maneuver through a ravine while llanero cavalry charged the Spanish lines. This victory effectively secured Venezuelan independence and is celebrated as the nation's most important military triumph.",
+    "fact": "The British volunteers who fought at Carabobo had formed the 'British Legion' after Napoleonic War veterans were recruited by Bolivar's agents in London pubs and promised land grants in the new republics."
+  },
+  "207": {
+    "name": "Battle of Chacabuco",
+    "description": "After leading his Army of the Andes across the treacherous mountain passes from Argentina, Jose de San Martin attacked the Spanish royalist forces defending Chile. The patriot victory at Chacabuco opened the road to Santiago and marked the beginning of Chilean independence.",
+    "fact": "San Martin's crossing of the Andes with 5,000 men is considered one of the greatest military feats in history. He used elaborate deception plans, sending spies to convince the Spanish he would attack from different passes."
+  },
+  "208": {
+    "name": "Battle of Maipu",
+    "description": "The Battle of Maipu was the decisive engagement of the Chilean War of Independence. San Martin's patriot forces defeated the Spanish royalist army on the plains south of Santiago. After the victory, San Martin embraced the Chilean leader Bernardo O'Higgins and declared Chile's independence finally assured.",
+    "fact": "After the victory at Maipu, San Martin and the wounded O'Higgins embraced on the battlefield. San Martin reportedly said: 'General, Chile will not forget the name of the brave who fought for her freedom.'"
+  },
+  "209": {
+    "name": "Battle of Ayacucho",
+    "description": "The Battle of Ayacucho was the last major battle of the Spanish American wars of independence. Antonio Jose de Sucre led the patriot forces to a decisive victory over the Spanish Viceroy's army on the high Andean plateau. The Spanish surrender that followed effectively ended over 300 years of colonial rule in South America.",
+    "fact": "The Spanish Viceroy La Serna was personally wounded and captured at Ayacucho. His surrender effectively ended over 300 years of Spanish rule in mainland South America."
+  },
+  "210": {
+    "name": "Battle of Junin",
+    "description": "The Battle of Junin was a remarkable cavalry engagement fought entirely with swords and lances - not a single shot was fired. On the high plains near Lake Junin, Bolivar's patriot cavalry clashed with Spanish royalist horsemen. A flanking charge by the Peruvian Hussars turned the tide, securing a crucial victory that set the stage for Ayacucho.",
+    "fact": "The Battle of Junin lasted approximately 45 minutes and was fought entirely with cavalry sabers and lances — not a single firearm was discharged during the entire engagement, making it one of history's last great cold-steel cavalry battles."
+  },
+  "211": {
+    "name": "Battle of Pichincha",
+    "description": "Antonio Jose de Sucre led patriot forces up the slopes of the Pichincha volcano to attack Spanish royalist positions above Quito. Fighting in fog and thin mountain air at over 3,500 meters altitude, the patriots defeated the royalists and liberated the territory that would become Ecuador.",
+    "fact": "The battle on Pichincha volcano was fought at an altitude where many soldiers from the coastal lowlands struggled to breathe. Sucre himself had to be helped up the final slopes."
+  },
+  "212": {
+    "name": "Battle of Tucuman",
+    "description": "General Manuel Belgrano disobeyed orders to retreat and instead chose to make a stand at Tucuman against advancing royalist forces. His decisive victory saved the Argentine independence movement and is considered one of the most important battles in Argentine history, earning Belgrano lasting national hero status.",
+    "fact": "When Belgrano disobeyed orders to retreat and instead fought at Tucuman, the Buenos Aires government was furious — until they learned he had won. He was then given full authority to continue the campaign."
+  },
+  "213": {
+    "name": "Battle of Tuyuti",
+    "description": "The Battle of Tuyuti was the largest battle in South American history, with over 60,000 combatants. Paraguayan forces under Marshal Francisco Solano Lopez launched a massive assault against the entrenched Triple Alliance forces of Brazil, Argentina, and Uruguay. The attack was repulsed with devastating casualties, marking a turning point in the bloodiest war in South American history.",
+    "fact": "The War of the Triple Alliance was proportionally the deadliest conflict in modern history. Paraguay lost an estimated 60-90% of its population, including almost all adult males, reducing the country to near extinction."
+  },
+  "214": {
+    "name": "Battle of Rancagua",
+    "description": "Bernardo O'Higgins and his patriot forces made a desperate last stand in the town of Rancagua against royalist forces. Surrounded and outnumbered, the patriots fought from barricades in the central plaza for two days before O'Higgins led a daring breakout. The defeat ended the Patria Vieja period and forced the patriots into exile in Argentina.",
+    "fact": "After his defeat at Rancagua, O'Higgins led survivors across the Andes to Mendoza, where he met San Martin. Together they would plan the liberation campaign that would return to free Chile three years later."
+  },
+  "215": {
+    "name": "Battle of Iquique",
+    "description": "During the War of the Pacific, the Chilean wooden corvette Esmeralda engaged the powerful Peruvian ironclad Huascar off Iquique. Captain Arturo Prat led a boarding attempt against the ironclad and was killed on its deck. Though the Esmeralda was sunk, Prat's sacrifice became the defining heroic moment of Chilean national identity.",
+    "fact": "Captain Arturo Prat's last words before boarding the Huascar are debated, but the most famous version has him crying 'Board her, boys!' His sacrifice at Iquique is commemorated as Chilean Navy Day every May 21st."
+  },
+  "216": {
+    "name": "Battle of Angamos",
+    "description": "The Chilean navy cornered and captured the Peruvian ironclad Huascar at the Battle of Angamos. The Huascar, under Admiral Miguel Grau, had terrorized the Chilean coast for months. Grau was killed during the engagement and the capture of his ship gave Chile naval supremacy, enabling the land invasion that would decide the War of the Pacific.",
+    "fact": "Admiral Miguel Grau of Peru was known as 'The Gentleman of the Seas' because he returned personal effects of fallen enemies to their families. Even his Chilean adversaries honored him after his death at Angamos."
+  },
+  "217": {
+    "name": "Battle of Arica",
+    "description": "Chilean forces stormed the heavily fortified clifftop position of Arica in just 55 minutes. Colonel Francisco Bolognesi had refused to surrender, vowing to fight to the last cartridge. The fierce assault and the defenders' heroic resistance made Arica one of the most celebrated battles on both sides of the War of the Pacific.",
+    "fact": "Colonel Bolognesi's famous last words at Arica — 'I have sacred duties to fulfill and I will fight until firing the last cartridge' — became one of the most iconic phrases in Peruvian military history."
+  },
+  "218": {
+    "name": "Battle of Puebla",
+    "description": "General Ignacio Zaragoza led the Mexican army to a surprising victory over the French expeditionary force at Puebla. The French army, considered the finest in the world, was repulsed with heavy losses. Though France would later conquer Mexico City, the victory at Puebla became a powerful symbol of Mexican resistance, celebrated every May 5th as Cinco de Mayo.",
+    "fact": "The Battle of Puebla is more widely celebrated in the United States as Cinco de Mayo than it is in Mexico, where it is a relatively minor holiday compared to Mexican Independence Day on September 16th."
+  },
+  "219": {
+    "name": "Battle of Cerro Cora",
+    "description": "The Battle of Cerro Cora was the final engagement of the War of the Triple Alliance. Brazilian cavalry tracked down the last remnants of the Paraguayan army in the forests of northern Paraguay. President Francisco Solano Lopez was killed, reportedly declaring he was dying with his fatherland. Paraguay had lost an estimated 60-90% of its population in the catastrophic war.",
+    "fact": "When a Brazilian soldier reportedly told Lopez to surrender at Cerro Cora, he allegedly replied 'I die with my fatherland!' — words that became the national motto of Paraguayan resistance and pride."
+  },
+  "220": {
+    "name": "La Noche Triste",
+    "description": "La Noche Triste (The Sad Night) was the disastrous Spanish retreat from Tenochtitlan after the Aztec uprising. Cortes and his men attempted to escape across the causeways at night but were discovered. Many soldiers drowned in the lake, weighed down by looted gold. Cortes reportedly wept under an ahuehuete tree, having lost over half his force.",
+    "fact": "During La Noche Triste, so much looted Aztec gold was lost in the waters of Lake Texcoco that treasure hunters searched the area for centuries. Some soldiers reportedly drowned because they refused to abandon their gold."
+  },
+  "221": {
+    "name": "Battle of Vuelta de Obligado",
+    "description": "Argentine forces under Juan Manuel de Rosas attempted to block an Anglo-French naval squadron from sailing up the Parana River. Iron chains were stretched across the waterway and shore batteries opened fire. Though the European warships eventually broke through, the fierce resistance demonstrated Argentine sovereignty and is celebrated as a day of national sovereignty.",
+    "fact": "Despite technically losing the Battle of Vuelta de Obligado, Argentina celebrates November 20th as the 'Day of National Sovereignty' in honor of the defiant resistance against European intervention."
+  },
+  "222": {
+    "name": "Battle of Ituzaingo",
+    "description": "The Battle of Ituzaingo was the largest engagement of the Argentine-Brazilian War. Argentine and Uruguayan forces under Carlos Maria de Alvear defeated the Imperial Brazilian army. The battle helped establish Uruguay as an independent nation, serving as a buffer state between Argentina and Brazil.",
+    "fact": "The Battle of Ituzaingo led to British-mediated negotiations that created Uruguay as an independent buffer state. Neither Argentina nor Brazil got what they wanted — instead, an entirely new nation was born."
+  },
+  "223": {
+    "name": "Battle of Chaco Boreal",
+    "description": "The Chaco War between Paraguay and Bolivia was fought over the desolate Gran Chaco region, believed to contain oil reserves. Despite Bolivia's larger population and army, Paraguay's soldiers were better adapted to the harsh terrain and won a series of decisive battles. The war killed over 100,000 people and was the bloodiest South American conflict of the 20th century.",
+    "fact": "Bolivia hired a German general, Hans Kundt, to lead their forces in the Chaco War. His European-style tactics proved disastrous in the harsh scrubland, and he was eventually relieved of command after repeated defeats."
+  },
+  "224": {
+    "name": "Battle of San Lorenzo",
+    "description": "Jose de San Martin led his Mounted Grenadiers in a surprise cavalry charge against Spanish royalist troops near the San Lorenzo monastery. It was San Martin's first battle in South America and the only one he fought on Argentine soil. His horse was killed and fell on him, and he was saved by two of his grenadiers in a famous act of sacrifice.",
+    "fact": "The two grenadiers who saved San Martin's life at San Lorenzo — Sergeant Juan Bautista Cabral and Private Baigorria — became national heroes. Cabral's dying words were reportedly 'I die happy, we have beaten the enemy.'"
+  },
+  "225": {
+    "name": "Battle of Cancha Rayada",
+    "description": "Spanish royalist forces launched a devastating night attack on San Martin's patriot army at Cancha Rayada. The surprise assault caused widespread panic and the patriots suffered significant losses. However, San Martin and his officers quickly rallied their forces, and just 12 days later won the decisive Battle of Maipu that secured Chilean independence.",
+    "fact": "The defeat at Cancha Rayada was so complete that San Martin's army initially appeared destroyed. But within days he had rallied 5,000 men for the Battle of Maipu, one of the great military comebacks in history."
+  },
+  "226": {
+    "name": "Battle of Kadesh",
+    "description": "Ramesses II led his Egyptian army against the Hittite forces of Muwatalli II near the city of Kadesh on the Orontes River. The Egyptians were ambushed when Hittite chariots struck their divided columns, nearly capturing the pharaoh himself. Ramesses rallied his forces and fought to a stalemate. The battle led to the earliest known international peace treaty, the Egyptian-Hittite peace accord."
+  },
+  "227": {
+    "name": "Battle of Gaugamela",
+    "description": "Alexander the Great faced Darius III's massive Persian army on a plain near Gaugamela. Despite being vastly outnumbered, Alexander executed a brilliant oblique attack, leading his Companion cavalry in a devastating charge directly at Darius. The Persian king fled, and his army collapsed. The victory gave Alexander control of Babylon, Susa, and Persepolis, ending the Achaemenid Empire."
+  },
+  "228": {
+    "name": "Fall of Babylon",
+    "description": "Cyrus the Great of Persia captured Babylon from King Nabonidus. According to Herodotus, the Persians diverted the Euphrates River and entered along the dry riverbed. Cyrus presented himself as a liberator and freed the captive Jewish population, earning praise in the Hebrew Bible. The Cyrus Cylinder, found in Babylon, is sometimes called the first declaration of human rights."
+  },
+  "229": {
+    "name": "Battle of Actium",
+    "description": "Octavian's fleet defeated the combined naval forces of Mark Antony and Cleopatra VII at Actium. When Cleopatra's squadron fled toward Egypt, Antony abandoned his fleet to follow her. The victory made Octavian sole ruler of the Roman world, and Egypt became a Roman province, ending the Ptolemaic dynasty and thousands of years of Egyptian independence."
+  },
+  "230": {
+    "name": "Siege of Jerusalem",
+    "description": "Nebuchadnezzar II of Babylon besieged Jerusalem after King Zedekiah rebelled. After an 18-month siege, the city fell and Solomon's Temple was completely destroyed. The elite of Judah were deported to Babylon in what became known as the Babylonian Exile, one of the defining events in Jewish history."
+  },
+  "231": {
+    "name": "Fall of Constantinople",
+    "description": "Sultan Mehmed II besieged Constantinople, capital of the Byzantine Empire, with a massive army and the largest cannons ever built. After a 53-day siege, the Ottomans breached the legendary Theodosian Walls. The last Byzantine Emperor, Constantine XI, died fighting. The fall of Constantinople ended the Roman Empire after over a thousand years and established the Ottoman Empire as the dominant power in the eastern Mediterranean."
+  },
+  "232": {
+    "name": "Battle of Tours",
+    "description": "Charles Martel led a Frankish army against the Umayyad Caliphate's forces under Abdul Rahman Al Ghafiqi near Tours in central France. The Frankish heavy infantry held firm against repeated cavalry charges, and Abdul Rahman was killed in the fighting. The victory halted the northward expansion of Islam into Western Europe and established the Carolingian dynasty's prestige, eventually leading to the reign of Charlemagne."
+  },
+  "233": {
+    "name": "Siege of Vienna",
+    "description": "The Ottoman Empire besieged Vienna, the Habsburg capital, with a massive army under Grand Vizier Kara Mustafa Pasha. After two months of desperate defense, a relief force led by Polish King Jan III Sobieski arrived and launched one of the largest cavalry charges in history. The Ottomans were routed, marking the beginning of their long retreat from Europe and the end of Ottoman expansion westward."
+  },
+  "234": {
+    "name": "Battle of Hattin",
+    "description": "Saladin lured the Crusader army under Guy of Lusignan into a waterless march toward the Horns of Hattin near the Sea of Galilee. Exhausted and dying of thirst, the Crusaders were surrounded and destroyed. Saladin captured the True Cross and most of the Crusader nobility. Within months, he recaptured Jerusalem and most of the Crusader states, shocking Christian Europe and triggering the Third Crusade."
+  },
+  "235": {
+    "name": "Battle of Gallipoli",
+    "description": "The Allied powers attempted to seize the Dardanelles strait and capture Constantinople to knock the Ottoman Empire out of World War I. British, French, and ANZAC forces landed on the Gallipoli peninsula but were pinned down by fierce Ottoman resistance. Mustafa Kemal, later known as Ataturk, distinguished himself as a brilliant defensive commander. After eight months of brutal trench warfare and over 400,000 casualties on each side, the Allies evacuated in defeat. The campaign became a founding national myth for Australia, New Zealand, and modern Turkey."
+  }
+}

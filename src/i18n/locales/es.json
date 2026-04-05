@@ -49,7 +49,12 @@
     "points": "Puntos",
     "hintsUsed": "Pistas usadas",
     "streak": "Racha",
-    "nextBattle": "Siguiente batalla"
+    "nextBattle": "Siguiente batalla",
+    "difficulty": {
+      "easy": "fácil",
+      "medium": "medio",
+      "hard": "difícil"
+    }
   },
   "modes": {
     "classic": "Clásico",

@@ -5,6 +5,7 @@ import { Confetti } from '../effects/Confetti';
 import { DefeatAnimation } from '../effects/DefeatAnimation';
 import { ShareButton } from './ShareButton';
 import { battleFacts } from '../../data/battleFacts';
+import { getLocalizedBattleContent } from '../../i18n/battleContent';
 import type { Battle, BattleRoundResult } from '../../types';
 
 interface ResultFeedbackProps {
@@ -34,8 +35,11 @@ export function ResultFeedback({
   bestStreak = 0,
   battleResults = [],
 }: ResultFeedbackProps) {
-  const { t } = useTranslation();
-  const fact = battleFacts[battle.id];
+  const { t, i18n } = useTranslation();
+  const localized = getLocalizedBattleContent(battle.id, i18n.language);
+  const description = localized.description ?? battle.description;
+  const fact = localized.fact ?? battleFacts[battle.id];
+  const difficultyLabel = t(`result.difficulty.${battle.difficulty}`, { defaultValue: battle.difficulty });
 
   return (
     <motion.div
@@ -84,7 +88,7 @@ export function ResultFeedback({
         transition={{ delay: 0.3 }}
         className="bg-primary-50 rounded-xl p-3 sm:p-4 text-left"
       >
-        <p className="text-sm sm:text-base text-primary-800">{battle.description}</p>
+        <p className="text-sm sm:text-base text-primary-800">{description}</p>
         <div className="mt-2 flex flex-wrap gap-2">
           <span className="px-2 py-1 bg-primary-200 text-primary-800 rounded text-sm">
             {battle.year < 0 ? `${Math.abs(battle.year)} BCE` : battle.year}
@@ -97,7 +101,7 @@ export function ResultFeedback({
             battle.difficulty === 'medium' ? 'bg-yellow-200 text-yellow-800' :
             'bg-red-200 text-red-800'
           }`}>
-            {battle.difficulty}
+            {difficultyLabel}
           </span>
         </div>
       </motion.div>
