@@ -155,7 +155,7 @@ export function ResultFeedback({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
-        className="flex gap-3"
+        className="flex flex-col gap-3"
       >
         <Button variant="primary" size="lg" onClick={onNextBattle} className="flex-1">
           {t('result.nextBattle')}

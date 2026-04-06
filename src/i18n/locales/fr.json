@@ -165,13 +165,13 @@
     },
     "about": {
       "title": "À propos de BattleGuess",
-      "description": "BattleGuess est le jeu de culture générale historique ultime où vous identifiez des batailles célèbres à partir de superbes illustrations générées par IA. Testez vos connaissances à travers 8 époques historiques, de l'Antiquité aux guerres mondiales, et rivalisez dans les classements mondiaux.",
+      "description": "BattleGuess est le jeu de culture générale historique ultime où vous identifiez des batailles célèbres à partir de superbes illustrations. Testez vos connaissances à travers 8 époques historiques, de l'Antiquité aux guerres mondiales, et rivalisez dans les classements mondiaux.",
       "howToPlay": "Comment jouer",
       "whatMakesSpecial": "Ce qui rend BattleGuess unique",
       "cta": "Prêt à tester vos connaissances ?",
       "ctaSubtitle": "Lancez-vous et voyez combien de batailles vous pouvez identifier.",
       "features": {
-        "aiImages": "Images générées par IA",
+        "aiImages": "Images de batailles",
         "gameModes": "8 modes de jeu",
         "battles": "Plus de 200 batailles",
         "eras": "8 époques historiques"
@@ -179,14 +179,14 @@
       "step1Title": "Choisissez vos paramètres",
       "step1Desc": "Sélectionnez votre époque, votre niveau de difficulté et votre mode de jeu préférés. Que vous souhaitiez un défi quotidien rapide ou une campagne complète, il y a un mode pour vous.",
       "step2Title": "Étudiez l'image de la bataille",
-      "step2Desc": "Examinez l'illustration générée par IA représentant une célèbre bataille historique. Recherchez des indices visuels comme les armures, les armes, le terrain et les formations.",
+      "step2Desc": "Examinez l'illustration représentant une célèbre bataille historique. Recherchez des indices visuels comme les armures, les armes, le terrain et les formations.",
       "step3Title": "Utilisez les indices si nécessaire",
       "step3Desc": "Bloqué ? Révélez jusqu'à trois indices progressifs pour vous aider à identifier la bataille. Chaque indice coûte des points, alors utilisez-les judicieusement.",
       "step4Title": "Soumettez votre réponse",
       "step4Desc": "Tapez le nom de la bataille et validez votre réponse. Les bonnes réponses rapportent des points en fonction de la difficulté, des indices utilisés et de votre série en cours.",
       "step5Title": "Grimpez dans le classement",
       "step5Desc": "Construisez votre série, débloquez des succès et rivalisez dans le classement mondial. Partagez vos résultats avec vos amis et défiez-les de battre votre score.",
-      "featureAiDesc": "Chaque bataille prend vie grâce à des images uniques et atmosphériques générées par IA, conçues pour capturer l'essence de chaque engagement historique.",
+      "featureAiDesc": "Chaque bataille prend vie grâce à des images uniques et atmosphériques, conçues pour capturer l'essence de chaque engagement historique.",
       "featureModesDesc": "Du mode Classique au tri Chronologique, en passant par les défis Chronométrés, les Campagnes et les défis Quotidiens, il y a toujours une nouvelle façon de jouer.",
       "featureBattlesDesc": "Explorez plus de 200 batailles historiquement fidèles couvrant des milliers d'années d'histoire militaire, de la guerre antique sur chars aux combats modernes.",
       "featureErasDesc": "Voyagez à travers l'Égypte ancienne, la Grèce et Rome antiques, l'Europe médiévale, l'Empire ottoman, l'Asie de l'Est, l'ère coloniale, les guerres américaines et les guerres mondiales."
@@ -309,15 +309,15 @@
     },
     "10": {
       "question": "BattleGuess fonctionne-t-il hors ligne ?",
-      "answer": "BattleGuess nécessite une connexion Internet pour jouer. Le jeu doit charger les images de batailles générées par IA depuis le serveur, envoyer vos scores au classement mondial et synchroniser les données du défi quotidien. Bien que les fichiers principaux de l'application puissent être mis en cache par votre navigateur pour un chargement plus rapide, une connexion Internet active est nécessaire pour profiter pleinement de l'expérience de jeu."
+      "answer": "BattleGuess nécessite une connexion Internet pour jouer. Le jeu doit charger les images de batailles depuis le serveur, envoyer vos scores au classement mondial et synchroniser les données du défi quotidien. Bien que les fichiers principaux de l'application puissent être mis en cache par votre navigateur pour un chargement plus rapide, une connexion Internet active est nécessaire pour profiter pleinement de l'expérience de jeu."
     },
     "11": {
       "question": "D'où viennent les images des batailles ?",
-      "answer": "Toutes les images de batailles dans BattleGuess sont générées par IA à l'aide de Google Gemini. Chaque image est soigneusement conçue pour représenter une bataille historique spécifique avec des détails fidèles à l'époque, tels que les armures, les armes, le terrain et les formations. L'approche par IA permet au jeu de fournir des représentations vivantes et uniques de batailles qui peuvent avoir peu ou pas d'illustrations historiques disponibles."
+      "answer": "Chaque image de bataille dans BattleGuess est soigneusement conçue pour représenter une bataille historique spécifique avec des détails fidèles à l'époque, tels que les armures, les armes, le terrain et les formations. Cette approche permet au jeu de fournir des représentations vivantes et uniques de batailles qui peuvent avoir peu ou pas d'illustrations historiques disponibles."
     },
     "12": {
       "question": "Les informations historiques sont-elles fiables ?",
-      "answer": "Les informations historiques dans BattleGuess sont bien documentées et conçues pour être éducatives. Les descriptions des batailles, les dates, les lieux et les faits clés ont été vérifiés à partir de sources historiques fiables. Bien que les images générées par IA soient des interprétations artistiques plutôt que des reconstitutions exactes, le contenu factuel — y compris les noms des batailles, les années, les belligérants et les issues — est précis et vise à aider les joueurs à apprendre la véritable histoire militaire tout en jouant."
+      "answer": "Les informations historiques dans BattleGuess sont bien documentées et conçues pour être éducatives. Les descriptions des batailles, les dates, les lieux et les faits clés ont été vérifiés à partir de sources historiques fiables. Bien que les images soient des interprétations artistiques plutôt que des reconstitutions exactes, le contenu factuel — y compris les noms des batailles, les années, les belligérants et les issues — est précis et vise à aider les joueurs à apprendre la véritable histoire militaire tout en jouant."
     },
     "13": {
       "question": "De nouvelles batailles seront-elles ajoutées ?",
@@ -339,8 +339,8 @@
     "classic": {
       "label": "Classique",
       "shortDesc": "Devinez la bataille à partir de l'image",
-      "longDesc": "Observez une image générée par IA d'une bataille célèbre et essayez de deviner laquelle c'est. Utilisez les indices si vous êtes bloqué !",
-      "rules": "Une image générée par IA représentant une bataille historique vous est présentée. Votre objectif est de taper correctement le nom de la bataille. Vous avez accès à 4 indices par manche, chacun coûtant 25 points. Les points sont attribués en fonction de la difficulté de la bataille : les batailles faciles, moyennes et difficiles ont des valeurs de points de base croissantes. Les bonnes réponses construisent votre série, qui accorde des points bonus pour les réponses correctes consécutives.",
+      "longDesc": "Observez une image d'une bataille célèbre et essayez de deviner laquelle c'est. Utilisez les indices si vous êtes bloqué !",
+      "rules": "Une image représentant une bataille historique vous est présentée. Votre objectif est de taper correctement le nom de la bataille. Vous avez accès à 4 indices par manche, chacun coûtant 25 points. Les points sont attribués en fonction de la difficulté de la bataille : les batailles faciles, moyennes et difficiles ont des valeurs de points de base croissantes. Les bonnes réponses construisent votre série, qui accorde des points bonus pour les réponses correctes consécutives.",
       "strategy": "Commencez par examiner l'image pour repérer des détails propres à chaque époque, comme les styles d'armure, les armes et le paysage. Les batailles antiques présentent souvent des boucliers, des lances et un terrain méditerranéen, tandis que les batailles des guerres mondiales montrent des tranchées, des chars ou des uniformes modernes. Si l'image montre un combat naval, réduisez vos options aux batailles navales célèbres. Utilisez les indices de manière sélective — le premier indice est généralement un indice d'époque général qui peut vous éviter une mauvaise réponse. Construire et maintenir une série est l'un des meilleurs moyens de maximiser votre score global."
     },
     "reverse-year": {

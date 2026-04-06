@@ -165,13 +165,13 @@
     },
     "about": {
       "title": "About BattleGuess",
-      "description": "BattleGuess is the ultimate history trivia game where you identify famous battles from stunning AI-generated artwork. Test your knowledge across 8 historical eras, from the ancient world to the World Wars, and compete on global leaderboards.",
+      "description": "BattleGuess is the ultimate history trivia game where you identify famous battles from stunning artwork. Test your knowledge across 8 historical eras, from the ancient world to the World Wars, and compete on global leaderboards.",
       "howToPlay": "How to Play",
       "whatMakesSpecial": "What Makes BattleGuess Special",
       "cta": "Ready to Test Your Knowledge?",
       "ctaSubtitle": "Jump in and see how many battles you can identify.",
       "features": {
-        "aiImages": "AI-Generated Images",
+        "aiImages": "Battle Images",
         "gameModes": "8 Game Modes",
         "battles": "200+ Battles",
         "eras": "8 Historical Eras"
@@ -179,14 +179,14 @@
       "step1Title": "Choose Your Settings",
       "step1Desc": "Select your preferred era, difficulty level, and game mode. Whether you want a quick daily challenge or a full campaign, there is a mode for you.",
       "step2Title": "Study the Battle Image",
-      "step2Desc": "Examine the AI-generated artwork depicting a famous historical battle. Look for visual clues like armor, weapons, terrain, and formations.",
+      "step2Desc": "Examine the artwork depicting a famous historical battle. Look for visual clues like armor, weapons, terrain, and formations.",
       "step3Title": "Use Hints If Needed",
       "step3Desc": "Stuck? Reveal up to three progressive hints to help narrow down the battle. Each hint costs points, so use them wisely.",
       "step4Title": "Submit Your Guess",
       "step4Desc": "Type the name of the battle and submit your answer. Correct answers earn points based on difficulty, hints used, and your current streak.",
       "step5Title": "Climb the Leaderboard",
       "step5Desc": "Build your streak, earn achievements, and compete on the global leaderboard. Share your results with friends and challenge them to beat your score.",
-      "featureAiDesc": "Every battle is brought to life with unique, atmospheric AI-generated images crafted to capture the essence of each historical engagement.",
+      "featureAiDesc": "Every battle is brought to life with unique, atmospheric images crafted to capture the essence of each historical engagement.",
       "featureModesDesc": "From Classic guessing to Timeline sorting, Timed challenges, Campaigns, and Daily challenges, there is always a new way to play.",
       "featureBattlesDesc": "Explore over 200 historically accurate battles spanning thousands of years of military history, from ancient chariot warfare to modern combat.",
       "featureErasDesc": "Journey through Ancient Egypt, Greece & Rome, Medieval Europe, the Ottoman Empire, East Asia, the Colonial era, American Wars, and the World Wars."
@@ -309,15 +309,15 @@
     },
     "10": {
       "question": "Does BattleGuess work offline?",
-      "answer": "BattleGuess requires an internet connection to play. The game needs to load AI-generated battle images from the server, submit your scores to the global leaderboard, and sync daily challenge data. While the core application files may be cached by your browser for faster loading, an active internet connection is necessary for the full gameplay experience."
+      "answer": "BattleGuess requires an internet connection to play. The game needs to load battle images from the server, submit your scores to the global leaderboard, and sync daily challenge data. While the core application files may be cached by your browser for faster loading, an active internet connection is necessary for the full gameplay experience."
     },
     "11": {
       "question": "Where do the battle images come from?",
-      "answer": "All battle images in BattleGuess are AI-generated using Google Gemini. Each image is carefully prompted to depict a specific historical battle with period-accurate details such as armor, weapons, terrain, and formations. The AI-generated approach allows the game to provide vivid, unique depictions of battles that may have limited or no historical illustrations available."
+      "answer": "Each battle image in BattleGuess is carefully crafted to depict a specific historical battle with period-accurate details such as armor, weapons, terrain, and formations. This approach allows the game to provide vivid, unique depictions of battles that may have limited or no historical illustrations available."
     },
     "12": {
       "question": "How accurate is the historical information?",
-      "answer": "The historical information in BattleGuess is well-researched and designed to be educational. Battle descriptions, dates, locations, and key facts have been verified against reputable historical sources. While the AI-generated images are artistic interpretations rather than exact recreations, the factual content \u2014 including battle names, years, belligerents, and outcomes \u2014 is accurate and intended to help players learn real military history as they play."
+      "answer": "The historical information in BattleGuess is well-researched and designed to be educational. Battle descriptions, dates, locations, and key facts have been verified against reputable historical sources. While the images are artistic interpretations rather than exact recreations, the factual content \u2014 including battle names, years, belligerents, and outcomes \u2014 is accurate and intended to help players learn real military history as they play."
     },
     "13": {
       "question": "Will more battles be added?",
@@ -339,8 +339,8 @@
     "classic": {
       "label": "Classic",
       "shortDesc": "Guess the battle from the image",
-      "longDesc": "See an AI-generated image of a famous battle and try to guess which one it is. Use hints if you get stuck!",
-      "rules": "You are presented with an AI-generated image depicting a historical battle. Your goal is to type the name of the battle correctly. You have access to 4 hints per round, each costing 25 points. Points are awarded based on the difficulty of the battle: easy, medium, and hard battles have increasing base point values. Correct answers build your streak, which awards bonus points for consecutive correct guesses.",
+      "longDesc": "See an image of a famous battle and try to guess which one it is. Use hints if you get stuck!",
+      "rules": "You are presented with an image depicting a historical battle. Your goal is to type the name of the battle correctly. You have access to 4 hints per round, each costing 25 points. Points are awarded based on the difficulty of the battle: easy, medium, and hard battles have increasing base point values. Correct answers build your streak, which awards bonus points for consecutive correct guesses.",
       "strategy": "Start by examining the image for era-specific details such as armor styles, weapons, and landscape. Ancient battles often feature shields, spears, and Mediterranean terrain, while World War battles show trenches, tanks, or modern uniforms. If the image shows naval combat, narrow your options to famous sea battles. Use hints selectively \u2014 the first hint is usually a broad era clue that can save you from a wrong guess. Building and maintaining a streak is one of the best ways to maximize your overall score."
     },
     "reverse-year": {

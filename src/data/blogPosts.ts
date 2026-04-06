@@ -75,7 +75,7 @@ export const blogPosts: BlogPost[] = [
     title: '10 Most Decisive Battles in History',
     description:
       'From Thermopylae to Stalingrad, explore the battles that changed the course of civilization and shaped the world we live in today.',
-    date: '2026-02-22',
+    date: '2025-11-10',
     author: 'Harry H',
     readTime: '12 min read',
     tags: ['history', 'battles', 'military', 'world history'],
@@ -143,7 +143,7 @@ export const blogPosts: BlogPost[] = [
     title: 'How Ancient Warfare Shaped the Modern World',
     description:
       'Discover how military tactics, technology, and strategy from the ancient world laid the foundations for modern civilization.',
-    date: '2026-02-22',
+    date: '2025-11-18',
     author: 'Harry H',
     readTime: '10 min read',
     tags: ['ancient history', 'warfare', 'tactics', 'civilization'],
@@ -206,7 +206,7 @@ export const blogPosts: BlogPost[] = [
     title: 'A Beginner\u2019s Guide to Military History',
     description:
       'New to military history? This guide covers the best starting points, key eras to explore, and how to build your knowledge from the ground up.',
-    date: '2026-02-22',
+    date: '2025-11-27',
     author: 'Harry H',
     readTime: '9 min read',
     tags: ['beginner', 'guide', 'learning', 'military history'],
@@ -272,7 +272,7 @@ export const blogPosts: BlogPost[] = [
     title: '8 Ways to Improve Your BattleGuess Score',
     description:
       'Practical tips and strategies to boost your scores across all game modes in BattleGuess, from studying images to mastering streaks.',
-    date: '2026-02-22',
+    date: '2025-12-05',
     author: 'Harry H',
     readTime: '7 min read',
     tags: ['tips', 'strategy', 'game guide', 'BattleGuess'],
@@ -338,7 +338,7 @@ export const blogPosts: BlogPost[] = [
     title: 'The Evolution of Siege Warfare',
     description:
       'Trace the development of siege warfare from ancient battering rams and siege towers to the massive artillery bombardments of the modern era.',
-    date: '2026-02-22',
+    date: '2025-12-14',
     author: 'Harry H',
     readTime: '10 min read',
     tags: ['siege warfare', 'fortifications', 'military technology', 'history'],
@@ -400,7 +400,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Top 10 Naval Battles That Ruled the Waves',
     description:
       'From ancient triremes to modern aircraft carriers, these naval engagements determined who controlled the seas and shaped the destiny of empires.',
-    date: '2026-02-22',
+    date: '2025-12-22',
     author: 'Harry H',
     readTime: '11 min read',
     tags: ['naval battles', 'maritime history', 'ships', 'military history'],
@@ -451,7 +451,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Battles Every Student Should Know',
     description:
       'A curated list of the most important battles for history students, covering the engagements that shaped civilizations and appear on every exam.',
-    date: '2026-02-22',
+    date: '2026-01-03',
     author: 'Harry H',
     readTime: '10 min read',
     tags: ['education', 'history', 'students', 'learning'],
@@ -516,7 +516,7 @@ export const blogPosts: BlogPost[] = [
     title: 'The Greatest Military Commanders of All Time',
     description:
       'From Alexander the Great to Napoleon Bonaparte, explore the strategies and victories of history\u2019s most brilliant military leaders.',
-    date: '2026-02-22',
+    date: '2026-01-12',
     author: 'Harry H',
     readTime: '12 min read',
     tags: ['commanders', 'generals', 'leadership', 'strategy'],
@@ -575,7 +575,7 @@ export const blogPosts: BlogPost[] = [
     title: 'How Gunpowder Changed Warfare Forever',
     description:
       'The introduction of gunpowder weapons transformed battle tactics, ended the age of castles, and reshaped the global balance of power.',
-    date: '2026-02-22',
+    date: '2026-01-20',
     author: 'Harry H',
     readTime: '10 min read',
     tags: ['gunpowder', 'military technology', 'weapons', 'history'],
@@ -634,7 +634,7 @@ export const blogPosts: BlogPost[] = [
     title: '5 Turning Points of World War II',
     description:
       'The five key battles that shifted the momentum of World War II, from the defense of Britain to the fall of Berlin.',
-    date: '2026-02-22',
+    date: '2026-01-29',
     author: 'Harry H',
     readTime: '11 min read',
     tags: ['World War II', 'turning points', 'modern warfare', 'history'],
@@ -697,7 +697,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Samurai Battles: The Warrior Conflicts of Feudal Japan',
     description:
       'Explore the epic battles of feudal Japan, from the Genpei War to the unification under Tokugawa, and the code of the samurai warrior.',
-    date: '2026-02-22',
+    date: '2026-02-06',
     author: 'Harry H',
     readTime: '10 min read',
     tags: ['Japan', 'samurai', 'feudal warfare', 'East Asia'],
@@ -754,7 +754,7 @@ export const blogPosts: BlogPost[] = [
     title: 'The Crusades Explained: Key Battles and Lasting Legacy',
     description:
       'An accessible overview of the Crusades covering the major battles, key figures, and the lasting impact these religious wars had on both East and West.',
-    date: '2026-02-22',
+    date: '2026-02-15',
     author: 'Harry H',
     readTime: '11 min read',
     tags: ['Crusades', 'medieval', 'Middle East', 'religious wars'],
@@ -859,7 +859,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Latin American Wars of Independence: The Battles That Freed a Continent',
     description:
       'How Simon Bolivar, Jose de San Martin, and other liberators fought to free South America from colonial rule through a series of dramatic battles.',
-    date: '2026-02-22',
+    date: '2026-03-02',
     author: 'Harry H',
     readTime: '10 min read',
     tags: ['Latin America', 'independence', 'Bolivar', 'San Martin'],
@@ -912,7 +912,7 @@ export const blogPosts: BlogPost[] = [
     title: 'The History of Cavalry: From Chariots to Tanks',
     description:
       'Trace the evolution of mounted warfare from ancient war chariots through medieval knights to the mechanized armor of the 20th century.',
-    date: '2026-02-22',
+    date: '2026-03-10',
     author: 'Harry H',
     readTime: '10 min read',
     tags: ['cavalry', 'tanks', 'military evolution', 'mounted warfare'],
@@ -970,7 +970,7 @@ export const blogPosts: BlogPost[] = [
     title: 'The Ottoman Empire\u2019s Greatest Military Victories',
     description:
       'How the Ottoman Empire built one of history\u2019s most powerful military machines and conquered an empire spanning three continents.',
-    date: '2026-02-22',
+    date: '2026-03-18',
     author: 'Harry H',
     readTime: '10 min read',
     tags: ['Ottoman Empire', 'Islamic history', 'conquest', 'military power'],
@@ -1028,7 +1028,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Women in Military History: Warriors, Leaders, and Strategists',
     description:
       'From ancient warrior queens to modern military leaders, discover the women who shaped the course of military history.',
-    date: '2026-02-22',
+    date: '2026-03-25',
     author: 'Harry H',
     readTime: '10 min read',
     tags: ['women in history', 'warriors', 'leadership', 'military history'],
@@ -1081,7 +1081,7 @@ export const blogPosts: BlogPost[] = [
     title: 'How Weather Decided Famous Battles',
     description:
       'Rain, snow, fog, and storms have turned the tide of history. Discover how weather conditions determined the outcome of some of the most famous battles ever fought.',
-    date: '2026-02-22',
+    date: '2026-04-01',
     author: 'Harry H',
     readTime: '9 min read',
     tags: ['weather', 'tactics', 'terrain', 'battle conditions'],
@@ -1137,7 +1137,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Ancient Rome vs Ancient Greece: A Military Comparison',
     description:
       'Phalanx versus legion, hoplite versus legionary \u2014 compare the two greatest military systems of the ancient world and the battles that proved their strengths.',
-    date: '2026-02-22',
+    date: '2026-04-03',
     author: 'Harry H',
     readTime: '10 min read',
     tags: ['Rome', 'Greece', 'ancient warfare', 'tactics', 'military comparison'],
@@ -1202,7 +1202,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Battlefield Tactics Explained for Beginners',
     description:
       'Flanking, envelopment, pincer movements, and more \u2014 understand the core tactical concepts that commanders have used to win battles throughout history.',
-    date: '2026-02-22',
+    date: '2026-04-06',
     author: 'Harry H',
     readTime: '9 min read',
     tags: ['tactics', 'strategy', 'beginner', 'military concepts'],

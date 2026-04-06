@@ -195,7 +195,7 @@ function BlogTopic() {
             Ready to test your knowledge?
           </h2>
           <p className="text-slate-600 mb-5">
-            Identify famous battles from AI-generated artwork across 8 historical eras.
+            Identify famous battles from stunning artwork across 8 historical eras.
           </p>
           <LocaleLink
             to="/"

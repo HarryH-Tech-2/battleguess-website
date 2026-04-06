@@ -45,7 +45,7 @@ function FAQ() {
   return (
     <ContentLayout
       title="FAQ | BattleGuess"
-      description="Find answers to frequently asked questions about BattleGuess, the history trivia game where you identify battles from AI-generated images."
+      description="Find answers to frequently asked questions about BattleGuess, the history trivia game where you identify battles from historical artwork."
       canonical="https://battleguess.app/faq"
       path="/faq"
       jsonLd={jsonLd}

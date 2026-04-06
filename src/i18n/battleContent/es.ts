@@ -201,4 +201,124 @@ export const battleContentEs: LocalizedBattleMap = {
     description: "Tutmosis I lanzó una agresiva campaña militar en Nubia, adentrándose más al sur del Nilo que cualquier faraón anterior. Navegó más allá de la peligrosa segunda catarata y combatió hasta la tercera, llegando al corazón del reino kushita. El faraón mató personalmente al jefe nubio en combate, y su cuerpo fue colgado de la proa de la nave real como advertencia. Tutmosis estableció una nueva frontera sur y construyó fortalezas para consolidar el control egipcio sobre las minas de oro nubias.",
     fact: "Tutmosis I estaba tan orgulloso de haber matado al jefe nubio que colgó su cuerpo en la proa de su nave real durante todo el viaje de regreso a Egipto, como trofeo y advertencia.",
   },
+  51: {
+    description: "Asurbanipal de Asiria envió su ejército contra el reino elamita, y ambas fuerzas chocaron junto al río Ulai en una batalla catastrófica y completamente desigual. El rey elamita Teumman fue muerto y decapitado durante la desbandada. Los relieves del palacio de Asurbanipal en Nínive representan con crudo detalle el río atestado de cadáveres elamitas y la cabeza cercenada del rey transportada en triunfo. En un célebre panel, Asurbanipal y su reina cenan en un jardín con la cabeza de Teumman colgando de un árbol cercano. La batalla quebró el poderío elamita y constituye uno de los enfrentamientos mejor documentados del mundo antiguo.",
+    fact: "Los relieves palaciegos de Asurbanipal sobre la batalla de Ulai son tan detallados que los estudiosos pueden identificar a nobles elamitas individuales y reconstruir la secuencia del combate de panel en panel.",
+  },
+  52: {
+    description: "Tras años de revueltas babilónicas, Senaquerib de Asiria perdió la paciencia y ordenó la destrucción completa de Babilonia, una de las ciudades más antiguas y veneradas de Mesopotamia. Su ejército arrasó murallas, templos y palacios, y luego desvió canales para inundar las ruinas. La destrucción de Babilonia, en especial de sus templos sagrados, conmocionó al mundo antiguo y fue considerada un acto de supremo sacrilegio. Muchos asirios creyeron que el posterior asesinato de Senaquerib a manos de sus propios hijos fue un castigo divino por haber destruido la ciudad santa. Su sucesor Esarhadón reconstruiría Babilonia más tarde para expiar el crimen.",
+    fact: "La destrucción de Babilonia por Senaquerib se consideró tan sacrílega que su propio hijo Esarhadón dedicó años a reconstruir la ciudad para expiar el crimen de su padre contra los dioses.",
+  },
+  53: {
+    description: "Senaquerib de Asiria se enfrentó a una enorme coalición de babilonios, elamitas, caldeos y tribus arameas en Halule, a orillas del Tigris. Fue una de las batallas más grandes de la historia mesopotámica. Las inscripciones de Senaquerib proclaman una gran victoria con ríos de sangre enemiga, pero el hecho de que Babilonia siguiera siendo independiente tras la batalla sugiere que el resultado fue menos decisivo de lo que se afirmó. El desenlace inconcluso frustró tan profundamente a Senaquerib que dos años después tomaría la drástica decisión de destruir Babilonia por completo.",
+    fact: "Ambos bandos en Halule se atribuyeron la victoria en sus registros oficiales, lo que convierte a esta batalla en uno de los ejemplos más tempranos de narrativas propagandísticas contrapuestas sobre un mismo enfrentamiento en la historia antigua.",
+  },
+  54: {
+    description: "Esarhadón de Asiria cruzó el desierto del Sinaí e invadió Egipto, asediando y capturando Menfis, la antigua capital. El faraón Taharqa, de la dinastía nubia XXV, huyó hacia el sur, al Alto Egipto. La conquista de Menfis puso a Egipto bajo control asirio por primera vez, uniendo las dos civilizaciones más antiguas del Próximo Oriente bajo un solo imperio. Esarhadón erigió una estela de victoria que mostraba al hijo de Taharqa encadenado. Sin embargo, el dominio asirio sobre Egipto resultó difícil de mantener: Taharqa reconquistaría Menfis más tarde, obligando al sucesor de Esarhadón, Asurbanipal, a invadir Egipto de nuevo.",
+    fact: "La conquista de Menfis por Esarhadón fue la primera y única vez en que Asiria y Egipto, las dos civilizaciones más antiguas del Próximo Oriente, quedaron unidas bajo un solo gobernante.",
+  },
+  55: {
+    description: "La gran ciudad sumeria de Ur, capital de la Tercera Dinastía de Ur y una de las urbes más antiguas del mundo, cayó ante un asalto combinado de elamitas procedentes del este y nómadas amorreos del oeste. El rey Ibbi-Sin, último soberano sumerio, fue capturado y llevado encadenado a Elam, donde murió en cautiverio. La destrucción de Ur puso fin para siempre al poder político sumerio, aunque su cultura y su lengua sobrevivieron como tradición erudita. La caída inspiró el «Lamento por Ur», una de las obras literarias más antiguas y conmovedoras, que describe a la diosa Ningal llorando sobre su ciudad destruida.",
+    fact: "El «Lamento por Ur», compuesto tras la caída de la ciudad, es una de las obras literarias más antiguas que se conservan y describe a la diosa Ningal llorando sobre las ruinas en versos de desgarradora poesía.",
+  },
+  56: {
+    description: "El ejército griego combinado, al mando del regente espartano Pausanias, derrotó de forma decisiva a las fuerzas persas de Mardonio en Platea. Fue la última gran batalla terrestre de la segunda invasión persa de Grecia. El comandante persa Mardonio cayó en combate y su ejército fue puesto en fuga, poniendo fin efectivamente a las ambiciones de Jerjes de conquistar Grecia y asegurando la independencia griega durante generaciones.",
+    fact: "Tras la victoria griega en Platea, los aliados helenos juraron no reconstruir jamás los templos destruidos por los persas, dejándolos como monumentos al sacrilegio persa durante décadas.",
+  },
+  57: {
+    description: "Epaminondas de Tebas revolucionó el arte de la guerra griego al concentrar su ala izquierda en una formación de cincuenta filas de profundidad contra el ala derecha espartana, mientras retenía su flanco derecho, más débil. Este orden oblicuo destrozó la falange espartana, supuestamente invencible, y causó la muerte del rey Cleómbroto. La victoria puso fin para siempre a la supremacía militar espartana en Grecia y estableció a Tebas como la potencia hegemónica del mundo helénico.",
+    fact: "El orden oblicuo de Epaminondas en Leuctra fue tan revolucionario que influyó en la táctica militar durante más de dos mil años, inspirando directamente las maniobras de Federico el Grande en Leuthen en 1757.",
+  },
+  58: {
+    description: "Alejandro Magno libró su primera gran batalla contra el Imperio persa junto al río Gránico, en Asia Menor. Encabezando personalmente la carga de la caballería de los Compañeros a través del río, Alejandro estuvo a punto de morir en un feroz combate cuerpo a cuerpo con nobles persas. La decisiva victoria macedonia abrió toda Asia Menor a la conquista de Alejandro y señaló el principio del fin del Imperio persa aqueménida.",
+    fact: "Alejandro estuvo a punto de morir en el Gránico cuando el golpe de espada de un noble persa le partió el casco. Solo se salvó porque su compañero Clito el Negro cercenó el brazo del persa en pleno movimiento.",
+  },
+  59: {
+    description: "Las legiones veteranas de César se enfrentaron al ejército numéricamente superior de Pompeyo en la batalla decisiva de su guerra civil. César dispuso una cuarta línea oculta de infantería para contrarrestar a la caballería pompeyana, que se desbandó tras el ataque inesperado. Pompeyo huyó a Egipto, donde fue asesinado. La victoria convirtió a César en dueño indiscutible de la República romana y sentó las bases para la caída de esta.",
+    fact: "Antes de Farsalia, César ordenó a su infantería usar las jabalinas para apuñalar en el rostro a los jóvenes aristócratas de la caballería de Pompeyo, sabiendo que se cubrirían la cara para proteger su apariencia. La táctica funcionó a la perfección.",
+  },
+  60: {
+    description: "Aníbal ejecutó la mayor emboscada de la historia militar, ocultando su ejército en las colinas sobre el lago Trasimeno y tendiendo la trampa al cónsul romano Flaminio mientras sus legiones marchaban por el estrecho camino junto a la orilla. Una densa niebla matinal ocultó a las fuerzas cartaginesas hasta el momento del ataque. El ejército romano entero, unos 25.000 hombres, fue aniquilado o capturado en apenas tres horas, incluido el propio cónsul.",
+    fact: "La emboscada del lago Trasimeno fue tan fulminante que muchos soldados romanos murieron mientras aún intentaban ponerse la armadura, y algunos se ahogaron en el lago tratando de escapar.",
+  },
+  61: {
+    description: "Las legiones romanas al mando de Tito Quincio Flaminio derrotaron a la falange de Filipo V de Macedonia en las colinas llamadas Cinoscéfalas. El terreno irregular desarticuló la rígida falange macedonia, mientras que el flexible sistema manipular romano se adaptó y explotó las brechas en la formación. La victoria estableció el dominio romano sobre Grecia y demostró la superioridad táctica de la legión sobre la falange en terreno accidentado.",
+    fact: "La victoria en Cinoscéfalas se debió en parte a un tribuno romano anónimo que, por iniciativa propia, tomó veinte manípulos y atacó la falange macedonia por la retaguardia.",
+  },
+  62: {
+    description: "La caballería goda se estrelló contra los flancos expuestos de las legiones romanas del emperador Valente, aniquilando dos tercios del ejército romano. El propio emperador Valente pereció y su cuerpo nunca fue hallado. La batalla se cita a menudo como el principio del fin del Imperio romano de Occidente, al demostrar el creciente predominio de la caballería pesada sobre la infantería y la amenaza cada vez mayor de los pueblos bárbaros para Roma.",
+    fact: "El cuerpo del emperador Valente nunca fue encontrado tras Adrianópolis. Según un relato, fue trasladado herido a una casa de campo que los godos incendiaron después, sin saber que el emperador se encontraba dentro.",
+  },
+  63: {
+    description: "El general romano Aecio forjó una alianza con los visigodos y otras tribus germánicas para detener la devastadora invasión de la Galia por Atila el Huno. En una de las últimas grandes batallas del Imperio romano de Occidente, la coalición obligó a Atila a retirarse tras un sangriento empate. Aunque el rey visigodo Teodorico murió en el combate, la batalla salvó a Europa occidental de la dominación huna y marcó el punto culminante de las conquistas de Atila.",
+    fact: "El rey visigodo Teodorico I murió en los Campos Cataláunicos, pero su muerte no se descubrió hasta después de la batalla, cuando su cuerpo fue hallado bajo un montón de cadáveres.",
+  },
+  64: {
+    description: "El cónsul romano Lucio Emilio Paulo derrotó al rey Perseo de Macedonia en una batalla que puso fin a la dinastía antigónida y a la independencia macedonia. A medida que la falange macedonia avanzaba por terreno irregular, se abrieron brechas en la formación. Los legionarios romanos se lanzaron a esas brechas con sus espadas cortas, donde las largas sarissas resultaban inútiles en el combate cuerpo a cuerpo. Más de 20.000 macedonios cayeron en menos de una hora.",
+    fact: "Tras Pidna, el cónsul romano Emilio Paulo lloró al contemplar al derrotado rey Perseo, reflexionando, según se cuenta, sobre la fragilidad de la fortuna humana y los caprichos del destino.",
+  },
+  65: {
+    description: "El asedio romano de Siracusa es célebre por las ingeniosas máquinas defensivas diseñadas por el matemático Arquímedes, entre ellas garras gigantes que levantaban barcos del agua y catapultas de alcance extraordinario. La ciudad resistió durante más de dos años frente a las fuerzas romanas de Marcelo. Cuando finalmente cayó, Arquímedes fue muerto por un soldado romano, presuntamente mientras trazaba figuras geométricas en la arena.",
+    fact: "Cuando Siracusa cayó al fin, el comandante romano Marcelo supuestamente lloró ante la belleza de la ciudad que estaba a punto de saquear. Había dado órdenes expresas de perdonar a Arquímedes, pero un soldado lo mató de todos modos.",
+  },
+  66: {
+    description: "Constantino derrotó a su rival Majencio en el puente Milvio, sobre el río Tíber, a las puertas de Roma. Según la leyenda, Constantino vio una cruz de luz en el cielo con las palabras «Con este signo vencerás» antes de la batalla y ordenó a sus soldados marcar sus escudos con el crismón cristiano. Majencio se ahogó en el Tíber mientras huía. La victoria llevó a Constantino a promulgar el Edicto de Milán, legalizando el cristianismo en todo el Imperio romano.",
+    fact: "La visión de la cruz que tuvo Constantino antes del puente Milvio, ya fuese genuina o una invención política, alteró el curso de la civilización occidental al vincular el poder imperial romano con el cristianismo.",
+  },
+  67: {
+    description: "Filipo II de Macedonia aplastó a los ejércitos combinados de Atenas y Tebas en Queronea, poniendo fin para siempre a la independencia de las ciudades-estado griegas. Alejandro, con tan solo dieciocho años, comandó el ala izquierda y encabezó la carga de la caballería de los Compañeros que aniquiló al Batallón Sagrado de Tebas. La victoria convirtió a Filipo en dueño de Grecia y sentó las bases para la posterior conquista del Imperio persa por Alejandro.",
+    fact: "Tras Queronea, Filipo II erigió un león de piedra sobre la fosa común del Batallón Sagrado de Tebas. Cuando fue excavada en 1890, se hallaron 254 esqueletos dispuestos en siete filas ordenadas.",
+  },
+  68: {
+    description: "Aníbal atrajo al impetuoso cónsul romano Sempronio a cruzar el gélido río Trebia al amanecer, obligando a los romanos a combatir ateridos, empapados y hambrientos. Mientras su infantería sostenía el centro romano, el hermano de Aníbal, Magón, surgió de su escondite con 2.000 soldados y atacó la retaguardia romana. El ejército romano fue prácticamente destruido, lo que supuso la primera gran victoria de Aníbal en suelo itálico tras su célebre cruce de los Alpes.",
+    fact: "En el Trebia, Aníbal hizo que su hermano Magón y 2.000 hombres se ocultaran en un barranco durante toda la noche. Estaban tan bien camuflados que los romanos pasaron justo por delante de ellos antes de que se activara la trampa.",
+  },
+  69: {
+    description: "El cónsul romano Claudio Nerón marchó en secreto hacia el norte para unirse a su colega Livio Salinátor, sorprendiendo al ejército de Asdrúbal Barca junto al río Metauro. Asdrúbal avanzaba hacia el sur para reforzar a su hermano Aníbal. El ejército cartaginés fue aniquilado y Asdrúbal murió en el combate. Los romanos catapultaron la cabeza cercenada de Asdrúbal al campamento de Aníbal, destruyendo toda esperanza de recibir refuerzos.",
+    fact: "Tras el Metauro, los romanos catapultaron la cabeza cercenada de Asdrúbal al campamento de Aníbal. Según Tito Livio, Aníbal contempló el rostro de su hermano y dijo: «Veo el destino de Cartago».",
+  },
+  70: {
+    description: "César derrotó con fulminante rapidez a Farnaces II del Ponto en una batalla tan breve y decisiva que la describió con la célebre frase «Veni, vidi, vici» — «Vine, vi, vencí». Farnaces había aprovechado la guerra civil romana para apoderarse de territorios en Asia Menor. Las legiones veteranas de César cargaron cuesta arriba y pusieron en fuga al ejército póntico en unas cuatro horas, restaurando el control romano sobre la región.",
+    fact: "El despacho de César al Senado romano sobre Zela, «Veni, vidi, vici», no era solo una fanfarronada, sino un insulto deliberado a Pompeyo, que había tardado mucho más en someter la misma región años antes.",
+  },
+  71: {
+    description: "Marco Licinio Craso, el hombre más rico de Roma y miembro del Primer Triunvirato, condujo siete legiones al desierto mesopotámico, donde fueron aniquiladas por los arqueros a caballo y catafractos partos al mando de Surena. Los arqueros partos emplearon la célebre «flecha parta», disparando flechas mientras se retiraban, para devastar a los romanos atrapados. Craso fue muerto y, según la leyenda, los partos vertieron oro fundido en su garganta para burlarse de su legendaria avaricia.",
+    fact: "Según la leyenda, los partos vertieron oro fundido en la garganta de Craso tras Carras para mofarse de su legendaria codicia. Su cabeza fue usada después como atrezo en una representación de «Las bacantes» de Eurípides.",
+  },
+  72: {
+    description: "Las fuerzas de Octaviano y Marco Antonio chocaron con las de los asesinos de César, Bruto y Casio, en dos enfrentamientos a lo largo de tres semanas en Filipos, Macedonia. Casio, creyendo erróneamente que la batalla estaba perdida, se suicidó tras el primer combate. Bruto fue derrotado en el segundo enfrentamiento y también se quitó la vida. La victoria vengó el asesinato de César y dejó a Octaviano y Antonio como dueños del mundo romano.",
+    fact: "Se dice que el fantasma de Julio César se apareció a Bruto antes de Filipos y le dijo: «Nos veremos en Filipos». Shakespeare inmortalizó este encuentro en su obra teatral.",
+  },
+  73: {
+    description: "Tras la caída de Jerusalén en el año 70 d.C., cerca de un millar de zelotes judíos resistieron en la cima de la fortaleza aparentemente inexpugnable de Masada durante tres años. La Décima Legión romana los sitió y construyó una enorme rampa de tierra por la ladera del acantilado. Cuando los romanos finalmente abrieron una brecha en las murallas, descubrieron que los defensores habían elegido quitarse la vida antes que ser esclavizados. Masada se convirtió en un símbolo perdurable de resistencia y determinación.",
+    fact: "La rampa de asedio romana en Masada, construida por esclavos judíos, sigue en pie hoy y es una de las estructuras militares romanas mejor conservadas del mundo.",
+  },
+  74: {
+    description: "El ejército escocés de Roberto I Bruce derrotó a una fuerza inglesa muy superior al mando de Eduardo II cerca del castillo de Stirling. Los escoceses emplearon densas formaciones de lanceros llamadas schiltrons y eligieron un terreno pantanoso que neutralizó a la caballería pesada inglesa. La victoria decisiva aseguró la independencia escocesa durante siglos y cimentó el lugar de Bruce como el más grande rey de Escocia. Sigue siendo una de las batallas más celebradas de la historia escocesa.",
+    fact: "Se dice que Roberto Bruce encontró inspiración para su lucha por la independencia de Escocia al observar a una araña intentar una y otra vez tejer su tela en una cueva donde él se escondía.",
+  },
+  75: {
+    description: "El ejército otomano del sultán Mehmed II sitió la capital bizantina con más de 80.000 soldados y enormes cañones que batieron las antiguas murallas Teodosianas. Pese a una heroica defensa liderada por el emperador Constantino XI, la ciudad cayó el 29 de mayo de 1453, poniendo fin al Imperio bizantino y a más de mil años de continuidad imperial romana. La caída sacudió a la cristiandad entera y marcó el fin definitivo de la era medieval.",
+    fact: "Mehmed II tenía solo 21 años cuando conquistó Constantinopla. Ordenó a sus ingenieros fundir el cañón más grande jamás construido, tan colosal que requería 60 bueyes y 200 hombres para transportarlo.",
+  },
+  76: {
+    description: "El ejército anglo-gascón de Eduardo, el Príncipe Negro, derrotó a una fuerza francesa muy superior y capturó al rey Juan II de Francia en el campo de batalla. Los ingleses utilizaron setos y viñedos para canalizar los ataques franceses, mientras los arqueros de arco largo diezmaban a los caballeros que avanzaban. La captura del rey francés dio lugar a un rescate descomunal y al Tratado de Brétigny, que otorgó temporalmente a Inglaterra vastos territorios en Francia.",
+    fact: "El rescate del rey Juan II de Francia tras Poitiers se fijó en 3 millones de escudos de oro, aproximadamente el doble de los ingresos anuales de toda la corona francesa, lo que devastó la economía de Francia durante décadas.",
+  },
+  77: {
+    description: "Felipe II Augusto de Francia derrotó a una poderosa coalición del emperador del Sacro Imperio Romano Germánico Otón IV, los aliados del rey Juan de Inglaterra y el conde de Flandes en una sola batalla decisiva. La victoria consolidó el poder real francés, condujo a Juan a firmar la Carta Magna bajo la presión de sus barones y puso fin a las pretensiones de Otón IV al trono imperial. Bouvines está considerada una de las batallas más trascendentales de la historia medieval europea.",
+    fact: "La batalla de Bouvines es una de las pocas batallas medievales cuyo desenlace condujo directamente a un documento constitucional: los barones ingleses obligaron al rey Juan a firmar la Carta Magna al año siguiente.",
+  },
+  78: {
+    description: "Saladino atrajo al ejército cruzado del rey Guido de Lusignan lejos de las fuentes de agua y lo atrapó en los áridos Cuernos de Hattin. Agotados por el calor y la sed, los cruzados fueron aniquilados y la Vera Cruz fue capturada. El desastre dejó a los estados cruzados prácticamente indefensos, y Saladino reconquistó Jerusalén en tres meses, lo que provocó la Tercera Cruzada.",
+    fact: "Saladino ofreció a Guido de Lusignan una copa de agua helada tras Hattin como gesto de clemencia, pero deliberadamente no se la ofreció a Reinaldo de Châtillon, a quien Saladino decapitó personalmente acto seguido.",
+  },
+  79: {
+    description: "Los turcos selyúcidas al mando del sultán Alp Arslan derrotaron al ejército bizantino y capturaron al emperador Romano IV Diógenes en una de las batallas más trascendentales de la historia. El desastre destrozó el poder militar bizantino en Anatolia, abriendo la península a una migración y asentamiento turco masivos. La pérdida de Anatolia debilitó permanentemente a Bizancio y fue un catalizador directo de la Primera Cruzada dos décadas después.",
+    fact: "El emperador Romano IV fue tratado con sorprendente cortesía por el sultán Alp Arslan tras su captura en Manzikert. Se dice que el sultán declaró: «Habría hecho lo mismo que vos si nuestros papeles se hubieran invertido».",
+  },
+  80: {
+    description: "La Liga Lombarda, una alianza de ciudades-estado del norte de Italia, derrotó al ejército del emperador del Sacro Imperio Romano Germánico Federico Barbarroja. La infantería miliciana italiana se agrupó en torno a su carroccio, un sagrado carro de guerra tirado por bueyes, y rechazó a la caballería de Barbarroja. La victoria obligó al emperador a reconocer la independencia de las comunas italianas en la Paz de Constanza y demostró que una infantería bien organizada podía vencer a la caballería feudal.",
+    fact: "El carroccio, o carro de guerra, defendido en Legnano era un sagrado carro tirado por bueyes que portaba el estandarte de la ciudad y un altar con un sacerdote. Su captura significaba la deshonra absoluta para la ciudad.",
+  },
 };

@@ -37,7 +37,7 @@ function About() {
   return (
     <ContentLayout
       title="About BattleGuess | How to Play"
-      description="Learn how to play BattleGuess and discover what makes it the ultimate history trivia game. 200+ battles, 8 eras, 8 game modes, and AI-generated artwork."
+      description="Learn how to play BattleGuess and discover what makes it the ultimate history trivia game. 200+ battles, 8 eras, 8 game modes, and stunning battle artwork."
       canonical="https://battleguess.app/about"
       path="/about"
       jsonLd={jsonLd}

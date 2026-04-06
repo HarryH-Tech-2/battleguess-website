@@ -201,4 +201,124 @@ export const battleContentFr: LocalizedBattleMap = {
     description: "Thoutmôsis Iᵉʳ lança une campagne militaire agressive en Nubie, s'enfonçant plus au sud le long du Nil que tout pharaon précédent. Il navigua au-delà de la dangereuse deuxième cataracte et combattit jusqu'à la troisième, au cœur du royaume koushite. Le pharaon tua personnellement le chef nubien au combat, et son corps fut pendu à la proue du navire royal en guise d'avertissement. Thoutmôsis établit une nouvelle frontière sud et construisit des forteresses pour consolider le contrôle égyptien sur les mines d'or nubiennes.",
     fact: "Thoutmôsis Iᵉʳ était si fier d'avoir tué le chef nubien qu'il fit pendre le corps à la proue de son navire royal pendant tout le voyage de retour en Égypte, en guise de trophée et d'avertissement.",
   },
+  51: {
+    description: "Assurbanipal d'Assyrie envoya son armée contre le royaume élamite, et les deux forces s'affrontèrent sur les rives de la rivière Oulaï dans un combat d'une violence catastrophiquement inégale. Le roi élamite Teumman fut tué et décapité pendant la déroute. Les bas-reliefs du palais d'Assurbanipal à Ninive représentent avec un réalisme saisissant la rivière engorgée de cadavres élamites et la tête tranchée du roi portée en triomphe. Sur un célèbre panneau sculpté, Assurbanipal et sa reine festoient dans un jardin tandis que la tête de Teumman pend à un arbre voisin. La bataille brisa la puissance élamite et demeure l'une des batailles les plus vivement documentées du monde antique.",
+    fact: "Les bas-reliefs du palais d'Assurbanipal représentant la bataille de l'Oulaï sont si détaillés que les chercheurs peuvent identifier des nobles élamites individuels et reconstituer le déroulement de la bataille de panneau en panneau.",
+  },
+  52: {
+    description: "Après des années de révoltes babyloniennes, Sennachérib d'Assyrie perdit patience et ordonna la destruction totale de Babylone, l'une des cités les plus anciennes et les plus vénérées de Mésopotamie. Son armée rasa les murailles, les temples et les palais, puis détourna les canaux pour inonder les ruines. La destruction de Babylone, en particulier de ses temples sacrés, choqua le monde antique et fut considérée comme un acte de sacrilège suprême. De nombreux Assyriens crurent que l'assassinat ultérieur de Sennachérib par ses propres fils constituait un châtiment divin pour avoir détruit la cité sainte. Son successeur Assarhaddon entreprit plus tard de reconstruire Babylone pour expier ce crime.",
+    fact: "La destruction de Babylone par Sennachérib fut jugée si sacrilège que son propre fils Assarhaddon passa ensuite des années à reconstruire la cité pour expier le crime de son père contre les dieux.",
+  },
+  53: {
+    description: "Sennachérib d'Assyrie affronta une vaste coalition de Babyloniens, d'Élamites, de Chaldéens et de tribus araméennes à Halulé, sur le Tigre. Ce fut l'une des plus grandes batailles de l'histoire mésopotamienne. Les inscriptions de Sennachérib revendiquent une grande victoire avec des fleuves de sang ennemi, mais le fait que Babylone soit restée indépendante après la bataille suggère que l'issue fut moins décisive qu'annoncé. Ce résultat indécis frustra si profondément Sennachérib que, deux ans plus tard, il prit la mesure radicale de détruire entièrement Babylone.",
+    fact: "Les deux camps à Halulé revendiquèrent la victoire dans leurs archives officielles, ce qui en fait l'un des plus anciens exemples de récits de propagande concurrents à propos d'une même bataille dans l'histoire antique.",
+  },
+  54: {
+    description: "Assarhaddon d'Assyrie traversa le désert du Sinaï et envahit l'Égypte, assiégeant et capturant Memphis, l'antique capitale. Le pharaon Taharqa, de la XXVᵉ dynastie nubienne, s'enfuit vers la Haute-Égypte. La conquête de Memphis plaça pour la première fois l'Égypte sous domination assyrienne, réunissant les deux plus anciennes civilisations du Proche-Orient sous un seul empire. Assarhaddon érigea une stèle de victoire montrant le fils de Taharqa enchaîné. Toutefois, le contrôle assyrien sur l'Égypte s'avéra difficile à maintenir, et Taharqa reprit Memphis par la suite, contraignant le successeur d'Assarhaddon, Assurbanipal, à envahir l'Égypte une seconde fois.",
+    fact: "La conquête de Memphis par Assarhaddon fut la seule et unique fois où l'Assyrie et l'Égypte, les deux plus anciennes civilisations du Proche-Orient, furent réunies sous l'autorité d'un seul souverain.",
+  },
+  55: {
+    description: "La grande cité sumérienne d'Ur, capitale de la troisième dynastie d'Ur et l'une des plus anciennes villes du monde, tomba sous l'assaut combiné des Élamites venus de l'est et des nomades amorites venus de l'ouest. Le roi Ibbi-Sîn, dernier souverain sumérien, fut capturé et emmené enchaîné en Élam, où il mourut en captivité. La destruction d'Ur mit fin à jamais au pouvoir politique sumérien, bien que la culture et la langue sumériennes aient survécu en tant que tradition savante. Cette chute inspira la « Lamentation sur Ur », l'une des œuvres littéraires les plus anciennes et les plus poignantes, décrivant la déesse Ningal pleurant sur sa cité dévastée.",
+    fact: "La « Lamentation sur Ur », composée après la chute de la cité, est l'une des plus anciennes œuvres littéraires conservées et décrit la déesse Ningal pleurant sur les ruines dans des vers poétiques déchirants.",
+  },
+  56: {
+    description: "L'armée grecque coalisée, conduite par le régent spartiate Pausanias, écrasa de manière décisive les forces perses de Mardonios à Platées. Ce fut la dernière grande bataille terrestre de la seconde invasion perse de la Grèce. Le commandant perse Mardonios fut tué et son armée mise en déroute, mettant effectivement fin aux ambitions de Xerxès de conquérir la Grèce et assurant l'indépendance grecque pour des générations.",
+    fact: "Après la victoire grecque à Platées, les alliés grecs prêtèrent serment de ne jamais reconstruire les temples détruits par les Perses, les laissant en ruines comme monuments du sacrilège perse pendant des décennies.",
+  },
+  57: {
+    description: "Épaminondas de Thèbes révolutionna l'art de la guerre grec en massant son aile gauche sur cinquante rangs de profondeur face à l'aile droite spartiate, tout en refusant le combat sur son aile droite plus faible. Cet ordre oblique brisa la phalange spartiate, réputée invincible, et tua le roi Cléombrote. La victoire mit fin à jamais à la suprématie militaire de Sparte en Grèce et établit Thèbes comme puissance dominante du monde hellénique.",
+    fact: "L'ordre oblique d'Épaminondas à Leuctres fut si révolutionnaire qu'il influença la tactique militaire pendant plus de deux mille ans, inspirant directement les manœuvres de Frédéric le Grand à Leuthen en 1757.",
+  },
+  58: {
+    description: "Alexandre le Grand livra sa première grande bataille contre l'Empire perse sur les rives du Granique, en Asie Mineure. Menant personnellement la charge de sa cavalerie des Compagnons à travers la rivière, Alexandre faillit périr dans un féroce combat au corps à corps contre des nobles perses. La victoire décisive des Macédoniens ouvrit toute l'Asie Mineure à la conquête d'Alexandre et annonça le début de la fin pour l'Empire perse achéménide.",
+    fact: "Alexandre faillit mourir au Granique lorsqu'un noble perse fendit son casque d'un coup d'épée. Il ne fut sauvé que par l'intervention de son compagnon Cleitos le Noir, qui trancha le bras du Perse en plein élan.",
+  },
+  59: {
+    description: "Les légions aguerries de César affrontèrent l'armée numériquement supérieure de Pompée lors de la bataille décisive de leur guerre civile. César disposa une quatrième ligne d'infanterie dissimulée pour contrer la cavalerie de Pompée, qui fut mise en déroute après cette attaque inattendue. Pompée s'enfuit en Égypte où il fut assassiné. La victoire fit de César le maître incontesté de la République romaine et prépara la chute de celle-ci.",
+    fact: "Avant Pharsale, César ordonna à ses fantassins d'utiliser leurs javelots pour frapper au visage les jeunes cavaliers aristocrates de Pompée, sachant qu'ils reculeraient instinctivement pour protéger leur apparence. La tactique fonctionna à la perfection.",
+  },
+  60: {
+    description: "Hannibal exécuta la plus grande embuscade de l'histoire militaire en dissimulant son armée dans les collines surplombant le lac Trasimène et en refermant le piège sur le consul romain Flaminius tandis que ses légions longeaient l'étroit chemin en bordure du lac. Un brouillard matinal dense masqua les forces carthaginoises jusqu'au moment de l'assaut. L'armée romaine tout entière, soit environ 25 000 hommes, fut tuée ou capturée en à peine trois heures, consul compris.",
+    fact: "La surprise au lac Trasimène fut si totale que nombre de soldats romains furent tués alors qu'ils tentaient encore de revêtir leur armure, et certains se noyèrent dans le lac en essayant de fuir.",
+  },
+  61: {
+    description: "Les légions romaines de Titus Quinctius Flamininus vainquirent la phalange de Philippe V de Macédoine sur les collines appelées Cynoscéphales. Le terrain accidenté disloqua la rigide phalange macédonienne, tandis que le système manipulaire romain, plus souple, s'adapta et exploita les brèches dans la formation. La victoire établit la domination romaine sur la Grèce et démontra la supériorité tactique de la légion sur la phalange en terrain irrégulier.",
+    fact: "La victoire de Cynoscéphales fut en partie remportée grâce à un tribun romain anonyme qui, de sa propre initiative, détacha vingt manipules pour attaquer la phalange macédonienne par l'arrière.",
+  },
+  62: {
+    description: "La cavalerie gothique s'abattit sur les flancs exposés des légions romaines de l'empereur Valens, anéantissant les deux tiers de l'armée romaine. L'empereur Valens lui-même fut tué et son corps ne fut jamais retrouvé. La bataille est souvent citée comme le début de la fin de l'Empire romain d'Occident, illustrant la montée en puissance de la cavalerie lourde face à l'infanterie et la menace croissante des peuples barbares pour Rome.",
+    fact: "Le corps de l'empereur Valens ne fut jamais retrouvé après Andrinople. Selon un récit, il aurait été transporté blessé dans une ferme que les Goths incendièrent ensuite, ignorant que l'empereur se trouvait à l'intérieur.",
+  },
+  63: {
+    description: "Le général romain Aetius forgea une alliance avec les Wisigoths et d'autres tribus germaniques pour arrêter la dévastatrice invasion de la Gaule par Attila le Hun. Dans l'une des dernières grandes batailles de l'Empire romain d'Occident, la coalition contraignit Attila à la retraite après un sanglant combat indécis. Bien que le roi wisigoth Théodoric Iᵉʳ fût tué, la bataille sauva l'Europe occidentale de la domination hunnique et marqua l'apogée des conquêtes d'Attila.",
+    fact: "Le roi wisigoth Théodoric Iᵉʳ fut tué aux Champs catalauniques, mais sa mort ne fut découverte qu'après la bataille, lorsque son corps fut retrouvé enseveli sous un monceau de cadavres.",
+  },
+  64: {
+    description: "Le consul romain Lucius Aemilius Paullus vainquit le roi Persée de Macédoine dans une bataille qui mit fin à la dynastie antigonide et à l'indépendance macédonienne. Tandis que la phalange macédonienne avançait sur un terrain inégal, des brèches s'ouvrirent dans la formation. Les légionnaires romains s'y engouffrèrent avec leurs glaives courts, rendant les longues sarisses inutilisables au corps à corps. Plus de 20 000 Macédoniens furent tués en moins d'une heure.",
+    fact: "Après Pydna, le consul romain Aemilius Paullus pleura devant le spectacle du roi Persée vaincu, méditant, dit-on, sur la fragilité de la fortune humaine et l'inconstance du destin.",
+  },
+  65: {
+    description: "Le siège romain de Syracuse est célèbre pour les ingénieuses machines défensives conçues par le mathématicien Archimède, notamment des griffes géantes capables de soulever des navires hors de l'eau et des catapultes d'une portée extraordinaire. La cité résista plus de deux ans aux forces romaines commandées par Marcellus. Lorsqu'elle tomba enfin, Archimède fut tué par un soldat romain, selon la tradition alors qu'il traçait des figures géométriques dans le sable.",
+    fact: "Lorsque Syracuse tomba enfin, le commandant romain Marcellus aurait pleuré devant la beauté de la cité qu'il s'apprêtait à mettre à sac. Il avait donné l'ordre formel d'épargner Archimède, mais un soldat le tua malgré tout.",
+  },
+  66: {
+    description: "Constantin vainquit son rival Maxence au pont Milvius, sur le Tibre, aux portes de Rome. Selon la légende, Constantin vit dans le ciel une croix lumineuse accompagnée des mots « Par ce signe, tu vaincras » avant la bataille, et ordonna à ses soldats d'inscrire le chrisme sur leurs boucliers. Maxence se noya dans le Tibre en tentant de fuir. La victoire conduisit Constantin à promulguer l'édit de Milan, légalisant le christianisme dans tout l'Empire romain.",
+    fact: "La vision de la croix par Constantin avant le pont Milvius, qu'elle fût authentique ou invention politique, altéra le cours de la civilisation occidentale en liant le pouvoir impérial romain au christianisme.",
+  },
+  67: {
+    description: "Philippe II de Macédoine écrasa les armées combinées d'Athènes et de Thèbes à Chéronée, mettant fin à jamais à l'indépendance des cités-États grecques. Le jeune Alexandre, âgé de dix-huit ans, commandait l'aile gauche et mena la charge de la cavalerie des Compagnons qui anéantit le Bataillon sacré thébain. La victoire fit de Philippe le maître de la Grèce et prépara la future conquête de l'Empire perse par Alexandre.",
+    fact: "Après Chéronée, Philippe II fit ériger un lion de pierre sur la fosse commune du Bataillon sacré thébain. Lors de fouilles en 1890, on y découvrit 254 squelettes disposés en sept rangées ordonnées.",
+  },
+  68: {
+    description: "Hannibal attira l'impétueux consul romain Sempronius à traverser la Trébie glacée à l'aube, contraignant les Romains à combattre transis, trempés et affamés. Tandis que son infanterie retenait le centre romain, le frère d'Hannibal, Magon, surgit d'une position dissimulée avec 2 000 soldats et frappa l'arrière-garde romaine. L'armée romaine fut pratiquement anéantie, consacrant la première grande victoire d'Hannibal en sol italien après sa célèbre traversée des Alpes.",
+    fact: "À la Trébie, Hannibal fit dissimuler son frère Magon et 2 000 hommes dans un ravin pendant toute la nuit. Ils étaient si bien cachés que les Romains passèrent juste devant eux avant que le piège ne se referme.",
+  },
+  69: {
+    description: "Le consul romain Claudius Néron marcha secrètement vers le nord avec ses forces pour rejoindre son collègue Livius Salinator, surprenant l'armée d'Hasdrubal Barca sur les rives du Métaure. Hasdrubal marchait vers le sud pour renforcer son frère Hannibal. L'armée carthaginoise fut anéantie et Hasdrubal tué. Les Romains catapultèrent la tête tranchée d'Hasdrubal dans le camp d'Hannibal, réduisant à néant son espoir de recevoir des renforts.",
+    fact: "Après le Métaure, les Romains catapultèrent la tête tranchée d'Hasdrubal dans le camp d'Hannibal. Selon Tite-Live, Hannibal contempla le visage de son frère et déclara : « Je vois le destin de Carthage. »",
+  },
+  70: {
+    description: "César défit promptement Pharnace II du Pont dans une bataille si rapide et si décisive qu'il la résuma par la célèbre formule « Veni, vidi, vici » — « Je suis venu, j'ai vu, j'ai vaincu. » Pharnace avait profité de la guerre civile romaine pour s'emparer de territoires en Asie Mineure. Les légions aguerries de César chargèrent en montée et mirent l'armée pontique en déroute en environ quatre heures, rétablissant le contrôle romain sur la région.",
+    fact: "La dépêche de César au Sénat romain à propos de Zéla, « Veni, vidi, vici », n'était pas seulement une vantardise mais une pique adressée à Pompée, qui avait mis bien plus longtemps à soumettre la même région des années auparavant.",
+  },
+  71: {
+    description: "Marcus Licinius Crassus, l'homme le plus riche de Rome et membre du premier triumvirat, mena sept légions dans le désert mésopotamien où elles furent anéanties par les archers à cheval et les cataphractaires parthes commandés par Suréna. Les archers parthes utilisèrent le fameux « tir du Parthe », décochant leurs flèches tout en se repliant, pour décimer les Romains pris au piège. Crassus fut tué et, selon la légende, les Parthes lui versèrent de l'or fondu dans la gorge pour railler sa légendaire cupidité.",
+    fact: "Selon la légende, les Parthes versèrent de l'or fondu dans la gorge de Crassus après Carrhes pour railler sa légendaire cupidité. Sa tête servit ensuite d'accessoire lors d'une représentation des « Bacchantes » d'Euripide.",
+  },
+  72: {
+    description: "Les forces d'Octavien et de Marc Antoine s'affrontèrent à celles des assassins de César, Brutus et Cassius, lors de deux engagements étalés sur trois semaines à Philippes, en Macédoine. Cassius, croyant à tort la bataille perdue, se suicida après le premier affrontement. Brutus fut vaincu lors du second combat et mit également fin à ses jours. La victoire vengea l'assassinat de César et laissa Octavien et Marc Antoine maîtres du monde romain.",
+    fact: "Le fantôme de Jules César serait apparu à Brutus avant Philippes, lui déclarant : « Je te reverrai à Philippes. » Shakespeare immortalisa cette rencontre dans sa pièce.",
+  },
+  73: {
+    description: "Après la chute de Jérusalem en 70 apr. J.-C., près d'un millier de Zélotes juifs tinrent le sommet de la forteresse désertique apparemment imprenable de Massada pendant trois ans. La Xᵉ légion romaine les assiégea, construisant une immense rampe de terre le long de la falaise. Lorsque les Romains percèrent enfin les murailles, ils découvrirent que les défenseurs avaient choisi de se donner la mort plutôt que d'être réduits en esclavage. Massada devint un symbole durable de résistance et de détermination.",
+    fact: "La rampe de siège romaine à Massada, construite par des esclaves juifs, se dresse encore aujourd'hui et constitue l'une des structures militaires romaines les mieux préservées au monde.",
+  },
+  74: {
+    description: "L'armée écossaise de Robert Bruce vainquit une force anglaise bien supérieure en nombre, commandée par Édouard II, près du château de Stirling. Les Écossais utilisèrent de denses formations de piquiers appelées schiltrons et choisirent un terrain marécageux qui neutralisa la cavalerie lourde anglaise. Cette victoire décisive assura l'indépendance de l'Écosse pour des siècles et cimenta la place de Bruce comme le plus grand roi d'Écosse. Elle demeure l'une des batailles les plus célébrées de l'histoire écossaise.",
+    fact: "Robert Bruce aurait puisé l'inspiration de son combat pour l'indépendance écossaise en observant une araignée qui tentait inlassablement de tisser sa toile dans la grotte où il se cachait.",
+  },
+  75: {
+    description: "L'armée ottomane du sultan Mehmed II assiégea la capitale byzantine avec plus de 80 000 hommes et d'énormes canons qui pilonnèrent les antiques murailles théodosiennes. Malgré une défense héroïque menée par l'empereur Constantin XI, la cité tomba le 29 mai 1453, mettant fin à l'Empire byzantin et à plus d'un millénaire de continuité impériale romaine. La chute envoya une onde de choc à travers la chrétienté et marqua la fin définitive de l'ère médiévale.",
+    fact: "Mehmed II n'avait que vingt et un ans lorsqu'il conquit Constantinople. Il fit fondre par ses ingénieurs le plus grand canon jamais construit, si colossal qu'il fallait 60 bœufs et 200 hommes pour le transporter.",
+  },
+  76: {
+    description: "L'armée anglo-gasconne d'Édouard, le Prince Noir, vainquit une force française bien supérieure en nombre et captura le roi Jean II de France sur le champ de bataille. Les Anglais utilisèrent haies et vignobles pour canaliser les assauts français, tandis que les archers au long arc décimaient les chevaliers en marche. La capture du roi français donna lieu à une rançon colossale et au traité de Brétigny, qui céda temporairement à l'Angleterre de vastes territoires en France.",
+    fact: "La rançon du roi Jean II de France après Poitiers fut fixée à 3 millions d'écus d'or, soit environ le double du revenu annuel de l'ensemble de la couronne française, dévastant l'économie du royaume pour des décennies.",
+  },
+  77: {
+    description: "Philippe II Auguste de France défit une puissante coalition formée par l'empereur du Saint-Empire Otton IV, les alliés du roi Jean d'Angleterre et le comte de Flandre lors d'une seule bataille décisive. La victoire consolida le pouvoir royal français, contraignit Jean à signer la Magna Carta sous la pression de ses barons et mit fin aux prétentions d'Otton IV au trône impérial. Bouvines est considérée comme l'une des batailles les plus déterminantes de l'histoire médiévale européenne.",
+    fact: "La bataille de Bouvines est l'une des rares batailles médiévales dont l'issue conduisit directement à un document constitutionnel : les barons anglais forcèrent le roi Jean à signer la Magna Carta l'année suivante.",
+  },
+  78: {
+    description: "Saladin attira l'armée croisée du roi Guy de Lusignan loin de tout point d'eau et la piégea sur les arides Cornes de Hattin. Épuisés par la chaleur et la soif, les Croisés furent anéantis et la Vraie Croix fut capturée. Ce désastre laissa les États croisés pratiquement sans défense, et Saladin reprit Jérusalem en moins de trois mois, provoquant la troisième croisade.",
+    fact: "Saladin offrit à Guy de Lusignan une coupe d'eau glacée après Hattin en signe de clémence, mais s'abstint ostensiblement d'en offrir une à Renaud de Châtillon, qu'il décapita ensuite de sa propre main.",
+  },
+  79: {
+    description: "Les Turcs seldjoukides du sultan Alp Arslan vainquirent l'armée byzantine et capturèrent l'empereur Romain IV Diogène dans l'une des batailles les plus lourdes de conséquences de l'histoire. Le désastre brisa la puissance militaire byzantine en Anatolie, ouvrant la péninsule à une migration et une colonisation turques massives. La perte de l'Anatolie affaiblit durablement Byzance et fut un catalyseur direct de la première croisade, deux décennies plus tard.",
+    fact: "L'empereur Romain IV fut traité avec une courtoisie surprenante par le sultan Alp Arslan après sa capture à Mantzikert. Le sultan aurait déclaré : « J'aurais fait la même chose que vous si nos rôles avaient été inversés. »",
+  },
+  80: {
+    description: "La Ligue lombarde, alliance de cités-États du nord de l'Italie, défit l'armée de l'empereur du Saint-Empire Frédéric Barberousse. L'infanterie des milices italiennes se rallia autour de son carroccio, un chariot de guerre sacré tiré par des bœufs, et repoussa la cavalerie de Barberousse. La victoire contraignit l'empereur à reconnaître l'indépendance des communes italiennes par la paix de Constance et démontra qu'une infanterie bien organisée pouvait vaincre la cavalerie féodale.",
+    fact: "Le carroccio, ou chariot de guerre, défendu à Legnano était un char sacré tiré par des bœufs, portant l'étendard de la cité et un autel avec un prêtre. Sa capture signifiait le déshonneur absolu pour la cité.",
+  },
 };

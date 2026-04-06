@@ -299,7 +299,7 @@ function App() {
         canonical="https://battleguess.app"
         path="/"
       />
-      <h1 className="sr-only">BattleGuess - The History Battle Guessing Game</h1>
+      <h1 className="hidden">BattleGuess - The History Battle Guessing Game</h1>
       <div className="space-y-4 sm:space-y-6 pb-6 sm:pb-8">
 
         {/* Mode Selector - visible when idle or between rounds */}

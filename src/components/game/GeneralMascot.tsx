@@ -12,7 +12,7 @@ interface GeneralMascotProps {
 }
 
 // Enable drag on screens >= 1024px (lg breakpoint)
-const DRAG_BREAKPOINT = 1024;
+const DRAG_BREAKPOINT = 0;
 
 // Module-level storage — survives component unmount/remount between questions
 const savedPosition = { x: 0, y: 0 };
@@ -236,7 +236,7 @@ export function GeneralMascot({
         <img
           src={mascotImage}
           alt={mascotAlt}
-          className="w-[80px] h-[96px] sm:w-[100px] sm:h-[120px] lg:w-[340px] lg:h-[408px] 2xl:w-[400px] 2xl:h-[480px] object-contain select-none pointer-events-none"
+          className="w-[100px] h-[120px] sm:w-[120px] sm:h-[144px] lg:w-[340px] lg:h-[408px] 2xl:w-[400px] 2xl:h-[480px] object-contain select-none pointer-events-none"
           draggable={false}
         />
       </motion.div>

@@ -165,13 +165,13 @@
     },
     "about": {
       "title": "Acerca de BattleGuess",
-      "description": "BattleGuess es el juego definitivo de cultura histórica donde identificas batallas famosas a partir de impresionantes imágenes generadas por IA. Pon a prueba tus conocimientos a través de 8 épocas históricas, desde la Antigüedad hasta las Guerras Mundiales, y compite en clasificaciones globales.",
+      "description": "BattleGuess es el juego definitivo de cultura histórica donde identificas batallas famosas a partir de impresionantes imágenes. Pon a prueba tus conocimientos a través de 8 épocas históricas, desde la Antigüedad hasta las Guerras Mundiales, y compite en clasificaciones globales.",
       "howToPlay": "Cómo jugar",
       "whatMakesSpecial": "Qué hace especial a BattleGuess",
       "cta": "¿Listo para poner a prueba tus conocimientos?",
       "ctaSubtitle": "Lánzate y descubre cuántas batallas puedes identificar.",
       "features": {
-        "aiImages": "Imágenes generadas por IA",
+        "aiImages": "Imágenes de batallas",
         "gameModes": "8 modos de juego",
         "battles": "Más de 200 batallas",
         "eras": "8 épocas históricas"
@@ -179,14 +179,14 @@
       "step1Title": "Elige tu configuración",
       "step1Desc": "Selecciona tu época, nivel de dificultad y modo de juego preferidos. Ya sea que quieras un desafío diario rápido o una campaña completa, hay un modo para ti.",
       "step2Title": "Estudia la imagen de la batalla",
-      "step2Desc": "Examina la imagen generada por IA que representa una famosa batalla histórica. Busca pistas visuales como armaduras, armas, terreno y formaciones.",
+      "step2Desc": "Examina la imagen que representa una famosa batalla histórica. Busca pistas visuales como armaduras, armas, terreno y formaciones.",
       "step3Title": "Usa las pistas si las necesitas",
       "step3Desc": "¿Atascado? Revela hasta tres pistas progresivas para ayudarte a identificar la batalla. Cada pista cuesta puntos, así que úsalas con prudencia.",
       "step4Title": "Envía tu respuesta",
       "step4Desc": "Escribe el nombre de la batalla y envía tu respuesta. Las respuestas correctas otorgan puntos según la dificultad, las pistas usadas y tu racha actual.",
       "step5Title": "Sube en la clasificación",
       "step5Desc": "Aumenta tu racha, obtén logros y compite en la clasificación global. Comparte tus resultados con amigos y desafíalos a superar tu puntuación.",
-      "featureAiDesc": "Cada batalla cobra vida con imágenes únicas y atmosféricas generadas por IA, diseñadas para capturar la esencia de cada enfrentamiento histórico.",
+      "featureAiDesc": "Cada batalla cobra vida con imágenes únicas y atmosféricas, diseñadas para capturar la esencia de cada enfrentamiento histórico.",
       "featureModesDesc": "Desde adivinanzas clásicas hasta ordenar cronologías, desafíos contrarreloj, campañas y retos diarios, siempre hay una nueva forma de jugar.",
       "featureBattlesDesc": "Explora más de 200 batallas históricamente precisas que abarcan miles de años de historia militar, desde la guerra de carros antigua hasta el combate moderno.",
       "featureErasDesc": "Viaja a través del Antiguo Egipto, Grecia y Roma, la Europa medieval, el Imperio otomano, Asia oriental, la era colonial, las Guerras de América y las Guerras Mundiales."
@@ -309,15 +309,15 @@
     },
     "10": {
       "question": "¿Funciona BattleGuess sin conexión?",
-      "answer": "BattleGuess requiere conexión a internet para jugar. El juego necesita cargar las imágenes de batalla generadas por IA desde el servidor, enviar tus puntuaciones a la clasificación global y sincronizar los datos del desafío diario. Aunque los archivos principales de la aplicación pueden almacenarse en caché en tu navegador para una carga más rápida, se necesita una conexión a internet activa para la experiencia de juego completa."
+      "answer": "BattleGuess requiere conexión a internet para jugar. El juego necesita cargar las imágenes de batalla desde el servidor, enviar tus puntuaciones a la clasificación global y sincronizar los datos del desafío diario. Aunque los archivos principales de la aplicación pueden almacenarse en caché en tu navegador para una carga más rápida, se necesita una conexión a internet activa para la experiencia de juego completa."
     },
     "11": {
       "question": "¿De dónde vienen las imágenes de las batallas?",
-      "answer": "Todas las imágenes de batallas en BattleGuess son generadas por IA utilizando Google Gemini. Cada imagen se genera cuidadosamente para representar una batalla histórica específica con detalles precisos de la época, como armaduras, armas, terreno y formaciones. El enfoque de generación por IA permite al juego ofrecer representaciones vívidas y únicas de batallas que pueden tener ilustraciones históricas limitadas o inexistentes."
+      "answer": "Cada imagen de batalla en BattleGuess está cuidadosamente elaborada para representar una batalla histórica específica con detalles precisos de la época, como armaduras, armas, terreno y formaciones. Este enfoque permite al juego ofrecer representaciones vívidas y únicas de batallas que pueden tener ilustraciones históricas limitadas o inexistentes."
     },
     "12": {
       "question": "¿Qué tan precisa es la información histórica?",
-      "answer": "La información histórica de BattleGuess está bien investigada y diseñada para ser educativa. Las descripciones de las batallas, fechas, ubicaciones y datos clave han sido verificados con fuentes históricas confiables. Si bien las imágenes generadas por IA son interpretaciones artísticas y no recreaciones exactas, el contenido factual, incluyendo nombres de batallas, años, beligerantes y resultados, es preciso y tiene como objetivo ayudar a los jugadores a aprender historia militar real mientras juegan."
+      "answer": "La información histórica de BattleGuess está bien investigada y diseñada para ser educativa. Las descripciones de las batallas, fechas, ubicaciones y datos clave han sido verificados con fuentes históricas confiables. Si bien las imágenes son interpretaciones artísticas y no recreaciones exactas, el contenido factual, incluyendo nombres de batallas, años, beligerantes y resultados, es preciso y tiene como objetivo ayudar a los jugadores a aprender historia militar real mientras juegan."
     },
     "13": {
       "question": "¿Se agregarán más batallas?",
@@ -339,8 +339,8 @@
     "classic": {
       "label": "Clásico",
       "shortDesc": "Adivina la batalla a partir de la imagen",
-      "longDesc": "¡Mira una imagen generada por IA de una famosa batalla e intenta adivinar cuál es. Usa las pistas si te quedas atascado!",
-      "rules": "Se te presenta una imagen generada por IA que representa una batalla histórica. Tu objetivo es escribir correctamente el nombre de la batalla. Tienes acceso a 4 pistas por ronda, cada una con un costo de 25 puntos. Los puntos se otorgan según la dificultad de la batalla: las batallas fáciles, medias y difíciles tienen valores de puntos base crecientes. Las respuestas correctas aumentan tu racha, que otorga puntos de bonificación por aciertos consecutivos.",
+      "longDesc": "¡Mira una imagen de una famosa batalla e intenta adivinar cuál es. Usa las pistas si te quedas atascado!",
+      "rules": "Se te presenta una imagen que representa una batalla histórica. Tu objetivo es escribir correctamente el nombre de la batalla. Tienes acceso a 4 pistas por ronda, cada una con un costo de 25 puntos. Los puntos se otorgan según la dificultad de la batalla: las batallas fáciles, medias y difíciles tienen valores de puntos base crecientes. Las respuestas correctas aumentan tu racha, que otorga puntos de bonificación por aciertos consecutivos.",
       "strategy": "Comienza examinando la imagen en busca de detalles específicos de la época, como estilos de armadura, armas y paisaje. Las batallas antiguas suelen mostrar escudos, lanzas y terreno mediterráneo, mientras que las batallas de las Guerras Mundiales muestran trincheras, tanques o uniformes modernos. Si la imagen muestra combate naval, reduce tus opciones a batallas navales famosas. Usa las pistas de forma selectiva: la primera pista suele ser una pista general de la época que puede evitarte una respuesta incorrecta. Construir y mantener una racha es una de las mejores maneras de maximizar tu puntuación general."
     },
     "reverse-year": {

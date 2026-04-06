@@ -84,9 +84,6 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
               >
                 BattleGuess
               </h1>
-              <p className="text-xs sm:text-sm text-primary-500">
-                Guess the Battle
-              </p>
             </div>
           </motion.div>
 
