@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
 import { LocaleLink } from '../components/ui/LocaleLink';
-import { getBattleById, allBattles } from '../data/battles';
+import { getBattleById, allBattles, getCanonicalBattleByName } from '../data/battles';
 import { battleFacts } from '../data/battleFacts';
 import { battleImages } from '../data/battleImages';
 import type { BlogPost } from '../data/blogPosts';
@@ -16,6 +16,7 @@ import {
   getEraDisplayName,
   getEraIcon,
   formatYear,
+  truncateMetaDescription,
 } from '../utils/battleHelpers';
 
 const difficultyColors: Record<string, string> = {
@@ -59,6 +60,7 @@ function BattleDetail() {
         title="Battle Not Found | BattleGuess"
         description="The requested battle could not be found."
         canonical="https://battleguess.app/battles"
+        robots="noindex, follow"
       >
         <div className="text-center py-16">
           <div className="text-6xl mb-4">🔍</div>
@@ -82,10 +84,18 @@ function BattleDetail() {
   const fact = battleFacts[battle.id];
   const imageUrl = battleImages[battle.id];
 
+  // Some battles have gameplay variants that share a name (e.g. ids 31 and
+  // 226 are both "Battle of Kadesh"). Point the canonical URL at the lowest-
+  // ID entry so duplicates don't compete in search results.
+  const canonicalBattle = getCanonicalBattleByName(battle.name) ?? battle;
+  const canonicalSlug = getBattleSlug(canonicalBattle);
+  const canonicalUrl = `https://battleguess.app/battles/${canonicalSlug}`;
+  const canonicalPath = `/battles/${canonicalSlug}`;
+
   const breadcrumbs = buildBreadcrumbJsonLd([
     { name: 'Home', url: 'https://battleguess.app' },
     { name: 'Battle Encyclopedia', url: 'https://battleguess.app/battles' },
-    { name: battle.name, url: `https://battleguess.app/battles/${battleId}` },
+    { name: battle.name, url: canonicalUrl },
   ]);
 
   const article = {
@@ -124,9 +134,9 @@ function BattleDetail() {
   return (
     <ContentLayout
       title={`${battle.name} | BattleGuess`}
-      description={battle.description}
-      canonical={`https://battleguess.app/battles/${battleId}`}
-      path={`/battles/${battleId}`}
+      description={truncateMetaDescription(battle.description)}
+      canonical={canonicalUrl}
+      path={canonicalPath}
       jsonLd={jsonLd}
     >
       {/* Back link */}
@@ -206,7 +216,7 @@ function BattleDetail() {
           <div className="rounded-2xl overflow-hidden shadow-md border border-slate-100">
             <img
               src={imageUrl}
-              alt={`Historical artwork depicting the Battle of ${battle.name}`}
+              alt={`Historical artwork depicting the ${battle.name}`}
               loading="lazy"
               className="w-full h-auto object-cover"
               width={1080}

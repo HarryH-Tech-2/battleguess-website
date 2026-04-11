@@ -29,6 +29,32 @@ export function formatYear(year: number): string {
   return `${year} CE`;
 }
 
+/**
+ * Truncates a string for use in a meta description.
+ * Google displays ~155–160 characters in SERP snippets; longer descriptions
+ * get cut mid-sentence. This trims at the last sentence break under the
+ * limit, or falls back to a word-boundary cut with an ellipsis.
+ */
+export function truncateMetaDescription(text: string, maxLength = 155): string {
+  if (text.length <= maxLength) return text;
+
+  // Prefer a clean break at the end of a sentence within the limit.
+  const sliced = text.slice(0, maxLength);
+  const sentenceEnd = Math.max(
+    sliced.lastIndexOf('. '),
+    sliced.lastIndexOf('! '),
+    sliced.lastIndexOf('? ')
+  );
+  if (sentenceEnd > 80) {
+    return text.slice(0, sentenceEnd + 1);
+  }
+
+  // Otherwise cut at the last word boundary and append an ellipsis.
+  const lastSpace = sliced.lastIndexOf(' ');
+  const cut = lastSpace > 0 ? sliced.slice(0, lastSpace) : sliced;
+  return cut.replace(/[.,;:!?-]+$/, '') + '…';
+}
+
 export function groupBattlesByEra(battles: Battle[]): Record<CivilizationId, Battle[]> {
   const groups: Partial<Record<CivilizationId, Battle[]>> = {};
   for (const battle of battles) {

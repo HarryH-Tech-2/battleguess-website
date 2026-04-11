@@ -16,6 +16,7 @@ const Blog = lazy(() => import('./pages/Blog'));
 const BlogPost = lazy(() => import('./pages/BlogPost'));
 const BlogTopic = lazy(() => import('./pages/BlogTopic'));
 const Stats = lazy(() => import('./pages/Stats'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function LoadingFallback() {
   return (
@@ -28,6 +29,12 @@ function LoadingFallback() {
   );
 }
 
+const OG_LOCALES: Record<string, string> = {
+  en: 'en_US',
+  fr: 'fr_FR',
+  es: 'es_ES',
+};
+
 function LanguageLayout() {
   const { lang } = useParams<{ lang?: string }>();
   const { i18n } = useTranslation();
@@ -37,6 +44,19 @@ function LanguageLayout() {
   useEffect(() => {
     if (i18n.language !== targetLang) {
       i18n.changeLanguage(targetLang);
+    }
+
+    // Keep <html lang> and og:locale in sync with the URL language so that
+    // pre-rendered HTML exposes the correct language to crawlers.
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = targetLang;
+      let ogLocale = document.querySelector('meta[property="og:locale"]') as HTMLMetaElement | null;
+      if (!ogLocale) {
+        ogLocale = document.createElement('meta');
+        ogLocale.setAttribute('property', 'og:locale');
+        document.head.appendChild(ogLocale);
+      }
+      ogLocale.content = OG_LOCALES[targetLang] ?? 'en_US';
     }
   }, [targetLang, i18n]);
 
@@ -58,7 +78,7 @@ const contentRoutes = (
     <Route path="blog/topics/:topicId" element={<BlogTopic />} />
     <Route path="blog/:slug" element={<BlogPost />} />
     <Route path="stats" element={<Stats />} />
-    <Route path="*" element={<App />} />
+    <Route path="*" element={<NotFound />} />
   </>
 );
 

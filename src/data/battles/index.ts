@@ -49,6 +49,22 @@ export const getBattleById = (id: number): Battle | undefined => {
   return allBattles.find(b => b.id === id);
 };
 
+/**
+ * Returns the canonical battle for a given name (lowest-ID entry).
+ * Some battles have gameplay variants with duplicate names but different IDs
+ * (e.g. ids 31 and 226 both "Battle of Kadesh"). For SEO we treat the lowest
+ * ID as the canonical URL so duplicates don't compete in search.
+ */
+export const getCanonicalBattleByName = (name: string): Battle | undefined => {
+  const normalized = name.toLowerCase();
+  let canonical: Battle | undefined;
+  for (const b of allBattles) {
+    if (b.name.toLowerCase() !== normalized) continue;
+    if (!canonical || b.id < canonical.id) canonical = b;
+  }
+  return canonical;
+};
+
 export const getTimelineBattleSet = (
   civilization: CivilizationId | 'all' = 'all',
   difficulty: Difficulty | 'all' = 'all',

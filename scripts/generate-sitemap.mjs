@@ -13,7 +13,13 @@ const rootDir = resolve(__dirname, '..');
 
 const BASE_URL = 'https://battleguess.app';
 const BUILD_DATE = new Date().toISOString().split('T')[0];
-const LANGUAGES = ['en', 'fr', 'es'];
+// Only English is in the sitemap. The /fr/ and /es/ routes still exist at
+// runtime (the UI is translated), but the underlying content (battle
+// descriptions, blog posts) is still English. Advertising hreflang alternates
+// that point at non-translated pages causes duplicate-content penalties, so
+// we emit just the English URLs for now. Re-enable additional languages here
+// once real translated body content is in place.
+const LANGUAGES = ['en'];
 
 // Game mode slugs (from gameModeData.ts)
 const modeSlugs = [
@@ -94,6 +100,10 @@ function getBattleSlugs() {
     'src/data/battles/southAmerica.ts',
   ];
 
+  // Track names we've already added so duplicate-name battles (gameplay
+  // variants that share a canonical battle) are excluded from the sitemap.
+  const seenNames = new Set();
+
   for (const file of battleFiles) {
     const content = readFileSync(resolve(rootDir, file), 'utf-8');
     // Match id and name from battle objects
@@ -103,6 +113,9 @@ function getBattleSlugs() {
     for (let i = 0; i < idMatches.length && i < nameMatches.length; i++) {
       const id = idMatches[i][1];
       const name = nameMatches[i][1];
+      const nameKey = name.toLowerCase();
+      if (seenNames.has(nameKey)) continue; // skip duplicate-name gameplay variants
+      seenNames.add(nameKey);
       const slug = `${id}-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '')}`;
       slugs.push(slug);
     }
@@ -164,31 +177,37 @@ function generateSitemap() {
     })),
   ];
 
-  // Generate entries for all languages with hreflang alternates
+  // Generate entries for all languages. Only emit hreflang alternates when
+  // more than one language is listed — a single-language sitemap doesn't
+  // need hreflang and Google treats a lone self-referential alternate as
+  // redundant noise.
+  const emitHreflangs = LANGUAGES.length > 1;
   const allEntries = [];
   for (const url of urls) {
     for (const lang of LANGUAGES) {
       const prefix = lang === 'en' ? '' : `/${lang}`;
       const loc = `${BASE_URL}${prefix}${url.loc}`;
-      const hreflangs = LANGUAGES.map(l => {
-        const p = l === 'en' ? '' : `/${l}`;
-        return `    <xhtml:link rel="alternate" hreflang="${l}" href="${BASE_URL}${p}${url.loc}"/>`;
-      }).join('\n');
-      // x-default points to English version
-      const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${url.loc}"/>`;
-      allEntries.push({ loc, priority: url.priority, changefreq: url.changefreq, lastmod: url.lastmod, hreflangs: hreflangs + '\n' + xDefault });
+      let hreflangs = '';
+      if (emitHreflangs) {
+        const alts = LANGUAGES.map(l => {
+          const p = l === 'en' ? '' : `/${l}`;
+          return `    <xhtml:link rel="alternate" hreflang="${l}" href="${BASE_URL}${p}${url.loc}"/>`;
+        }).join('\n');
+        const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${url.loc}"/>`;
+        hreflangs = alts + '\n' + xDefault;
+      }
+      allEntries.push({ loc, priority: url.priority, changefreq: url.changefreq, lastmod: url.lastmod, hreflangs });
     }
   }
 
+  const xmlnsHreflang = emitHreflangs ? '\n        xmlns:xhtml="http://www.w3.org/1999/xhtml"' : '';
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"${xmlnsHreflang}>
 ${allEntries.map(u => `  <url>
     <loc>${u.loc}</loc>
     <lastmod>${u.lastmod}</lastmod>
     <changefreq>${u.changefreq}</changefreq>
-    <priority>${u.priority}</priority>
-${u.hreflangs}
+    <priority>${u.priority}</priority>${u.hreflangs ? '\n' + u.hreflangs : ''}
   </url>`).join('\n')}
 </urlset>
 `;

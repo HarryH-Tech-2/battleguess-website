@@ -72,9 +72,7 @@ function getRoutes() {
   const locMatches = sitemap.matchAll(/<loc>https:\/\/battleguess\.app([^<]*)<\/loc>/g);
   for (const match of locMatches) {
     const path = match[1] || '/';
-    if (path !== '/') {
-      routes.push(path);
-    }
+    routes.push(path);
   }
 
   console.log(`Found ${routes.length} routes in sitemap to pre-render`);

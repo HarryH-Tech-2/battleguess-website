@@ -10,7 +10,8 @@ const OG_HEIGHT = 630;
 
 async function generateOGImage() {
   const inputPath = join(rootDir, 'public', 'welcome-placeholder.webp');
-  const outputPath = join(rootDir, 'public', 'og-image.png');
+  const outputJpg = join(rootDir, 'public', 'og-image.jpg');
+  const outputWebp = join(rootDir, 'public', 'og-image.webp');
 
   // Get source image dimensions
   const metadata = await sharp(inputPath).metadata();
@@ -62,20 +63,25 @@ async function generateOGImage() {
     <text x="${OG_WIDTH - 40}" y="${OG_HEIGHT - 30}" text-anchor="end" class="url">battleguess.app</text>
   </svg>`;
 
-  // Crop, resize, then composite the gradient + text overlay
-  await sharp(inputPath)
+  // Crop + resize + overlay once, then emit optimised JPG and WebP variants.
+  // JPG is used by <meta property="og:image"> for maximum compatibility; WebP
+  // is kept as a smaller alternative.
+  const composed = sharp(inputPath)
     .extract({ left: cropLeft, top: cropTop, width: cropW, height: cropH })
     .resize(OG_WIDTH, OG_HEIGHT, { fit: 'fill' })
     .composite([
       { input: Buffer.from(gradientSvg), blend: 'over' },
       { input: Buffer.from(textSvg), blend: 'over' },
-    ])
-    .png({ quality: 90 })
-    .toFile(outputPath);
+    ]);
 
-  const { size } = await sharp(outputPath).metadata();
-  const stats = (await import('fs')).statSync(outputPath);
-  console.log(`Generated OG image: ${outputPath} (${(stats.size / 1024).toFixed(0)} KB)`);
+  await composed.clone().jpeg({ quality: 85, mozjpeg: true }).toFile(outputJpg);
+  await composed.clone().webp({ quality: 85, effort: 6 }).toFile(outputWebp);
+
+  const fs = await import('fs');
+  const jpgSize = fs.statSync(outputJpg).size;
+  const webpSize = fs.statSync(outputWebp).size;
+  console.log(`Generated OG image: ${outputJpg} (${(jpgSize / 1024).toFixed(0)} KB)`);
+  console.log(`Generated OG image: ${outputWebp} (${(webpSize / 1024).toFixed(0)} KB)`);
 }
 
 generateOGImage().catch(console.error);

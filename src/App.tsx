@@ -298,6 +298,29 @@ function App() {
         description="Test your knowledge of military history by identifying famous battles from artwork. Over 200 battles across 8 historical eras."
         canonical="https://battleguess.app"
         path="/"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'WebApplication',
+          name: 'BattleGuess',
+          url: 'https://battleguess.app',
+          description: 'A free historical battle guessing game. Identify famous battles from images across 5 game modes covering ancient civilizations to modern warfare.',
+          applicationCategory: 'GameApplication',
+          operatingSystem: 'Web',
+          offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+          },
+          author: {
+            '@type': 'Person',
+            name: 'Harry',
+            url: 'https://x.com/HarryHH1993',
+          },
+          image: 'https://battleguess.app/og-image.jpg',
+          screenshot: 'https://battleguess.app/og-image.jpg',
+          genre: ['Educational', 'Trivia', 'History'],
+          inLanguage: 'en',
+        }}
       />
       <div className="space-y-4 sm:space-y-6 pb-6 sm:pb-8">
 

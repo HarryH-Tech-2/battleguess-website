@@ -1,17 +1,19 @@
 import { useEffect } from 'react';
-import { supportedLanguages } from '../../i18n';
 
 interface SEOHeadProps {
   title: string;
   description: string;
   canonical: string;
+  /**
+   * Previously used to emit per-page hreflang alternates. Kept as an optional
+   * prop so existing callers don't need to change while real content
+   * translations are being built out.
+   */
   path?: string;
   jsonLd?: object | object[];
   ogImage?: string;
   robots?: string;
 }
-
-const BASE_URL = 'https://battleguess.app';
 
 function setMetaTag(property: string, content: string, isProperty = false) {
   const attr = isProperty ? 'property' : 'name';
@@ -24,7 +26,7 @@ function setMetaTag(property: string, content: string, isProperty = false) {
   tag.content = content;
 }
 
-export function SEOHead({ title, description, canonical, path, jsonLd, ogImage, robots = 'index, follow' }: SEOHeadProps) {
+export function SEOHead({ title, description, canonical, jsonLd, ogImage, robots = 'index, follow' }: SEOHeadProps) {
   useEffect(() => {
     document.title = title;
 
@@ -50,28 +52,12 @@ export function SEOHead({ title, description, canonical, path, jsonLd, ogImage, 
     }
     canonicalLink.href = canonical;
 
-    // Clean up old hreflang tags
+    // Hreflang alternates are intentionally not emitted: the /fr and /es
+    // routes exist at runtime but the underlying content (battle descriptions,
+    // blog posts, etc.) is still English, so pointing hreflang at them would
+    // cause duplicate-content penalties. Re-enable once body content is
+    // actually translated.
     document.querySelectorAll('link[hreflang]').forEach(el => el.remove());
-
-    // Generate hreflang tags for all supported languages + x-default
-    if (path !== undefined) {
-      const basePath = path || '/';
-
-      for (const lang of supportedLanguages) {
-        const hreflang = document.createElement('link');
-        hreflang.rel = 'alternate';
-        hreflang.hreflang = lang;
-        hreflang.href = lang === 'en' ? `${BASE_URL}${basePath}` : `${BASE_URL}/${lang}${basePath}`;
-        document.head.appendChild(hreflang);
-      }
-
-      // x-default points to English (no prefix)
-      const xDefault = document.createElement('link');
-      xDefault.rel = 'alternate';
-      xDefault.hreflang = 'x-default';
-      xDefault.href = `${BASE_URL}${basePath}`;
-      document.head.appendChild(xDefault);
-    }
 
     // JSON-LD
     document.querySelectorAll('.seo-jsonld').forEach(el => el.remove());
@@ -90,7 +76,7 @@ export function SEOHead({ title, description, canonical, path, jsonLd, ogImage, 
     return () => {
       document.querySelectorAll('.seo-jsonld').forEach(el => el.remove());
     };
-  }, [title, description, canonical, path, jsonLd, ogImage, robots]);
+  }, [title, description, canonical, jsonLd, ogImage, robots]);
 
   return null;
 }
