@@ -22,9 +22,16 @@
     }
   ],
   "rewrites": [
-    { "source": "/((fr|es)/)?(battles|blog|collections|modes|faq|about|stats)(/.*)?", "destination": "/index.html" },
-    { "source": "/(fr|es)", "destination": "/index.html" },
-    { "source": "/(fr|es)/", "destination": "/index.html" }
+    { "source": "/battles/:path*", "destination": "/index.html" },
+    { "source": "/blog/:path*", "destination": "/index.html" },
+    { "source": "/collections/:path*", "destination": "/index.html" },
+    { "source": "/modes/:path*", "destination": "/index.html" },
+    { "source": "/faq", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/stats", "destination": "/index.html" },
+    { "source": "/fr/:path*", "destination": "/index.html" },
+    { "source": "/es/:path*", "destination": "/index.html" },
+    { "source": "/fr", "destination": "/index.html" },
+    { "source": "/es", "destination": "/index.html" }
   ]
 }
-</content>
