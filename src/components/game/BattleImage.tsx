@@ -51,8 +51,8 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
                   key="image"
                   src={imageUrl}
                   alt={battleName ? `Battle scene of ${battleName}` : 'Historical battle scene'}
-                  width={1080}
-                  height={1080}
+                  width={512}
+                  height={512}
                   className="w-full h-full object-contain bg-gray-900"
                   initial={{ opacity: 0, scale: 1.05 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -67,8 +67,8 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
                   key="placeholder"
                   src="/welcome-placeholder.webp"
                   alt="BattleGuess - Can you name the battle?"
-                  width={1080}
-                  height={1080}
+                  width={512}
+                  height={512}
                   className="w-full h-full object-cover"
                   initial={{ opacity: 0, scale: 1.02 }}
                   animate={{ opacity: 1, scale: 1 }}
