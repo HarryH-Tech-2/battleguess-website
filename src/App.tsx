@@ -30,6 +30,7 @@ const StatsPanel = lazy(() => import('./components/stats/StatsPanel').then(m => 
 const AchievementsList = lazy(() => import('./components/achievements/AchievementsList').then(m => ({ default: m.AchievementsList })));
 import { useGame } from './hooks/useGame';
 import { useImageGeneration } from './hooks/useImageGeneration';
+import { getBattlesByCivilization } from './data/battles/index';
 import { useBackgroundMusic } from './hooks/useBackgroundMusic';
 import { useSoundEffects } from './hooks/useSoundEffects';
 import { useStats } from './hooks/useStats';
@@ -48,7 +49,7 @@ const BUY_ME_A_COFFEE_URL = "https://buymeacoffee.com/harryhh";
 
 function App() {
   const { t } = useTranslation();
-  const { state, actions, totalBattlesInPool, battlesPlayed } = useGame();
+  const { state, actions, totalBattlesInPool, battlesPlayed, playedBattleIds } = useGame();
   const { getImageForBattle } = useImageGeneration();
   const { isMuted, toggleMute, currentTrackId, changeTrack, tracks } = useBackgroundMusic('/drum-tune.mp3');
   const { play: playSound } = useSoundEffects(isMuted);
@@ -90,6 +91,17 @@ function App() {
       img.src = imageUrl;
     }
   }, [state.currentBattle, state.gameStatus, state.imageUrl, actions, getImageForBattle]);
+
+  // Prefetch upcoming battle images when a round ends (won/lost/playing)
+  useEffect(() => {
+    if (state.gameStatus !== 'won' && state.gameStatus !== 'lost' && state.gameStatus !== 'playing') return;
+    const pool = getBattlesByCivilization(state.selectedCivilization, state.selectedDifficulty);
+    const remaining = pool.filter(b => !playedBattleIds.includes(b.id));
+    remaining.slice(0, 5).forEach(b => {
+      const img = new Image();
+      img.src = getImageForBattle(b.id);
+    });
+  }, [state.gameStatus, state.selectedCivilization, state.selectedDifficulty, playedBattleIds, getImageForBattle]);
 
   // Track battle IDs when creating a challenge
   useEffect(() => {

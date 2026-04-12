@@ -271,6 +271,7 @@ export function useGame() {
     savedStats,
     totalBattlesInPool: ROUNDS_PER_GAME,
     battlesPlayed: playedBattles.length,
+    playedBattleIds: playedBattles,
     actions: {
       startGame,
       startBattleById,
