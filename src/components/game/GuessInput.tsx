@@ -76,6 +76,7 @@ export function GuessInput({ onSubmit, disabled, onGiveUp }: GuessInputProps) {
           type="button"
           variant="danger"
           size="lg"
+          className="flex-1"
           onClick={onGiveUp}
           disabled={disabled}
         >

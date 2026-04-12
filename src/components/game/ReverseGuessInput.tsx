@@ -108,6 +108,7 @@ export function ReverseGuessInput({ mode, onSubmit, disabled, onGiveUp, actualYe
           type="button"
           variant="danger"
           size="lg"
+          className="flex-1"
           onClick={onGiveUp}
           disabled={disabled}
         >
