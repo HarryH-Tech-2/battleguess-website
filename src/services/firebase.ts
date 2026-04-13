@@ -2,17 +2,6 @@
 // Local utilities (no backend/Firebase dependency)
 // =============================================
 
-// Player ID (anonymous, persistent via localStorage)
-function getPlayerId(): string {
-  const key = 'battleguess-player-id';
-  let id = localStorage.getItem(key);
-  if (!id) {
-    id = crypto.randomUUID();
-    localStorage.setItem(key, id);
-  }
-  return id;
-}
-
 export function getPlayerName(): string {
   return localStorage.getItem('battleguess-player-name') || 'Anonymous Commander';
 }
