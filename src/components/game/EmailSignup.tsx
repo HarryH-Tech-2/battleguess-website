@@ -37,7 +37,7 @@ export function EmailSignup() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, height: 0 }}
         transition={{ delay: 0.2 }}
-        className="relative bg-gradient-to-r from-primary-50 to-emerald-50 border border-primary-200 rounded-xl px-4 py-3 sm:py-2.5"
+        className="relative bg-gradient-to-r from-primary-50 to-emerald-50 border border-primary-200 rounded-xl px-5 py-4"
       >
         {/* Dismiss button */}
         <button
@@ -50,12 +50,12 @@ export function EmailSignup() {
           </svg>
         </button>
 
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 pr-5">
-          <p className="text-sm text-primary-800 font-medium text-center sm:text-left shrink-0">
+        <form onSubmit={handleSubmit} className="flex flex-col items-center gap-3 pr-5">
+          <p className="text-base text-primary-800 font-medium text-center">
             <span className="hidden sm:inline">🎯 Guess 3 new battles every day — get notified when new battles drop!</span>
             <span className="sm:hidden">🎯 Get notified when new battles drop!</span>
           </p>
-          <div className="flex w-full sm:w-auto gap-2 flex-1 max-w-sm">
+          <div className="flex w-full gap-2 max-w-sm">
             <input
               type="email"
               value={email}
