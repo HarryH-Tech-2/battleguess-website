@@ -41,6 +41,7 @@ import { useDailyChallenge } from './hooks/useDailyChallenge';
 import { useChallengeMode } from './hooks/useChallengeMode';
 import { getDailyBattleIds, getDailyDateKey } from './services/firebase';
 import { calculateScore } from './utils/scoring';
+import { analytics } from './utils/analytics';
 import type { GameMode } from './types';
 import './index.css';
 
@@ -145,6 +146,7 @@ function App() {
       }
       // Record stats
       if (state.currentBattle) {
+        analytics.battleWon(state.currentBattle.difficulty, state.hintsUsed, state.streak);
         recordResult({
           battleId: state.currentBattle.id,
           civilization: state.currentBattle.civilization,
@@ -170,6 +172,7 @@ function App() {
     } else if (prev === 'playing' && curr === 'lost') {
       playSound('giveUp');
       if (state.currentBattle) {
+        analytics.battleLost(state.currentBattle.difficulty, state.hintsUsed);
         recordResult({
           battleId: state.currentBattle.id,
           civilization: state.currentBattle.civilization,
@@ -194,6 +197,7 @@ function App() {
       }
     } else if (curr === 'completed') {
       playSound('complete');
+      analytics.gameCompleted(state.gameMode, state.score, state.correctGuesses);
       // If we were creating a challenge, finish it and generate the share link
       if (challenge.state.phase === 'creating') {
         challenge.finishCreating(
@@ -242,6 +246,7 @@ function App() {
 
   const handleStartGame = () => {
     recordPlay();
+    analytics.gameStart(state.gameMode, state.selectedDifficulty, state.selectedCivilization);
     if (isDailyPlaying) {
       // Daily mode - load next daily battle via startBattleById
       const battle = daily.getCurrentBattle();
@@ -515,6 +520,7 @@ function App() {
                   isLoading={challenge.state.isLoading}
                   onAccept={() => {
                     challenge.startChallenge();
+                    analytics.challengeAccepted();
                     if (challenge.state.battles[0]) {
                       recordPlay();
                       actions.startBattleById(challenge.state.battles[0].id);
@@ -589,6 +595,7 @@ function App() {
                     size="lg"
                     onClick={() => {
                       challenge.startCreating();
+                      analytics.challengeCreated();
                       recordPlay();
                       actions.startGame();
                     }}
@@ -903,7 +910,12 @@ function App() {
       {/* Achievements */}
       <AchievementPopup
         achievement={achievementsSystem.newlyUnlocked}
-        onDismiss={achievementsSystem.dismissPopup}
+        onDismiss={() => {
+          if (achievementsSystem.newlyUnlocked) {
+            analytics.achievementUnlocked(achievementsSystem.newlyUnlocked.id);
+          }
+          achievementsSystem.dismissPopup();
+        }}
       />
       <Suspense fallback={null}>
         <AchievementsList
