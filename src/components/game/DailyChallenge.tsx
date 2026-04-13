@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { Confetti } from '../effects/Confetti';
-import { getDailyDateKey, type DailyScore } from '../../services/firebase';
+import { getDailyDateKey } from '../../services/firebase';
 
 interface DailyChallengeIntroProps {
   onStart: () => void;
@@ -103,12 +103,10 @@ interface DailyResultProps {
   score: number;
   correctGuesses: number;
   totalBattles: number;
-  leaderboard: DailyScore[];
-  isLoadingLeaderboard: boolean;
   onBack: () => void;
 }
 
-export function DailyResult({ score, correctGuesses, totalBattles, leaderboard, isLoadingLeaderboard, onBack }: DailyResultProps) {
+export function DailyResult({ score, correctGuesses, totalBattles, onBack }: DailyResultProps) {
   const accuracy = totalBattles > 0 ? Math.round((correctGuesses / totalBattles) * 100) : 0;
 
   return (
@@ -138,39 +136,6 @@ export function DailyResult({ score, correctGuesses, totalBattles, leaderboard, 
           <p className="text-2xl font-bold text-primary-600">{accuracy}%</p>
           <p className="text-xs text-gray-500">Accuracy</p>
         </div>
-      </div>
-
-      {/* Leaderboard */}
-      <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-        <div className="px-4 py-3 bg-gradient-to-r from-primary-50 to-emerald-50 border-b border-gray-200">
-          <h3 className="font-semibold text-sm text-gray-700">Today's Leaderboard</h3>
-        </div>
-        {isLoadingLeaderboard ? (
-          <div className="p-6 text-center text-gray-400 text-sm">Loading...</div>
-        ) : leaderboard.length === 0 ? (
-          <div className="p-6 text-center text-gray-400 text-sm">
-            No leaderboard data yet. Set up Firebase to compete globally!
-          </div>
-        ) : (
-          <div className="divide-y divide-gray-100 max-h-64 overflow-y-auto">
-            {leaderboard.map((entry, i) => (
-              <div key={entry.playerId} className="flex items-center justify-between px-4 py-2.5">
-                <div className="flex items-center gap-3">
-                  <span className={`w-6 text-center font-bold text-sm ${
-                    i === 0 ? 'text-yellow-500' : i === 1 ? 'text-gray-400' : i === 2 ? 'text-amber-600' : 'text-gray-400'
-                  }`}>
-                    {i + 1}
-                  </span>
-                  <span className="text-sm text-gray-700">{entry.playerName}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-xs text-gray-400">{entry.correctGuesses}/{entry.totalBattles}</span>
-                  <span className="font-semibold text-sm text-primary-600">{entry.score}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
       </div>
 
       <Button variant="primary" size="lg" onClick={onBack} className="w-full">

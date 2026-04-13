@@ -494,8 +494,6 @@ function App() {
                   score={daily.state.score}
                   correctGuesses={daily.state.correctGuesses}
                   totalBattles={daily.state.battles.length}
-                  leaderboard={daily.state.leaderboard}
-                  isLoadingLeaderboard={daily.state.isLoadingLeaderboard}
                   onBack={() => {
                     daily.reset();
                     actions.resetGame();

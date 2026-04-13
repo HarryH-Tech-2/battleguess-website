@@ -2,8 +2,6 @@ import { useState, useCallback, useEffect } from 'react';
 import {
   createChallenge,
   getChallenge,
-  submitChallengeAttempt,
-  getChallengeAttempts,
   type Challenge,
   type ChallengeAttempt,
 } from '../services/firebase';
@@ -46,9 +44,9 @@ export function useChallengeMode() {
     }
   }, []);
 
-  const loadChallenge = async (challengeId: string) => {
+  const loadChallenge = (challengeId: string) => {
     setState(prev => ({ ...prev, isLoading: true, phase: 'viewing' }));
-    const challenge = await getChallenge(challengeId);
+    const challenge = getChallenge(challengeId);
     if (challenge) {
       const battles = challenge.battleIds.map(id => getBattleById(id)).filter(Boolean) as Battle[];
       setState(prev => ({
@@ -93,15 +91,13 @@ export function useChallengeMode() {
     }));
   }, []);
 
-  const finishCreating = useCallback(async (score: number, correctGuesses: number, difficulty: string, civilization: string) => {
+  const finishCreating = useCallback((score: number, correctGuesses: number, difficulty: string, civilization: string) => {
     const battleIds = state.playedBattleIds;
     if (battleIds.length === 0) return;
 
-    const challengeId = await createChallenge(battleIds, score, correctGuesses, difficulty, civilization);
-    if (challengeId) {
-      const url = `${window.location.origin}/?challenge=${challengeId}`;
-      setState(prev => ({ ...prev, phase: 'share', challengeUrl: url, score, correctGuesses }));
-    }
+    const challengeId = createChallenge(battleIds, score, correctGuesses, difficulty, civilization);
+    const url = `${window.location.origin}/?challenge=${challengeId}`;
+    setState(prev => ({ ...prev, phase: 'share', challengeUrl: url, score, correctGuesses }));
   }, [state.playedBattleIds]);
 
   const recordBattleResult = useCallback((correct: boolean, score: number) => {
@@ -115,33 +111,23 @@ export function useChallengeMode() {
   const advanceToNext = useCallback(() => {
     setState(prev => {
       if (prev.currentIndex >= prev.battles.length - 1) {
-        // Challenge done - submit attempt
-        if (prev.challenge) {
-          submitChallengeAttempt(prev.challenge.challengeId, prev.score, prev.correctGuesses);
-          getChallengeAttempts(prev.challenge.challengeId).then(attempts => {
-            setState(p => ({ ...p, attempts }));
-          });
-        }
         return { ...prev, phase: 'result' as const };
       }
       return { ...prev, currentIndex: prev.currentIndex + 1 };
     });
   }, []);
 
-  const createNewChallenge = useCallback(async (
+  const createNewChallenge = useCallback((
     battleIds: number[],
     score: number,
     correctGuesses: number,
     difficulty: string,
     civilization: string
-  ): Promise<string | null> => {
-    const challengeId = await createChallenge(battleIds, score, correctGuesses, difficulty, civilization);
-    if (challengeId) {
-      const url = `${window.location.origin}/?challenge=${challengeId}`;
-      setState(prev => ({ ...prev, challengeUrl: url }));
-      return url;
-    }
-    return null;
+  ): string | null => {
+    const challengeId = createChallenge(battleIds, score, correctGuesses, difficulty, civilization);
+    const url = `${window.location.origin}/?challenge=${challengeId}`;
+    setState(prev => ({ ...prev, challengeUrl: url }));
+    return url;
   }, []);
 
   const getCurrentBattle = useCallback((): Battle | null => {

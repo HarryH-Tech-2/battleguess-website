@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { getDailyDateKey, getDailyBattleIds, submitDailyScore, getDailyLeaderboard, type DailyScore } from '../services/firebase';
+import { getDailyDateKey, getDailyBattleIds } from '../services/firebase';
 import { getBattleById } from '../data/battles';
 import type { Battle } from '../types';
 import { useLocalStorage } from './useLocalStorage';
@@ -11,8 +11,6 @@ interface DailyChallengeState {
   score: number;
   correctGuesses: number;
   dateKey: string;
-  leaderboard: DailyScore[];
-  isLoadingLeaderboard: boolean;
 }
 
 export function useDailyChallenge() {
@@ -25,8 +23,6 @@ export function useDailyChallenge() {
     score: 0,
     correctGuesses: 0,
     dateKey: getDailyDateKey(),
-    leaderboard: [],
-    isLoadingLeaderboard: false,
   });
 
   const todayKey = getDailyDateKey();
@@ -45,8 +41,6 @@ export function useDailyChallenge() {
       score: 0,
       correctGuesses: 0,
       dateKey,
-      leaderboard: [],
-      isLoadingLeaderboard: false,
     });
   }, []);
 
@@ -63,24 +57,12 @@ export function useDailyChallenge() {
       if (prev.currentIndex >= prev.battles.length - 1) {
         // All battles done
         const result = { score: prev.score, correct: prev.correctGuesses };
-        // Save to localStorage
         setCompletedDays(days => ({ ...days, [prev.dateKey]: result }));
-        // Submit to Firebase (fire-and-forget)
-        submitDailyScore(prev.score, prev.correctGuesses, prev.battles.length);
-        // Load leaderboard
-        loadLeaderboard(prev.dateKey);
-
         return { ...prev, phase: 'result' as const };
       }
       return { ...prev, currentIndex: prev.currentIndex + 1 };
     });
   }, [setCompletedDays]);
-
-  const loadLeaderboard = async (dateKey: string) => {
-    setState(prev => ({ ...prev, isLoadingLeaderboard: true }));
-    const leaderboard = await getDailyLeaderboard(dateKey);
-    setState(prev => ({ ...prev, leaderboard, isLoadingLeaderboard: false }));
-  };
 
   const getCurrentBattle = useCallback((): Battle | null => {
     if (state.phase !== 'playing' || state.currentIndex >= state.battles.length) return null;
@@ -94,7 +76,6 @@ export function useDailyChallenge() {
       currentIndex: 0,
       score: 0,
       correctGuesses: 0,
-      leaderboard: [],
     }));
   }, []);
 

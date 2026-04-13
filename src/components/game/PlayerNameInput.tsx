@@ -37,7 +37,7 @@ export function PlayerNameInput({ isOpen, onClose, currentName }: PlayerNameInpu
         onClick={e => e.stopPropagation()}
       >
         <h3 className="text-lg font-bold text-primary-800">Your Name</h3>
-        <p className="text-sm text-gray-500">This appears on leaderboards and in challenges.</p>
+        <p className="text-sm text-gray-500">This appears in challenges.</p>
         <input
           type="text"
           value={name}

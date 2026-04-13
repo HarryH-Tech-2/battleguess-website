@@ -1,38 +1,8 @@
-import type { FirebaseApp } from 'firebase/app';
-import type { Firestore } from 'firebase/firestore';
-
-// Firebase config - replace with your own from Firebase Console
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || '',
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || '',
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || '',
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || '',
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || '',
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || '',
-};
-
-let app: FirebaseApp | null = null;
-let db: Firestore | null = null;
-
-function isConfigured(): boolean {
-  return !!firebaseConfig.apiKey && !!firebaseConfig.projectId;
-}
-
-async function getDb(): Promise<Firestore | null> {
-  if (!isConfigured()) return null;
-  if (!app) {
-    const { initializeApp } = await import('firebase/app');
-    const { getFirestore } = await import('firebase/firestore');
-    app = initializeApp(firebaseConfig);
-    db = getFirestore(app);
-  }
-  return db;
-}
-
 // =============================================
+// Local utilities (no backend/Firebase dependency)
+// =============================================
+
 // Player ID (anonymous, persistent via localStorage)
-// =============================================
-
 function getPlayerId(): string {
   const key = 'battleguess-player-id';
   let id = localStorage.getItem(key);
@@ -79,58 +49,8 @@ export function getDailyBattleIds(dateKey: string): number[] {
   return ids;
 }
 
-export interface DailyScore {
-  playerId: string;
-  playerName: string;
-  score: number;
-  correctGuesses: number;
-  totalBattles: number;
-  timestamp: number;
-}
-
-export async function submitDailyScore(score: number, correctGuesses: number, totalBattles: number): Promise<boolean> {
-  const firestore = await getDb();
-  if (!firestore) return false;
-
-  try {
-    const { doc, setDoc } = await import('firebase/firestore');
-    const dateKey = getDailyDateKey();
-    const playerId = getPlayerId();
-    await setDoc(doc(firestore, 'daily', dateKey, 'scores', playerId), {
-      playerId,
-      playerName: getPlayerName(),
-      score,
-      correctGuesses,
-      totalBattles,
-      timestamp: Date.now(),
-    });
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-export async function getDailyLeaderboard(dateKey?: string): Promise<DailyScore[]> {
-  const firestore = await getDb();
-  if (!firestore) return [];
-
-  try {
-    const { collection, query, orderBy, limit, getDocs } = await import('firebase/firestore');
-    const key = dateKey || getDailyDateKey();
-    const q = query(
-      collection(firestore, 'daily', key, 'scores'),
-      orderBy('score', 'desc'),
-      limit(50)
-    );
-    const snapshot = await getDocs(q);
-    return snapshot.docs.map(d => d.data() as DailyScore);
-  } catch {
-    return [];
-  }
-}
-
 // =============================================
-// Challenge Mode (URL-based multiplayer)
+// Challenge Mode (URL-based, no backend needed)
 // =============================================
 
 export interface Challenge {
@@ -153,47 +73,18 @@ export interface ChallengeAttempt {
   timestamp: number;
 }
 
-function generateChallengeId(): string {
-  return Math.random().toString(36).substring(2, 8).toUpperCase();
-}
-
-export async function createChallenge(
+export function createChallenge(
   battleIds: number[],
   creatorScore: number,
   creatorCorrect: number,
   difficulty: string,
   civilization: string
-): Promise<string | null> {
-  const firestore = await getDb();
-  const challengeId = generateChallengeId();
-
-  if (!firestore) {
-    // Fallback: encode challenge in URL params
-    const data = { b: battleIds, s: creatorScore, c: creatorCorrect, d: difficulty, v: civilization, n: getPlayerName() };
-    return btoa(JSON.stringify(data));
-  }
-
-  try {
-    const { doc, setDoc } = await import('firebase/firestore');
-    await setDoc(doc(firestore, 'challenges', challengeId), {
-      challengeId,
-      creatorId: getPlayerId(),
-      creatorName: getPlayerName(),
-      battleIds,
-      creatorScore,
-      creatorCorrect,
-      difficulty,
-      civilization,
-      createdAt: Date.now(),
-    });
-    return challengeId;
-  } catch {
-    return null;
-  }
+): string {
+  const data = { b: battleIds, s: creatorScore, c: creatorCorrect, d: difficulty, v: civilization, n: getPlayerName() };
+  return btoa(JSON.stringify(data));
 }
 
-export async function getChallenge(challengeId: string): Promise<Challenge | null> {
-  // Check if it's a base64-encoded fallback
+export function getChallenge(challengeId: string): Challenge | null {
   try {
     const decoded = JSON.parse(atob(challengeId));
     if (decoded.b && Array.isArray(decoded.b)) {
@@ -210,57 +101,7 @@ export async function getChallenge(challengeId: string): Promise<Challenge | nul
       };
     }
   } catch {
-    // Not base64 - try Firebase
+    // Invalid challenge data
   }
-
-  const firestore = await getDb();
-  if (!firestore) return null;
-
-  try {
-    const { doc, getDoc } = await import('firebase/firestore');
-    const docSnap = await getDoc(doc(firestore, 'challenges', challengeId));
-    return docSnap.exists() ? (docSnap.data() as Challenge) : null;
-  } catch {
-    return null;
-  }
+  return null;
 }
-
-export async function submitChallengeAttempt(challengeId: string, score: number, correctGuesses: number): Promise<boolean> {
-  const firestore = await getDb();
-  if (!firestore) return false;
-
-  try {
-    const { doc, setDoc } = await import('firebase/firestore');
-    const playerId = getPlayerId();
-    await setDoc(doc(firestore, 'challenges', challengeId, 'attempts', playerId), {
-      playerId,
-      playerName: getPlayerName(),
-      score,
-      correctGuesses,
-      timestamp: Date.now(),
-    });
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-export async function getChallengeAttempts(challengeId: string): Promise<ChallengeAttempt[]> {
-  const firestore = await getDb();
-  if (!firestore) return [];
-
-  try {
-    const { collection, query, orderBy, limit, getDocs } = await import('firebase/firestore');
-    const q = query(
-      collection(firestore, 'challenges', challengeId, 'attempts'),
-      orderBy('score', 'desc'),
-      limit(20)
-    );
-    const snapshot = await getDocs(q);
-    return snapshot.docs.map(d => d.data() as ChallengeAttempt);
-  } catch {
-    return [];
-  }
-}
-
-export { isConfigured as isFirebaseConfigured };
