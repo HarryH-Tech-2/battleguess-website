@@ -69,7 +69,7 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
                   alt="BattleGuess - Can you name the battle?"
                   width={512}
                   height={512}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                   initial={{ opacity: 0, scale: 1.02 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8 }}
