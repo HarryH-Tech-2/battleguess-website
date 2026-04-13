@@ -159,7 +159,20 @@ function BlogPost() {
     },
   };
 
-  const jsonLd = [breadcrumbs, articleSchema];
+  const faqSchema = post.faqs && post.faqs.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: post.faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  } : null;
+
+  const jsonLd = [breadcrumbs, articleSchema, ...(faqSchema ? [faqSchema] : [])];
 
   return (
     <ContentLayout
@@ -265,6 +278,26 @@ function BlogPost() {
         {post.description}
       </motion.p>
 
+      {/* Key Summary */}
+      {post.keySummary && post.keySummary.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.09 }}
+          className="bg-primary-50 border border-primary-200 rounded-xl p-5 mb-8"
+        >
+          <h2 className="text-sm font-bold text-primary-700 uppercase tracking-wider mb-3">Key Takeaways</h2>
+          <ul className="space-y-2">
+            {post.keySummary.map((point, i) => (
+              <li key={i} className="flex items-start gap-2 text-slate-700 leading-relaxed">
+                <span className="text-primary-500 mt-1 flex-shrink-0">&#9679;</span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      )}
+
       {/* Table of Contents */}
       {post.sections.length > 3 && (
         <motion.nav
@@ -323,6 +356,36 @@ function BlogPost() {
                   </p>
                 </div>
               </LocaleLink>
+            ))}
+          </div>
+        </motion.div>
+      )}
+
+      {/* FAQs */}
+      {post.faqs && post.faqs.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.38 }}
+          className="mt-10"
+        >
+          <h2 className="text-xl font-bold text-slate-800 mb-4">Frequently Asked Questions</h2>
+          <div className="space-y-3">
+            {post.faqs.map((faq, i) => (
+              <details
+                key={i}
+                className="bg-white rounded-xl border border-slate-200 shadow-sm group"
+              >
+                <summary className="cursor-pointer p-4 font-semibold text-slate-800 hover:text-primary-700 transition-colors list-none flex items-center justify-between gap-2">
+                  <span>{faq.question}</span>
+                  <svg className="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-4 pb-4 text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                  {faq.answer}
+                </div>
+              </details>
             ))}
           </div>
         </motion.div>

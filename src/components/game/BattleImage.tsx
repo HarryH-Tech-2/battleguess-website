@@ -54,10 +54,10 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
                   width={512}
                   height={512}
                   className="w-full h-full object-contain bg-gray-900"
-                  initial={{ opacity: 0, scale: 1.05 }}
+                  initial={{ opacity: 0, scale: 1.02 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.25 }}
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"

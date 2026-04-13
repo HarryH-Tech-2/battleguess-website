@@ -11,6 +11,11 @@ export interface BlogSection {
   bullets?: string[];
 }
 
+export interface BlogFaq {
+  question: string;
+  answer: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -22,6 +27,8 @@ export interface BlogPost {
   category: BlogCategory;
   image?: string;
   imageAlt?: string;
+  keySummary?: string[];
+  faqs?: BlogFaq[];
   sections: BlogSection[];
   relatedBattleIds?: number[];
 }
@@ -82,6 +89,26 @@ export const blogPosts: BlogPost[] = [
     category: 'wars-and-conflicts',
     image: '/blog/decisive-battles.webp',
     imageAlt: 'Dramatic painting of armies clashing on a battlefield representing the most decisive battles in history',
+    keySummary: [
+      'Decisive battles alter political borders, topple empires, and redirect culture',
+      'Thermopylae, Gaugamela, Hastings, and Constantinople reshaped civilizations',
+      'Waterloo ended Napoleon and redrew Europe for a century',
+      'Stalingrad and Midway turned the tide of World War II',
+    ],
+    faqs: [
+      {
+        question: 'What is the most decisive battle in history?',
+        answer: 'While debated, the Battle of Stalingrad is often cited as the most decisive because it permanently shifted World War II momentum against Germany and resulted in over two million casualties.',
+      },
+      {
+        question: 'What makes a battle historically decisive?',
+        answer: 'A decisive battle is one whose outcome directly changed political borders, toppled empires, or permanently altered the cultural trajectory of civilizations, not simply one with high casualties.',
+      },
+      {
+        question: 'Did the Battle of Thermopylae actually change history?',
+        answer: 'Yes. Although the Greeks lost the pass, the delay allowed Athens to evacuate and prepare the navy that won at Salamis, ultimately preserving Greek civilization from Persian conquest.',
+      },
+    ],
     relatedBattleIds: [2, 42, 4, 75, 1, 5, 11],
     sections: [
       {
@@ -150,6 +177,26 @@ export const blogPosts: BlogPost[] = [
     category: 'ancient-warfare',
     image: '/blog/ancient-warfare.webp',
     imageAlt: 'Ancient Greek and Roman soldiers in formation with shields and spears on a Mediterranean battlefield',
+    keySummary: [
+      'Sumerian and Egyptian armies created the first organized military systems',
+      'Greek phalanx tactics proved discipline could defeat numerical superiority',
+      'Roman roads and logistics built the infrastructure of modern Europe',
+      'Ancient warfare spread iron-working, crossbows, and gunpowder across continents',
+    ],
+    faqs: [
+      {
+        question: 'How did ancient warfare influence modern civilization?',
+        answer: 'Ancient warfare drove the development of centralized government, taxation, logistics systems, and infrastructure like Roman roads that still shape modern Europe today.',
+      },
+      {
+        question: 'What was the Greek phalanx formation?',
+        answer: 'The phalanx was a tight infantry formation where soldiers stood shoulder to shoulder with overlapping shields and protruding spears, proving that training and discipline could overcome numerical superiority.',
+      },
+      {
+        question: 'Why were Roman roads originally built?',
+        answer: 'Roman roads were built primarily for military deployment, allowing legions to move quickly across the empire. Many modern European highways still follow these ancient routes.',
+      },
+    ],
     relatedBattleIds: [31, 42, 73],
     sections: [
       {
@@ -213,6 +260,26 @@ export const blogPosts: BlogPost[] = [
     category: 'game-guides',
     image: '/blog/beginners-guide.webp',
     imageAlt: 'Open history book with battlefield illustrations spanning multiple eras of warfare',
+    keySummary: [
+      'Start with one era or conflict that interests you, then branch out',
+      'Four major eras: Ancient, Medieval, Early Modern, and Modern warfare',
+      'Key concepts include strategy, tactics, logistics, terrain, and morale',
+      'Active engagement and self-testing beats passive reading for retention',
+    ],
+    faqs: [
+      {
+        question: 'What is the best way to start learning military history?',
+        answer: 'Pick a single era or conflict that interests you and go deep before going broad. A personal hook makes the learning stick, and you will naturally branch out to related topics.',
+      },
+      {
+        question: 'What are the major eras of military history?',
+        answer: 'Military history is typically divided into four eras: Ancient (3000 BCE-500 CE), Medieval (500-1500), Early Modern (1500-1800), and Modern (1800-present), each with distinct weapons and tactics.',
+      },
+      {
+        question: 'What is the difference between military strategy and tactics?',
+        answer: 'Strategy is the big-picture plan for winning a war or campaign, while tactics are the specific maneuvers used to arrange and move troops during an individual battle.',
+      },
+    ],
     relatedBattleIds: [2, 42, 1],
     sections: [
       {
@@ -279,6 +346,26 @@ export const blogPosts: BlogPost[] = [
     category: 'game-guides',
     image: '/blog/improve-score.webp',
     imageAlt: 'Strategy board with military miniatures and score cards representing BattleGuess gameplay tips',
+    keySummary: [
+      'Study the full image for weapons, terrain, uniforms, and formations',
+      'Use hints strategically as streak insurance, not as a first resort',
+      'Protect your streak bonus since it compounds with each correct answer',
+      'Learn from wrong answers and explore the battle encyclopedia between games',
+    ],
+    faqs: [
+      {
+        question: 'How do I get a higher score in BattleGuess?',
+        answer: 'Focus on protecting your streak bonus by using hints strategically, study images thoroughly before guessing, and practice across all eras to build well-rounded knowledge.',
+      },
+      {
+        question: 'Are hints worth the point cost in BattleGuess?',
+        answer: 'Yes, a 25-point hint is almost always worth it if it saves your streak, since a long streak earns far more bonus points than the hint costs.',
+      },
+      {
+        question: 'How can I identify battle eras from images?',
+        answer: 'Look for visual signatures: bronze shields for ancient, plate armor for medieval, muskets and line formations for early modern, and tanks or trenches for modern warfare.',
+      },
+    ],
     sections: [
       {
         heading: '1. Study the Image Before You Guess',
@@ -345,6 +432,26 @@ export const blogPosts: BlogPost[] = [
     category: 'military-technology',
     image: '/blog/siege-warfare.webp',
     imageAlt: 'Medieval siege with trebuchets launching stones at a castle wall while defenders fight back',
+    keySummary: [
+      'Siege warfare dates to the Bronze Age with battering rams and scaling ladders',
+      'Romans perfected siege engineering with circumvallation and testudo formations',
+      'The trebuchet was the most powerful medieval siege weapon before gunpowder',
+      'Gunpowder artillery made traditional castle walls obsolete almost overnight',
+    ],
+    faqs: [
+      {
+        question: 'What was the most effective medieval siege weapon?',
+        answer: 'The counterweight trebuchet, developed in the 12th century, was the most powerful siege weapon of the medieval era, capable of launching stones over 100 kg at castle walls from hundreds of meters away.',
+      },
+      {
+        question: 'How did gunpowder change siege warfare?',
+        answer: 'Gunpowder artillery made tall castle walls obsolete, as demonstrated at Constantinople in 1453. This led to the development of low, angled bastion fortifications designed to withstand cannon fire.',
+      },
+      {
+        question: 'What was the longest siege in history?',
+        answer: 'The Siege of Leningrad during World War II lasted 872 days, demonstrating that siege warfare remained devastating even in the modern era, with the city enduring bombardment and starvation.',
+      },
+    ],
     relatedBattleIds: [73, 75, 82],
     sections: [
       {
@@ -407,6 +514,26 @@ export const blogPosts: BlogPost[] = [
     category: 'wars-and-conflicts',
     image: '/blog/naval-battles.webp',
     imageAlt: 'Wooden warships exchanging cannon fire on rough seas in a dramatic naval battle',
+    keySummary: [
+      'Naval supremacy has been the key factor in determining global dominance',
+      'Salamis saved Greek civilization and Actium created the Roman Empire',
+      'Trafalgar secured British naval dominance for over a century',
+      'Midway and Leyte Gulf proved aircraft carriers replaced battleships',
+    ],
+    faqs: [
+      {
+        question: 'What was the most important naval battle in history?',
+        answer: 'The Battle of Salamis in 480 BCE is often considered the most important, as the Greek victory over Persia preserved Western civilization and democracy at a critical moment.',
+      },
+      {
+        question: 'When did aircraft carriers replace battleships?',
+        answer: 'World War II marked the transition, with the Battle of the Coral Sea in 1942 being the first naval engagement fought entirely by carrier-launched aircraft without opposing ships ever seeing each other.',
+      },
+      {
+        question: 'What was the largest naval battle in history?',
+        answer: 'The Battle of Leyte Gulf in 1944 was the largest naval battle in history by tonnage, involving hundreds of ships across multiple simultaneous engagements in the Philippines.',
+      },
+    ],
     relatedBattleIds: [27, 44, 8, 11],
     sections: [
       {
@@ -458,6 +585,26 @@ export const blogPosts: BlogPost[] = [
     category: 'game-guides',
     image: '/blog/student-battles.webp',
     imageAlt: 'Student studying military history with maps and battle diagrams spread across a desk',
+    keySummary: [
+      'Marathon, Thermopylae, Gaugamela, and Cannae form the ancient foundation',
+      'Hastings, Constantinople, and Waterloo are essential medieval-to-modern knowledge',
+      'Gettysburg, Stalingrad, and D-Day defined the modern era',
+      'Active recall and self-testing are more effective than passive rereading',
+    ],
+    faqs: [
+      {
+        question: 'What battles should I know for a history exam?',
+        answer: 'Essential battles include Marathon, Thermopylae, Cannae, Hastings, Constantinople, Waterloo, Gettysburg, the Somme, Stalingrad, and D-Day, as these consistently appear in curricula worldwide.',
+      },
+      {
+        question: 'How many casualties were there at the Battle of Stalingrad?',
+        answer: 'The Battle of Stalingrad had over two million total casualties, making it the bloodiest battle in human history and a defining turning point of World War II.',
+      },
+      {
+        question: 'What is the best way to study for a military history exam?',
+        answer: 'Focus on understanding why each battle happened and what changed as a result, use active recall to test yourself, and connect battles to broader themes like technology and political change.',
+      },
+    ],
     relatedBattleIds: [10, 2, 42, 14, 4, 75, 1, 16, 22, 3, 5],
     sections: [
       {
@@ -523,6 +670,26 @@ export const blogPosts: BlogPost[] = [
     category: 'military-strategy',
     image: '/blog/military-commanders.webp',
     imageAlt: 'Commanding general on horseback surveying a battlefield with troops in formation below',
+    keySummary: [
+      'Great commanders combine strategic vision, tactical innovation, and leadership',
+      'Alexander the Great conquered an empire before age 30 using combined arms',
+      'Hannibal\'s Cannae remains the gold standard for tactical envelopment',
+      'Napoleon\'s corps system revolutionized how large armies were organized and moved',
+    ],
+    faqs: [
+      {
+        question: 'Who is considered the greatest military commander in history?',
+        answer: 'Alexander the Great is often cited as the greatest, having conquered the largest empire the ancient world had seen before age 30, winning every major battle through combined-arms innovation.',
+      },
+      {
+        question: 'What made Napoleon such a successful military leader?',
+        answer: 'Napoleon revolutionized warfare through the corps system, which allowed multiple independent forces to maneuver and converge on a decisive point. He fought over sixty battles and lost only a handful.',
+      },
+      {
+        question: 'What was Hannibal\'s most famous battle?',
+        answer: 'The Battle of Cannae in 216 BCE, where Hannibal encircled and destroyed a Roman army twice his size, is still the textbook example of tactical envelopment studied in military academies today.',
+      },
+    ],
     relatedBattleIds: [42, 59, 14, 18, 12, 1],
     sections: [
       {
@@ -582,6 +749,26 @@ export const blogPosts: BlogPost[] = [
     category: 'military-technology',
     image: '/blog/gunpowder-warfare.webp',
     imageAlt: 'Cannon firing with smoke billowing across a battlefield as castle walls crumble',
+    keySummary: [
+      'Gunpowder was invented in 9th-century China and spread westward via the Mongols',
+      'Gunpowder artillery made medieval castle walls obsolete within decades',
+      'Muskets ended the dominance of the armored knight on the battlefield',
+      'Napoleon\'s massed artillery could devastate formations from over a mile away',
+    ],
+    faqs: [
+      {
+        question: 'Where was gunpowder invented?',
+        answer: 'Gunpowder was invented in China around the 9th century CE, initially used in fireworks before being adapted for fire lances, bombs, and early cannons centuries before the technology reached Europe.',
+      },
+      {
+        question: 'How did gunpowder end the age of castles?',
+        answer: 'Gunpowder artillery could shatter castle walls that had stood for centuries, as demonstrated at Constantinople in 1453. This forced a shift to low, angled bastion fortifications designed to deflect cannonballs.',
+      },
+      {
+        question: 'When did muskets replace swords and armor in warfare?',
+        answer: 'Muskets began replacing traditional weapons in the 15th-16th centuries. Battles like Nagashino in 1575 showed that disciplined musket volleys could shatter cavalry charges, ending the era of the armored knight.',
+      },
+    ],
     relatedBattleIds: [75, 122, 12, 26],
     sections: [
       {
@@ -641,6 +828,26 @@ export const blogPosts: BlogPost[] = [
     category: 'wars-and-conflicts',
     image: '/blog/wwii-turning-points.webp',
     imageAlt: 'World War II battle scene with tanks advancing through smoke and explosions on a European front',
+    keySummary: [
+      'The Battle of Britain proved Germany was not invincible in the air',
+      'Stalingrad was the bloodiest battle in history with over 2 million casualties',
+      'Midway shifted naval superiority in the Pacific from Japan to the US',
+      'D-Day was the largest amphibious invasion ever, opening a second European front',
+    ],
+    faqs: [
+      {
+        question: 'What was the turning point of World War II?',
+        answer: 'There were multiple turning points: the Battle of Britain prevented invasion in 1940, Stalingrad broke Germany on the Eastern Front in 1943, and Midway shifted the Pacific in 1942.',
+      },
+      {
+        question: 'How many people died in the Battle of Stalingrad?',
+        answer: 'Combined casualties at Stalingrad exceeded two million, making it the bloodiest single battle in human history. The entire German 6th Army was encircled and destroyed.',
+      },
+      {
+        question: 'Why was D-Day so important?',
+        answer: 'D-Day established a second front in Western Europe that Germany could not sustain, squeezing Nazi Germany from both west and east and making Allied victory inevitable.',
+      },
+    ],
     relatedBattleIds: [197, 5, 11, 189, 6],
     sections: [
       {
@@ -704,6 +911,26 @@ export const blogPosts: BlogPost[] = [
     category: 'wars-and-conflicts',
     image: '/blog/samurai-battles.webp',
     imageAlt: 'Samurai warriors in traditional armor clashing with swords in front of a Japanese castle',
+    keySummary: [
+      'The Genpei War established military government that ruled Japan for 700 years',
+      'Kamikaze typhoons destroyed two Mongol invasion fleets in 1274 and 1281',
+      'The Sengoku period produced legends like Nobunaga, Hideyoshi, and Tokugawa',
+      'Sekigahara in 1600 unified Japan and began 250 years of peace under the Tokugawa',
+    ],
+    faqs: [
+      {
+        question: 'What was the most important samurai battle in Japanese history?',
+        answer: 'The Battle of Sekigahara in 1600 is often considered the most important, as it unified Japan under Tokugawa rule and ushered in over 250 years of peace during the Edo period.',
+      },
+      {
+        question: 'What does kamikaze mean and where did the term originate?',
+        answer: 'Kamikaze means "divine wind" in Japanese. It originated from the typhoons that destroyed Mongol invasion fleets in 1274 and 1281, which the Japanese attributed to divine intervention.',
+      },
+      {
+        question: 'Did samurai use guns in battle?',
+        answer: 'Yes. The Battle of Nagashino in 1575 famously demonstrated the power of massed firearms in Japanese warfare, and gunpowder weapons were widely adopted during the late Sengoku period.',
+      },
+    ],
     relatedBattleIds: [129, 134, 122, 119, 121],
     sections: [
       {
@@ -761,6 +988,26 @@ export const blogPosts: BlogPost[] = [
     category: 'wars-and-conflicts',
     image: '/blog/crusades.webp',
     imageAlt: 'Crusader knights with cross-marked shields besieging a fortified Middle Eastern city',
+    keySummary: [
+      'The Crusades were religious wars fought over the Holy Land from 1095 to 1291',
+      'The First Crusade captured Jerusalem in 1099 and established Crusader States',
+      'Saladin\'s victory at Hattin in 1187 recaptured Jerusalem for Muslim forces',
+      'Crusader-era trade and cultural exchange helped spark the Western Renaissance',
+    ],
+    faqs: [
+      {
+        question: 'How many Crusades were there?',
+        answer: 'There were nine major Crusades between 1096 and 1272, plus several minor ones. The First Crusade was the most successful from a European perspective, capturing Jerusalem in 1099.',
+      },
+      {
+        question: 'Who was Saladin and why is he famous?',
+        answer: 'Saladin was the Muslim sultan who defeated the Crusaders at the Battle of Hattin in 1187 and recaptured Jerusalem. He is renowned for both his military genius and his chivalry toward defeated opponents.',
+      },
+      {
+        question: 'What was the lasting impact of the Crusades?',
+        answer: 'The Crusades deepened divisions between Christianity and Islam, but also spurred cultural exchange that brought Arabic scholarship, trade networks, and banking innovations to Europe.',
+      },
+    ],
     relatedBattleIds: [78, 90, 82],
     sections: [
       {
@@ -814,6 +1061,26 @@ export const blogPosts: BlogPost[] = [
     category: 'wars-and-conflicts',
     image: '/blog/american-revolution.webp',
     imageAlt: 'Continental Army soldiers firing muskets at advancing British redcoats across a colonial American field',
+    keySummary: [
+      'The Revolution began at Lexington and Concord in April 1775',
+      'Saratoga in 1777 convinced France to enter the war as an American ally',
+      'Foreign allies provided soldiers, ships, training, and financial support',
+      'The Siege of Yorktown in 1781 effectively secured American independence',
+    ],
+    faqs: [
+      {
+        question: 'What was the turning point of the American Revolution?',
+        answer: 'The Battle of Saratoga in 1777 was the turning point because the American victory convinced France to enter the war as an ally, providing critical military and financial support.',
+      },
+      {
+        question: 'How did France help America win independence?',
+        answer: 'France provided soldiers, a powerful navy, and financial support. French naval forces blocked Chesapeake Bay at Yorktown, preventing British escape and ensuring the decisive American victory.',
+      },
+      {
+        question: 'What happened at the Battle of Yorktown?',
+        answer: 'Combined American and French forces besieged British General Cornwallis at Yorktown in 1781. With the French navy blocking escape by sea, Cornwallis surrendered his entire army, effectively ending the war.',
+      },
+    ],
     relatedBattleIds: [29, 170, 16, 22],
     sections: [
       {
@@ -866,6 +1133,26 @@ export const blogPosts: BlogPost[] = [
     category: 'wars-and-conflicts',
     image: '/blog/latin-american-independence.webp',
     imageAlt: 'South American independence forces crossing the Andes mountains with cavalry and flags',
+    keySummary: [
+      'Napoleon\'s invasion of Spain triggered independence movements across Latin America',
+      'Bolivar liberated Venezuela, Colombia, Ecuador, Peru, and Bolivia',
+      'San Martin crossed the Andes to free Chile and Argentina from Spanish rule',
+      'The Battle of Ayacucho in 1824 ended Spanish colonial power in South America',
+    ],
+    faqs: [
+      {
+        question: 'Who was Simon Bolivar?',
+        answer: 'Simon Bolivar was the central figure of South American independence, liberating Venezuela, Colombia, Ecuador, Peru, and Bolivia through military campaigns that combined brilliance with political vision.',
+      },
+      {
+        question: 'What triggered the Latin American wars of independence?',
+        answer: 'Napoleon\'s invasion of Spain in 1808 created a power vacuum that inspired colonial populations to revolt, building on ideals from the American and French Revolutions.',
+      },
+      {
+        question: 'What is Cinco de Mayo actually celebrating?',
+        answer: 'Cinco de Mayo celebrates the Battle of Puebla in 1862, when Mexican forces defeated a French army considered one of the finest in the world, not Mexican independence day.',
+      },
+    ],
     relatedBattleIds: [205, 206, 207, 208, 209, 218],
     sections: [
       {
@@ -919,6 +1206,26 @@ export const blogPosts: BlogPost[] = [
     category: 'military-technology',
     image: '/blog/cavalry-evolution.webp',
     imageAlt: 'Evolution of mounted warfare showing a chariot, medieval knight, and modern tank side by side',
+    keySummary: [
+      'War chariots appeared around 2000 BCE as the first mobile warfare innovation',
+      'The stirrup revolutionized cavalry by enabling mounted combat with lance and sword',
+      'Armored knights dominated European warfare for nearly five centuries',
+      'Tanks replaced cavalry as the primary mobile striking force in World War II',
+    ],
+    faqs: [
+      {
+        question: 'When was the last cavalry charge in history?',
+        answer: 'The last major cavalry charge was at the Battle of Beersheba in 1917 during World War I. The myth that Polish cavalry charged German tanks in 1939 is false.',
+      },
+      {
+        question: 'How did the stirrup change warfare?',
+        answer: 'The stirrup allowed riders to fight with lance and sword without losing balance, enabling the rise of the heavily armored mounted knight who dominated medieval European battlefields for centuries.',
+      },
+      {
+        question: 'When were tanks first used in battle?',
+        answer: 'Tanks were first deployed at the Battle of the Somme in 1916. By World War II, armored divisions using blitzkrieg tactics had fully replaced cavalry as the primary mobile striking force.',
+      },
+    ],
     relatedBattleIds: [31, 42, 4, 12],
     sections: [
       {
@@ -977,6 +1284,26 @@ export const blogPosts: BlogPost[] = [
     category: 'wars-and-conflicts',
     image: '/blog/ottoman-victories.webp',
     imageAlt: 'Ottoman Janissary troops with massive siege cannons outside the walls of Constantinople',
+    keySummary: [
+      'The Ottoman Empire grew from a small principality to a three-continent superpower',
+      'The fall of Constantinople in 1453 was the Ottomans\' defining achievement',
+      'Janissaries were one of the first standing professional armies in Europe',
+      'Ottoman gunpowder artillery was the most advanced in the world for centuries',
+    ],
+    faqs: [
+      {
+        question: 'Who were the Janissaries?',
+        answer: 'The Janissaries were elite Ottoman infantry recruited from conquered Christian populations, trained from childhood to be loyal only to the Sultan. They were among the first professional standing armies in Europe.',
+      },
+      {
+        question: 'How did the Ottomans conquer Constantinople?',
+        answer: 'Sultan Mehmed II used massive cannons to breach walls that had stood for over 1,000 years and transported ships overland to bypass harbor defenses. He was only 21 years old at the time.',
+      },
+      {
+        question: 'How long did the Ottoman Empire last?',
+        answer: 'The Ottoman Empire lasted over six centuries, from its founding in the late 13th century until its dissolution after World War I in 1922, spanning three continents at its peak.',
+      },
+    ],
     relatedBattleIds: [75],
     sections: [
       {
@@ -1035,6 +1362,26 @@ export const blogPosts: BlogPost[] = [
     category: 'military-strategy',
     image: '/blog/women-military-history.webp',
     imageAlt: 'Joan of Arc in armor rallying French troops with a banner at the Siege of Orleans',
+    keySummary: [
+      'Women led armies and commanded navies throughout ancient and medieval history',
+      'Boudicca nearly drove Rome from Britain; Zenobia conquered Egypt',
+      'Joan of Arc turned the tide of the Hundred Years\' War at age seventeen',
+      'Soviet women served as snipers, pilots, and combat soldiers in WWII',
+    ],
+    faqs: [
+      {
+        question: 'Did women fight in battles throughout history?',
+        answer: 'Yes. From ancient warrior queens like Boudicca and Zenobia to medieval leaders like Joan of Arc and WWII combat soldiers like Soviet sniper Lyudmila Pavlichenko, women have fought in every era.',
+      },
+      {
+        question: 'Who were the Night Witches?',
+        answer: 'The Night Witches were a Soviet all-female bomber regiment in WWII that flew over 30,000 sorties using obsolete plywood biplanes, becoming one of the most decorated units in the Soviet Air Force.',
+      },
+      {
+        question: 'What did Joan of Arc actually do in battle?',
+        answer: 'Joan of Arc rallied the demoralized French army at the Siege of Orleans in 1429, providing both strategic leadership and symbolic inspiration that turned the tide of the Hundred Years\' War.',
+      },
+    ],
     relatedBattleIds: [44],
     sections: [
       {
@@ -1088,6 +1435,26 @@ export const blogPosts: BlogPost[] = [
     category: 'military-strategy',
     image: '/blog/weather-battles.webp',
     imageAlt: 'Army marching through a blizzard with soldiers struggling against wind and snow',
+    keySummary: [
+      'Typhoons saved Japan from Mongol invasion and storms scattered the Spanish Armada',
+      'Napoleon lost over 500,000 troops to the Russian winter in 1812',
+      'Rain and mud at Agincourt trapped French knights and decided the battle',
+      'D-Day hinged on a brief weather clearing that German meteorologists missed',
+    ],
+    faqs: [
+      {
+        question: 'Which famous battles were decided by weather?',
+        answer: 'Many battles were decided by weather, including Agincourt (mud trapped French knights), the Spanish Armada (storms scattered the fleet), and Napoleon\'s 1812 retreat from Moscow (winter destroyed his army).',
+      },
+      {
+        question: 'What was the kamikaze divine wind?',
+        answer: 'The kamikaze or "divine wind" refers to typhoons in 1274 and 1281 that destroyed Mongol invasion fleets headed for Japan, saving the nation from conquest and becoming a powerful cultural symbol.',
+      },
+      {
+        question: 'How did weather affect D-Day?',
+        answer: 'Eisenhower needed a brief weather clearing for the invasion. His meteorologist identified a gap that German forecasters missed, achieving surprise because Rommel believed no invasion was possible in such weather.',
+      },
+    ],
     sections: [
       {
         heading: 'The Invisible Commander',
@@ -1144,6 +1511,26 @@ export const blogPosts: BlogPost[] = [
     category: 'ancient-warfare',
     image: '/blog/rome-vs-greece.webp',
     imageAlt: 'Roman legionaries with rectangular shields facing Greek hoplites in phalanx formation',
+    keySummary: [
+      'The Greek phalanx was nearly impervious frontally but vulnerable on flanks',
+      'The Roman legion used flexible maniple units that could adapt to any terrain',
+      'Cynoscephalae and Pydna proved the legion was superior to the phalanx',
+      'Roman soldiers served 25 years, creating a highly experienced professional force',
+    ],
+    faqs: [
+      {
+        question: 'Who would win in a fight, Roman legions or Greek phalanx?',
+        answer: 'History answered this question at the battles of Cynoscephalae (197 BCE) and Pydna (168 BCE), where Roman legions decisively defeated the Macedonian phalanx by exploiting its vulnerability to flank attacks.',
+      },
+      {
+        question: 'What was the main weakness of the Greek phalanx?',
+        answer: 'The phalanx was extremely strong from the front but vulnerable to attacks on its flanks and rear, and it struggled to maintain formation on rough or uneven terrain.',
+      },
+      {
+        question: 'How was the Roman legion organized?',
+        answer: 'The legion was divided into smaller maniples (later cohorts) that could operate independently, adapt to terrain, and rotate fresh troops into the fight, giving it far greater flexibility than the phalanx.',
+      },
+    ],
     relatedBattleIds: [14, 42],
     sections: [
       {
@@ -1209,6 +1596,26 @@ export const blogPosts: BlogPost[] = [
     category: 'military-strategy',
     image: '/blog/battlefield-tactics.webp',
     imageAlt: 'Tactical battle map showing flanking arrows and troop formations from a birds eye view',
+    keySummary: [
+      'Flanking and double envelopment target the weakest sides of enemy formations',
+      'Hammer and anvil uses a holding force while a mobile force delivers the blow',
+      'Defense in depth and terrain can multiply a smaller force\'s effectiveness',
+      'Deception and surprise have turned the tide of wars throughout history',
+    ],
+    faqs: [
+      {
+        question: 'What is a flanking maneuver in battle?',
+        answer: 'A flanking maneuver targets the side of an enemy formation where it is weakest. A double envelopment attacks both flanks simultaneously, as Hannibal famously demonstrated at Cannae in 216 BCE.',
+      },
+      {
+        question: 'What is the hammer and anvil tactic?',
+        answer: 'The hammer and anvil uses a strong defensive force (the anvil) to pin the enemy in place while a mobile force (the hammer) strikes from a different direction, a tactic perfected by Alexander the Great.',
+      },
+      {
+        question: 'What are the most common tactical mistakes in military history?',
+        answer: 'The most common mistakes include overextending supply lines, underestimating the enemy, fighting on unfavorable terrain, ignoring intelligence, and attacking strong positions frontally.',
+      },
+    ],
     sections: [
       {
         heading: 'Why Tactics Matter',

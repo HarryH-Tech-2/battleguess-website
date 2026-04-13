@@ -93,13 +93,19 @@ function App() {
   }, [state.currentBattle, state.gameStatus, state.imageUrl, actions, getImageForBattle]);
 
   // Prefetch upcoming battle images when a round ends (won/lost/playing)
+  const prefetchedRef = useRef(new Set<number>());
   useEffect(() => {
     if (state.gameStatus !== 'won' && state.gameStatus !== 'lost' && state.gameStatus !== 'playing') return;
     const pool = getBattlesByCivilization(state.selectedCivilization, state.selectedDifficulty);
     const remaining = pool.filter(b => !playedBattleIds.includes(b.id));
     remaining.slice(0, 5).forEach(b => {
-      const img = new Image();
-      img.src = getImageForBattle(b.id);
+      if (prefetchedRef.current.has(b.id)) return;
+      prefetchedRef.current.add(b.id);
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.as = 'image';
+      link.href = getImageForBattle(b.id);
+      document.head.appendChild(link);
     });
   }, [state.gameStatus, state.selectedCivilization, state.selectedDifficulty, playedBattleIds, getImageForBattle]);
 
@@ -769,13 +775,23 @@ function App() {
                 exit={{ opacity: 0 }}
               >
                 {/* Show the battle image */}
-                <div className="mb-6">
+                <div className="mb-4">
                   <BattleImage
                     imageUrl={state.imageUrl}
                     isLoading={false}
                     battleName={state.currentBattle.name}
                     battleYear={state.currentBattle.year}
                   />
+                </div>
+
+                {/* Next Battle button directly under image for mobile convenience */}
+                <div className="mb-6">
+                  <Button variant="primary" size="lg" onClick={handleNextBattle} className="w-full">
+                    {t('result.nextBattle')}
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </Button>
                 </div>
 
                 <ResultFeedback

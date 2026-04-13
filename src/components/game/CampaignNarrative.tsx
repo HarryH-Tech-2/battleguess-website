@@ -50,7 +50,7 @@ export function CampaignNarrative({
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="space-y-4"
+      className="space-y-5"
     >
       {/* Campaign header */}
       <div className="text-center">
@@ -80,7 +80,7 @@ export function CampaignNarrative({
       </div>
 
       {/* Continue button */}
-      <div className="flex justify-center gap-3">
+      <div className="flex justify-center gap-3 mb-2">
         {isTyping && (
           <Button variant="secondary" size="md" onClick={handleSkip}>
             Skip

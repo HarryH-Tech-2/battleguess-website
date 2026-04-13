@@ -123,6 +123,49 @@ function About() {
         </div>
       </motion.section>
 
+      {/* About the Creator */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="mb-16"
+      >
+        <h2 className="text-2xl font-bold text-slate-800 text-center mb-8">
+          About the Creator
+        </h2>
+        <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-100 text-center">
+          <div className="max-w-xl mx-auto">
+            <p className="text-slate-600 leading-relaxed mb-4">
+              BattleGuess was created by{' '}
+              <a
+                href="https://x.com/HarryHH1993"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-600 hover:text-primary-800 font-medium underline decoration-primary-300 hover:decoration-primary-500 transition-colors"
+              >
+                Harry H
+              </a>
+              , a developer and history enthusiast who wanted to make learning about military history fun and accessible.
+            </p>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              What started as a side project combining a love of history with web development has grown into a game featuring over 200 battles, stunning AI-generated artwork, and multiple game modes designed to challenge and educate players of all levels.
+            </p>
+            <p className="text-slate-600 leading-relaxed">
+              Have feedback or suggestions? Feel free to reach out on{' '}
+              <a
+                href="https://x.com/HarryHH1993"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-600 hover:text-primary-800 font-medium underline decoration-primary-300 hover:decoration-primary-500 transition-colors"
+              >
+                X (Twitter)
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </motion.section>
+
       {/* CTA */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
