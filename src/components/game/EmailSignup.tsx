@@ -7,7 +7,7 @@ export function EmailSignup() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
-  if (dismissed || status === 'sent') return null;
+  if (dismissed) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ export function EmailSignup() {
       });
       if (res.ok) {
         setStatus('sent');
-        setDismissed(true);
+        setTimeout(() => setDismissed(true), 3000);
       } else {
         setStatus('error');
       }
@@ -50,30 +50,36 @@ export function EmailSignup() {
           </svg>
         </button>
 
-        <form onSubmit={handleSubmit} className="flex flex-col items-center gap-3 pr-5">
-          <p className="text-base text-primary-800 font-medium text-center">
-            <span className="hidden sm:inline">🎯 Guess 3 new battles every day — get notified when new battles drop!</span>
-            <span className="sm:hidden">🎯 Get notified when new battles drop!</span>
+        {status === 'sent' ? (
+          <p className="text-base text-primary-800 font-medium text-center py-1">
+            You're in! We'll notify you when new battles drop.
           </p>
-          <div className="flex w-full gap-2 max-w-sm">
-            <input
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              placeholder="your@email.com"
-              required
-              disabled={status === 'sending'}
-              className="flex-1 min-w-0 px-3 py-1.5 text-sm border border-primary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white"
-            />
-            <button
-              type="submit"
-              disabled={status === 'sending' || !email.trim()}
-              className="shrink-0 px-4 py-1.5 bg-primary-600 hover:bg-primary-700 disabled:bg-gray-300 text-white text-sm font-medium rounded-lg transition-colors shadow-sm"
-            >
-              {status === 'sending' ? 'Joining...' : status === 'error' ? 'Retry' : 'Join'}
-            </button>
-          </div>
-        </form>
+        ) : (
+          <form onSubmit={handleSubmit} className="flex flex-col items-center gap-3 pr-5">
+            <p className="text-base text-primary-800 font-medium text-center">
+              <span className="hidden sm:inline">🎯 Guess 3 new battles every day — get notified when new battles drop!</span>
+              <span className="sm:hidden">🎯 Get notified when new battles drop!</span>
+            </p>
+            <div className="flex w-full gap-2 max-w-sm">
+              <input
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                placeholder="your@email.com"
+                required
+                disabled={status === 'sending'}
+                className="flex-1 min-w-0 px-3 py-1.5 text-sm border border-primary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white"
+              />
+              <button
+                type="submit"
+                disabled={status === 'sending' || !email.trim()}
+                className="shrink-0 px-4 py-1.5 bg-primary-600 hover:bg-primary-700 disabled:bg-gray-300 text-white text-sm font-medium rounded-lg transition-colors shadow-sm"
+              >
+                {status === 'sending' ? 'Joining...' : status === 'error' ? 'Retry' : 'Join'}
+              </button>
+            </div>
+          </form>
+        )}
       </motion.div>
     </AnimatePresence>
   );
