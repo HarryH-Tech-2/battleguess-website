@@ -16,6 +16,7 @@ import { ScoreDisplay } from './components/game/ScoreDisplay';
 import { MusicTrackSelector } from './components/game/MusicTrackSelector';
 import { CivilizationSelector } from './components/game/CivilizationSelector';
 import { DifficultySelector } from './components/game/DifficultySelector';
+import { EmailSignup } from './components/game/EmailSignup';
 import { ModeSelector } from './components/game/ModeSelector';
 import { CampaignSelector } from './components/game/CampaignSelector';
 import { CampaignNarrative } from './components/game/CampaignNarrative';
@@ -387,6 +388,9 @@ function App() {
             disabled={state.gameStatus === 'loading'}
           />
         </motion.div>
+
+        {/* Email Signup */}
+        <EmailSignup />
 
         {/* Main Game Card */}
         <Card variant="elevated" glow={isPlaying}>
