@@ -25,7 +25,7 @@ export function Layout({ children, buyMeACoffeeUrl, dailyStreak, onOpenStats, on
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar buyMeACoffeeUrl={buyMeACoffeeUrl} dailyStreak={dailyStreak} onOpenStats={onOpenStats} onOpenAchievements={onOpenAchievements} achievementCount={achievementCount} />
 
-        <main className="flex-1 container mx-auto px-3 sm:px-4 lg:px-8 max-w-2xl lg:max-w-4xl xl:max-w-5xl py-4 sm:py-6">
+        <main className="flex-1 container mx-auto px-3 sm:px-4 lg:px-8 max-w-2xl lg:max-w-4xl xl:max-w-5xl pt-6 pb-4 sm:py-6">
           {children}
         </main>
 
