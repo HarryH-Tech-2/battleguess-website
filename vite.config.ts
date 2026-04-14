@@ -15,8 +15,6 @@ export default defineConfig({
           if (id.includes('data/campaigns') || id.includes('data/achievements')) return 'game-meta';
           if (id.includes('i18n/locales/')) return 'i18n';
           if (id.includes('node_modules/react-i18next') || id.includes('node_modules/i18next')) return 'i18n-lib';
-          if (id.includes('node_modules/react-dom')) return 'react-dom';
-          if (id.includes('node_modules/react/') || id.includes('node_modules/react-router')) return 'react-core';
         },
       },
     },
