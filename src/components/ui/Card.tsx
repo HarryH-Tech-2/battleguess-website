@@ -44,26 +44,6 @@ export function Card({ children, variant = 'default', glow = false, className = 
         }}
         {...props}
       >
-        {/* Shimmer effect */}
-        <motion.div
-          className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none"
-          initial={{ opacity: 0 }}
-          whileHover={{ opacity: 1 }}
-        >
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12"
-            animate={{
-              x: ['-100%', '200%'],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatDelay: 3,
-              ease: 'easeInOut',
-            }}
-          />
-        </motion.div>
-
         {children}
       </motion.div>
     </div>

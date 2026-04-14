@@ -316,6 +316,7 @@ function App() {
       onOpenStats={() => setShowStatsPanel(true)}
       onOpenAchievements={() => setShowAchievements(true)}
       achievementCount={{ unlocked: achievementsSystem.unlockedCount, total: achievementsSystem.totalAchievements }}
+      onLogoClick={actions.resetGame}
     >
       <SEOHead
         title="BattleGuess - The History Battle Guessing Game"
@@ -348,49 +349,34 @@ function App() {
       />
       <div className="space-y-4 sm:space-y-6 pb-6 sm:pb-8">
 
-        {/* Mode Selector - visible when idle or between rounds */}
-        {(isIdle || isResult || state.gameStatus === 'completed' || (state.gameMode === 'campaign' && campaign.state.phase === 'select') || (isCampaignActive && campaign.state.phase === 'complete')) && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.05 }}
-          >
+        {/* Email Signup */}
+        <EmailSignup />
+
+        {/* Selectors row */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.05 }}
+          className="flex flex-wrap items-start justify-center gap-2 sm:gap-3"
+        >
+          {(isIdle || isResult || state.gameStatus === 'completed' || (state.gameMode === 'campaign' && campaign.state.phase === 'select') || (isCampaignActive && campaign.state.phase === 'complete')) && (
             <ModeSelector
               selected={state.gameMode}
               onSelect={actions.setMode}
               disabled={state.gameStatus === 'loading' || isResult}
             />
-          </motion.div>
-        )}
-
-        {/* Civilization Selector - Always visible */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-        >
+          )}
           <CivilizationSelector
             selected={state.selectedCivilization}
             onSelect={actions.selectCivilization}
             disabled={state.gameStatus === 'loading'}
           />
-        </motion.div>
-
-        {/* Difficulty Selector - Always visible */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15 }}
-        >
           <DifficultySelector
             selected={state.selectedDifficulty}
             onSelect={actions.selectDifficulty}
             disabled={state.gameStatus === 'loading'}
           />
         </motion.div>
-
-        {/* Email Signup */}
-        <EmailSignup />
 
         {/* Main Game Card */}
         <Card variant="elevated" glow={isPlaying}>

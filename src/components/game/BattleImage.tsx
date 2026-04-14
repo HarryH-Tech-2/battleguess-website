@@ -19,7 +19,7 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
   return (
     <div className="space-y-3">
       {/* Image Container - Square aspect ratio for 1080x1080 images */}
-      <div className="relative overflow-hidden rounded-2xl shadow-xl bg-gray-900">
+      <div className="relative overflow-hidden rounded-2xl shadow-xl bg-gray-900 max-h-[70vh]">
           <div className="aspect-[4/3]">
             <AnimatePresence mode="wait">
               {isLoading ? (
@@ -63,19 +63,19 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
                   decoding="async"
                 />
               ) : (
-                <motion.img
+                <motion.video
                   key="placeholder"
-                  src="/welcome-placeholder.webp"
-                  alt="BattleGuess - Can you name the battle?"
-                  width={512}
-                  height={512}
+                  src="/battle-placeholder-video.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="none"
+                  poster="/welcome-placeholder.webp"
                   className="w-full h-full object-cover object-top"
                   initial={{ opacity: 0, scale: 1.02 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8 }}
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
                 />
               )}
             </AnimatePresence>

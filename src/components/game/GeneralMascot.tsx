@@ -16,6 +16,7 @@ const DRAG_BREAKPOINT = 0;
 
 // Module-level storage — survives component unmount/remount between questions
 const savedPosition = { x: 0, y: 0 };
+let savedScale = 1;
 
 export function GeneralMascot({
   hints,
@@ -27,6 +28,9 @@ export function GeneralMascot({
   mascotAlt = 'Battle Guide mascot',
 }: GeneralMascotProps) {
   const [showBubble, setShowBubble] = useState(false);
+  const [scale, setScale] = useState(savedScale);
+  const isResizingRef = useRef(false);
+  const resizeStartRef = useRef({ y: 0, scale: 1 });
   // Initialise synchronously so the first frame already has the correct style
   const [canDrag, setCanDrag] = useState(
     () => typeof window !== 'undefined' && window.innerWidth >= DRAG_BREAKPOINT
@@ -73,6 +77,32 @@ export function GeneralMascot({
       setShowBubble(false);
     }
   }, [showBubble, revealedHints.length, canRevealMore, disabled, onRevealHint]);
+
+  const handleResizeStart = useCallback((e: React.PointerEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    isResizingRef.current = true;
+    resizeStartRef.current = { y: e.clientY, scale };
+
+    const onMove = (ev: PointerEvent) => {
+      if (!isResizingRef.current) return;
+      const dy = resizeStartRef.current.y - ev.clientY;
+      const dx = resizeStartRef.current.y - ev.clientY; // diagonal: use vertical component
+      const dist = Math.sign(dy) * Math.sqrt(dx * dx + (resizeStartRef.current.y - ev.clientY) ** 2);
+      const newScale = Math.min(2, Math.max(0.3, resizeStartRef.current.scale + dist / 200));
+      setScale(newScale);
+      savedScale = newScale;
+    };
+
+    const onUp = () => {
+      isResizingRef.current = false;
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+    };
+
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+  }, [scale]);
 
   const isLeft = side === 'left';
 
@@ -142,7 +172,7 @@ export function GeneralMascot({
         }
       `}
     >
-      {/* Speech Bubble - absolutely positioned above mascot */}
+      {/* Speech Bubble - fixed to viewport to prevent cutoff */}
       <AnimatePresence>
         {showBubble && (
           <motion.div
@@ -150,7 +180,7 @@ export function GeneralMascot({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            className={`absolute bottom-full mb-2 ${canDrag ? 'right-0' : isLeft ? 'left-0' : 'right-0'} bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border-2 border-amber-200 p-2 sm:p-4 lg:p-5 w-[200px] sm:w-[300px] lg:w-[360px] max-h-[45vh] sm:max-h-[50vh] overflow-y-auto`}
+            className={`fixed z-50 ${canDrag ? 'right-2 sm:right-4' : isLeft ? 'left-2 sm:left-4' : 'right-2 sm:right-4'} bottom-[140px] sm:bottom-[170px] bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border-2 border-amber-200 p-2 sm:p-4 lg:p-5 w-[min(300px,85vw)] sm:w-[min(340px,80vw)] max-h-[calc(100vh-200px)] overflow-y-auto`}
             onPointerDown={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -215,6 +245,9 @@ export function GeneralMascot({
       </AnimatePresence>
 
       {/* Mascot Character */}
+      <div
+        style={{ transform: `scale(${scale})`, transformOrigin: 'bottom center' }}
+      >
       <motion.div
         onClick={handleMascotClick}
         className="relative"
@@ -239,7 +272,19 @@ export function GeneralMascot({
           className="w-[100px] h-[120px] sm:w-[120px] sm:h-[144px] lg:w-[340px] lg:h-[408px] 2xl:w-[400px] 2xl:h-[480px] object-contain select-none pointer-events-none"
           draggable={false}
         />
+
+        {/* Resize handle */}
+        <div
+          onPointerDown={handleResizeStart}
+          className="absolute -top-1 -left-1 w-6 h-6 rounded-full bg-white/90 border-2 border-amber-300 shadow-md flex items-center justify-center cursor-nwse-resize hover:bg-amber-50 hover:border-amber-400 transition-colors touch-none z-20"
+          title="Drag to resize"
+        >
+          <svg className="w-3 h-3 text-amber-500" viewBox="0 0 10 10" fill="currentColor">
+            <path d="M1 9L9 1M4 9L9 4M7 9L9 7" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+          </svg>
+        </div>
       </motion.div>
+      </div>
     </motion.div>
   );
 }

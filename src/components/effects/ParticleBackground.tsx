@@ -48,8 +48,8 @@ export function ParticleBackground() {
   const radarAngleRef = useRef(0);
 
   const initParticles = useCallback((width: number, height: number) => {
-    const particleCount = Math.floor((width * height) / 12000);
-    particlesRef.current = Array.from({ length: Math.min(particleCount, 120) }, () =>
+    const particleCount = Math.floor((width * height) / 25000);
+    particlesRef.current = Array.from({ length: Math.min(particleCount, 50) }, () =>
       createParticle(width, height)
     );
   }, []);
@@ -69,7 +69,7 @@ export function ParticleBackground() {
       particlesRef.current.push(particle);
     }
 
-    const maxParticles = 180;
+    const maxParticles = 70;
     if (particlesRef.current.length > maxParticles) {
       particlesRef.current = particlesRef.current.slice(-maxParticles);
     }
@@ -292,9 +292,9 @@ export function ParticleBackground() {
           const dy = particle.y - other.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 140) {
+          if (dist < 100) {
             const radarBoost = Math.max(particle.radarGlow, other.radarGlow);
-            const baseOpacity = 0.12 * (1 - dist / 140);
+            const baseOpacity = 0.12 * (1 - dist / 100);
             const opacity = baseOpacity + radarBoost * 0.2;
             ctx.beginPath();
             ctx.strokeStyle = `rgba(34, 197, 94, ${opacity})`;
@@ -357,11 +357,8 @@ export function ParticleBackground() {
 export function FloatingOrbs() {
   const orbs = [
     { size: 350, x: '10%', y: '15%', duration: 20, delay: 0, color: 'rgba(34, 197, 94, 0.08)' },
-    { size: 250, x: '85%', y: '55%', duration: 25, delay: 5, color: 'rgba(22, 163, 74, 0.07)' },
     { size: 300, x: '45%', y: '75%', duration: 22, delay: 2, color: 'rgba(74, 222, 128, 0.06)' },
-    { size: 200, x: '15%', y: '65%', duration: 28, delay: 8, color: 'rgba(161, 161, 0, 0.06)' },
     { size: 280, x: '75%', y: '20%', duration: 24, delay: 4, color: 'rgba(34, 197, 94, 0.07)' },
-    { size: 180, x: '55%', y: '35%', duration: 26, delay: 6, color: 'rgba(101, 163, 13, 0.06)' },
   ];
 
   return (

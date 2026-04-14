@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import type { Difficulty } from '../../types';
 
@@ -8,11 +9,11 @@ interface DifficultySelectorProps {
   disabled?: boolean;
 }
 
-const items: { id: Difficulty | 'all'; icon: string; color: string }[] = [
-  { id: 'all', icon: '🎯', color: '' },
-  { id: 'easy', icon: '🟢', color: 'from-green-500 to-green-600' },
-  { id: 'medium', icon: '🟡', color: 'from-yellow-500 to-yellow-600' },
-  { id: 'hard', icon: '🔴', color: 'from-red-500 to-red-600' },
+const items: { id: Difficulty | 'all'; icon: string; dotColor: string }[] = [
+  { id: 'all', icon: '🎯', dotColor: 'bg-gray-400' },
+  { id: 'easy', icon: '🟢', dotColor: 'bg-green-500' },
+  { id: 'medium', icon: '🟡', dotColor: 'bg-yellow-500' },
+  { id: 'hard', icon: '🔴', dotColor: 'bg-red-500' },
 ];
 
 export function DifficultySelector({
@@ -21,38 +22,86 @@ export function DifficultySelector({
   disabled = false,
 }: DifficultySelectorProps) {
   const { t } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const selectedItem = items.find(i => i.id === selected);
+  const selectedName = selectedItem?.id === 'all' ? t('difficulty.allLevels') : t(`difficulty.${selectedItem?.id}`);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
-    <div className="w-full">
-      <div className="flex items-center gap-2 sm:gap-2 justify-center">
-        {items.map(item => {
-          const isSelected = selected === item.id;
-          const name = item.id === 'all' ? t('difficulty.allLevels') : t(`difficulty.${item.id}`);
-          return (
-            <motion.button
-              key={item.id}
-              onClick={() => !disabled && onSelect(item.id)}
-              className={`
-                flex-1 sm:flex-none flex items-center justify-center gap-1 sm:gap-1.5 px-2 py-1.5 sm:px-3 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium
-                transition-colors duration-200 whitespace-nowrap
-                ${isSelected
-                  ? item.color
-                    ? `bg-gradient-to-r ${item.color} text-white shadow-md`
-                    : 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-md'
-                  : 'bg-white text-primary-600 border border-primary-200 hover:border-primary-300 shadow-sm'
-                }
-                ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
-              `}
-              whileHover={disabled ? {} : { scale: 1.05 }}
-              whileTap={disabled ? {} : { scale: 0.95 }}
-              disabled={disabled}
-            >
-              <span>{item.icon}</span>
-              <span>{name}</span>
-            </motion.button>
-          );
-        })}
-      </div>
+    <div className="relative inline-block" ref={dropdownRef}>
+      <button
+        onClick={() => !disabled && setIsOpen(!isOpen)}
+        disabled={disabled}
+        className={`
+          flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium
+          bg-white text-gray-700 border border-gray-300 shadow-sm
+          hover:bg-gray-50 hover:border-gray-400
+          transition-all duration-150 min-w-0 sm:min-w-[140px] justify-between
+          ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
+        `}
+      >
+        <span className="flex items-center gap-2">
+          <span className={`w-2 h-2 rounded-full ${selectedItem?.dotColor}`} />
+          <span>{selectedName}</span>
+        </span>
+        <motion.span
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
+          className="text-gray-400 text-[10px]"
+        >
+          ▼
+        </motion.span>
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.12 }}
+            className="absolute z-50 mt-1.5 left-0 w-40 sm:w-44 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden"
+          >
+            {items.map((item) => {
+              const isSelected = selected === item.id;
+              const name = item.id === 'all' ? t('difficulty.allLevels') : t(`difficulty.${item.id}`);
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    onSelect(item.id);
+                    setIsOpen(false);
+                  }}
+                  className={`
+                    w-full flex items-center gap-2.5 px-3.5 py-2.5 text-sm transition-colors
+                    ${isSelected
+                      ? 'bg-gray-100 text-gray-900 font-medium'
+                      : 'text-gray-600 hover:bg-gray-50'
+                    }
+                  `}
+                >
+                  <span className={`w-2 h-2 rounded-full ${item.dotColor}`} />
+                  <span className="flex-1 text-left">{name}</span>
+                  {isSelected && (
+                    <span className="text-gray-400 text-xs">&#10003;</span>
+                  )}
+                </button>
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

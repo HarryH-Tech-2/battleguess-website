@@ -37,7 +37,7 @@ export function EmailSignup() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, height: 0 }}
         transition={{ delay: 0.2 }}
-        className="relative bg-gradient-to-r from-primary-50 to-emerald-50 border border-primary-200 rounded-xl px-5 py-4"
+        className="relative bg-gradient-to-r from-primary-50 to-emerald-50 border border-primary-200 rounded-xl px-3 py-3 sm:px-5 sm:py-4"
       >
         {/* Dismiss button */}
         <button
@@ -55,9 +55,9 @@ export function EmailSignup() {
             You're in! We'll notify you when new battles drop.
           </p>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col items-center gap-3 pr-5">
-            <p className="text-base text-primary-800 font-medium text-center">
-              <span className="hidden sm:inline">🎯 Guess 3 new battles every day — get notified when new battles drop!</span>
+          <form onSubmit={handleSubmit} className="flex flex-col items-center gap-2 sm:gap-3 pr-5">
+            <p className="text-sm sm:text-base text-primary-800 font-medium text-center">
+              <span className="hidden sm:inline">🎯 Guess 3 new battles to test your knowledge every week and get notified when new battles drop!</span>
               <span className="sm:hidden">🎯 Get notified when new battles drop!</span>
             </p>
             <div className="flex w-full gap-2 max-w-sm">

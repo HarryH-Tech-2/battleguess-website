@@ -10,9 +10,10 @@ interface NavbarProps {
   onOpenStats?: () => void;
   onOpenAchievements?: () => void;
   achievementCount?: { unlocked: number; total: number };
+  onLogoClick?: () => void;
 }
 
-export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', dailyStreak, onOpenStats, onOpenAchievements, achievementCount }: NavbarProps) {
+export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', dailyStreak, onOpenStats, onOpenAchievements, achievementCount, onLogoClick }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
@@ -36,25 +37,21 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
       animate={{ opacity: 1, y: 0 }}
       className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-primary-100 shadow-sm"
     >
-      <div className="container mx-auto px-3 sm:px-4 lg:px-8 max-w-2xl lg:max-w-4xl xl:max-w-5xl">
-        <div className="flex items-center justify-between h-14 sm:h-20">
+      <div className="container mx-auto px-3 sm:px-4 lg:px-8 max-w-3xl lg:max-w-4xl xl:max-w-5xl">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo & Title */}
           <motion.div
-            className="flex items-center gap-2 sm:gap-3"
+            className="flex items-center gap-2 sm:gap-3 cursor-pointer"
             whileHover={{ scale: 1.02 }}
+            onClick={onLogoClick}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onLogoClick?.(); }}
           >
             {/* Animated Logo */}
             <div className="relative">
-              <motion.div
+              <div
                 className="absolute -inset-1 bg-gradient-to-r from-primary-400 to-primary-600 rounded-xl blur-sm opacity-40"
-                animate={{
-                  opacity: [0.3, 0.5, 0.3],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
               />
               <motion.div
                 className="relative w-9 h-9 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center shadow-md"

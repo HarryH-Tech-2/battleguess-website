@@ -6,8 +6,6 @@ import { useTranslation } from 'react-i18next';
 export function FeedbackWidget() {
   const [showFeedback, setShowFeedback] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState('');
-  const [feedbackEmail, setFeedbackEmail] = useState('');
-  const [feedbackSubscribe, setFeedbackSubscribe] = useState(false);
   const [feedbackStatus, setFeedbackStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const { t } = useTranslation();
 
@@ -21,15 +19,11 @@ export function FeedbackWidget() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           message: feedbackMessage,
-          email: feedbackEmail || undefined,
-          subscribeToUpdates: feedbackSubscribe ? 'yes' : 'no',
         }),
       });
       if (res.ok) {
         setFeedbackStatus('sent');
         setFeedbackMessage('');
-        setFeedbackEmail('');
-        setFeedbackSubscribe(false);
         setTimeout(() => { setShowFeedback(false); setFeedbackStatus('idle'); }, 2000);
       } else {
         setFeedbackStatus('error');
@@ -76,29 +70,6 @@ export function FeedbackWidget() {
                 required
                 disabled={feedbackStatus === 'sending' || feedbackStatus === 'sent'}
               />
-              <div className="pt-2 border-t border-primary-50 space-y-2">
-                <label className="flex items-start gap-2 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={feedbackSubscribe}
-                    onChange={e => setFeedbackSubscribe(e.target.checked)}
-                    className="mt-0.5 w-4 h-4 rounded border-primary-200 text-primary-600 focus:ring-primary-500"
-                    disabled={feedbackStatus === 'sending' || feedbackStatus === 'sent'}
-                  />
-                  <span className="text-sm text-gray-600">{t('navbar.subscribeLabel')}</span>
-                </label>
-                {feedbackSubscribe && (
-                  <input
-                    type="email"
-                    value={feedbackEmail}
-                    onChange={e => setFeedbackEmail(e.target.value)}
-                    placeholder={t('navbar.subscribePlaceholder')}
-                    className="w-full px-3 py-2 border border-primary-100 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                    required={feedbackSubscribe}
-                    disabled={feedbackStatus === 'sending' || feedbackStatus === 'sent'}
-                  />
-                )}
-              </div>
               {feedbackStatus === 'error' && (
                 <p className="text-sm text-red-500">{t('navbar.feedbackError')}</p>
               )}

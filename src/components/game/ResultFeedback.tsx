@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { Button } from '../ui/Button';
 import { Confetti } from '../effects/Confetti';
 import { DefeatAnimation } from '../effects/DefeatAnimation';
 import { ShareButton } from './ShareButton';
@@ -150,20 +149,13 @@ export function ResultFeedback({
       {/* Animations */}
       {isWin ? <Confetti /> : <DefeatAnimation />}
 
-      {/* Actions */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-        className="flex flex-col gap-3"
-      >
-        <Button variant="primary" size="lg" onClick={onNextBattle} className="flex-1">
-          {t('result.nextBattle')}
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
-        </Button>
-        {isWin && (
+      {/* Share button */}
+      {isWin && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+        >
           <ShareButton
             data={{
               score: totalScore,
@@ -175,8 +167,8 @@ export function ResultFeedback({
               battleResults,
             }}
           />
-        )}
-      </motion.div>
+        </motion.div>
+      )}
     </motion.div>
   );
 }
