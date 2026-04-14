@@ -27,7 +27,7 @@ export function ResultFeedback({
   score,
   hintsUsed,
   streak,
-  onNextBattle,
+  onNextBattle: _onNextBattle,
   totalScore = 0,
   correctGuesses = 0,
   totalGuesses = 0,
