@@ -59,12 +59,12 @@ export function GuessInput({ onSubmit, disabled, onGiveUp }: GuessInputProps) {
         </AnimatePresence>
       </div>
 
-      <div className="flex gap-3 pt-2">
+      <div className="flex gap-3 pt-2 justify-center">
         <Button
           type="submit"
           variant="primary"
           size="lg"
-          className="flex-1"
+          className="px-8"
           disabled={disabled || !guess.trim()}
         >
           Submit Guess
@@ -73,7 +73,7 @@ export function GuessInput({ onSubmit, disabled, onGiveUp }: GuessInputProps) {
           type="button"
           variant="danger"
           size="lg"
-          className="flex-1"
+          className="px-8"
           onClick={onGiveUp}
           disabled={disabled}
         >

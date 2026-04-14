@@ -366,16 +366,20 @@ function App() {
               disabled={state.gameStatus === 'loading' || isResult}
             />
           )}
-          <CivilizationSelector
-            selected={state.selectedCivilization}
-            onSelect={actions.selectCivilization}
-            disabled={state.gameStatus === 'loading'}
-          />
-          <DifficultySelector
-            selected={state.selectedDifficulty}
-            onSelect={actions.selectDifficulty}
-            disabled={state.gameStatus === 'loading'}
-          />
+          {state.gameMode !== 'daily' && (
+            <>
+              <CivilizationSelector
+                selected={state.selectedCivilization}
+                onSelect={actions.selectCivilization}
+                disabled={state.gameStatus === 'loading'}
+              />
+              <DifficultySelector
+                selected={state.selectedDifficulty}
+                onSelect={actions.selectDifficulty}
+                disabled={state.gameStatus === 'loading'}
+              />
+            </>
+          )}
         </motion.div>
 
         {/* Main Game Card */}
