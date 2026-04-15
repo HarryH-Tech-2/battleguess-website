@@ -180,7 +180,7 @@ export function GeneralMascot({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            className={`fixed z-50 ${canDrag ? 'right-2 sm:right-4' : isLeft ? 'left-2 sm:left-4' : 'right-2 sm:right-4'} bottom-[140px] sm:bottom-[170px] bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border-2 border-amber-200 p-2 sm:p-4 lg:p-5 w-[min(300px,85vw)] sm:w-[min(340px,80vw)] max-h-[calc(100vh-200px)] overflow-y-auto`}
+            className={`absolute z-50 bottom-full mb-2 ${canDrag ? 'right-0' : isLeft ? 'left-0' : 'right-0'} bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border-2 border-amber-200 p-2 sm:p-4 lg:p-5 w-[min(300px,85vw)] sm:w-[min(340px,80vw)] max-h-[calc(100vh-200px)] overflow-y-auto`}
             onPointerDown={(e) => e.stopPropagation()}
           >
             {/* Close button */}

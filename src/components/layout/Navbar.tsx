@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { DailyStreakBadge } from '../game/DailyStreakBadge';
 import { LanguageSwitcher } from '../ui/LanguageSwitcher';
+import { useAuth } from '../../contexts/AuthContext';
+import { SignUpModal } from '../auth/SignUpModal';
 
 interface NavbarProps {
   buyMeACoffeeUrl?: string;
@@ -15,8 +17,10 @@ interface NavbarProps {
 
 export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', dailyStreak, onOpenStats, onOpenAchievements, achievementCount, onLogoClick }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
+  const { user, isAuthenticated, signOut } = useAuth();
 
 
   // Close menu on click outside
@@ -32,6 +36,7 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
   }, [mobileMenuOpen]);
 
   return (
+    <>
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -163,6 +168,39 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
                 </svg>
                 <span>{t('navbar.buyMeACoffee')}</span>
               </motion.a>
+
+              {/* Login / User menu */}
+              {isAuthenticated ? (
+                <div className="flex items-center gap-2">
+                  {user?.avatarUrl ? (
+                    <img src={user.avatarUrl} alt="" className="w-8 h-8 rounded-full" />
+                  ) : (
+                    <div className="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-semibold text-sm">
+                      {user?.name?.charAt(0).toUpperCase()}
+                    </div>
+                  )}
+                  <motion.button
+                    onClick={signOut}
+                    className="text-sm text-gray-500 hover:text-gray-700 font-medium transition-colors"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {t('navbar.signOut')}
+                  </motion.button>
+                </div>
+              ) : (
+                <motion.button
+                  onClick={() => setShowAuthModal(true)}
+                  className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+                  whileHover={{ scale: 1.05, y: -1 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  <span>{t('navbar.loginRegister')}</span>
+                </motion.button>
+              )}
             </div>
 
             {/* Mobile burger menu */}
@@ -257,6 +295,31 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
                       <span className="font-medium">Buy me a coffee</span>
                     </a>
 
+                    <div className="border-t border-gray-100" />
+
+                    {/* Login / User */}
+                    {isAuthenticated ? (
+                      <button
+                        onClick={() => { signOut(); setMobileMenuOpen(false); }}
+                        className="flex items-center gap-3 w-full px-4 py-3 text-left text-sm text-red-600 hover:bg-red-50 transition-colors"
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
+                        <span className="font-medium">{t('navbar.signOut')}</span>
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => { setShowAuthModal(true); setMobileMenuOpen(false); }}
+                        className="flex items-center gap-3 w-full px-4 py-3 text-left text-sm text-primary-600 hover:bg-primary-50 transition-colors"
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        <span className="font-medium">{t('navbar.loginRegister')}</span>
+                      </button>
+                    )}
+
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -265,5 +328,13 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
         </div>
       </div>
     </motion.nav>
+
+    {/* Auth modal */}
+    <SignUpModal
+      isOpen={showAuthModal}
+      onDismiss={() => setShowAuthModal(false)}
+      onSuccess={() => setShowAuthModal(false)}
+    />
+    </>
   );
 }

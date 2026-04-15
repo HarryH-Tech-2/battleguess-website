@@ -1,0 +1,40 @@
+BattleGuess — Deployment Checklist for Auth & Growth Features
+=============================================================
+
+Before deploying, complete these steps in order:
+
+1. SET UP GOOGLE CLOUD OAUTH
+   - Follow docs/GOOGLE_AUTH_SETUP.md for full instructions
+   - Go to console.cloud.google.com
+   - Create project, configure OAuth consent screen
+   - Create OAuth 2.0 Client ID (Web application)
+   - Add authorized origins: https://battleguess.app, http://localhost:5173
+   - Copy the Client ID
+
+2. CREATE VERCEL POSTGRES DATABASE
+   - Go to Vercel Dashboard > Storage > Create Database > Postgres
+   - Link it to the BattleGuess project
+   - POSTGRES_URL env var is auto-configured
+
+3. SET ENVIRONMENT VARIABLES IN VERCEL
+   - Vercel Dashboard > Project Settings > Environment Variables
+   - VITE_GOOGLE_CLIENT_ID = your Google OAuth Client ID
+   - JWT_SECRET = random 64-char string (run: openssl rand -hex 32)
+   - POSTGRES_URL = auto-set from step 2
+
+4. LOCAL DEV (optional)
+   - Create .env.local in project root:
+     VITE_GOOGLE_CLIENT_ID=your-client-id.apps.googleusercontent.com
+     JWT_SECRET=any-local-secret
+     POSTGRES_URL=your-local-postgres-url
+
+5. DEPLOY
+   - git push
+   - API routes in /api/ deploy as Vercel Serverless Functions automatically
+   - Database tables are created on first request (initializeDatabase)
+
+6. VERIFY
+   - Play 3 battles, confirm signup modal appears
+   - Sign in with Google, confirm it works
+   - Complete a game, confirm Share Score and Share on X buttons work
+   - Complete daily challenge, confirm share button with daily format

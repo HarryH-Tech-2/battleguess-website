@@ -87,7 +87,9 @@
     "subscribePlaceholder": "your@email.com",
     "setName": "Set Name",
     "buyMeACoffee": "Buy me a coffee",
-    "twitter": "Twitter/X"
+    "twitter": "Twitter/X",
+    "loginRegister": "Login / Register",
+    "signOut": "Sign Out"
   },
   "footer": {
     "battleIntelFeed": "Battle Intel Feed",

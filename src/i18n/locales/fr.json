@@ -87,7 +87,9 @@
     "subscribePlaceholder": "votre@email.com",
     "setName": "Choisir un pseudo",
     "buyMeACoffee": "Offrez-moi un café",
-    "twitter": "Twitter/X"
+    "twitter": "Twitter/X",
+    "loginRegister": "Connexion / Inscription",
+    "signOut": "Déconnexion"
   },
   "footer": {
     "battleIntelFeed": "Fil d'actualités des batailles",
