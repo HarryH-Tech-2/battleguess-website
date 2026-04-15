@@ -38,7 +38,7 @@ function BattleDetail() {
     import('../data/blogPosts').then(({ blogPosts }) => {
       setRelatedArticles(blogPosts.filter(p => p.relatedBattleIds?.includes(battle.id)));
     });
-  }, [battle?.id]);
+  }, [battle]);
 
   const featuredCollections = useMemo(
     () => battle ? battleCollections.filter(c => c.battleIds.includes(battle.id)) : [],

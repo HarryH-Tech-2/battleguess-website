@@ -8,16 +8,15 @@ import { LocaleLink } from '../ui/LocaleLink';
 const TEASER_COUNT = 20;
 
 export function Footer() {
-  const [currentFactIndex, setCurrentFactIndex] = useState(0);
+  const [currentFactIndex, setCurrentFactIndex] = useState(
+    () => Math.floor(Math.random() * TEASER_COUNT)
+  );
   const [scanLinePos, setScanLinePos] = useState(0);
   const animFrameRef = useRef<number>(0);
   const { t } = useTranslation();
 
   // Rotate facts
   useEffect(() => {
-    const startIndex = Math.floor(Math.random() * TEASER_COUNT);
-    setCurrentFactIndex(startIndex);
-
     const interval = setInterval(() => {
       setCurrentFactIndex(prev => (prev + 1) % TEASER_COUNT);
     }, 6000);

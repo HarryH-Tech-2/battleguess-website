@@ -11,7 +11,9 @@ export function useTimer({ onExpire }: UseTimerOptions = {}) {
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const onExpireRef = useRef(onExpire);
 
-  onExpireRef.current = onExpire;
+  useEffect(() => {
+    onExpireRef.current = onExpire;
+  });
 
   const clear = useCallback(() => {
     if (intervalRef.current) {

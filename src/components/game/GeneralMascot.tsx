@@ -54,7 +54,7 @@ export function GeneralMascot({
   // Close bubble when the question changes (new hints = new question)
   const hintsKey = hints.join('|');
   useEffect(() => {
-    setShowBubble(false);
+    setShowBubble(false); // eslint-disable-line react-hooks/set-state-in-effect -- intentional reset on question change
   }, [hintsKey]);
 
   const handleRevealHint = () => {

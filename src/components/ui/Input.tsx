@@ -1,6 +1,12 @@
 import { forwardRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// Pre-computed sparkle positions (decorative, stable across renders)
+const SPARKLE_POSITIONS = Array.from({ length: 6 }, (_, i) => ({
+  x: `${((i * 37 + 13) % 100)}%`,
+  y: `${((i * 53 + 7) % 100)}%`,
+}));
+
 interface InputProps {
   error?: boolean;
   className?: string;
@@ -55,7 +61,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         <AnimatePresence>
           {isFocused && !error && (
             <>
-              {[...Array(6)].map((_, i) => (
+              {SPARKLE_POSITIONS.map((pos, i) => (
                 <motion.div
                   key={i}
                   className="absolute w-1 h-1 bg-primary-400 rounded-full"
@@ -68,8 +74,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                   animate={{
                     opacity: [0, 1, 0],
                     scale: [0, 1.5, 0],
-                    x: `${Math.random() * 100}%`,
-                    y: `${Math.random() * 100}%`,
+                    x: pos.x,
+                    y: pos.y,
                   }}
                   transition={{
                     duration: 1.5,

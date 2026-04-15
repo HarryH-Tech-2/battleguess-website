@@ -35,16 +35,7 @@ export function useChallengeMode() {
     playedBattleIds: [],
   });
 
-  // Check URL for challenge ID on mount
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const challengeId = params.get('challenge');
-    if (challengeId) {
-      loadChallenge(challengeId);
-    }
-  }, []);
-
-  const loadChallenge = (challengeId: string) => {
+  const loadChallenge = useCallback((challengeId: string) => {
     setState(prev => ({ ...prev, isLoading: true, phase: 'viewing' }));
     const challenge = getChallenge(challengeId);
     if (challenge) {
@@ -59,7 +50,16 @@ export function useChallengeMode() {
     } else {
       setState(prev => ({ ...prev, isLoading: false, phase: 'idle' }));
     }
-  };
+  }, []);
+
+  // Check URL for challenge ID on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const challengeId = params.get('challenge');
+    if (challengeId) {
+      loadChallenge(challengeId); // eslint-disable-line react-hooks/set-state-in-effect -- intentional mount-time initialization from URL
+    }
+  }, [loadChallenge]);
 
   // For accepting a received challenge
   const startChallenge = useCallback(() => {

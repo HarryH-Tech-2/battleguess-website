@@ -27,7 +27,7 @@ export function ResultFeedback({
   score,
   hintsUsed,
   streak,
-  onNextBattle: _onNextBattle,
+  onNextBattle: _onNextBattle, // eslint-disable-line @typescript-eslint/no-unused-vars
   totalScore = 0,
   correctGuesses = 0,
   totalGuesses = 0,

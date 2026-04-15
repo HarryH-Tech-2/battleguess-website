@@ -81,7 +81,7 @@ export function ScoreDisplay({ score, streak, bestStreak }: ScoreDisplayProps) {
   // Show milestone text on streak changes
   useEffect(() => {
     if (streak >= 3 && streakLabel) {
-      setMilestoneText(streakLabel);
+      setMilestoneText(streakLabel); // eslint-disable-line react-hooks/set-state-in-effect -- intentional UI feedback on streak change
       const timer = setTimeout(() => setMilestoneText(''), 2500);
       return () => clearTimeout(timer);
     }

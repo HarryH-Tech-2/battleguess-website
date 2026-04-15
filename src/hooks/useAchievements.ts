@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 import { achievements, type AchievementDef, type AchievementStats } from '../data/achievements';
 
@@ -24,7 +24,7 @@ export function useAchievements() {
   const [uniqueCivs, setUniqueCivs] = useLocalStorage<string[]>('battleguess-unique-civs', []);
   const queueRef = useRef<AchievementDef[]>([]);
 
-  const unlockedIds = new Set(unlocked.map(u => u.id));
+  const unlockedIds = useMemo(() => new Set(unlocked.map(u => u.id)), [unlocked]);
 
   const checkAndUnlock = useCallback((stats: AchievementStats) => {
     const newUnlocks: AchievementDef[] = [];

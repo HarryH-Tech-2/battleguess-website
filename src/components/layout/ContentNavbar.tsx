@@ -23,7 +23,7 @@ export function ContentNavbar() {
   ];
 
   useEffect(() => {
-    setMenuOpen(false);
+    setMenuOpen(false); // eslint-disable-line react-hooks/set-state-in-effect -- close menu on navigation
   }, [location.pathname]);
 
   useEffect(() => {
