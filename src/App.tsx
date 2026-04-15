@@ -25,6 +25,8 @@ import { GameComplete } from './components/game/GameComplete';
 import { DailyChallengeIntro, DailyProgress, DailyResult } from './components/game/DailyChallenge';
 import { ChallengeInvite, ChallengeProgress, ChallengeResult, ChallengeShare } from './components/game/ChallengeView';
 import { AchievementPopup } from './components/achievements/AchievementPopup';
+import { SignUpModal } from './components/auth/SignUpModal';
+import { useAuth } from './contexts/AuthContext';
 
 // Lazy-load overlay components (modals that aren't always visible)
 const StatsPanel = lazy(() => import('./components/stats/StatsPanel').then(m => ({ default: m.StatsPanel })));
@@ -67,6 +69,9 @@ function App() {
   const hasShownPopup = useRef(false);
   const prevGameStatus = useRef(state.gameStatus);
   const prevRevealedHints = useRef(state.revealedHints.length);
+  const { isAuthenticated } = useAuth();
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
+  const signUpModalDismissed = useRef(false);
 
   const isReverseMode = state.gameMode === 'reverse-year';
 
@@ -239,6 +244,18 @@ function App() {
       return () => clearTimeout(timer);
     }
   }, [state.totalGuesses]);
+
+  // Show sign-up modal after 3rd battle (once per session, only if not authenticated)
+  useEffect(() => {
+    if (
+      state.totalGuesses === 3 &&
+      !isAuthenticated &&
+      !signUpModalDismissed.current
+    ) {
+      const timer = setTimeout(() => setShowSignUpModal(true), 500);
+      return () => clearTimeout(timer);
+    }
+  }, [state.totalGuesses, isAuthenticated]);
 
   const isDailyMode = state.gameMode === 'daily';
   const isChallengeMode = state.gameMode === 'challenge';
@@ -918,6 +935,19 @@ function App() {
           unlocked={achievementsSystem.unlocked}
         />
       </Suspense>
+
+      {/* Sign Up Modal */}
+      <SignUpModal
+        isOpen={showSignUpModal}
+        onDismiss={() => {
+          setShowSignUpModal(false);
+          signUpModalDismissed.current = true;
+        }}
+        onSuccess={() => {
+          setShowSignUpModal(false);
+          signUpModalDismissed.current = true;
+        }}
+      />
     </Layout>
   );
 }
