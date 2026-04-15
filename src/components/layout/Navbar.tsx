@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { DailyStreakBadge } from '../game/DailyStreakBadge';
@@ -21,7 +21,28 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
   const menuRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
   const { user, isAuthenticated, signOut } = useAuth();
+  const [welcomeName, setWelcomeName] = useState<string | null>(null);
 
+  const handleAuthSuccess = useCallback(() => {
+    setShowAuthModal(false);
+    // Grab the name from localStorage since state may not have updated yet
+    try {
+      const stored = localStorage.getItem('battleguess-auth-user');
+      if (stored) {
+        const parsed = JSON.parse(stored) as { name?: string };
+        setWelcomeName(parsed.name?.split(' ')[0] ?? 'there');
+      }
+    } catch {
+      setWelcomeName('there');
+    }
+  }, []);
+
+  // Auto-dismiss welcome toast
+  useEffect(() => {
+    if (!welcomeName) return;
+    const timer = setTimeout(() => setWelcomeName(null), 3500);
+    return () => clearTimeout(timer);
+  }, [welcomeName]);
 
   // Close menu on click outside
   useEffect(() => {
@@ -333,8 +354,30 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
     <SignUpModal
       isOpen={showAuthModal}
       onDismiss={() => setShowAuthModal(false)}
-      onSuccess={() => setShowAuthModal(false)}
+      onSuccess={handleAuthSuccess}
     />
+
+    {/* Welcome toast */}
+    <AnimatePresence>
+      {welcomeName && (
+        <motion.div
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -40 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+          className="fixed top-20 left-1/2 -translate-x-1/2 z-[60] bg-white border border-primary-200 shadow-lg rounded-xl px-5 py-3 flex items-center gap-3"
+        >
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-400 to-emerald-500 flex items-center justify-center">
+            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span className="text-sm font-semibold text-gray-800">
+            Welcome, {welcomeName}!
+          </span>
+        </motion.div>
+      )}
+    </AnimatePresence>
     </>
   );
 }
