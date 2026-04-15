@@ -70,7 +70,7 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
                   muted
                   loop
                   playsInline
-                  preload="metadata"
+                  preload="auto"
                   poster="/welcome-placeholder.webp"
                   className="w-full h-full object-cover object-top"
                   initial={{ opacity: 0, scale: 1.02 }}
