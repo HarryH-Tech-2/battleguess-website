@@ -510,6 +510,7 @@ function App() {
                   score={daily.state.score}
                   correctGuesses={daily.state.correctGuesses}
                   totalBattles={daily.state.battles.length}
+                  dailyStreak={dailyStreak}
                   onBack={() => {
                     daily.reset();
                     actions.resetGame();

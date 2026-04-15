@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { Confetti } from '../effects/Confetti';
 import { getDailyDateKey } from '../../services/firebase';
+import { ShareButton } from './ShareButton';
 
 interface DailyChallengeIntroProps {
   onStart: () => void;
@@ -103,10 +104,11 @@ interface DailyResultProps {
   score: number;
   correctGuesses: number;
   totalBattles: number;
+  dailyStreak: number;
   onBack: () => void;
 }
 
-export function DailyResult({ score, correctGuesses, totalBattles, onBack }: DailyResultProps) {
+export function DailyResult({ score, correctGuesses, totalBattles, dailyStreak, onBack }: DailyResultProps) {
   const accuracy = totalBattles > 0 ? Math.round((correctGuesses / totalBattles) * 100) : 0;
 
   return (
@@ -137,6 +139,19 @@ export function DailyResult({ score, correctGuesses, totalBattles, onBack }: Dai
           <p className="text-xs text-gray-500">Accuracy</p>
         </div>
       </div>
+
+      <ShareButton
+        data={{
+          score,
+          accuracy,
+          streak: dailyStreak,
+          rank: 'Daily Challenge',
+          battlesWon: correctGuesses,
+          totalBattles,
+          battleResults: [],
+        }}
+        className="w-full"
+      />
 
       <Button variant="primary" size="lg" onClick={onBack} className="w-full">
         Back to Menu
