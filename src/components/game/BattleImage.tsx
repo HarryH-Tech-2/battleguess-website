@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
@@ -12,6 +13,54 @@ function formatYear(year?: number): string {
   if (!year) return '';
   if (year < 0) return `${Math.abs(year)} BCE`;
   return `${year}`;
+}
+
+function PlaceholderVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [canPlay, setCanPlay] = useState(true);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Mobile browsers block autoplay even for muted videos in some cases.
+    // Calling play() explicitly and catching the rejection lets us fall
+    // back to the poster image instead of showing a blank/frozen frame.
+    video.play().catch(() => {
+      setCanPlay(false);
+    });
+  }, []);
+
+  if (!canPlay) {
+    return (
+      <motion.img
+        key="poster-fallback"
+        src="/welcome-placeholder.webp"
+        alt="Welcome to BattleGuess"
+        className="w-full h-full object-cover object-top"
+        initial={{ opacity: 0, scale: 1.02 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+      />
+    );
+  }
+
+  return (
+    <motion.video
+      key="placeholder"
+      ref={videoRef}
+      src="/battle-placeholder-video.mp4"
+      muted
+      loop
+      playsInline
+      preload="auto"
+      poster="/welcome-placeholder.webp"
+      className="w-full h-full object-cover object-top"
+      initial={{ opacity: 0, scale: 1.02 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8 }}
+    />
+  );
 }
 
 export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: BattleImageProps) {
@@ -63,20 +112,7 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
                   decoding="async"
                 />
               ) : (
-                <motion.video
-                  key="placeholder"
-                  src="/battle-placeholder-video.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                  poster="/welcome-placeholder.webp"
-                  className="w-full h-full object-cover object-top"
-                  initial={{ opacity: 0, scale: 1.02 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8 }}
-                />
+                <PlaceholderVideo />
               )}
             </AnimatePresence>
           </div>
