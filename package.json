@@ -12,8 +12,10 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
+    "@vercel/postgres": "^0.10.0",
     "framer-motion": "^12.27.5",
     "i18next": "^25.8.13",
+    "jose": "^6.2.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-i18next": "^16.5.4",
