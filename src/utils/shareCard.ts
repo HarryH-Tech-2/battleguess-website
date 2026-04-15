@@ -8,6 +8,7 @@ export interface ShareCardData {
   battlesWon: number;
   totalBattles: number;
   battleResults: BattleRoundResult[];
+  isDaily?: boolean;
 }
 
 export type ShareStatus = 'shared' | 'copied' | 'failed';
@@ -223,9 +224,20 @@ export async function generateShareCard(data: ShareCardData): Promise<Blob> {
 export function generateShareText(data: ShareCardData): string {
   const lines: string[] = [];
 
-  // Header
-  lines.push(`🎖️ BattleGuess — ${data.rank}`);
-  lines.push(`⭐ ${data.score.toLocaleString()} pts | 🎯 ${data.accuracy}% | 🔥 ${data.streak} streak`);
+  // Header — different for daily vs standard
+  if (data.isDaily) {
+    const today = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    lines.push(`Battle Guess Daily - ${today}`);
+    lines.push(`Score: ${data.battlesWon}/${data.totalBattles}`);
+  } else {
+    lines.push(`🎖️ BattleGuess — ${data.rank}`);
+    lines.push(`⭐ ${data.score.toLocaleString()} pts | 🎯 ${data.accuracy}% | 🔥 ${data.streak} streak`);
+  }
+
+  // Streak line (both modes, skip if 0)
+  if (data.isDaily && data.streak > 0) {
+    lines.push(`Streak: ${data.streak} days`);
+  }
   lines.push('');
 
   // Emoji grid

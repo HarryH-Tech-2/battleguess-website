@@ -149,6 +149,7 @@ export function DailyResult({ score, correctGuesses, totalBattles, dailyStreak, 
           battlesWon: correctGuesses,
           totalBattles,
           battleResults: [],
+          isDaily: true,
         }}
         className="w-full"
       />
