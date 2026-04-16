@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../../contexts/AuthContext';
 import { GoogleSignInButton } from './GoogleSignInButton';
@@ -15,6 +16,7 @@ export function SignUpModal({ isOpen, onDismiss, onSuccess }: SignUpModalProps) 
   const [mode, setMode] = useState<Mode>('login');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -23,6 +25,7 @@ export function SignUpModal({ isOpen, onDismiss, onSuccess }: SignUpModalProps) 
   const resetForm = () => {
     setEmail('');
     setPassword('');
+    setShowPassword(false);
     setName('');
     setError('');
     setLoading(false);
@@ -67,14 +70,14 @@ export function SignUpModal({ isOpen, onDismiss, onSuccess }: SignUpModalProps) 
     }
   };
 
-  return (
+  const modal = (
     <AnimatePresence>
       {isOpen && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
         >
           {/* Backdrop */}
           <motion.div
@@ -111,7 +114,10 @@ export function SignUpModal({ isOpen, onDismiss, onSuccess }: SignUpModalProps) 
             </div>
 
             {/* Google sign-in */}
-            <GoogleSignInButton onSuccess={() => { resetForm(); onSuccess(); }} />
+            <GoogleSignInButton
+              width={260}
+              onSuccess={() => { resetForm(); onSuccess(); }}
+            />
 
             {/* Divider */}
             <div className="flex items-center gap-3">
@@ -140,15 +146,37 @@ export function SignUpModal({ isOpen, onDismiss, onSuccess }: SignUpModalProps) 
                 required
                 className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none text-sm transition-colors"
               />
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                minLength={6}
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none text-sm transition-colors"
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  minLength={6}
+                  className="w-full pl-4 pr-10 py-2.5 rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none text-sm transition-colors"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((v) => !v)}
+                  className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 transition-colors"
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
+                  tabIndex={-1}
+                >
+                  {showPassword ? (
+                    // eye-off
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 3l18 18M10.584 10.587a2 2 0 002.828 2.83M9.88 4.24A10.05 10.05 0 0112 4c4.477 0 8.268 2.943 9.543 7a9.97 9.97 0 01-4.132 5.411M6.1 6.1A10.026 10.026 0 002.457 11c1.274 4.057 5.065 7 9.543 7 1.657 0 3.223-.402 4.6-1.112" />
+                    </svg>
+                  ) : (
+                    // eye
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                  )}
+                </button>
+              </div>
 
               {error && (
                 <p className="text-sm text-red-500 text-center">{error}</p>
@@ -187,4 +215,10 @@ export function SignUpModal({ isOpen, onDismiss, onSuccess }: SignUpModalProps) 
       )}
     </AnimatePresence>
   );
+
+  // Portal to document.body so the modal escapes Layout's `z-10` wrapper
+  // stacking context; otherwise the Feedback FAB (z-40, rendered outside
+  // that wrapper) sits above us.
+  if (typeof document === 'undefined') return null;
+  return createPortal(modal, document.body);
 }

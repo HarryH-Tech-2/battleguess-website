@@ -46,17 +46,50 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     await initializeDatabase();
 
     const googleUser = await verifyGoogleToken(credential);
+    const normalizedEmail = googleUser.email.trim().toLowerCase();
 
-    // Upsert user
-    const { rows } = await sql`
-      INSERT INTO users (google_id, email, name, avatar_url)
-      VALUES (${googleUser.sub}, ${googleUser.email}, ${googleUser.name}, ${googleUser.picture})
-      ON CONFLICT (google_id)
-      DO UPDATE SET name = ${googleUser.name}, avatar_url = ${googleUser.picture}
-      RETURNING id, email, name, avatar_url
+    // Look up by google_id first — normal returning-Google-user path.
+    const byGoogle = await sql`
+      SELECT id, email, name, avatar_url
+      FROM users
+      WHERE google_id = ${googleUser.sub}
+      LIMIT 1
     `;
 
-    const user = rows[0];
+    let user;
+    if (byGoogle.rows.length > 0) {
+      const updated = await sql`
+        UPDATE users
+        SET name = ${googleUser.name}, avatar_url = ${googleUser.picture}
+        WHERE google_id = ${googleUser.sub}
+        RETURNING id, email, name, avatar_url
+      `;
+      user = updated.rows[0];
+    } else {
+      // First time we've seen this Google account. Check whether there's an
+      // existing email/password account with the same email to link onto,
+      // rather than failing on the unique email index.
+      const byEmail = await sql`
+        SELECT id FROM users WHERE LOWER(email) = ${normalizedEmail} LIMIT 1
+      `;
+      if (byEmail.rows.length > 0) {
+        const linked = await sql`
+          UPDATE users
+          SET google_id = ${googleUser.sub},
+              avatar_url = COALESCE(avatar_url, ${googleUser.picture})
+          WHERE id = ${byEmail.rows[0].id}
+          RETURNING id, email, name, avatar_url
+        `;
+        user = linked.rows[0];
+      } else {
+        const inserted = await sql`
+          INSERT INTO users (google_id, email, name, avatar_url)
+          VALUES (${googleUser.sub}, ${normalizedEmail}, ${googleUser.name}, ${googleUser.picture})
+          RETURNING id, email, name, avatar_url
+        `;
+        user = inserted.rows[0];
+      }
+    }
 
     // Ensure user_stats row exists
     await sql`

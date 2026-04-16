@@ -17,49 +17,108 @@ function formatYear(year?: number): string {
 
 function PlaceholderVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [canPlay, setCanPlay] = useState(true);
+  const [showFallback, setShowFallback] = useState(false);
+
+  // Set `muted` imperatively via a ref callback so the HTML attribute is
+  // present on the element the moment iOS Safari evaluates autoplay
+  // eligibility (React's `muted` prop sets the property but the attribute
+  // timing has historically been unreliable for autoplay gating).
+  const setVideoRef = (el: HTMLVideoElement | null) => {
+    videoRef.current = el;
+    if (el) {
+      el.muted = true;
+      el.setAttribute('muted', '');
+      el.defaultMuted = true;
+    }
+  };
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Mobile browsers block autoplay even for muted videos in some cases.
-    // Calling play() explicitly and catching the rejection lets us fall
-    // back to the poster image instead of showing a blank/frozen frame.
-    video.play().catch(() => {
-      setCanPlay(false);
-    });
+    let cancelled = false;
+    const gestureEvents = ['pointerdown', 'touchstart', 'keydown'] as const;
+
+    const removeGestureListeners = () => {
+      gestureEvents.forEach((e) => window.removeEventListener(e, attemptPlay));
+    };
+
+    function attemptPlay() {
+      if (!video || cancelled) return;
+      // Re-assert muted in case anything has toggled it.
+      video.muted = true;
+      const result = video.play();
+      if (result === undefined) return;
+      result
+        .then(() => {
+          if (cancelled) return;
+          setShowFallback(false);
+          removeGestureListeners();
+        })
+        .catch(() => {
+          if (cancelled) return;
+          // Autoplay blocked or not enough data yet. Show the poster and keep
+          // retrying: on the next `canplay` tick and on the first user gesture.
+          setShowFallback(true);
+        });
+    }
+
+    const onCanPlay = () => attemptPlay();
+
+    // If the video isn't ready yet (common on cold cache / fresh page load),
+    // wait for it rather than calling play() prematurely — a too-early play()
+    // on mobile often rejects with a NotAllowedError because the browser
+    // hasn't decoded enough data to grant silent autoplay.
+    if (video.readyState >= 2 /* HAVE_CURRENT_DATA */) {
+      attemptPlay();
+    } else {
+      video.addEventListener('canplay', onCanPlay);
+    }
+
+    // Last-resort: if autoplay really is blocked (iOS Low Power Mode etc.),
+    // the first user gesture anywhere on the page will be allowed to start it.
+    gestureEvents.forEach((e) =>
+      window.addEventListener(e, attemptPlay, { passive: true }),
+    );
+
+    return () => {
+      cancelled = true;
+      video.removeEventListener('canplay', onCanPlay);
+      removeGestureListeners();
+    };
   }, []);
 
-  if (!canPlay) {
-    return (
-      <motion.img
-        key="poster-fallback"
-        src="/welcome-placeholder.webp"
-        alt="Welcome to BattleGuess"
+  return (
+    <div className="relative w-full h-full">
+      <motion.video
+        ref={setVideoRef}
+        src="/battle-placeholder-video.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/welcome-placeholder.webp"
         className="w-full h-full object-cover object-top"
         initial={{ opacity: 0, scale: 1.02 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
       />
-    );
-  }
-
-  return (
-    <motion.video
-      key="placeholder"
-      ref={videoRef}
-      src="/battle-placeholder-video.mp4"
-      muted
-      loop
-      playsInline
-      preload="auto"
-      poster="/welcome-placeholder.webp"
-      className="w-full h-full object-cover object-top"
-      initial={{ opacity: 0, scale: 1.02 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8 }}
-    />
+      <AnimatePresence>
+        {showFallback && (
+          <motion.img
+            key="poster-fallback"
+            src="/welcome-placeholder.webp"
+            alt="Welcome to BattleGuess"
+            className="absolute inset-0 w-full h-full object-cover object-top"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          />
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
 
