@@ -5,6 +5,8 @@ import { ContentLayout } from '../components/layout/ContentLayout';
 import { LocaleLink } from '../components/ui/LocaleLink';
 import { useStats } from '../hooks/useStats';
 import { useAchievements } from '../hooks/useAchievements';
+import { useAuth } from '../contexts/AuthContext';
+import { SignUpCTA } from '../components/auth/SignUpCTA';
 import { civilizations } from '../data/civilizations';
 import { progressExtractors } from '../data/achievements';
 
@@ -31,6 +33,7 @@ function AccuracyBar({ label, icon, correct, total }: { label: string; icon?: st
 function Stats() {
   const { total, correct, accuracy, byCivilization, byDifficulty, avgHints } = useStats();
   const { unlocked, achievementStats, achievements: allAchievements } = useAchievements();
+  const { isAuthenticated } = useAuth();
   const { t } = useTranslation();
 
   const civMap = useMemo(
@@ -66,7 +69,14 @@ function Stats() {
 
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-8">{t('pages.stats.title')}</h1>
 
-        {total === 0 ? (
+        {!isAuthenticated ? (
+          <div className="bg-white rounded-2xl shadow-sm border border-slate-100">
+            <SignUpCTA
+              title="Sign up to track your stats"
+              message="Accuracy, best streak, per-civilization breakdown, achievements — all saved to your account."
+            />
+          </div>
+        ) : total === 0 ? (
           <div className="text-center py-16">
             <div className="text-6xl mb-4">📊</div>
             <h2 className="text-xl font-bold text-slate-800 mb-3">{t('pages.stats.noStats')}</h2>

@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { useLocalStorage } from './useLocalStorage';
+import { useAuth } from '../contexts/AuthContext';
 import type { CivilizationId, Difficulty } from '../types';
 
 export interface BattleResult {
@@ -16,12 +17,21 @@ export interface DetailedStats {
   results: BattleResult[];
 }
 
+const EMPTY_STATS: DetailedStats = { results: [] };
+
 export function useStats() {
-  const [stats, setStats] = useLocalStorage<DetailedStats>('battleguess-detailed-stats', { results: [] });
+  const { isAuthenticated } = useAuth();
+  const [rawStats, setRawStats] = useLocalStorage<DetailedStats>('battleguess-detailed-stats', EMPTY_STATS);
+
+  // Anonymous users don't accumulate stats. Legacy localStorage data is left
+  // alone so it can still migrate on future sign-in, but nothing is surfaced
+  // to the UI and no new results are recorded.
+  const stats = isAuthenticated ? rawStats : EMPTY_STATS;
 
   const recordResult = useCallback((result: BattleResult) => {
-    setStats(prev => ({ results: [...prev.results, result] }));
-  }, [setStats]);
+    if (!isAuthenticated) return;
+    setRawStats(prev => ({ results: [...prev.results, result] }));
+  }, [isAuthenticated, setRawStats]);
 
   const derived = useMemo(() => {
     const { results } = stats;

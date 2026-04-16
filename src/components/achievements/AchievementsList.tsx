@@ -1,5 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { achievements, type AchievementDef } from '../../data/achievements';
+import { useAuth } from '../../contexts/AuthContext';
+import { SignUpCTA } from '../auth/SignUpCTA';
 
 interface AchievementsListProps {
   isOpen: boolean;
@@ -8,6 +10,7 @@ interface AchievementsListProps {
 }
 
 export function AchievementsList({ isOpen, onClose, unlocked }: AchievementsListProps) {
+  const { isAuthenticated } = useAuth();
   const unlockedIds = new Set(unlocked.map(u => u.id));
 
   return (
@@ -40,32 +43,42 @@ export function AchievementsList({ isOpen, onClose, unlocked }: AchievementsList
               </button>
 
               <h3 className="text-xl font-bold text-gray-800 mb-1">Achievements</h3>
-              <p className="text-sm text-gray-500 mb-4">
-                {unlocked.length} / {achievements.length} unlocked
-              </p>
 
-              {/* Progress bar */}
-              <div className="h-2 bg-gray-100 rounded-full overflow-hidden mb-4">
-                <motion.div
-                  className="h-full bg-gradient-to-r from-primary-400 to-emerald-500 rounded-full"
-                  initial={{ width: 0 }}
-                  animate={{ width: `${(unlocked.length / achievements.length) * 100}%` }}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}
+              {!isAuthenticated ? (
+                <SignUpCTA
+                  title="Sign up to unlock achievements"
+                  message="There are 20 achievements to earn. Your progress is saved to your account so you'll never lose a badge."
                 />
-              </div>
+              ) : (
+                <>
+                  <p className="text-sm text-gray-500 mb-4">
+                    {unlocked.length} / {achievements.length} unlocked
+                  </p>
 
-              <div className="space-y-2">
-                {achievements.map((achievement) => {
-                  const isUnlocked = unlockedIds.has(achievement.id);
-                  return (
-                    <AchievementRow
-                      key={achievement.id}
-                      achievement={achievement}
-                      isUnlocked={isUnlocked}
+                  {/* Progress bar */}
+                  <div className="h-2 bg-gray-100 rounded-full overflow-hidden mb-4">
+                    <motion.div
+                      className="h-full bg-gradient-to-r from-primary-400 to-emerald-500 rounded-full"
+                      initial={{ width: 0 }}
+                      animate={{ width: `${(unlocked.length / achievements.length) * 100}%` }}
+                      transition={{ duration: 0.8, ease: 'easeOut' }}
                     />
-                  );
-                })}
-              </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    {achievements.map((achievement) => {
+                      const isUnlocked = unlockedIds.has(achievement.id);
+                      return (
+                        <AchievementRow
+                          key={achievement.id}
+                          achievement={achievement}
+                          isUnlocked={isUnlocked}
+                        />
+                      );
+                    })}
+                  </div>
+                </>
+              )}
             </div>
             </div>
           </motion.div>

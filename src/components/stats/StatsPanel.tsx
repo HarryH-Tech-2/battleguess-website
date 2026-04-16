@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { civilizations } from '../../data/civilizations';
+import { useAuth } from '../../contexts/AuthContext';
+import { SignUpCTA } from '../auth/SignUpCTA';
 
 interface StatsPanelProps {
   isOpen: boolean;
@@ -36,6 +38,7 @@ function AccuracyBar({ label, icon, correct, total }: { label: string; icon?: st
 export function StatsPanel({
   isOpen, onClose, total, accuracy, avgHints, byCivilization, byDifficulty, bestStreak,
 }: StatsPanelProps) {
+  const { isAuthenticated } = useAuth();
   const civMap = Object.fromEntries(civilizations.map(c => [c.id, c]));
 
   return (
@@ -69,7 +72,12 @@ export function StatsPanel({
 
               <h3 className="text-xl font-bold text-gray-800 mb-4">Your Stats</h3>
 
-              {total === 0 ? (
+              {!isAuthenticated ? (
+                <SignUpCTA
+                  title="Sign up to see your stats"
+                  message="Accuracy, best streak, per-civilization breakdown — all saved to your account once you sign up."
+                />
+              ) : total === 0 ? (
                 <p className="text-gray-500 text-center py-8">Play some battles to see your stats!</p>
               ) : (
                 <div className="space-y-5">

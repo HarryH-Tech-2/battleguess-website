@@ -5,7 +5,6 @@ import { Layout } from './components/layout/Layout';
 import { SEOHead } from './components/layout/SEOHead';
 import { Card } from './components/ui/Card';
 import { Button } from './components/ui/Button';
-import { DonationPopup } from './components/ui/DonationPopup';
 import { BattleImage } from './components/game/BattleImage';
 import { GuessInput } from './components/game/GuessInput';
 import { ReverseGuessInput } from './components/game/ReverseGuessInput';
@@ -16,7 +15,6 @@ import { ScoreDisplay } from './components/game/ScoreDisplay';
 import { MusicTrackSelector } from './components/game/MusicTrackSelector';
 import { CivilizationSelector } from './components/game/CivilizationSelector';
 import { DifficultySelector } from './components/game/DifficultySelector';
-import { EmailSignup } from './components/game/EmailSignup';
 import { ModeSelector } from './components/game/ModeSelector';
 import { CampaignSelector } from './components/game/CampaignSelector';
 import { CampaignNarrative } from './components/game/CampaignNarrative';
@@ -26,6 +24,7 @@ import { DailyChallengeIntro, DailyProgress, DailyResult } from './components/ga
 import { ChallengeInvite, ChallengeProgress, ChallengeResult, ChallengeShare } from './components/game/ChallengeView';
 import { AchievementPopup } from './components/achievements/AchievementPopup';
 import { SignUpModal } from './components/auth/SignUpModal';
+import { SignUpBanner } from './components/auth/SignUpBanner';
 import { useAuth } from './contexts/AuthContext';
 
 // Lazy-load overlay components (modals that aren't always visible)
@@ -48,9 +47,6 @@ import { analytics } from './utils/analytics';
 import type { GameMode } from './types';
 import './index.css';
 
-// Update this with your actual Buy Me a Coffee URL
-const BUY_ME_A_COFFEE_URL = "https://buymeacoffee.com/harryhh";
-
 function App() {
   const { t } = useTranslation();
   const { state, actions, totalBattlesInPool, battlesPlayed, playedBattleIds } = useGame();
@@ -63,10 +59,8 @@ function App() {
   const achievementsSystem = useAchievements();
   const daily = useDailyChallenge();
   const challenge = useChallengeMode();
-  const [showDonationPopup, setShowDonationPopup] = useState(false);
   const [showStatsPanel, setShowStatsPanel] = useState(false);
   const [showAchievements, setShowAchievements] = useState(false);
-  const hasShownPopup = useRef(false);
   const prevGameStatus = useRef(state.gameStatus);
   const prevRevealedHints = useRef(state.revealedHints.length);
   const { isAuthenticated } = useAuth();
@@ -234,17 +228,6 @@ function App() {
     prevTotalGuesses.current = state.totalGuesses;
   }, [state.totalGuesses, state.gameStatus, playSound]);
 
-  // Show donation popup after 5 completed questions (only once per session)
-  useEffect(() => {
-    if (state.totalGuesses === 5 && !hasShownPopup.current) {
-      hasShownPopup.current = true;
-      const timer = setTimeout(() => {
-        setShowDonationPopup(true);
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [state.totalGuesses]);
-
   // Show sign-up modal after 3rd battle (once per session, only if not authenticated)
   useEffect(() => {
     if (
@@ -328,7 +311,6 @@ function App() {
 
   return (
     <Layout
-      buyMeACoffeeUrl={BUY_ME_A_COFFEE_URL}
       dailyStreak={dailyStreak}
       onOpenStats={() => setShowStatsPanel(true)}
       onOpenAchievements={() => setShowAchievements(true)}
@@ -366,8 +348,8 @@ function App() {
       />
       <div className="space-y-4 sm:space-y-6 pb-6 sm:pb-8">
 
-        {/* Email Signup */}
-        <EmailSignup />
+        {/* Anonymous user CTA — hidden for signed-in users and dismissible */}
+        <SignUpBanner />
 
         {/* Selectors row */}
         <motion.div
@@ -897,13 +879,6 @@ function App() {
           mascotAlt={state.totalGuesses % 2 === 0 ? 'Napoleon Battle Guide' : 'Roman Battle Guide'}
         />
       )}
-
-      {/* Donation Popup */}
-      <DonationPopup
-        isOpen={showDonationPopup}
-        onClose={() => setShowDonationPopup(false)}
-        buyMeACoffeeUrl={BUY_ME_A_COFFEE_URL}
-      />
 
       {/* Stats Panel (lazy-loaded) */}
       <Suspense fallback={null}>

@@ -13,7 +13,6 @@ const FloatingOrbs = lazy(() =>
 
 interface LayoutProps {
   children: ReactNode;
-  buyMeACoffeeUrl?: string;
   dailyStreak?: number;
   onOpenStats?: () => void;
   onOpenAchievements?: () => void;
@@ -21,7 +20,7 @@ interface LayoutProps {
   onLogoClick?: () => void;
 }
 
-export function Layout({ children, buyMeACoffeeUrl, dailyStreak, onOpenStats, onOpenAchievements, achievementCount, onLogoClick }: LayoutProps) {
+export function Layout({ children, dailyStreak, onOpenStats, onOpenAchievements, achievementCount, onLogoClick }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden">
       {/* Background effects - lazy loaded */}
@@ -33,7 +32,7 @@ export function Layout({ children, buyMeACoffeeUrl, dailyStreak, onOpenStats, on
 
       {/* Content */}
       <div className="relative z-10 flex flex-col min-h-screen">
-        <Navbar buyMeACoffeeUrl={buyMeACoffeeUrl} dailyStreak={dailyStreak} onOpenStats={onOpenStats} onOpenAchievements={onOpenAchievements} achievementCount={achievementCount} onLogoClick={onLogoClick} />
+        <Navbar dailyStreak={dailyStreak} onOpenStats={onOpenStats} onOpenAchievements={onOpenAchievements} achievementCount={achievementCount} onLogoClick={onLogoClick} />
 
         <main className="flex-1 container mx-auto px-3 sm:px-4 lg:px-8 max-w-3xl lg:max-w-4xl xl:max-w-5xl py-4 sm:py-6">
           {children}

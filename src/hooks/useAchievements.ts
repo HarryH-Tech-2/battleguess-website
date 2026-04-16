@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { useLocalStorage } from './useLocalStorage';
+import { useAuth } from '../contexts/AuthContext';
 import { achievements, type AchievementDef, type AchievementStats } from '../data/achievements';
 
 interface UnlockedAchievement {
@@ -7,22 +8,39 @@ interface UnlockedAchievement {
   unlockedAt: number;
 }
 
+const EMPTY_STATS: AchievementStats = {
+  totalGames: 0,
+  totalCorrect: 0,
+  bestStreak: 0,
+  totalNoHintWins: 0,
+  totalHardCorrect: 0,
+  totalMediumCorrect: 0,
+  totalEasyCorrect: 0,
+  uniqueCivilizations: 0,
+  totalCampaignsCompleted: 0,
+};
+
+// Stable empty reference so the memoized `unlockedIds` below doesn't
+// invalidate on every render for anonymous users.
+const EMPTY_UNLOCKED: UnlockedAchievement[] = [];
+
 export function useAchievements() {
-  const [unlocked, setUnlocked] = useLocalStorage<UnlockedAchievement[]>('battleguess-achievements', []);
+  const { isAuthenticated } = useAuth();
+  const [rawUnlocked, setRawUnlocked] = useLocalStorage<UnlockedAchievement[]>('battleguess-achievements', []);
   const [newlyUnlocked, setNewlyUnlocked] = useState<AchievementDef | null>(null);
-  const [achievementStats, setAchievementStats] = useLocalStorage<AchievementStats>('battleguess-achievement-stats', {
-    totalGames: 0,
-    totalCorrect: 0,
-    bestStreak: 0,
-    totalNoHintWins: 0,
-    totalHardCorrect: 0,
-    totalMediumCorrect: 0,
-    totalEasyCorrect: 0,
-    uniqueCivilizations: 0,
-    totalCampaignsCompleted: 0,
-  });
+  const [rawAchievementStats, setRawAchievementStats] = useLocalStorage<AchievementStats>(
+    'battleguess-achievement-stats',
+    EMPTY_STATS,
+  );
   const [uniqueCivs, setUniqueCivs] = useLocalStorage<string[]>('battleguess-unique-civs', []);
   const queueRef = useRef<AchievementDef[]>([]);
+
+  // Anonymous users see no unlocks and accrue no stats. Legacy localStorage
+  // values are preserved for future sign-in migration.
+  const unlocked = isAuthenticated ? rawUnlocked : EMPTY_UNLOCKED;
+  const achievementStats = isAuthenticated ? rawAchievementStats : EMPTY_STATS;
+  const setUnlocked = setRawUnlocked;
+  const setAchievementStats = setRawAchievementStats;
 
   const unlockedIds = useMemo(() => new Set(unlocked.map(u => u.id)), [unlocked]);
 
@@ -70,6 +88,7 @@ export function useAchievements() {
     civilization: string;
     streak: number;
   }) => {
+    if (!isAuthenticated) return;
     setAchievementStats(prev => {
       const newCivs = params.correct && !uniqueCivs.includes(params.civilization)
         ? [...uniqueCivs, params.civilization]
@@ -95,9 +114,10 @@ export function useAchievements() {
       setTimeout(() => checkAndUnlock(updated), 0);
       return updated;
     });
-  }, [setAchievementStats, uniqueCivs, setUniqueCivs, checkAndUnlock]);
+  }, [isAuthenticated, setAchievementStats, uniqueCivs, setUniqueCivs, checkAndUnlock]);
 
   const recordCampaignComplete = useCallback(() => {
+    if (!isAuthenticated) return;
     setAchievementStats(prev => {
       const updated: AchievementStats = {
         ...prev,
@@ -106,7 +126,7 @@ export function useAchievements() {
       setTimeout(() => checkAndUnlock(updated), 0);
       return updated;
     });
-  }, [setAchievementStats, checkAndUnlock]);
+  }, [isAuthenticated, setAchievementStats, checkAndUnlock]);
 
   return {
     unlocked,
