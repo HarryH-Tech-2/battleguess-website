@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import { motion } from 'framer-motion';
-import { SignUpModal } from './SignUpModal';
+
+// Lazy-loaded: auth modal chunk is only needed when the user actually clicks.
+const SignUpModal = lazy(() => import('./SignUpModal').then(m => ({ default: m.SignUpModal })));
 
 interface SignUpCTAProps {
   title: string;
@@ -39,11 +41,15 @@ export function SignUpCTA({ title, message, ctaLabel = 'Sign up' }: SignUpCTAPro
         </motion.button>
       </div>
 
-      <SignUpModal
-        isOpen={open}
-        onDismiss={() => setOpen(false)}
-        onSuccess={() => setOpen(false)}
-      />
+      {open && (
+        <Suspense fallback={null}>
+          <SignUpModal
+            isOpen={open}
+            onDismiss={() => setOpen(false)}
+            onSuccess={() => setOpen(false)}
+          />
+        </Suspense>
+      )}
     </>
   );
 }

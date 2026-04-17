@@ -29,7 +29,12 @@ export function useBackgroundMusic(defaultSrc: string) {
 
   // Create/replace audio element when track changes
   useEffect(() => {
-    const audio = new Audio(currentTrack.src);
+    // preload='none' prevents browsers from fetching audio metadata on page
+    // load — each music file is 4–6MB, and the user may never unmute. The
+    // file is fetched on demand when play() is called below.
+    const audio = new Audio();
+    audio.preload = 'none';
+    audio.src = currentTrack.src;
     audio.loop = true;
     audio.volume = 0.3;
     audioRef.current = audio;

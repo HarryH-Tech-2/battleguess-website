@@ -168,7 +168,11 @@ export default defineConfig(({ mode }) => {
             if (id.includes('data/battles/')) return 'battle-data';
             if (id.includes('data/battleFacts') || id.includes('data/battleCoordinates') || id.includes('data/battleImages')) return 'battle-meta';
             if (id.includes('data/campaigns') || id.includes('data/achievements')) return 'game-meta';
-            if (id.includes('i18n/locales/')) return 'i18n';
+            // Non-default locales are code-split so they're only fetched when
+            // the user visits a /fr or /es route. en.json stays inlined into
+            // the main bundle (it's the synchronous fallback).
+            if (id.includes('i18n/locales/fr.json')) return 'i18n-fr';
+            if (id.includes('i18n/locales/es.json')) return 'i18n-es';
             if (id.includes('node_modules/react-i18next') || id.includes('node_modules/i18next')) return 'i18n-lib';
           },
         },

@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, Outlet, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { isSupportedLanguage } from './i18n';
+import { ensureLocaleLoaded, isSupportedLanguage, type SupportedLanguage } from './i18n';
 import App from './App';
 
 const FAQ = lazy(() => import('./pages/FAQ'));
@@ -38,12 +38,16 @@ const OG_LOCALES: Record<string, string> = {
 function LanguageLayout() {
   const { lang } = useParams<{ lang?: string }>();
   const { i18n } = useTranslation();
-  const targetLang = lang && isSupportedLanguage(lang) ? lang : 'en';
+  const targetLang: SupportedLanguage = lang && isSupportedLanguage(lang) ? lang : 'en';
 
   // Sync language from URL (handles back/forward navigation and direct URL access)
   useEffect(() => {
     if (i18n.language !== targetLang) {
-      i18n.changeLanguage(targetLang);
+      // Non-English locales are code-split — load the chunk before switching
+      // so components don't flash missing translation keys.
+      ensureLocaleLoaded(targetLang).then(() => {
+        i18n.changeLanguage(targetLang);
+      });
     }
 
     // Keep <html lang> and og:locale in sync with the URL language so that

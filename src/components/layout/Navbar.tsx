@@ -1,10 +1,13 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { lazy, Suspense, useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { DailyStreakBadge } from '../game/DailyStreakBadge';
 import { LanguageSwitcher } from '../ui/LanguageSwitcher';
 import { useAuth } from '../../contexts/AuthContext';
-import { SignUpModal } from '../auth/SignUpModal';
+
+// Lazy — Navbar renders on every page, but the auth modal should not ship
+// in the critical-path bundle.
+const SignUpModal = lazy(() => import('../auth/SignUpModal').then(m => ({ default: m.SignUpModal })));
 
 interface NavbarProps {
   dailyStreak?: number;
@@ -321,11 +324,15 @@ export function Navbar({ dailyStreak, onOpenStats, onOpenAchievements, achieveme
     </motion.nav>
 
     {/* Auth modal */}
-    <SignUpModal
-      isOpen={showAuthModal}
-      onDismiss={() => setShowAuthModal(false)}
-      onSuccess={handleAuthSuccess}
-    />
+    {showAuthModal && (
+      <Suspense fallback={null}>
+        <SignUpModal
+          isOpen={showAuthModal}
+          onDismiss={() => setShowAuthModal(false)}
+          onSuccess={handleAuthSuccess}
+        />
+      </Suspense>
+    )}
 
     {/* Welcome toast */}
     <AnimatePresence>

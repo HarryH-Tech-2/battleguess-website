@@ -7,29 +7,36 @@ import { Card } from './components/ui/Card';
 import { Button } from './components/ui/Button';
 import { BattleImage } from './components/game/BattleImage';
 import { GuessInput } from './components/game/GuessInput';
-import { ReverseGuessInput } from './components/game/ReverseGuessInput';
-import { ReversePrompt } from './components/game/ReversePrompt';
-import { GeneralMascot } from './components/game/GeneralMascot';
 import { ResultFeedback } from './components/game/ResultFeedback';
 import { ScoreDisplay } from './components/game/ScoreDisplay';
 import { MusicTrackSelector } from './components/game/MusicTrackSelector';
 import { CivilizationSelector } from './components/game/CivilizationSelector';
 import { DifficultySelector } from './components/game/DifficultySelector';
 import { ModeSelector } from './components/game/ModeSelector';
-import { CampaignSelector } from './components/game/CampaignSelector';
-import { CampaignNarrative } from './components/game/CampaignNarrative';
-import { CampaignComplete } from './components/game/CampaignComplete';
-import { GameComplete } from './components/game/GameComplete';
-import { DailyChallengeIntro, DailyProgress, DailyResult } from './components/game/DailyChallenge';
-import { ChallengeInvite, ChallengeProgress, ChallengeResult, ChallengeShare } from './components/game/ChallengeView';
-import { AchievementPopup } from './components/achievements/AchievementPopup';
-import { SignUpModal } from './components/auth/SignUpModal';
 import { SignUpBanner } from './components/auth/SignUpBanner';
 import { useAuth } from './contexts/AuthContext';
 
-// Lazy-load overlay components (modals that aren't always visible)
+// Lazy-load components that only appear in specific game modes or after
+// a user action — these shouldn't bloat the initial bundle for the default
+// classic-mode home view.
 const StatsPanel = lazy(() => import('./components/stats/StatsPanel').then(m => ({ default: m.StatsPanel })));
 const AchievementsList = lazy(() => import('./components/achievements/AchievementsList').then(m => ({ default: m.AchievementsList })));
+const AchievementPopup = lazy(() => import('./components/achievements/AchievementPopup').then(m => ({ default: m.AchievementPopup })));
+const SignUpModal = lazy(() => import('./components/auth/SignUpModal').then(m => ({ default: m.SignUpModal })));
+const ReverseGuessInput = lazy(() => import('./components/game/ReverseGuessInput').then(m => ({ default: m.ReverseGuessInput })));
+const ReversePrompt = lazy(() => import('./components/game/ReversePrompt').then(m => ({ default: m.ReversePrompt })));
+const GeneralMascot = lazy(() => import('./components/game/GeneralMascot').then(m => ({ default: m.GeneralMascot })));
+const CampaignSelector = lazy(() => import('./components/game/CampaignSelector').then(m => ({ default: m.CampaignSelector })));
+const CampaignNarrative = lazy(() => import('./components/game/CampaignNarrative').then(m => ({ default: m.CampaignNarrative })));
+const CampaignComplete = lazy(() => import('./components/game/CampaignComplete').then(m => ({ default: m.CampaignComplete })));
+const GameComplete = lazy(() => import('./components/game/GameComplete').then(m => ({ default: m.GameComplete })));
+const DailyChallengeIntro = lazy(() => import('./components/game/DailyChallenge').then(m => ({ default: m.DailyChallengeIntro })));
+const DailyProgress = lazy(() => import('./components/game/DailyChallenge').then(m => ({ default: m.DailyProgress })));
+const DailyResult = lazy(() => import('./components/game/DailyChallenge').then(m => ({ default: m.DailyResult })));
+const ChallengeInvite = lazy(() => import('./components/game/ChallengeView').then(m => ({ default: m.ChallengeInvite })));
+const ChallengeProgress = lazy(() => import('./components/game/ChallengeView').then(m => ({ default: m.ChallengeProgress })));
+const ChallengeResult = lazy(() => import('./components/game/ChallengeView').then(m => ({ default: m.ChallengeResult })));
+const ChallengeShare = lazy(() => import('./components/game/ChallengeView').then(m => ({ default: m.ChallengeShare })));
 import { useGame } from './hooks/useGame';
 import { useImageGeneration } from './hooks/useImageGeneration';
 import { getBattlesByCivilization } from './data/battles/index';
@@ -383,6 +390,7 @@ function App() {
 
         {/* Main Game Card */}
         <Card variant="elevated" glow={isPlaying}>
+          <Suspense fallback={<div className="h-64" />}>
           <AnimatePresence mode="wait">
             {/* Campaign Selector */}
             {state.gameStatus === 'idle' && state.gameMode === 'campaign' && campaign.state.phase === 'select' && (
@@ -850,6 +858,7 @@ function App() {
               </motion.div>
             )}
           </AnimatePresence>
+          </Suspense>
         </Card>
 
         {/* Game Stats (when playing) */}
@@ -869,15 +878,17 @@ function App() {
 
       {/* Mascot Hint Character - fixed overlay outside the card */}
       {isPlaying && state.currentBattle && !isReverseMode && (
-        <GeneralMascot
-          hints={state.currentBattle.hints}
-          revealedHints={state.revealedHints}
-          onRevealHint={actions.revealHint}
-          disabled={!state.imageUrl}
-          side={state.totalGuesses % 2 === 0 ? 'left' : 'right'}
-          mascotImage={state.totalGuesses % 2 === 0 ? '/mascot.webp' : '/mascot-roman.webp'}
-          mascotAlt={state.totalGuesses % 2 === 0 ? 'Napoleon Battle Guide' : 'Roman Battle Guide'}
-        />
+        <Suspense fallback={null}>
+          <GeneralMascot
+            hints={state.currentBattle.hints}
+            revealedHints={state.revealedHints}
+            onRevealHint={actions.revealHint}
+            disabled={!state.imageUrl}
+            side={state.totalGuesses % 2 === 0 ? 'left' : 'right'}
+            mascotImage={state.totalGuesses % 2 === 0 ? '/mascot.webp' : '/mascot-roman.webp'}
+            mascotAlt={state.totalGuesses % 2 === 0 ? 'Napoleon Battle Guide' : 'Roman Battle Guide'}
+          />
+        </Suspense>
       )}
 
       {/* Stats Panel (lazy-loaded) */}
@@ -895,15 +906,17 @@ function App() {
       </Suspense>
 
       {/* Achievements */}
-      <AchievementPopup
-        achievement={achievementsSystem.newlyUnlocked}
-        onDismiss={() => {
-          if (achievementsSystem.newlyUnlocked) {
-            analytics.achievementUnlocked(achievementsSystem.newlyUnlocked.id);
-          }
-          achievementsSystem.dismissPopup();
-        }}
-      />
+      <Suspense fallback={null}>
+        <AchievementPopup
+          achievement={achievementsSystem.newlyUnlocked}
+          onDismiss={() => {
+            if (achievementsSystem.newlyUnlocked) {
+              analytics.achievementUnlocked(achievementsSystem.newlyUnlocked.id);
+            }
+            achievementsSystem.dismissPopup();
+          }}
+        />
+      </Suspense>
       <Suspense fallback={null}>
         <AchievementsList
           isOpen={showAchievements}
@@ -913,17 +926,19 @@ function App() {
       </Suspense>
 
       {/* Sign Up Modal */}
-      <SignUpModal
-        isOpen={showSignUpModal}
-        onDismiss={() => {
-          setShowSignUpModal(false);
-          signUpModalDismissed.current = true;
-        }}
-        onSuccess={() => {
-          setShowSignUpModal(false);
-          signUpModalDismissed.current = true;
-        }}
-      />
+      <Suspense fallback={null}>
+        <SignUpModal
+          isOpen={showSignUpModal}
+          onDismiss={() => {
+            setShowSignUpModal(false);
+            signUpModalDismissed.current = true;
+          }}
+          onSuccess={() => {
+            setShowSignUpModal(false);
+            signUpModalDismissed.current = true;
+          }}
+        />
+      </Suspense>
     </Layout>
   );
 }

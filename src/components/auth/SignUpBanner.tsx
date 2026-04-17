@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../../contexts/AuthContext';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
-import { SignUpModal } from './SignUpModal';
+
+// Lazy-loaded — the auth modal (and its internal GoogleSignInButton + jose
+// dependency chain) is only needed once the user clicks "Sign up", not on
+// every page load.
+const SignUpModal = lazy(() => import('./SignUpModal').then(m => ({ default: m.SignUpModal })));
 
 /**
  * Always-visible banner for unauthenticated users explaining that progress
@@ -61,11 +65,15 @@ export function SignUpBanner() {
         </motion.div>
       </AnimatePresence>
 
-      <SignUpModal
-        isOpen={modalOpen}
-        onDismiss={() => setModalOpen(false)}
-        onSuccess={() => setModalOpen(false)}
-      />
+      {modalOpen && (
+        <Suspense fallback={null}>
+          <SignUpModal
+            isOpen={modalOpen}
+            onDismiss={() => setModalOpen(false)}
+            onSuccess={() => setModalOpen(false)}
+          />
+        </Suspense>
+      )}
     </>
   );
 }
