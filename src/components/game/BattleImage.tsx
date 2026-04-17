@@ -126,9 +126,10 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
   const { t } = useTranslation();
   return (
     <div className="space-y-3">
-      {/* Image Container - Square aspect ratio for 1080x1080 images */}
-      <div className="relative overflow-hidden rounded-2xl shadow-xl bg-gray-900 max-h-[70vh]">
-          <div className="aspect-[4/3]">
+      {/* Image Container — square aspect ratio matches the 1080x1080 source images
+          so nothing letterboxes. */}
+      <div className="relative overflow-hidden rounded-2xl shadow-xl max-h-[70vh]">
+          <div className="aspect-square">
             <AnimatePresence mode="wait">
               {isLoading ? (
                 <motion.div
@@ -159,9 +160,9 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
                   key="image"
                   src={imageUrl}
                   alt={battleName ? `Battle scene of ${battleName}` : 'Historical battle scene'}
-                  width={512}
-                  height={512}
-                  className="w-full h-full object-contain bg-gray-900"
+                  width={1080}
+                  height={1080}
+                  className="w-full h-full object-cover"
                   initial={{ opacity: 0, scale: 1.02 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
