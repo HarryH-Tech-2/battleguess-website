@@ -15,15 +15,27 @@ function renderInlineLinks(text: string) {
   return parts.map((part, i) => {
     const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (match) {
+      const label = match[1];
+      const href = match[2];
+      const isInternal = href.startsWith('/');
+      const className =
+        'text-primary-600 hover:text-primary-800 underline decoration-primary-300 hover:decoration-primary-500 transition-colors';
+      if (isInternal) {
+        return (
+          <LocaleLink key={i} to={href} className={className}>
+            {label}
+          </LocaleLink>
+        );
+      }
       return (
         <a
           key={i}
-          href={match[2]}
+          href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-primary-600 hover:text-primary-800 underline decoration-primary-300 hover:decoration-primary-500 transition-colors"
+          className={className}
         >
-          {match[1]}
+          {label}
         </a>
       );
     }
@@ -79,9 +91,22 @@ function BlogPost() {
 
   const relatedPosts = useMemo(() => {
     if (!post) return [];
-    return blogPosts
-      .filter(p => p.slug !== post.slug && p.category === post.category)
-      .slice(0, 3);
+    // Prefer same-category posts, then top up with cross-category picks so every
+    // post surfaces 6 related reads — better for internal linking / SEO than the
+    // old 3-post, category-locked list which left many posts with empty rails.
+    const sameCategory = blogPosts.filter(
+      p => p.slug !== post.slug && p.category === post.category,
+    );
+    const crossCategory = blogPosts.filter(
+      p => p.slug !== post.slug && p.category !== post.category,
+    );
+    const TARGET = 6;
+    const filled = [...sameCategory];
+    for (const p of crossCategory) {
+      if (filled.length >= TARGET) break;
+      filled.push(p);
+    }
+    return filled.slice(0, TARGET);
   }, [post]);
 
   const relatedBattles = useMemo(() => {
@@ -403,7 +428,11 @@ function BlogPost() {
             Ready to test your knowledge?
           </h2>
           <p className="text-slate-600 mb-5">
-            Identify famous battles from historical artwork across 9 historical eras.
+            Identify famous battles from historical artwork across 9 historical eras on the{' '}
+            <LocaleLink to="/" className="text-primary-700 hover:text-primary-800 font-semibold underline decoration-primary-300 hover:decoration-primary-500">
+              BattleGuess homepage
+            </LocaleLink>
+            .
           </p>
           <LocaleLink
             to="/"
@@ -411,6 +440,23 @@ function BlogPost() {
           >
             Play BattleGuess
           </LocaleLink>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-slate-600">
+            <LocaleLink to="/modes" className="hover:text-primary-700 underline decoration-slate-300 hover:decoration-primary-500 transition-colors">
+              Game modes
+            </LocaleLink>
+            <span aria-hidden className="text-slate-300">&middot;</span>
+            <LocaleLink to="/battles" className="hover:text-primary-700 underline decoration-slate-300 hover:decoration-primary-500 transition-colors">
+              Battle encyclopedia
+            </LocaleLink>
+            <span aria-hidden className="text-slate-300">&middot;</span>
+            <LocaleLink to="/collections" className="hover:text-primary-700 underline decoration-slate-300 hover:decoration-primary-500 transition-colors">
+              Collections
+            </LocaleLink>
+            <span aria-hidden className="text-slate-300">&middot;</span>
+            <LocaleLink to="/blog" className="hover:text-primary-700 underline decoration-slate-300 hover:decoration-primary-500 transition-colors">
+              All articles
+            </LocaleLink>
+          </div>
         </div>
       </motion.div>
 
@@ -423,7 +469,7 @@ function BlogPost() {
           className="mt-10"
         >
           <h2 className="text-xl font-bold text-slate-800 mb-4">Related Articles</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {relatedPosts.map(related => (
               <LocaleLink
                 key={related.slug}

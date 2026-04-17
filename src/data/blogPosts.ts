@@ -163,6 +163,18 @@ export const blogPosts: BlogPost[] = [
         content:
           'These ten battles represent just a fraction of the military encounters that shaped our world. Each one involved real people making decisions under extraordinary pressure, and understanding them gives us insight into how the modern world came to be. Think you can identify these battles from a single image? Try identifying these battles in BattleGuess and see how your knowledge of military history stacks up.',
       },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'Continue your journey through military history with these related guides and play the game at [BattleGuess](/).',
+        bullets: [
+          '[The Greatest Military Commanders of All Time](/blog/greatest-military-commanders-of-all-time) \u2014 deep dives on Alexander, Hannibal, Genghis Khan, and Napoleon',
+          '[5 Turning Points of World War II](/blog/world-war-ii-turning-points) \u2014 the five engagements that decided the modern world',
+          '[Top 10 Naval Battles That Ruled the Waves](/blog/top-10-naval-battles-that-ruled-the-waves) \u2014 from Salamis to Midway',
+          '[Battles Every Student Should Know](/blog/battles-every-student-should-know) \u2014 the essential curriculum every history reader needs',
+          'Browse every engagement in the [Battle encyclopedia](/battles) or try a mixed set in the [game modes](/modes).',
+        ],
+      },
     ],
   },
   {
@@ -244,6 +256,18 @@ export const blogPosts: BlogPost[] = [
           '[The Art of War by Sun Tzu](https://en.wikipedia.org/wiki/The_Art_of_War) \u2014 the foundational text on military strategy, still studied today',
           '[Warfare in the Ancient World](https://www.worldhistory.org/warfare/) \u2014 World History Encyclopedia\u2019s comprehensive overview',
           '[Ancient History Encyclopedia](https://www.worldhistory.org/) \u2014 free articles on ancient civilizations and their military systems',
+        ],
+      },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'Dig deeper into the ancient world and related eras with these guides, then put your knowledge to the test at [BattleGuess](/).',
+        bullets: [
+          '[Ancient Rome vs Ancient Greece: A Military Comparison](/blog/ancient-rome-vs-ancient-greece-military-comparison) \u2014 phalanx against legion, head to head',
+          '[The History of Cavalry: From Chariots to Tanks](/blog/history-of-cavalry-from-chariots-to-tanks) \u2014 mounted warfare across 4,000 years',
+          '[The Evolution of Siege Warfare](/blog/evolution-of-siege-warfare) \u2014 how armies cracked open fortified cities from Assyria onward',
+          '[Battles Every Student Should Know](/blog/battles-every-student-should-know) \u2014 the core ancient and medieval engagements to memorize',
+          'Browse every ancient engagement in the [Battle encyclopedia](/battles) or jump straight into [today\u2019s game](/).',
         ],
       },
     ],
@@ -332,6 +356,18 @@ export const blogPosts: BlogPost[] = [
         content:
           'The best way to retain military history knowledge is through active engagement rather than passive reading. Test yourself regularly, discuss battles with friends, and try to connect individual events to the larger historical narrative. Games like BattleGuess are excellent tools for this because they force you to recall specific details under pressure. Start with easy difficulty to build confidence, then gradually increase the challenge. Over time you will develop an instinctive sense for identifying eras, regions, and even specific battles from contextual clues alone.',
       },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'Ready to go from beginner to confident? These companion guides build on the foundations above, and you can practice everything you learn at [BattleGuess](/).',
+        bullets: [
+          '[Battles Every Student Should Know](/blog/battles-every-student-should-know) \u2014 the essential curriculum for exams and general knowledge',
+          '[Battlefield Tactics Explained for Beginners](/blog/battlefield-tactics-explained-for-beginners) \u2014 flanking, envelopment, and the hammer-and-anvil',
+          '[8 Ways to Improve Your BattleGuess Score](/blog/8-ways-to-improve-your-battleguess-score) \u2014 turn knowledge into points',
+          '[10 Most Decisive Battles in History](/blog/10-most-decisive-battles-in-history) \u2014 the starting-point highlights reel',
+          'Pick a mode from the [Game modes](/modes) page or explore the [Battle encyclopedia](/battles) to study before you play.',
+        ],
+      },
     ],
   },
   {
@@ -418,6 +454,18 @@ export const blogPosts: BlogPost[] = [
         content:
           'BattleGuess includes a comprehensive battle encyclopedia with details on every battle in the game. Browsing through the encyclopedia between game sessions is an excellent way to familiarize yourself with battles you have not encountered yet. Pay attention to the images, descriptions, and era groupings. The more battles you have seen outside of gameplay, the more likely you are to recognize them when they appear during a game.',
       },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'These companion guides pair well with the score-improvement tips above. Read them, then jump back into [BattleGuess](/) to put the strategy to work.',
+        bullets: [
+          '[Battlefield Tactics Explained for Beginners](/blog/battlefield-tactics-explained-for-beginners) \u2014 tactical vocabulary that makes images easier to read',
+          '[A Beginner\u2019s Guide to Military History](/blog/beginners-guide-to-military-history) \u2014 build the era knowledge your guesses rely on',
+          '[Battles Every Student Should Know](/blog/battles-every-student-should-know) \u2014 the highest-frequency battles you should lock in first',
+          '[10 Most Decisive Battles in History](/blog/10-most-decisive-battles-in-history) \u2014 recognisable heavyweights you will meet often',
+          'Try a new challenge type in [Game modes](/modes) or study profiles in the [Battle encyclopedia](/battles).',
+        ],
+      },
     ],
   },
   {
@@ -500,6 +548,18 @@ export const blogPosts: BlogPost[] = [
         content:
           'Siege warfare shaped not just military history but architecture, urban planning, and engineering. The star-shaped fortifications of the early modern period determined the layout of cities that still exist today. Techniques developed for undermining walls led to advances in mining and tunneling. The logistics of supplying besieging armies drove innovations in transportation and supply chain management. Understanding siege warfare provides insight into how human ingenuity has been applied to both attack and defense throughout history, and many of the most famous battles in BattleGuess involve sieges that tested the limits of both attacker and defender.',
       },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'Siege warfare touches almost every era. Follow these related guides and then test yourself at [BattleGuess](/).',
+        bullets: [
+          '[How Gunpowder Changed Warfare Forever](/blog/how-gunpowder-changed-warfare-forever) \u2014 the technology that made traditional castles obsolete',
+          '[The Crusades Explained: Key Battles and Lasting Legacy](/blog/crusades-explained-battles-and-legacy) \u2014 defining medieval sieges in the Holy Land',
+          '[The Ottoman Empire\u2019s Greatest Military Victories](/blog/ottoman-empire-greatest-military-victories) \u2014 the fall of Constantinople and beyond',
+          '[The History of Cavalry: From Chariots to Tanks](/blog/history-of-cavalry-from-chariots-to-tanks) \u2014 the mobile counterpart to siege warfare',
+          'Play an era-focused round from the [Game modes](/modes) page or browse fortifications in the [Battle encyclopedia](/battles).',
+        ],
+      },
     ],
   },
   {
@@ -569,7 +629,19 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Test Your Naval Knowledge',
         content:
-          'Naval battles have a distinctive visual vocabulary: ships under sail, cannon smoke across the water, aircraft diving toward carriers, and submarines lurking beneath the waves. In BattleGuess, naval battles are some of the most visually striking and recognizable images in the game. Check out our Naval Battles collection to explore all the maritime engagements, or jump into a game and see if you can identify these famous sea fights from their images.',
+          'Naval battles have a distinctive visual vocabulary: ships under sail, cannon smoke across the water, aircraft diving toward carriers, and submarines lurking beneath the waves. In BattleGuess, naval battles are some of the most visually striking and recognizable images in the game. Check out our Naval Battles [collection](/collections) to explore all the maritime engagements, or jump into a game and see if you can identify these famous sea fights from their images.',
+      },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'If the sea drew you in, these companion guides go deeper into the connected battles and commanders. Play the game at [BattleGuess](/) when you are ready.',
+        bullets: [
+          '[5 Turning Points of World War II](/blog/world-war-ii-turning-points) \u2014 Midway, the Pacific carrier war, and D-Day in context',
+          '[10 Most Decisive Battles in History](/blog/10-most-decisive-battles-in-history) \u2014 where Salamis, Trafalgar, and Midway sit in the bigger picture',
+          '[How Weather Decided Famous Battles](/blog/how-weather-decided-famous-battles) \u2014 storms, fog, and the Spanish Armada',
+          '[The Greatest Military Commanders of All Time](/blog/greatest-military-commanders-of-all-time) \u2014 Nelson, Themistocles, and Yamamoto in profile',
+          'Explore every sea fight in the [Battle encyclopedia](/battles) or pick a naval-heavy [collection](/collections).',
+        ],
       },
     ],
   },
@@ -656,6 +728,18 @@ export const blogPosts: BlogPost[] = [
         content:
           'The most effective study technique is active recall \u2014 testing yourself rather than passively re-reading notes. BattleGuess is built around this principle, challenging you to identify battles from visual clues and contextual hints. Playing regularly helps you build a mental library of battle imagery that makes studying more efficient and exam preparation more effective.',
       },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'Pair this study list with these deeper reads, then reinforce what you have learned at [BattleGuess](/).',
+        bullets: [
+          '[10 Most Decisive Battles in History](/blog/10-most-decisive-battles-in-history) \u2014 longer profiles of the heavyweight engagements',
+          '[The Greatest Military Commanders of All Time](/blog/greatest-military-commanders-of-all-time) \u2014 the people behind the victories',
+          '[A Beginner\u2019s Guide to Military History](/blog/beginners-guide-to-military-history) \u2014 an easy on-ramp if any era still feels unfamiliar',
+          '[8 Ways to Improve Your BattleGuess Score](/blog/8-ways-to-improve-your-battleguess-score) \u2014 turn exam knowledge into a strong gameplay streak',
+          'Revise on the go with the [Battle encyclopedia](/battles) or pick a themed challenge from [Game modes](/modes).',
+        ],
+      },
     ],
   },
   {
@@ -735,6 +819,18 @@ export const blogPosts: BlogPost[] = [
         content:
           'Many battles in BattleGuess are associated with famous commanders, and knowing their signature tactics can help you identify battles faster. If you see a cavalry charge at the decisive moment, think Alexander. If you see a trapped army being encircled, think Hannibal. If you see a carefully planned deception with converging forces, think Napoleon. The battles of great commanders are featured across multiple eras and difficulty levels in BattleGuess.',
       },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'Pair the stories of these commanders with the tactics and technology that made their victories possible. Then put yourself in the driver\u2019s seat at [BattleGuess](/).',
+        bullets: [
+          '[Battlefield Tactics Explained for Beginners](/blog/battlefield-tactics-explained-for-beginners) \u2014 envelopment, hammer-and-anvil, and more',
+          '[10 Most Decisive Battles in History](/blog/10-most-decisive-battles-in-history) \u2014 the battles these commanders fought at their peak',
+          '[Ancient Rome vs Ancient Greece: A Military Comparison](/blog/ancient-rome-vs-ancient-greece-military-comparison) \u2014 the systems Alexander and Caesar commanded',
+          '[The History of Cavalry: From Chariots to Tanks](/blog/history-of-cavalry-from-chariots-to-tanks) \u2014 the arm of decision for almost every great general',
+          'Find a commander\u2019s signature battle in the [Battle encyclopedia](/battles) or take a themed [game mode](/modes) challenge.',
+        ],
+      },
     ],
   },
   {
@@ -813,6 +909,18 @@ export const blogPosts: BlogPost[] = [
         heading: 'Recognizing Gunpowder-Era Battles',
         content:
           'In BattleGuess, gunpowder-era battles have distinctive visual markers: clouds of smoke, cannon positions, soldiers in line formations, and fortifications with angled bastions rather than tall walls. Learning to distinguish between early gunpowder battles (loose formations, hand cannons) and later ones (disciplined volleys, field artillery) is key to narrowing down the era and identifying specific battles.',
+      },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'Gunpowder touched every branch of warfare. These companions put the transformation in context, and you can spot each era in action at [BattleGuess](/).',
+        bullets: [
+          '[The Evolution of Siege Warfare](/blog/evolution-of-siege-warfare) \u2014 how cannon and bastion changed fortifications forever',
+          '[The History of Cavalry: From Chariots to Tanks](/blog/history-of-cavalry-from-chariots-to-tanks) \u2014 why gunpowder did not immediately end mounted combat',
+          '[The Ottoman Empire\u2019s Greatest Military Victories](/blog/ottoman-empire-greatest-military-victories) \u2014 gunpowder pioneers whose guns took Constantinople',
+          '[Battlefield Tactics Explained for Beginners](/blog/battlefield-tactics-explained-for-beginners) \u2014 how gunpowder reshaped the tactical playbook',
+          'Pick a gunpowder-era round in [Game modes](/modes) or scan firearms-era battles in the [Battle encyclopedia](/battles).',
+        ],
       },
     ],
   },
@@ -897,6 +1005,18 @@ export const blogPosts: BlogPost[] = [
         content:
           'These five turning points collectively illustrate how the war\u2019s momentum shifted irreversibly against the Axis powers. Each battle demonstrated different aspects of modern warfare: air power at Britain, urban warfare at Stalingrad, carrier warfare at Midway, combined arms at El Alamein, and amphibious operations at Normandy. Understanding these engagements is essential for anyone studying 20th-century history.',
       },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'Zoom out from WWII with these related guides, then identify the battles that defined the century at [BattleGuess](/).',
+        bullets: [
+          '[10 Most Decisive Battles in History](/blog/10-most-decisive-battles-in-history) \u2014 Stalingrad and Midway in the longer arc of history',
+          '[Top 10 Naval Battles That Ruled the Waves](/blog/top-10-naval-battles-that-ruled-the-waves) \u2014 Midway, Leyte Gulf, and the Pacific carrier war',
+          '[How Weather Decided Famous Battles](/blog/how-weather-decided-famous-battles) \u2014 the D-Day gamble and the winter that broke Napoleon',
+          '[Women in Military History: Warriors, Leaders, and Strategists](/blog/women-in-military-history) \u2014 snipers, pilots, and code-breakers of WWII',
+          'Jump into a modern-era challenge from [Game modes](/modes) or browse 20th-century engagements in the [Battle encyclopedia](/battles).',
+        ],
+      },
     ],
   },
   {
@@ -972,7 +1092,19 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Japanese Battles in BattleGuess',
         content:
-          'Japanese battles in BattleGuess are among the most visually distinctive in the game. Look for samurai armor with its distinctive helmet crests, castle walls with curved stone bases, and the unique landscape of the Japanese archipelago. The transition from sword-and-bow combat to gunpowder warfare is particularly visible in images from the late Sengoku period. Explore the East Asia era in BattleGuess to test your knowledge of these fascinating conflicts.',
+          'Japanese battles in BattleGuess are among the most visually distinctive in the game. Look for samurai armor with its distinctive helmet crests, castle walls with curved stone bases, and the unique landscape of the Japanese archipelago. The transition from sword-and-bow combat to gunpowder warfare is particularly visible in images from the late Sengoku period. Explore the East Asia era in [BattleGuess](/) to test your knowledge of these fascinating conflicts.',
+      },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'Japanese warfare connects to cavalry, gunpowder, and tactical doctrines from around the world. These companions expand the picture.',
+        bullets: [
+          '[The History of Cavalry: From Chariots to Tanks](/blog/history-of-cavalry-from-chariots-to-tanks) \u2014 the mounted warriors samurai descended from',
+          '[How Gunpowder Changed Warfare Forever](/blog/how-gunpowder-changed-warfare-forever) \u2014 why Nagashino was a world-historical turning point',
+          '[The Greatest Military Commanders of All Time](/blog/greatest-military-commanders-of-all-time) \u2014 Oda, Hideyoshi, and Tokugawa in global context',
+          '[Battlefield Tactics Explained for Beginners](/blog/battlefield-tactics-explained-for-beginners) \u2014 the tactical vocabulary behind Okehazama and Sekigahara',
+          'Study samurai-era battles in the [Battle encyclopedia](/battles) or test yourself with a fresh [game mode](/modes) round.',
+        ],
       },
     ],
   },
@@ -1047,6 +1179,18 @@ export const blogPosts: BlogPost[] = [
         content:
           'Crusade-era battles are visually striking in BattleGuess, featuring knights in distinctive cross-marked surcoats, desert fortifications, and the colorful banners of both European and Islamic forces. Battles from this era appear in both the Medieval Europe and Ottoman & Islamic categories. Understanding the visual differences between Crusader and Islamic forces helps identify these battles quickly. Look for cross motifs on shields and surcoats for Crusader forces, and crescent symbols and lighter armor for Islamic armies.',
       },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'The Crusades sit at the crossroads of siege warfare, Ottoman expansion, and medieval tactics. These related guides flesh out the surrounding story.',
+        bullets: [
+          '[The Evolution of Siege Warfare](/blog/evolution-of-siege-warfare) \u2014 how Acre, Jerusalem, and Antioch fell or held',
+          '[The Ottoman Empire\u2019s Greatest Military Victories](/blog/ottoman-empire-greatest-military-victories) \u2014 the Islamic power that followed Saladin',
+          '[The History of Cavalry: From Chariots to Tanks](/blog/history-of-cavalry-from-chariots-to-tanks) \u2014 heavy-lance charges that defined Crusader armies',
+          '[The Greatest Military Commanders of All Time](/blog/greatest-military-commanders-of-all-time) \u2014 Saladin and Richard the Lionheart in profile',
+          'Browse Crusader-era engagements in the [Battle encyclopedia](/battles) or try a medieval [game mode](/modes) round.',
+        ],
+      },
     ],
   },
   {
@@ -1117,7 +1261,19 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Revolutionary Battles in BattleGuess',
         content:
-          'American Revolution battles in BattleGuess feature distinctive visual elements: colonial militia in civilian clothing alongside Continental Army uniforms, British redcoats in formation, and the rural American landscape of forests, rivers, and farmland. These battles appear in the American Wars era and range from easy (Bunker Hill, Yorktown) to harder (Cowpens, Monmouth). Pay attention to the style of uniforms and weapons to distinguish Revolutionary War battles from later American conflicts.',
+          'American Revolution battles in BattleGuess feature distinctive visual elements: colonial militia in civilian clothing alongside Continental Army uniforms, British redcoats in formation, and the rural American landscape of forests, rivers, and farmland. These battles appear in the American Wars era and range from easy (Bunker Hill, Yorktown) to harder (Cowpens, Monmouth). Pay attention to the style of uniforms and weapons to distinguish Revolutionary War battles from later American conflicts. You can compare American uniforms directly in the [Battle encyclopedia](/battles) on [BattleGuess](/).',
+      },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'The American Revolution is one chapter of a much larger independence story. These companion guides widen the lens.',
+        bullets: [
+          '[Latin American Wars of Independence](/blog/latin-american-wars-of-independence) \u2014 how Bolivar and San Martin repeated the feat in the south',
+          '[10 Most Decisive Battles in History](/blog/10-most-decisive-battles-in-history) \u2014 where Saratoga and Yorktown rank among world-history turning points',
+          '[Battlefield Tactics Explained for Beginners](/blog/battlefield-tactics-explained-for-beginners) \u2014 siege craft, skirmishing, and why frontal assaults failed at Bunker Hill',
+          '[The Greatest Military Commanders of All Time](/blog/greatest-military-commanders-of-all-time) \u2014 Washington, Lafayette, and the Prussian trainers of Valley Forge',
+          'Test your Revolution knowledge with a [game mode](/modes) round or browse every colonial-era battle in the [encyclopedia](/battles).',
+        ],
       },
     ],
   },
@@ -1190,7 +1346,19 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Explore Latin American Battles',
         content:
-          'Latin American battles are among the newest additions to BattleGuess, covering conflicts from the Inca Empire through the Chaco War. These battles feature distinctive visual elements: Andean mountain landscapes, tropical forests, cavalry-heavy warfare on the pampas, and the unique mixture of European military traditions with indigenous fighting styles. Explore the Latin American Wars era in BattleGuess to test your knowledge of these under-studied but fascinating conflicts.',
+          'Latin American battles are among the newest additions to BattleGuess, covering conflicts from the Inca Empire through the Chaco War. These battles feature distinctive visual elements: Andean mountain landscapes, tropical forests, cavalry-heavy warfare on the pampas, and the unique mixture of European military traditions with indigenous fighting styles. Explore the Latin American Wars era in [BattleGuess](/) to test your knowledge of these under-studied but fascinating conflicts.',
+      },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'Latin America\u2019s wars of independence sit in a much larger global story. Broaden the picture with these guides.',
+        bullets: [
+          '[The American Revolution: Key Battles That Won Independence](/blog/american-revolution-key-battles) \u2014 the northern independence story that inspired Bolivar',
+          '[The Greatest Military Commanders of All Time](/blog/greatest-military-commanders-of-all-time) \u2014 where Bolivar and San Martin rank among history\u2019s best',
+          '[Battlefield Tactics Explained for Beginners](/blog/battlefield-tactics-explained-for-beginners) \u2014 the maneuvers behind Boyaca, Ayacucho, and Puebla',
+          '[How Weather Decided Famous Battles](/blog/how-weather-decided-famous-battles) \u2014 the Andes crossings and their extreme conditions',
+          'Browse every Latin American engagement in the [Battle encyclopedia](/battles) or try an independence-era [game mode](/modes) round.',
+        ],
       },
     ],
   },
@@ -1268,7 +1436,19 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Spotting Cavalry in BattleGuess',
         content:
-          'Cavalry battles are some of the most dynamic and visually exciting images in BattleGuess. Look for the type of mount and equipment to determine the era: chariots suggest ancient Egypt or Mesopotamia, unarmored horsemen suggest steppe or early cavalry, fully armored knights indicate the medieval period, and hussars or dragoons point to the Napoleonic era. The transition from horse to tank is one of the clearest visual markers in the game for identifying the time period of a battle.',
+          'Cavalry battles are some of the most dynamic and visually exciting images in BattleGuess. Look for the type of mount and equipment to determine the era: chariots suggest ancient Egypt or Mesopotamia, unarmored horsemen suggest steppe or early cavalry, fully armored knights indicate the medieval period, and hussars or dragoons point to the Napoleonic era. The transition from horse to tank is one of the clearest visual markers in the game for identifying the time period of a battle at [BattleGuess](/).',
+      },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'Cavalry winds through every era. Continue with these related guides, then put the era signatures you have just learned to the test.',
+        bullets: [
+          '[How Gunpowder Changed Warfare Forever](/blog/how-gunpowder-changed-warfare-forever) \u2014 the technology that slowly retired the horse',
+          '[Samurai Battles: The Warrior Conflicts of Feudal Japan](/blog/samurai-battles-feudal-japan) \u2014 mounted samurai before and after Nagashino',
+          '[Battlefield Tactics Explained for Beginners](/blog/battlefield-tactics-explained-for-beginners) \u2014 the hammer-and-anvil built around cavalry',
+          '[How Ancient Warfare Shaped the Modern World](/blog/how-ancient-warfare-shaped-modern-world) \u2014 from Egyptian chariots to Alexander\u2019s Companions',
+          'Identify horse, tank, and chariot battles in the [Battle encyclopedia](/battles) or start a fresh [game mode](/modes) round.',
+        ],
       },
     ],
   },
@@ -1346,7 +1526,19 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Ottoman Battles in BattleGuess',
         content:
-          'Ottoman battles in BattleGuess feature distinctive visual elements: Janissary troops with their characteristic headgear, massive siege cannons, galley fleets in the Mediterranean, and the architectural backdrop of mosques and minarets. These battles span nearly five centuries and appear in the Ottoman & Islamic era. Understanding Ottoman military evolution from early Anatolian raiders to gunpowder-equipped imperial forces helps identify the specific time period within this long and rich military history.',
+          'Ottoman battles in BattleGuess feature distinctive visual elements: Janissary troops with their characteristic headgear, massive siege cannons, galley fleets in the Mediterranean, and the architectural backdrop of mosques and minarets. These battles span nearly five centuries and appear in the Ottoman & Islamic era. Understanding Ottoman military evolution from early Anatolian raiders to gunpowder-equipped imperial forces helps identify the specific time period within this long and rich military history. Track it live at [BattleGuess](/).',
+      },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'The Ottoman story intersects with the Crusades, siege craft, and the global gunpowder revolution. These guides widen the frame.',
+        bullets: [
+          '[The Crusades Explained: Key Battles and Lasting Legacy](/blog/crusades-explained-battles-and-legacy) \u2014 the wars the Ottomans inherited and eventually closed',
+          '[The Evolution of Siege Warfare](/blog/evolution-of-siege-warfare) \u2014 how Mehmed\u2019s cannons ended the age of walls',
+          '[How Gunpowder Changed Warfare Forever](/blog/how-gunpowder-changed-warfare-forever) \u2014 where Ottoman artillery sat in world history',
+          '[The Greatest Military Commanders of All Time](/blog/greatest-military-commanders-of-all-time) \u2014 Mehmed, Suleiman, and the generals who carried the crescent',
+          'Study Ottoman battles in the [Battle encyclopedia](/battles) or spin up a themed [game mode](/modes) round.',
+        ],
       },
     ],
   },
@@ -1419,7 +1611,19 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Recognizing Their Battles',
         content:
-          'Several battles in BattleGuess are directly connected to women\u2019s military leadership. The Siege of Orl\u00e9ans, the Battle of Actium, and numerous other engagements feature women as key decision-makers. When you see the distinctive banner of a French army rallying at a besieged city, think Joan of Arc. When you see an Egyptian fleet in the Mediterranean, consider Cleopatra. These battles remind us that military history belongs to everyone who fought to shape it.',
+          'Several battles in BattleGuess are directly connected to women\u2019s military leadership. The Siege of Orl\u00e9ans, the Battle of Actium, and numerous other engagements feature women as key decision-makers. When you see the distinctive banner of a French army rallying at a besieged city, think Joan of Arc. When you see an Egyptian fleet in the Mediterranean, consider Cleopatra. These battles remind us that military history belongs to everyone who fought to shape it. Meet more of those stories at [BattleGuess](/).',
+      },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'Women\u2019s military history cuts across every era on the site. These companions drop you into the fuller context.',
+        bullets: [
+          '[The Greatest Military Commanders of All Time](/blog/greatest-military-commanders-of-all-time) \u2014 compare with the male-dominated canon to see what was missing',
+          '[5 Turning Points of World War II](/blog/world-war-ii-turning-points) \u2014 the engagements where Soviet women flew, shot, and broke codes',
+          '[10 Most Decisive Battles in History](/blog/10-most-decisive-battles-in-history) \u2014 where Salamis, Actium, and Orleans fit in the bigger story',
+          '[The Crusades Explained: Key Battles and Lasting Legacy](/blog/crusades-explained-battles-and-legacy) \u2014 Eleanor of Aquitaine, Queen Melisende, and the medieval women at the heart of the wars',
+          'Find battles led or defined by women in the [Battle encyclopedia](/battles) or test yourself in a [game mode](/modes) round.',
+        ],
       },
     ],
   },
@@ -1495,7 +1699,19 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Weather Clues in BattleGuess',
         content:
-          'Weather conditions are valuable visual clues in BattleGuess images. Snowy landscapes suggest winter battles like the Bulge or Chosin Reservoir. Muddy, rain-soaked fields point to battles like Agincourt or Passchendaele. Desert heat waves suggest Middle Eastern or North African engagements. Stormy seas point to naval battles where weather played a decisive role. Training yourself to read weather conditions in battle images is one of the most effective strategies for narrowing down the possibilities.',
+          'Weather conditions are valuable visual clues in BattleGuess images. Snowy landscapes suggest winter battles like the Bulge or Chosin Reservoir. Muddy, rain-soaked fields point to battles like Agincourt or Passchendaele. Desert heat waves suggest Middle Eastern or North African engagements. Stormy seas point to naval battles where weather played a decisive role. Training yourself to read weather conditions in battle images is one of the most effective strategies for narrowing down the possibilities at [BattleGuess](/).',
+      },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'Weather interlocks with naval engagements, WWII gambles, and countless famous defeats. These guides deepen the story.',
+        bullets: [
+          '[10 Most Decisive Battles in History](/blog/10-most-decisive-battles-in-history) \u2014 many decided by snow, mud, or storm',
+          '[5 Turning Points of World War II](/blog/world-war-ii-turning-points) \u2014 the D-Day weather gamble and the Russian winter',
+          '[Top 10 Naval Battles That Ruled the Waves](/blog/top-10-naval-battles-that-ruled-the-waves) \u2014 Salamis, the Spanish Armada, and Trafalgar\u2019s weather',
+          '[Battlefield Tactics Explained for Beginners](/blog/battlefield-tactics-explained-for-beginners) \u2014 how commanders turned terrain and climate into force multipliers',
+          'Hunt for weather-decided battles in the [Battle encyclopedia](/battles) or test your eye on [today\u2019s game](/).',
+        ],
       },
     ],
   },
@@ -1580,7 +1796,19 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Identify the Difference in BattleGuess',
         content:
-          'In BattleGuess, Greek and Roman battles have distinct visual characteristics. Greek battles feature rounded shields, bronze armor, crested helmets, and tight phalanx formations on open plains. Roman battles show rectangular shields (scutum), segmented armor, and more spread-out flexible formations, often with fortifications or siege works visible. Learning to distinguish these visual signatures instantly narrows your options and helps you identify specific battles within each civilization.',
+          'In BattleGuess, Greek and Roman battles have distinct visual characteristics. Greek battles feature rounded shields, bronze armor, crested helmets, and tight phalanx formations on open plains. Roman battles show rectangular shields (scutum), segmented armor, and more spread-out flexible formations, often with fortifications or siege works visible. Learning to distinguish these visual signatures instantly narrows your options and helps you identify specific battles within each civilization at [BattleGuess](/).',
+      },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'The Rome-vs-Greece comparison opens onto the wider story of ancient warfare. Use these companions to go deeper.',
+        bullets: [
+          '[How Ancient Warfare Shaped the Modern World](/blog/how-ancient-warfare-shaped-modern-world) \u2014 the long shadow Greek and Roman tactics cast over the modern era',
+          '[The Greatest Military Commanders of All Time](/blog/greatest-military-commanders-of-all-time) \u2014 Alexander, Hannibal, Scipio, and Caesar in profile',
+          '[The History of Cavalry: From Chariots to Tanks](/blog/history-of-cavalry-from-chariots-to-tanks) \u2014 the arm that flanked every phalanx and legion',
+          '[Battlefield Tactics Explained for Beginners](/blog/battlefield-tactics-explained-for-beginners) \u2014 the flanking and envelopment maneuvers that broke the phalanx',
+          'Identify Greek or Roman battles in the [Battle encyclopedia](/battles) or start an ancient-era [game mode](/modes) round.',
+        ],
       },
     ],
   },
@@ -1664,7 +1892,19 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Spotting Tactics in BattleGuess',
         content:
-          'Understanding tactics helps you identify battles in BattleGuess because many famous engagements are depicted at the moment their defining tactic was executed. An image showing forces closing around a trapped army suggests Cannae or Stalingrad. A cavalry charge hitting an exposed flank suggests Gaugamela or Austerlitz. A defensive position in a narrow pass suggests Thermopylae or Roncesvalles. By recognizing the tactical situation in an image, you can narrow down the possibilities before examining other visual clues.',
+          'Understanding tactics helps you identify battles in BattleGuess because many famous engagements are depicted at the moment their defining tactic was executed. An image showing forces closing around a trapped army suggests Cannae or Stalingrad. A cavalry charge hitting an exposed flank suggests Gaugamela or Austerlitz. A defensive position in a narrow pass suggests Thermopylae or Roncesvalles. By recognizing the tactical situation in an image, you can narrow down the possibilities before examining other visual clues at [BattleGuess](/).',
+      },
+      {
+        heading: 'Keep Exploring BattleGuess',
+        content:
+          'Tactics are most memorable when you see them in action. Pair these companions with rounds at [BattleGuess](/) to lock the concepts in.',
+        bullets: [
+          '[8 Ways to Improve Your BattleGuess Score](/blog/8-ways-to-improve-your-battleguess-score) \u2014 turn tactical awareness into points',
+          '[A Beginner\u2019s Guide to Military History](/blog/beginners-guide-to-military-history) \u2014 the era and geography context behind every tactic',
+          '[The Greatest Military Commanders of All Time](/blog/greatest-military-commanders-of-all-time) \u2014 the commanders who pioneered these maneuvers',
+          '[Ancient Rome vs Ancient Greece: A Military Comparison](/blog/ancient-rome-vs-ancient-greece-military-comparison) \u2014 the system-level case study of flexibility vs rigidity',
+          'Spot tactical situations live in the [Battle encyclopedia](/battles) or pick a themed [game mode](/modes) challenge.',
+        ],
       },
     ],
   },
