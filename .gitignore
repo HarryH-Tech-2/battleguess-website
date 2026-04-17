@@ -32,3 +32,7 @@ dist-ssr
 
 .vercel
 .env*.local
+
+# Local setup notes (may contain credentials / project IDs)
+gsc-ga-setup.txt
+*.iam.gserviceaccount.com*.json
