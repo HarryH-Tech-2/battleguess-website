@@ -36,3 +36,7 @@ dist-ssr
 # Local setup notes (may contain credentials / project IDs)
 gsc-ga-setup.txt
 *.iam.gserviceaccount.com*.json
+
+# Battle image regen staging + backups
+public/battles/_staging/
+public/battles/_backup-*/
