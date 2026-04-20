@@ -126,11 +126,11 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
   const { t } = useTranslation();
   return (
     <div className="space-y-3">
-      {/* Image Container — square aspect ratio matches the 1080x1080 source images
-          so nothing letterboxes. */}
-      <div className="relative overflow-hidden rounded-2xl shadow-xl max-h-[70vh]">
-          <div className="aspect-square">
-            <AnimatePresence mode="wait">
+      {/* Image Container — square aspect ratio matches the 1080x1080 source images.
+          Cap at 70vh on both width and height so the square shrinks (not clips)
+          on short viewports. */}
+      <div className="relative overflow-hidden rounded-2xl shadow-xl aspect-square max-h-[70vh] max-w-[70vh] mx-auto">
+          <AnimatePresence mode="wait">
               {isLoading ? (
                 <motion.div
                   key="loading"
@@ -162,7 +162,7 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
                   alt={battleName ? `Battle scene of ${battleName}` : 'Historical battle scene'}
                   width={1080}
                   height={1080}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   initial={{ opacity: 0, scale: 1.02 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
@@ -175,7 +175,6 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
                 <PlaceholderVideo />
               )}
             </AnimatePresence>
-          </div>
       </div>
 
       {/* Date display below image */}
