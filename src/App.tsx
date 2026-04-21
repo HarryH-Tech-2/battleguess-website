@@ -792,8 +792,8 @@ function App() {
                 </div>
 
                 {/* Next Battle button directly under image for mobile convenience */}
-                <div className="mb-6">
-                  <Button variant="primary" size="lg" onClick={handleNextBattle} className="w-full">
+                <div className="mb-6 flex justify-center">
+                  <Button variant="primary" size="lg" onClick={handleNextBattle} className="w-full max-w-xs">
                     {t('result.nextBattle')}
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

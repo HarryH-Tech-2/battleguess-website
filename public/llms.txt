@@ -1,6 +1,6 @@
 # BattleGuess
 
-> BattleGuess is a free browser-based historical battle guessing game at https://battleguess.app. Players identify famous battles from images across 225 battles spanning 9 historical eras, with 5 different game modes. No account or download required.
+> BattleGuess is a free browser-based military history game at https://battleguess.app. Players identify famous battles from images across 225 battles spanning 9 historical eras, with 5 different game modes. No account or download required.
 
 BattleGuess covers battles from Ancient Egypt and Mesopotamia through to the World Wars and South American independence wars. Each battle includes an image, hints, historical facts, location data, and difficulty rating. The game features scoring, streaks, achievements, a global leaderboard, and daily challenges.
 
