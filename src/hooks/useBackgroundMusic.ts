@@ -29,19 +29,28 @@ export function useBackgroundMusic(defaultSrc: string) {
 
   // Create/replace audio element when track changes
   useEffect(() => {
-    // preload='none' prevents browsers from fetching audio metadata on page
-    // load — each music file is 4–6MB, and the user may never unmute. The
-    // file is fetched on demand when play() is called below.
+    // On initial mount we keep preload='none' so we don't fetch 4–6MB before
+    // the user has even chosen to unmute. But once the user has interacted
+    // (e.g. picked a different track), start fetching eagerly so playback
+    // kicks in as soon as the browser has enough buffered — this is what the
+    // user perceives as "the song starts quickly after changing it".
     const audio = new Audio();
-    audio.preload = 'none';
+    audio.preload = hasInteracted.current ? 'auto' : 'none';
     audio.src = currentTrack.src;
     audio.loop = true;
     audio.volume = 0.3;
     audioRef.current = audio;
 
-    // If music is playing (not muted and user has interacted), start the new track
+    // If music is playing (not muted and user has interacted), start the new
+    // track. Also listen for `canplay` so we kick off playback the instant
+    // the browser has buffered enough — otherwise play() may wait for a
+    // larger buffer window before producing audible sound.
     if (!isMuted && hasInteracted.current) {
-      audio.play().catch(() => {});
+      const tryPlay = () => {
+        audio.play().catch(() => {});
+      };
+      tryPlay();
+      audio.addEventListener('canplay', tryPlay, { once: true });
     }
 
     return () => {

@@ -108,6 +108,18 @@ export const blogPosts: BlogPost[] = [
         question: 'Did the Battle of Thermopylae actually change history?',
         answer: 'Yes. Although the Greeks lost the pass, the delay allowed Athens to evacuate and prepare the navy that won at Salamis, ultimately preserving Greek civilization from Persian conquest.',
       },
+      {
+        question: 'Who coined the idea of "decisive battles"?',
+        answer: 'The concept was popularized by the English historian Edward Creasy in his 1851 book "The Fifteen Decisive Battles of the World." His framework, focused on long-term political and cultural impact, still shapes how writers rank major engagements today.',
+      },
+      {
+        question: 'Are decisive battles still possible in modern warfare?',
+        answer: 'Most modern historians argue that industrial and nuclear-age conflicts are decided by campaigns and economies rather than single battles. Engagements like Midway or Stalingrad are still labelled decisive, but they functioned as turning points within much larger systems of attrition.',
+      },
+      {
+        question: 'How can I study a decisive battle in depth?',
+        answer: 'Start with a modern academic narrative, then read at least one primary source and one opposing perspective. Walking or viewing the terrain, even through maps and satellite imagery, dramatically improves your understanding of why commanders made the choices they did.',
+      },
     ],
     relatedBattleIds: [2, 42, 4, 75, 1, 5, 11],
     sections: [
@@ -144,7 +156,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'The World Wars: Stalingrad and Midway',
         content:
-          'The Battle of Stalingrad, fought from August 1942 to February 1943, was the bloodiest battle in human history and marked the turning point of the Eastern Front in World War II. The Soviet encirclement and destruction of the German 6th Army shattered the myth of Wehrmacht invincibility and began the long Soviet push westward to Berlin.\n\nIn the Pacific, the Battle of Midway in June 1942 saw the United States Navy sink four Japanese aircraft carriers in a single engagement, shifting naval superiority in the Pacific and putting Japan on the defensive for the remainder of the war. The [National WWII Museum](https://www.nationalww2museum.org/) provides excellent resources for exploring these engagements in depth.',
+          'The Battle of Stalingrad, fought from August 1942 to February 1943, was the bloodiest battle in human history and marked the turning point of the Eastern Front in World War II. The Soviet encirclement and destruction of the German 6th Army shattered the myth of Wehrmacht invincibility and began the long Soviet push westward to Berlin.\n\nIn the Pacific, the Battle of Midway in June 1942 saw the United States Navy sink four Japanese aircraft carriers in a single engagement, shifting naval superiority in the Pacific and putting Japan on the defensive for the remainder of the war. The [National WWII Museum](https://www.nationalww2museum.org/) provides excellent resources for exploring these engagements in depth.\n\nWhat made both battles decisive was not just their outcomes but how they reshaped expectations on every side. After Stalingrad, German commanders privately acknowledged that the strategic initiative in the east had been lost for good, and Axis allies from Romania to Italy began quietly hedging their political bets. After Midway, Japanese naval planners shifted from offensive carrier operations to a defensive perimeter strategy they never recovered from. In both cases the material losses \u2014 aircrews, ships, trained staff officers \u2014 were as damaging as the territory and prestige surrendered. Decisive battles are often measured in the capabilities they destroy, not just the ground they change hands over.',
       },
       {
         heading: 'Honourable Mentions',
@@ -162,6 +174,22 @@ export const blogPosts: BlogPost[] = [
         heading: 'Test Your Knowledge',
         content:
           'These ten battles represent just a fraction of the military encounters that shaped our world. Each one involved real people making decisions under extraordinary pressure, and understanding them gives us insight into how the modern world came to be. Think you can identify these battles from a single image? Try identifying these battles in BattleGuess and see how your knowledge of military history stacks up.',
+      },
+      {
+        heading: 'What the Sources Actually Say',
+        content:
+          'Much of what we know about ancient decisive battles comes from a surprisingly small group of surviving writers \u2014 and their biases shape the stories we inherit. Herodotus and Thucydides give us most of the Greek engagements, Livy and Polybius frame the Punic Wars, and Arrian\u2019s account of Alexander draws on now-lost memoirs written by his generals. None of these authors were neutral observers, and several wrote decades or even centuries after the events they describe.\n\nFor later battles, the source base broadens but does not always sharpen. The Bayeux Tapestry tells the Norman side of Hastings; Byzantine and Ottoman chroniclers give radically different accounts of Constantinople in 1453. Modern historians work by triangulating these voices against archaeology, terrain surveys, and surviving administrative records. When you read about a "decisive" engagement, it is worth asking whose version you are hearing \u2014 the winners almost always shaped the first draft.',
+        bullets: [
+          'Greek classics \u2014 Herodotus, Thucydides, Xenophon, and later Arrian and Plutarch',
+          'Roman voices \u2014 Polybius, Livy, Caesar\u2019s own commentaries, and Tacitus',
+          'Medieval chronicles \u2014 often written by clergy with clear political loyalties',
+          'Modern battles \u2014 war diaries, dispatches, and state archives open a much wider evidentiary base',
+        ],
+      },
+      {
+        heading: 'Counterfactuals and Scholarly Debate',
+        content:
+          'Calling a battle "decisive" is itself a historical argument, and not all historians accept the label. Critics of the decisive-battles tradition \u2014 which traces back to [Edward Creasy](https://en.wikipedia.org/wiki/Edward_Shepherd_Creasy) \u2014 argue that focusing on single engagements exaggerates the power of individual days and underplays the long economic, demographic, and institutional trends that really shape civilizations. A Persian victory at Salamis, for example, might still have failed to hold Greece for long; a German win at Stalingrad would have faced the same Soviet manpower and industrial depth the following year.\n\nCounterfactual thinking \u2014 carefully asking "what if?" \u2014 is useful precisely because it disciplines the claim of decisiveness. If the broader outcome would have been similar either way, the battle matters less than it seems. If the divergence is genuinely enormous, the case for calling it decisive grows stronger. Reading a good counterfactual essay alongside a traditional narrative is one of the fastest ways to sharpen your own judgement.',
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -208,6 +236,18 @@ export const blogPosts: BlogPost[] = [
         question: 'Why were Roman roads originally built?',
         answer: 'Roman roads were built primarily for military deployment, allowing legions to move quickly across the empire. Many modern European highways still follow these ancient routes.',
       },
+      {
+        question: 'How big were ancient armies really?',
+        answer: 'Ancient sources often inflate enemy numbers for dramatic effect, sometimes by an order of magnitude. Modern historians cross-check logistics, terrain, and population estimates, and usually conclude that even major ancient armies rarely exceeded the low tens of thousands.',
+      },
+      {
+        question: 'Did ancient soldiers wear uniforms?',
+        answer: 'Full standardised uniforms were rare, but units often shared recognisable equipment, shield devices, and tunic colours. Roman legions came closest to a true uniform system, with regulated armour patterns and unit insignia on shields.',
+      },
+      {
+        question: 'What role did women play in ancient warfare?',
+        answer: 'Women were usually barred from front-line combat but were central to logistics, medicine, and the defence of besieged cities. Some societies, including certain Scythian and Sarmatian groups, included armed women whose graves have been confirmed by modern archaeology.',
+      },
     ],
     relatedBattleIds: [31, 42, 73],
     sections: [
@@ -230,7 +270,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Roman Engineering and Logistics',
         content:
-          'Rome\u2019s military success rested not just on battlefield prowess but on engineering and logistics. The Roman legion was a self-contained fighting unit that built fortified camps every night on the march, constructed roads that connected an empire spanning three continents, and employed siege engineers capable of taking any fortification. The [Roman road network](https://en.wikipedia.org/wiki/Roman_roads), originally built for military deployment, became the transportation backbone of Europe and many modern European highways still follow Roman routes. Roman military law, rank structures, and organizational principles directly influenced the development of Western military tradition.',
+          'Rome\u2019s military success rested not just on battlefield prowess but on engineering and logistics. The Roman legion was a self-contained fighting unit that built fortified camps every night on the march, constructed roads that connected an empire spanning three continents, and employed siege engineers capable of taking any fortification. The [Roman road network](https://en.wikipedia.org/wiki/Roman_roads), originally built for military deployment, became the transportation backbone of Europe and many modern European highways still follow Roman routes. Roman military law, rank structures, and organizational principles directly influenced the development of Western military tradition.\n\nThe legacy of Roman military engineering runs deeper than surviving roads and aqueducts. The grid layout of cities from London to Cologne began as the rectangular plan of a legionary camp, and many European universities still use Latin military vocabulary \u2014 castrum, cohors, legatus \u2014 in their administrative life. Roman manuals on fortification, surveying, and water management were copied and studied throughout the medieval period and rediscovered by Renaissance architects who designed the star forts of the sixteenth century. When modern engineers talk about standardised units, modular construction, and disciplined logistics, they are often echoing solutions first worked out by centurions and their engineers on the frontiers of the empire.',
       },
       {
         heading: 'Technology Transfer Through Conflict',
@@ -247,6 +287,22 @@ export const blogPosts: BlogPost[] = [
         heading: 'Lasting Political Legacies',
         content:
           'The political boundaries drawn by ancient conquests are still visible on modern maps. Alexander\u2019s empire spread Greek language and culture across the Middle East, creating the Hellenistic world whose influence persisted through Roman and Byzantine rule into the present day. Roman conquests determined which parts of Europe speak Romance languages and which retained Germanic or Celtic tongues. The concept of citizenship, republican government, and codified law \u2014 all of which were shaped by Rome\u2019s military expansion \u2014 became the intellectual foundation of modern Western democracies.',
+      },
+      {
+        heading: 'Ancient Logistics and the Birth of the Supply Train',
+        content:
+          'Long before strategy manuals existed, ancient commanders discovered that battles were usually won or lost by whoever could feed and water their army the longest. A [Roman legion](https://en.wikipedia.org/wiki/Roman_legion) on campaign needed enormous daily quantities of grain, fodder for pack animals, and fresh water, and entire bureaucracies evolved to keep that flow moving. The Persian Royal Road, Egyptian granary networks, and Carthaginian naval convoys were all logistical answers to the same fundamental problem \u2014 how do you keep thousands of armed men alive in hostile territory?\n\nThese systems left cultural fingerprints that far outlasted the armies they served. Standardised weights and measures, state-run bakeries, written requisition orders, and centralised tax collection all matured under military pressure. Modern supply chains \u2014 from just-in-time manufacturing to military expeditionary logistics \u2014 still rest on principles first worked out when a quartermaster had to decide how many wagons of wheat a legion needed to reach the Rhine.',
+        bullets: [
+          'A legion on campaign required roughly a tonne of grain per day for soldiers alone',
+          'Persian royal couriers inspired later postal and messenger systems',
+          'Greek city-states pioneered written contracts for mercenary supply',
+          'Carthaginian naval logistics enabled Hannibal\u2019s Iberian operations for years at a time',
+        ],
+      },
+      {
+        heading: 'Archaeology and What the Battlefields Still Reveal',
+        content:
+          'Much of our evolving picture of ancient warfare comes not from texts but from the ground itself. Battlefield archaeology at sites such as the [Teutoburg Forest](https://en.wikipedia.org/wiki/Battle_of_the_Teutoburg_Forest) has overturned the old written narrative, locating the actual line of ambush through metal-detector surveys of Roman coins, hobnails, and weapon fragments. Similar work at Greek and Punic sites has shown that ancient combat was often messier, more compressed, and more mobile than neat diagrams in textbooks suggest.\n\nScientific techniques have added new layers. Isotope analysis of skeletal remains tells us where soldiers grew up; chemical residues on weapons reveal what materials they were used against; aerial LiDAR uncovers earthworks invisible from the ground. The Roman siege works around Alesia, for example, have been mapped in extraordinary detail using modern survey technology. For beginners, exploring these findings alongside the classical sources \u2014 and comparing them with engagements in the [Battle encyclopedia](/battles) \u2014 is one of the most rewarding ways into ancient military history.',
       },
       {
         heading: 'Further Reading',
@@ -303,6 +359,18 @@ export const blogPosts: BlogPost[] = [
         question: 'What is the difference between military strategy and tactics?',
         answer: 'Strategy is the big-picture plan for winning a war or campaign, while tactics are the specific maneuvers used to arrange and move troops during an individual battle.',
       },
+      {
+        question: 'Do I need to know a lot of geography first?',
+        answer: 'A basic mental map of the world helps, but you can build it as you go. Whenever a new region appears in your reading, spend a minute locating it on a modern map and noting nearby rivers, mountains, and coastlines.',
+      },
+      {
+        question: 'Is it worth reading primary sources as a beginner?',
+        answer: 'Yes, in small doses. A short passage from Thucydides, Caesar, or a World War II memoir will teach you more about how people understood their own wars than any summary. Pair them with a modern commentary so you do not miss the context.',
+      },
+      {
+        question: 'How do I avoid getting overwhelmed by dates?',
+        answer: 'Focus on sequences and causes rather than exact years. Knowing that Hastings came before the Crusades, or that Waterloo came after the French Revolution, matters far more than memorising every date. Specific years stick naturally once the framework is in place.',
+      },
     ],
     relatedBattleIds: [2, 42, 1],
     sections: [
@@ -325,7 +393,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Key Concepts to Understand',
         content:
-          'A few core concepts make military history much easier to follow. Strategy refers to the big-picture plan for winning a war, while tactics are the specific maneuvers used in individual battles. Logistics \u2014 the movement of supplies, food, and reinforcements \u2014 is often the deciding factor in prolonged conflicts, even though it gets less attention than dramatic charges and last stands. Understanding the difference between offensive and defensive warfare, and why commanders choose one over the other, will help you analyze almost any battle you encounter.',
+          'A few core concepts make military history much easier to follow. Strategy refers to the big-picture plan for winning a war, while tactics are the specific maneuvers used in individual battles. Logistics \u2014 the movement of supplies, food, and reinforcements \u2014 is often the deciding factor in prolonged conflicts, even though it gets less attention than dramatic charges and last stands. Understanding the difference between offensive and defensive warfare, and why commanders choose one over the other, will help you analyze almost any battle you encounter.\n\nTwo more concepts quietly shape almost every engagement you will read about: doctrine and command intent. Doctrine is the shared set of assumptions an army carries into combat \u2014 how it expects to move, fight, and communicate \u2014 and it often explains why two forces with similar weapons behave so differently. Command intent is the idea that subordinates should understand their commander\u2019s overall goal well enough to adapt when plans fall apart. When you notice these two threads, battles stop looking like collections of random decisions and start looking like the meeting of two organisations, each with its own habits, language, and blind spots. That shift in perspective is what separates casual reading from genuine understanding.',
         bullets: [
           'Strategy \u2014 the overall plan for winning a war or campaign',
           'Tactics \u2014 how troops are arranged and maneuver during a specific battle',
@@ -355,6 +423,22 @@ export const blogPosts: BlogPost[] = [
         heading: 'Building Knowledge Over Time',
         content:
           'The best way to retain military history knowledge is through active engagement rather than passive reading. Test yourself regularly, discuss battles with friends, and try to connect individual events to the larger historical narrative. Games like BattleGuess are excellent tools for this because they force you to recall specific details under pressure. Start with easy difficulty to build confidence, then gradually increase the challenge. Over time you will develop an instinctive sense for identifying eras, regions, and even specific battles from contextual clues alone.',
+      },
+      {
+        heading: 'How to Read a Battle Map',
+        content:
+          'Battle maps look intimidating at first, but they follow a small set of conventions you can learn quickly. Friendly forces are almost always shown in blue, opposing forces in red, with unit symbols indicating infantry (crossed lines in a box), cavalry (single diagonal), or artillery (filled circle). Arrows show movement, dashed lines show planned or attempted moves, and hatched shapes usually mark fortifications or entrenchments. Once these basics click, you can follow a campaign across dozens of pages without getting lost.\n\nStart with a single, well-drawn map and trace the sequence of events in order, pausing to check the terrain. Ask three questions every time: where is high ground, where are the lines of supply, and where can the losing side retreat to? Those three questions explain the majority of tactical decisions in any era, from [Cannae](https://www.worldhistory.org/Battle_of_Cannae/) to the Western Front. Good atlases pair maps with short written summaries, and pairing those with images in the [Battle encyclopedia](/battles) turns abstract diagrams into memorable scenes.',
+        bullets: [
+          'Blue = friendly, Red = enemy in most Western atlases',
+          'Unit symbols (NATO style) show branch, size, and sometimes nationality',
+          'Arrows show actual movements; dashed arrows show intended ones',
+          'Contour lines and rivers usually explain why a commander chose a position',
+        ],
+      },
+      {
+        heading: 'Building a Simple Study Routine',
+        content:
+          'Military history rewards small, regular effort far more than occasional marathon sessions. A routine that works well for most beginners is to pick one battle or campaign per week, read a short overview, then spend ten or fifteen minutes a day on related material \u2014 a map, a primary-source quote, a podcast episode, or a quick round in a game. By the end of the month you will know four engagements in real depth rather than skimming twenty.\n\nSelf-testing multiplies what you retain. After reading about a battle, try to summarise it from memory in three sentences: who fought, what each side was trying to achieve, and why the outcome mattered. Keeping a simple notebook \u2014 paper or digital \u2014 of these summaries builds a personal reference you can return to. Over a year, this kind of routine produces a surprisingly thorough map of military history, and it pairs naturally with practice on [BattleGuess](/) or tools like the [Game modes](/modes) page.',
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -401,6 +485,18 @@ export const blogPosts: BlogPost[] = [
         question: 'How can I identify battle eras from images?',
         answer: 'Look for visual signatures: bronze shields for ancient, plate armor for medieval, muskets and line formations for early modern, and tanks or trenches for modern warfare.',
       },
+      {
+        question: 'Does playing every day really help?',
+        answer: 'Yes. Short daily sessions beat long weekly ones because spaced repetition is how visual recognition locks in. Even one Daily round a day builds era instincts faster than you might expect.',
+      },
+      {
+        question: 'Should I memorise dates or images?',
+        answer: 'Images first, dates second. BattleGuess rewards visual recognition of weapons, terrain, and uniforms, while exact dates rarely determine an answer. Use dates mainly as secondary checks when two battles look similar.',
+      },
+      {
+        question: 'What is the best way to practise a weak era?',
+        answer: 'Focus on easy battles from that era first to anchor the most recognisable examples, then move to medium difficulty. Browsing a handful of that era\u2019s entries in the encyclopedia between rounds reinforces the visual patterns you need.',
+      },
     ],
     sections: [
       {
@@ -427,7 +523,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: '4. Protect Your Streak at All Costs',
         content:
-          'The streak bonus is one of the most powerful scoring mechanisms in BattleGuess. Each consecutive correct answer increases your streak multiplier, so a long streak can be worth hundreds of extra points. This means it is often better to use a hint and get the answer right than to guess blind and risk breaking your streak. Think of hints as streak insurance \u2014 spending 25 points to maintain a streak that is earning you 50 or more bonus points per round is always a good trade.',
+          'The streak bonus is one of the most powerful scoring mechanisms in BattleGuess. Each consecutive correct answer increases your streak multiplier, so a long streak can be worth hundreds of extra points. This means it is often better to use a hint and get the answer right than to guess blind and risk breaking your streak. Think of hints as streak insurance \u2014 spending 25 points to maintain a streak that is earning you 50 or more bonus points per round is always a good trade.\n\nThe psychological side of streak play matters almost as much as the maths. Long streaks create pressure, and pressure tempts players into rushed guesses on exactly the battles where a careful look would have saved them. A useful habit is to pause for a full breath whenever your streak hits a new personal best \u2014 literally count to three before committing. That small ritual resets your attention, keeps the streak bonus compounding, and usually costs you nothing because time bonuses are rarely decided in those three seconds. Treat your streak like an investment account: the longer it grows, the more conservative your plays around it should become.',
       },
       {
         heading: '5. Practice Across All Eras and Difficulties',
@@ -453,6 +549,22 @@ export const blogPosts: BlogPost[] = [
         heading: '8. Explore the Battle Encyclopedia',
         content:
           'BattleGuess includes a comprehensive battle encyclopedia with details on every battle in the game. Browsing through the encyclopedia between game sessions is an excellent way to familiarize yourself with battles you have not encountered yet. Pay attention to the images, descriptions, and era groupings. The more battles you have seen outside of gameplay, the more likely you are to recognize them when they appear during a game.',
+      },
+      {
+        heading: '9. Calibrate Your Guessing Speed by Mode',
+        content:
+          'Different BattleGuess modes reward different pacing, and top scorers adjust accordingly. In timed rounds, a confident answer within the first few seconds often outscores a perfect answer given at the buzzer, because time bonuses compound across a run. In untimed or Campaign play, the opposite is true \u2014 careful observation and a second pass over the image almost always pays off. The mistake to avoid is using the same rhythm everywhere.\n\nBefore each session, take a moment to ask what the mode actually rewards: raw accuracy, speed, streak length, or era coverage. Then set a simple rule for yourself \u2014 for example, "commit within ten seconds if I am above 80 percent sure, otherwise use one hint." Having a pre-committed rule prevents the most common scoring leak, which is freezing on a battle you half-recognise and letting the clock eat your bonus. Try a few rules across different [Game modes](/modes) and keep the one that fits your playing style.',
+        bullets: [
+          'Daily and timed modes \u2014 lean toward fast, confident answers',
+          'Campaign and exploration modes \u2014 slow down and cross-check details',
+          'Streak-focused runs \u2014 prioritise hint use over risky guesses',
+          'Warm-up rounds \u2014 use them to recalibrate, not to chase scores',
+        ],
+      },
+      {
+        heading: '10. Keep a Personal "Hard Battles" List',
+        content:
+          'Every player has a handful of battles that consistently catch them out. Maybe you mix up two similar desert engagements, or you keep confusing two 18th-century European campaigns with nearly identical uniforms. The fastest way to plug these leaks is to keep a short personal list \u2014 a notes app entry is plenty \u2014 of the battles that have beaten you twice or more.\n\nEach entry needs only three things: the battle name, the visual clue you missed, and the feature that would have given it away. Review the list for a minute before each play session. Over time, you will find that most of your "surprise" wrong answers come from the same dozen or so battles, and a targeted study list turns those weak spots into reliable points. Pair this with a quick browse of the [Battle encyclopedia](/battles) and you will see measurable gains within a few sessions.',
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -499,6 +611,18 @@ export const blogPosts: BlogPost[] = [
         question: 'What was the longest siege in history?',
         answer: 'The Siege of Leningrad during World War II lasted 872 days, demonstrating that siege warfare remained devastating even in the modern era, with the city enduring bombardment and starvation.',
       },
+      {
+        question: 'How long did a typical siege last?',
+        answer: 'Length varied enormously. Some strongholds fell in days once walls were breached, while well-supplied cities could hold out for months or even years. Medieval sieges of major fortresses often ran through a full campaigning season before winter forced the besiegers to withdraw.',
+      },
+      {
+        question: 'Did defenders ever win sieges decisively?',
+        answer: 'Yes. Successful defences at places like Vienna in 1529 and Malta in 1565 broke enemy campaigns and shaped the strategic map for generations. A city that held long enough for disease, weather, or a relief army to intervene often ended the war on better terms than it began.',
+      },
+      {
+        question: 'What is the difference between a siege and a blockade?',
+        answer: 'A siege actively tries to reduce a fortified place through assault, bombardment, or mining, while a blockade simply seals it off and waits for supplies to run out. Many historical operations combined both, tightening the blockade while preparing assaults on weak points.',
+      },
     ],
     relatedBattleIds: [73, 75, 82],
     sections: [
@@ -536,7 +660,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Gunpowder Changes Everything',
         content:
-          'The introduction of gunpowder artillery in the 14th and 15th centuries made traditional castle walls obsolete almost overnight. The Ottoman siege of Constantinople in 1453 featured massive bombards that could shatter walls that had stood for a thousand years. European military engineers responded with the [trace italienne](https://en.wikipedia.org/wiki/Bastion_fort) \u2014 low, thick, angled bastions designed to deflect cannonballs and provide overlapping fields of fire. This new style of fortification, pioneered by Italian architects and perfected by [Vauban](https://en.wikipedia.org/wiki/Vauban) in France, dominated military architecture from the 16th through the 18th centuries and shaped the layout of cities across Europe.',
+          'The introduction of gunpowder artillery in the 14th and 15th centuries made traditional castle walls obsolete almost overnight. The Ottoman siege of Constantinople in 1453 featured massive bombards that could shatter walls that had stood for a thousand years. European military engineers responded with the [trace italienne](https://en.wikipedia.org/wiki/Bastion_fort) \u2014 low, thick, angled bastions designed to deflect cannonballs and provide overlapping fields of fire. This new style of fortification, pioneered by Italian architects and perfected by [Vauban](https://en.wikipedia.org/wiki/Vauban) in France, dominated military architecture from the 16th through the 18th centuries and shaped the layout of cities across Europe.\n\nThe shift to gunpowder also transformed who built and paid for fortifications. Medieval castles had largely been private projects of lords and bishops, but the new bastion forts demanded teams of trained engineers, huge labour forces, and constant maintenance budgets that only centralising states could sustain. Military architecture became an instrument of political consolidation: the prince who could fund a modern fortress network could tax, defend, and dominate his territory in ways a local baron could not. Vauban\u2019s fortress belt in France is the classic example, but similar systems reshaped the Spanish Netherlands, northern Italy, and the Ottoman frontier. In this sense gunpowder did not just break walls \u2014 it redirected political power toward the kind of state that could afford to build the next generation of them.',
       },
       {
         heading: 'Modern Siege Warfare',
@@ -547,6 +671,22 @@ export const blogPosts: BlogPost[] = [
         heading: 'The Legacy of Siege Warfare',
         content:
           'Siege warfare shaped not just military history but architecture, urban planning, and engineering. The star-shaped fortifications of the early modern period determined the layout of cities that still exist today. Techniques developed for undermining walls led to advances in mining and tunneling. The logistics of supplying besieging armies drove innovations in transportation and supply chain management. Understanding siege warfare provides insight into how human ingenuity has been applied to both attack and defense throughout history, and many of the most famous battles in BattleGuess involve sieges that tested the limits of both attacker and defender.',
+      },
+      {
+        heading: 'Life Inside a Besieged City',
+        content:
+          'For most of history, the people who suffered most in a siege were not the soldiers on either side but the civilians trapped inside the walls. Food ran out first for the poor, then the middle orders, and finally the garrison itself. Wells were poisoned, cisterns were rationed, and disease \u2014 especially dysentery and typhus \u2014 often killed more defenders than enemy action. Medieval chronicles and early modern diaries describe grim improvisations: horses eaten, leather boiled, church bells melted for shot.\n\nMorale was managed as carefully as rations. Commanders staged religious processions, circulated rumours of relief armies, and executed anyone caught signalling to besiegers. When cities did fall, the distinction between an "honourable surrender" and a "stormed" city was not just ceremonial \u2014 it often determined whether the population was spared, ransomed, or massacred. Understanding these human realities is essential to understanding why sieges feature so heavily in the historical record: they compressed entire societies into a single prolonged crisis.',
+        bullets: [
+          'Rationing usually tightened first on bread, then meat, then fuel',
+          'Plague and dysentery often ended sieges before military action did',
+          'Surrender terms were negotiated documents, sometimes running to dozens of clauses',
+          'Stormed cities traditionally faced three days of sack under early modern laws of war',
+        ],
+      },
+      {
+        heading: 'Sieges in the Nuclear and Urban Age',
+        content:
+          'The end of the bastion fort did not end siege thinking \u2014 it relocated it. Twentieth- and twenty-first-century urban combat at places like Stalingrad, Hue, and more recent Middle Eastern cities has revived many classic siege problems in a new form: how to isolate a defended zone, how to manage civilian populations, and how to take fortified buildings without destroying the city around them. Modern planners still talk about cordons, breaches, and reliefs, even if the vocabulary is dressed in contemporary doctrine.\n\nTechnology has shifted the balance again. Precision munitions can replace weeks of bombardment with a single strike, while drones and persistent surveillance make the classic besieger\u2019s job of sealing a perimeter easier than at any point in history. At the same time, dense modern cities offer defenders cover, tunnels, and media visibility that medieval garrisons could only dream of. For a broader view of how these tactics emerged, pair this post with the companion guide on [How Gunpowder Changed Warfare Forever](/blog/how-gunpowder-changed-warfare-forever).',
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -593,6 +733,18 @@ export const blogPosts: BlogPost[] = [
         question: 'What was the largest naval battle in history?',
         answer: 'The Battle of Leyte Gulf in 1944 was the largest naval battle in history by tonnage, involving hundreds of ships across multiple simultaneous engagements in the Philippines.',
       },
+      {
+        question: 'Why did the Greeks win at Salamis despite being outnumbered?',
+        answer: 'The narrow straits neutralized the Persian numerical advantage and favored the heavier, more maneuverable Greek triremes in close combat. Persian command and control broke down in the confined water, turning the fleet\u2019s size into a liability.',
+      },
+      {
+        question: 'What role did codebreaking play in naval battles?',
+        answer: 'Codebreaking was decisive in several 20th-century engagements. American cryptanalysts reading the JN-25 code helped ambush the Japanese at Midway, and British work on the German Enigma was central to winning the Battle of the Atlantic.',
+      },
+      {
+        question: 'Are any famous warships still preserved today?',
+        answer: 'Yes. Nelson\u2019s HMS Victory is preserved in dry dock at Portsmouth, and the USS Constitution remains a commissioned US Navy vessel in Boston. Several WWII-era ships, including the USS Missouri and the Japanese submarine hunter bases, survive as museum ships.',
+      },
     ],
     relatedBattleIds: [27, 44, 8, 11],
     sections: [
@@ -624,12 +776,28 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'The World Wars: Midway and Leyte Gulf',
         content:
-          'World War II saw naval warfare transformed by aircraft carriers and submarines. The Battle of Midway in 1942 was the turning point of the Pacific War, while the [Battle of Leyte Gulf](https://en.wikipedia.org/wiki/Battle_of_Leyte_Gulf) in 1944 was the largest naval battle in history by tonnage. The Battle of the Coral Sea was the first naval engagement where the opposing ships never saw each other, fighting entirely through carrier-launched aircraft. These battles proved that the age of the battleship was over and air power now ruled the seas.',
+          'World War II saw naval warfare transformed by aircraft carriers and submarines. The Battle of Midway in 1942 was the turning point of the Pacific War, while the [Battle of Leyte Gulf](https://en.wikipedia.org/wiki/Battle_of_Leyte_Gulf) in 1944 was the largest naval battle in history by tonnage. The Battle of the Coral Sea was the first naval engagement where the opposing ships never saw each other, fighting entirely through carrier-launched aircraft. These battles proved that the age of the battleship was over and air power now ruled the seas.\n\nThe human dimension of these engagements is often lost in the strategic narrative. A single carrier could hold more than two thousand sailors and airmen, and when ships like the Akagi, Kaga, Soryu, and Hiryu burned at Midway, Japan lost not only hulls but an irreplaceable cadre of veteran pilots and deck crews. Leyte Gulf also saw the first organized [kamikaze attacks](https://en.wikipedia.org/wiki/Kamikaze), a grim innovation born of desperation as Japanese naval aviation collapsed. Understanding these battles means weighing industrial output, training pipelines, and morale alongside the headline tactical decisions \u2014 the sea war was won by nations, not just admirals.',
       },
       {
         heading: 'Test Your Naval Knowledge',
         content:
           'Naval battles have a distinctive visual vocabulary: ships under sail, cannon smoke across the water, aircraft diving toward carriers, and submarines lurking beneath the waves. In BattleGuess, naval battles are some of the most visually striking and recognizable images in the game. Check out our Naval Battles [collection](/collections) to explore all the maritime engagements, or jump into a game and see if you can identify these famous sea fights from their images.',
+      },
+      {
+        heading: 'Logistics Behind the Fleet',
+        content:
+          'Naval victories are decided long before the first shot is fired. Every warship needs an immense trail of timber, canvas, tar, gunpowder, salted provisions, and fresh water to stay at sea, and the nation that masters this supply problem usually wins the long war. The Royal Navy\u2019s network of dockyards at Portsmouth, Plymouth, and overseas bases like Gibraltar was arguably a greater strategic asset than any single ship of the line, because it let British fleets stay on station while rivals rotted in port.\n\nModern navies face the same equation in a different form. Aircraft carriers burn through thousands of tons of jet fuel and ordnance in sustained operations, and the unglamorous fleet train of oilers, ammunition ships, and repair vessels is what makes global power projection possible. The [United States Navy\u2019s logistics arm](https://en.wikipedia.org/wiki/Military_Sealift_Command) was the hidden backbone of the Pacific War \u2014 it is why Midway could be followed by Leyte Gulf rather than a retreat.',
+        bullets: [
+          'Timber shortages shaped 18th-century strategy \u2014 Britain imported Baltic masts for decades',
+          'Coaling stations dictated 19th-century colonial expansion for steam-powered fleets',
+          'WWII underway replenishment allowed US carrier groups to stay at sea for months',
+          'Modern carriers require constant resupply of fuel, food, and precision munitions',
+        ],
+      },
+      {
+        heading: 'Wrecks, Archaeology, and Primary Sources',
+        content:
+          'Much of what we know about famous sea fights comes from the seabed rather than the archive. The discovery of the [Mary Rose](https://en.wikipedia.org/wiki/Mary_Rose), Henry VIII\u2019s flagship raised from the Solent in 1982, rewrote our understanding of Tudor gunnery, archery, and daily shipboard life. Survey work on the wrecks at Salamis, on Spanish Armada hulks along the Irish coast, and on the sunken carriers of Midway has confirmed details that contemporary accounts could only hint at \u2014 and has occasionally contradicted them.\n\nWritten sources matter just as much. Herodotus on Salamis, Thucydides on the Athenian disaster at Syracuse, and the logs and dispatches of Nelson\u2019s captains are still the backbone of naval history. For modern battles, action reports, radio intercepts, and aerial photography form a dense evidentiary record that historians are still mining. Pairing wreck archaeology with primary documents is how scholars continue to refine our picture of naval warfare.',
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -676,6 +844,18 @@ export const blogPosts: BlogPost[] = [
         question: 'What is the best way to study for a military history exam?',
         answer: 'Focus on understanding why each battle happened and what changed as a result, use active recall to test yourself, and connect battles to broader themes like technology and political change.',
       },
+      {
+        question: 'How do I remember battle dates without just cramming?',
+        answer: 'Anchor each date to a story or a cause-and-effect chain rather than memorizing it in isolation. Grouping battles by decade or war, and linking them to political events you already know, makes the dates stick far longer than flashcards alone.',
+      },
+      {
+        question: 'Are there any good documentaries for learning about major battles?',
+        answer: 'Yes. The BBC\u2019s history documentaries, PBS\u2019s "The Civil War" by Ken Burns, and the series produced by the Imperial War Museum are reliable starting points. Pair any documentary with a textbook chapter to catch the simplifications that film narratives sometimes make.',
+      },
+      {
+        question: 'Should I memorize casualty figures for exams?',
+        answer: 'Only the headline ones, and always as ranges rather than exact numbers. Historians disagree on totals for many battles, so it is safer to say "over a million" at the Somme than to quote a precise figure that a marker might challenge.',
+      },
     ],
     relatedBattleIds: [10, 2, 42, 14, 4, 75, 1, 16, 22, 3, 5],
     sections: [
@@ -714,7 +894,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'How to Study Battles Effectively',
         content:
-          'Memorizing dates is the least effective way to learn military history. Instead, focus on understanding why each battle happened, what made it decisive, and what changed as a result.',
+          'Memorizing dates is the least effective way to learn military history. Instead, focus on understanding why each battle happened, what made it decisive, and what changed as a result.\n\nSpaced repetition is the other half of the equation. Research into the [forgetting curve](https://en.wikipedia.org/wiki/Forgetting_curve) shows that information decays rapidly unless it is revisited at widening intervals, which is why a twenty-minute review a week before an exam beats hours of last-minute cramming. Build a simple schedule: review a battle the day you first study it, then three days later, then a week later, then two weeks. Combine this with retrieval practice \u2014 closing the book and trying to write out what you remember \u2014 and you will retain far more than classmates who rely on highlighting. Gamified tools like BattleGuess fit neatly into this rhythm because each short session is itself a retrieval exercise.',
         bullets: [
           'Create a timeline connecting battles to the wars and political events they belong to',
           'For each battle, learn: who fought, why, what tactics were used, and what the outcome changed',
@@ -727,6 +907,23 @@ export const blogPosts: BlogPost[] = [
         heading: 'Study Smarter with BattleGuess',
         content:
           'The most effective study technique is active recall \u2014 testing yourself rather than passively re-reading notes. BattleGuess is built around this principle, challenging you to identify battles from visual clues and contextual hints. Playing regularly helps you build a mental library of battle imagery that makes studying more efficient and exam preparation more effective.',
+      },
+      {
+        heading: 'Battles Outside the Western Canon',
+        content:
+          'Most school syllabi lean heavily on European and American engagements, but a well-rounded student should know the battles that shaped the rest of the world too. The Battle of Talas in 751 CE halted Tang Chinese expansion into Central Asia and helped spread papermaking westward. Sekigahara in 1600 unified Japan under the Tokugawa and set the stage for two and a half centuries of relative peace. Panipat, fought three times on the same plain in northern India, decided the fate of the Delhi Sultanate and later the Mughal Empire.\n\nAfrican and Latin American examples are equally important. [Isandlwana](https://en.wikipedia.org/wiki/Battle_of_Isandlwana) in 1879 showed that a well-organized Zulu army could defeat a modern European force in the field, while Ayacucho in 1824 effectively ended Spanish rule in South America. Including these engagements in your study plan signals to examiners that you understand military history as a global phenomenon rather than a Western story with footnotes.',
+        bullets: [
+          'Talas (751) \u2014 Tang China vs. the Abbasid Caliphate in Central Asia',
+          'Sekigahara (1600) \u2014 the battle that unified Japan under the Tokugawa shogunate',
+          'Panipat (1526, 1556, 1761) \u2014 three decisive battles on the same Indian plain',
+          'Isandlwana (1879) \u2014 a major Zulu victory over British forces in southern Africa',
+          'Ayacucho (1824) \u2014 the engagement that sealed South American independence',
+        ],
+      },
+      {
+        heading: 'Writing Strong Essay Answers About Battles',
+        content:
+          'Exam questions about battles almost never reward pure narrative. Markers are looking for analysis: causes, significance, and historiographical awareness. A strong answer opens with a clear thesis \u2014 for example, that Stalingrad was decisive not because of its scale but because it destroyed the German Sixth Army and broke the operational initiative on the Eastern Front \u2014 and then marshals specific evidence to support it.\n\nAvoid the common trap of listing every detail you remember. Pick three or four pieces of precise evidence and explain what each one proves. Signpost the wider context: how did the battle fit into the war, and how did the war fit into its century? Finish by acknowledging scholarly debate where appropriate \u2014 historians disagree, for instance, about whether Gettysburg was truly the turning point of the [American Civil War](https://www.britannica.com/event/American-Civil-War) or whether Vicksburg, fought at almost the same time, mattered more strategically.',
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -773,6 +970,18 @@ export const blogPosts: BlogPost[] = [
         question: 'What was Hannibal\'s most famous battle?',
         answer: 'The Battle of Cannae in 216 BCE, where Hannibal encircled and destroyed a Roman army twice his size, is still the textbook example of tactical envelopment studied in military academies today.',
       },
+      {
+        question: 'Were any great commanders truly undefeated in battle?',
+        answer: 'A handful came close. Alexander the Great never lost a major pitched battle, and Khalid ibn al-Walid fought over a hundred engagements without a defeat. Most \u201cundefeated\u201d claims rely on narrow definitions that exclude skirmishes, sieges, or campaigns that ended in strategic failure.',
+      },
+      {
+        question: 'How reliable are ancient sources on famous commanders?',
+        answer: 'They are biased and often written centuries after the events. Arrian on Alexander, Plutarch on Caesar, and Livy on Hannibal drew on earlier accounts now lost. Modern historians cross-reference archaeology, inscriptions, and rival traditions to separate legend from probable fact.',
+      },
+      {
+        question: 'Were there any great female military commanders in history?',
+        answer: 'Yes \u2014 figures like Boudica, Tomyris of the Massagetae, Empress Jingu, and Joan of Arc led successful campaigns, and more recent commanders like Lakshmibai of Jhansi fought pitched engagements. Their visibility in the historical record is limited more by who wrote the sources than by their actual impact.',
+      },
     ],
     relatedBattleIds: [42, 59, 14, 18, 12, 1],
     sections: [
@@ -812,7 +1021,24 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Napoleon Bonaparte: The Emperor',
         content:
-          'Napoleon revolutionized warfare through the corps system, which allowed him to maneuver multiple independent forces that could converge on a decisive point. His victory at [Austerlitz](https://en.wikipedia.org/wiki/Battle_of_Austerlitz), where he deliberately weakened his right flank to lure the enemy into a trap, is considered one of the greatest tactical masterpieces in military history. He fought in over sixty battles and lost only a handful, reshaping the map of Europe before his final defeat at Waterloo. His military innovations influenced every subsequent major conflict.',
+          'Napoleon revolutionized warfare through the corps system, which allowed him to maneuver multiple independent forces that could converge on a decisive point. His victory at [Austerlitz](https://en.wikipedia.org/wiki/Battle_of_Austerlitz), where he deliberately weakened his right flank to lure the enemy into a trap, is considered one of the greatest tactical masterpieces in military history. He fought in over sixty battles and lost only a handful, reshaping the map of Europe before his final defeat at Waterloo. His military innovations influenced every subsequent major conflict.\n\nHis failures are just as instructive as his victories. The 1812 invasion of Russia destroyed the Grande Arm\u00e9e through logistics and winter rather than enemy action \u2014 proof that even genius cannot outrun supply lines. The Peninsular War in Spain bled France for years in a grinding insurgency Napoleon never quite took seriously. And at Waterloo, a tired commander facing coordinated coalition opponents finally met a problem he could not out-maneuver. Studying where great commanders broke often teaches more than studying where they won.',
+      },
+      {
+        heading: 'Underrated Commanders Worth Studying',
+        content:
+          'The usual \u201cgreatest of all time\u201d lists lean heavily on European and classical figures. Broadening the lens turns up commanders whose records rival the famous names.',
+        bullets: [
+          'Subutai \u2014 Genghis Khan\u2019s chief general, who coordinated campaigns across thousands of miles from China to Hungary using scouts, deception, and relentless marching',
+          'Belisarius \u2014 the Byzantine commander who reconquered much of the Roman west for Justinian with tiny, chronically underfunded armies',
+          'Khalid ibn al-Walid \u2014 undefeated in over a hundred battles during the early Islamic conquests, blending cavalry shock with fast operational tempo',
+          'Gustavus Adolphus \u2014 the Swedish king who modernised gunpowder warfare with combined-arms brigades and mobile artillery before dying at Lutzen',
+          'Vo Nguyen Giap \u2014 the self-taught Vietnamese general who defeated France at Dien Bien Phu and fought the United States to a negotiated withdrawal',
+        ],
+      },
+      {
+        heading: 'How Commanders Are Ranked and Why It Is Hard',
+        content:
+          'Any \u201cgreatest commander\u201d ranking depends on what you count. Win rate alone rewards commanders who only fought weak opponents. Raw scale favours those who happened to lead large states. Strategic results matter, but so do the resources they were handed. Historians usually weigh several factors together: the quality of opposition faced, whether the commander innovated or merely executed existing doctrine, how results held up after the commander left the field, and whether their campaigns shaped later warfare. That is why lists disagree \u2014 the criteria are genuinely contested, not just a matter of taste.',
       },
       {
         heading: 'Commanders in BattleGuess',
@@ -864,6 +1090,18 @@ export const blogPosts: BlogPost[] = [
         question: 'When did muskets replace swords and armor in warfare?',
         answer: 'Muskets began replacing traditional weapons in the 15th-16th centuries. Battles like Nagashino in 1575 showed that disciplined musket volleys could shatter cavalry charges, ending the era of the armored knight.',
       },
+      {
+        question: 'Why did swords and bayonets stick around so long after muskets arrived?',
+        answer: 'Early muskets were slow to reload \u2014 often only two or three shots per minute \u2014 and useless in close combat. The bayonet turned a musket into a short pike, letting one soldier handle both ranged and melee roles. Swords remained standard for officers and cavalry well into the 19th century.',
+      },
+      {
+        question: 'Did gunpowder weapons immediately dominate every battlefield?',
+        answer: 'No. Early hand cannons were clumsy, inaccurate, and unreliable in rain. For a century or more, crossbows and longbows often outperformed them. Gunpowder only dominated once reliable matchlocks, standardised ammunition, and drilled infantry tactics came together in the 16th and 17th centuries.',
+      },
+      {
+        question: 'How did gunpowder change naval warfare?',
+        answer: 'Cannon-armed warships replaced the ramming and boarding tactics of galley warfare. By the 16th century, line-of-battle ships fighting in column made sea power a matter of broadsides rather than hand-to-hand fighting, setting the stage for centuries of European naval dominance.',
+      },
     ],
     relatedBattleIds: [75, 122, 12, 26],
     sections: [
@@ -881,7 +1119,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'The End of Castle Warfare',
         content:
-          'For centuries, castle walls provided near-impregnable defense. A well-stocked castle could hold out for months against a besieging army. Gunpowder artillery changed this equation dramatically. The Ottoman siege of Constantinople in 1453 demonstrated the devastating power of massive bombards against even the strongest fortifications. Within decades, medieval castle design became obsolete, replaced by the low, thick, star-shaped trace italienne fortifications designed to withstand cannon fire. An entire feudal system built around castle defense crumbled alongside the walls.',
+          'For centuries, castle walls provided near-impregnable defense. A well-stocked castle could hold out for months against a besieging army. Gunpowder artillery changed this equation dramatically. The Ottoman siege of Constantinople in 1453 demonstrated the devastating power of massive bombards against even the strongest fortifications. Within decades, medieval castle design became obsolete, replaced by the low, thick, star-shaped trace italienne fortifications designed to withstand cannon fire. An entire feudal system built around castle defense crumbled alongside the walls.\n\nThe political consequences were just as profound as the military ones. When a single ruler\u2019s artillery train could reduce any vassal\u2019s castle in weeks, local lords lost the physical basis of their independence. Centralised monarchies \u2014 France, Spain, the Ottomans \u2014 pulled power inward precisely because gunpowder made siege warfare something only a wealthy state could afford. Fortification became a national industry, not a local privilege.',
       },
       {
         heading: 'Infantry Revolution',
@@ -909,6 +1147,22 @@ export const blogPosts: BlogPost[] = [
         heading: 'Recognizing Gunpowder-Era Battles',
         content:
           'In BattleGuess, gunpowder-era battles have distinctive visual markers: clouds of smoke, cannon positions, soldiers in line formations, and fortifications with angled bastions rather than tall walls. Learning to distinguish between early gunpowder battles (loose formations, hand cannons) and later ones (disciplined volleys, field artillery) is key to narrowing down the era and identifying specific battles.',
+      },
+      {
+        heading: 'Gunpowder Outside Europe',
+        content:
+          'The gunpowder story is often told as a European one, but the most impressive early adopters were elsewhere. The [Gunpowder Empires](https://en.wikipedia.org/wiki/Gunpowder_empires) \u2014 Ottoman, Safavid, and Mughal \u2014 built sprawling states around cannon, matchlock infantry, and siege trains. In Japan, the arquebus was integrated into samurai armies within decades of its arrival in 1543. Korean hwacha rocket carts, Chinese fire lances, and the Mughal use of camel-mounted swivel guns all show that gunpowder innovation was a global conversation.',
+        bullets: [
+          'Ottoman bronze bombards brought down Constantinople\u2019s walls in 1453, decades before similar guns were common in Europe',
+          'Japanese tepp\u014d matchlocks were mass-produced by domestic smiths within ten years of contact with Portuguese traders',
+          'Mughal India fielded enormous siege trains and standardised gun-casting workshops in the 16th and 17th centuries',
+          'Ethiopian armies used imported and locally modified firearms to repel invasions long before European colonial expansion',
+        ],
+      },
+      {
+        heading: 'The Human Cost of Gunpowder',
+        content:
+          'Gunpowder did not just change tactics \u2014 it changed what battle felt like. Wounds from musket balls and shell fragments were harder to treat than sword cuts; amputation became the standard response to shattered limbs. Smoke reduced command to shouted orders and flag signals. Battlefield medicine lagged centuries behind weapon lethality, and diseases spread through the crowded siege camps that gunpowder logistics required. The industrial-scale casualties of the 19th and 20th centuries \u2014 Borodino, Gettysburg, the Somme \u2014 were the end point of a trajectory that began with the first fire lance.',
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -955,6 +1209,18 @@ export const blogPosts: BlogPost[] = [
         question: 'Why was D-Day so important?',
         answer: 'D-Day established a second front in Western Europe that Germany could not sustain, squeezing Nazi Germany from both west and east and making Allied victory inevitable.',
       },
+      {
+        question: 'Was Kursk a bigger turning point than Stalingrad?',
+        answer: 'They were linked, not alternatives. Stalingrad ended German offensive capacity on the Eastern Front; Kursk in summer 1943 confirmed it by destroying Germany\u2019s last major strategic offensive. After Kursk, the Wehrmacht could only react to Soviet attacks.',
+      },
+      {
+        question: 'How did code-breaking affect these turning points?',
+        answer: 'Hugely. British Ultra intelligence from [Enigma](https://en.wikipedia.org/wiki/Ultra_(cryptography)) helped win the Battle of the Atlantic and informed North African operations, while American codebreakers reading Japanese naval traffic let Nimitz lay the trap at Midway. Intelligence turned otherwise even battles decisive.',
+      },
+      {
+        question: 'Why is the Eastern Front often underrepresented in Western histories?',
+        answer: 'Cold War politics, language barriers, and the simple fact that most English-language sources were written by Western veterans meant the Soviet war was long understated. Roughly 80% of Wehrmacht casualties were inflicted on the Eastern Front, and Soviet deaths exceeded 25 million.',
+      },
     ],
     relatedBattleIds: [197, 5, 11, 189, 6],
     sections: [
@@ -977,7 +1243,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Stalingrad (1942-1943)',
         content:
-          'The [Battle of Stalingrad](https://en.wikipedia.org/wiki/Battle_of_Stalingrad) was the bloodiest battle in human history, with combined casualties exceeding two million. The Soviet encirclement and destruction of the German 6th Army marked the first time an entire German field army had been defeated and captured. After Stalingrad, Germany was permanently on the defensive on the Eastern Front, and the Soviet Union began the long, grinding advance westward that would end at the Reichstag in Berlin.',
+          'The [Battle of Stalingrad](https://en.wikipedia.org/wiki/Battle_of_Stalingrad) was the bloodiest battle in human history, with combined casualties exceeding two million. The Soviet encirclement and destruction of the German 6th Army marked the first time an entire German field army had been defeated and captured. After Stalingrad, Germany was permanently on the defensive on the Eastern Front, and the Soviet Union began the long, grinding advance westward that would end at the Reichstag in Berlin.\n\nWhat made Stalingrad decisive was not just its scale but its meaning. Hitler committed to holding the city for political and symbolic reasons even after the strategic rationale had evaporated. The Soviet Operation Uranus, launched in November 1942, smashed through the weakly held Romanian and Italian flanks to encircle 300,000 Axis troops in less than a week. Field Marshal Paulus\u2019s surrender in February 1943 \u2014 the first German field marshal ever to capitulate \u2014 shattered the myth of Wehrmacht invincibility across occupied Europe.',
       },
       {
         heading: 'Midway (1942)',
@@ -1004,6 +1270,23 @@ export const blogPosts: BlogPost[] = [
         heading: 'The War\u2019s Legacy',
         content:
           'These five turning points collectively illustrate how the war\u2019s momentum shifted irreversibly against the Axis powers. Each battle demonstrated different aspects of modern warfare: air power at Britain, urban warfare at Stalingrad, carrier warfare at Midway, combined arms at El Alamein, and amphibious operations at Normandy. Understanding these engagements is essential for anyone studying 20th-century history.',
+      },
+      {
+        heading: 'The Turning Points History Often Overlooks',
+        content:
+          'The famous five are not the only engagements that shifted WWII. Several lesser-known campaigns mattered just as much to the final outcome.',
+        bullets: [
+          'The Battle of Moscow (winter 1941-42) \u2014 the first major defeat of the Wehrmacht, ending the possibility of a quick German victory in the east',
+          'The Battle of the Atlantic (1939-45) \u2014 the longest campaign of the war, whose convoy battles decided whether Britain could be supplied at all',
+          'Operation Bagration (summer 1944) \u2014 the colossal Soviet offensive that destroyed Army Group Centre and made the fall of Berlin a matter of time',
+          'Guadalcanal (1942-43) \u2014 the grinding Pacific land-sea-air campaign that permanently drained Japan\u2019s experienced pilots and ships',
+          'The Italian campaign (1943-45) \u2014 often forgotten, but it knocked Mussolini out and tied down German divisions that could have reinforced France',
+        ],
+      },
+      {
+        heading: 'Home Fronts Decide Wars Too',
+        content:
+          'Turning points on the battlefield depended on turning points behind the lines. American industrial mobilisation allowed one country to build more aircraft in 1944 than Germany and Japan combined produced during the entire war. Soviet factory evacuations moved more than 1,500 plants east of the Urals in 1941, keeping tank and aircraft production running while the front was collapsing. British scientific mobilisation produced radar, operational research, and the codebreaking operation at Bletchley Park. Without these home-front achievements, the battlefield turning points would not have been possible \u2014 or would have gone the other way.',
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -1050,6 +1333,18 @@ export const blogPosts: BlogPost[] = [
         question: 'Did samurai use guns in battle?',
         answer: 'Yes. The Battle of Nagashino in 1575 famously demonstrated the power of massed firearms in Japanese warfare, and gunpowder weapons were widely adopted during the late Sengoku period.',
       },
+      {
+        question: 'Were there female samurai?',
+        answer: 'Yes. Women of the bushi class known as onna-musha trained with the naginata and were expected to defend households and castles. [Tomoe Gozen](https://en.wikipedia.org/wiki/Tomoe_Gozen) fought alongside Minamoto no Yoshinaka in the Genpei War, and women led defensive garrisons throughout the Sengoku period.',
+      },
+      {
+        question: 'What weapons did samurai actually use most often?',
+        answer: 'Despite pop-culture focus on the katana, the primary samurai weapons were the bow (yumi) in the early period and the spear (yari) in the Sengoku. Swords were a sidearm and a status symbol. Mounted archery, not swordplay, was the original core skill of the warrior class.',
+      },
+      {
+        question: 'What ended the age of the samurai?',
+        answer: 'The Meiji Restoration of 1868 dismantled the feudal system; the samurai class was formally abolished in the 1870s. The Satsuma Rebellion of 1877, where Western-equipped conscripts defeated the last major samurai uprising, effectively closed the era militarily.',
+      },
     ],
     relatedBattleIds: [129, 134, 122, 119, 121],
     sections: [
@@ -1077,7 +1372,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'The Sengoku Period: A Century of War',
         content:
-          'The [Sengoku period](https://en.wikipedia.org/wiki/Sengoku_period), or Warring States era, saw Japan torn apart by competing feudal lords called daimyo. This era produced legendary commanders like Oda Nobunaga, Toyotomi Hideyoshi, and Tokugawa Ieyasu. The Battle of Okehazama in 1560 saw Nobunaga defeat a force ten times his size in a surprise attack during a thunderstorm. The Battle of Nagashino in 1575 demonstrated the power of massed firearms, and Sekigahara in 1600 unified Japan under Tokugawa rule.',
+          'The [Sengoku period](https://en.wikipedia.org/wiki/Sengoku_period), or Warring States era, saw Japan torn apart by competing feudal lords called daimyo. This era produced legendary commanders like Oda Nobunaga, Toyotomi Hideyoshi, and Tokugawa Ieyasu. The Battle of Okehazama in 1560 saw Nobunaga defeat a force ten times his size in a surprise attack during a thunderstorm. The Battle of Nagashino in 1575 demonstrated the power of massed firearms, and Sekigahara in 1600 unified Japan under Tokugawa rule.\n\nWhat made the Sengoku so distinctive was the constant experimentation forced by survival pressure. Armies grew from a few thousand retainers to mass conscript hosts of peasant ashigaru infantry. Daimyo borrowed from each other relentlessly \u2014 Takeda Shingen\u2019s cavalry shock, Uesugi Kenshin\u2019s disciplined infantry, Nobunaga\u2019s firearms, Hideyoshi\u2019s siegecraft. The century produced a clear evolution: whoever combined the most elements fastest tended to win, which is why the final unifiers (Nobunaga, Hideyoshi, Tokugawa) were the generalists rather than the specialists.',
       },
       {
         heading: 'Castles and Siege Warfare',
@@ -1093,6 +1388,23 @@ export const blogPosts: BlogPost[] = [
         heading: 'Japanese Battles in BattleGuess',
         content:
           'Japanese battles in BattleGuess are among the most visually distinctive in the game. Look for samurai armor with its distinctive helmet crests, castle walls with curved stone bases, and the unique landscape of the Japanese archipelago. The transition from sword-and-bow combat to gunpowder warfare is particularly visible in images from the late Sengoku period. Explore the East Asia era in [BattleGuess](/) to test your knowledge of these fascinating conflicts.',
+      },
+      {
+        heading: 'Bushido: Myth and Reality',
+        content:
+          'The modern idea of bushido \u2014 an unwritten ancient code of absolute loyalty and ritual suicide \u2014 owes more to Meiji-era nationalism and the 1900 book *Bushido: The Soul of Japan* than to actual samurai practice. Real warrior conduct varied sharply by clan and era. Samurai regularly switched sides when their lord\u2019s cause looked hopeless, negotiated ransoms, and pragmatically used whatever weapons worked. Seppuku existed but was rare outside specific shaming contexts. The most accurate description of pre-modern samurai ethics is that they were a professional warrior class with a strong honour culture, not saintly paragons of self-sacrifice.',
+      },
+      {
+        heading: 'Samurai Warfare Compared to the Wider World',
+        content:
+          'Placing samurai battles next to their global contemporaries reveals surprising parallels and differences.',
+        bullets: [
+          'Early mounted archer samurai fought much like the Mongol and steppe warriors they eventually faced \u2014 bow-first, with the sword as a last resort',
+          'Sengoku pike-and-shot formations paralleled European tercio warfare almost exactly, developing independently around the same decades',
+          'Japanese castle design evolved in the opposite direction from European castles: upward with graceful wooden towers, while Europe went low and angular to resist cannon',
+          'The scale of Sengoku battles \u2014 Sekigahara had roughly 160,000 combatants \u2014 rivalled any European engagement of the period',
+          'Post-1600 Pax Tokugawa produced 250 years of near-peace, a length of internal stability few other pre-modern states matched',
+        ],
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -1139,6 +1451,18 @@ export const blogPosts: BlogPost[] = [
         question: 'What was the lasting impact of the Crusades?',
         answer: 'The Crusades deepened divisions between Christianity and Islam, but also spurred cultural exchange that brought Arabic scholarship, trade networks, and banking innovations to Europe.',
       },
+      {
+        question: 'Were the Crusades successful overall?',
+        answer: 'From a military standpoint, mostly no. Only the First Crusade achieved its stated goal. By 1291 every Crusader territory in the Levant had fallen, and the Fourth Crusade never even reached its destination \u2014 it sacked Christian Constantinople instead. The long-term impact on Europe was cultural and economic rather than territorial.',
+      },
+      {
+        question: 'Why did the Fourth Crusade attack a Christian city?',
+        answer: 'A tangle of Venetian debt, Byzantine succession disputes, and a lack of strategic oversight diverted the Crusaders to Constantinople in 1204. Venice gained commercial dominance in the eastern Mediterranean; the Byzantine Empire never fully recovered. It is one of medieval history\u2019s most consequential mis-directions.',
+      },
+      {
+        question: 'Who were the Knights Templar and what happened to them?',
+        answer: 'The [Templars](https://en.wikipedia.org/wiki/Knights_Templar) were a military order founded in 1119 to protect pilgrims. They became the leading heavy cavalry of the Crusades and pioneered early international banking. In 1307 King Philip IV of France \u2014 deeply in debt to them \u2014 had the order suppressed on dubious charges, ending their power.',
+      },
     ],
     relatedBattleIds: [78, 90, 82],
     sections: [
@@ -1155,7 +1479,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Hattin and the Fall of Jerusalem',
         content:
-          'The Battle of Hattin in 1187 was one of the most decisive defeats suffered by the Crusaders. [Saladin](https://en.wikipedia.org/wiki/Saladin) lured the Crusader army into a waterless desert near the Sea of Galilee, where heat and thirst destroyed their combat effectiveness before the battle even began. The resulting Muslim victory led to the recapture of Jerusalem and prompted the Third Crusade, which saw the legendary rivalry between Richard the Lionheart and Saladin. The Battle of Arsuf during the Third Crusade demonstrated that disciplined Crusader heavy cavalry could still defeat Muslim forces in open battle.',
+          'The Battle of Hattin in 1187 was one of the most decisive defeats suffered by the Crusaders. [Saladin](https://en.wikipedia.org/wiki/Saladin) lured the Crusader army into a waterless desert near the Sea of Galilee, where heat and thirst destroyed their combat effectiveness before the battle even began. The resulting Muslim victory led to the recapture of Jerusalem and prompted the Third Crusade, which saw the legendary rivalry between Richard the Lionheart and Saladin. The Battle of Arsuf during the Third Crusade demonstrated that disciplined Crusader heavy cavalry could still defeat Muslim forces in open battle.\n\nHattin is studied today as a near-perfect example of strategic exhaustion. Saladin did not try to outfight the Crusaders \u2014 he spent days denying them water, setting grass fires to worsen the heat, and controlling the only accessible wells. By the time the two armies clashed at the Horns of Hattin, the Crusader infantry had effectively collapsed from thirst. The lesson \u2014 that logistics can defeat a superior force before any fighting occurs \u2014 would be repeated centuries later against Napoleon in Russia and the Germans in North Africa.',
       },
       {
         heading: 'The Siege of Acre and the Later Crusades',
@@ -1178,6 +1502,23 @@ export const blogPosts: BlogPost[] = [
         heading: 'The Crusades in BattleGuess',
         content:
           'Crusade-era battles are visually striking in BattleGuess, featuring knights in distinctive cross-marked surcoats, desert fortifications, and the colorful banners of both European and Islamic forces. Battles from this era appear in both the Medieval Europe and Ottoman & Islamic categories. Understanding the visual differences between Crusader and Islamic forces helps identify these battles quickly. Look for cross motifs on shields and surcoats for Crusader forces, and crescent symbols and lighter armor for Islamic armies.',
+      },
+      {
+        heading: 'The Crusades Outside the Holy Land',
+        content:
+          'The word Crusade is often limited to campaigns in the Levant, but papal crusading authority was extended to many other theatres. These campaigns shaped Europe just as profoundly as the Eastern expeditions.',
+        bullets: [
+          'The [Reconquista](https://en.wikipedia.org/wiki/Reconquista) \u2014 centuries of Christian-Muslim warfare in Iberia, reframed as a crusade from the 12th century',
+          'The Northern Crusades \u2014 campaigns against pagan Baltic peoples that founded states like Prussia and Livonia',
+          'The Albigensian Crusade (1209-1229) \u2014 a brutal internal crusade against the Cathars of southern France',
+          'The Hussite Crusades (1419-1434) \u2014 multiple failed attempts to suppress Czech religious reformers who repeatedly defeated larger crusader armies',
+          'The late Ottoman crusades \u2014 including Nicopolis (1396) and Varna (1444), which tried and failed to halt Ottoman expansion into the Balkans',
+        ],
+      },
+      {
+        heading: 'How Historians Revised the Crusades',
+        content:
+          'For much of the 19th and 20th centuries the Crusades were told as either heroic Christian adventures or simple colonial land-grabs. Modern scholarship is more complicated. Historians now emphasise that Crusader states functioned as multi-ethnic societies where Franks, Syriac Christians, Muslims, and Jews coexisted under uneasy arrangements. The Muslim world\u2019s own memory of the Crusades was surprisingly faint until the 19th century, when colonial encounters revived interest. And Byzantine perspectives \u2014 often of horror at what Western allies had done to them \u2014 complete a picture no single tradition captured alone.',
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -1224,6 +1565,18 @@ export const blogPosts: BlogPost[] = [
         question: 'What happened at the Battle of Yorktown?',
         answer: 'Combined American and French forces besieged British General Cornwallis at Yorktown in 1781. With the French navy blocking escape by sea, Cornwallis surrendered his entire army, effectively ending the war.',
       },
+      {
+        question: 'Who fought in the Continental Army?',
+        answer: 'A mix of state militia, long-service Continental regulars, free and enslaved African Americans, and foreign volunteers. After Valley Forge, von Steuben\'s drilling turned them into a European-style regular army. Enlistments ranged from three months to \u201cfor the war,\u201d creating constant turnover headaches for Washington.',
+      },
+      {
+        question: 'What role did Native Americans play in the Revolution?',
+        answer: 'Both sides recruited Native allies, though most nations sided with Britain, fearing American westward expansion. The Iroquois Confederacy famously split, with most nations backing the British. Sullivan\'s 1779 campaign destroyed dozens of Iroquois villages, reshaping the balance of power in the Great Lakes region.',
+      },
+      {
+        question: 'Why did Britain lose despite having the strongest military in the world?',
+        answer: 'Distance, dispersed population centres, hostile terrain, competing global commitments, and political divisions at home. Supplying and reinforcing armies across the Atlantic was enormously expensive, and once France entered the war, Britain was forced to defend the Caribbean, Gibraltar, and India simultaneously.',
+      },
     ],
     relatedBattleIds: [29, 170, 16, 22],
     sections: [
@@ -1251,7 +1604,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'The Role of Foreign Allies',
         content:
-          'The American Revolution was won not by the colonists alone but with crucial support from European allies. France provided soldiers, a powerful navy, and critical financial support. [The Marquis de Lafayette](https://en.wikipedia.org/wiki/Gilbert_du_Motier,_Marquis_de_Lafayette) served as a major general in Washington\u2019s army. Baron von Steuben, a Prussian military officer, trained the Continental Army at Valley Forge and transformed it into a professional fighting force. Polish engineers like Tadeusz Ko\u015Bciuszko designed fortifications that proved decisive at several engagements.',
+          'The American Revolution was won not by the colonists alone but with crucial support from European allies. France provided soldiers, a powerful navy, and critical financial support. [The Marquis de Lafayette](https://en.wikipedia.org/wiki/Gilbert_du_Motier,_Marquis_de_Lafayette) served as a major general in Washington\u2019s army. Baron von Steuben, a Prussian military officer, trained the Continental Army at Valley Forge and transformed it into a professional fighting force. Polish engineers like Tadeusz Ko\u015Bciuszko designed fortifications that proved decisive at several engagements.\n\nThe war was never just an American affair. French and Spanish entry turned it into a genuinely global conflict, with fighting in the Caribbean, West Africa, Gibraltar, and the Indian Ocean. French subsidies and loans bankrolled much of the Continental Army \u2014 and helped bankrupt the French monarchy, contributing to the Revolution there a decade later. The American Revolution is one of the clearest examples of how a local rebellion can become decisive only once it is folded into great-power rivalry.',
       },
       {
         heading: 'Yorktown: The Final Victory',
@@ -1262,6 +1615,23 @@ export const blogPosts: BlogPost[] = [
         heading: 'Revolutionary Battles in BattleGuess',
         content:
           'American Revolution battles in BattleGuess feature distinctive visual elements: colonial militia in civilian clothing alongside Continental Army uniforms, British redcoats in formation, and the rural American landscape of forests, rivers, and farmland. These battles appear in the American Wars era and range from easy (Bunker Hill, Yorktown) to harder (Cowpens, Monmouth). Pay attention to the style of uniforms and weapons to distinguish Revolutionary War battles from later American conflicts. You can compare American uniforms directly in the [Battle encyclopedia](/battles) on [BattleGuess](/).',
+      },
+      {
+        heading: 'The Southern Campaign: The War Most Americans Forget',
+        content:
+          'Textbook coverage tends to focus on the northern theatre, but the war was arguably decided in the South after 1778. British strategy pivoted to a \u201csouthern strategy\u201d banking on loyalist support \u2014 which never materialised in the numbers expected. A grinding partisan war developed across the Carolinas and Georgia, marked by brutal small-unit fighting, switching allegiances, and extraordinary commanders on both sides.',
+        bullets: [
+          'Camden (1780) \u2014 a disastrous defeat that showed militia alone could not stand against British regulars in open battle',
+          'Kings Mountain (1780) \u2014 a loyalist force annihilated by frontier riflemen; a decisive psychological blow to British southern plans',
+          'Cowpens (1781) \u2014 Daniel Morgan\'s combined-arms masterpiece, one of the most tactically perfect American victories of the war',
+          'Guilford Court House (1781) \u2014 a British tactical win that cost so many casualties it forced the move north toward Yorktown',
+          'The partisan war led by Francis Marion, Thomas Sumter, and others tied down British resources for years',
+        ],
+      },
+      {
+        heading: 'After the Shooting: Turning Victory into a Nation',
+        content:
+          'Winning independence on the battlefield turned out to be the simpler part. The Continental Army had gone unpaid for years, and in the 1783 Newburgh Conspiracy officers came close to marching on Congress before Washington personally defused the crisis. The Articles of Confederation proved unable to tax or coordinate the states, prompting the 1787 Constitutional Convention. Debates over a standing army, federal power, and state militias that began in the war echo through American politics to this day. Yorktown ended one fight; the arguments it started have never fully finished.',
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -1308,6 +1678,18 @@ export const blogPosts: BlogPost[] = [
         question: 'What is Cinco de Mayo actually celebrating?',
         answer: 'Cinco de Mayo celebrates the Battle of Puebla in 1862, when Mexican forces defeated a French army considered one of the finest in the world, not Mexican independence day.',
       },
+      {
+        question: 'Why did Brazil\'s independence look so different from Spanish America\'s?',
+        answer: 'Brazil\'s split from Portugal in 1822 was largely peaceful. When Napoleon invaded Portugal, the royal family fled to Rio de Janeiro, elevating Brazil to kingdom status. When they returned, Crown Prince Pedro stayed, declared independence, and was crowned emperor \u2014 avoiding the long bloody wars seen in Spanish South America.',
+      },
+      {
+        question: 'Why did Gran Colombia break apart so quickly?',
+        answer: 'Bolivar\'s union of Venezuela, Colombia, and Ecuador lasted barely a decade. Huge distances, poor communications, regional rivalries, and disagreement over centralised versus federal government pulled it apart. By 1831, Gran Colombia had split into the three modern states \u2014 foreshadowing patterns of fragmentation across 19th-century Spanish America.',
+      },
+      {
+        question: 'How did enslaved people and indigenous populations fit into the wars?',
+        answer: 'Both groups fought on both sides, often promised freedom or autonomy in exchange. Haiti\'s 1804 revolution had already proved enslaved people could defeat European armies and inspired regional movements. Many indigenous groups, however, saw little improvement under new Creole republics, which often replicated colonial land and labour structures.',
+      },
     ],
     relatedBattleIds: [205, 206, 207, 208, 209, 218],
     sections: [
@@ -1324,7 +1706,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Jose de San Martin and the Southern Campaign',
         content:
-          'While Bolivar liberated the north, [Jose de San Martin](https://en.wikipedia.org/wiki/Jos%C3%A9_de_San_Mart%C3%ADn) led the independence campaigns in the south. His crossing of the Andes from Argentina into Chile in 1817 is compared to Hannibal\u2019s crossing of the Alps for its audacity and difficulty. The Battle of Chacabuco secured Chilean independence, and the Battle of Maipu confirmed it. San Martin then advanced into Peru, where his forces and Bolivar\u2019s would eventually converge to deliver the final blow to Spanish colonial power at the Battle of Ayacucho in 1824.',
+          'While Bolivar liberated the north, [Jose de San Martin](https://en.wikipedia.org/wiki/Jos%C3%A9_de_San_Mart%C3%ADn) led the independence campaigns in the south. His crossing of the Andes from Argentina into Chile in 1817 is compared to Hannibal\u2019s crossing of the Alps for its audacity and difficulty. The Battle of Chacabuco secured Chilean independence, and the Battle of Maipu confirmed it. San Martin then advanced into Peru, where his forces and Bolivar\u2019s would eventually converge to deliver the final blow to Spanish colonial power at the Battle of Ayacucho in 1824.\n\nThe Andes crossing deserves its own attention as a feat of military logistics. San Martin spent more than two years preparing: establishing foundries, weaving uniforms, breeding mules, and coordinating diversionary feints to fool the Spanish about his route. Five thousand soldiers crossed passes above 3,500 metres in midsummer snow, losing roughly a third of their pack animals. The fact that an army arrived in Chile at all \u2014 still organised, still equipped, still willing to fight within 48 hours at Chacabuco \u2014 is one of the great logistical achievements in military history.',
       },
       {
         heading: 'Key Battles of the Liberation',
@@ -1347,6 +1729,23 @@ export const blogPosts: BlogPost[] = [
         heading: 'Explore Latin American Battles',
         content:
           'Latin American battles are among the newest additions to BattleGuess, covering conflicts from the Inca Empire through the Chaco War. These battles feature distinctive visual elements: Andean mountain landscapes, tropical forests, cavalry-heavy warfare on the pampas, and the unique mixture of European military traditions with indigenous fighting styles. Explore the Latin American Wars era in [BattleGuess](/) to test your knowledge of these under-studied but fascinating conflicts.',
+      },
+      {
+        heading: 'Post-Independence Wars That Redrew the Map',
+        content:
+          'Independence was only the start. The 19th century saw a second wave of wars that determined the final borders of Latin American nations \u2014 and they are often more surprising than the wars of liberation themselves.',
+        bullets: [
+          'The War of the Triple Alliance (1864-1870) \u2014 Paraguay fought Brazil, Argentina, and Uruguay simultaneously, losing perhaps 60% of its population in one of history\'s most devastating wars',
+          'The War of the Pacific (1879-1884) \u2014 Chile defeated Peru and Bolivia, leaving Bolivia landlocked to this day and reshaping South America\'s nitrate-driven economies',
+          'The Mexican-American War (1846-1848) \u2014 transferred roughly half of Mexico\'s territory to the United States, including California and the American Southwest',
+          'The Chaco War (1932-1935) \u2014 Bolivia and Paraguay fought over the Gran Chaco in one of the deadliest conflicts of interwar Latin America',
+          'The Cisplatine War (1825-1828) \u2014 Argentina and Brazil fought over what became Uruguay, creating a buffer state by British mediation',
+        ],
+      },
+      {
+        heading: 'Why the Liberators\u2019 Vision Fell Short',
+        content:
+          'Bolivar died in 1830 writing bitterly that he had \u201cploughed the sea.\u201d Independence freed Latin America from direct Spanish rule but did not deliver the unified continental republic he envisioned. Social hierarchies largely survived \u2014 Creole elites simply replaced Spanish officials at the top. Caudillismo (strongman rule), regional civil wars, and foreign economic dependence shaped the first century of republican life. Understanding the gap between Bolivar\'s Letter from Jamaica and the fragmented continent that actually emerged is essential for making sense of modern Latin American politics.',
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -1393,6 +1792,18 @@ export const blogPosts: BlogPost[] = [
         question: 'When were tanks first used in battle?',
         answer: 'Tanks were first deployed at the Battle of the Somme in 1916. By World War II, armored divisions using blitzkrieg tactics had fully replaced cavalry as the primary mobile striking force.',
       },
+      {
+        question: 'Do modern armies still have cavalry units?',
+        answer: 'Yes, though \u201ccavalry\u201d now usually means reconnaissance or armoured forces. The U.S. Army\'s cavalry regiments ride Stryker vehicles and Bradleys. A few ceremonial mounted units remain, and special forces have occasionally used horses in modern operations \u2014 notably in Afghanistan in 2001.',
+      },
+      {
+        question: 'Why did horse cavalry survive so long after rifles arrived?',
+        answer: 'Horses still provided something no infantryman could: sustained operational mobility. Until trucks and railways matured, a mounted force could move 30-50 miles per day versus an infantry\'s 15. Their role shifted from shock to reconnaissance, screening, and rapid exploitation, which kept them useful through WWI.',
+      },
+      {
+        question: 'What really happened with Polish cavalry and German tanks in 1939?',
+        answer: 'A persistent myth, but false. Polish cavalry did fight effectively against German infantry at Krojanty in September 1939, but the famous \u201ccharging tanks\u201d story came from a misunderstood newsreel scene filmed by Italian journalists. Polish cavalry fought as mounted infantry, not as suicidal lance chargers.',
+      },
     ],
     relatedBattleIds: [31, 42, 4, 12],
     sections: [
@@ -1415,7 +1826,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'The Medieval Knight',
         content:
-          'The armored knight was the apex predator of medieval warfare for nearly five centuries. A single charge of heavy cavalry could break infantry formations, scatter light cavalry, and decide a battle in minutes. Battles like Hastings, Bouvines, and the Crusade engagements showcase the devastating impact of mounted knights. However, the knight\u2019s dominance was not absolute \u2014 disciplined infantry with pikes or longbows could stop cavalry charges, as demonstrated at Bannockburn, Cr\u00e9cy, and Agincourt.',
+          'The armored knight was the apex predator of medieval warfare for nearly five centuries. A single charge of heavy cavalry could break infantry formations, scatter light cavalry, and decide a battle in minutes. Battles like Hastings, Bouvines, and the Crusade engagements showcase the devastating impact of mounted knights. However, the knight\u2019s dominance was not absolute \u2014 disciplined infantry with pikes or longbows could stop cavalry charges, as demonstrated at Bannockburn, Cr\u00e9cy, and Agincourt.\n\nWhat made the knight so expensive, and so politically powerful, was the full system behind him. A single fully equipped knight required a trained warhorse (often several), mail or plate armour, squires, grooms, and land-rents to support all of it. That is why the feudal system existed in its European form: it was essentially a long-term financing arrangement for maintaining heavy cavalry. When that funding model broke in the late Middle Ages \u2014 partly from the rise of professional infantry, partly from the economic shock of the Black Death \u2014 the knight\'s battlefield dominance went with it.',
       },
       {
         heading: 'Cavalry in the Gunpowder Age',
@@ -1437,6 +1848,23 @@ export const blogPosts: BlogPost[] = [
         heading: 'Spotting Cavalry in BattleGuess',
         content:
           'Cavalry battles are some of the most dynamic and visually exciting images in BattleGuess. Look for the type of mount and equipment to determine the era: chariots suggest ancient Egypt or Mesopotamia, unarmored horsemen suggest steppe or early cavalry, fully armored knights indicate the medieval period, and hussars or dragoons point to the Napoleonic era. The transition from horse to tank is one of the clearest visual markers in the game for identifying the time period of a battle at [BattleGuess](/).',
+      },
+      {
+        heading: 'The Horse Itself Was a Technology',
+        content:
+          'It is easy to forget that the horse was the most important piece of military technology for nearly four thousand years. Small changes in breeding, equipment, and care produced massive battlefield consequences.',
+        bullets: [
+          'Selective breeding produced the huge destriers that could carry armoured knights, and the tough steppe ponies that sustained Mongol campaigns across Eurasia',
+          'The horseshoe (widespread in Europe by the 9th century) preserved hooves on paved roads and rocky terrain, vastly extending operational range',
+          'The padded horse collar replaced the throat-strangling yoke and let horses pull heavier loads, reshaping military logistics',
+          'Horse archery required years of training from childhood \u2014 which is why steppe peoples produced cavalry that settled societies could rarely match',
+          'A Napoleonic army needed roughly one horse for every three soldiers; forage logistics often dictated whether a campaign was possible at all',
+        ],
+      },
+      {
+        heading: 'What Replaced Cavalry, and What Did Not',
+        content:
+          'Tanks inherited the cavalry role of operational shock, but not every cavalry function transferred. Helicopters took over reconnaissance and rapid insertion \u2014 essentially the dragoon role. Attack helicopters and armed drones now provide what was once the cavalry\'s mobile firepower. What has not really been replaced is the political symbolism: horses remain the image nations reach for when they want to evoke military tradition, which is why mounted units lead most state ceremonies even in heavily mechanised armies. The horse left the battlefield; it never quite left the parade ground.',
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -1483,6 +1911,18 @@ export const blogPosts: BlogPost[] = [
         question: 'How long did the Ottoman Empire last?',
         answer: 'The Ottoman Empire lasted over six centuries, from its founding in the late 13th century until its dissolution after World War I in 1922, spanning three continents at its peak.',
       },
+      {
+        question: 'Who was Suleiman the Magnificent?',
+        answer: '[Suleiman I](https://en.wikipedia.org/wiki/Suleiman_the_Magnificent) ruled from 1520 to 1566 and is widely considered the greatest Ottoman sultan. He personally led 13 major campaigns, codified Ottoman law, captured Belgrade and Rhodes, and won the battle of Mohacs \u2014 all while presiding over the empire\'s cultural golden age.',
+      },
+      {
+        question: 'Why did the Ottomans fail to take Vienna?',
+        answer: 'Twice \u2014 in 1529 and 1683. Both sieges came at the extreme edge of Ottoman logistical reach, with supply lines stretching from Istanbul across the Balkans. Heavy autumn rains, disease, dwindling supplies, and the 1683 Polish-Imperial relief army under Jan III Sobieski combined to turn Vienna into the high-water mark of Ottoman Europe.',
+      },
+      {
+        question: 'What was the devshirme system?',
+        answer: 'A levy of Christian boys from Balkan provinces, taken to Istanbul, converted to Islam, and trained as Janissaries or palace administrators. It was coercive by modern standards but offered real social mobility \u2014 many devshirme recruits rose to become grand viziers and effectively ran the empire.',
+      },
     ],
     relatedBattleIds: [75],
     sections: [
@@ -1494,7 +1934,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'The Fall of Constantinople',
         content:
-          'The Siege of Constantinople in 1453 was the Ottoman Empire\u2019s defining military achievement. Sultan [Mehmed II](https://en.wikipedia.org/wiki/Mehmed_the_Conqueror) deployed massive cannons to breach the walls that had protected the city for over a thousand years. He also transported ships overland to bypass the chain blocking the Golden Horn. The fall of the Byzantine capital sent shockwaves across Europe and established the Ottoman Empire as a major world power, controlling the crucial crossroads between Europe and Asia.',
+          'The Siege of Constantinople in 1453 was the Ottoman Empire\u2019s defining military achievement. Sultan [Mehmed II](https://en.wikipedia.org/wiki/Mehmed_the_Conqueror) deployed massive cannons to breach the walls that had protected the city for over a thousand years. He also transported ships overland to bypass the chain blocking the Golden Horn. The fall of the Byzantine capital sent shockwaves across Europe and established the Ottoman Empire as a major world power, controlling the crucial crossroads between Europe and Asia.\n\nThe siege lasted 53 days and deserves its reputation as a turning point. Mehmed arrived with between 60,000 and 80,000 troops and the most modern siege train ever assembled \u2014 including the monstrous Orban bombard, cast in Edirne by a Hungarian engineer whom the Byzantines had been unable to afford. Emperor Constantine XI defended with around 7,000 men, including a famous detachment of Genoese under Giovanni Giustiniani. When the Theodosian Walls \u2014 the most formidable fortification of the ancient and medieval world \u2014 finally gave way, so did the Roman political tradition that had existed in some form since 27 BCE.',
         bullets: [
           'The Orban cannon used at Constantinople was over 8 meters long and required 60 oxen to transport',
           'Mehmed was only 21 years old when he conquered Constantinople',
@@ -1527,6 +1967,23 @@ export const blogPosts: BlogPost[] = [
         heading: 'Ottoman Battles in BattleGuess',
         content:
           'Ottoman battles in BattleGuess feature distinctive visual elements: Janissary troops with their characteristic headgear, massive siege cannons, galley fleets in the Mediterranean, and the architectural backdrop of mosques and minarets. These battles span nearly five centuries and appear in the Ottoman & Islamic era. Understanding Ottoman military evolution from early Anatolian raiders to gunpowder-equipped imperial forces helps identify the specific time period within this long and rich military history. Track it live at [BattleGuess](/).',
+      },
+      {
+        heading: 'The Long Decline and Its Battlefield Markers',
+        content:
+          'No empire lasting six centuries stays at its peak. The Ottomans\' military decline played out over roughly two hundred years of rising European pressure. Each of these engagements marked a further step in the process.',
+        bullets: [
+          'Second Siege of Vienna (1683) \u2014 the failed siege that ended Ottoman expansion into central Europe and began the Habsburg reconquest of Hungary',
+          'Battle of Zenta (1697) \u2014 Prince Eugene of Savoy annihilated an Ottoman army mid-river, forcing the Treaty of Karlowitz and the loss of most of Hungary',
+          'Russo-Turkish War of 1768-1774 \u2014 Russian victories and the Treaty of Kucuk Kaynarca established Russia as a dominant Black Sea power',
+          'Navarino (1827) \u2014 European navies destroyed the Ottoman-Egyptian fleet, effectively guaranteeing Greek independence',
+          'The Balkan Wars (1912-13) \u2014 the Ottomans lost nearly all remaining European territory in under a year, setting the stage for WWI entry',
+        ],
+      },
+      {
+        heading: 'Ottoman Military Legacy',
+        content:
+          'The modern Republic of Turkey emerged from the Ottoman collapse after WWI, but Ottoman military practice shaped more of the surrounding region than is often recognised. Balkan states inherited Ottoman-style conscription and fortification. Arab militaries trained by Ottoman officers carried those doctrines into independence. The Janissary template \u2014 a professional standing force drawn from outside the traditional elite and loyal to central authority \u2014 echoes in organisations as different as Mamluk cavalry, European guard regiments, and even the concept of a modern national army. The Ottoman military was not an oddity on the world stage; it was one of its most influential institutions.',
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -1573,6 +2030,18 @@ export const blogPosts: BlogPost[] = [
         question: 'What did Joan of Arc actually do in battle?',
         answer: 'Joan of Arc rallied the demoralized French army at the Siege of Orleans in 1429, providing both strategic leadership and symbolic inspiration that turned the tide of the Hundred Years\' War.',
       },
+      {
+        question: 'Were there really Amazon warriors?',
+        answer: 'Probably \u2014 though not exactly as Greek myth described. Archaeological digs in Scythian and Sarmatian burial sites across the Eurasian steppe have found roughly one in five warrior graves containing women with weapons and combat injuries. The Greek Amazon stories likely stemmed from genuine contact with these steppe cultures.',
+      },
+      {
+        question: 'How many women served in WWII combat roles?',
+        answer: 'Over 800,000 Soviet women served in the Red Army, including roughly 200,000 in combat positions \u2014 snipers, tankers, pilots, and partisan fighters. The U.S. and UK largely restricted women to auxiliary roles, though WASP pilots ferried combat aircraft and SOE agents fought directly behind enemy lines.',
+      },
+      {
+        question: 'Who is the highest-ranking woman in military history?',
+        answer: 'Depends on how you measure. Empress Wu Zetian of Tang China commanded armies as head of state in the 7th century. In modern terms, [Ann Dunwoody](https://en.wikipedia.org/wiki/Ann_E._Dunwoody) became the first four-star general in U.S. history in 2008, and several nations now have women as chiefs of defence or ministers of defence.',
+      },
     ],
     relatedBattleIds: [44],
     sections: [
@@ -1600,7 +2069,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Modern Military Women',
         content:
-          'The role of women in military operations expanded dramatically in the modern era. During World War II, Soviet women served as snipers, pilots, and combat soldiers, with figures like [Lyudmila Pavlichenko](https://en.wikipedia.org/wiki/Lyudmila_Pavlichenko) (309 confirmed kills) becoming legendary. Women served in resistance movements across occupied Europe, provided essential support as nurses and code-breakers, and flew combat missions as part of the Soviet [Night Witches](https://en.wikipedia.org/wiki/Night_Witches) bomber regiment. Their service helped pave the way for women\u2019s integration into modern armed forces.',
+          'The role of women in military operations expanded dramatically in the modern era. During World War II, Soviet women served as snipers, pilots, and combat soldiers, with figures like [Lyudmila Pavlichenko](https://en.wikipedia.org/wiki/Lyudmila_Pavlichenko) (309 confirmed kills) becoming legendary. Women served in resistance movements across occupied Europe, provided essential support as nurses and code-breakers, and flew combat missions as part of the Soviet [Night Witches](https://en.wikipedia.org/wiki/Night_Witches) bomber regiment. Their service helped pave the way for women\u2019s integration into modern armed forces.\n\nThe post-1945 integration story is uneven and worth understanding in detail. Israel conscripted women from 1948 but initially restricted them to non-combat roles; those restrictions were steadily loosened over five decades. The United States permitted women in all combat roles only in 2015. The Soviet Union, which had fielded the largest force of women combatants in history, quietly pushed most of them back into civilian life after 1945 \u2014 the wartime demand vanished faster than the stigma did. Every modern military that integrates women has had to work through the same set of practical questions: training standards, unit cohesion, deployment policy, and treatment of prisoners. The answers keep evolving.',
         bullets: [
           'The Night Witches flew over 30,000 bombing sorties using obsolete biplanes made of plywood and canvas',
           'The Special Operations Executive (SOE) sent women behind enemy lines in occupied France',
@@ -1612,6 +2081,24 @@ export const blogPosts: BlogPost[] = [
         heading: 'Recognizing Their Battles',
         content:
           'Several battles in BattleGuess are directly connected to women\u2019s military leadership. The Siege of Orl\u00e9ans, the Battle of Actium, and numerous other engagements feature women as key decision-makers. When you see the distinctive banner of a French army rallying at a besieged city, think Joan of Arc. When you see an Egyptian fleet in the Mediterranean, consider Cleopatra. These battles remind us that military history belongs to everyone who fought to shape it. Meet more of those stories at [BattleGuess](/).',
+      },
+      {
+        heading: 'Beyond the Western Canon',
+        content:
+          'The familiar list of warrior women tends to centre on Europe and the Mediterranean. Looking globally produces a far larger catalogue of figures whose influence shaped national military traditions.',
+        bullets: [
+          'Rani Lakshmibai of Jhansi \u2014 led cavalry charges during the 1857 Indian Rebellion and died in combat at Gwalior',
+          'Empress Jingu \u2014 legendary Japanese ruler credited with leading an invasion of Korea in the 3rd century CE',
+          'Lozen \u2014 Apache warrior and prophet who fought alongside Victorio and Geronimo, renowned for her skill with horses and weapons',
+          'Nzinga Mbande \u2014 17th-century queen of Ndongo and Matamba who waged a 30-year war against Portuguese colonists in what is now Angola',
+          'Ching Shih \u2014 early 19th-century Chinese pirate leader who commanded a fleet of 1,800 ships and 70,000 men, larger than most national navies of the period',
+          'The Dahomey Agojie \u2014 West African all-female elite regiment that fought through the 19th century and defeated multiple French expeditions before colonial conquest',
+        ],
+      },
+      {
+        heading: 'Women Behind the Lines',
+        content:
+          'Direct combat is only part of the story. Women\'s contributions to intelligence, code-breaking, logistics, medicine, and resistance have often been the margin of victory. Roughly 75% of Bletchley Park\'s wartime staff were women, many operating the Bombe machines that broke Enigma traffic daily. Virginia Hall, an American SOE agent in occupied France, coordinated resistance networks while the Gestapo hunted her as \u201cthe most dangerous Allied spy.\u201d Soviet partisans relied on women as couriers, bombers, and saboteurs behind German lines. In every war where detailed records survive, women\'s contributions have proven far larger than the stripped-down battle narratives suggest.',
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -1658,6 +2145,18 @@ export const blogPosts: BlogPost[] = [
         question: 'How did weather affect D-Day?',
         answer: 'Eisenhower needed a brief weather clearing for the invasion. His meteorologist identified a gap that German forecasters missed, achieving surprise because Rommel believed no invasion was possible in such weather.',
       },
+      {
+        question: 'How did military meteorology develop as a discipline?',
+        answer: 'Weather forecasting as a military science grew out of WWI trench warfare, when chemical attacks depended on wind direction. By WWII, dedicated meteorological services supported every major operation \u2014 D-Day, strategic bombing raids, and Pacific fleet movements. Modern militaries now run their own weather satellites and global forecasting models.',
+      },
+      {
+        question: 'Could modern armies ignore weather the way ancient ones could not?',
+        answer: 'Not really. GPS and all-weather aircraft help, but storms still ground helicopters, sandstorms still foul vehicles, and extreme cold still disables batteries and electronics. The 1980 [Operation Eagle Claw](https://en.wikipedia.org/wiki/Operation_Eagle_Claw) Iran hostage rescue failed partly because of unexpected dust storms. Weather is less decisive than in Napoleon\'s day \u2014 but never irrelevant.',
+      },
+      {
+        question: 'Is the idea of climate as a military factor new?',
+        answer: 'No, but its framing is. Historians now talk about \u201cmilitary climatology\u201d \u2014 how long-term climate patterns (e.g. the Little Ice Age, the Medieval Warm Period) shaped the feasibility of entire campaigns. The 17th-century Little Ice Age, for instance, contributed to crop failures that helped drive the Thirty Years War.',
+      },
     ],
     sections: [
       {
@@ -1678,7 +2177,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Winter Warfare',
         content:
-          'Cold weather has destroyed more armies than any enemy force. [Napoleon\u2019s invasion of Russia](https://en.wikipedia.org/wiki/French_invasion_of_Russia) in 1812 ended in catastrophe as the Grande Arm\u00e9e was devastated by the Russian winter during its retreat from Moscow. Of the roughly 600,000 troops who entered Russia, fewer than 100,000 returned. The Battle of the Bulge in 1944 was fought in bitter cold and heavy snow that grounded Allied air support and favored the German surprise attack. At the Battle of Chosin Reservoir in 1950, temperatures dropped below minus 30 degrees, affecting weapon function and causing massive casualties from frostbite.',
+          'Cold weather has destroyed more armies than any enemy force. [Napoleon\u2019s invasion of Russia](https://en.wikipedia.org/wiki/French_invasion_of_Russia) in 1812 ended in catastrophe as the Grande Arm\u00e9e was devastated by the Russian winter during its retreat from Moscow. Of the roughly 600,000 troops who entered Russia, fewer than 100,000 returned. The Battle of the Bulge in 1944 was fought in bitter cold and heavy snow that grounded Allied air support and favored the German surprise attack. At the Battle of Chosin Reservoir in 1950, temperatures dropped below minus 30 degrees, affecting weapon function and causing massive casualties from frostbite.\n\nIt is worth separating the genuine role of cold from the myth of \u201cGeneral Winter.\u201d The Russian winters of 1812 and 1941-42 were in fact colder than average, but most of Napoleon\'s and Hitler\'s losses came before the worst cold hit \u2014 starvation, typhus, and stretched supply lines had already hollowed out both armies. Cold was the killing blow, not the whole cause. Historians now describe weather as a force multiplier: it rarely creates a defeat from nothing, but it can turn a difficult situation into a catastrophe with breathtaking speed.',
       },
       {
         heading: 'Rain, Mud, and Fog',
@@ -1700,6 +2199,23 @@ export const blogPosts: BlogPost[] = [
         heading: 'Weather Clues in BattleGuess',
         content:
           'Weather conditions are valuable visual clues in BattleGuess images. Snowy landscapes suggest winter battles like the Bulge or Chosin Reservoir. Muddy, rain-soaked fields point to battles like Agincourt or Passchendaele. Desert heat waves suggest Middle Eastern or North African engagements. Stormy seas point to naval battles where weather played a decisive role. Training yourself to read weather conditions in battle images is one of the most effective strategies for narrowing down the possibilities at [BattleGuess](/).',
+      },
+      {
+        heading: 'Heat, Sand, and Thirst',
+        content:
+          'Cold gets the most attention, but heat and drought have decided just as many battles. Campaigns in deserts, steppes, and tropical zones often came down to who controlled the wells.',
+        bullets: [
+          'Hattin (1187) \u2014 Saladin won by controlling water and letting Crusader heat exhaustion do the fighting',
+          'The Mongol invasion of Hungary (1241) \u2014 a rare case where sudden spring mud slowed Mongol cavalry long enough for Europe to recover',
+          'Gallipoli (1915) \u2014 summer heat and dysentery did more damage to Allied troops than Ottoman bullets in the opening months',
+          'El Alamein (1942) \u2014 the Sahara heat shaped how both armies moved, fought, and maintained vehicles',
+          'The Korean Chosin Reservoir campaign (1950) \u2014 not only freezing but driven by sudden thaws that turned roads into impassable sludge',
+        ],
+      },
+      {
+        heading: 'Forecasting in Modern Warfare',
+        content:
+          'Modern militaries invest heavily in weather forecasting because precision weapons, helicopters, and electronic systems are surprisingly weather-sensitive. A fog bank can ground a drone swarm. Humidity affects artillery ballistics enough to matter for long-range fire. Desert dust can damage jet engines in hours. Cold-soaked lithium batteries can lose half their capacity. The side that predicts these conditions hours earlier than its opponent gets genuine operational advantage \u2014 which is why every major military fields its own meteorological service and why dedicated weather satellites are now routine military hardware.',
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -1746,6 +2262,18 @@ export const blogPosts: BlogPost[] = [
         question: 'How was the Roman legion organized?',
         answer: 'The legion was divided into smaller maniples (later cohorts) that could operate independently, adapt to terrain, and rotate fresh troops into the fight, giving it far greater flexibility than the phalanx.',
       },
+      {
+        question: 'Did Rome just copy Greek military ideas?',
+        answer: 'Rome borrowed heavily \u2014 early Roman armies fought in phalanx-like formations themselves \u2014 but then systematically adapted and improved. Manipular tactics, the pilum, the gladius (borrowed from Iberia), and the castra (fortified camp) show that Rome\'s genius was synthesis, not originality. They picked the best elements from every enemy they fought.',
+      },
+      {
+        question: 'Who had better cavalry, Greece or Rome?',
+        answer: 'Greece, by a clear margin \u2014 especially under Macedon. Alexander\'s Companion cavalry was probably the finest heavy cavalry arm of the ancient world. Rome\'s native cavalry was mediocre, which is why Roman armies relied on allied (later \u201cauxiliary\u201d) cavalry from Gaul, Numidia, and elsewhere throughout their history.',
+      },
+      {
+        question: 'Did the phalanx ever come back after Pydna?',
+        answer: 'Not as the dominant formation, but its ideas never disappeared. Byzantine spear-and-shield formations, Swiss pike squares, and the Spanish tercio all drew on phalanx logic. Even modern infantry squares used against cavalry in the 18th and 19th centuries were essentially temporary phalanxes.',
+      },
     ],
     relatedBattleIds: [14, 42],
     sections: [
@@ -1779,7 +2307,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'When They Clashed',
         content:
-          'The definitive test came at the Battle of Cynoscephalae in 197 BCE, where the Roman legions of Flamininus defeated the Macedonian phalanx of Philip V. The Roman victory demonstrated that the flexible legion could exploit the phalanx\u2019s weakness: its vulnerability to attacks on the flanks and rear, and its difficulty maneuvering on uneven ground. The Battle of Pydna in 168 BCE confirmed this result, effectively ending the age of the phalanx and establishing the legion as the dominant military formation of the ancient world.',
+          'The definitive test came at the Battle of Cynoscephalae in 197 BCE, where the Roman legions of Flamininus defeated the Macedonian phalanx of Philip V. The Roman victory demonstrated that the flexible legion could exploit the phalanx\u2019s weakness: its vulnerability to attacks on the flanks and rear, and its difficulty maneuvering on uneven ground. The Battle of Pydna in 168 BCE confirmed this result, effectively ending the age of the phalanx and establishing the legion as the dominant military formation of the ancient world.\n\nThe way these battles were won is instructive. At Cynoscephalae, an unplanned encounter on broken hills forced the phalanx to advance across uneven terrain; gaps opened in its line, and a quick-thinking Roman tribune led twenty maniples into the open rear of the Macedonian formation. At Pydna, Aemilius Paullus let the phalanx press forward, watched it fragment as it entered rougher ground, and then sent cohorts into each gap. The pattern \u2014 force the phalanx to move, wait for it to lose cohesion, then exploit the seams \u2014 became the standard Roman playbook for defeating any rigid formation.',
       },
       {
         heading: 'Side-by-Side Comparison',
@@ -1797,6 +2325,23 @@ export const blogPosts: BlogPost[] = [
         heading: 'Identify the Difference in BattleGuess',
         content:
           'In BattleGuess, Greek and Roman battles have distinct visual characteristics. Greek battles feature rounded shields, bronze armor, crested helmets, and tight phalanx formations on open plains. Roman battles show rectangular shields (scutum), segmented armor, and more spread-out flexible formations, often with fortifications or siege works visible. Learning to distinguish these visual signatures instantly narrows your options and helps you identify specific battles within each civilization at [BattleGuess](/).',
+      },
+      {
+        heading: 'Beyond the Battlefield: The Systems That Made Them Possible',
+        content:
+          'Tactical formations matter, but neither Greece nor Rome won through tactics alone. The underlying systems behind their armies were just as important as how they fought.',
+        bullets: [
+          'Greek civic armies \u2014 hoplites were wealthy enough to buy their own armour, limiting campaigns to what citizen-farmers could spare from the fields',
+          'Roman conscription and later professional service \u2014 created a force that could campaign for years without disbanding',
+          'Military engineering \u2014 Roman roads, aqueducts, and siege machinery let legions sustain operations no Greek state could match',
+          'Naval reach \u2014 Athens built an empire on triremes; Rome had to learn navy-building from Carthage during the Punic Wars',
+          'Diplomacy and citizenship \u2014 Rome incorporated defeated enemies into its army as allies and eventually citizens, multiplying its manpower',
+        ],
+      },
+      {
+        heading: 'What Each System Actually Left Behind',
+        content:
+          'Rome\'s military template directly shaped later Western militaries \u2014 the legion standard, rank insignia (from *centurion* to *general*), military engineering manuals, and the entire concept of a professional standing army trace back through Roman practice. Greece\'s influence is more diffuse but just as deep: the Greek invention of citizen-soldiers tied to a political community shapes the modern idea of the national army, and Alexander\'s combined-arms approach is still taught at staff colleges today. A modern NATO officer reading Xenophon\'s *Anabasis* or Vegetius\'s *De Re Militari* recognises more than they might expect.',
       },
       {
         heading: 'Keep Exploring BattleGuess',
@@ -1843,6 +2388,18 @@ export const blogPosts: BlogPost[] = [
         question: 'What are the most common tactical mistakes in military history?',
         answer: 'The most common mistakes include overextending supply lines, underestimating the enemy, fighting on unfavorable terrain, ignoring intelligence, and attacking strong positions frontally.',
       },
+      {
+        question: 'What is the difference between strategy, operations, and tactics?',
+        answer: 'Strategy is the overall plan to win a war \u2014 which campaigns to fight and why. Operations is coordinating multiple battles and movements within a theatre. Tactics is how individual engagements are fought. A good commander wins tactically but loses strategically if they fight the wrong war; the Confederacy in 1861-65 is the classic example.',
+      },
+      {
+        question: 'What is an oblique order?',
+        answer: 'An oblique attack concentrates overwhelming force against one flank of an enemy line while refusing the other. Frederick the Great perfected it at Leuthen in 1757, smashing a force twice his size. The logic is to break the decisive point before the rest of the enemy line can react.',
+      },
+      {
+        question: 'Are there tactics that only work in specific eras?',
+        answer: 'Yes \u2014 some tactics depend on the weapons of their age. Longbow volleys stopped French cavalry at Agincourt but would be useless against modern armour. Pike squares worked against knights but collapsed under artillery. Tactics are always in conversation with technology; when weapons change, so does the tactical playbook.',
+      },
     ],
     sections: [
       {
@@ -1853,7 +2410,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: 'Flanking and Envelopment',
         content:
-          'A [flanking attack](https://en.wikipedia.org/wiki/Flanking_maneuver) targets the side of an enemy formation, where it is weakest. A double envelopment attacks both flanks simultaneously, surrounding the enemy. The most famous example is Hannibal\u2019s victory at Cannae in 216 BCE, where he deliberately weakened his center to draw the Romans in, then closed his wings around them like a trap. This tactic has been copied countless times throughout history and remains a fundamental maneuver in modern military doctrine.',
+          'A [flanking attack](https://en.wikipedia.org/wiki/Flanking_maneuver) targets the side of an enemy formation, where it is weakest. A double envelopment attacks both flanks simultaneously, surrounding the enemy. The most famous example is Hannibal\u2019s victory at Cannae in 216 BCE, where he deliberately weakened his center to draw the Romans in, then closed his wings around them like a trap. This tactic has been copied countless times throughout history and remains a fundamental maneuver in modern military doctrine.\n\nFlanking works because formations are almost always strongest facing forward \u2014 shields, bayonets, main guns, and trained attention all point the same way. Hit the side, and you force enemy soldiers to rotate individually while under attack, which is the moment when cohesion breaks. The principle scales from a hoplite phalanx to an armoured division: Schlieffen planned a massive flanking wheel through Belgium in 1914, and Guderian\'s Panzer breakthrough at Sedan in 1940 was essentially a Cannae at the operational level. The weapons changed; the geometry did not.',
       },
       {
         heading: 'The Hammer and Anvil',
@@ -1893,6 +2450,23 @@ export const blogPosts: BlogPost[] = [
         heading: 'Spotting Tactics in BattleGuess',
         content:
           'Understanding tactics helps you identify battles in BattleGuess because many famous engagements are depicted at the moment their defining tactic was executed. An image showing forces closing around a trapped army suggests Cannae or Stalingrad. A cavalry charge hitting an exposed flank suggests Gaugamela or Austerlitz. A defensive position in a narrow pass suggests Thermopylae or Roncesvalles. By recognizing the tactical situation in an image, you can narrow down the possibilities before examining other visual clues at [BattleGuess](/).',
+      },
+      {
+        heading: 'Tactics That Shaped Modern Warfare',
+        content:
+          'Classical tactics evolved into modern doctrines once industrialised firepower changed the rules. Several 20th-century approaches now sit alongside the older concepts in any serious tactical toolkit.',
+        bullets: [
+          'Infiltration tactics \u2014 developed by German stormtroopers in 1918 and Soviet deep battle in the 1930s, these bypass strongpoints to strike command and logistics',
+          'Combined arms \u2014 the integration of infantry, armour, artillery, and air power, so that each arm covers the others\' weaknesses',
+          'Maneuver warfare \u2014 defeating an enemy by disrupting their ability to respond rather than destroying them piece by piece, formalised in U.S. doctrine in the 1980s',
+          'Counter-insurgency \u2014 the \u201cink-spot\u201d approach of securing populations rather than holding terrain, refined from Malaya through Iraq',
+          'Network-centric and multi-domain operations \u2014 using information superiority to coordinate land, sea, air, space, and cyber effects simultaneously',
+        ],
+      },
+      {
+        heading: 'How to Read a Battle Like a Historian',
+        content:
+          'The same battle can look completely different depending on how you read it. Professional historians (and sharp players) usually work through the same checklist: what did each side want to achieve, what did each side know about the other, what was the terrain and weather, what was the force composition, and what were the key decision points where the outcome could have gone differently. Try it on a battle you already know \u2014 Gettysburg, Waterloo, Midway \u2014 and you will often find the textbook story is much thinner than the full picture. That habit also pays off in BattleGuess: the same tactical clues that let historians reconstruct ancient engagements let you narrow down which battle you are looking at.',
       },
       {
         heading: 'Keep Exploring BattleGuess',

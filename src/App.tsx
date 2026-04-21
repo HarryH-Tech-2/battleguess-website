@@ -325,7 +325,7 @@ function App() {
       onLogoClick={actions.resetGame}
     >
       <SEOHead
-        title="BattleGuess - The History Battle Guessing Game"
+        title="BattleGuess - The Military History Game"
         description="Test your knowledge of military history by identifying famous battles from artwork. Over 200 battles across 8 historical eras."
         canonical="https://battleguess.app"
         path="/"
