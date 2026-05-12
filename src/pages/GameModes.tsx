@@ -10,7 +10,7 @@ function GameModes() {
   return (
     <ContentLayout
       title="Game Modes | BattleGuess"
-      description="Explore 8 unique game modes in BattleGuess: Classic, Timed, Year, Location, Timeline, Campaign, Daily Challenge, and Community Challenge."
+      description="Explore the game modes in BattleGuess: Daily, Classic, Year, Campaign, and Challenge a friend."
       canonical="https://battleguess.app/modes"
       path="/modes"
     >

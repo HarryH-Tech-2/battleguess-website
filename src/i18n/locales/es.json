@@ -61,7 +61,6 @@
     "timed": "Contrarreloj",
     "reverseYear": "Año",
     "reverseLocation": "Ubicación",
-    "timeline": "Cronología",
     "campaign": "Campaña",
     "daily": "Diario",
     "challenge": "Desafío"
@@ -188,7 +187,7 @@
       "step5Title": "Sube en la clasificación",
       "step5Desc": "Aumenta tu racha, obtén logros y compite en la clasificación global. Comparte tus resultados con amigos y desafíalos a superar tu puntuación.",
       "featureAiDesc": "Cada batalla cobra vida con imágenes únicas y atmosféricas, diseñadas para capturar la esencia de cada enfrentamiento histórico.",
-      "featureModesDesc": "Desde adivinanzas clásicas hasta ordenar cronologías, desafíos contrarreloj, campañas y retos diarios, siempre hay una nueva forma de jugar.",
+      "featureModesDesc": "Desde adivinanzas clásicas hasta adivinar el año, campañas, retos diarios y desafíos entre amigos, siempre hay una nueva forma de jugar.",
       "featureBattlesDesc": "Explora más de 200 batallas históricamente precisas que abarcan miles de años de historia militar, desde la guerra de carros antigua hasta el combate moderno.",
       "featureErasDesc": "Viaja a través del Antiguo Egipto, Grecia y Roma, la Europa medieval, el Imperio otomano, Asia oriental, la era colonial, las Guerras de América y las Guerras Mundiales."
     },

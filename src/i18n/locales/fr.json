@@ -61,7 +61,6 @@
     "timed": "Chronométré",
     "reverseYear": "Année",
     "reverseLocation": "Localisation",
-    "timeline": "Chronologie",
     "campaign": "Campagne",
     "daily": "Quotidien",
     "challenge": "Défi"
@@ -188,7 +187,7 @@
       "step5Title": "Grimpez dans le classement",
       "step5Desc": "Construisez votre série, débloquez des succès et rivalisez dans le classement mondial. Partagez vos résultats avec vos amis et défiez-les de battre votre score.",
       "featureAiDesc": "Chaque bataille prend vie grâce à des images uniques et atmosphériques, conçues pour capturer l'essence de chaque engagement historique.",
-      "featureModesDesc": "Du mode Classique au tri Chronologique, en passant par les défis Chronométrés, les Campagnes et les défis Quotidiens, il y a toujours une nouvelle façon de jouer.",
+      "featureModesDesc": "Du mode Classique à la devinette d'Année, en passant par les Campagnes, les défis Quotidiens et les Défis entre amis, il y a toujours une nouvelle façon de jouer.",
       "featureBattlesDesc": "Explorez plus de 200 batailles historiquement fidèles couvrant des milliers d'années d'histoire militaire, de la guerre antique sur chars aux combats modernes.",
       "featureErasDesc": "Voyagez à travers l'Égypte ancienne, la Grèce et Rome antiques, l'Europe médiévale, l'Empire ottoman, l'Asie de l'Est, l'ère coloniale, les guerres américaines et les guerres mondiales."
     },

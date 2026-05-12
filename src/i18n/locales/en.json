@@ -61,7 +61,6 @@
     "timed": "Timed",
     "reverseYear": "Year",
     "reverseLocation": "Location",
-    "timeline": "Timeline",
     "campaign": "Campaign",
     "daily": "Daily",
     "challenge": "Challenge"
@@ -188,7 +187,7 @@
       "step5Title": "Climb the Leaderboard",
       "step5Desc": "Build your streak, earn achievements, and compete on the global leaderboard. Share your results with friends and challenge them to beat your score.",
       "featureAiDesc": "Every battle is brought to life with unique, atmospheric images crafted to capture the essence of each historical engagement.",
-      "featureModesDesc": "From Classic guessing to Timeline sorting, Timed challenges, Campaigns, and Daily challenges, there is always a new way to play.",
+      "featureModesDesc": "From Classic guessing to Year guessing, Campaigns, Daily challenges, and head-to-head Challenges with friends, there is always a new way to play.",
       "featureBattlesDesc": "Explore over 200 historically accurate battles spanning thousands of years of military history, from ancient chariot warfare to modern combat.",
       "featureErasDesc": "Journey through Ancient Egypt, Greece & Rome, Medieval Europe, the Ottoman Empire, East Asia, the Colonial era, American Wars, and the World Wars."
     },

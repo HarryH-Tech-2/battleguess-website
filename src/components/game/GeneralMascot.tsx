@@ -16,7 +16,6 @@ const DRAG_BREAKPOINT = 0;
 
 // Module-level storage — survives component unmount/remount between questions
 const savedPosition = { x: 0, y: 0 };
-let savedScale = 1;
 
 export function GeneralMascot({
   hints,
@@ -28,9 +27,6 @@ export function GeneralMascot({
   mascotAlt = 'Battle Guide mascot',
 }: GeneralMascotProps) {
   const [showBubble, setShowBubble] = useState(false);
-  const [scale, setScale] = useState(savedScale);
-  const isResizingRef = useRef(false);
-  const resizeStartRef = useRef({ y: 0, scale: 1 });
   // Initialise synchronously so the first frame already has the correct style
   const [canDrag, setCanDrag] = useState(
     () => typeof window !== 'undefined' && window.innerWidth >= DRAG_BREAKPOINT
@@ -77,32 +73,6 @@ export function GeneralMascot({
       setShowBubble(false);
     }
   }, [showBubble, revealedHints.length, canRevealMore, disabled, onRevealHint]);
-
-  const handleResizeStart = useCallback((e: React.PointerEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    isResizingRef.current = true;
-    resizeStartRef.current = { y: e.clientY, scale };
-
-    const onMove = (ev: PointerEvent) => {
-      if (!isResizingRef.current) return;
-      const dy = resizeStartRef.current.y - ev.clientY;
-      const dx = resizeStartRef.current.y - ev.clientY; // diagonal: use vertical component
-      const dist = Math.sign(dy) * Math.sqrt(dx * dx + (resizeStartRef.current.y - ev.clientY) ** 2);
-      const newScale = Math.min(2, Math.max(0.3, resizeStartRef.current.scale + dist / 200));
-      setScale(newScale);
-      savedScale = newScale;
-    };
-
-    const onUp = () => {
-      isResizingRef.current = false;
-      window.removeEventListener('pointermove', onMove);
-      window.removeEventListener('pointerup', onUp);
-    };
-
-    window.addEventListener('pointermove', onMove);
-    window.addEventListener('pointerup', onUp);
-  }, [scale]);
 
   const isLeft = side === 'left';
 
@@ -245,9 +215,6 @@ export function GeneralMascot({
       </AnimatePresence>
 
       {/* Mascot Character */}
-      <div
-        style={{ transform: `scale(${scale})`, transformOrigin: 'bottom center' }}
-      >
       <motion.div
         onClick={handleMascotClick}
         className="relative"
@@ -272,19 +239,7 @@ export function GeneralMascot({
           className="w-[100px] h-[120px] sm:w-[120px] sm:h-[144px] lg:w-[340px] lg:h-[408px] 2xl:w-[400px] 2xl:h-[480px] object-contain select-none pointer-events-none"
           draggable={false}
         />
-
-        {/* Resize handle */}
-        <div
-          onPointerDown={handleResizeStart}
-          className="absolute -top-1 -left-1 w-6 h-6 rounded-full bg-white/90 border-2 border-amber-300 shadow-md flex items-center justify-center cursor-nwse-resize hover:bg-amber-50 hover:border-amber-400 transition-colors touch-none z-20"
-          title="Drag to resize"
-        >
-          <svg className="w-3.5 h-3.5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
-          </svg>
-        </div>
       </motion.div>
-      </div>
     </motion.div>
   );
 }
