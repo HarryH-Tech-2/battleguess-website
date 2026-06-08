@@ -56,7 +56,7 @@ import './index.css';
 
 function App() {
   const { t } = useTranslation();
-  const { state, actions, totalBattlesInPool, battlesPlayed, playedBattleIds } = useGame();
+  const { state, actions, totalBattlesInPool, playedBattleIds } = useGame();
   const { getImageForBattle } = useImageGeneration();
   const { isMuted, toggleMute, currentTrackId, changeTrack, tracks } = useBackgroundMusic('/drum-tune.mp3');
   const { play: playSound } = useSoundEffects(isMuted);
@@ -905,7 +905,7 @@ function App() {
           >
             <div>{state.correctGuesses} correct out of {state.totalGuesses} battles</div>
             <div className="text-primary-300">
-              Battle {battlesPlayed} of {totalBattlesInPool}
+              {state.correctGuesses} of {totalBattlesInPool} correct to finish
             </div>
           </motion.div>
         )}

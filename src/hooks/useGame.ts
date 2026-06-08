@@ -217,7 +217,10 @@ export function useGame() {
   }, [setSavedStats]);
 
   const nextBattle = useCallback(() => {
-    if (playedBattles.length >= ROUNDS_PER_GAME) {
+    // Game completes only after the player has answered 10 battles correctly,
+    // regardless of how many they attempted or whether they changed civ/difficulty
+    // mid-run.
+    if (state.correctGuesses >= ROUNDS_PER_GAME) {
       dispatch({ type: 'COMPLETE_GAME' });
       return;
     }
@@ -231,17 +234,17 @@ export function useGame() {
     const battle = remaining[Math.floor(Math.random() * remaining.length)];
     setPlayedBattles(prev => [...prev, battle.id]);
     dispatch({ type: 'SET_BATTLE', payload: battle });
-  }, [playedBattles, setPlayedBattles, state.selectedCivilization, state.selectedDifficulty]);
+  }, [playedBattles, setPlayedBattles, state.selectedCivilization, state.selectedDifficulty, state.correctGuesses]);
 
+  // Battle-option changes (civilization, difficulty) carry the player's
+  // correct-answer progress forward — the run only ends after 10 correct.
   const selectCivilization = useCallback((civ: CivilizationId | 'all') => {
     dispatch({ type: 'SET_CIVILIZATION', payload: civ });
-    setPlayedBattles([]);
-  }, [setPlayedBattles]);
+  }, []);
 
   const selectDifficulty = useCallback((difficulty: Difficulty | 'all') => {
     dispatch({ type: 'SET_DIFFICULTY', payload: difficulty });
-    setPlayedBattles([]);
-  }, [setPlayedBattles]);
+  }, []);
 
   const setMode = useCallback((mode: GameMode) => {
     dispatch({ type: 'SET_MODE', payload: mode });
