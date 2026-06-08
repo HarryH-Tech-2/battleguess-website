@@ -105,40 +105,73 @@ async function prerender() {
     const routes = getRoutes();
     console.log(`Pre-rendering ${routes.length} routes...`);
 
+    // Render a single route. Returns true on success.
+    async function renderRoute(route, attempt) {
+      const page = await browser.newPage();
+      try {
+        // domcontentloaded + waitForSelector('main') is more reliable than
+        // networkidle0 on slow build machines — networkidle0 can time out
+        // when long-lived connections (e.g. analytics) keep the network busy
+        // even after the page is fully interactive.
+        await page.goto(`http://localhost:${PORT}${route}`, {
+          waitUntil: 'domcontentloaded',
+          timeout: 30000,
+        });
+
+        // Wait for React to mount and render the main landmark.
+        await page.waitForSelector('main', { timeout: 10000 });
+
+        const html = await page.content();
+
+        // Sanity check: pre-rendered HTML should be meaningfully populated.
+        // If it's tiny, treat as a failure so the retry logic kicks in
+        // rather than writing a broken file that fails validation later.
+        if (html.length < 5000) {
+          throw new Error(`html too small (${html.length} bytes)`);
+        }
+
+        const outDir = resolve(distDir, route.slice(1));
+        mkdirSync(outDir, { recursive: true });
+        writeFileSync(resolve(outDir, 'index.html'), html, 'utf-8');
+        return true;
+      } catch (err) {
+        const prefix = attempt > 1 ? `  Retry ${attempt} failed for` : `  Failed to render`;
+        console.error(`${prefix} ${route}: ${err.message}`);
+        return false;
+      } finally {
+        await page.close();
+      }
+    }
+
     // Process in batches of 10 for speed
     const BATCH_SIZE = 10;
     let completed = 0;
+    const failedRoutes = [];
 
     for (let i = 0; i < routes.length; i += BATCH_SIZE) {
       const batch = routes.slice(i, i + BATCH_SIZE);
       await Promise.all(batch.map(async (route) => {
-        const page = await browser.newPage();
-        try {
-          await page.goto(`http://localhost:${PORT}${route}`, {
-            waitUntil: 'networkidle0',
-            timeout: 15000,
-          });
-
-          // Wait a bit for React to hydrate
-          await page.waitForSelector('main', { timeout: 5000 }).catch(() => {});
-
-          const html = await page.content();
-
-          // Write to dist/<route>/index.html
-          const outDir = resolve(distDir, route.slice(1)); // remove leading /
-          mkdirSync(outDir, { recursive: true });
-          writeFileSync(resolve(outDir, 'index.html'), html, 'utf-8');
-
+        const ok = await renderRoute(route, 1);
+        if (ok) {
           completed++;
           if (completed % 20 === 0 || completed === routes.length) {
             console.log(`  ${completed}/${routes.length} pages rendered`);
           }
-        } catch (err) {
-          console.error(`  Failed to render ${route}: ${err.message}`);
-        } finally {
-          await page.close();
+        } else {
+          failedRoutes.push(route);
         }
       }));
+    }
+
+    // Retry failed routes serially with a longer budget. A second pass
+    // typically rescues transient timeouts caused by build-machine
+    // contention during the parallel batches.
+    if (failedRoutes.length > 0) {
+      console.log(`Retrying ${failedRoutes.length} failed route(s)...`);
+      for (const route of failedRoutes) {
+        const ok = await renderRoute(route, 2);
+        if (ok) completed++;
+      }
     }
 
     console.log(`Pre-rendering complete! ${completed} pages written to dist/`);
