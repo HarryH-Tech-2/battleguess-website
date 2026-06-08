@@ -84,7 +84,7 @@ export function ShareModal({ isOpen, data, onClose }: ShareModalProps) {
       await navigator.clipboard.write([
         new ClipboardItem({ 'image/png': png }),
       ]);
-      showToast('success', 'Image copied — paste it anywhere!');
+      showToast('success', 'Image copied');
     } catch {
       showToast('error', 'Copy failed');
     }
@@ -100,7 +100,7 @@ export function ShareModal({ isOpen, data, onClose }: ShareModalProps) {
     a.click();
     a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
-    showToast('success', 'Image saved');
+    showToast('success', 'Downloaded');
   }
 
   // Share the actual image (not a text caption). Tries the native share
@@ -136,18 +136,17 @@ export function ShareModal({ isOpen, data, onClose }: ShareModalProps) {
     }
 
     const targets = {
-      x: { url: 'https://x.com/compose/post', name: 'X' },
-      instagram: { url: 'https://www.instagram.com/', name: 'Instagram' },
-      whatsapp: { url: 'https://web.whatsapp.com/', name: 'WhatsApp' },
+      x: 'https://x.com/compose/post',
+      instagram: 'https://www.instagram.com/',
+      whatsapp: 'https://web.whatsapp.com/',
     } as const;
-    const target = targets[platform];
 
     if (copied) {
-      showToast('success', `Image copied — paste it in ${target.name}`);
+      showToast('success', 'Image copied');
     } else {
-      showToast('error', 'Copy not supported — try Download instead');
+      showToast('error', 'Copy failed — try Download');
     }
-    window.open(target.url, '_blank', 'noopener,noreferrer');
+    window.open(targets[platform], '_blank', 'noopener,noreferrer');
   }
 
   function handleTwitter() {
@@ -187,11 +186,11 @@ export function ShareModal({ isOpen, data, onClose }: ShareModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 20 }}
             transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-            className="relative w-full max-w-md sm:max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col"
+            className="relative w-full max-w-md sm:max-w-lg lg:max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[92vh] flex flex-col"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-4 sm:px-5 py-3 border-b border-gray-100">
-              <h2 className="text-base sm:text-lg font-bold text-gray-900">Share your score</h2>
+            <div className="flex items-center justify-between px-4 sm:px-5 lg:px-7 py-3 lg:py-4 border-b border-gray-100">
+              <h2 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900">Share your score</h2>
               <button
                 onClick={onClose}
                 aria-label="Close share dialog"
@@ -204,9 +203,9 @@ export function ShareModal({ isOpen, data, onClose }: ShareModalProps) {
             </div>
 
             {/* Preview + actions (scrollable) */}
-            <div className="flex-1 overflow-y-auto px-4 sm:px-5 py-4 space-y-4">
-              {/* Image preview */}
-              <div className="relative w-full max-w-[320px] mx-auto aspect-[1080/1350] rounded-xl overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200/60 shadow-md">
+            <div className="flex-1 overflow-y-auto px-4 sm:px-5 lg:px-7 py-4 lg:py-6 space-y-4 lg:space-y-5">
+              {/* Image preview — grows to ~480px on desktop */}
+              <div className="relative w-full max-w-[320px] lg:max-w-[480px] mx-auto aspect-[1080/1350] rounded-xl overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200/60 shadow-md">
                 {generating || !previewUrl ? (
                   <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
                     <div className="w-10 h-10 border-4 border-amber-200 border-t-amber-600 rounded-full animate-spin" />
@@ -260,19 +259,16 @@ export function ShareModal({ isOpen, data, onClose }: ShareModalProps) {
                 </div>
               </div>
 
-              <p className="text-[10px] text-gray-400 text-center pt-1">
-                Tip: We'll copy the image — paste it into your post.
-              </p>
             </div>
 
-            {/* Toast */}
+            {/* Toast — full-width bar pinned to the bottom of the modal */}
             <AnimatePresence>
               {toast && (
                 <motion.div
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  className={`absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-full text-white text-xs font-medium shadow-lg whitespace-nowrap ${
+                  exit={{ opacity: 0, y: 12 }}
+                  className={`absolute bottom-0 inset-x-0 py-3 text-center text-white text-sm font-medium ${
                     toast.kind === 'success' ? 'bg-green-600' : 'bg-red-600'
                   }`}
                 >
@@ -304,7 +300,7 @@ function ActionButton({
   label: string;
 }) {
   const base =
-    'flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl font-semibold text-sm transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed';
+    'flex items-center justify-center gap-2 px-3 py-2.5 lg:py-3 rounded-xl font-semibold text-sm lg:text-base transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed';
   const styles =
     variant === 'primary'
       ? 'bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white shadow-md shadow-amber-500/25 hover:scale-[1.02] active:scale-[0.98]'
@@ -338,7 +334,7 @@ function SocialButton({
       disabled={disabled}
       aria-label={`Share image to ${label}`}
       title={`Share image to ${label}`}
-      className="flex items-center justify-center gap-2 py-3 rounded-xl text-white text-sm font-semibold transition-transform duration-150 hover:scale-[1.03] active:scale-95 shadow-md disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+      className="flex items-center justify-center gap-2 py-3 lg:py-3.5 rounded-xl text-white text-sm lg:text-base font-semibold transition-transform duration-150 hover:scale-[1.03] active:scale-95 shadow-md disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
       style={gradient ? { backgroundImage: gradient } : { backgroundColor: color }}
     >
       {children}
