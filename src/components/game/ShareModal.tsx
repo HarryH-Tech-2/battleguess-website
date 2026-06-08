@@ -237,14 +237,14 @@ export function ShareModal({ isOpen, data, onClose }: ShareModalProps) {
                 )}
               </div>
 
-              {/* Primary actions */}
-              <div className="grid grid-cols-2 gap-2">
+              {/* Primary actions — narrower (centered) but taller/larger */}
+              <div className="mx-auto grid grid-cols-2 gap-3 w-full max-w-xs sm:max-w-sm">
                 <ActionButton
                   onClick={handleCopyImage}
                   disabled={!blob}
                   variant="primary"
                   icon={
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 lg:w-7 lg:h-7" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                       <rect x="9" y="9" width="13" height="13" rx="2" />
                       <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
                     </svg>
@@ -256,7 +256,7 @@ export function ShareModal({ isOpen, data, onClose }: ShareModalProps) {
                   disabled={!blob}
                   variant="secondary"
                   icon={
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 lg:w-7 lg:h-7" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
                     </svg>
                   }
@@ -321,7 +321,7 @@ function ActionButton({
   label: string;
 }) {
   const base =
-    'flex items-center justify-center gap-2 px-3 py-2.5 lg:py-3 rounded-xl font-semibold text-sm lg:text-base transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed';
+    'flex flex-col items-center justify-center gap-1.5 px-3 py-4 lg:py-5 rounded-xl font-semibold text-sm lg:text-base transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed';
   const styles =
     variant === 'primary'
       ? 'bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white shadow-md shadow-amber-500/25 hover:scale-[1.02] active:scale-[0.98]'

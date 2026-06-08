@@ -87,12 +87,12 @@ export async function generateShareCard(data: ShareCardData): Promise<Blob> {
   canvas.height = HEIGHT;
   const ctx = canvas.getContext('2d')!;
 
-  // --- Background: rich diagonal military-sunset gradient ---
+  // --- Background: vivid blue base with orange + green energy ---
   const bg = ctx.createLinearGradient(0, 0, WIDTH, HEIGHT);
-  bg.addColorStop(0, '#1a0b2e');     // deep aubergine
-  bg.addColorStop(0.35, '#3b1240');  // royal plum
-  bg.addColorStop(0.65, '#7a1f2b');  // burgundy
-  bg.addColorStop(1, '#2a0a14');     // dark wine
+  bg.addColorStop(0, '#0a2540');     // deep cobalt
+  bg.addColorStop(0.4, '#0c3d6e');   // royal blue
+  bg.addColorStop(0.75, '#093554');  // steel blue
+  bg.addColorStop(1, '#051a2e');     // ink blue
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
@@ -100,40 +100,54 @@ export async function generateShareCard(data: ShareCardData): Promise<Blob> {
   ctx.save();
   ctx.globalCompositeOperation = 'lighter';
 
+  // Bright sky-blue burst — top left
   const blob1 = ctx.createRadialGradient(
-    WIDTH * 0.18, HEIGHT * 0.15, 0,
-    WIDTH * 0.18, HEIGHT * 0.15, WIDTH * 0.55,
+    WIDTH * 0.15, HEIGHT * 0.18, 0,
+    WIDTH * 0.15, HEIGHT * 0.18, WIDTH * 0.6,
   );
-  blob1.addColorStop(0, 'rgba(255,140,40,0.45)');   // ember orange
-  blob1.addColorStop(1, 'rgba(255,140,40,0)');
+  blob1.addColorStop(0, 'rgba(64,170,255,0.7)');
+  blob1.addColorStop(1, 'rgba(64,170,255,0)');
   ctx.fillStyle = blob1;
   ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
+  // Bright orange burst — top right
   const blob2 = ctx.createRadialGradient(
-    WIDTH * 0.9, HEIGHT * 0.25, 0,
-    WIDTH * 0.9, HEIGHT * 0.25, WIDTH * 0.5,
+    WIDTH * 0.88, HEIGHT * 0.22, 0,
+    WIDTH * 0.88, HEIGHT * 0.22, WIDTH * 0.55,
   );
-  blob2.addColorStop(0, 'rgba(212,55,120,0.4)');    // magenta
-  blob2.addColorStop(1, 'rgba(212,55,120,0)');
+  blob2.addColorStop(0, 'rgba(255,140,30,0.75)');
+  blob2.addColorStop(1, 'rgba(255,140,30,0)');
   ctx.fillStyle = blob2;
   ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
+  // Vivid emerald — bottom right
   const blob3 = ctx.createRadialGradient(
     WIDTH * 0.85, HEIGHT * 0.85, 0,
     WIDTH * 0.85, HEIGHT * 0.85, WIDTH * 0.6,
   );
-  blob3.addColorStop(0, 'rgba(60,140,220,0.35)');   // steel blue
-  blob3.addColorStop(1, 'rgba(60,140,220,0)');
+  blob3.addColorStop(0, 'rgba(40,210,130,0.65)');
+  blob3.addColorStop(1, 'rgba(40,210,130,0)');
   ctx.fillStyle = blob3;
   ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
+  // Lime-yellow accent — bottom left
   const blob4 = ctx.createRadialGradient(
-    WIDTH * 0.1, HEIGHT * 0.95, 0,
-    WIDTH * 0.1, HEIGHT * 0.95, WIDTH * 0.5,
+    WIDTH * 0.12, HEIGHT * 0.9, 0,
+    WIDTH * 0.12, HEIGHT * 0.9, WIDTH * 0.55,
   );
-  blob4.addColorStop(0, 'rgba(80,200,160,0.3)');    // teal
-  blob4.addColorStop(1, 'rgba(80,200,160,0)');
+  blob4.addColorStop(0, 'rgba(255,200,50,0.5)');
+  blob4.addColorStop(1, 'rgba(255,200,50,0)');
   ctx.fillStyle = blob4;
+  ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+  // Cyan center pop for extra brightness
+  const blob5 = ctx.createRadialGradient(
+    WIDTH * 0.5, HEIGHT * 0.55, 0,
+    WIDTH * 0.5, HEIGHT * 0.55, WIDTH * 0.5,
+  );
+  blob5.addColorStop(0, 'rgba(80,200,255,0.25)');
+  blob5.addColorStop(1, 'rgba(80,200,255,0)');
+  ctx.fillStyle = blob5;
   ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
   ctx.restore();
