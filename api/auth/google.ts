@@ -15,15 +15,20 @@ async function verifyGoogleToken(credential: string): Promise<GoogleTokenInfo> {
   const res = await fetch(
     `https://oauth2.googleapis.com/tokeninfo?id_token=${credential}`
   );
-  if (!res.ok) throw new Error('Invalid Google token');
+  if (!res.ok) throw new Error(`Invalid Google token (tokeninfo ${res.status})`);
 
   const data = await res.json() as GoogleTokenInfo;
 
-  const clientId = process.env.VITE_GOOGLE_CLIENT_ID;
-  if (data.aud !== clientId) throw new Error('Token audience mismatch');
+  const clientId = process.env.VITE_GOOGLE_CLIENT_ID ?? process.env.GOOGLE_CLIENT_ID;
+  if (!clientId) {
+    throw new Error('Server missing VITE_GOOGLE_CLIENT_ID env var');
+  }
+  if (data.aud !== clientId) {
+    throw new Error(`Audience mismatch: token aud=${data.aud}, expected=${clientId}`);
+  }
 
   const validIssuers = ['accounts.google.com', 'https://accounts.google.com'];
-  if (!validIssuers.includes(data.iss)) throw new Error('Invalid token issuer');
+  if (!validIssuers.includes(data.iss)) throw new Error(`Invalid issuer: ${data.iss}`);
 
   return data;
 }
@@ -116,6 +121,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
   } catch (error) {
     console.error('Auth error:', error);
-    return res.status(401).json({ error: 'Authentication failed' });
+    const message = error instanceof Error ? error.message : 'Authentication failed';
+    return res.status(401).json({ error: message });
   }
 }
