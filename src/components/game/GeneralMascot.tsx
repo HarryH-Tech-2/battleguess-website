@@ -264,7 +264,7 @@ export function GeneralMascot({
             movable. */}
         {canDrag && (
           <motion.div
-            className="absolute -top-1 -left-1 z-20 pointer-events-none flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 lg:w-9 lg:h-9 rounded-full bg-amber-500 text-white shadow-lg border-2 border-white"
+            className="absolute top-[15%] left-[12%] z-20 pointer-events-none flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 lg:w-9 lg:h-9 rounded-full bg-amber-500 text-white shadow-lg border-2 border-white"
             animate={showDragHint ? { scale: [1, 1.18, 1] } : { scale: 1 }}
             transition={showDragHint ? { duration: 1.2, repeat: Infinity, ease: 'easeInOut' } : { duration: 0.3 }}
             aria-hidden="true"
@@ -289,7 +289,7 @@ export function GeneralMascot({
               initial={{ opacity: 0, y: 4 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className="absolute -top-7 sm:-top-8 lg:-top-10 left-1/2 -translate-x-1/2 z-20 pointer-events-none whitespace-nowrap px-2 py-0.5 sm:py-1 rounded-full bg-amber-600/95 text-white text-[9px] sm:text-[10px] lg:text-xs font-semibold shadow-md"
+              className="absolute top-[6%] left-1/2 -translate-x-1/2 z-20 pointer-events-none whitespace-nowrap px-2 py-0.5 sm:py-1 rounded-full bg-amber-600/95 text-white text-[9px] sm:text-[10px] lg:text-xs font-semibold shadow-md"
               aria-hidden="true"
             >
               Drag me
@@ -299,7 +299,7 @@ export function GeneralMascot({
 
         {hintsRemaining > 0 && (
           <span
-            className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] sm:text-xs lg:text-lg font-bold rounded-full w-5 h-5 sm:w-6 sm:h-6 lg:w-10 lg:h-10 flex items-center justify-center z-10 shadow-lg border-2 lg:border-[3px] border-white"
+            className="absolute top-[15%] right-[12%] bg-red-500 text-white text-[10px] sm:text-xs lg:text-lg font-bold rounded-full w-5 h-5 sm:w-6 sm:h-6 lg:w-10 lg:h-10 flex items-center justify-center z-10 shadow-lg border-2 lg:border-[3px] border-white"
           >
             {hintsRemaining}
           </span>
