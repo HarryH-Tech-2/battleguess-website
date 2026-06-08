@@ -1,7 +1,8 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { shareResult, type ShareCardData, type ShareStatus } from '../../utils/shareCard';
+import { type ShareCardData } from '../../utils/shareCard';
+import { ShareModal } from './ShareModal';
 
 interface BattleImageProps {
   imageUrl: string | null;
@@ -128,18 +129,16 @@ function PlaceholderVideo() {
 
 export function BattleImage({ imageUrl, isLoading, battleName, battleYear, shareData }: BattleImageProps) {
   const { t } = useTranslation();
-  const [shareStatus, setShareStatus] = useState<ShareStatus | 'idle'>('idle');
+  const [shareOpen, setShareOpen] = useState(false);
   const isShareable = !!shareData;
 
-  const handleShare = async (e?: React.MouseEvent) => {
+  const handleShare = (e?: React.MouseEvent) => {
     if (e) {
       e.stopPropagation();
       e.preventDefault();
     }
     if (!shareData) return;
-    const result = await shareResult(shareData);
-    setShareStatus(result);
-    setTimeout(() => setShareStatus('idle'), 2500);
+    setShareOpen(true);
   };
 
   return (
@@ -203,35 +202,23 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear, share
 
             {/* Corner share button - visible whenever sharing is enabled */}
             {isShareable && (
-              <>
-                <button
-                  type="button"
-                  onClick={handleShare}
-                  aria-label="Share this battle and your score"
-                  className="absolute top-2 right-2 z-10 flex items-center gap-1.5 px-3 py-2 rounded-full bg-black/55 hover:bg-black/75 backdrop-blur-sm text-white text-xs sm:text-sm font-semibold shadow-lg transition-all hover:scale-105 active:scale-95 group-hover:bg-black/70"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-                  </svg>
-                  <span className="hidden sm:inline">Share</span>
-                </button>
-                <AnimatePresence>
-                  {shareStatus !== 'idle' && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0 }}
-                      className={`absolute bottom-3 left-1/2 -translate-x-1/2 z-10 px-3 py-1.5 rounded-full text-xs font-medium text-white shadow-lg whitespace-nowrap ${
-                        shareStatus === 'failed' ? 'bg-red-600' : 'bg-green-600'
-                      }`}
-                    >
-                      {shareStatus === 'shared' ? 'Shared!' : shareStatus === 'copied' ? 'Copied to clipboard!' : 'Share failed'}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </>
+              <button
+                type="button"
+                onClick={handleShare}
+                aria-label="Share this battle and your score"
+                className="absolute top-2 right-2 z-10 flex items-center gap-1.5 px-3 py-2 rounded-full bg-black/55 hover:bg-black/75 backdrop-blur-sm text-white text-xs sm:text-sm font-semibold shadow-lg transition-all hover:scale-105 active:scale-95 group-hover:bg-black/70"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                </svg>
+                <span className="hidden sm:inline">Share</span>
+              </button>
             )}
       </div>
+
+      {isShareable && shareData && (
+        <ShareModal isOpen={shareOpen} data={shareData} onClose={() => setShareOpen(false)} />
+      )}
 
       {/* Date display below image */}
       {battleYear && imageUrl && (

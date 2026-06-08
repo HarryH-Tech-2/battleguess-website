@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { shareResult, generateShareText, type ShareCardData } from '../../utils/shareCard';
+import { type ShareCardData } from '../../utils/shareCard';
+import { ShareModal } from './ShareModal';
 
 interface ShareButtonProps {
   data: ShareCardData;
@@ -8,26 +8,12 @@ interface ShareButtonProps {
 }
 
 export function ShareButton({ data, className = '' }: ShareButtonProps) {
-  const [status, setStatus] = useState<'idle' | 'shared' | 'copied' | 'failed'>('idle');
-
-  const handleShare = async () => {
-    const result = await shareResult(data);
-    setStatus(result);
-    setTimeout(() => setStatus('idle'), 2500);
-  };
-
-  const handleShareX = () => {
-    const text = generateShareText(data);
-    const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
-
-  const feedbackText = status === 'shared' ? 'Shared!' : status === 'copied' ? 'Copied to clipboard!' : status === 'failed' ? 'Share failed' : '';
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={`relative space-y-2 ${className}`}>
+    <div className={`relative ${className}`}>
       <button
-        onClick={handleShare}
+        onClick={() => setIsOpen(true)}
         className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 text-white font-bold rounded-xl shadow-lg shadow-yellow-500/25 transition-all duration-200 hover:shadow-yellow-500/40 hover:scale-[1.02] active:scale-[0.98]"
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,29 +21,7 @@ export function ShareButton({ data, className = '' }: ShareButtonProps) {
         </svg>
         Share Score
       </button>
-      <button
-        onClick={handleShareX}
-        className="mx-auto mt-3 flex items-center justify-center gap-2 px-5 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
-      >
-        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-        </svg>
-        Share on X
-      </button>
-      <AnimatePresence>
-        {status !== 'idle' && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            className={`absolute -top-9 left-1/2 -translate-x-1/2 text-white text-xs px-3 py-1.5 rounded-full whitespace-nowrap shadow-lg ${
-              status === 'failed' ? 'bg-red-600' : 'bg-green-600'
-            }`}
-          >
-            {feedbackText}
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <ShareModal isOpen={isOpen} data={data} onClose={() => setIsOpen(false)} />
     </div>
   );
 }
