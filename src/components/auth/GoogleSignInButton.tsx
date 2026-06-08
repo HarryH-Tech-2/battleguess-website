@@ -22,10 +22,11 @@ declare global {
 
 interface GoogleSignInButtonProps {
   onSuccess?: () => void;
+  onError?: (message: string) => void;
   width?: number;
 }
 
-export function GoogleSignInButton({ onSuccess, width = 300 }: GoogleSignInButtonProps) {
+export function GoogleSignInButton({ onSuccess, onError, width = 300 }: GoogleSignInButtonProps) {
   const buttonRef = useRef<HTMLDivElement>(null);
   const { signIn } = useAuth();
 
@@ -37,7 +38,10 @@ export function GoogleSignInButton({ onSuccess, width = 300 }: GoogleSignInButto
         body: JSON.stringify({ credential: response.credential }),
       });
 
-      if (!res.ok) throw new Error('Auth failed');
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error ?? `Auth failed (${res.status})`);
+      }
 
       const data = await res.json() as { token: string; user: { id: string; email: string; name: string; avatarUrl: string | null } };
       signIn(data.token, data.user);
@@ -48,8 +52,9 @@ export function GoogleSignInButton({ onSuccess, width = 300 }: GoogleSignInButto
       onSuccess?.();
     } catch (err) {
       console.error('Sign-in failed:', err);
+      onError?.(err instanceof Error ? err.message : 'Google sign-in failed');
     }
-  }, [signIn, onSuccess]);
+  }, [signIn, onSuccess, onError]);
 
   useEffect(() => {
     const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;

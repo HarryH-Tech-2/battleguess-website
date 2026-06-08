@@ -117,6 +117,7 @@ export function SignUpModal({ isOpen, onDismiss, onSuccess }: SignUpModalProps) 
             <GoogleSignInButton
               width={260}
               onSuccess={() => { resetForm(); onSuccess(); }}
+              onError={(message) => setError(message)}
             />
 
             {/* Divider */}
