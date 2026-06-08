@@ -9,8 +9,6 @@ interface ShareModalProps {
   onClose: () => void;
 }
 
-const SHARE_URL = 'https://battleguess.app';
-
 type ToastKind = 'success' | 'error';
 
 interface Toast {
