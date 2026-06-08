@@ -186,7 +186,7 @@ export function ShareModal({ isOpen, data, onClose }: ShareModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 20 }}
             transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-            className="relative w-full max-w-md sm:max-w-xl lg:max-w-3xl xl:max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[95vh] flex flex-col"
+            className="relative w-full max-w-md sm:max-w-2xl lg:max-w-4xl xl:max-w-5xl bg-white rounded-2xl shadow-2xl overflow-hidden max-h-[95vh] flex flex-col"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-4 sm:px-5 lg:px-7 py-3 lg:py-4 border-b border-gray-100">
@@ -205,7 +205,7 @@ export function ShareModal({ isOpen, data, onClose }: ShareModalProps) {
             {/* Preview + actions (scrollable) */}
             <div className="flex-1 overflow-y-auto px-4 sm:px-5 lg:px-7 py-4 lg:py-6 space-y-4 lg:space-y-5">
               {/* Image preview — grows on larger screens */}
-              <div className="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[560px] xl:max-w-[640px] mx-auto aspect-[1080/1350] rounded-xl overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200/60 shadow-md">
+              <div className="relative w-full max-w-[340px] sm:max-w-[480px] lg:max-w-[680px] xl:max-w-[760px] mx-auto aspect-[1080/1350] rounded-xl overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200/60 shadow-md">
                 {generating || !previewUrl ? (
                   <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
                     <div className="w-10 h-10 border-4 border-amber-200 border-t-amber-600 rounded-full animate-spin" />

@@ -87,16 +87,59 @@ export async function generateShareCard(data: ShareCardData): Promise<Blob> {
   canvas.height = HEIGHT;
   const ctx = canvas.getContext('2d')!;
 
-  // --- Background: deep military gradient (navy -> black) ---
-  const bg = ctx.createLinearGradient(0, 0, 0, HEIGHT);
-  bg.addColorStop(0, '#0b1220');
-  bg.addColorStop(0.55, '#0f1f2e');
-  bg.addColorStop(1, '#05070c');
+  // --- Background: rich diagonal military-sunset gradient ---
+  const bg = ctx.createLinearGradient(0, 0, WIDTH, HEIGHT);
+  bg.addColorStop(0, '#1a0b2e');     // deep aubergine
+  bg.addColorStop(0.35, '#3b1240');  // royal plum
+  bg.addColorStop(0.65, '#7a1f2b');  // burgundy
+  bg.addColorStop(1, '#2a0a14');     // dark wine
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
+  // Colorful glow blobs for depth (use 'lighter' to blend additively)
+  ctx.save();
+  ctx.globalCompositeOperation = 'lighter';
+
+  const blob1 = ctx.createRadialGradient(
+    WIDTH * 0.18, HEIGHT * 0.15, 0,
+    WIDTH * 0.18, HEIGHT * 0.15, WIDTH * 0.55,
+  );
+  blob1.addColorStop(0, 'rgba(255,140,40,0.45)');   // ember orange
+  blob1.addColorStop(1, 'rgba(255,140,40,0)');
+  ctx.fillStyle = blob1;
+  ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+  const blob2 = ctx.createRadialGradient(
+    WIDTH * 0.9, HEIGHT * 0.25, 0,
+    WIDTH * 0.9, HEIGHT * 0.25, WIDTH * 0.5,
+  );
+  blob2.addColorStop(0, 'rgba(212,55,120,0.4)');    // magenta
+  blob2.addColorStop(1, 'rgba(212,55,120,0)');
+  ctx.fillStyle = blob2;
+  ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+  const blob3 = ctx.createRadialGradient(
+    WIDTH * 0.85, HEIGHT * 0.85, 0,
+    WIDTH * 0.85, HEIGHT * 0.85, WIDTH * 0.6,
+  );
+  blob3.addColorStop(0, 'rgba(60,140,220,0.35)');   // steel blue
+  blob3.addColorStop(1, 'rgba(60,140,220,0)');
+  ctx.fillStyle = blob3;
+  ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+  const blob4 = ctx.createRadialGradient(
+    WIDTH * 0.1, HEIGHT * 0.95, 0,
+    WIDTH * 0.1, HEIGHT * 0.95, WIDTH * 0.5,
+  );
+  blob4.addColorStop(0, 'rgba(80,200,160,0.3)');    // teal
+  blob4.addColorStop(1, 'rgba(80,200,160,0)');
+  ctx.fillStyle = blob4;
+  ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+  ctx.restore();
+
   // Topographic-ish diagonal map lines
-  ctx.strokeStyle = 'rgba(212,175,55,0.04)';
+  ctx.strokeStyle = 'rgba(255,220,140,0.06)';
   ctx.lineWidth = 1;
   for (let i = -HEIGHT; i < WIDTH; i += 36) {
     ctx.beginPath();
@@ -105,19 +148,33 @@ export async function generateShareCard(data: ShareCardData): Promise<Blob> {
     ctx.stroke();
   }
 
-  // Vignette corners
+  // Vignette for text legibility — pull the edges dark so white headline pops
   const vignette = ctx.createRadialGradient(
     WIDTH / 2,
     HEIGHT / 2,
-    WIDTH * 0.4,
+    WIDTH * 0.3,
     WIDTH / 2,
     HEIGHT / 2,
-    WIDTH * 0.9,
+    WIDTH * 0.95,
   );
   vignette.addColorStop(0, 'rgba(0,0,0,0)');
-  vignette.addColorStop(1, 'rgba(0,0,0,0.55)');
+  vignette.addColorStop(1, 'rgba(0,0,0,0.7)');
   ctx.fillStyle = vignette;
   ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+  // Header darkening strip so "BATTLEGUESS" stays high-contrast
+  const headerShade = ctx.createLinearGradient(0, 0, 0, 220);
+  headerShade.addColorStop(0, 'rgba(0,0,0,0.55)');
+  headerShade.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle = headerShade;
+  ctx.fillRect(0, 0, WIDTH, 220);
+
+  // Footer darkening strip for the stats / footer text
+  const footerShade = ctx.createLinearGradient(0, HEIGHT - 360, 0, HEIGHT);
+  footerShade.addColorStop(0, 'rgba(0,0,0,0)');
+  footerShade.addColorStop(1, 'rgba(0,0,0,0.6)');
+  ctx.fillStyle = footerShade;
+  ctx.fillRect(0, HEIGHT - 360, WIDTH, 360);
 
   // Outer gold border
   ctx.strokeStyle = '#d4af37';
