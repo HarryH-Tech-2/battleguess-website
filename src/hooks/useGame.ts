@@ -35,6 +35,7 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         revealedHints: [],
         hintsUsed: 0,
         currentGuess: '',
+        imageUrl: null,
       };
     case 'SET_BATTLE':
       return {
@@ -42,6 +43,7 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         currentBattle: action.payload,
         gameStatus: 'playing',
         isImageLoading: true,
+        imageUrl: null,
       };
     case 'SET_IMAGE':
       return {

@@ -1,12 +1,16 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { shareResult, type ShareCardData, type ShareStatus } from '../../utils/shareCard';
 
 interface BattleImageProps {
   imageUrl: string | null;
   isLoading: boolean;
   battleName?: string;
   battleYear?: number;
+  /** When provided, shows a corner share button and makes the card clickable
+      to share the current battle + score. */
+  shareData?: ShareCardData;
 }
 
 function formatYear(year?: number): string {
@@ -122,14 +126,35 @@ function PlaceholderVideo() {
   );
 }
 
-export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: BattleImageProps) {
+export function BattleImage({ imageUrl, isLoading, battleName, battleYear, shareData }: BattleImageProps) {
   const { t } = useTranslation();
+  const [shareStatus, setShareStatus] = useState<ShareStatus | 'idle'>('idle');
+  const isShareable = !!shareData;
+
+  const handleShare = async (e?: React.MouseEvent) => {
+    if (e) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+    if (!shareData) return;
+    const result = await shareResult(shareData);
+    setShareStatus(result);
+    setTimeout(() => setShareStatus('idle'), 2500);
+  };
+
   return (
     <div className="space-y-3">
       {/* Image Container — square aspect ratio matches the 1080x1080 source images.
           Cap at 70vh on both width and height so the square shrinks (not clips)
           on short viewports. */}
-      <div className="relative overflow-hidden rounded-2xl shadow-xl aspect-square max-h-[70vh] max-w-[70vh] mx-auto">
+      <div
+        className={`relative overflow-hidden rounded-2xl shadow-xl aspect-square max-h-[70vh] max-w-[70vh] mx-auto ${
+          isShareable ? 'cursor-pointer group' : ''
+        }`}
+        onClick={isShareable ? () => handleShare() : undefined}
+        role={isShareable ? 'button' : undefined}
+        aria-label={isShareable ? 'Tap to share this battle and your score' : undefined}
+      >
           <AnimatePresence mode="wait">
               {isLoading ? (
                 <motion.div
@@ -175,6 +200,37 @@ export function BattleImage({ imageUrl, isLoading, battleName, battleYear }: Bat
                 <PlaceholderVideo />
               )}
             </AnimatePresence>
+
+            {/* Corner share button - visible whenever sharing is enabled */}
+            {isShareable && (
+              <>
+                <button
+                  type="button"
+                  onClick={handleShare}
+                  aria-label="Share this battle and your score"
+                  className="absolute top-2 right-2 z-10 flex items-center gap-1.5 px-3 py-2 rounded-full bg-black/55 hover:bg-black/75 backdrop-blur-sm text-white text-xs sm:text-sm font-semibold shadow-lg transition-all hover:scale-105 active:scale-95 group-hover:bg-black/70"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                  </svg>
+                  <span className="hidden sm:inline">Share</span>
+                </button>
+                <AnimatePresence>
+                  {shareStatus !== 'idle' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0 }}
+                      className={`absolute bottom-3 left-1/2 -translate-x-1/2 z-10 px-3 py-1.5 rounded-full text-xs font-medium text-white shadow-lg whitespace-nowrap ${
+                        shareStatus === 'failed' ? 'bg-red-600' : 'bg-green-600'
+                      }`}
+                    >
+                      {shareStatus === 'shared' ? 'Shared!' : shareStatus === 'copied' ? 'Copied to clipboard!' : 'Share failed'}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </>
+            )}
       </div>
 
       {/* Date display below image */}

@@ -93,10 +93,22 @@ function App() {
   useEffect(() => {
     if (state.currentBattle && state.gameStatus === 'playing' && !state.imageUrl) {
       const imageUrl = getImageForBattle(state.currentBattle.id);
-      // Preload the image before showing it
+      // Preload the image before showing it. Always clear the loading state on
+      // completion (success OR error) so we never get stuck on the spinner.
       const img = new Image();
-      img.onload = () => actions.setImage(imageUrl);
+      let cancelled = false;
+      img.onload = () => {
+        if (!cancelled) actions.setImage(imageUrl);
+      };
+      img.onerror = () => {
+        // Show the image anyway — the <img> in BattleImage will render the
+        // browser's broken-image icon rather than spin forever.
+        if (!cancelled) actions.setImage(imageUrl);
+      };
       img.src = imageUrl;
+      return () => {
+        cancelled = true;
+      };
     }
   }, [state.currentBattle, state.gameStatus, state.imageUrl, actions, getImageForBattle]);
 
@@ -125,19 +137,21 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.currentBattle?.id, state.gameStatus]);
 
-  // When civilization changes mid-game, load a new battle from the new pool
+  // When civilization or difficulty changes mid-game, load a new battle from
+  // the new pool.
   const prevCivilization = useRef(state.selectedCivilization);
+  const prevDifficulty = useRef(state.selectedDifficulty);
   useEffect(() => {
     const isSpecialMode = state.gameMode === 'campaign' || state.gameMode === 'daily' || state.gameMode === 'challenge';
-    if (
-      prevCivilization.current !== state.selectedCivilization &&
-      state.gameStatus === 'playing' &&
-      !isSpecialMode
-    ) {
+    const filterChanged =
+      prevCivilization.current !== state.selectedCivilization ||
+      prevDifficulty.current !== state.selectedDifficulty;
+    if (filterChanged && state.gameStatus === 'playing' && !isSpecialMode) {
       actions.startGame();
     }
     prevCivilization.current = state.selectedCivilization;
-  }, [state.selectedCivilization, state.gameStatus, state.gameMode, actions]);
+    prevDifficulty.current = state.selectedDifficulty;
+  }, [state.selectedCivilization, state.selectedDifficulty, state.gameStatus, state.gameMode, actions]);
 
   // Sound effects & stats recording based on game status changes
   useEffect(() => {
@@ -691,7 +705,17 @@ function App() {
             )}
 
             {/* Playing State */}
-            {isPlaying && state.currentBattle && (
+            {isPlaying && state.currentBattle && (() => {
+              const liveShareData = {
+                score: state.score,
+                accuracy: state.totalGuesses > 0 ? Math.round((state.correctGuesses / state.totalGuesses) * 100) : 0,
+                streak: state.streak,
+                rank: state.streak >= 10 ? 'Unstoppable' : state.streak >= 5 ? 'On Fire' : state.streak >= 3 ? 'Hot Streak' : 'Commander',
+                battlesWon: state.correctGuesses,
+                totalBattles: state.totalGuesses,
+                battleResults: state.battleResults,
+              };
+              return (
               <motion.div
                 key="playing"
                 initial={{ opacity: 0 }}
@@ -711,6 +735,7 @@ function App() {
                     isLoading={state.isImageLoading}
                     battleName={state.currentBattle.name}
                     battleYear={state.currentBattle.year}
+                    shareData={liveShareData}
                   />
                 )}
 
@@ -771,7 +796,8 @@ function App() {
 
                 {/* Mascot rendered outside card as fixed overlay */}
               </motion.div>
-            )}
+              );
+            })()}
 
             {/* Result State */}
             {isResult && state.currentBattle && (
@@ -788,6 +814,15 @@ function App() {
                     isLoading={false}
                     battleName={state.currentBattle.name}
                     battleYear={state.currentBattle.year}
+                    shareData={{
+                      score: state.score,
+                      accuracy: state.totalGuesses > 0 ? Math.round((state.correctGuesses / state.totalGuesses) * 100) : 0,
+                      streak: state.streak,
+                      rank: state.streak >= 10 ? 'Unstoppable' : state.streak >= 5 ? 'On Fire' : state.streak >= 3 ? 'Hot Streak' : 'Commander',
+                      battlesWon: state.correctGuesses,
+                      totalBattles: state.totalGuesses,
+                      battleResults: state.battleResults,
+                    }}
                   />
                 </div>
 

@@ -33,6 +33,12 @@ export function GeneralMascot({
   );
   const isDraggingRef = useRef(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  // Tracks which side of the viewport the mascot is currently on. The hint
+  // bubble opens to the opposite side so it never gets clipped off-screen.
+  const [mascotOnLeft, setMascotOnLeft] = useState(false);
+  // One-time drag hint pulse — fades after the user has interacted with the
+  // mascot (or dismisses itself after a few seconds).
+  const [showDragHint, setShowDragHint] = useState(true);
   const nextHintIndex = revealedHints.length;
   const canRevealMore = nextHintIndex < hints.length;
   const hintsRemaining = hints.length - revealedHints.length;
@@ -47,6 +53,27 @@ export function GeneralMascot({
     return () => window.removeEventListener('resize', check);
   }, []);
 
+  // Auto-dismiss the drag hint after a few seconds even without interaction.
+  useEffect(() => {
+    const id = setTimeout(() => setShowDragHint(false), 6000);
+    return () => clearTimeout(id);
+  }, []);
+
+  // Determine which half of the viewport the mascot is in (used to flip the
+  // hint bubble to the opposite side).
+  const updateSide = useCallback(() => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const centre = rect.left + rect.width / 2;
+    setMascotOnLeft(centre < window.innerWidth / 2);
+  }, []);
+
+  useEffect(() => {
+    requestAnimationFrame(updateSide);
+    window.addEventListener('resize', updateSide);
+    return () => window.removeEventListener('resize', updateSide);
+  }, [updateSide]);
+
   // Close bubble when the question changes (new hints = new question)
   const hintsKey = hints.join('|');
   useEffect(() => {
@@ -60,10 +87,14 @@ export function GeneralMascot({
   };
 
   const handleMascotClick = useCallback(() => {
+    setShowDragHint(false);
     if (isDraggingRef.current) {
       isDraggingRef.current = false;
       return;
     }
+    // Refresh the side whenever the bubble opens so it always points the
+    // right way after a drag.
+    updateSide();
     if (!showBubble) {
       if (revealedHints.length === 0 && canRevealMore && !disabled) {
         onRevealHint(0);
@@ -72,7 +103,7 @@ export function GeneralMascot({
     } else {
       setShowBubble(false);
     }
-  }, [showBubble, revealedHints.length, canRevealMore, disabled, onRevealHint]);
+  }, [showBubble, revealedHints.length, canRevealMore, disabled, onRevealHint, updateSide]);
 
   const isLeft = side === 'left';
 
@@ -126,6 +157,8 @@ export function GeneralMascot({
         // Persist position so it survives unmount/remount between questions
         savedPosition.x = dragX.get();
         savedPosition.y = dragY.get();
+        setShowDragHint(false);
+        updateSide();
         // Small delay so the click handler can check isDraggingRef
         setTimeout(() => {
           isDraggingRef.current = false;
@@ -150,7 +183,7 @@ export function GeneralMascot({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            className={`absolute z-50 bottom-full mb-2 ${canDrag ? 'right-0' : isLeft ? 'left-0' : 'right-0'} bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border-2 border-amber-200 p-2 sm:p-4 lg:p-5 w-[min(300px,85vw)] sm:w-[min(340px,80vw)] max-h-[calc(100vh-200px)] overflow-y-auto`}
+            className={`absolute z-50 bottom-full mb-2 ${mascotOnLeft ? 'left-0' : 'right-0'} bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border-2 border-amber-200 p-2 sm:p-4 lg:p-5 w-[min(240px,72vw)] sm:w-[min(320px,75vw)] lg:w-[min(340px,80vw)] max-h-[calc(100vh-200px)] overflow-y-auto`}
             onPointerDown={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -179,7 +212,7 @@ export function GeneralMascot({
                 {[...revealedHints].sort((a, b) => a - b).map((hintIndex) => (
                   <motion.div
                     key={hintIndex}
-                    initial={{ opacity: 0, x: (canDrag || !isLeft) ? -10 : 10 }}
+                    initial={{ opacity: 0, x: mascotOnLeft ? 10 : -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     className="flex items-start gap-1.5 sm:gap-2 bg-amber-50 rounded-md sm:rounded-lg p-1.5 sm:p-2 lg:p-3 border border-amber-100"
                   >
@@ -209,7 +242,7 @@ export function GeneralMascot({
               </div>
             )}
 
-            <div className={`absolute -bottom-2 ${canDrag ? 'right-6' : isLeft ? 'left-6' : 'right-6'} w-3 h-3 bg-white/95 border-r-2 border-b-2 border-amber-200 transform rotate-45`} />
+            <div className={`absolute -bottom-2 ${mascotOnLeft ? 'left-6' : 'right-6'} w-3 h-3 bg-white/95 border-r-2 border-b-2 border-amber-200 transform rotate-45`} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -225,6 +258,45 @@ export function GeneralMascot({
           : `${hintsRemaining} hints remaining – click for intel!`
         }
       >
+        {/* Draggable indicator — grip icon badge in the top-left corner.
+            Pulses for a few seconds on first mount, then settles into a
+            quieter persistent state so users still know the mascot is
+            movable. */}
+        {canDrag && (
+          <motion.div
+            className="absolute -top-1 -left-1 z-20 pointer-events-none flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 lg:w-9 lg:h-9 rounded-full bg-amber-500 text-white shadow-lg border-2 border-white"
+            animate={showDragHint ? { scale: [1, 1.18, 1] } : { scale: 1 }}
+            transition={showDragHint ? { duration: 1.2, repeat: Infinity, ease: 'easeInOut' } : { duration: 0.3 }}
+            aria-hidden="true"
+          >
+            {/* Grip dots icon */}
+            <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-5 lg:h-5" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="9" cy="6" r="1.6" />
+              <circle cx="15" cy="6" r="1.6" />
+              <circle cx="9" cy="12" r="1.6" />
+              <circle cx="15" cy="12" r="1.6" />
+              <circle cx="9" cy="18" r="1.6" />
+              <circle cx="15" cy="18" r="1.6" />
+            </svg>
+          </motion.div>
+        )}
+
+        {/* "Drag me" tooltip — fades out after the user interacts or after
+            the auto-dismiss timer. */}
+        <AnimatePresence>
+          {canDrag && showDragHint && (
+            <motion.div
+              initial={{ opacity: 0, y: 4 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="absolute -top-7 sm:-top-8 lg:-top-10 left-1/2 -translate-x-1/2 z-20 pointer-events-none whitespace-nowrap px-2 py-0.5 sm:py-1 rounded-full bg-amber-600/95 text-white text-[9px] sm:text-[10px] lg:text-xs font-semibold shadow-md"
+              aria-hidden="true"
+            >
+              Drag me
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {hintsRemaining > 0 && (
           <span
             className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] sm:text-xs lg:text-lg font-bold rounded-full w-5 h-5 sm:w-6 sm:h-6 lg:w-10 lg:h-10 flex items-center justify-center z-10 shadow-lg border-2 lg:border-[3px] border-white"
