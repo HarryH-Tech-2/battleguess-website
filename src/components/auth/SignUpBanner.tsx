@@ -39,7 +39,7 @@ export function SignUpBanner() {
             onClick={() => setModalOpen(true)}
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
-            className="flex-shrink-0 inline-flex items-center gap-1 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold px-3.5 py-1.5 rounded-lg shadow-sm transition-colors"
+            className="flex-shrink-0 inline-flex items-center gap-1 bg-primary-600 hover:bg-primary-700 text-white text-base sm:text-lg font-semibold px-5 py-2 rounded-lg shadow-sm transition-colors"
           >
             Sign up
           </motion.button>
