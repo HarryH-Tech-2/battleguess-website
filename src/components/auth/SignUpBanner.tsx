@@ -27,16 +27,11 @@ export function SignUpBanner() {
           exit={{ opacity: 0, y: -8 }}
           className="relative flex items-center gap-3 bg-gradient-to-r from-primary-50 via-emerald-50 to-primary-50 border border-primary-200 rounded-xl px-4 py-3 shadow-sm"
         >
-          <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-gradient-to-br from-primary-500 to-emerald-600 flex items-center justify-center shadow-md">
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </div>
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-semibold text-primary-900 leading-tight">
+            <p className="text-base sm:text-lg font-semibold text-primary-900 leading-tight">
               Sign up to save your progress
             </p>
-            <p className="text-xs text-primary-700/80 leading-tight mt-0.5">
+            <p className="text-sm sm:text-base text-primary-700/80 leading-tight mt-0.5">
               Your scores, streaks, and achievements only stick with an account.
             </p>
           </div>
