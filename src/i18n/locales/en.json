@@ -11,7 +11,8 @@
     "language": "Language"
   },
   "promo": {
-    "timelineChronos": "Love history? Try Timeline Chronos on Google Play"
+    "timelineChronosLine1": "Love history? Try Timeline Chronos",
+    "timelineChronosLine2": "on Google Play →"
   },
   "game": {
     "startGame": "Start Game",

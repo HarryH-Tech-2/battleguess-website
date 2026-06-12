@@ -11,7 +11,8 @@
     "language": "Idioma"
   },
   "promo": {
-    "timelineChronos": "¿Te gusta la historia? Prueba Timeline Chronos en Google Play"
+    "timelineChronosLine1": "¿Te gusta la historia? Prueba Timeline Chronos",
+    "timelineChronosLine2": "en Google Play →"
   },
   "game": {
     "startGame": "Iniciar partida",

@@ -11,7 +11,8 @@
     "language": "Langue"
   },
   "promo": {
-    "timelineChronos": "Passionné d'histoire ? Essayez Timeline Chronos sur Google Play"
+    "timelineChronosLine1": "Passionné d'histoire ? Essayez Timeline Chronos",
+    "timelineChronosLine2": "sur Google Play →"
   },
   "game": {
     "startGame": "Commencer la partie",

@@ -413,11 +413,14 @@ function App() {
             href="https://play.google.com/store/apps/details?id=com.harryhh.timelinechronos"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs sm:text-sm font-medium hover:bg-emerald-100 hover:border-emerald-300 transition-colors"
+            className="inline-flex flex-col items-center gap-1.5 px-5 py-2.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs sm:text-sm font-medium hover:bg-emerald-100 hover:border-emerald-300 transition-colors"
           >
-            <span aria-hidden="true">📱</span>
-            <span>{t('promo.timelineChronos')}</span>
-            <span aria-hidden="true">→</span>
+            <img
+              src="/timeline-chronos-icon.png"
+              alt="Timeline Chronos"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg"
+            />
+            <span className="text-center leading-tight">{t('promo.timelineChronosLine1')}<br />{t('promo.timelineChronosLine2')}</span>
           </a>
         </motion.div>
 
