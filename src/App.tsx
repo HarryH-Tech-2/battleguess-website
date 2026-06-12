@@ -402,25 +402,38 @@ function App() {
           )}
         </motion.div>
 
-        {/* Timeline Chronos promo link */}
+        {/* App promo links */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="flex justify-center"
+          className="flex flex-wrap justify-center gap-3 sm:gap-4"
         >
           <a
             href="https://play.google.com/store/apps/details?id=com.harryhh.timelinechronos"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex flex-col items-center gap-1.5 px-5 py-2.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs sm:text-sm font-medium hover:bg-emerald-100 hover:border-emerald-300 transition-colors"
+            className="inline-flex flex-col items-center gap-2.5 px-7 py-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-base sm:text-lg font-medium hover:bg-emerald-100 hover:border-emerald-300 transition-colors"
           >
             <img
               src="/timeline-chronos-icon.png"
               alt="Timeline Chronos"
-              className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl"
             />
             <span className="text-center leading-tight">{t('promo.timelineChronosLine1')}<br />{t('promo.timelineChronosLine2')}</span>
+          </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.harryhh.theodyssey"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex flex-col items-center gap-2.5 px-7 py-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-700 text-base sm:text-lg font-medium hover:bg-amber-100 hover:border-amber-300 transition-colors"
+          >
+            <img
+              src="/odyssey-icon.png"
+              alt="The Odyssey"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl"
+            />
+            <span className="text-center leading-tight">{t('promo.odysseyLine1')}<br />{t('promo.odysseyLine2')}</span>
           </a>
         </motion.div>
 
