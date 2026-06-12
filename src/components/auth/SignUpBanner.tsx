@@ -1,7 +1,6 @@
 import { lazy, Suspense, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../../contexts/AuthContext';
-import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 // Lazy-loaded — the auth modal (and its internal GoogleSignInButton + jose
 // dependency chain) is only needed once the user clicks "Sign up", not on
@@ -15,13 +14,9 @@ const SignUpModal = lazy(() => import('./SignUpModal').then(m => ({ default: m.S
  */
 export function SignUpBanner() {
   const { isAuthenticated } = useAuth();
-  const [dismissed, setDismissed] = useLocalStorage<boolean>(
-    'battleguess-signup-banner-dismissed',
-    false,
-  );
   const [modalOpen, setModalOpen] = useState(false);
 
-  if (isAuthenticated || dismissed) return null;
+  if (isAuthenticated) return null;
 
   return (
     <>
@@ -53,15 +48,6 @@ export function SignUpBanner() {
           >
             Sign up
           </motion.button>
-          <button
-            onClick={() => setDismissed(true)}
-            className="flex-shrink-0 text-primary-400 hover:text-primary-700 transition-colors p-1 -mr-1"
-            aria-label="Dismiss"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
         </motion.div>
       </AnimatePresence>
 
