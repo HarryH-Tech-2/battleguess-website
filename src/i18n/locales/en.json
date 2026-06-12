@@ -10,6 +10,9 @@
     "about": "About",
     "language": "Language"
   },
+  "promo": {
+    "timelineChronos": "Love history? Try Timeline Chronos on Google Play"
+  },
   "game": {
     "startGame": "Start Game",
     "submit": "Submit",

@@ -402,6 +402,25 @@ function App() {
           )}
         </motion.div>
 
+        {/* Timeline Chronos promo link */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="flex justify-center"
+        >
+          <a
+            href="https://play.google.com/store/apps/details?id=com.harryhh.timelinechronos"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs sm:text-sm font-medium hover:bg-emerald-100 hover:border-emerald-300 transition-colors"
+          >
+            <span aria-hidden="true">📱</span>
+            <span>{t('promo.timelineChronos')}</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </motion.div>
+
         {/* Main Game Card */}
         <Card variant="elevated" glow={isPlaying}>
           <Suspense fallback={<div className="h-64" />}>

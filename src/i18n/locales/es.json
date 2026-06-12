@@ -10,6 +10,9 @@
     "about": "Acerca de",
     "language": "Idioma"
   },
+  "promo": {
+    "timelineChronos": "¿Te gusta la historia? Prueba Timeline Chronos en Google Play"
+  },
   "game": {
     "startGame": "Iniciar partida",
     "submit": "Enviar",
