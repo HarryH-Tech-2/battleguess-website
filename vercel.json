@@ -35,6 +35,14 @@
       ]
     }
   ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.battleguess.app" }],
+      "destination": "https://battleguess.app/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/battles/:path*", "destination": "/index.html" },
     { "source": "/blog/:path*", "destination": "/index.html" },

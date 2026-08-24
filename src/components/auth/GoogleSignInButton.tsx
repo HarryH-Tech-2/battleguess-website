@@ -1,5 +1,6 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
+import { analytics } from '../../utils/analytics';
 
 declare global {
   interface Window {
@@ -43,8 +44,9 @@ export function GoogleSignInButton({ onSuccess, onError, width = 300 }: GoogleSi
         throw new Error(data?.error ?? `Auth failed (${res.status})`);
       }
 
-      const data = await res.json() as { token: string; user: { id: string; email: string; name: string; avatarUrl: string | null } };
+      const data = await res.json() as { token: string; isNewUser?: boolean; user: { id: string; email: string; name: string; avatarUrl: string | null } };
       signIn(data.token, data.user);
+      if (data.isNewUser) analytics.signUp('google'); else analytics.login('google');
 
       // Migrate localStorage stats to DB
       migrateLocalStats(data.token);

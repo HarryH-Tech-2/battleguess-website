@@ -62,6 +62,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     `;
 
     let user;
+    let isNewUser = false;
     if (byGoogle.rows.length > 0) {
       const updated = await sql`
         UPDATE users
@@ -93,6 +94,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           RETURNING id, email, name, avatar_url
         `;
         user = inserted.rows[0];
+        isNewUser = true;
       }
     }
 
@@ -112,6 +114,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     return res.status(200).json({
       token,
+      isNewUser,
       user: {
         id: user.id,
         email: user.email,

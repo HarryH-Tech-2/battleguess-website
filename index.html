@@ -86,6 +86,12 @@
     <!-- Analytics: loaded after first paint so it doesn't compete with the app for bandwidth/CPU -->
     <script>
       (function () {
+        // Skip GA for automated browsers (headless Chrome, Puppeteer/Playwright, the
+        // build-time prerenderer, scrapers). These execute JS so GA can't tell them
+        // apart server-side; ~75% of "sessions" in Aug 2026 were this kind of traffic.
+        if (navigator.webdriver || /HeadlessChrome|bot|crawl|spider|Lighthouse/i.test(navigator.userAgent)) {
+          return;
+        }
         var loadAnalytics = function () {
           var s = document.createElement('script');
           s.async = true;

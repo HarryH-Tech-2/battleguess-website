@@ -30,4 +30,18 @@ export const analytics = {
   achievementUnlocked(achievementId: string) {
     event('achievement_unlocked', { achievement_id: achievementId });
   },
+  // GA4 recommended auth events — `method` shows up as a standard dimension.
+  signUp(method: 'email' | 'google') {
+    event('sign_up', { method });
+  },
+  login(method: 'email' | 'google') {
+    event('login', { method });
+  },
+  // Inline quiz widget on blog posts.
+  blogQuizAnswered(postSlug: string, battleId: number, correct: boolean) {
+    event('blog_quiz_answered', { post_slug: postSlug, battle_id: battleId, correct });
+  },
+  blogQuizPlayClick(postSlug: string) {
+    event('blog_quiz_play_click', { post_slug: postSlug });
+  },
 };

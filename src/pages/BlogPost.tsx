@@ -1,9 +1,10 @@
-import { useMemo } from 'react';
+import { Fragment, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ContentLayout } from '../components/layout/ContentLayout';
 import { LocaleLink } from '../components/ui/LocaleLink';
+import { BattleQuizCTA } from '../components/blog/BattleQuizCTA';
 import { blogPosts, blogCategories } from '../data/blogPosts';
 import type { BlogSection } from '../data/blogPosts';
 import { getBattleById } from '../data/battles';
@@ -351,7 +352,14 @@ function BlogPost() {
       {/* Article Content */}
       <article className="space-y-8 max-w-none">
         {post.sections.map((section, index) => (
-          <SectionBlock key={index} section={section} index={index} />
+          <Fragment key={index}>
+            <SectionBlock section={section} index={index} />
+            {/* Inline quiz after the first section — readers were bouncing
+                before ever reaching the end-of-post CTA. */}
+            {index === 0 && (
+              <BattleQuizCTA seed={post.slug} battleIds={post.relatedBattleIds} />
+            )}
+          </Fragment>
         ))}
       </article>
 

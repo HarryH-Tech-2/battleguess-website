@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../../contexts/AuthContext';
 import { GoogleSignInButton } from './GoogleSignInButton';
+import { analytics } from '../../utils/analytics';
 
 interface SignUpModalProps {
   isOpen: boolean;
@@ -61,6 +62,7 @@ export function SignUpModal({ isOpen, onDismiss, onSuccess }: SignUpModalProps) 
 
       const data = await res.json() as { token: string; user: { id: string; email: string; name: string; avatarUrl: string | null } };
       signIn(data.token, data.user);
+      if (mode === 'login') analytics.login('email'); else analytics.signUp('email');
       resetForm();
       onSuccess();
     } catch (err) {
