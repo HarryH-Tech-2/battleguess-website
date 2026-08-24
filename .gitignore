@@ -40,3 +40,4 @@ gsc-ga-setup.txt
 # Battle image regen staging + backups
 public/battles/_staging/
 public/battles/_backup-*/
+ANALYTICS-HANDOFF.txt
