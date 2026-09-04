@@ -37,11 +37,18 @@ export const analytics = {
   login(method: 'email' | 'google') {
     event('login', { method });
   },
-  // Inline quiz widget on blog posts.
-  blogQuizAnswered(postSlug: string, battleId: number, correct: boolean) {
-    event('blog_quiz_answered', { post_slug: postSlug, battle_id: battleId, correct });
+  // Daily challenge retention loop.
+  dailyCompleted(correct: number, streak: number, beatPercent: number | null) {
+    event('daily_completed', { correct, streak, beat_percent: beatPercent ?? -1 });
   },
-  blogQuizPlayClick(postSlug: string) {
-    event('blog_quiz_play_click', { post_slug: postSlug });
+  dailyShare(method: 'native' | 'copy' | 'image') {
+    event('daily_share', { method });
+  },
+  // Where a sign-up prompt was shown / clicked, so we can see which placement converts.
+  signUpPromptShown(placement: string) {
+    event('sign_up_prompt_shown', { placement });
+  },
+  signUpPromptClick(placement: string) {
+    event('sign_up_prompt_click', { placement });
   },
 };

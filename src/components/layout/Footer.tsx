@@ -159,7 +159,7 @@ export function Footer() {
         </div>
 
         {/* Footer Navigation */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+        <div className="grid grid-cols-3 gap-4 text-center">
           <div>
             <div className="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">{t('footer.explore')}</div>
             <div className="space-y-1">
@@ -169,19 +169,11 @@ export function Footer() {
             </div>
           </div>
           <div>
-            <div className="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">{t('footer.learn')}</div>
+            <div className="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">{t('footer.play')}</div>
             <div className="space-y-1">
-              <LocaleLink to="/blog/topics/ancient-warfare" className="block text-sm text-white/70 hover:text-white transition-colors">{t('footer.ancientWarfare')}</LocaleLink>
-              <LocaleLink to="/blog/topics/wars-and-conflicts" className="block text-sm text-white/70 hover:text-white transition-colors">{t('footer.warsConflicts')}</LocaleLink>
-              <LocaleLink to="/blog/topics/military-strategy" className="block text-sm text-white/70 hover:text-white transition-colors">{t('footer.strategyTactics')}</LocaleLink>
-            </div>
-          </div>
-          <div>
-            <div className="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">{t('footer.read')}</div>
-            <div className="space-y-1">
-              <LocaleLink to="/blog/topics/military-technology" className="block text-sm text-white/70 hover:text-white transition-colors">{t('footer.militaryTechnology')}</LocaleLink>
-              <LocaleLink to="/blog/topics/game-guides" className="block text-sm text-white/70 hover:text-white transition-colors">{t('footer.gameGuides')}</LocaleLink>
-              <LocaleLink to="/blog" className="block text-sm text-white/70 hover:text-white transition-colors">{t('footer.allArticles')}</LocaleLink>
+              <LocaleLink to="/modes/daily" className="block text-sm text-white/70 hover:text-white transition-colors">{t('footer.dailyChallenge')}</LocaleLink>
+              <LocaleLink to="/modes/classic" className="block text-sm text-white/70 hover:text-white transition-colors">{t('footer.classic')}</LocaleLink>
+              <LocaleLink to="/modes/campaign" className="block text-sm text-white/70 hover:text-white transition-colors">{t('footer.campaign')}</LocaleLink>
             </div>
           </div>
           <div>

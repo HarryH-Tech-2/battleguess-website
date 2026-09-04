@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { Confetti } from '../effects/Confetti';
 import { ShareButton } from './ShareButton';
+import type { ReactNode } from 'react';
 import type { BattleRoundResult } from '../../types';
 
 interface GameCompleteProps {
@@ -12,6 +13,8 @@ interface GameCompleteProps {
   totalBattles: number;
   battleResults: BattleRoundResult[];
   onPlayAgain: () => void;
+  /** Rendered under the share/play-again buttons (e.g. a sign-up prompt). */
+  footer?: ReactNode;
 }
 
 function getRankTitle(correctGuesses: number, totalBattles: number): { rank: string; message: string; quote: string } {
@@ -32,6 +35,7 @@ export function GameComplete({
   totalBattles,
   battleResults,
   onPlayAgain,
+  footer,
 }: GameCompleteProps) {
   const { rank, message, quote } = getRankTitle(correctGuesses, totalBattles);
   const accuracy = totalGuesses > 0 ? Math.round((correctGuesses / totalGuesses) * 100) : 0;
@@ -244,6 +248,7 @@ export function GameComplete({
           </svg>
           New Campaign
         </Button>
+        {footer}
       </motion.div>
     </motion.div>
   );

@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -7,7 +7,6 @@ import { LocaleLink } from '../components/ui/LocaleLink';
 import { getBattleById, allBattles, getCanonicalBattleByName } from '../data/battles';
 import { battleFacts } from '../data/battleFacts';
 import { battleImages } from '../data/battleImages';
-import type { BlogPost } from '../data/blogPosts';
 import { battleCollections } from '../data/battleCollections';
 import { buildBreadcrumbJsonLd } from '../utils/breadcrumbs';
 import {
@@ -30,15 +29,6 @@ function BattleDetail() {
   const id = battleId ? parseBattleId(battleId) : NaN;
   const battle = !isNaN(id) ? getBattleById(id) : undefined;
   const { t } = useTranslation();
-
-  const [relatedArticles, setRelatedArticles] = useState<BlogPost[]>([]);
-
-  useEffect(() => {
-    if (!battle) return;
-    import('../data/blogPosts').then(({ blogPosts }) => {
-      setRelatedArticles(blogPosts.filter(p => p.relatedBattleIds?.includes(battle.id)));
-    });
-  }, [battle]);
 
   const featuredCollections = useMemo(
     () => battle ? battleCollections.filter(c => c.battleIds.includes(battle.id)) : [],
@@ -133,7 +123,7 @@ function BattleDetail() {
 
   return (
     <ContentLayout
-      title={`${battle.name} | BattleGuess`}
+      title={`${battle.name} (${formatYear(battle.year)}) – Facts & Quiz | BattleGuess`}
       description={truncateMetaDescription(battle.description)}
       canonical={canonicalUrl}
       path={canonicalPath}
@@ -279,35 +269,6 @@ function BattleDetail() {
                 <span className="text-sm font-medium text-slate-700 group-hover:text-primary-700 transition-colors">
                   {collection.title}
                 </span>
-              </LocaleLink>
-            ))}
-          </div>
-        </motion.div>
-      )}
-
-      {/* Related Articles */}
-      {relatedArticles.length > 0 && (
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.38 }}
-          className="mb-10"
-        >
-          <h2 className="text-lg font-bold text-slate-700 mb-3">{t('pages.battles.relatedArticles')}</h2>
-          <div className="space-y-2">
-            {relatedArticles.map(article => (
-              <LocaleLink
-                key={article.slug}
-                to={`/blog/${article.slug}`}
-                className="flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm border border-slate-100 hover:shadow-md hover:border-primary-200 transition-all duration-200 group"
-              >
-                <span className="text-2xl flex-shrink-0">📝</span>
-                <div className="min-w-0">
-                  <p className="font-semibold text-slate-800 group-hover:text-primary-700 transition-colors text-sm truncate">
-                    {article.title}
-                  </p>
-                  <p className="text-xs text-slate-400">{article.readTime}</p>
-                </div>
               </LocaleLink>
             ))}
           </div>

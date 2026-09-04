@@ -107,4 +107,23 @@ export async function initializeDatabase() {
       played_at TIMESTAMP DEFAULT NOW()
     )
   `;
+
+  // One row per player per daily challenge. `player_key` is the browser's
+  // anonymous id so anonymous players count toward the percentile; `user_id`
+  // is attached when the player is (or later becomes) signed in, which is
+  // what puts them on the named leaderboard.
+  await sql`
+    CREATE TABLE IF NOT EXISTS daily_results (
+      id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+      date_key TEXT NOT NULL,
+      player_key TEXT NOT NULL,
+      user_id UUID REFERENCES users(id),
+      score INTEGER NOT NULL,
+      correct INTEGER NOT NULL,
+      marks TEXT NOT NULL DEFAULT '',
+      created_at TIMESTAMP DEFAULT NOW(),
+      UNIQUE (date_key, player_key)
+    )
+  `;
+  await sql`CREATE INDEX IF NOT EXISTS daily_results_date_idx ON daily_results (date_key)`;
 }

@@ -164,7 +164,6 @@ export default defineConfig(({ mode }) => {
         output: {
           manualChunks(id) {
             if (id.includes('framer-motion')) return 'framer-motion';
-            if (id.includes('data/blogPosts')) return 'blog-data';
             if (id.includes('data/battles/')) return 'battle-data';
             if (id.includes('data/battleFacts') || id.includes('data/battleCoordinates') || id.includes('data/battleImages')) return 'battle-meta';
             if (id.includes('data/campaigns') || id.includes('data/achievements')) return 'game-meta';

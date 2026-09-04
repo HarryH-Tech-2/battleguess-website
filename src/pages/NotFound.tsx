@@ -34,12 +34,6 @@ function NotFound() {
           >
             Battle Encyclopedia
           </LocaleLink>
-          <LocaleLink
-            to="/blog"
-            className="inline-flex items-center gap-2 bg-white border border-slate-200 hover:border-primary-300 text-slate-700 font-semibold px-5 py-3 rounded-xl shadow-sm transition-all"
-          >
-            Blog
-          </LocaleLink>
         </div>
       </div>
     </ContentLayout>

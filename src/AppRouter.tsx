@@ -12,9 +12,6 @@ const BattleEncyclopedia = lazy(() => import('./pages/BattleEncyclopedia'));
 const BattleDetail = lazy(() => import('./pages/BattleDetail'));
 const BattleCollections = lazy(() => import('./pages/BattleCollections'));
 const BattleCollectionDetail = lazy(() => import('./pages/BattleCollectionDetail'));
-const Blog = lazy(() => import('./pages/Blog'));
-const BlogPost = lazy(() => import('./pages/BlogPost'));
-const BlogTopic = lazy(() => import('./pages/BlogTopic'));
 const Stats = lazy(() => import('./pages/Stats'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
@@ -78,9 +75,6 @@ const contentRoutes = (
     <Route path="battles/:battleId" element={<BattleDetail />} />
     <Route path="collections" element={<BattleCollections />} />
     <Route path="collections/:slug" element={<BattleCollectionDetail />} />
-    <Route path="blog" element={<Blog />} />
-    <Route path="blog/topics/:topicId" element={<BlogTopic />} />
-    <Route path="blog/:slug" element={<BlogPost />} />
     <Route path="stats" element={<Stats />} />
     <Route path="*" element={<NotFound />} />
   </>

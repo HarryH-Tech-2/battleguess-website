@@ -2,9 +2,10 @@ import { motion } from 'framer-motion';
 
 interface DailyStreakBadgeProps {
   streak: number;
+  title?: string;
 }
 
-export function DailyStreakBadge({ streak }: DailyStreakBadgeProps) {
+export function DailyStreakBadge({ streak, title }: DailyStreakBadgeProps) {
   if (streak <= 0) return null;
 
   return (
@@ -12,7 +13,7 @@ export function DailyStreakBadge({ streak }: DailyStreakBadgeProps) {
       className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-gradient-to-br from-primary-100 to-emerald-100 text-primary-700 shadow-sm"
       initial={{ scale: 0.8, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      title={`${streak} day streak!`}
+      title={title ?? `${streak} day streak!`}
     >
       <span className="text-sm">🔥</span>
       <span className="text-sm font-bold">{streak}</span>

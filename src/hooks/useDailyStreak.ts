@@ -1,44 +1,41 @@
 import { useCallback } from 'react';
 import { useLocalStorage } from './useLocalStorage';
-import { useAuth } from '../contexts/AuthContext';
+import { getDailyDateKey } from '../services/firebase';
+import {
+  EMPTY_STREAK,
+  advanceStreak,
+  displayStreak,
+  mergeStreaks,
+  type StreakData,
+} from '../utils/daily';
 
-interface DailyStreakData {
-  currentStreak: number;
-  lastPlayDate: string;
-  longestStreak: number;
-}
-
-const EMPTY_STREAK: DailyStreakData = {
-  currentStreak: 0,
-  lastPlayDate: '',
-  longestStreak: 0,
-};
-
+/**
+ * Consecutive days on which the player finished the Daily Challenge.
+ *
+ * Tracked locally for everyone (it is the hook that brings people back), and
+ * mirrored to the account for signed-in players so it survives a new device.
+ * Signing up is what makes the streak permanent; that's the pitch.
+ */
 export function useDailyStreak() {
-  const { isAuthenticated } = useAuth();
-  const [rawData, setRawData] = useLocalStorage<DailyStreakData>(
-    'battleguess-daily-streak',
-    EMPTY_STREAK,
-  );
+  const [data, setData] = useLocalStorage<StreakData>('battleguess-daily-streak', EMPTY_STREAK);
+  const todayKey = getDailyDateKey();
 
-  // Anonymous users don't accumulate a streak. Legacy localStorage data is
-  // kept for future sign-in migration but never surfaced.
-  const data = isAuthenticated ? rawData : EMPTY_STREAK;
+  const recordDailyCompletion = useCallback((dateKey: string) => {
+    setData(prev => advanceStreak(prev, dateKey));
+  }, [setData]);
 
-  const recordPlay = useCallback(() => {
-    if (!isAuthenticated) return;
-    const today = new Date().toISOString().split('T')[0];
-    if (rawData.lastPlayDate === today) return;
+  const mergeServerStreak = useCallback((server: StreakData) => {
+    setData(prev => mergeStreaks(prev, server));
+  }, [setData]);
 
-    const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
-    const newStreak = rawData.lastPlayDate === yesterday ? rawData.currentStreak + 1 : 1;
-
-    setRawData({
-      currentStreak: newStreak,
-      lastPlayDate: today,
-      longestStreak: Math.max(newStreak, rawData.longestStreak),
-    });
-  }, [isAuthenticated, rawData, setRawData]);
-
-  return { ...data, recordPlay };
+  return {
+    /** Streak as it should be shown right now: 0 once a day has been missed. */
+    currentStreak: displayStreak(data, todayKey),
+    longestStreak: data.longestStreak,
+    lastPlayDate: data.lastPlayDate,
+    completedToday: data.lastPlayDate === todayKey,
+    raw: data,
+    recordDailyCompletion,
+    mergeServerStreak,
+  };
 }

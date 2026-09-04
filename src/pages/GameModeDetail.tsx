@@ -41,11 +41,13 @@ function GameModeDetail() {
   const longDesc = t(`gameModesData.${mode.slug}.longDesc`);
   const rules = t(`gameModesData.${mode.slug}.rules`);
   const strategy = t(`gameModesData.${mode.slug}.strategy`);
+  const seoTitle = t(`gameModesData.${mode.slug}.seoTitle`, { defaultValue: `${label} Mode | BattleGuess` });
+  const seoDescription = t(`gameModesData.${mode.slug}.seoDescription`, { defaultValue: longDesc });
 
   return (
     <ContentLayout
-      title={`${label} Mode | BattleGuess`}
-      description={longDesc}
+      title={seoTitle}
+      description={seoDescription}
       canonical={`https://battleguess.app/modes/${mode.slug}`}
       path={`/modes/${mode.slug}`}
     >

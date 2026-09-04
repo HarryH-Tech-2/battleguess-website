@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary SEO -->
-    <title>BattleGuess - The Military History Game</title>
-    <meta name="description" content="BattleGuess is a free military history game — identify famous battles from their images across 5 game modes, covering ancient civilizations to the world wars. Play now!" />
+    <title>BattleGuess: Guess the Battle – Free Military History Quiz Game</title>
+    <meta name="description" content="Can you name the battle from the picture? A free military history quiz game with 200+ battles from ancient Egypt to WWII, a daily challenge, campaigns and more." />
     <meta name="keywords" content="military history game, battle guessing game, history trivia, military history, historical battles, history quiz, war history game, guess the battle" />
     <meta name="author" content="BattleGuess" />
     <link rel="canonical" href="https://battleguess.app" />
@@ -14,8 +14,8 @@
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://battleguess.app" />
-    <meta property="og:title" content="BattleGuess - The Military History Game" />
-    <meta property="og:description" content="Test your military history knowledge! Identify famous battles across 5 game modes — from ancient Egypt to World War II." />
+    <meta property="og:title" content="BattleGuess: Guess the Battle – Free Military History Quiz Game" />
+    <meta property="og:description" content="Can you name the battle from the picture? A free military history quiz game with 200+ battles from ancient Egypt to WWII, a daily challenge, campaigns and more." />
     <meta property="og:image" content="https://battleguess.app/og-image.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
@@ -26,8 +26,8 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://battleguess.app" />
-    <meta name="twitter:title" content="BattleGuess - The Military History Game" />
-    <meta name="twitter:description" content="Test your military history knowledge! Identify famous battles from images across 5 game modes." />
+    <meta name="twitter:title" content="BattleGuess: Guess the Battle – Free Military History Quiz Game" />
+    <meta name="twitter:description" content="Can you name the battle from the picture? A free military history quiz game with 200+ battles from ancient Egypt to WWII, a daily challenge, campaigns and more." />
     <meta name="twitter:image" content="https://battleguess.app/og-image.jpg" />
     <meta name="twitter:creator" content="@HarryHH1993" />
 
@@ -73,7 +73,6 @@
         <nav>
           <ul>
             <li><a href="/battles">Battle Encyclopedia</a></li>
-            <li><a href="/blog">History Blog</a></li>
             <li><a href="/collections">Battle Collections</a></li>
             <li><a href="/modes">Game Modes</a></li>
             <li><a href="/faq">FAQ</a></li>
@@ -86,13 +85,40 @@
     <!-- Analytics: loaded after first paint so it doesn't compete with the app for bandwidth/CPU -->
     <script>
       (function () {
-        // Skip GA for automated browsers (headless Chrome, Puppeteer/Playwright, the
-        // build-time prerenderer, scrapers). These execute JS so GA can't tell them
-        // apart server-side; ~75% of "sessions" in Aug 2026 were this kind of traffic.
-        if (navigator.webdriver || /HeadlessChrome|bot|crawl|spider|Lighthouse/i.test(navigator.userAgent)) {
+        // Bot gate, two layers.
+        //
+        // 1. Cheap fingerprint checks for automation that admits to it.
+        // 2. Engagement gate: GA only loads once the visitor has interacted
+        //    (pointer, key, touch, wheel, scroll) OR kept the tab visible for
+        //    4 seconds. The datacenter bots that made up ~75% of Aug 2026
+        //    "sessions" (Singapore/China, Direct, 0-2 s, no interaction) pass
+        //    the webdriver/UA test but fail this one. Humans who leave inside
+        //    4 s without touching anything are lost too, but GA already scored
+        //    those as unengaged bounces.
+        var ua = navigator.userAgent || '';
+        if (
+          navigator.webdriver ||
+          /HeadlessChrome|bot|crawl|spider|Lighthouse|PhantomJS|Slimer|Electron/i.test(ua) ||
+          (!navigator.languages || navigator.languages.length === 0) ||
+          (/Chrome\//.test(ua) && !/Edg|OPR|SamsungBrowser/.test(ua) && !window.chrome)
+        ) {
           return;
         }
+
+        var loaded = false;
+        var timer = null;
+        var events = ['pointerdown', 'pointermove', 'keydown', 'touchstart', 'wheel', 'scroll'];
+
+        var cleanup = function () {
+          events.forEach(function (e) { window.removeEventListener(e, onEngage, true); });
+          document.removeEventListener('visibilitychange', onVisibility);
+          if (timer) { clearTimeout(timer); timer = null; }
+        };
+
         var loadAnalytics = function () {
+          if (loaded) return;
+          loaded = true;
+          cleanup();
           var s = document.createElement('script');
           s.async = true;
           s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PLJMY10S3E';
@@ -102,10 +128,31 @@
           window.gtag('js', new Date());
           window.gtag('config', 'G-PLJMY10S3E');
         };
+
+        var onEngage = function () { loadAnalytics(); };
+
+        var armTimer = function () {
+          if (timer || loaded) return;
+          timer = setTimeout(function () {
+            timer = null;
+            if (document.visibilityState === 'visible') loadAnalytics();
+          }, 4000);
+        };
+        var onVisibility = function () {
+          if (document.visibilityState === 'visible') { armTimer(); }
+          else if (timer) { clearTimeout(timer); timer = null; }
+        };
+
+        var arm = function () {
+          events.forEach(function (e) { window.addEventListener(e, onEngage, { capture: true, passive: true }); });
+          document.addEventListener('visibilitychange', onVisibility);
+          if (document.visibilityState === 'visible') armTimer();
+        };
+
         if (document.readyState === 'complete') {
-          setTimeout(loadAnalytics, 0);
+          arm();
         } else {
-          window.addEventListener('load', function () { setTimeout(loadAnalytics, 0); }, { once: true });
+          window.addEventListener('load', arm, { once: true });
         }
       })();
     </script>

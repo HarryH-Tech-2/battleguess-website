@@ -87,10 +87,19 @@ async function prerender() {
   try {
     const puppeteer = await import('puppeteer-core');
     let executablePath;
-    try {
-      const chromium = await import('@sparticuz/chromium');
-      executablePath = await chromium.default.executablePath();
-    } catch {
+    // @sparticuz/chromium ships a Linux-only binary for Vercel/Lambda. On a
+    // Windows/macOS dev machine its import succeeds but the extracted path
+    // doesn't exist, so the launch fails with ENOENT before the catch below
+    // can help. Only try it on Linux; elsewhere use puppeteer's own Chrome.
+    if (process.platform === 'linux') {
+      try {
+        const chromium = await import('@sparticuz/chromium');
+        executablePath = await chromium.default.executablePath();
+      } catch {
+        // fall through to local puppeteer
+      }
+    }
+    if (!executablePath) {
       // Local dev: fall back to regular puppeteer's Chrome
       const localPuppeteer = await import('puppeteer');
       const { executablePath: localPath } = localPuppeteer.default;

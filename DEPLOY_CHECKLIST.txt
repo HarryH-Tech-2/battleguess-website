@@ -34,7 +34,11 @@ Before deploying, complete these steps in order:
    - Database tables are created on first request (initializeDatabase)
 
 6. VERIFY
-   - Play 3 battles, confirm signup modal appears
    - Sign in with Google, confirm it works
-   - Complete a game, confirm Share Score and Share on X buttons work
-   - Complete daily challenge, confirm share button with daily format
+   - Complete a classic game, confirm Share Score works and the anonymous
+     "Create free account" prompt shows under the results
+   - Complete the daily challenge: streak chip, "You beat X%" line,
+     leaderboard and "Share result" (text) all render; /api/daily/result
+     returns 200 (Network tab)
+   - Sign in afterwards: your name appears on today's leaderboard and the
+     streak survives a hard refresh

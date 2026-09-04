@@ -13,7 +13,9 @@ import { MusicTrackSelector } from './components/game/MusicTrackSelector';
 import { CivilizationSelector } from './components/game/CivilizationSelector';
 import { DifficultySelector } from './components/game/DifficultySelector';
 import { ModeSelector } from './components/game/ModeSelector';
-import { SignUpBanner } from './components/auth/SignUpBanner';
+import { ExploreSection } from './components/home/ExploreSection';
+import { DailyCard } from './components/home/DailyCard';
+import { SaveProgressCTA } from './components/auth/SaveProgressCTA';
 import { useAuth } from './contexts/AuthContext';
 
 // Lazy-load components that only appear in specific game modes or after
@@ -22,7 +24,6 @@ import { useAuth } from './contexts/AuthContext';
 const StatsPanel = lazy(() => import('./components/stats/StatsPanel').then(m => ({ default: m.StatsPanel })));
 const AchievementsList = lazy(() => import('./components/achievements/AchievementsList').then(m => ({ default: m.AchievementsList })));
 const AchievementPopup = lazy(() => import('./components/achievements/AchievementPopup').then(m => ({ default: m.AchievementPopup })));
-const SignUpModal = lazy(() => import('./components/auth/SignUpModal').then(m => ({ default: m.SignUpModal })));
 const ReverseGuessInput = lazy(() => import('./components/game/ReverseGuessInput').then(m => ({ default: m.ReverseGuessInput })));
 const ReversePrompt = lazy(() => import('./components/game/ReversePrompt').then(m => ({ default: m.ReversePrompt })));
 const GeneralMascot = lazy(() => import('./components/game/GeneralMascot').then(m => ({ default: m.GeneralMascot })));
@@ -49,6 +50,14 @@ import { useAchievements } from './hooks/useAchievements';
 import { useDailyChallenge } from './hooks/useDailyChallenge';
 import { useChallengeMode } from './hooks/useChallengeMode';
 import { getDailyBattleIds, getDailyDateKey } from './services/firebase';
+import {
+  fetchDailyCommunity,
+  fetchServerStreak,
+  migrateLocalStats,
+  serverStreakToLocal,
+  submitDailyResult,
+} from './services/dailyApi';
+import { DAILY_BATTLE_COUNT, advanceStreak, getDailyNumber } from './utils/daily';
 import { calculateScore } from './utils/scoring';
 import { analytics } from './utils/analytics';
 import type { GameMode } from './types';
@@ -61,7 +70,7 @@ function App() {
   const { isMuted, toggleMute, currentTrackId, changeTrack, tracks } = useBackgroundMusic('/drum-tune.mp3');
   const { play: playSound } = useSoundEffects(isMuted);
   const { recordResult, total, accuracy, avgHints, byCivilization, byDifficulty } = useStats();
-  const { currentStreak: dailyStreak, recordPlay } = useDailyStreak();
+  const { currentStreak: dailyStreak, raw: streakRaw, recordDailyCompletion, mergeServerStreak } = useDailyStreak();
   const campaign = useCampaignGame();
   const achievementsSystem = useAchievements();
   const daily = useDailyChallenge();
@@ -70,9 +79,12 @@ function App() {
   const [showAchievements, setShowAchievements] = useState(false);
   const prevGameStatus = useRef(state.gameStatus);
   const prevRevealedHints = useRef(state.revealedHints.length);
-  const { isAuthenticated } = useAuth();
-  const [showSignUpModal, setShowSignUpModal] = useState(false);
-  const signUpModalDismissed = useRef(false);
+  const { isAuthenticated, token } = useAuth();
+  const [communityLoading, setCommunityLoading] = useState(false);
+  // Which day's daily result has already been sent to the server this session.
+  const submittedDayRef = useRef<string | null>(null);
+  const lastSyncedToken = useRef<string | null>(null);
+  const initialToken = useRef(token);
 
   const isReverseMode = state.gameMode === 'reverse-year';
 
@@ -249,25 +261,87 @@ function App() {
     prevTotalGuesses.current = state.totalGuesses;
   }, [state.totalGuesses, state.gameStatus, playSound]);
 
-  // Show sign-up modal after 3rd battle (once per session, only if not authenticated)
+  // Daily finished: persist locally, grow the streak, then ask the server how
+  // everyone else did. The local write happens first so a network failure
+  // never costs the player their result.
   useEffect(() => {
-    if (
-      state.totalGuesses === 3 &&
-      !isAuthenticated &&
-      !signUpModalDismissed.current
-    ) {
-      const timer = setTimeout(() => setShowSignUpModal(true), 500);
-      return () => clearTimeout(timer);
-    }
-  }, [state.totalGuesses, isAuthenticated]);
+    if (state.gameMode !== 'daily' || daily.state.phase !== 'result') return;
+    const { dateKey, score, correctGuesses, marks } = daily.state;
+    if (submittedDayRef.current === dateKey) return;
+    submittedDayRef.current = dateKey;
+
+    daily.persistToday({ score, correct: correctGuesses, marks });
+    recordDailyCompletion(dateKey);
+    const streakAfter = advanceStreak(streakRaw, dateKey).currentStreak;
+
+    setCommunityLoading(true);
+    submitDailyResult({ dateKey, score, correct: correctGuesses, marks }, token)
+      .then(resp => {
+        daily.updateCommunity(dateKey, resp, true);
+        if (resp.streak) mergeServerStreak(serverStreakToLocal(resp.streak));
+        analytics.dailyCompleted(correctGuesses, resp.streak?.currentStreak ?? streakAfter, resp.beatPercent);
+      })
+      .catch(() => {
+        analytics.dailyCompleted(correctGuesses, streakAfter, null);
+      })
+      .finally(() => setCommunityLoading(false));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.gameMode, daily.state.phase, daily.state.dateKey]);
+
+  // Revisiting the daily after finishing it: refresh the community view so
+  // the leaderboard and percentile reflect players who finished later.
+  useEffect(() => {
+    if (state.gameMode !== 'daily' || daily.state.phase !== 'intro' || !daily.isCompletedToday) return;
+    let cancelled = false;
+    setCommunityLoading(true);
+    fetchDailyCommunity(daily.todayKey, token)
+      .then(community => { if (!cancelled) daily.updateCommunity(daily.todayKey, community); })
+      .catch(() => { /* keep whatever snapshot we have */ })
+      .finally(() => { if (!cancelled) setCommunityLoading(false); });
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.gameMode, daily.state.phase, daily.isCompletedToday, daily.todayKey, token]);
+
+  // Account sync. On every load with a token: pull the server streak (a new
+  // device starts at 0 locally). On a sign-in during this session: also push
+  // local stats up and re-send today's daily result so the leaderboard shows
+  // a name instead of an anonymous id.
+  useEffect(() => {
+    if (!token || lastSyncedToken.current === token) return;
+    lastSyncedToken.current = token;
+    const signedInThisSession = token !== initialToken.current;
+    const todayRecord = daily.todayResult;
+
+    (async () => {
+      try {
+        if (signedInThisSession) {
+          await migrateLocalStats(token, streakRaw).catch(() => undefined);
+          if (todayRecord) {
+            const resp = await submitDailyResult(
+              { dateKey: daily.todayKey, score: todayRecord.score, correct: todayRecord.correct, marks: todayRecord.marks },
+              token,
+            );
+            daily.updateCommunity(daily.todayKey, resp, true);
+            if (resp.streak) mergeServerStreak(serverStreakToLocal(resp.streak));
+            return;
+          }
+        }
+        const server = await fetchServerStreak(token);
+        mergeServerStreak(server);
+      } catch {
+        // Offline or server hiccup: local data stands until next time.
+      }
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [token]);
 
   const isDailyMode = state.gameMode === 'daily';
   const isChallengeMode = state.gameMode === 'challenge';
+  const dailyNumber = getDailyNumber(daily.todayKey);
   const isDailyPlaying = isDailyMode && daily.state.phase === 'playing';
   const isChallengePlaying = isChallengeMode && challenge.state.phase === 'playing';
 
   const handleStartGame = () => {
-    recordPlay();
     analytics.gameStart(state.gameMode, state.selectedDifficulty, state.selectedCivilization);
     if (isDailyPlaying) {
       // Daily mode - load next daily battle via startBattleById
@@ -298,7 +372,7 @@ function App() {
       const battleScore = state.currentBattle
         ? calculateScore(state.hintsUsed, state.currentBattle.difficulty, state.streak - (isWin ? 1 : 0))
         : 0;
-      daily.recordBattleResult(isWin, isWin ? battleScore : 0);
+      daily.recordBattleResult(isWin, isWin ? battleScore : 0, state.hintsUsed);
       daily.advanceToNext();
       // Start next battle if there is one
       const nextBattle = daily.getCurrentBattle();
@@ -339,8 +413,8 @@ function App() {
       onLogoClick={actions.resetGame}
     >
       <SEOHead
-        title="BattleGuess - The Military History Game"
-        description="Test your knowledge of military history by identifying famous battles from artwork. Over 200 battles across 8 historical eras."
+        title="BattleGuess: Guess the Battle – Free Military History Quiz Game"
+        description="Can you name the battle from the picture? A free military history quiz game with 200+ battles from ancient Egypt to WWII, a daily challenge, campaigns and more."
         canonical="https://battleguess.app"
         path="/"
         jsonLd={{
@@ -368,9 +442,6 @@ function App() {
         }}
       />
       <div className="space-y-4 sm:space-y-6 pb-6 sm:pb-8">
-
-        {/* Anonymous user CTA — hidden for signed-in users and dismissible */}
-        <SignUpBanner />
 
         {/* Selectors row */}
         <motion.div
@@ -401,6 +472,21 @@ function App() {
             </>
           )}
         </motion.div>
+
+        {/* Today's daily: the front door for returning players */}
+        {isIdle && state.gameMode !== 'daily' && (
+          <DailyCard
+            dayNumber={dailyNumber}
+            streak={dailyStreak}
+            completed={daily.todayResult ? {
+              correct: daily.todayResult.correct,
+              total: DAILY_BATTLE_COUNT,
+              marks: daily.todayResult.marks,
+              beatPercent: daily.todayResult.community?.beatPercent ?? null,
+            } : undefined}
+            onOpen={() => actions.setMode('daily')}
+          />
+        )}
 
         {/* App promo links */}
         <motion.div
@@ -479,7 +565,6 @@ function App() {
                       // Start the regular game engine with the specific campaign battle
                       if (campaign.state.campaign) {
                         const battleId = campaign.state.campaign.battleIds[campaign.state.currentBattleIndex];
-                        recordPlay();
                         actions.startBattleById(battleId);
                       }
                     }
@@ -521,7 +606,6 @@ function App() {
                     // Start first daily battle
                     const battleIds = getDailyBattleIds(getDailyDateKey());
                     if (battleIds.length > 0) {
-                      recordPlay();
                       actions.startBattleById(battleIds[0]);
                       // Prefetch all daily battle images so they're cached for later rounds
                       battleIds.slice(1).forEach(id => {
@@ -530,9 +614,19 @@ function App() {
                       });
                     }
                   }}
-                  isCompleted={daily.isCompletedToday}
-                  todayResult={daily.todayResult}
-                  battleCount={5}
+                  dayNumber={dailyNumber}
+                  streak={dailyStreak}
+                  streakAtRisk={dailyStreak > 0 && !daily.isCompletedToday}
+                  battleCount={DAILY_BATTLE_COUNT}
+                  completed={daily.todayResult ? {
+                    score: daily.todayResult.score,
+                    correctGuesses: daily.todayResult.correct,
+                    totalBattles: DAILY_BATTLE_COUNT,
+                    marks: daily.todayResult.marks,
+                    community: daily.todayResult.community,
+                    communityLoading,
+                    isAuthenticated,
+                  } : undefined}
                 />
               </motion.div>
             )}
@@ -546,10 +640,15 @@ function App() {
                 exit={{ opacity: 0 }}
               >
                 <DailyResult
+                  dayNumber={dailyNumber}
                   score={daily.state.score}
                   correctGuesses={daily.state.correctGuesses}
                   totalBattles={daily.state.battles.length}
-                  dailyStreak={dailyStreak}
+                  marks={daily.state.marks}
+                  streak={dailyStreak}
+                  community={daily.todayResult?.community}
+                  communityLoading={communityLoading}
+                  isAuthenticated={isAuthenticated}
                   onBack={() => {
                     daily.reset();
                     actions.resetGame();
@@ -573,7 +672,6 @@ function App() {
                     challenge.startChallenge();
                     analytics.challengeAccepted();
                     if (challenge.state.battles[0]) {
-                      recordPlay();
                       actions.startBattleById(challenge.state.battles[0].id);
                       // Prefetch remaining challenge battle images
                       challenge.state.battles.slice(1).forEach(b => {
@@ -647,7 +745,6 @@ function App() {
                     onClick={() => {
                       challenge.startCreating();
                       analytics.challengeCreated();
-                      recordPlay();
                       actions.startGame();
                     }}
                     className="w-full"
@@ -727,6 +824,7 @@ function App() {
                 current={daily.state.currentIndex}
                 total={daily.state.battles.length}
                 score={daily.state.score}
+                marks={daily.state.marks}
               />
             )}
             {isPlaying && isChallengePlaying && challenge.state.challenge && (
@@ -924,6 +1022,15 @@ function App() {
                   totalBattles={totalBattlesInPool}
                   battleResults={state.battleResults}
                   onPlayAgain={actions.resetGame}
+                  footer={!isAuthenticated ? (
+                    <SaveProgressCTA
+                      placement="game_complete"
+                      title="This run wasn't saved"
+                      message="Anonymous games don't count toward stats or achievements. A free account keeps every run, plus your daily streak."
+                      modalHeading="Save your progress"
+                      modalSubheading="Free account. Stats, achievements and your daily streak, kept."
+                    />
+                  ) : undefined}
                 />
               </motion.div>
             )}
@@ -944,6 +1051,9 @@ function App() {
             </div>
           </motion.div>
         )}
+
+        {/* Crawlable explore block (idle homepage only) */}
+        {isIdle && <ExploreSection />}
       </div>
 
       {/* Mascot Hint Character - fixed overlay outside the card */}
@@ -995,20 +1105,6 @@ function App() {
         />
       </Suspense>
 
-      {/* Sign Up Modal */}
-      <Suspense fallback={null}>
-        <SignUpModal
-          isOpen={showSignUpModal}
-          onDismiss={() => {
-            setShowSignUpModal(false);
-            signUpModalDismissed.current = true;
-          }}
-          onSuccess={() => {
-            setShowSignUpModal(false);
-            signUpModalDismissed.current = true;
-          }}
-        />
-      </Suspense>
     </Layout>
   );
 }

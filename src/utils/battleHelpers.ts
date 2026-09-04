@@ -45,7 +45,9 @@ export function truncateMetaDescription(text: string, maxLength = 155): string {
     sliced.lastIndexOf('! '),
     sliced.lastIndexOf('? ')
   );
-  if (sentenceEnd > 80) {
+  // Only accept the sentence break if it keeps a reasonably full snippet —
+  // a 90-character description wastes most of the SERP real estate.
+  if (sentenceEnd > 110) {
     return text.slice(0, sentenceEnd + 1);
   }
 

@@ -5,7 +5,6 @@
     "gameModes": "Modos de juego",
     "battles": "Batallas",
     "collections": "Colecciones",
-    "blog": "Blog",
     "faq": "FAQ",
     "about": "Acerca de",
     "language": "Idioma"
@@ -102,15 +101,11 @@
     "facts": "Datos",
     "years": "Años",
     "explore": "Explorar",
-    "learn": "Aprender",
-    "read": "Leer",
+    "play": "Jugar",
     "info": "Información",
-    "ancientWarfare": "Guerra antigua",
-    "warsConflicts": "Guerras y conflictos",
-    "strategyTactics": "Estrategia y tácticas",
-    "militaryTechnology": "Tecnología militar",
-    "gameGuides": "Guías de juego",
-    "allArticles": "Todos los artículos"
+    "dailyChallenge": "Desafío diario",
+    "classic": "Clásico",
+    "campaign": "Campaña"
   },
   "civilizations": {
     "allBattles": "Todas las batallas",
@@ -225,8 +220,7 @@
       "noBattlesFound": "No se encontraron batallas que coincidan con tu búsqueda.",
       "battleNotFound": "Batalla no encontrada",
       "battleNotFoundDesc": "La batalla que buscas no existe.",
-      "featuredIn": "Aparece en",
-      "relatedArticles": "Artículos relacionados"
+      "featuredIn": "Aparece en"
     },
     "collections": {
       "title": "Colecciones de batallas",
@@ -237,15 +231,6 @@
       "backToCollections": "Todas las colecciones",
       "notFound": "Colección no encontrada",
       "notFoundDesc": "La colección de batallas que buscas no existe."
-    },
-    "blog": {
-      "title": "Blog",
-      "subtitle": "Análisis históricos, guías de juego e inmersiones en historia militar",
-      "readMore": "Leer más",
-      "backToBlog": "Volver al blog",
-      "minRead": "min de lectura",
-      "postNotFound": "Artículo no encontrado",
-      "postNotFoundDesc": "El artículo que buscas no existe."
     },
     "stats": {
       "title": "Tus estadísticas",

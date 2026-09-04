@@ -14,8 +14,8 @@ const checks = [
     mustContain: ['<title>', 'Thermopylae', '<main'],
   },
   {
-    path: 'blog/10-most-decisive-battles-in-history/index.html',
-    mustContain: ['<title>', 'Decisive Battles', '<main'],
+    path: 'modes/daily/index.html',
+    mustContain: ['<title>', 'Daily', '<main'],
   },
   {
     path: 'faq/index.html',

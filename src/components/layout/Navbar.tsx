@@ -117,7 +117,12 @@ export function Navbar({ buyMeACoffeeUrl = 'https://buymeacoffee.com/harryhh', d
           <div className="flex items-center gap-1.5 sm:gap-3">
             {/* Daily Streak Badge - always visible */}
             {dailyStreak !== undefined && dailyStreak > 0 && (
-              <DailyStreakBadge streak={dailyStreak} />
+              <DailyStreakBadge
+                streak={dailyStreak}
+                title={isAuthenticated
+                  ? `${dailyStreak}-day Daily Challenge streak`
+                  : `${dailyStreak}-day streak, saved in this browser only. Sign up to keep it.`}
+              />
             )}
 
             {/* Icon buttons - hidden on mobile, shown on sm+ */}

@@ -5,16 +5,27 @@ import { useAuth } from '../../contexts/AuthContext';
 import { GoogleSignInButton } from './GoogleSignInButton';
 import { analytics } from '../../utils/analytics';
 
+type Mode = 'login' | 'register';
+
 interface SignUpModalProps {
   isOpen: boolean;
   onDismiss: () => void;
   onSuccess: () => void;
+  /** Override the default heading to continue the pitch that opened the modal. */
+  heading?: string;
+  subheading?: string;
+  initialMode?: Mode;
 }
 
-type Mode = 'login' | 'register';
-
-export function SignUpModal({ isOpen, onDismiss, onSuccess }: SignUpModalProps) {
-  const [mode, setMode] = useState<Mode>('login');
+export function SignUpModal({
+  isOpen,
+  onDismiss,
+  onSuccess,
+  heading,
+  subheading,
+  initialMode = 'login',
+}: SignUpModalProps) {
+  const [mode, setMode] = useState<Mode>(initialMode);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -30,7 +41,7 @@ export function SignUpModal({ isOpen, onDismiss, onSuccess }: SignUpModalProps) 
     setName('');
     setError('');
     setLoading(false);
-    setMode('login');
+    setMode(initialMode);
   };
 
   const handleDismiss = () => {
@@ -108,10 +119,10 @@ export function SignUpModal({ isOpen, onDismiss, onSuccess }: SignUpModalProps) 
             {/* Heading */}
             <div>
               <h2 className="text-xl font-bold text-gray-900">
-                {mode === 'login' ? 'Welcome back' : 'Create an account'}
+                {heading ?? (mode === 'login' ? 'Welcome back' : 'Create an account')}
               </h2>
               <p className="text-sm text-gray-500 mt-1">
-                Track streaks, scores, and compete with friends
+                {subheading ?? 'Keep your daily streak, get on the leaderboard, save your stats'}
               </p>
             </div>
 

@@ -36,6 +36,11 @@
     }
   ],
   "redirects": [
+    { "source": "/daily", "destination": "/?mode=daily", "permanent": false },
+    { "source": "/blog", "destination": "/", "permanent": true },
+    { "source": "/blog/:path*", "destination": "/", "permanent": true },
+    { "source": "/:lang(fr|es)/blog", "destination": "/", "permanent": true },
+    { "source": "/:lang(fr|es)/blog/:path*", "destination": "/", "permanent": true },
     {
       "source": "/",
       "has": [{ "type": "host", "value": "www.battleguess.app" }],
@@ -51,7 +56,6 @@
   ],
   "rewrites": [
     { "source": "/battles/:path*", "destination": "/index.html" },
-    { "source": "/blog/:path*", "destination": "/index.html" },
     { "source": "/collections/:path*", "destination": "/index.html" },
     { "source": "/modes/:path*", "destination": "/index.html" },
     { "source": "/faq", "destination": "/index.html" },
