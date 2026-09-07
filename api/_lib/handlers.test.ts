@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import resultHandler from './result';
-import leaderboardHandler from './leaderboard';
+import resultHandler from '../daily/result';
+import leaderboardHandler from '../daily/leaderboard';
 import meStatsHandler from '../me/stats';
 
 // Minimal req/res doubles. These tests only reach the paths that run before

@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { sql, initializeDatabase } from '../lib/db.js';
-import { signToken } from '../lib/jwt.js';
-import { hashPassword } from '../lib/password.js';
+import { sql, initializeDatabase } from '../_lib/db.js';
+import { signToken } from '../_lib/jwt.js';
+import { hashPassword } from '../_lib/password.js';
 
 interface RegisterBody {
   email: string;

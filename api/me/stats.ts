@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { initializeDatabase } from '../lib/db.js';
-import { extractUser } from '../lib/auth.js';
-import { getUserStreak } from '../lib/daily.js';
+import { initializeDatabase } from '../_lib/db.js';
+import { extractUser } from '../_lib/auth.js';
+import { getUserStreak } from '../_lib/daily.js';
 
 /**
  * GET /api/me/stats — the signed-in user's server-side streak, used to

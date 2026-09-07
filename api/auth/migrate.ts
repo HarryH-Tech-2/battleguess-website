@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { sql, initializeDatabase } from '../lib/db.js';
-import { extractUser } from '../lib/auth.js';
+import { sql, initializeDatabase } from '../_lib/db.js';
+import { extractUser } from '../_lib/auth.js';
 
 interface MigrationPayload {
   totalGames: number;

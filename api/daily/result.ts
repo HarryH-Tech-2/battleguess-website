@@ -1,8 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { initializeDatabase } from '../lib/db.js';
-import { extractUser } from '../lib/auth.js';
-import { validateDailyResult } from '../lib/dailyStats.js';
-import { getDailyCommunity, recordUserStreak, upsertDailyResult } from '../lib/daily.js';
+import { initializeDatabase } from '../_lib/db.js';
+import { extractUser } from '../_lib/auth.js';
+import { validateDailyResult } from '../_lib/dailyStats.js';
+import { getDailyCommunity, recordUserStreak, upsertDailyResult } from '../_lib/daily.js';
 
 /**
  * POST /api/daily/result

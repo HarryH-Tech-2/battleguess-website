@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { initializeDatabase } from '../lib/db.js';
-import { extractUser } from '../lib/auth.js';
-import { getDailyCommunity } from '../lib/daily.js';
+import { initializeDatabase } from '../_lib/db.js';
+import { extractUser } from '../_lib/auth.js';
+import { getDailyCommunity } from '../_lib/daily.js';
 
 const DATE_KEY_RE = /^\d{4}-\d{2}-\d{2}$/;
 const ANON_ID_RE = /^[A-Za-z0-9_-]{8,64}$/;
