@@ -10,10 +10,8 @@
     "language": "Language"
   },
   "promo": {
-    "timelineChronosLine1": "Love history? Try Timeline Chronos",
-    "timelineChronosLine2": "on Google Play \u2192",
-    "odysseyLine1": "Explore ancient myths in The Odyssey",
-    "odysseyLine2": "on Google Play \u2192"
+    "historyDateGuesserLine1": "Love history? Try History Quiz: Guess the Date",
+    "historyDateGuesserLine2": "on Google Play \u2192"
   },
   "game": {
     "startGame": "Start Game",

@@ -10,10 +10,8 @@
     "language": "Langue"
   },
   "promo": {
-    "timelineChronosLine1": "Passionné d'histoire ? Essayez Timeline Chronos",
-    "timelineChronosLine2": "sur Google Play →",
-    "odysseyLine1": "Explorez les mythes antiques dans The Odyssey",
-    "odysseyLine2": "sur Google Play →"
+    "historyDateGuesserLine1": "Passionné d'histoire ? Essayez History Quiz: Guess the Date",
+    "historyDateGuesserLine2": "sur Google Play →"
   },
   "game": {
     "startGame": "Commencer la partie",

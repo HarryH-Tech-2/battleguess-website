@@ -496,30 +496,17 @@ function App() {
           className="flex flex-wrap justify-center gap-3 sm:gap-4"
         >
           <a
-            href="https://play.google.com/store/apps/details?id=com.harryhh.timelinechronos"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex flex-col items-center gap-2.5 px-7 py-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-base sm:text-lg font-medium hover:bg-emerald-100 hover:border-emerald-300 transition-colors"
-          >
-            <img
-              src="/timeline-chronos-icon.png"
-              alt="Timeline Chronos"
-              className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl"
-            />
-            <span className="text-center leading-tight">{t('promo.timelineChronosLine1')}<br />{t('promo.timelineChronosLine2')}</span>
-          </a>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.harryhh.theodyssey"
+            href="https://play.google.com/store/apps/details?id=com.harryhh.historydateguesser"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex flex-col items-center gap-2.5 px-7 py-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-700 text-base sm:text-lg font-medium hover:bg-amber-100 hover:border-amber-300 transition-colors"
           >
             <img
-              src="/odyssey-icon.png"
-              alt="The Odyssey"
+              src="/history-date-guesser-icon.png"
+              alt="History Quiz: Guess the Date"
               className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl"
             />
-            <span className="text-center leading-tight">{t('promo.odysseyLine1')}<br />{t('promo.odysseyLine2')}</span>
+            <span className="text-center leading-tight">{t('promo.historyDateGuesserLine1')}<br />{t('promo.historyDateGuesserLine2')}</span>
           </a>
         </motion.div>
 
